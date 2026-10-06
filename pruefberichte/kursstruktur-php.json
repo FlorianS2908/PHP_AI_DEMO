@@ -1,0 +1,157 @@
+{
+  "date": "2026-10-06",
+  "environment": "Linux · PHP 8.3.6 CLI -n · integrierter HTTP-Server",
+  "scope": "Neue Tagesdemos und die ausgewählten Pflichtlösungen; kein Windows/XAMPP- oder optionaler DB-Laufzeittest",
+  "checks": [
+    {
+      "test": "PHP-Syntax PHP_Arbeitsbereich/tagesdemos/empfang.php",
+      "passed": true
+    },
+    {
+      "test": "PHP-Syntax PHP_Arbeitsbereich/tagesdemos/php-einstieg.php",
+      "passed": true
+    },
+    {
+      "test": "PHP-Syntax PHP_Arbeitsbereich/tagesstarter/tag-03.php",
+      "passed": true
+    },
+    {
+      "test": "PHP-Syntax PHP_Arbeitsbereich/tagesstarter/tag-04/auswertung.php",
+      "passed": true
+    },
+    {
+      "test": "PHP-Syntax PHP_Dozent/tagesloesungen/tag-03.php",
+      "passed": true
+    },
+    {
+      "test": "PHP-Syntax PHP_Dozent/tagesloesungen/tag-05-cookies/index.php",
+      "passed": true
+    },
+    {
+      "test": "PHP-Syntax PHP_Dozent/tagesloesungen/tag-05-cookies/auswertung.php",
+      "passed": true
+    },
+    {
+      "test": "PHP-Syntax PHP_Dozent/tagesloesungen/tag-05-cookies/function.php",
+      "passed": true
+    },
+    {
+      "test": "PHP-Syntax PHP_Dozent/tagesloesungen/tag-04/index.php",
+      "passed": true
+    },
+    {
+      "test": "PHP-Syntax PHP_Dozent/tagesloesungen/tag-04/auswertung.php",
+      "passed": true
+    },
+    {
+      "test": "PHP-Syntax PHP_Dozent/tagesloesungen/tag-05-session/anzeige.php",
+      "passed": true
+    },
+    {
+      "test": "PHP-Syntax PHP_Dozent/tagesloesungen/tag-05-session/index.php",
+      "passed": true
+    },
+    {
+      "test": "PHP-Syntax PHP_Dozent/tagesloesungen/tag-05-session/auswertung.php",
+      "passed": true
+    },
+    {
+      "test": "PHP-Syntax PHP_Dozent/tagesloesungen/tag-05-session/function.php",
+      "passed": true
+    },
+    {
+      "test": "GET-Lupe zeigt Methode und kodierten Query",
+      "passed": true
+    },
+    {
+      "test": "POST-Lupe verarbeitet Form-Body",
+      "passed": true
+    },
+    {
+      "test": "HTTP-Lupe maskiert fremdes HTML",
+      "passed": true
+    },
+    {
+      "test": "HTTP-Lupe behandelt Array-Eingabe",
+      "passed": true
+    },
+    {
+      "test": "HTTP-Lupe weist fremde Methode mit 405 ab",
+      "passed": true
+    },
+    {
+      "test": "PHP-Einstieg wird ausgeführt",
+      "passed": true
+    },
+    {
+      "test": "Formular: Direktaufruf -> 303",
+      "passed": true
+    },
+    {
+      "test": "Formular ungültig: fehlt",
+      "passed": true
+    },
+    {
+      "test": "Formular ungültig: leer",
+      "passed": true
+    },
+    {
+      "test": "Formular ungültig: Array",
+      "passed": true
+    },
+    {
+      "test": "Formular ungültig: zu lang",
+      "passed": true
+    },
+    {
+      "test": "Formular gültig + erhalten: Berlin",
+      "passed": true
+    },
+    {
+      "test": "Formular gültig + erhalten: 0",
+      "passed": true
+    },
+    {
+      "test": "Formular gültig + erhalten: <b>Ort</b>",
+      "passed": true
+    },
+    {
+      "test": "Cookie speichern und nach Redirect lesen",
+      "passed": true
+    },
+    {
+      "test": "Cookie bei ungültiger Eingabe nicht überschreiben",
+      "passed": true
+    },
+    {
+      "test": "Cookie gelöscht: Standard",
+      "passed": true
+    },
+    {
+      "test": "Session speichert nach POST",
+      "passed": true
+    },
+    {
+      "test": "Session auf zweiter Seite",
+      "passed": true
+    },
+    {
+      "test": "Session-Fehler überschreibt alten Stand nicht",
+      "passed": true
+    },
+    {
+      "test": "Session-Array wird abgewiesen",
+      "passed": true
+    },
+    {
+      "test": "Neuer Cookie-Kontext hat eigenen Zustand",
+      "passed": true
+    },
+    {
+      "test": "Session-Ausgabe maskiert HTML",
+      "passed": true
+    }
+  ],
+  "passed": 37,
+  "failed": 0
+}

@@ -1,13 +1,13 @@
 {
   "date": "2026-10-06",
-  "scope": "Bereitstellungsprüfung der neutral benannten Veröffentlichung",
-  "files": 927,
-  "pdf_files": 28,
-  "json_files": 48,
-  "html_files": 242,
-  "checked_local_references": 4247,
+  "scope": "Bereitstellungsprüfung der Fünf-Tage-Kursfassung 2.0",
+  "files": 966,
+  "pdf_files": 29,
+  "json_files": 51,
+  "html_files": 259,
+  "checked_local_references": 5970,
   "javascript_syntax": true,
   "distinct_core_questions": 156,
   "errors": [],
-  "runtime_note": "PHP-/Datenbank- und Windows-Laufzeittests wurden bei dieser Bereitstellung nicht erneut ausgeführt. Die beiliegenden älteren Prüfberichte sind getrennte Nachweise."
+  "runtime_note": "Neue Tagesdemos und Pflichtlösungen separat geprüft: 14 PHP-Syntaxprüfungen und 23 HTTP-Fälle unter Linux/PHP 8.3.6. Windows/XAMPP und optionaler Datenbankbetrieb nicht erneut geprüft."
 }

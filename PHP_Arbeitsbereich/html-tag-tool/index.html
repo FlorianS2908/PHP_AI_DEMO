@@ -1,5 +1,4 @@
-<!doctype html>
-<html lang="de" class="course-ui">
+<!doctype html><html lang="de" class="course-ui">
 
 <head>
   <meta charset="utf-8">
@@ -893,26 +892,24 @@
   <link rel="stylesheet" href="tool-basis.css">
   <link rel="stylesheet" href="html-tag-tool.css">
 
-</head>
+<html><head><link rel="stylesheet" href="../../assets/tage.css"></head></html></head>
 
 <body class="course-shell">
-  <a class="tool-skip-link" href="#einfuehrung">Zum Inhalt springen</a>
+  <nav class="course-bar" aria-label="Zurück zum Kurs"><a href="../../PHP_Teilnehmer/index.html">Teilnehmer: fünf Tage</a><a href="../../PHP_Dozent/index.html">Dozent: fünf Tage</a><a href="../index.html">Arbeitsbereich</a></nav><a class="tool-skip-link" href="#einfuehrung">Zum Inhalt springen</a>
   <div class="tag-tool-layout course-layout">
     <aside class="tag-tool-sidebar course-sidebar" aria-label="Seitennavigation">
       <span class="tag-tool-brand">HTML &amp; CSS</span>
       <h2>HTML-Tag-Übersicht</h2>
       <a class="course-backlink" href="#einfuehrung" data-course-preserve-label data-course-backlink>Zur
         Tool-Übersicht</a>
-      <button type="button" class="course-menu-toggle" data-course-menu-toggle aria-controls="course-navigation"
-        aria-expanded="false">Seitennavigation öffnen</button>
-      <nav class="tag-tool-navigation course-navigation" aria-label="HTML-Tag-Übersicht" data-course-navigation
-        data-mobile-collapsible="true" id="course-navigation">
+      <button type="button" class="course-menu-toggle" data-course-menu-toggle aria-controls="course-navigation" aria-expanded="false">Seitennavigation öffnen</button>
+      <nav class="tag-tool-navigation course-navigation" aria-label="HTML-Tag-Übersicht" data-course-navigation data-mobile-collapsible="true" id="course-navigation">
         <a href="#einfuehrung" data-course-scroll-target>Einführung</a>
-        <a href="#tag1" data-course-scroll-target>Tag 1 · Grundlagen</a>
-        <a href="#tag2" data-course-scroll-target>Tag 2 · Flexbox</a>
-        <a href="#tag3" data-course-scroll-target>Tag 3 · Grid</a>
-        <a href="#tag4" data-course-scroll-target>Tag 4 · Responsive</a>
-        <a href="#tag5" data-course-scroll-target>Tag 5 · Formulare</a>
+        <a href="#tag1" data-course-scroll-target>Thema 1 · Grundlagen</a>
+        <a href="#tag2" data-course-scroll-target>Thema 2 · Flexbox</a>
+        <a href="#tag3" data-course-scroll-target>Thema 3 · Grid</a>
+        <a href="#tag4" data-course-scroll-target>Thema 4 · Responsive</a>
+        <a href="#tag5" data-course-scroll-target>Thema 5 · Formulare</a>
       </nav>
     </aside>
     <div class="tag-tool-content">
@@ -936,9 +933,8 @@
         </section>
 
         <details class="day-disclosure course-accordion" id="tag1" open data-course-accordion>
-          <summary class="day-summary"><span class="day-summary-kicker">Tag 1</span><span class="day-summary-title">Tag
-              1: HTML-Grundstruktur und CSS-Basics</span><span class="day-summary-meta">21 HTML-Tags</span><span
-              class="day-summary-state" aria-hidden="true"></span></summary>
+          <summary class="day-summary"><span class="day-summary-kicker">Thema 1</span><span class="day-summary-title">Tag
+              1: HTML-Grundstruktur und CSS-Basics</span><span class="day-summary-meta">21 HTML-Tags</span><span class="day-summary-state" aria-hidden="true"></span></summary>
           <div class="day-content">
             <div class="wrap">
               <div class="day-head">
@@ -960,7 +956,7 @@
                     <h4>Typische Verwendung</h4>
                     <p>Es umschließt head und body und legt über lang die Sprache fest.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;html lang=&quot;de&quot;&gt;
+                    <pre><code>&lt;html lang="de"&gt;
   &lt;head&gt;...&lt;/head&gt;
   &lt;body&gt;...&lt;/body&gt;
 &lt;/html&gt;</code></pre>
@@ -973,10 +969,7 @@
                     <input class="variant-input v3" type="radio" name="demo-1-html" id="demo-1-html-v3">
                     <input class="variant-input v4" type="radio" name="demo-1-html" id="demo-1-html-v4">
                     <input class="variant-input v5" type="radio" name="demo-1-html" id="demo-1-html-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-1-html-v1">Standard</label><label
-                        class="tab-2" for="demo-1-html-v2">Akzent</label><label class="tab-3"
-                        for="demo-1-html-v3">Layout</label><label class="tab-4" for="demo-1-html-v4">Karte</label><label
-                        class="tab-5" for="demo-1-html-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-1-html-v1">Standard</label><label class="tab-2" for="demo-1-html-v2">Akzent</label><label class="tab-3" for="demo-1-html-v3">Layout</label><label class="tab-4" for="demo-1-html-v4">Karte</label><label class="tab-5" for="demo-1-html-v5">Kontrast</label></div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;html&gt;</strong>
                         <p>Beispielinhalt für Gestaltung.</p>
@@ -1047,7 +1040,7 @@
                     <p>Hier stehen Zeichensatz, Viewport, Titel und bei Bedarf interne Styles.</p>
                     <h4>HTML-Syntax</h4>
                     <pre><code>&lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta charset="utf-8"&gt;
   &lt;title&gt;Meine Seite&lt;/title&gt;
 &lt;/head&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
@@ -1060,10 +1053,7 @@
                     <input class="variant-input v3" type="radio" name="demo-2-head" id="demo-2-head-v3">
                     <input class="variant-input v4" type="radio" name="demo-2-head" id="demo-2-head-v4">
                     <input class="variant-input v5" type="radio" name="demo-2-head" id="demo-2-head-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-2-head-v1">Standard</label><label
-                        class="tab-2" for="demo-2-head-v2">Akzent</label><label class="tab-3"
-                        for="demo-2-head-v3">Layout</label><label class="tab-4" for="demo-2-head-v4">Karte</label><label
-                        class="tab-5" for="demo-2-head-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-2-head-v1">Standard</label><label class="tab-2" for="demo-2-head-v2">Akzent</label><label class="tab-3" for="demo-2-head-v3">Layout</label><label class="tab-4" for="demo-2-head-v4">Karte</label><label class="tab-5" for="demo-2-head-v5">Kontrast</label></div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;head&gt;</strong>
                         <p>Beispielinhalt für Gestaltung.</p>
@@ -1144,10 +1134,7 @@
                     <input class="variant-input v3" type="radio" name="demo-3-title" id="demo-3-title-v3">
                     <input class="variant-input v4" type="radio" name="demo-3-title" id="demo-3-title-v4">
                     <input class="variant-input v5" type="radio" name="demo-3-title" id="demo-3-title-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-3-title-v1">Standard</label><label
-                        class="tab-2" for="demo-3-title-v2">Akzent</label><label class="tab-3"
-                        for="demo-3-title-v3">Layout</label><label class="tab-4"
-                        for="demo-3-title-v4">Karte</label><label class="tab-5" for="demo-3-title-v5">Kontrast</label>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-3-title-v1">Standard</label><label class="tab-2" for="demo-3-title-v2">Akzent</label><label class="tab-3" for="demo-3-title-v3">Layout</label><label class="tab-4" for="demo-3-title-v4">Karte</label><label class="tab-5" for="demo-3-title-v5">Kontrast</label>
                     </div>
                     <div class="preview">
                       <h3 class="demo-target demo-heading">HTML und CSS verstehen</h3>
@@ -1216,8 +1203,8 @@
                     <h4>Typische Verwendung</h4>
                     <p>Typisch sind Zeichensatz und Viewport für responsive Seiten.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;meta charset=&quot;utf-8&quot;&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</code></pre>
+                    <pre><code>&lt;meta charset="utf-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <p class="selector-note">Meta-Elemente werden nicht sichtbar gerendert. Sie steuern technische
                       Angaben wie Zeichensatz oder Viewport, werden aber nicht direkt gestaltet.</p>
@@ -1227,10 +1214,7 @@
                     <input class="variant-input v3" type="radio" name="demo-4-meta" id="demo-4-meta-v3">
                     <input class="variant-input v4" type="radio" name="demo-4-meta" id="demo-4-meta-v4">
                     <input class="variant-input v5" type="radio" name="demo-4-meta" id="demo-4-meta-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-4-meta-v1">Standard</label><label
-                        class="tab-2" for="demo-4-meta-v2">Akzent</label><label class="tab-3"
-                        for="demo-4-meta-v3">Layout</label><label class="tab-4" for="demo-4-meta-v4">Karte</label><label
-                        class="tab-5" for="demo-4-meta-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-4-meta-v1">Standard</label><label class="tab-2" for="demo-4-meta-v2">Akzent</label><label class="tab-3" for="demo-4-meta-v3">Layout</label><label class="tab-4" for="demo-4-meta-v4">Karte</label><label class="tab-5" for="demo-4-meta-v5">Kontrast</label></div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;meta&gt;</strong>
                         <p>Beispielinhalt für Gestaltung.</p>
@@ -1300,7 +1284,7 @@
                     <h4>Typische Verwendung</h4>
                     <p>In Projekten bindet es häufig CSS ein; in dieser Datei bleibt CSS intern.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;</code></pre>
+                    <pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <p class="selector-note">Das link-Element selbst wird nicht sichtbar gestaltet. Es verbindet ein
                       Dokument mit Ressourcen; die Gestaltung betrifft die geladenen oder sichtbaren Inhalte.</p>
@@ -1310,10 +1294,7 @@
                     <input class="variant-input v3" type="radio" name="demo-5-link" id="demo-5-link-v3">
                     <input class="variant-input v4" type="radio" name="demo-5-link" id="demo-5-link-v4">
                     <input class="variant-input v5" type="radio" name="demo-5-link" id="demo-5-link-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-5-link-v1">Standard</label><label
-                        class="tab-2" for="demo-5-link-v2">Akzent</label><label class="tab-3"
-                        for="demo-5-link-v3">Layout</label><label class="tab-4" for="demo-5-link-v4">Karte</label><label
-                        class="tab-5" for="demo-5-link-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-5-link-v1">Standard</label><label class="tab-2" for="demo-5-link-v2">Akzent</label><label class="tab-3" for="demo-5-link-v3">Layout</label><label class="tab-4" for="demo-5-link-v4">Karte</label><label class="tab-5" for="demo-5-link-v5">Kontrast</label></div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;link&gt;</strong>
                         <p>Beispielinhalt für Gestaltung.</p>
@@ -1396,10 +1377,7 @@ body &gt; main</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-6-body" id="demo-6-body-v3">
                     <input class="variant-input v4" type="radio" name="demo-6-body" id="demo-6-body-v4">
                     <input class="variant-input v5" type="radio" name="demo-6-body" id="demo-6-body-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-6-body-v1">Standard</label><label
-                        class="tab-2" for="demo-6-body-v2">Akzent</label><label class="tab-3"
-                        for="demo-6-body-v3">Layout</label><label class="tab-4" for="demo-6-body-v4">Karte</label><label
-                        class="tab-5" for="demo-6-body-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-6-body-v1">Standard</label><label class="tab-2" for="demo-6-body-v2">Akzent</label><label class="tab-3" for="demo-6-body-v3">Layout</label><label class="tab-4" for="demo-6-body-v4">Karte</label><label class="tab-5" for="demo-6-body-v5">Kontrast</label></div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;body&gt;</strong>
                         <p>Beispielinhalt für Gestaltung.</p>
@@ -1469,7 +1447,7 @@ body &gt; main</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Es enthält häufig Logo, Überschrift, Einleitung oder Navigation.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;header class=&quot;site-header&quot;&gt;
+                    <pre><code>&lt;header class="site-header"&gt;
   &lt;h1&gt;Meine Seite&lt;/h1&gt;
 &lt;/header&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
@@ -1482,10 +1460,7 @@ section &gt; header</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-7-header" id="demo-7-header-v3">
                     <input class="variant-input v4" type="radio" name="demo-7-header" id="demo-7-header-v4">
                     <input class="variant-input v5" type="radio" name="demo-7-header" id="demo-7-header-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-7-header-v1">Standard</label><label
-                        class="tab-2" for="demo-7-header-v2">Akzent</label><label class="tab-3"
-                        for="demo-7-header-v3">Layout</label><label class="tab-4"
-                        for="demo-7-header-v4">Karte</label><label class="tab-5" for="demo-7-header-v5">Kontrast</label>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-7-header-v1">Standard</label><label class="tab-2" for="demo-7-header-v2">Akzent</label><label class="tab-3" for="demo-7-header-v3">Layout</label><label class="tab-4" for="demo-7-header-v4">Karte</label><label class="tab-5" for="demo-7-header-v5">Kontrast</label>
                     </div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;header&gt;</strong>
@@ -1568,10 +1543,7 @@ section &gt; header</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-8-main" id="demo-8-main-v3">
                     <input class="variant-input v4" type="radio" name="demo-8-main" id="demo-8-main-v4">
                     <input class="variant-input v5" type="radio" name="demo-8-main" id="demo-8-main-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-8-main-v1">Standard</label><label
-                        class="tab-2" for="demo-8-main-v2">Akzent</label><label class="tab-3"
-                        for="demo-8-main-v3">Layout</label><label class="tab-4" for="demo-8-main-v4">Karte</label><label
-                        class="tab-5" for="demo-8-main-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-8-main-v1">Standard</label><label class="tab-2" for="demo-8-main-v2">Akzent</label><label class="tab-3" for="demo-8-main-v3">Layout</label><label class="tab-4" for="demo-8-main-v4">Karte</label><label class="tab-5" for="demo-8-main-v5">Kontrast</label></div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;main&gt;</strong>
                         <p>Beispielinhalt für Gestaltung.</p>
@@ -1655,11 +1627,7 @@ section &gt; header</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-9-section" id="demo-9-section-v3">
                     <input class="variant-input v4" type="radio" name="demo-9-section" id="demo-9-section-v4">
                     <input class="variant-input v5" type="radio" name="demo-9-section" id="demo-9-section-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-9-section-v1">Standard</label><label
-                        class="tab-2" for="demo-9-section-v2">Akzent</label><label class="tab-3"
-                        for="demo-9-section-v3">Layout</label><label class="tab-4"
-                        for="demo-9-section-v4">Karte</label><label class="tab-5"
-                        for="demo-9-section-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-9-section-v1">Standard</label><label class="tab-2" for="demo-9-section-v2">Akzent</label><label class="tab-3" for="demo-9-section-v3">Layout</label><label class="tab-4" for="demo-9-section-v4">Karte</label><label class="tab-5" for="demo-9-section-v5">Kontrast</label></div>
                     <div class="preview">
                       <section class="demo-target demo-section"><strong>Abschnitt</strong>
                         <p>Ein thematischer Bereich.</p>
@@ -1729,7 +1697,7 @@ section &gt; header</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Typisch sind Karten, Beiträge, Meldungen oder Projektblöcke.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;article class=&quot;card&quot;&gt;
+                    <pre><code>&lt;article class="card"&gt;
   &lt;h2&gt;Karte&lt;/h2&gt;
   &lt;p&gt;Text&lt;/p&gt;
 &lt;/article&gt;</code></pre>
@@ -1743,11 +1711,7 @@ section &gt; header</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-10-article" id="demo-10-article-v3">
                     <input class="variant-input v4" type="radio" name="demo-10-article" id="demo-10-article-v4">
                     <input class="variant-input v5" type="radio" name="demo-10-article" id="demo-10-article-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-10-article-v1">Standard</label><label
-                        class="tab-2" for="demo-10-article-v2">Akzent</label><label class="tab-3"
-                        for="demo-10-article-v3">Layout</label><label class="tab-4"
-                        for="demo-10-article-v4">Karte</label><label class="tab-5"
-                        for="demo-10-article-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-10-article-v1">Standard</label><label class="tab-2" for="demo-10-article-v2">Akzent</label><label class="tab-3" for="demo-10-article-v3">Layout</label><label class="tab-4" for="demo-10-article-v4">Karte</label><label class="tab-5" for="demo-10-article-v5">Kontrast</label></div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;article&gt;</strong>
                         <p>Beispielinhalt für Gestaltung.</p>
@@ -1829,11 +1793,7 @@ section &gt; header</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-11-footer" id="demo-11-footer-v3">
                     <input class="variant-input v4" type="radio" name="demo-11-footer" id="demo-11-footer-v4">
                     <input class="variant-input v5" type="radio" name="demo-11-footer" id="demo-11-footer-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-11-footer-v1">Standard</label><label
-                        class="tab-2" for="demo-11-footer-v2">Akzent</label><label class="tab-3"
-                        for="demo-11-footer-v3">Layout</label><label class="tab-4"
-                        for="demo-11-footer-v4">Karte</label><label class="tab-5"
-                        for="demo-11-footer-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-11-footer-v1">Standard</label><label class="tab-2" for="demo-11-footer-v2">Akzent</label><label class="tab-3" for="demo-11-footer-v3">Layout</label><label class="tab-4" for="demo-11-footer-v4">Karte</label><label class="tab-5" for="demo-11-footer-v5">Kontrast</label></div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;footer&gt;</strong>
                         <p>Beispielinhalt für Gestaltung.</p>
@@ -1914,10 +1874,7 @@ main h1</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-12-h1" id="demo-12-h1-v3">
                     <input class="variant-input v4" type="radio" name="demo-12-h1" id="demo-12-h1-v4">
                     <input class="variant-input v5" type="radio" name="demo-12-h1" id="demo-12-h1-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-12-h1-v1">Standard</label><label
-                        class="tab-2" for="demo-12-h1-v2">Akzent</label><label class="tab-3"
-                        for="demo-12-h1-v3">Layout</label><label class="tab-4" for="demo-12-h1-v4">Karte</label><label
-                        class="tab-5" for="demo-12-h1-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-12-h1-v1">Standard</label><label class="tab-2" for="demo-12-h1-v2">Akzent</label><label class="tab-3" for="demo-12-h1-v3">Layout</label><label class="tab-4" for="demo-12-h1-v4">Karte</label><label class="tab-5" for="demo-12-h1-v5">Kontrast</label></div>
                     <div class="preview">
                       <h3 class="demo-target demo-heading">HTML und CSS verstehen</h3>
                       <div class="demo-context"><strong>Mehr Kontext für die Variante</strong>
@@ -1985,7 +1942,7 @@ main h1</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Es eignet sich für Kapitel wie Tagesbereiche oder Inhaltsgruppen.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;h2&gt;Tag 1: HTML-Grundstruktur&lt;/h2&gt;</code></pre>
+                    <pre><code>&lt;h2&gt;Thema 1: HTML-Grundstruktur&lt;/h2&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <pre><code>h2
 .section-title
@@ -1996,10 +1953,7 @@ section h2</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-13-h2" id="demo-13-h2-v3">
                     <input class="variant-input v4" type="radio" name="demo-13-h2" id="demo-13-h2-v4">
                     <input class="variant-input v5" type="radio" name="demo-13-h2" id="demo-13-h2-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-13-h2-v1">Standard</label><label
-                        class="tab-2" for="demo-13-h2-v2">Akzent</label><label class="tab-3"
-                        for="demo-13-h2-v3">Layout</label><label class="tab-4" for="demo-13-h2-v4">Karte</label><label
-                        class="tab-5" for="demo-13-h2-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-13-h2-v1">Standard</label><label class="tab-2" for="demo-13-h2-v2">Akzent</label><label class="tab-3" for="demo-13-h2-v3">Layout</label><label class="tab-4" for="demo-13-h2-v4">Karte</label><label class="tab-5" for="demo-13-h2-v5">Kontrast</label></div>
                     <div class="preview">
                       <h3 class="demo-target demo-heading">HTML und CSS verstehen</h3>
                       <div class="demo-context"><strong>Mehr Kontext für die Variante</strong>
@@ -2078,10 +2032,7 @@ section h2</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-14-p" id="demo-14-p-v3">
                     <input class="variant-input v4" type="radio" name="demo-14-p" id="demo-14-p-v4">
                     <input class="variant-input v5" type="radio" name="demo-14-p" id="demo-14-p-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-14-p-v1">Standard</label><label
-                        class="tab-2" for="demo-14-p-v2">Akzent</label><label class="tab-3"
-                        for="demo-14-p-v3">Layout</label><label class="tab-4" for="demo-14-p-v4">Karte</label><label
-                        class="tab-5" for="demo-14-p-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-14-p-v1">Standard</label><label class="tab-2" for="demo-14-p-v2">Akzent</label><label class="tab-3" for="demo-14-p-v3">Layout</label><label class="tab-4" for="demo-14-p-v4">Karte</label><label class="tab-5" for="demo-14-p-v5">Kontrast</label></div>
                     <div class="preview">
                       <p class="demo-target demo-paragraph">Ein gut lesbarer Absatz braucht ausreichend Zeilenhöhe,
                         sinnvolle Breite und klare Abstände.</p>
@@ -2164,10 +2115,7 @@ ul li</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-15-ul" id="demo-15-ul-v3">
                     <input class="variant-input v4" type="radio" name="demo-15-ul" id="demo-15-ul-v4">
                     <input class="variant-input v5" type="radio" name="demo-15-ul" id="demo-15-ul-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-15-ul-v1">Standard</label><label
-                        class="tab-2" for="demo-15-ul-v2">Akzent</label><label class="tab-3"
-                        for="demo-15-ul-v3">Layout</label><label class="tab-4" for="demo-15-ul-v4">Karte</label><label
-                        class="tab-5" for="demo-15-ul-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-15-ul-v1">Standard</label><label class="tab-2" for="demo-15-ul-v2">Akzent</label><label class="tab-3" for="demo-15-ul-v3">Layout</label><label class="tab-4" for="demo-15-ul-v4">Karte</label><label class="tab-5" for="demo-15-ul-v5">Kontrast</label></div>
                     <div class="preview">
                       <ul class="demo-target demo-list">
                         <li>Struktur</li>
@@ -2253,10 +2201,7 @@ ol li</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-16-ol" id="demo-16-ol-v3">
                     <input class="variant-input v4" type="radio" name="demo-16-ol" id="demo-16-ol-v4">
                     <input class="variant-input v5" type="radio" name="demo-16-ol" id="demo-16-ol-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-16-ol-v1">Standard</label><label
-                        class="tab-2" for="demo-16-ol-v2">Akzent</label><label class="tab-3"
-                        for="demo-16-ol-v3">Layout</label><label class="tab-4" for="demo-16-ol-v4">Karte</label><label
-                        class="tab-5" for="demo-16-ol-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-16-ol-v1">Standard</label><label class="tab-2" for="demo-16-ol-v2">Akzent</label><label class="tab-3" for="demo-16-ol-v3">Layout</label><label class="tab-4" for="demo-16-ol-v4">Karte</label><label class="tab-5" for="demo-16-ol-v5">Kontrast</label></div>
                     <div class="preview">
                       <ul class="demo-target demo-list">
                         <li>Struktur</li>
@@ -2339,10 +2284,7 @@ ol &gt; li</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-17-li" id="demo-17-li-v3">
                     <input class="variant-input v4" type="radio" name="demo-17-li" id="demo-17-li-v4">
                     <input class="variant-input v5" type="radio" name="demo-17-li" id="demo-17-li-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-17-li-v1">Standard</label><label
-                        class="tab-2" for="demo-17-li-v2">Akzent</label><label class="tab-3"
-                        for="demo-17-li-v3">Layout</label><label class="tab-4" for="demo-17-li-v4">Karte</label><label
-                        class="tab-5" for="demo-17-li-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-17-li-v1">Standard</label><label class="tab-2" for="demo-17-li-v2">Akzent</label><label class="tab-3" for="demo-17-li-v3">Layout</label><label class="tab-4" for="demo-17-li-v4">Karte</label><label class="tab-5" for="demo-17-li-v5">Kontrast</label></div>
                     <div class="preview">
                       <ul class="demo-target demo-list">
                         <li>Struktur</li>
@@ -2414,7 +2356,7 @@ ol &gt; li</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Es führt zu einer Stelle auf derselben Seite oder zu einem Ziel.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;a href=&quot;#tag1&quot;&gt;Zu Tag 1 springen&lt;/a&gt;</code></pre>
+                    <pre><code>&lt;a href="#tag1"&gt;Zu Thema 1 springen&lt;/a&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <pre><code>a
 .nav-link
@@ -2426,12 +2368,8 @@ a:hover</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-18-a" id="demo-18-a-v3">
                     <input class="variant-input v4" type="radio" name="demo-18-a" id="demo-18-a-v4">
                     <input class="variant-input v5" type="radio" name="demo-18-a" id="demo-18-a-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-18-a-v1">Standard</label><label
-                        class="tab-2" for="demo-18-a-v2">Akzent</label><label class="tab-3"
-                        for="demo-18-a-v3">Layout</label><label class="tab-4" for="demo-18-a-v4">Karte</label><label
-                        class="tab-5" for="demo-18-a-v5">Kontrast</label></div>
-                    <div class="preview"><a class="demo-target demo-link" href="#einfuehrung"
-                        data-course-placeholder="true">Beispiel-Link</a>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-18-a-v1">Standard</label><label class="tab-2" for="demo-18-a-v2">Akzent</label><label class="tab-3" for="demo-18-a-v3">Layout</label><label class="tab-4" for="demo-18-a-v4">Karte</label><label class="tab-5" for="demo-18-a-v5">Kontrast</label></div>
+                    <div class="preview"><a class="demo-target demo-link" href="#einfuehrung" data-course-placeholder="true">Beispiel-Link</a>
                       <div class="demo-context"><strong>Mehr Kontext für die Variante</strong>
                         <ul>
                           <li>Abstände, Rahmen, Farben und Typografie vergleichen.</li>
@@ -2497,7 +2435,7 @@ a:hover</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Das alt-Attribut beschreibt Inhalt oder Funktion des Bildes.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;img src=&quot;bild.jpg&quot; alt=&quot;Beispielbild&quot;&gt;</code></pre>
+                    <pre><code>&lt;img src="bild.jpg" alt="Beispielbild"&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <pre><code>img
 .card img
@@ -2508,10 +2446,7 @@ img.responsive</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-19-img" id="demo-19-img-v3">
                     <input class="variant-input v4" type="radio" name="demo-19-img" id="demo-19-img-v4">
                     <input class="variant-input v5" type="radio" name="demo-19-img" id="demo-19-img-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-19-img-v1">Standard</label><label
-                        class="tab-2" for="demo-19-img-v2">Akzent</label><label class="tab-3"
-                        for="demo-19-img-v3">Layout</label><label class="tab-4" for="demo-19-img-v4">Karte</label><label
-                        class="tab-5" for="demo-19-img-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-19-img-v1">Standard</label><label class="tab-2" for="demo-19-img-v2">Akzent</label><label class="tab-3" for="demo-19-img-v3">Layout</label><label class="tab-4" for="demo-19-img-v4">Karte</label><label class="tab-5" for="demo-19-img-v5">Kontrast</label></div>
                     <div class="preview">
                       <div class="demo-target demo-image">Bild</div>
                       <div class="demo-context"><strong>Mehr Kontext für die Variante</strong>
@@ -2579,7 +2514,7 @@ img.responsive</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Es wird genutzt, wenn kein semantisch passenderes Element existiert.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;div class=&quot;layout-box&quot;&gt;Inhalt&lt;/div&gt;</code></pre>
+                    <pre><code>&lt;div class="layout-box"&gt;Inhalt&lt;/div&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <pre><code>div
 .wrapper
@@ -2590,10 +2525,7 @@ img.responsive</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-20-div" id="demo-20-div-v3">
                     <input class="variant-input v4" type="radio" name="demo-20-div" id="demo-20-div-v4">
                     <input class="variant-input v5" type="radio" name="demo-20-div" id="demo-20-div-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-20-div-v1">Standard</label><label
-                        class="tab-2" for="demo-20-div-v2">Akzent</label><label class="tab-3"
-                        for="demo-20-div-v3">Layout</label><label class="tab-4" for="demo-20-div-v4">Karte</label><label
-                        class="tab-5" for="demo-20-div-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-20-div-v1">Standard</label><label class="tab-2" for="demo-20-div-v2">Akzent</label><label class="tab-3" for="demo-20-div-v3">Layout</label><label class="tab-4" for="demo-20-div-v4">Karte</label><label class="tab-5" for="demo-20-div-v5">Kontrast</label></div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;div&gt;</strong>
                         <p>Beispielinhalt für Gestaltung.</p>
@@ -2663,7 +2595,7 @@ img.responsive</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Es markiert kurze Textteile innerhalb einer Zeile.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;p&gt;Ein &lt;span class=&quot;highlight&quot;&gt;wichtiger Begriff&lt;/span&gt;.&lt;/p&gt;</code></pre>
+                    <pre><code>&lt;p&gt;Ein &lt;span class="highlight"&gt;wichtiger Begriff&lt;/span&gt;.&lt;/p&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <pre><code>span
 .highlight
@@ -2674,10 +2606,7 @@ p span</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-21-span" id="demo-21-span-v3">
                     <input class="variant-input v4" type="radio" name="demo-21-span" id="demo-21-span-v4">
                     <input class="variant-input v5" type="radio" name="demo-21-span" id="demo-21-span-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-21-span-v1">Standard</label><label
-                        class="tab-2" for="demo-21-span-v2">Akzent</label><label class="tab-3"
-                        for="demo-21-span-v3">Layout</label><label class="tab-4"
-                        for="demo-21-span-v4">Karte</label><label class="tab-5" for="demo-21-span-v5">Kontrast</label>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-21-span-v1">Standard</label><label class="tab-2" for="demo-21-span-v2">Akzent</label><label class="tab-3" for="demo-21-span-v3">Layout</label><label class="tab-4" for="demo-21-span-v4">Karte</label><label class="tab-5" for="demo-21-span-v5">Kontrast</label>
                     </div>
                     <div class="preview">
                       <p>Ein <span class="demo-target demo-span">markierter Begriff</span> im Satz.</p>
@@ -2745,9 +2674,8 @@ p span</code></pre>
         </details>
 
         <details class="day-disclosure course-accordion" id="tag2" data-course-accordion>
-          <summary class="day-summary"><span class="day-summary-kicker">Tag 2</span><span class="day-summary-title">Tag
-              2: Navigation, Buttons und Flexbox</span><span class="day-summary-meta">9 HTML-Tags</span><span
-              class="day-summary-state" aria-hidden="true"></span></summary>
+          <summary class="day-summary"><span class="day-summary-kicker">Thema 2</span><span class="day-summary-title">Tag
+              2: Navigation, Buttons und Flexbox</span><span class="day-summary-meta">9 HTML-Tags</span><span class="day-summary-state" aria-hidden="true"></span></summary>
           <div class="day-content">
             <div class="wrap">
               <div class="day-head">
@@ -2769,8 +2697,8 @@ p span</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Es enthält wichtige Links zu Bereichen oder Seitenabschnitten.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;nav aria-label=&quot;Tagesnavigation&quot;&gt;
-  &lt;a href=&quot;#tag1&quot;&gt;Tag 1&lt;/a&gt;
+                    <pre><code>&lt;nav aria-label="Tagesnavigation"&gt;
+  &lt;a href="#tag1"&gt;Thema 1&lt;/a&gt;
 &lt;/nav&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <pre><code>nav
@@ -2782,15 +2710,9 @@ nav a</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-22-nav" id="demo-22-nav-v3">
                     <input class="variant-input v4" type="radio" name="demo-22-nav" id="demo-22-nav-v4">
                     <input class="variant-input v5" type="radio" name="demo-22-nav" id="demo-22-nav-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-22-nav-v1">Standard</label><label
-                        class="tab-2" for="demo-22-nav-v2">Akzent</label><label class="tab-3"
-                        for="demo-22-nav-v3">Layout</label><label class="tab-4" for="demo-22-nav-v4">Karte</label><label
-                        class="tab-5" for="demo-22-nav-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-22-nav-v1">Standard</label><label class="tab-2" for="demo-22-nav-v2">Akzent</label><label class="tab-3" for="demo-22-nav-v3">Layout</label><label class="tab-4" for="demo-22-nav-v4">Karte</label><label class="tab-5" for="demo-22-nav-v5">Kontrast</label></div>
                     <div class="preview">
-                      <nav class="demo-target demo-nav"><a href="#einfuehrung"
-                          data-course-placeholder="true">Start</a><a href="#einfuehrung"
-                          data-course-placeholder="true">Tags</a><a href="#einfuehrung"
-                          data-course-placeholder="true">Kontakt</a></nav>
+                      <nav class="demo-target demo-nav"><a href="#einfuehrung" data-course-placeholder="true">Start</a><a href="#einfuehrung" data-course-placeholder="true">Tags</a><a href="#einfuehrung" data-course-placeholder="true">Kontakt</a></nav>
                       <div class="demo-context"><strong>Mehr Kontext für die Variante</strong>
                         <ul>
                           <li>Abstände, Rahmen, Farben und Typografie vergleichen.</li>
@@ -2856,7 +2778,7 @@ nav a</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Es enthält häufig Logo, Überschrift, Einleitung oder Navigation.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;header class=&quot;site-header&quot;&gt;
+                    <pre><code>&lt;header class="site-header"&gt;
   &lt;h1&gt;Meine Seite&lt;/h1&gt;
 &lt;/header&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
@@ -2869,11 +2791,7 @@ section &gt; header</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-23-header" id="demo-23-header-v3">
                     <input class="variant-input v4" type="radio" name="demo-23-header" id="demo-23-header-v4">
                     <input class="variant-input v5" type="radio" name="demo-23-header" id="demo-23-header-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-23-header-v1">Standard</label><label
-                        class="tab-2" for="demo-23-header-v2">Akzent</label><label class="tab-3"
-                        for="demo-23-header-v3">Layout</label><label class="tab-4"
-                        for="demo-23-header-v4">Karte</label><label class="tab-5"
-                        for="demo-23-header-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-23-header-v1">Standard</label><label class="tab-2" for="demo-23-header-v2">Akzent</label><label class="tab-3" for="demo-23-header-v3">Layout</label><label class="tab-4" for="demo-23-header-v4">Karte</label><label class="tab-5" for="demo-23-header-v5">Kontrast</label></div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;header&gt;</strong>
                         <p>Beispielinhalt für Gestaltung.</p>
@@ -2943,7 +2861,7 @@ section &gt; header</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Buttons werden für Formulare und Bedienaktionen verwendet.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;button type=&quot;button&quot;&gt;Mehr erfahren&lt;/button&gt;</code></pre>
+                    <pre><code>&lt;button type="button"&gt;Mehr erfahren&lt;/button&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <pre><code>button
 .btn
@@ -2955,11 +2873,7 @@ button:focus-visible</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-24-button" id="demo-24-button-v3">
                     <input class="variant-input v4" type="radio" name="demo-24-button" id="demo-24-button-v4">
                     <input class="variant-input v5" type="radio" name="demo-24-button" id="demo-24-button-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-24-button-v1">Standard</label><label
-                        class="tab-2" for="demo-24-button-v2">Akzent</label><label class="tab-3"
-                        for="demo-24-button-v3">Layout</label><label class="tab-4"
-                        for="demo-24-button-v4">Karte</label><label class="tab-5"
-                        for="demo-24-button-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-24-button-v1">Standard</label><label class="tab-2" for="demo-24-button-v2">Akzent</label><label class="tab-3" for="demo-24-button-v3">Layout</label><label class="tab-4" for="demo-24-button-v4">Karte</label><label class="tab-5" for="demo-24-button-v5">Kontrast</label></div>
                     <div class="preview"><button class="demo-target demo-button" type="button">Mehr erfahren</button>
                       <div class="demo-context"><strong>Mehr Kontext für die Variante</strong>
                         <ul>
@@ -3026,7 +2940,7 @@ button:focus-visible</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Es führt zu einer Stelle auf derselben Seite oder zu einem Ziel.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;a href=&quot;#tag1&quot;&gt;Zu Tag 1 springen&lt;/a&gt;</code></pre>
+                    <pre><code>&lt;a href="#tag1"&gt;Zu Thema 1 springen&lt;/a&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <pre><code>a
 .nav-link
@@ -3038,12 +2952,8 @@ a:hover</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-25-a" id="demo-25-a-v3">
                     <input class="variant-input v4" type="radio" name="demo-25-a" id="demo-25-a-v4">
                     <input class="variant-input v5" type="radio" name="demo-25-a" id="demo-25-a-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-25-a-v1">Standard</label><label
-                        class="tab-2" for="demo-25-a-v2">Akzent</label><label class="tab-3"
-                        for="demo-25-a-v3">Layout</label><label class="tab-4" for="demo-25-a-v4">Karte</label><label
-                        class="tab-5" for="demo-25-a-v5">Kontrast</label></div>
-                    <div class="preview"><a class="demo-target demo-link" href="#einfuehrung"
-                        data-course-placeholder="true">Beispiel-Link</a>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-25-a-v1">Standard</label><label class="tab-2" for="demo-25-a-v2">Akzent</label><label class="tab-3" for="demo-25-a-v3">Layout</label><label class="tab-4" for="demo-25-a-v4">Karte</label><label class="tab-5" for="demo-25-a-v5">Kontrast</label></div>
+                    <div class="preview"><a class="demo-target demo-link" href="#einfuehrung" data-course-placeholder="true">Beispiel-Link</a>
                       <div class="demo-context"><strong>Mehr Kontext für die Variante</strong>
                         <ul>
                           <li>Abstände, Rahmen, Farben und Typografie vergleichen.</li>
@@ -3123,10 +3033,7 @@ ul li</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-26-ul" id="demo-26-ul-v3">
                     <input class="variant-input v4" type="radio" name="demo-26-ul" id="demo-26-ul-v4">
                     <input class="variant-input v5" type="radio" name="demo-26-ul" id="demo-26-ul-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-26-ul-v1">Standard</label><label
-                        class="tab-2" for="demo-26-ul-v2">Akzent</label><label class="tab-3"
-                        for="demo-26-ul-v3">Layout</label><label class="tab-4" for="demo-26-ul-v4">Karte</label><label
-                        class="tab-5" for="demo-26-ul-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-26-ul-v1">Standard</label><label class="tab-2" for="demo-26-ul-v2">Akzent</label><label class="tab-3" for="demo-26-ul-v3">Layout</label><label class="tab-4" for="demo-26-ul-v4">Karte</label><label class="tab-5" for="demo-26-ul-v5">Kontrast</label></div>
                     <div class="preview">
                       <ul class="demo-target demo-list">
                         <li>Struktur</li>
@@ -3209,10 +3116,7 @@ ol &gt; li</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-27-li" id="demo-27-li-v3">
                     <input class="variant-input v4" type="radio" name="demo-27-li" id="demo-27-li-v4">
                     <input class="variant-input v5" type="radio" name="demo-27-li" id="demo-27-li-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-27-li-v1">Standard</label><label
-                        class="tab-2" for="demo-27-li-v2">Akzent</label><label class="tab-3"
-                        for="demo-27-li-v3">Layout</label><label class="tab-4" for="demo-27-li-v4">Karte</label><label
-                        class="tab-5" for="demo-27-li-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-27-li-v1">Standard</label><label class="tab-2" for="demo-27-li-v2">Akzent</label><label class="tab-3" for="demo-27-li-v3">Layout</label><label class="tab-4" for="demo-27-li-v4">Karte</label><label class="tab-5" for="demo-27-li-v5">Kontrast</label></div>
                     <div class="preview">
                       <ul class="demo-target demo-list">
                         <li>Struktur</li>
@@ -3284,7 +3188,7 @@ ol &gt; li</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Es wird genutzt, wenn kein semantisch passenderes Element existiert.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;div class=&quot;layout-box&quot;&gt;Inhalt&lt;/div&gt;</code></pre>
+                    <pre><code>&lt;div class="layout-box"&gt;Inhalt&lt;/div&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <pre><code>div
 .wrapper
@@ -3295,10 +3199,7 @@ ol &gt; li</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-28-div" id="demo-28-div-v3">
                     <input class="variant-input v4" type="radio" name="demo-28-div" id="demo-28-div-v4">
                     <input class="variant-input v5" type="radio" name="demo-28-div" id="demo-28-div-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-28-div-v1">Standard</label><label
-                        class="tab-2" for="demo-28-div-v2">Akzent</label><label class="tab-3"
-                        for="demo-28-div-v3">Layout</label><label class="tab-4" for="demo-28-div-v4">Karte</label><label
-                        class="tab-5" for="demo-28-div-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-28-div-v1">Standard</label><label class="tab-2" for="demo-28-div-v2">Akzent</label><label class="tab-3" for="demo-28-div-v3">Layout</label><label class="tab-4" for="demo-28-div-v4">Karte</label><label class="tab-5" for="demo-28-div-v5">Kontrast</label></div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;div&gt;</strong>
                         <p>Beispielinhalt für Gestaltung.</p>
@@ -3382,11 +3283,7 @@ ol &gt; li</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-29-section" id="demo-29-section-v3">
                     <input class="variant-input v4" type="radio" name="demo-29-section" id="demo-29-section-v4">
                     <input class="variant-input v5" type="radio" name="demo-29-section" id="demo-29-section-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-29-section-v1">Standard</label><label
-                        class="tab-2" for="demo-29-section-v2">Akzent</label><label class="tab-3"
-                        for="demo-29-section-v3">Layout</label><label class="tab-4"
-                        for="demo-29-section-v4">Karte</label><label class="tab-5"
-                        for="demo-29-section-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-29-section-v1">Standard</label><label class="tab-2" for="demo-29-section-v2">Akzent</label><label class="tab-3" for="demo-29-section-v3">Layout</label><label class="tab-4" for="demo-29-section-v4">Karte</label><label class="tab-5" for="demo-29-section-v5">Kontrast</label></div>
                     <div class="preview">
                       <section class="demo-target demo-section"><strong>Abschnitt</strong>
                         <p>Ein thematischer Bereich.</p>
@@ -3456,7 +3353,7 @@ ol &gt; li</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Typisch sind Karten, Beiträge, Meldungen oder Projektblöcke.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;article class=&quot;card&quot;&gt;
+                    <pre><code>&lt;article class="card"&gt;
   &lt;h2&gt;Karte&lt;/h2&gt;
   &lt;p&gt;Text&lt;/p&gt;
 &lt;/article&gt;</code></pre>
@@ -3470,11 +3367,7 @@ ol &gt; li</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-30-article" id="demo-30-article-v3">
                     <input class="variant-input v4" type="radio" name="demo-30-article" id="demo-30-article-v4">
                     <input class="variant-input v5" type="radio" name="demo-30-article" id="demo-30-article-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-30-article-v1">Standard</label><label
-                        class="tab-2" for="demo-30-article-v2">Akzent</label><label class="tab-3"
-                        for="demo-30-article-v3">Layout</label><label class="tab-4"
-                        for="demo-30-article-v4">Karte</label><label class="tab-5"
-                        for="demo-30-article-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-30-article-v1">Standard</label><label class="tab-2" for="demo-30-article-v2">Akzent</label><label class="tab-3" for="demo-30-article-v3">Layout</label><label class="tab-4" for="demo-30-article-v4">Karte</label><label class="tab-5" for="demo-30-article-v5">Kontrast</label></div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;article&gt;</strong>
                         <p>Beispielinhalt für Gestaltung.</p>
@@ -3542,9 +3435,8 @@ ol &gt; li</code></pre>
         </details>
 
         <details class="day-disclosure course-accordion" id="tag3" data-course-accordion>
-          <summary class="day-summary"><span class="day-summary-kicker">Tag 3</span><span class="day-summary-title">Tag
-              3: Struktur, Karten und Grid</span><span class="day-summary-meta">9 HTML-Tags</span><span
-              class="day-summary-state" aria-hidden="true"></span></summary>
+          <summary class="day-summary"><span class="day-summary-kicker">Thema 3</span><span class="day-summary-title">Tag
+              3: Struktur, Karten und Grid</span><span class="day-summary-meta">9 HTML-Tags</span><span class="day-summary-state" aria-hidden="true"></span></summary>
           <div class="day-content">
             <div class="wrap">
               <div class="day-head">
@@ -3578,10 +3470,7 @@ ol &gt; li</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-31-main" id="demo-31-main-v3">
                     <input class="variant-input v4" type="radio" name="demo-31-main" id="demo-31-main-v4">
                     <input class="variant-input v5" type="radio" name="demo-31-main" id="demo-31-main-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-31-main-v1">Standard</label><label
-                        class="tab-2" for="demo-31-main-v2">Akzent</label><label class="tab-3"
-                        for="demo-31-main-v3">Layout</label><label class="tab-4"
-                        for="demo-31-main-v4">Karte</label><label class="tab-5" for="demo-31-main-v5">Kontrast</label>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-31-main-v1">Standard</label><label class="tab-2" for="demo-31-main-v2">Akzent</label><label class="tab-3" for="demo-31-main-v3">Layout</label><label class="tab-4" for="demo-31-main-v4">Karte</label><label class="tab-5" for="demo-31-main-v5">Kontrast</label>
                     </div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;main&gt;</strong>
@@ -3652,7 +3541,7 @@ ol &gt; li</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Typisch sind Sidebar, Infobox oder Zusatzhinweis.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;aside class=&quot;sidebar&quot;&gt;
+                    <pre><code>&lt;aside class="sidebar"&gt;
   &lt;h2&gt;Hinweis&lt;/h2&gt;
 &lt;/aside&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
@@ -3665,10 +3554,7 @@ ol &gt; li</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-32-aside" id="demo-32-aside-v3">
                     <input class="variant-input v4" type="radio" name="demo-32-aside" id="demo-32-aside-v4">
                     <input class="variant-input v5" type="radio" name="demo-32-aside" id="demo-32-aside-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-32-aside-v1">Standard</label><label
-                        class="tab-2" for="demo-32-aside-v2">Akzent</label><label class="tab-3"
-                        for="demo-32-aside-v3">Layout</label><label class="tab-4"
-                        for="demo-32-aside-v4">Karte</label><label class="tab-5" for="demo-32-aside-v5">Kontrast</label>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-32-aside-v1">Standard</label><label class="tab-2" for="demo-32-aside-v2">Akzent</label><label class="tab-3" for="demo-32-aside-v3">Layout</label><label class="tab-4" for="demo-32-aside-v4">Karte</label><label class="tab-5" for="demo-32-aside-v5">Kontrast</label>
                     </div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;aside&gt;</strong>
@@ -3753,11 +3639,7 @@ ol &gt; li</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-33-section" id="demo-33-section-v3">
                     <input class="variant-input v4" type="radio" name="demo-33-section" id="demo-33-section-v4">
                     <input class="variant-input v5" type="radio" name="demo-33-section" id="demo-33-section-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-33-section-v1">Standard</label><label
-                        class="tab-2" for="demo-33-section-v2">Akzent</label><label class="tab-3"
-                        for="demo-33-section-v3">Layout</label><label class="tab-4"
-                        for="demo-33-section-v4">Karte</label><label class="tab-5"
-                        for="demo-33-section-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-33-section-v1">Standard</label><label class="tab-2" for="demo-33-section-v2">Akzent</label><label class="tab-3" for="demo-33-section-v3">Layout</label><label class="tab-4" for="demo-33-section-v4">Karte</label><label class="tab-5" for="demo-33-section-v5">Kontrast</label></div>
                     <div class="preview">
                       <section class="demo-target demo-section"><strong>Abschnitt</strong>
                         <p>Ein thematischer Bereich.</p>
@@ -3827,7 +3709,7 @@ ol &gt; li</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Typisch sind Karten, Beiträge, Meldungen oder Projektblöcke.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;article class=&quot;card&quot;&gt;
+                    <pre><code>&lt;article class="card"&gt;
   &lt;h2&gt;Karte&lt;/h2&gt;
   &lt;p&gt;Text&lt;/p&gt;
 &lt;/article&gt;</code></pre>
@@ -3841,11 +3723,7 @@ ol &gt; li</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-34-article" id="demo-34-article-v3">
                     <input class="variant-input v4" type="radio" name="demo-34-article" id="demo-34-article-v4">
                     <input class="variant-input v5" type="radio" name="demo-34-article" id="demo-34-article-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-34-article-v1">Standard</label><label
-                        class="tab-2" for="demo-34-article-v2">Akzent</label><label class="tab-3"
-                        for="demo-34-article-v3">Layout</label><label class="tab-4"
-                        for="demo-34-article-v4">Karte</label><label class="tab-5"
-                        for="demo-34-article-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-34-article-v1">Standard</label><label class="tab-2" for="demo-34-article-v2">Akzent</label><label class="tab-3" for="demo-34-article-v3">Layout</label><label class="tab-4" for="demo-34-article-v4">Karte</label><label class="tab-5" for="demo-34-article-v5">Kontrast</label></div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;article&gt;</strong>
                         <p>Beispielinhalt für Gestaltung.</p>
@@ -3915,7 +3793,7 @@ ol &gt; li</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Es wird genutzt, wenn kein semantisch passenderes Element existiert.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;div class=&quot;layout-box&quot;&gt;Inhalt&lt;/div&gt;</code></pre>
+                    <pre><code>&lt;div class="layout-box"&gt;Inhalt&lt;/div&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <pre><code>div
 .wrapper
@@ -3926,10 +3804,7 @@ ol &gt; li</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-35-div" id="demo-35-div-v3">
                     <input class="variant-input v4" type="radio" name="demo-35-div" id="demo-35-div-v4">
                     <input class="variant-input v5" type="radio" name="demo-35-div" id="demo-35-div-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-35-div-v1">Standard</label><label
-                        class="tab-2" for="demo-35-div-v2">Akzent</label><label class="tab-3"
-                        for="demo-35-div-v3">Layout</label><label class="tab-4" for="demo-35-div-v4">Karte</label><label
-                        class="tab-5" for="demo-35-div-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-35-div-v1">Standard</label><label class="tab-2" for="demo-35-div-v2">Akzent</label><label class="tab-3" for="demo-35-div-v3">Layout</label><label class="tab-4" for="demo-35-div-v4">Karte</label><label class="tab-5" for="demo-35-div-v5">Kontrast</label></div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;div&gt;</strong>
                         <p>Beispielinhalt für Gestaltung.</p>
@@ -3999,7 +3874,7 @@ ol &gt; li</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Es enthält häufig Logo, Überschrift, Einleitung oder Navigation.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;header class=&quot;site-header&quot;&gt;
+                    <pre><code>&lt;header class="site-header"&gt;
   &lt;h1&gt;Meine Seite&lt;/h1&gt;
 &lt;/header&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
@@ -4012,11 +3887,7 @@ section &gt; header</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-36-header" id="demo-36-header-v3">
                     <input class="variant-input v4" type="radio" name="demo-36-header" id="demo-36-header-v4">
                     <input class="variant-input v5" type="radio" name="demo-36-header" id="demo-36-header-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-36-header-v1">Standard</label><label
-                        class="tab-2" for="demo-36-header-v2">Akzent</label><label class="tab-3"
-                        for="demo-36-header-v3">Layout</label><label class="tab-4"
-                        for="demo-36-header-v4">Karte</label><label class="tab-5"
-                        for="demo-36-header-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-36-header-v1">Standard</label><label class="tab-2" for="demo-36-header-v2">Akzent</label><label class="tab-3" for="demo-36-header-v3">Layout</label><label class="tab-4" for="demo-36-header-v4">Karte</label><label class="tab-5" for="demo-36-header-v5">Kontrast</label></div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;header&gt;</strong>
                         <p>Beispielinhalt für Gestaltung.</p>
@@ -4098,11 +3969,7 @@ section &gt; header</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-37-footer" id="demo-37-footer-v3">
                     <input class="variant-input v4" type="radio" name="demo-37-footer" id="demo-37-footer-v4">
                     <input class="variant-input v5" type="radio" name="demo-37-footer" id="demo-37-footer-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-37-footer-v1">Standard</label><label
-                        class="tab-2" for="demo-37-footer-v2">Akzent</label><label class="tab-3"
-                        for="demo-37-footer-v3">Layout</label><label class="tab-4"
-                        for="demo-37-footer-v4">Karte</label><label class="tab-5"
-                        for="demo-37-footer-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-37-footer-v1">Standard</label><label class="tab-2" for="demo-37-footer-v2">Akzent</label><label class="tab-3" for="demo-37-footer-v3">Layout</label><label class="tab-4" for="demo-37-footer-v4">Karte</label><label class="tab-5" for="demo-37-footer-v5">Kontrast</label></div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;footer&gt;</strong>
                         <p>Beispielinhalt für Gestaltung.</p>
@@ -4173,7 +4040,7 @@ section &gt; header</code></pre>
                     <p>Es wird für Bilder, Diagramme oder Codeabbildungen genutzt.</p>
                     <h4>HTML-Syntax</h4>
                     <pre><code>&lt;figure&gt;
-  &lt;img src=&quot;bild.jpg&quot; alt=&quot;Beispiel&quot;&gt;
+  &lt;img src="bild.jpg" alt="Beispiel"&gt;
   &lt;figcaption&gt;Beschreibung&lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
@@ -4186,11 +4053,7 @@ figure img</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-38-figure" id="demo-38-figure-v3">
                     <input class="variant-input v4" type="radio" name="demo-38-figure" id="demo-38-figure-v4">
                     <input class="variant-input v5" type="radio" name="demo-38-figure" id="demo-38-figure-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-38-figure-v1">Standard</label><label
-                        class="tab-2" for="demo-38-figure-v2">Akzent</label><label class="tab-3"
-                        for="demo-38-figure-v3">Layout</label><label class="tab-4"
-                        for="demo-38-figure-v4">Karte</label><label class="tab-5"
-                        for="demo-38-figure-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-38-figure-v1">Standard</label><label class="tab-2" for="demo-38-figure-v2">Akzent</label><label class="tab-3" for="demo-38-figure-v3">Layout</label><label class="tab-4" for="demo-38-figure-v4">Karte</label><label class="tab-5" for="demo-38-figure-v5">Kontrast</label></div>
                     <div class="preview">
                       <figure class="demo-target demo-figure">
                         <div class="demo-image">Bild</div>
@@ -4266,17 +4129,12 @@ figure img</code></pre>
                     <pre><code>figcaption
 figure figcaption</code></pre>
                     <h4>CSS-Varianten in Aktion</h4>
-                    <input class="variant-input v1" type="radio" name="demo-39-figcaption" id="demo-39-figcaption-v1"
-                      checked>
+                    <input class="variant-input v1" type="radio" name="demo-39-figcaption" id="demo-39-figcaption-v1" checked>
                     <input class="variant-input v2" type="radio" name="demo-39-figcaption" id="demo-39-figcaption-v2">
                     <input class="variant-input v3" type="radio" name="demo-39-figcaption" id="demo-39-figcaption-v3">
                     <input class="variant-input v4" type="radio" name="demo-39-figcaption" id="demo-39-figcaption-v4">
                     <input class="variant-input v5" type="radio" name="demo-39-figcaption" id="demo-39-figcaption-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-39-figcaption-v1">Standard</label><label
-                        class="tab-2" for="demo-39-figcaption-v2">Akzent</label><label class="tab-3"
-                        for="demo-39-figcaption-v3">Layout</label><label class="tab-4"
-                        for="demo-39-figcaption-v4">Karte</label><label class="tab-5"
-                        for="demo-39-figcaption-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-39-figcaption-v1">Standard</label><label class="tab-2" for="demo-39-figcaption-v2">Akzent</label><label class="tab-3" for="demo-39-figcaption-v3">Layout</label><label class="tab-4" for="demo-39-figcaption-v4">Karte</label><label class="tab-5" for="demo-39-figcaption-v5">Kontrast</label></div>
                     <div class="preview">
                       <figure class="demo-figure">
                         <div class="demo-image">Bild</div>
@@ -4345,9 +4203,8 @@ figure figcaption</code></pre>
         </details>
 
         <details class="day-disclosure course-accordion" id="tag4" data-course-accordion>
-          <summary class="day-summary"><span class="day-summary-kicker">Tag 4</span><span class="day-summary-title">Tag
-              4: Responsive HTML-Elemente</span><span class="day-summary-meta">8 HTML-Tags</span><span
-              class="day-summary-state" aria-hidden="true"></span></summary>
+          <summary class="day-summary"><span class="day-summary-kicker">Thema 4</span><span class="day-summary-title">Tag
+              4: Responsive HTML-Elemente</span><span class="day-summary-meta">8 HTML-Tags</span><span class="day-summary-state" aria-hidden="true"></span></summary>
           <div class="day-content">
             <div class="wrap">
               <div class="day-head">
@@ -4369,26 +4226,17 @@ figure figcaption</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Er sorgt dafür, dass responsive CSS-Regeln sinnvoll greifen.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</code></pre>
+                    <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <p class="selector-note">Der Viewport-Meta-Tag ist nicht sichtbar. Er ermöglicht responsive
                       Darstellung, die eigentliche Gestaltung erfolgt über CSS-Regeln für sichtbare Elemente.</p>
                     <h4>CSS-Varianten in Aktion</h4>
-                    <input class="variant-input v1" type="radio" name="demo-40-meta-viewport"
-                      id="demo-40-meta-viewport-v1" checked>
-                    <input class="variant-input v2" type="radio" name="demo-40-meta-viewport"
-                      id="demo-40-meta-viewport-v2">
-                    <input class="variant-input v3" type="radio" name="demo-40-meta-viewport"
-                      id="demo-40-meta-viewport-v3">
-                    <input class="variant-input v4" type="radio" name="demo-40-meta-viewport"
-                      id="demo-40-meta-viewport-v4">
-                    <input class="variant-input v5" type="radio" name="demo-40-meta-viewport"
-                      id="demo-40-meta-viewport-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-40-meta-viewport-v1">Standard</label><label
-                        class="tab-2" for="demo-40-meta-viewport-v2">Akzent</label><label class="tab-3"
-                        for="demo-40-meta-viewport-v3">Layout</label><label class="tab-4"
-                        for="demo-40-meta-viewport-v4">Karte</label><label class="tab-5"
-                        for="demo-40-meta-viewport-v5">Kontrast</label></div>
+                    <input class="variant-input v1" type="radio" name="demo-40-meta-viewport" id="demo-40-meta-viewport-v1" checked>
+                    <input class="variant-input v2" type="radio" name="demo-40-meta-viewport" id="demo-40-meta-viewport-v2">
+                    <input class="variant-input v3" type="radio" name="demo-40-meta-viewport" id="demo-40-meta-viewport-v3">
+                    <input class="variant-input v4" type="radio" name="demo-40-meta-viewport" id="demo-40-meta-viewport-v4">
+                    <input class="variant-input v5" type="radio" name="demo-40-meta-viewport" id="demo-40-meta-viewport-v5">
+                    <div class="variant-tabs"><label class="tab-1" for="demo-40-meta-viewport-v1">Standard</label><label class="tab-2" for="demo-40-meta-viewport-v2">Akzent</label><label class="tab-3" for="demo-40-meta-viewport-v3">Layout</label><label class="tab-4" for="demo-40-meta-viewport-v4">Karte</label><label class="tab-5" for="demo-40-meta-viewport-v5">Kontrast</label></div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;meta viewport&gt;</strong>
                         <p>Beispielinhalt für Gestaltung.</p>
@@ -4459,8 +4307,8 @@ figure figcaption</code></pre>
                     <p>Es wird genutzt, wenn je nach Breite oder Format andere Bilder passend sind.</p>
                     <h4>HTML-Syntax</h4>
                     <pre><code>&lt;picture&gt;
-  &lt;source media=&quot;(min-width: 800px)&quot; srcset=&quot;gross.jpg&quot;&gt;
-  &lt;img src=&quot;klein.jpg&quot; alt=&quot;Beispiel&quot;&gt;
+  &lt;source media="(min-width: 800px)" srcset="gross.jpg"&gt;
+  &lt;img src="klein.jpg" alt="Beispiel"&gt;
 &lt;/picture&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <pre><code>picture
@@ -4471,11 +4319,7 @@ picture img</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-41-picture" id="demo-41-picture-v3">
                     <input class="variant-input v4" type="radio" name="demo-41-picture" id="demo-41-picture-v4">
                     <input class="variant-input v5" type="radio" name="demo-41-picture" id="demo-41-picture-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-41-picture-v1">Standard</label><label
-                        class="tab-2" for="demo-41-picture-v2">Akzent</label><label class="tab-3"
-                        for="demo-41-picture-v3">Layout</label><label class="tab-4"
-                        for="demo-41-picture-v4">Karte</label><label class="tab-5"
-                        for="demo-41-picture-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-41-picture-v1">Standard</label><label class="tab-2" for="demo-41-picture-v2">Akzent</label><label class="tab-3" for="demo-41-picture-v3">Layout</label><label class="tab-4" for="demo-41-picture-v4">Karte</label><label class="tab-5" for="demo-41-picture-v5">Kontrast</label></div>
                     <div class="preview">
                       <div class="demo-target demo-image">Bild</div>
                       <div class="demo-context"><strong>Mehr Kontext für die Variante</strong>
@@ -4543,7 +4387,7 @@ picture img</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Innerhalb von picture kann es unterschiedliche Bildvarianten anbieten.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;source media=&quot;(min-width: 800px)&quot; srcset=&quot;gross.jpg&quot;&gt;</code></pre>
+                    <pre><code>&lt;source media="(min-width: 800px)" srcset="gross.jpg"&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <p class="selector-note">source ist ein nicht sichtbares Quellen-Element. Gestaltet wird das
                       sichtbare img-, audio- oder video-Element.</p>
@@ -4553,11 +4397,7 @@ picture img</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-42-source" id="demo-42-source-v3">
                     <input class="variant-input v4" type="radio" name="demo-42-source" id="demo-42-source-v4">
                     <input class="variant-input v5" type="radio" name="demo-42-source" id="demo-42-source-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-42-source-v1">Standard</label><label
-                        class="tab-2" for="demo-42-source-v2">Akzent</label><label class="tab-3"
-                        for="demo-42-source-v3">Layout</label><label class="tab-4"
-                        for="demo-42-source-v4">Karte</label><label class="tab-5"
-                        for="demo-42-source-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-42-source-v1">Standard</label><label class="tab-2" for="demo-42-source-v2">Akzent</label><label class="tab-3" for="demo-42-source-v3">Layout</label><label class="tab-4" for="demo-42-source-v4">Karte</label><label class="tab-5" for="demo-42-source-v5">Kontrast</label></div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;source&gt;</strong>
                         <p>Beispielinhalt für Gestaltung.</p>
@@ -4627,7 +4467,7 @@ picture img</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Das alt-Attribut beschreibt Inhalt oder Funktion des Bildes.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;img src=&quot;bild.jpg&quot; alt=&quot;Beispielbild&quot;&gt;</code></pre>
+                    <pre><code>&lt;img src="bild.jpg" alt="Beispielbild"&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <pre><code>img
 .card img
@@ -4638,10 +4478,7 @@ img.responsive</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-43-img" id="demo-43-img-v3">
                     <input class="variant-input v4" type="radio" name="demo-43-img" id="demo-43-img-v4">
                     <input class="variant-input v5" type="radio" name="demo-43-img" id="demo-43-img-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-43-img-v1">Standard</label><label
-                        class="tab-2" for="demo-43-img-v2">Akzent</label><label class="tab-3"
-                        for="demo-43-img-v3">Layout</label><label class="tab-4" for="demo-43-img-v4">Karte</label><label
-                        class="tab-5" for="demo-43-img-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-43-img-v1">Standard</label><label class="tab-2" for="demo-43-img-v2">Akzent</label><label class="tab-3" for="demo-43-img-v3">Layout</label><label class="tab-4" for="demo-43-img-v4">Karte</label><label class="tab-5" for="demo-43-img-v5">Kontrast</label></div>
                     <div class="preview">
                       <div class="demo-target demo-image">Bild</div>
                       <div class="demo-context"><strong>Mehr Kontext für die Variante</strong>
@@ -4709,8 +4546,8 @@ img.responsive</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Es enthält wichtige Links zu Bereichen oder Seitenabschnitten.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;nav aria-label=&quot;Tagesnavigation&quot;&gt;
-  &lt;a href=&quot;#tag1&quot;&gt;Tag 1&lt;/a&gt;
+                    <pre><code>&lt;nav aria-label="Tagesnavigation"&gt;
+  &lt;a href="#tag1"&gt;Thema 1&lt;/a&gt;
 &lt;/nav&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <pre><code>nav
@@ -4722,15 +4559,9 @@ nav a</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-44-nav" id="demo-44-nav-v3">
                     <input class="variant-input v4" type="radio" name="demo-44-nav" id="demo-44-nav-v4">
                     <input class="variant-input v5" type="radio" name="demo-44-nav" id="demo-44-nav-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-44-nav-v1">Standard</label><label
-                        class="tab-2" for="demo-44-nav-v2">Akzent</label><label class="tab-3"
-                        for="demo-44-nav-v3">Layout</label><label class="tab-4" for="demo-44-nav-v4">Karte</label><label
-                        class="tab-5" for="demo-44-nav-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-44-nav-v1">Standard</label><label class="tab-2" for="demo-44-nav-v2">Akzent</label><label class="tab-3" for="demo-44-nav-v3">Layout</label><label class="tab-4" for="demo-44-nav-v4">Karte</label><label class="tab-5" for="demo-44-nav-v5">Kontrast</label></div>
                     <div class="preview">
-                      <nav class="demo-target demo-nav"><a href="#einfuehrung"
-                          data-course-placeholder="true">Start</a><a href="#einfuehrung"
-                          data-course-placeholder="true">Tags</a><a href="#einfuehrung"
-                          data-course-placeholder="true">Kontakt</a></nav>
+                      <nav class="demo-target demo-nav"><a href="#einfuehrung" data-course-placeholder="true">Start</a><a href="#einfuehrung" data-course-placeholder="true">Tags</a><a href="#einfuehrung" data-course-placeholder="true">Kontakt</a></nav>
                       <div class="demo-context"><strong>Mehr Kontext für die Variante</strong>
                         <ul>
                           <li>Abstände, Rahmen, Farben und Typografie vergleichen.</li>
@@ -4796,7 +4627,7 @@ nav a</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Buttons werden für Formulare und Bedienaktionen verwendet.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;button type=&quot;button&quot;&gt;Mehr erfahren&lt;/button&gt;</code></pre>
+                    <pre><code>&lt;button type="button"&gt;Mehr erfahren&lt;/button&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <pre><code>button
 .btn
@@ -4808,11 +4639,7 @@ button:focus-visible</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-45-button" id="demo-45-button-v3">
                     <input class="variant-input v4" type="radio" name="demo-45-button" id="demo-45-button-v4">
                     <input class="variant-input v5" type="radio" name="demo-45-button" id="demo-45-button-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-45-button-v1">Standard</label><label
-                        class="tab-2" for="demo-45-button-v2">Akzent</label><label class="tab-3"
-                        for="demo-45-button-v3">Layout</label><label class="tab-4"
-                        for="demo-45-button-v4">Karte</label><label class="tab-5"
-                        for="demo-45-button-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-45-button-v1">Standard</label><label class="tab-2" for="demo-45-button-v2">Akzent</label><label class="tab-3" for="demo-45-button-v3">Layout</label><label class="tab-4" for="demo-45-button-v4">Karte</label><label class="tab-5" for="demo-45-button-v5">Kontrast</label></div>
                     <div class="preview"><button class="demo-target demo-button" type="button">Mehr erfahren</button>
                       <div class="demo-context"><strong>Mehr Kontext für die Variante</strong>
                         <ul>
@@ -4893,11 +4720,7 @@ button:focus-visible</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-46-section" id="demo-46-section-v3">
                     <input class="variant-input v4" type="radio" name="demo-46-section" id="demo-46-section-v4">
                     <input class="variant-input v5" type="radio" name="demo-46-section" id="demo-46-section-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-46-section-v1">Standard</label><label
-                        class="tab-2" for="demo-46-section-v2">Akzent</label><label class="tab-3"
-                        for="demo-46-section-v3">Layout</label><label class="tab-4"
-                        for="demo-46-section-v4">Karte</label><label class="tab-5"
-                        for="demo-46-section-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-46-section-v1">Standard</label><label class="tab-2" for="demo-46-section-v2">Akzent</label><label class="tab-3" for="demo-46-section-v3">Layout</label><label class="tab-4" for="demo-46-section-v4">Karte</label><label class="tab-5" for="demo-46-section-v5">Kontrast</label></div>
                     <div class="preview">
                       <section class="demo-target demo-section"><strong>Abschnitt</strong>
                         <p>Ein thematischer Bereich.</p>
@@ -4979,10 +4802,7 @@ button:focus-visible</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-47-main" id="demo-47-main-v3">
                     <input class="variant-input v4" type="radio" name="demo-47-main" id="demo-47-main-v4">
                     <input class="variant-input v5" type="radio" name="demo-47-main" id="demo-47-main-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-47-main-v1">Standard</label><label
-                        class="tab-2" for="demo-47-main-v2">Akzent</label><label class="tab-3"
-                        for="demo-47-main-v3">Layout</label><label class="tab-4"
-                        for="demo-47-main-v4">Karte</label><label class="tab-5" for="demo-47-main-v5">Kontrast</label>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-47-main-v1">Standard</label><label class="tab-2" for="demo-47-main-v2">Akzent</label><label class="tab-3" for="demo-47-main-v3">Layout</label><label class="tab-4" for="demo-47-main-v4">Karte</label><label class="tab-5" for="demo-47-main-v5">Kontrast</label>
                     </div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;main&gt;</strong>
@@ -5051,9 +4871,8 @@ button:focus-visible</code></pre>
         </details>
 
         <details class="day-disclosure course-accordion" id="tag5" data-course-accordion>
-          <summary class="day-summary"><span class="day-summary-kicker">Tag 5</span><span class="day-summary-title">Tag
-              5: Formulare, Webfonts und CSS-Struktur</span><span class="day-summary-meta">11 HTML-Tags</span><span
-              class="day-summary-state" aria-hidden="true"></span></summary>
+          <summary class="day-summary"><span class="day-summary-kicker">Thema 5</span><span class="day-summary-title">Tag
+              5: Formulare, Webfonts und CSS-Struktur</span><span class="day-summary-meta">11 HTML-Tags</span><span class="day-summary-state" aria-hidden="true"></span></summary>
           <div class="day-content">
             <div class="wrap">
               <div class="day-head">
@@ -5087,10 +4906,7 @@ button:focus-visible</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-48-style" id="demo-48-style-v3">
                     <input class="variant-input v4" type="radio" name="demo-48-style" id="demo-48-style-v4">
                     <input class="variant-input v5" type="radio" name="demo-48-style" id="demo-48-style-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-48-style-v1">Standard</label><label
-                        class="tab-2" for="demo-48-style-v2">Akzent</label><label class="tab-3"
-                        for="demo-48-style-v3">Layout</label><label class="tab-4"
-                        for="demo-48-style-v4">Karte</label><label class="tab-5" for="demo-48-style-v5">Kontrast</label>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-48-style-v1">Standard</label><label class="tab-2" for="demo-48-style-v2">Akzent</label><label class="tab-3" for="demo-48-style-v3">Layout</label><label class="tab-4" for="demo-48-style-v4">Karte</label><label class="tab-5" for="demo-48-style-v5">Kontrast</label>
                     </div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;style&gt;</strong>
@@ -5161,7 +4977,7 @@ button:focus-visible</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>In Projekten bindet es häufig CSS ein; in dieser Datei bleibt CSS intern.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;</code></pre>
+                    <pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <p class="selector-note">Das link-Element selbst wird nicht sichtbar gestaltet. Es verbindet ein
                       Dokument mit Ressourcen; die Gestaltung betrifft die geladenen oder sichtbaren Inhalte.</p>
@@ -5171,10 +4987,7 @@ button:focus-visible</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-49-link" id="demo-49-link-v3">
                     <input class="variant-input v4" type="radio" name="demo-49-link" id="demo-49-link-v4">
                     <input class="variant-input v5" type="radio" name="demo-49-link" id="demo-49-link-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-49-link-v1">Standard</label><label
-                        class="tab-2" for="demo-49-link-v2">Akzent</label><label class="tab-3"
-                        for="demo-49-link-v3">Layout</label><label class="tab-4"
-                        for="demo-49-link-v4">Karte</label><label class="tab-5" for="demo-49-link-v5">Kontrast</label>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-49-link-v1">Standard</label><label class="tab-2" for="demo-49-link-v2">Akzent</label><label class="tab-3" for="demo-49-link-v3">Layout</label><label class="tab-4" for="demo-49-link-v4">Karte</label><label class="tab-5" for="demo-49-link-v5">Kontrast</label>
                     </div>
                     <div class="preview">
                       <article class="demo-target demo-card"><strong>&lt;link&gt;</strong>
@@ -5246,8 +5059,8 @@ button:focus-visible</code></pre>
                     <p>Es bildet den Rahmen für Eingaben und Absenden von Daten.</p>
                     <h4>HTML-Syntax</h4>
                     <pre><code>&lt;form&gt;
-  &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
-  &lt;input id=&quot;name&quot; name=&quot;name&quot;&gt;
+  &lt;label for="name"&gt;Name&lt;/label&gt;
+  &lt;input id="name" name="name"&gt;
 &lt;/form&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <pre><code>form
@@ -5259,14 +5072,10 @@ form input</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-50-form" id="demo-50-form-v3">
                     <input class="variant-input v4" type="radio" name="demo-50-form" id="demo-50-form-v4">
                     <input class="variant-input v5" type="radio" name="demo-50-form" id="demo-50-form-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-50-form-v1">Standard</label><label
-                        class="tab-2" for="demo-50-form-v2">Akzent</label><label class="tab-3"
-                        for="demo-50-form-v3">Layout</label><label class="tab-4"
-                        for="demo-50-form-v4">Karte</label><label class="tab-5" for="demo-50-form-v5">Kontrast</label>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-50-form-v1">Standard</label><label class="tab-2" for="demo-50-form-v2">Akzent</label><label class="tab-3" for="demo-50-form-v3">Layout</label><label class="tab-4" for="demo-50-form-v4">Karte</label><label class="tab-5" for="demo-50-form-v5">Kontrast</label>
                     </div>
                     <div class="preview">
-                      <form class="demo-target demo-form"><label>Name</label><input placeholder="Max"><button
-                          type="button">Senden</button></form>
+                      <form class="demo-target demo-form"><label>Name</label><input placeholder="Max"><button type="button">Senden</button></form>
                       <div class="demo-context"><strong>Mehr Kontext für die Variante</strong>
                         <ul>
                           <li>Abstände, Rahmen, Farben und Typografie vergleichen.</li>
@@ -5332,8 +5141,8 @@ form input</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Über for wird es mit einer id verbunden.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;label for=&quot;email&quot;&gt;E-Mail&lt;/label&gt;
-&lt;input id=&quot;email&quot; type=&quot;email&quot;&gt;</code></pre>
+                    <pre><code>&lt;label for="email"&gt;E-Mail&lt;/label&gt;
+&lt;input id="email" type="email"&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <pre><code>label
 .form-label
@@ -5344,14 +5153,10 @@ label.required</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-51-label" id="demo-51-label-v3">
                     <input class="variant-input v4" type="radio" name="demo-51-label" id="demo-51-label-v4">
                     <input class="variant-input v5" type="radio" name="demo-51-label" id="demo-51-label-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-51-label-v1">Standard</label><label
-                        class="tab-2" for="demo-51-label-v2">Akzent</label><label class="tab-3"
-                        for="demo-51-label-v3">Layout</label><label class="tab-4"
-                        for="demo-51-label-v4">Karte</label><label class="tab-5" for="demo-51-label-v5">Kontrast</label>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-51-label-v1">Standard</label><label class="tab-2" for="demo-51-label-v2">Akzent</label><label class="tab-3" for="demo-51-label-v3">Layout</label><label class="tab-4" for="demo-51-label-v4">Karte</label><label class="tab-5" for="demo-51-label-v5">Kontrast</label>
                     </div>
                     <div class="preview">
-                      <div class="demo-form"><label class="demo-target demo-label">E-Mail</label><input
-                          placeholder="name@example.de"></div>
+                      <div class="demo-form"><label class="demo-target demo-label">E-Mail</label><input placeholder="name@example.de"></div>
                       <div class="demo-context"><strong>Mehr Kontext für die Variante</strong>
                         <ul>
                           <li>Abstände, Rahmen, Farben und Typografie vergleichen.</li>
@@ -5417,21 +5222,18 @@ label.required</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Der type bestimmt Art und Verhalten des Feldes.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;input type=&quot;email&quot; placeholder=&quot;name@example.de&quot;&gt;</code></pre>
+                    <pre><code>&lt;input type="email" placeholder="name@example.de"&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <pre><code>input
 input:focus
-input[aria-invalid=&quot;true&quot;]</code></pre>
+input[aria-invalid="true"]</code></pre>
                     <h4>CSS-Varianten in Aktion</h4>
                     <input class="variant-input v1" type="radio" name="demo-52-input" id="demo-52-input-v1" checked>
                     <input class="variant-input v2" type="radio" name="demo-52-input" id="demo-52-input-v2">
                     <input class="variant-input v3" type="radio" name="demo-52-input" id="demo-52-input-v3">
                     <input class="variant-input v4" type="radio" name="demo-52-input" id="demo-52-input-v4">
                     <input class="variant-input v5" type="radio" name="demo-52-input" id="demo-52-input-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-52-input-v1">Standard</label><label
-                        class="tab-2" for="demo-52-input-v2">Akzent</label><label class="tab-3"
-                        for="demo-52-input-v3">Layout</label><label class="tab-4"
-                        for="demo-52-input-v4">Karte</label><label class="tab-5" for="demo-52-input-v5">Kontrast</label>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-52-input-v1">Standard</label><label class="tab-2" for="demo-52-input-v2">Akzent</label><label class="tab-3" for="demo-52-input-v3">Layout</label><label class="tab-4" for="demo-52-input-v4">Karte</label><label class="tab-5" for="demo-52-input-v5">Kontrast</label>
                     </div>
                     <div class="preview"><input class="demo-target demo-input" placeholder="Eingabe">
                       <div class="demo-context"><strong>Mehr Kontext für die Variante</strong>
@@ -5499,24 +5301,18 @@ input[aria-invalid=&quot;true&quot;]</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Es eignet sich für Nachrichten, Notizen und Kommentare.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;textarea rows=&quot;4&quot;&gt;Nachricht&lt;/textarea&gt;</code></pre>
+                    <pre><code>&lt;textarea rows="4"&gt;Nachricht&lt;/textarea&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <pre><code>textarea
 textarea:focus</code></pre>
                     <h4>CSS-Varianten in Aktion</h4>
-                    <input class="variant-input v1" type="radio" name="demo-53-textarea" id="demo-53-textarea-v1"
-                      checked>
+                    <input class="variant-input v1" type="radio" name="demo-53-textarea" id="demo-53-textarea-v1" checked>
                     <input class="variant-input v2" type="radio" name="demo-53-textarea" id="demo-53-textarea-v2">
                     <input class="variant-input v3" type="radio" name="demo-53-textarea" id="demo-53-textarea-v3">
                     <input class="variant-input v4" type="radio" name="demo-53-textarea" id="demo-53-textarea-v4">
                     <input class="variant-input v5" type="radio" name="demo-53-textarea" id="demo-53-textarea-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-53-textarea-v1">Standard</label><label
-                        class="tab-2" for="demo-53-textarea-v2">Akzent</label><label class="tab-3"
-                        for="demo-53-textarea-v3">Layout</label><label class="tab-4"
-                        for="demo-53-textarea-v4">Karte</label><label class="tab-5"
-                        for="demo-53-textarea-v5">Kontrast</label></div>
-                    <div class="preview"><textarea class="demo-target demo-textarea"
-                        rows="3">Mehrzeiliger Text</textarea>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-53-textarea-v1">Standard</label><label class="tab-2" for="demo-53-textarea-v2">Akzent</label><label class="tab-3" for="demo-53-textarea-v3">Layout</label><label class="tab-4" for="demo-53-textarea-v4">Karte</label><label class="tab-5" for="demo-53-textarea-v5">Kontrast</label></div>
+                    <div class="preview"><textarea class="demo-target demo-textarea" rows="3">Mehrzeiliger Text</textarea>
                       <div class="demo-context"><strong>Mehr Kontext für die Variante</strong>
                         <ul>
                           <li>Abstände, Rahmen, Farben und Typografie vergleichen.</li>
@@ -5583,7 +5379,7 @@ textarea:focus</code></pre>
                     <p>Es wird verwendet, wenn aus mehreren Optionen gewählt werden soll.</p>
                     <h4>HTML-Syntax</h4>
                     <pre><code>&lt;select&gt;
-  &lt;option&gt;Tag 1&lt;/option&gt;
+  &lt;option&gt;Thema 1&lt;/option&gt;
 &lt;/select&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <pre><code>select
@@ -5594,14 +5390,10 @@ select:focus</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-54-select" id="demo-54-select-v3">
                     <input class="variant-input v4" type="radio" name="demo-54-select" id="demo-54-select-v4">
                     <input class="variant-input v5" type="radio" name="demo-54-select" id="demo-54-select-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-54-select-v1">Standard</label><label
-                        class="tab-2" for="demo-54-select-v2">Akzent</label><label class="tab-3"
-                        for="demo-54-select-v3">Layout</label><label class="tab-4"
-                        for="demo-54-select-v4">Karte</label><label class="tab-5"
-                        for="demo-54-select-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-54-select-v1">Standard</label><label class="tab-2" for="demo-54-select-v2">Akzent</label><label class="tab-3" for="demo-54-select-v3">Layout</label><label class="tab-4" for="demo-54-select-v4">Karte</label><label class="tab-5" for="demo-54-select-v5">Kontrast</label></div>
                     <div class="preview"><select class="demo-target demo-select">
-                        <option>Tag 1</option>
-                        <option>Tag 2</option>
+                        <option>Thema 1</option>
+                        <option>Thema 2</option>
                       </select>
                       <div class="demo-context"><strong>Mehr Kontext für die Variante</strong>
                         <ul>
@@ -5668,7 +5460,7 @@ select:focus</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Es enthält den sichtbaren Text einer auswählbaren Option.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;option value=&quot;tag1&quot;&gt;Tag 1&lt;/option&gt;</code></pre>
+                    <pre><code>&lt;option value="tag1"&gt;Thema 1&lt;/option&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <p class="selector-note">option-Elemente sind nur eingeschränkt und je nach Browser unterschiedlich
                       gestaltbar. In der Praxis wird meist das select-Element oder ein eigenes UI-Muster gestaltet.</p>
@@ -5678,14 +5470,10 @@ select:focus</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-55-option" id="demo-55-option-v3">
                     <input class="variant-input v4" type="radio" name="demo-55-option" id="demo-55-option-v4">
                     <input class="variant-input v5" type="radio" name="demo-55-option" id="demo-55-option-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-55-option-v1">Standard</label><label
-                        class="tab-2" for="demo-55-option-v2">Akzent</label><label class="tab-3"
-                        for="demo-55-option-v3">Layout</label><label class="tab-4"
-                        for="demo-55-option-v4">Karte</label><label class="tab-5"
-                        for="demo-55-option-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-55-option-v1">Standard</label><label class="tab-2" for="demo-55-option-v2">Akzent</label><label class="tab-3" for="demo-55-option-v3">Layout</label><label class="tab-4" for="demo-55-option-v4">Karte</label><label class="tab-5" for="demo-55-option-v5">Kontrast</label></div>
                     <div class="preview"><select class="demo-target demo-select">
-                        <option>Tag 1</option>
-                        <option>Tag 2</option>
+                        <option>Thema 1</option>
+                        <option>Thema 2</option>
                       </select>
                       <div class="demo-context"><strong>Mehr Kontext für die Variante</strong>
                         <ul>
@@ -5752,7 +5540,7 @@ select:focus</code></pre>
                     <h4>Typische Verwendung</h4>
                     <p>Buttons werden für Formulare und Bedienaktionen verwendet.</p>
                     <h4>HTML-Syntax</h4>
-                    <pre><code>&lt;button type=&quot;button&quot;&gt;Mehr erfahren&lt;/button&gt;</code></pre>
+                    <pre><code>&lt;button type="button"&gt;Mehr erfahren&lt;/button&gt;</code></pre>
                     <h4>Passende CSS-Selektoren</h4>
                     <pre><code>button
 .btn
@@ -5764,11 +5552,7 @@ button:focus-visible</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-56-button" id="demo-56-button-v3">
                     <input class="variant-input v4" type="radio" name="demo-56-button" id="demo-56-button-v4">
                     <input class="variant-input v5" type="radio" name="demo-56-button" id="demo-56-button-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-56-button-v1">Standard</label><label
-                        class="tab-2" for="demo-56-button-v2">Akzent</label><label class="tab-3"
-                        for="demo-56-button-v3">Layout</label><label class="tab-4"
-                        for="demo-56-button-v4">Karte</label><label class="tab-5"
-                        for="demo-56-button-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-56-button-v1">Standard</label><label class="tab-2" for="demo-56-button-v2">Akzent</label><label class="tab-3" for="demo-56-button-v3">Layout</label><label class="tab-4" for="demo-56-button-v4">Karte</label><label class="tab-5" for="demo-56-button-v5">Kontrast</label></div>
                     <div class="preview"><button class="demo-target demo-button" type="button">Mehr erfahren</button>
                       <div class="demo-context"><strong>Mehr Kontext für die Variante</strong>
                         <ul>
@@ -5843,17 +5627,12 @@ button:focus-visible</code></pre>
                     <pre><code>fieldset
 .form-group</code></pre>
                     <h4>CSS-Varianten in Aktion</h4>
-                    <input class="variant-input v1" type="radio" name="demo-57-fieldset" id="demo-57-fieldset-v1"
-                      checked>
+                    <input class="variant-input v1" type="radio" name="demo-57-fieldset" id="demo-57-fieldset-v1" checked>
                     <input class="variant-input v2" type="radio" name="demo-57-fieldset" id="demo-57-fieldset-v2">
                     <input class="variant-input v3" type="radio" name="demo-57-fieldset" id="demo-57-fieldset-v3">
                     <input class="variant-input v4" type="radio" name="demo-57-fieldset" id="demo-57-fieldset-v4">
                     <input class="variant-input v5" type="radio" name="demo-57-fieldset" id="demo-57-fieldset-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-57-fieldset-v1">Standard</label><label
-                        class="tab-2" for="demo-57-fieldset-v2">Akzent</label><label class="tab-3"
-                        for="demo-57-fieldset-v3">Layout</label><label class="tab-4"
-                        for="demo-57-fieldset-v4">Karte</label><label class="tab-5"
-                        for="demo-57-fieldset-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-57-fieldset-v1">Standard</label><label class="tab-2" for="demo-57-fieldset-v2">Akzent</label><label class="tab-3" for="demo-57-fieldset-v3">Layout</label><label class="tab-4" for="demo-57-fieldset-v4">Karte</label><label class="tab-5" for="demo-57-fieldset-v5">Kontrast</label></div>
                     <div class="preview">
                       <fieldset class="demo-target demo-fieldset">
                         <legend>Kontakt</legend><label>Name</label><input placeholder="Max">
@@ -5933,11 +5712,7 @@ fieldset legend</code></pre>
                     <input class="variant-input v3" type="radio" name="demo-58-legend" id="demo-58-legend-v3">
                     <input class="variant-input v4" type="radio" name="demo-58-legend" id="demo-58-legend-v4">
                     <input class="variant-input v5" type="radio" name="demo-58-legend" id="demo-58-legend-v5">
-                    <div class="variant-tabs"><label class="tab-1" for="demo-58-legend-v1">Standard</label><label
-                        class="tab-2" for="demo-58-legend-v2">Akzent</label><label class="tab-3"
-                        for="demo-58-legend-v3">Layout</label><label class="tab-4"
-                        for="demo-58-legend-v4">Karte</label><label class="tab-5"
-                        for="demo-58-legend-v5">Kontrast</label></div>
+                    <div class="variant-tabs"><label class="tab-1" for="demo-58-legend-v1">Standard</label><label class="tab-2" for="demo-58-legend-v2">Akzent</label><label class="tab-3" for="demo-58-legend-v3">Layout</label><label class="tab-4" for="demo-58-legend-v4">Karte</label><label class="tab-5" for="demo-58-legend-v5">Kontrast</label></div>
                     <div class="preview">
                       <fieldset class="demo-target demo-fieldset">
                         <legend>Kontakt</legend><label>Name</label><input placeholder="Max">

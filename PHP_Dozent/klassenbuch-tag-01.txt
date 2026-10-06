@@ -1,9 +1,9 @@
-Vorstellung, Erwartungen, Kursorganisation und gemeinsame Arbeitsweise.
-Benutzerschnittstellen sowie Eingabe- und Ausgabegeräte unterscheiden.
-CLI, Menü, GUI und dialogorientierte Schnittstellen anhand von Demos vergleichen.
-Partnerarbeit: Oberflächen untersuchen und Beobachtungen begründen.
-Reisebüro-Szenario: Nutzerziele und erste Anforderungen beschreiben.
-Qualitätseinstieg: Testfälle mit Eingaben und Soll-Ergebnissen formulieren.
-HTML-Vorgriff: Datei anlegen, Grundgerüst und erste Inhalte schreiben.
-HTML-Übung: Überschrift, Absatz und Liste ergänzen; Ergebnisse prüfen.
-Fragenpool bearbeiten, Lösungen besprechen und den Lernerfolg reflektieren.
+UE 1: Kursstart; Nutzerziel, Schnittstellen und Peripheriegeräte
+UE 2: HTML-Grundgerüst: DOCTYPE, head, body, title und h1
+UE 3: Tags, Elemente, Attribute, id und class am HTML-Tag-Tool
+UE 4: Semantische Struktur, Überschriften, Listen und Navigation
+UE 5: CSS-Regeln: Selektor, Eigenschaft, Wert und Einbindung
+UE 6: Box-Modell, Kontrast, Abstände und sichtbarer Tastaturfokus
+UE 7: Praxis: eine kleine Informationsseite selbst gestalten
+UE 8: KI-Review: zwei konkrete Verbesserungen prüfen und begründen
+UE 9: Wissenscheck, Tastaturtest und Tagesrückblick

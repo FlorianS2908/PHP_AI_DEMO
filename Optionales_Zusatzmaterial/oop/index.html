@@ -1,0 +1,111 @@
+<!doctype html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PHP · OOP in PHP – Einstieg</title><style>
+:root{--ink:#153249;--muted:#526577;--accent:#007e85;--line:#d6e1e8;--soft:#edf6f6;--bg:#f5f7fa}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}main{max-width:1000px;margin:auto;padding:32px 24px 64px}h1{font-size:clamp(30px,5vw,46px);line-height:1.12;letter-spacing:-.035em;margin:12px 0 20px}h2{font-size:25px;line-height:1.25;margin:0 0 16px}h3{font-size:19px;margin:0 0 10px}p{margin:10px 0 16px}a{color:#006f79;text-underline-offset:3px}.eyebrow{font-size:12px;font-weight:750;letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}.lead{font-size:20px;color:var(--muted);max-width:820px}.muted{color:var(--muted)}.small{font-size:14px}.card,section{background:white;border:1px solid var(--line);padding:25px;border-radius:8px;margin:20px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grid>.card{margin:0}code,pre{font-family:Consolas,"DejaVu Sans Mono",monospace}code{font-size:.9em;overflow-wrap:anywhere}pre{background:#152b3c;color:#f3f7fa;border-radius:6px;overflow:auto;padding:18px;font-size:14px;line-height:1.55}pre code{font-size:inherit;white-space:pre;overflow-wrap:normal}.note{border-left:4px solid var(--accent);background:var(--soft);padding:13px 17px;margin:17px 0}.error{border-left-color:#a92727;background:#fff0ee}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:15px}th,td{padding:10px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}th{background:#edf3f7}label{display:block;font-weight:650;margin:16px 0 6px}input{max-width:100%;width:320px;padding:9px;border:1px solid #8a9ead;border-radius:4px;font:inherit}button,.button{display:inline-block;background:var(--ink);color:white;border:0;border-radius:4px;padding:10px 16px;margin:14px 8px 0 0;font:inherit;font-size:15px;text-decoration:none;cursor:pointer}button:disabled{opacity:.4;cursor:default}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #c57700;outline-offset:3px}.top{background:white;border-bottom:1px solid var(--line)}.top>div{max-width:1000px;margin:auto;padding:14px 24px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center}.top nav{display:flex;flex-wrap:wrap;gap:12px;font-size:14px}.top strong{margin-right:auto}details{padding:12px 0;border-bottom:1px solid var(--line)}summary{cursor:pointer;font-weight:650}footer{margin-top:28px;font-size:13px;color:var(--muted)}.output{white-space:pre-wrap;background:#edf6f6;color:var(--ink)}.step{font-weight:700;color:var(--accent);font-size:13px}.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;background:white;padding:12px}.tag{display:inline-block;border:1px solid var(--line);padding:3px 9px;border-radius:4px;font-size:13px;margin:4px 5px 4px 0}.actions{display:flex;flex-wrap:wrap;gap:8px}ul,ol{padding-left:23px}li{margin-bottom:5px}
+@media(max-width:650px){main{padding:24px 16px 45px}.grid{grid-template-columns:1fr}.card,section{padding:19px}pre{font-size:12px;padding:13px}.lead{font-size:18px}}
+@media print{body{background:white;font-size:11pt}.top,.actions,.no-print{display:none}main{padding:0;max-width:none}section,.card{break-inside:avoid;border:0;padding:12px 0}pre{background:#f1f4f7;color:black;font-size:9pt;white-space:pre-wrap}.grid{display:block}h1{font-size:27pt}}
+</style><html><head><link rel="stylesheet" href="../../assets/tage.css"></head></html></head><body>
+<nav class="course-bar" aria-label="Zurück zum Kurs"><a href="../../PHP_Teilnehmer/index.html">Teilnehmer: fünf Tage</a><a href="../../PHP_Dozent/index.html">Dozent: fünf Tage</a><a href="../../PHP_Arbeitsbereich/index.html">Arbeitsbereich</a></nav><a class="skip" href="#inhalt">Zum Inhalt</a>
+<header class="top"><div><strong>PHP / PHP</strong><nav aria-label="Abschnitte"><a href="#idee">Grundidee</a><a href="#syntax">Syntax</a><a href="#ablauf">Ablauf</a><a href="#kapselung">Kapselung</a><a href="#aufgaben">Übungen</a></nav></div></header>
+<main id="inhalt"><div class="eyebrow">Ein kleiner Baustein vor dem späteren MVC-Thema</div>
+<h1>OOP in PHP.<br>Ein Bauplan. Konkrete Objekte.</h1>
+<p class="lead">Zuerst mit festen Werten arbeiten. Dann einen Zustand über Methoden ändern. Erst am Ende ein kleines Formular anschließen.</p>
+<p><span class="tag">Zehn Mini-Aufgaben</span><span class="tag">Ohne Datenbank</span><span class="tag">Ohne Vererbung</span><span class="tag">Lösungen getrennt</span></p>
+<p class="small muted">Umfang: PHP-BigPicture. Begriffe: vorhandene Java-OO-Unterlage. Die PHP-Beispiele sind neu erstellt; die Syntax wird getrennt anhand des PHP-Handbuchs erläutert. <a href="#quellen">Herkunft ansehen</a></p>
+<section id="idee"><div class="eyebrow">01 / Grundidee</div><h2>Vier Begriffe reichen für den Start.</h2>
+<div class="grid"><div class="card"><h3>Klasse und Objekt</h3><p><strong>Klasse:</strong> gemeinsamer Bauplan, etwa Tasse.<br><strong>Objekt:</strong> eine konkrete Tasse, zum Beispiel die rote.</p></div>
+<div class="card"><h3>Attribut und Methode</h3><p><strong>Attribut:</strong> ein Wert des Objekts, etwa seine Farbe.<br><strong>Methode:</strong> eine Funktion der Klasse, etwa die Farbe ändern.</p></div></div>
+<p class="small muted">Begrifflicher Anschluss: Java-OO, PDF-Seiten 9–11. In PHP werden Attribute im Handbuch auch „Eigenschaften“ genannt. <a href="#r1">[1]</a> <a href="#r2">[2]</a></p></section>
+<section id="syntax"><div class="eyebrow">02 / PHP-Syntax</div><h2>Ein vollständiges kleines Beispiel</h2>
+<pre><code>class Tasse
+{
+    public $farbe = "";
+
+    public function __construct($farbe)
+    {
+        $this-&gt;farbe = $farbe;
+    }
+
+    public function getText()
+    {
+        return "Tasse: " . $this-&gt;farbe;
+    }
+}
+
+$tasse = new Tasse("rot");
+echo $tasse-&gt;getText();</code></pre><p><strong>Ausgabe:</strong> Tasse: rot</p>
+<div class="tablewrap"><table><thead><tr><th>Schreibweise</th><th>Bedeutung in diesem Beispiel</th></tr></thead><tbody>
+<tr><td><code>class Tasse { ... }</code></td><td>Hier steht die Klassendefinition.</td></tr>
+<tr><td><code>public $farbe</code></td><td>Ein öffentlich zugängliches Attribut wird deklariert.</td></tr>
+<tr><td><code>new Tasse("rot")</code></td><td>Ein Objekt wird mit einem Startwert erzeugt.</td></tr>
+<tr><td><code>__construct($farbe)</code></td><td>Der Konstruktor läuft beim Erzeugen. In PHP heißt er __construct – anders als in den Java-Beispielen.</td></tr>
+<tr><td><code>$this-&gt;farbe = $farbe;</code></td><td>Links: Attribut dieses Objekts. Rechts: Parameter des Aufrufs.</td></tr>
+<tr><td><code>$tasse-&gt;getText()</code></td><td>Eine Methode des konkreten Objekts aufrufen. Die Klammern gehören zum Aufruf.</td></tr>
+<tr><td><code>return</code> / <code>echo</code></td><td>return liefert den Wert zurück; echo gibt ihn aus.</td></tr>
+</tbody></table></div>
+<p class="note">Bei einem festen Attributnamen steht nach dem Pfeil kein weiteres Dollarzeichen: <code>$this-&gt;farbe</code>. Das Attribut wird in der Klasse dagegen mit <code>$farbe</code> deklariert.</p>
+<p class="small muted">Neue PHP-Übertragung, technische Referenzen <a href="#r1">[1]</a>–<a href="#r5">[5]</a>. Die Klassendefinition selbst startet keine HTML-Ausgabe.</p></section>
+<section id="ablauf"><div class="eyebrow">03 / Schritt für Schritt</div><h2>Welches Objekt wird verändert?</h2>
+<p class="small muted">Diese Ablaufanzeige ist eine Illustration in JavaScript, kein PHP-Interpreter. Der vollständige PHP-Code liegt in der OOP-Demo.</p>
+<div id="trace" aria-live="polite"><p class="step" id="stepTitle">1. Klasse bereitstellen</p>
+<pre><code id="stepCode">class Tasse { /* Attribute und Methoden */ }</code></pre>
+<div class="grid"><div class="card"><h3>$tasse1</h3><p id="objectA">Noch kein Objekt</p></div><div class="card"><h3>$tasse2</h3><p id="objectB">Noch kein Objekt</p></div></div>
+<p id="stepText">Die Klassendefinition ist der Bauplan. Es gibt noch keine der beiden Tassen.</p></div>
+<div class="actions"><button id="prev" type="button" disabled>Zurück</button><button id="next" type="button">Weiter</button><button id="reset" type="button">Von vorn</button></div>
+<p class="small">Zwei getrennte Objekte benötigen hier zwei <code>new</code>-Aufrufe. Eine Zuweisung <code>$tasse2 = $tasse1</code> erzeugt keine unabhängige zweite Tasse. <a href="#r1">[1]</a></p></section>
+<section id="kapselung"><div class="eyebrow">04 / public und private</div><h2>Später steuert die Klasse den Zugriff.</h2>
+<p>Aufgaben 1–6 verwenden öffentliche Attribute zum Kennenlernen der Schreibweise. Ab Aufgabe 7 werden die Daten gekapselt: ein privates Attribut, dazu öffentliche Methoden.</p>
+<pre><code>private $farbe = "rot";
+
+public function getFarbe()
+{
+    return $this-&gt;farbe;
+}</code></pre><p class="small muted">Ausschnitt innerhalb einer Klasse: ein privates Attribut und ein öffentlicher Getter.</p>
+<p><strong>Getter:</strong> liest einen Wert.<br><strong>Setter:</strong> verändert einen Wert; dort kann eine Gültigkeitsprüfung stehen.</p>
+<p class="note">In Aufgabe 8 liefert der Setter <code>true</code> oder <code>false</code>. Bei ungültigen Werten bleibt der alte Zustand erhalten. Das ist unsere Übungsregel, keine vorgeschriebene PHP-Signatur für alle Setter.</p>
+<p><code>private</code> begrenzt den Zugriff im Programmcode. Es ersetzt keine Eingabeprüfung. Die Quelle zur Kapselung ist Java-OO, Seiten 15–16 und gedruckte Folie 62; die PHP-Sichtbarkeit steht in <a href="#r4">[4]</a>.</p></section>
+<section id="form"><div class="eyebrow">05 / Anschluss an eure Formulare</div><h2>Formular und Klasse haben verschiedene Aufgaben.</h2>
+<pre><code>POST empfangen und prüfen
+→ bei Fehlern: Meldung + gültige Eingaben zurückgeben
+→ bei Erfolg: new Lagerartikel(...)
+→ geprüften Bestand über die Methode setzen
+→ Werte über Getter für HTML auslesen</code></pre>
+<p><strong>auswertung.php</strong> kennt <code>$_POST</code> und die Rückleitung.<br>
+<strong>Lagerartikel.php</strong> enthält Attribute und Methoden, aber kein HTML und kein <code>$_POST</code>.<br>
+<strong>index.php</strong> zeigt das Formular; <strong>function.php</strong> enthält den bekannten HTML-Helper.</p>
+<p>Die sichtbaren Prüfungen mit <code>isset()</code>, Texttyp und erlaubten Inhalten sind in der letzten Aufgabe bereits vorbereitet. Neu ergänzt ihr dort nur die OOP-Stellen.</p>
+<p class="note">In diesem Paket werden keine Objekte dauerhaft gespeichert. Die PHP-Beispiele erzeugen sie bei jedem Aufruf neu. Sessions und Datenbank werden nicht zusätzlich eingebaut.</p>
+<p class="small muted">Eigene kleine Dateiaufteilung zum Üben, noch keine vollständige MVC-Anwendung. Das vorhandene Formularmaterial liefert den bekannten Ablauf; PHP-Referenzen <a href="#r6">[6]</a> und <a href="#r7">[7]</a>.</p></section>
+<section id="demos"><div class="eyebrow">06 / Vorführen</div><h2>Erst ohne Formular. Dann mit einem Feld.</h2>
+<p><strong>Demo A:</strong> Zwei Tassen vor und nach einer Methodenänderung.<br><strong>Demo B:</strong> Name per POST prüfen, ein Namensschild erzeugen und dessen Text anzeigen.</p>
+<p><a class="button" href="demo/index.php">OOP-Lupe öffnen</a><a class="button" href="demo_formular/index.php">Formular-Demo öffnen</a></p>
+<p class="small muted">Die PHP-Links funktionieren im entpackten Unterrichtspaket über localhost. Diese HTML-Einführung und die Ablaufanzeige funktionieren auch allein und offline.</p></section>
+<section id="aufgaben"><div class="eyebrow">07 / Üben</div><h2>Zehn kleine Schritte</h2>
+<p>Bearbeite die TODOs im PHP-Teil. Die HTML-Ausgabe ist vorbereitet. Eine Aufgabe pro Ordner, keine gemeinsame Sammeldatei mit allen Klassen.</p>
+<div class="tablewrap"><table><thead><tr><th>Nr.</th><th>Aufgabe</th><th>Schwerpunkt</th></tr></thead><tbody><tr><td>01</td><td><a href="aufgaben/01_Klasse_und_Objekt/index.php">Eine Lampe als Objekt</a></td><td>class · Attribut · new · -&gt;</td></tr><tr><td>02</td><td><a href="aufgaben/02_Zwei_Objekte/index.php">Zwei Lampen, zwei Zustände</a></td><td>Zwei Instanzen derselben Klasse</td></tr><tr><td>03</td><td><a href="aufgaben/03_Methode_und_this/index.php">Ein Namensschild spricht</a></td><td>Methode · $this · return</td></tr><tr><td>04</td><td><a href="aufgaben/04_Methode_mit_Parameter/index.php">Ein Zähler zählt weiter</a></td><td>Parameter · Attribut verändern · Rückgabewert</td></tr><tr><td>05</td><td><a href="aufgaben/05_Konstruktor/index.php">Ein Buch mit Startwert</a></td><td>__construct · Startwert beim Erzeugen</td></tr><tr><td>06</td><td><a href="aufgaben/06_Zwei_Attribute/index.php">Ein Artikel mit zwei Angaben</a></td><td>Konstruktor mit zwei Parametern · Methode</td></tr><tr><td>07</td><td><a href="aufgaben/07_Private_und_Getter/index.php">Ein Gerät kapselt seinen Namen</a></td><td>private · public · Getter</td></tr><tr><td>08</td><td><a href="aufgaben/08_Setter_mit_Pruefung/index.php">Lautstärke nur im erlaubten Bereich</a></td><td>Setter · Prüfung · true / false</td></tr><tr><td>09</td><td><a href="aufgaben/09_Klasse_in_Datei/index.php">Das Buch bekommt eine eigene Datei</a></td><td>Klasse auslagern · require_once · verwenden</td></tr><tr><td>10</td><td><a href="aufgaben/10_Formular_zu_Objekt/index.php">Vom kleinen Formular zum Objekt</a></td><td>POST · prüfen · Objekt erzeugen · Getter / Setter</td></tr></tbody></table></div>
+<p><a href="PHP_OOP_Aufgaben.pdf">Aufgaben-PDF öffnen</a></p>
+<p class="small muted">Das Startpaket enthält keine Musterlösungen zu den zehn Aufgaben. Die beiden ausdrücklich beschrifteten Demos sind vollständig.</p></section>
+<section id="quellen"><h2>Was kommt aus welchen Unterlagen?</h2>
+<p><strong>PHP-BigPicture, Seiten 4–5:</strong> OOP-Grundlagen als Vorbereitung auf MVC. Der vollständige MVC-Ausbau gehört nicht zu diesem Paket.</p>
+<p><strong>Vorhandene Java-Grundlagen-Java-OO-Unterlage:</strong> Bauplan, Objekt, Attribute, Methoden, Konstruktor und Kapselung. Übernommen werden diese Grundbegriffe, nicht Java-spezifische Syntax.</p>
+<p><strong>Neue Ausarbeitung:</strong> Die PHP-Beispiele, Aufgaben und ihre Reihenfolge. Eine ausgearbeitete PHP-OOP-Lektion ist in den verfügbaren PHP-Kapiteln 1–5 nicht enthalten. Die technischen PHP-Regeln sind deshalb als zusätzliche Referenz ausgewiesen.</p>
+<details><summary>PHP-Handbuch: Syntaxreferenzen</summary>
+<p id="r1">[1] <a href="https://www.php.net/manual/de/language.oop5.basic.php">Klassen, new, $this und Objektzuweisung</a></p>
+<p id="r2">[2] <a href="https://www.php.net/manual/de/language.oop5.properties.php">Eigenschaften</a></p>
+<p id="r3">[3] <a href="https://www.php.net/manual/de/language.oop5.decon.php">Konstruktor</a></p>
+<p id="r4">[4] <a href="https://www.php.net/manual/de/language.oop5.visibility.php">Sichtbarkeit</a></p>
+<p id="r5">[5] <a href="https://www.php.net/manual/de/functions.returning-values.php">Rückgabewerte</a></p>
+<p id="r6">[6] <a href="https://www.php.net/manual/de/function.require-once.php">require_once</a></p>
+<p id="r7">[7] <a href="https://www.php.net/manual/de/tutorial.forms.php">Formulare verarbeiten</a> · <a href="https://www.php.net/manual/de/function.header.php">header</a> · <a href="https://www.php.net/manual/de/function.htmlspecialchars.php">HTML-Ausgabe maskieren</a></p>
+</details><p class="small"><a href="QUELLEN.md">Ausführliche Herkunft und Abgrenzung im Paket</a> · Technische Referenzen geprüft am 01.10.2026.</p></section>
+<footer>PHP / OOP in PHP · Neu erstellte Unterrichtsausarbeitung · Kein Framework, keine Datenbank, keine Vererbung.</footer></main>
+<script>
+(() => {
+const steps=[{"title": "1. Klasse bereitstellen", "code": "class Tasse { /* Attribute und Methoden */ }", "a": "Noch kein Objekt", "b": "Noch kein Objekt", "text": "Die Klassendefinition ist der Bauplan. Es gibt noch keine der beiden Tassen."}, {"title": "2. Erste Instanz erzeugen", "code": "$tasse1 = new Tasse(\"rot\");", "a": "farbe = rot", "b": "Noch kein Objekt", "text": "new erzeugt eine Tasse. Der Konstruktor übernimmt den Startwert in ihr Attribut."}, {"title": "3. Zweite Instanz erzeugen", "code": "$tasse2 = new Tasse(\"blau\");", "a": "farbe = rot", "b": "farbe = blau", "text": "Ein weiterer new-Aufruf erzeugt ein getrenntes Objekt mit einem eigenen Wert."}, {"title": "4. Nur das erste Objekt ändern", "code": "$tasse1->setFarbe(\"gruen\");", "a": "farbe = gruen", "b": "farbe = blau", "text": "In diesem Methodenaufruf bezieht sich $this auf die erste Tasse. Die zweite bleibt unverändert."}, {"title": "5. Rückgabewerte ausgeben", "code": "echo $tasse1->getText();\necho $tasse2->getText();", "a": "Tasse: gruen", "b": "Tasse: blau", "text": "Die Methoden liefern Texte. echo gibt sie aus. Das echte PHP-Beispiel läuft auf dem Server."}];let current=0;
+function show(){const s=steps[current];document.getElementById('stepTitle').textContent=s.title;document.getElementById('stepCode').textContent=s.code;document.getElementById('objectA').textContent=s.a;document.getElementById('objectB').textContent=s.b;document.getElementById('stepText').textContent=s.text;document.getElementById('prev').disabled=current===0;document.getElementById('next').disabled=current===steps.length-1;}
+document.getElementById('next').addEventListener('click',()=>{if(current<steps.length-1){current++;show();}});
+document.getElementById('prev').addEventListener('click',()=>{if(current>0){current--;show();}});
+document.getElementById('reset').addEventListener('click',()=>{current=0;show();});
+show();
+})();
+</script></body></html>

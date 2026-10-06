@@ -3,5 +3,5 @@
    Im vollständigen Kursprojekt z. B.: courseOverviewUrl: "../index.html"
    Übergeordnete CSS-/JS-Dateien werden absichtlich nicht automatisch geladen. */
 window.HTML_TAG_TOOL_CONFIG = Object.freeze({
-  courseOverviewUrl: ""
+  courseOverviewUrl: "../../index.html"
 });

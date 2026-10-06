@@ -1,0 +1,100 @@
+{
+  "date": "2026-10-06",
+  "environment": "Chromium · Linux · 1360x900 / 390x844",
+  "checks": [
+    {
+      "test": "Render index.html",
+      "passed": true
+    },
+    {
+      "test": "Render PHP_Teilnehmer/index.html",
+      "passed": true
+    },
+    {
+      "test": "Render PHP_Dozent/index.html",
+      "passed": true
+    },
+    {
+      "test": "Render PHP_Dozent/dozent.html",
+      "passed": true
+    },
+    {
+      "test": "Render PHP_Dozent/tagesloesungen.html",
+      "passed": true
+    },
+    {
+      "test": "Render PHP_Arbeitsbereich/ai/index.html",
+      "passed": true
+    },
+    {
+      "test": "Render Optionales_Zusatzmaterial/index.html",
+      "passed": true
+    },
+    {
+      "test": "Render PHP_Teilnehmer/tag-01.html",
+      "passed": true
+    },
+    {
+      "test": "Render PHP_Teilnehmer/tag-02.html",
+      "passed": true
+    },
+    {
+      "test": "Render PHP_Teilnehmer/tag-03.html",
+      "passed": true
+    },
+    {
+      "test": "Render PHP_Teilnehmer/tag-04.html",
+      "passed": true
+    },
+    {
+      "test": "Render PHP_Teilnehmer/tag-05.html",
+      "passed": true
+    },
+    {
+      "test": "Render PHP_Dozent/tag-01.html",
+      "passed": true
+    },
+    {
+      "test": "Render PHP_Dozent/tag-02.html",
+      "passed": true
+    },
+    {
+      "test": "Render PHP_Dozent/tag-03.html",
+      "passed": true
+    },
+    {
+      "test": "Render PHP_Dozent/tag-04.html",
+      "passed": true
+    },
+    {
+      "test": "Render PHP_Dozent/tag-05.html",
+      "passed": true
+    },
+    {
+      "test": "Teilnehmer -> HTML-Tag-Tool -> Dozent",
+      "passed": true
+    },
+    {
+      "test": "Browser sendet reales GET und POST",
+      "passed": true
+    },
+    {
+      "test": "Mobile ohne Seitenüberlauf PHP_Teilnehmer/tag-01.html",
+      "passed": true
+    },
+    {
+      "test": "Mobile ohne Seitenüberlauf PHP_Dozent/tag-03.html",
+      "passed": true
+    },
+    {
+      "test": "Mobile ohne Seitenüberlauf PHP_Arbeitsbereich/ai/index.html",
+      "passed": true
+    },
+    {
+      "test": "Mobile ohne Seitenüberlauf Optionales_Zusatzmaterial/index.html",
+      "passed": true
+    }
+  ],
+  "passed": 23,
+  "errors": []
+}

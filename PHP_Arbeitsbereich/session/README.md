@@ -1,8 +1,8 @@
 # PHP · PHP-Sessions
 
 ## Start
-Ordner `PHP_Sessions` nach `C:\xampp\htdocs` entpacken. Apache starten.
-Im Browser: `http://localhost/PHP_Sessions/index.html`.
+vollständigen Ordner `PHP_AI_DEMO` nach `C:\xampp\htdocs` entpacken. Apache starten.
+Im Browser: `http://localhost/PHP_AI_DEMO/PHP_Arbeitsbereich/session/index.html`.
 Demos und Übungen benötigen PHP mit aktivierter Session-Unterstützung und einen beschreibbaren serverseitigen Session-Speicher. Das Paket benötigt keine Datenbank, kein Composer und kein JavaScript für die PHP-Formulare. Die HTML-Einführung verwendet JavaScript nur für ihre Simulation.
 
 ## Inhalt
@@ -26,3 +26,6 @@ PHP 8.x als Zielumgebung. Die verwendete Cookie-Optionssyntax benötigt mindeste
 Jeder Aufgabenordner verwendet einen eigenen Session-Namen und Cookie-Pfad. Die Musterlösungen haben andere Namen als die Startdateien. Beim Verschieben eines Ordners können alte Cookies im Browser übrig bleiben; für einen sauberen Test diese entfernen. Ein neuer Tab allein bedeutet keine neue Session. Ein anderer Browser oder ein getrenntes Profil bietet einen getrennten Cookie-Kontext.
 
 Die Übungen sind sequenzielle Beispiele ohne Hintergrundanfragen. Gleichzeitige Zugriffe, ein echter Login, CSRF-Token, Session-Zeitlimits und ausgefeilte Zugriffskontrollen sind nicht implementiert. Hinweise dazu stehen in der Webeinführung und in den Lehrkraft-Hinweisen der Lösungen.
+
+## Auswahl für Tag 5
+Eine kleine Aufgabe aus diesem Paket ist Pflicht. Die weiteren Aufgaben sind Übungsreserve. Vollständige Demos dienen als Vergleich; das historische separate Lösungen-ZIP ist hier nicht enthalten.

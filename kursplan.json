@@ -1,0 +1,351 @@
+{
+  "version": "2.0",
+  "days": [
+    {
+      "n": 1,
+      "title": "HTML, CSS und Bedienbarkeit",
+      "goal": "Eine verständliche, bedienbare Webseite strukturieren und gestalten.",
+      "product": "Eine eigene HTML-Seite mit externer CSS-Datei und dokumentiertem Tastaturtest.",
+      "ue": [
+        "Kursstart; Nutzerziel, Schnittstellen und Peripheriegeräte",
+        "HTML-Grundgerüst: DOCTYPE, head, body, title und h1",
+        "Tags, Elemente, Attribute, id und class am HTML-Tag-Tool",
+        "Semantische Struktur, Überschriften, Listen und Navigation",
+        "CSS-Regeln: Selektor, Eigenschaft, Wert und Einbindung",
+        "Box-Modell, Kontrast, Abstände und sichtbarer Tastaturfokus",
+        "Praxis: eine kleine Informationsseite selbst gestalten",
+        "KI-Review: zwei konkrete Verbesserungen prüfen und begründen",
+        "Wissenscheck, Tastaturtest und Tagesrückblick"
+      ],
+      "modules": [
+        "01",
+        "05",
+        "07",
+        "09"
+      ],
+      "extra": [
+        "03",
+        "04",
+        "06",
+        "10",
+        "13"
+      ],
+      "terms": [
+        [
+          "Schnittstelle",
+          "Ein definierter Übergang, über den Eingaben und Ausgaben ausgetauscht werden. Eine Benutzeroberfläche verbindet Mensch und Software; HTTP verbindet Browser und Server."
+        ],
+        [
+          "Peripheriegerät",
+          "Ein Ein- oder Ausgabegerät, etwa Tastatur, Maus, Mikrofon, Bildschirm oder Drucker. Ein Touchscreen kann beides. Hardware und Softwareoberfläche sind unterschiedliche Ebenen der Interaktion."
+        ],
+        [
+          "UI, Usability und UX",
+          "UI ist die bedienbare Oberfläche. Usability beschreibt, wie gut eine Person ihr Ziel erreicht. UX umfasst das gesamte Nutzungserlebnis, etwa Orientierung und Vertrauen."
+        ],
+        [
+          "DOCTYPE und Dokument",
+          "<!doctype html> fordert den Standardmodus des Browsers an. Es ist eine Dokumenttyp-Deklaration, kein sichtbares HTML-Element. html umschließt das Dokument, head enthält Metadaten, body die Seiteninhalte."
+        ],
+        [
+          "Tag, Element und Attribut",
+          "<p> ist ein Start-Tag; <p>Hallo</p> ist ein Element. Attribute stehen im Start-Tag, etwa lang=\"de\" oder href=\"ziel.html\". input ist ein leeres Element ohne End-Tag."
+        ],
+        [
+          "id und class",
+          "id kennzeichnet ein Element eindeutig innerhalb einer Seite. class ordnet ein oder mehrere Elemente einer wiederverwendbaren CSS-Klasse zu. Diese Klasse ist keine OOP-Klasse."
+        ],
+        [
+          "CSS-Regel",
+          "In .hinweis { color: navy; } ist .hinweis der Selektor, color die Eigenschaft und navy der Wert. Eigenschaft und Wert bilden eine Deklaration. Eine Datei wird über link rel=\"stylesheet\" eingebunden."
+        ],
+        [
+          "Kaskade und Box-Modell",
+          "Bei konkurrierenden Regeln entscheiden unter anderem Spezifität und Reihenfolge. Inhalt, Innenabstand (padding), Rahmen und Außenabstand (margin) bestimmen die Box."
+        ]
+      ],
+      "reading": "<p>Starte mit einem Nutzerziel: Eine Person möchte den Beginn eines Workshops finden. Gliedere die Information mit <code>header</code>, <code>nav</code>, <code>main</code> und <code>footer</code>. Überschriften ordnen Inhalte, CSS gestaltet sie. Eine Schnittstelle liefert nach einer Eingabe eine verständliche Rückmeldung.</p><p>Prüfe mit Maus und Tastatur: Erreiche ich jeden Link mit Tab? Sehe ich den Fokus? Ist der Linktext verständlich? Vergrößere die Seite auf 200 Prozent. Informationen dürfen nicht allein durch Farbe vermittelt werden.</p>",
+      "example": "<!doctype html>\n<html lang=\"de\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Workshop</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <main id=\"inhalt\">\n    <h1>Unser Workshop</h1>\n    <p class=\"hinweis\">Beginn: 09:00 Uhr</p>\n    <a href=\"#inhalt\">Zur Übersicht</a>\n  </main>\n</body>\n</html>",
+      "task": "Erstelle eine Seite mit Hauptüberschrift, zwei Abschnitten, einer Liste und zwei Navigationslinks. Verwende eine CSS-Klasse mehrfach und eine id nur einmal. Ergänze Abstände und einen sichtbaren Fokus. Nutze das HTML-Tag-Tool, um zwei Attribute nachzuschlagen. Notiere drei Beobachtungen zu Tastaturbedienung und Lesbarkeit.",
+      "checks": [
+        "Erkläre am eigenen Code den Unterschied zwischen Tag, Element und Attribut.",
+        "Zeige eine CSS-Regel und benenne Selektor, Eigenschaft und Wert.",
+        "Ordne Tastatur, Bildschirm und HTTP den passenden Schnittstellenebenen zu."
+      ],
+      "answers": [
+        "Ein Tag markiert die Elementgrenze; zum Element gehören auch Inhalt und gegebenenfalls End-Tag; Attribute ergänzen Eigenschaften im Start-Tag.",
+        "Zum Beispiel .hinweis ist der Selektor, color die Eigenschaft und navy der Wert.",
+        "Tastatur: Eingabe; Bildschirm: Ausgabe; HTTP: Protokoll zwischen Softwarekomponenten."
+      ],
+      "teacher": "HTML und CSS bereits am Vormittag schreiben lassen. UI/UX als konkreten Prüfauftrag integrieren, nicht als langen Theorieblock. Fokus, Semantik und lesbare Namen vor aufwendigen Layouts behandeln."
+    },
+    {
+      "n": 2,
+      "title": "Formulare, GET und POST",
+      "goal": "Verstehen, wie eine Formulareingabe als HTTP-Anfrage zum Server gelangt.",
+      "product": "Ein beschriftetes Formular und je ein protokollierter GET- und POST-Aufruf.",
+      "ue": [
+        "HTML/CSS kurz wiederholen; Ziel des Formulars festlegen",
+        "form, label, input, select und button sinnvoll verbinden",
+        "Attribute action, method, name, value, id und required",
+        "GET: Name-Wert-Paare in der URL untersuchen",
+        "POST: Formulardaten im Request-Body beobachten",
+        "HTTP: Request, Header, Body, Status und Response",
+        "Browserprüfung und Serverprüfung unterscheiden; PHP-Demo beobachten",
+        "KI-Auftrag: ein Formular auf den heutigen Lernstand begrenzen",
+        "Zwei Anfragen vergleichen und den Datenweg erklären"
+      ],
+      "modules": [
+        "08",
+        "02"
+      ],
+      "extra": [
+        "04"
+      ],
+      "terms": [
+        [
+          "Client und Server",
+          "Der Browser ist hier der Client. Er sendet eine Anfrage an einen Webserver. Der Server verarbeitet sie und liefert eine Antwort."
+        ],
+        [
+          "action und method",
+          "action bestimmt die Zieladresse des Formulars. method bestimmt die HTTP-Methode. GET und POST sind keine Programmiersprachen."
+        ],
+        [
+          "name, id und label",
+          "name ist der Schlüssel der übermittelten Formulardaten. id verbindet zusammen mit label for die Beschriftung mit dem Feld. id allein sendet keinen Feldwert."
+        ],
+        [
+          "GET",
+          "Bei einem HTML-Formular mit method=\"get\" stehen die Name-Wert-Paare im Query-Teil der Ziel-URL, etwa ?ziel=Berlin&anzahl=2. GET dient zum Abrufen, etwa einer Suche; Änderungen am gespeicherten Zustand lösen wir nicht per GET aus."
+        ],
+        [
+          "POST",
+          "Bei method=\"post\" sendet das Formular seine Daten im Request-Body. Bei unserem Formular ist die Kodierung application/x-www-form-urlencoded. Die Daten erscheinen nicht als angehängte Formularparameter in der Adresszeile, sind aber in den Entwicklerwerkzeugen sichtbar."
+        ],
+        [
+          "HTTP und HTTPS",
+          "HTTP regelt den Austausch von Anfrage und Antwort. HTTPS verschlüsselt die Übertragung. POST allein verschlüsselt nichts und ersetzt keine Eingabeprüfung."
+        ],
+        [
+          "Header, Body und Status",
+          "Header tragen Metadaten, etwa den Content-Type. Der Body enthält den Inhalt. Der Antwortstatus beschreibt das Ergebnis: beispielsweise 200 für eine erfolgreiche Antwort oder 303 für einen anschließenden GET-Aufruf."
+        ],
+        [
+          "Browserprüfung",
+          "required und type=\"email\" helfen bei der Bedienung. Diese Prüfung kann umgangen werden. Der Server muss alle Eingaben selbst prüfen."
+        ]
+      ],
+      "reading": "<p>Öffne die Demo über den lokalen PHP-Server. Die Verarbeitung ist heute vorgegeben: Beobachte zuerst den Datenweg, bevor du ab Tag 3 PHP selbst schreibst. In Firefox: F12 → Netzwerkanalyse; in Chromium: Network → Payload. Aktiviere bei Weiterleitungen die Aufzeichnung über Seitenwechsel hinweg.</p><p>Sende denselben fiktiven Zielort einmal mit GET und einmal mit POST. Vergleiche Methode, URL, Formularparameter und Antwort. Ein Feld ohne <code>name</code>, ein deaktiviertes Feld und eine nicht gesetzte Checkbox werden normalerweise nicht als deren Feldwert übertragen. Sonderzeichen werden URL-kodiert; tippe sie zum Vergleich in das Formular.</p>",
+      "example": "<form action=\"empfang.php\" method=\"get\">\n  <label for=\"ziel\">Zielort</label>\n  <input id=\"ziel\" name=\"ziel\" type=\"text\" required>\n  <button type=\"submit\">Suchen</button>\n</form>\n<!-- Für den Vergleich nur method=\"post\" ändern. -->",
+      "task": "Baue ein Formular mit einem Textfeld, einer Auswahl und einer Checkbox. Beschrifte jedes Feld. Verbinde es mit dem vorgegebenen Empfänger. Sende mit GET und POST. Notiere je Methode die Ziel-URL, die gesendeten Schlüssel und den Ort der Nutzdaten. Teste danach die Checkbox im gesetzten und ungesetzten Zustand.",
+      "checks": [
+        "Worin unterscheiden sich id und name?",
+        "Wo findest du die Daten einer GET- und einer POST-Formularanfrage?",
+        "Warum ist POST allein kein Schutz vertraulicher Daten?"
+      ],
+      "answers": [
+        "id verbindet das Element unter anderem mit label und muss auf der Seite eindeutig sein; name bestimmt den übertragenen Schlüssel.",
+        "GET: Query-Teil der URL; POST: Request-Body, sichtbar in der Netzwerkanalyse.",
+        "POST ist eine Methode; Verschlüsselung kommt durch HTTPS. Server und Browserwerkzeuge können die Daten weiterhin verarbeiten bzw. anzeigen."
+      ],
+      "teacher": "Der PHP-Empfänger ist eine fertige Beobachtungsdemo. Noch keine umfangreiche Serverimplementierung verlangen. POST nicht als unsichtbar oder verschlüsselt erklären. Nur fiktive Eingaben nutzen."
+    },
+    {
+      "n": 3,
+      "title": "PHP-Grundlagen in kleinen Schritten",
+      "goal": "Ein einfaches PHP-Skript lesen, ausführen und selbst verändern.",
+      "product": "Ein PHP-Skript mit Variablen, einer Entscheidung, einer Schleife und einer kleinen Funktion.",
+      "ue": [
+        "Browser, Webserver und PHP-Interpreter; XAMPP-Start prüfen",
+        "PHP-Tags, HTML-Ausgabe, Semikolon, Kommentare und DOCTYPE",
+        "Variablen, Werte, int, float, string, bool und array",
+        "Zuweisung, Verkettung, == und ===",
+        "if, elseif und else anhand kleiner Fälle",
+        "Einfaches Array; for und foreach schrittweise verfolgen",
+        "Funktion, Parameter, return und declare(strict_types=1)",
+        "KI-Review eines kleinen Skripts; erst vorhersagen, dann ausführen",
+        "Schreibtischtest und Erklärung der eigenen Lösung"
+      ],
+      "modules": [
+        "11"
+      ],
+      "extra": [],
+      "terms": [
+        [
+          "PHP-Tag",
+          "<?php beginnt PHP-Code. ?> beendet den PHP-Bereich, wenn HTML folgt. In reinen PHP-Dateien lassen wir den schließenden Tag weg, damit nicht versehentlich Leerraum ausgegeben wird."
+        ],
+        [
+          "DOCTYPE und PHP",
+          "DOCTYPE betrifft das HTML-Dokument für den Browser. PHP-Tags betreffen die Verarbeitung auf dem Server. Der Browser erhält das Ergebnis, nicht den ausführbaren PHP-Quellcode."
+        ],
+        [
+          "Variable und Typ",
+          "Eine Variable beginnt mit $. Werte haben Typen, etwa int, float, string, bool oder array. PHP ist dynamisch typisiert: eine gewöhnliche Variable kann nacheinander Werte verschiedener Typen halten."
+        ],
+        [
+          "Statisch und dynamisch",
+          "Statische Typisierung prüft Typbeziehungen weitgehend vor der Ausführung. Dynamische Typisierung bestimmt bzw. prüft sie zur Laufzeit. Das ist eine andere Frage als die nach erlaubten automatischen Umwandlungen."
+        ],
+        [
+          "Streng und weniger streng",
+          "Mit stark oder schwach typisiert ist meist gemeint, wie streng eine Sprache mit Typmischungen umgeht. Die Begriffe sind nicht einheitlich definiert. PHP erlaubt in manchen Situationen implizite Typumwandlung; Eingaben müssen trotzdem bewusst geprüft werden."
+        ],
+        [
+          "declare(strict_types=1)",
+          "Als erste PHP-Anweisung schaltet es für diese Datei strenge Regeln bei skalaren Typdeklarationen ein. Bei eigenen Funktionsaufrufen bestimmt die aufrufende Datei die Argumentprüfung. Rückgabewerte werden an der Funktionsdefinition geprüft. int ist für einen float-Parameter weiterhin erlaubt. Gewöhnliche Variablen werden dadurch nicht statisch typisiert."
+        ],
+        [
+          "=, == und ===",
+          "= weist zu; == vergleicht nach den PHP-Vergleichsregeln mit möglichen Typumwandlungen; === vergleicht Wert und Typ. Der String \"3\" ist nicht identisch mit der Zahl 3."
+        ],
+        [
+          "Kontrollstruktur und Funktion",
+          "if wählt einen Weg. for und foreach wiederholen Schritte. Eine Funktion bündelt eine Aufgabe; Parameter sind Eingaben und return liefert ein Ergebnis. HTML-Attribute sind keine PHP-Variablen; PHP-Attribute als Metadaten sind kein Kursthema."
+        ]
+      ],
+      "reading": "<p>Speichere die Datei mit der Endung <code>.php</code> und rufe sie über <code>http://localhost/...</code> auf. Ein Doppelklick führt PHP nicht aus. Beginne mit festen Werten; Formulardaten kommen als eigener Schritt an Tag 4.</p><p>Bei Schleifen immer Startwert, Bedingung, Veränderung und Ausgabe notieren. Nutze zunächst <code>if/else</code>, <code>for</code> und <code>foreach</code>. <code>switch</code>, <code>while</code> und <code>do-while</code> liegen als kurze Vertiefung im vorhandenen Baustein 11 bereit.</p>",
+      "example": "<?php\ndeclare(strict_types=1);\nfunction doppelt(int $zahl): int {\n    return $zahl * 2;\n}\n$anzahl = 3;\n$summe = doppelt($anzahl);\n?>\n<!doctype html>\n<html lang=\"de\">\n<head><meta charset=\"utf-8\"><title>PHP-Einstieg</title></head>\n<body><p>Ergebnis: <?= $summe ?></p></body>\n</html>",
+      "task": "Bearbeite die TODOs in der Startdatei: Lege drei Lernziele in einem Array ab, gib sie mit foreach aus und ergänze eine Entscheidung zur Teilnehmerzahl. Schreibe eine Funktion für eine einfache Berechnung. Notiere die erwartete Ausgabe vor dem Aufruf. Erkläre anschließend \"3\" === 3 und die Wirkung von strict_types am Funktionsaufruf.",
+      "checks": [
+        "Was sieht der Browser vom PHP-Quellcode bei korrekter Serverausführung?",
+        "Was bewirkt strict_types bei gewöhnlichen Variablen?",
+        "Wie viele Durchläufe hat for ($i=1; $i<=3; $i++)?"
+      ],
+      "answers": [
+        "Der Browser erhält die erzeugte Ausgabe, etwa HTML, nicht den serverseitig ausgeführten PHP-Code.",
+        "Es macht gewöhnliche Variablen nicht statisch typisiert. Es steuert strenge Regeln an skalaren Typdeklarationen.",
+        "Drei Durchläufe mit i = 1, 2 und 3."
+      ],
+      "teacher": "if/else und foreach sicher beherrschen lassen; zusätzliche Schleifen nur bei ausreichender Zeit. Die Demo unterscheidet dynamische Typisierung von strenger Parameterprüfung. Keine OOP-Klassen und keine PHP-Metadatenattribute einführen."
+    },
+    {
+      "n": 4,
+      "title": "Formulardaten prüfen und auswerten",
+      "goal": "GET/POST-Werte sicher lesen, verständlich prüfen und passende Rückmeldungen ausgeben.",
+      "product": "Ein kleines Formular mit PHP-Verarbeitung, Fehlerliste, Wiederanzeige und Testprotokoll.",
+      "ue": [
+        "Datenweg wiederholen; HTML-name auf PHP-Schlüssel abbilden",
+        "$_GET und $_POST lesen; Anfrageart und Existenz prüfen",
+        "Texttyp, trim, Pflichtfeld und erlaubte Werte prüfen",
+        "isset, empty und der gültige Wert \"0\"",
+        "Assoziative Arrays und verständliche Fehlerlisten",
+        "Funktionen trennen; Nutzereingaben für HTML maskieren",
+        "303-Rückleitung, http_build_query und gültige Werte wieder anzeigen",
+        "KI-Formularprojekt im reduzierten Umfang entwickeln und prüfen",
+        "Normalfall, Fehlfall und Grenzfall dokumentieren"
+      ],
+      "modules": [
+        "11",
+        "02"
+      ],
+      "extra": [],
+      "terms": [
+        [
+          "Superglobale Arrays",
+          "$_GET enthält Query-Parameter. $_POST enthält hier die Daten eines gewöhnlichen HTML-POST-Formulars. JSON-Nutzdaten landen nicht automatisch in $_POST; JSON-APIs sind kein Pflichtstoff."
+        ],
+        [
+          "isset und empty",
+          "isset prüft, ob ein Eintrag existiert und nicht null ist. empty gilt auch für 0 und \"0\" als wahr. Ob null oder 0 fachlich erlaubt ist, entscheidet die Aufgabe."
+        ],
+        [
+          "Validierung",
+          "Prüfe erst Existenz und erwarteten Datentyp, dann Inhalt und Wertebereich. Auch ein erwartetes Textfeld kann manipuliert als Array ankommen. trim darf erst auf einen String angewendet werden."
+        ],
+        [
+          "Maskierung",
+          "htmlspecialchars mit ENT_QUOTES und UTF-8 macht Text für die hier verwendete HTML-Ausgabe geeignet. Es ersetzt keine fachliche Prüfung und gilt nicht automatisch für JavaScript-, CSS- oder SQL-Kontexte."
+        ],
+        [
+          "Fehlerliste",
+          "Ein assoziatives Array kann Feldnamen auf Fehlermeldungen abbilden. Zeige konkrete Hinweise und erhalte die gültigen Eingaben, statt alles zu löschen."
+        ],
+        [
+          "POST/Redirect/GET",
+          "Nach der Verarbeitung veranlasst eine 303-Antwort einen neuen GET-Aufruf. header muss vor jeder Ausgabe stehen; danach beendet exit das Skript. $_POST wird nicht automatisch in den GET-Aufruf übernommen."
+        ]
+      ],
+      "reading": "<p>Arbeite zuerst mit nur ein oder zwei Feldern. Die vorhandenen Alltagsformulare zeigen den Ablauf mit getrennten Dateien für Anzeige, Verarbeitung und Funktionen. Baue erst danach die kleine Variante deines KI-Projekts.</p><p>Für die heutige lokale Übung können harmlose kurze Rückmeldungen mit <code>http_build_query</code> im Query-Teil der Rücksprung-URL stehen. Sensible Daten gehören dort nicht hinein. Tag 5 führt Sessions als Alternative für Rückmeldungen und Entwürfe ein.</p>",
+      "example": "$fehler = [];\n$ziel = \"\";\nif (!isset($_POST[\"ziel\"]) || !is_string($_POST[\"ziel\"])) {\n    $fehler[\"ziel\"] = \"Bitte einen Zielort als Text senden.\";\n} else {\n    $ziel = trim($_POST[\"ziel\"]);\n    if ($ziel === \"\") {\n        $fehler[\"ziel\"] = \"Bitte einen Zielort eintragen.\";\n    }\n}\n// Bei der späteren HTML-Ausgabe:\necho htmlspecialchars($ziel, ENT_QUOTES, \"UTF-8\");",
+      "task": "Wähle eine kleine Alltagsaufgabe und ergänze die fehlende Verarbeitung. Prüfe Direktaufruf ohne POST, fehlendes Feld, Leerzeichen, gültigen Text, den Wert \"0\" und eine Array-Eingabe. Gib fremdes HTML als Text aus. Vergleiche nach dem Absenden den POST und den folgenden GET. Halte Eingabe, Soll, Ist und Korrektur schriftlich fest.",
+      "checks": [
+        "Warum reicht required im HTML nicht aus?",
+        "Wann ist empty(\"0\") problematisch?",
+        "Warum beendet exit das Skript nach header(\"Location: ...\", true, 303)?"
+      ],
+      "answers": [
+        "Der Client kann die Browserprüfung umgehen; der Server erhält auch manipulierte Anfragen.",
+        "Wenn 0 fachlich ein erlaubter Wert ist, darf er nicht als fehlend verworfen werden.",
+        "Der Header allein beendet PHP nicht; exit verhindert ungewollte weitere Verarbeitung und Ausgabe."
+      ],
+      "teacher": "Ein kleiner belastbarer Datenweg zählt mehr als ein umfangreiches Formular. Serverseitige Validierung sichtbar schreiben lassen. Die großen fünf KI-Musterlösungen nur als spätere Vergleichsreferenz nutzen; keine vollständige Nachimplementierung aller fünf Projekte verlangen."
+    },
+    {
+      "n": 5,
+      "title": "Cookies, Sessions und Kursabschluss",
+      "goal": "Kleine Zustände über mehrere Anfragen erhalten und die Speicherorte erklären.",
+      "product": "Eine Cookie-Einstellung, eine Session-Übung und ein überprüftes kleines Formularprojekt.",
+      "ue": [
+        "Formularablauf wiederholen; HTTP-Anfragen und Zustand unterscheiden",
+        "Cookies: Set-Cookie, Cookie, Gültigkeit und Browser-Speicher",
+        "Cookie-Demo und eine Aufgabe: setzen, lesen, ändern oder löschen",
+        "Sessions: ID im Browser und Daten auf dem Server",
+        "Session-Demo und eine Aufgabe: starten, speichern und lesen",
+        "Löschen, Fehlerfälle und neuer Request; Zustand bewusst testen",
+        "KI-Transfer: eine kleine Komfortfunktion ergänzen und reviewen",
+        "Praktische Lernzielkontrolle am eigenen Formular",
+        "Ergebnisse vorstellen, Kursreview und Ausblick auf Zusatzmaterial"
+      ],
+      "modules": [],
+      "extra": [],
+      "terms": [
+        [
+          "Cookie",
+          "Ein Browser speichert einen kleinen Wert und sendet ihn bei passenden Folgeanfragen mit. Der Server setzt ihn über Set-Cookie; die Anfrage trägt ihn im Cookie-Header. Cookie-Daten sind veränderbare Eingaben."
+        ],
+        [
+          "setcookie und $_COOKIE",
+          "setcookie setzt einen Antwort-Header. $_COOKIE enthält dagegen die Werte der eingehenden Anfrage. Ein neu gesetzter Wert erscheint dort erst bei einem späteren passenden Request."
+        ],
+        [
+          "Session",
+          "Im Kurs speichert PHP die Nutzdaten serverseitig. Der Browser trägt normalerweise die Session-ID in einem Cookie. Vor dem Zugriff auf $_SESSION wird auf jeder beteiligten Seite session_start aufgerufen."
+        ],
+        [
+          "Speichern und Lesen",
+          "Eine Zuweisung in $_SESSION ist im selben Skript sofort lesbar. Cookie- oder Session-Funktionen, die Header senden, gehören vor die HTML-Ausgabe. Eine Session benötigt weder OOP noch eine Datenbank."
+        ],
+        [
+          "Löschen",
+          "Ein Cookie wird mit gleichem Namen und Gültigkeitsbereich und einer vergangenen Ablaufzeit gelöscht. unset entfernt einen Session-Schlüssel. session_destroy allein leert weder das aktuelle PHP-Array noch das Browser-Cookie."
+        ],
+        [
+          "Grenzen",
+          "Ein neues Browser-Tab ist keine unabhängige Session. Browser-Schließen ist kein zuverlässiger Logout-Test. Die Übungsbeispiele sind keine Anmeldung und verwenden nur fiktive Daten."
+        ]
+      ],
+      "reading": "<p>Die vorhandenen Cookie- und Session-Webvarianten enthalten Erklärungen, Schrittsimulationen, fertige Demos, Aufgabenblätter und Startdateien. Bearbeite heute je eine kleine Aufgabe vollständig. Weitere Aufgaben bleiben als Übungsreserve erreichbar.</p><p>Vergleiche in den Entwicklerwerkzeugen Browser-Speicher, Request-Header und Response-Header. Für einen unabhängigen Session-Test verwende ein getrenntes Browserprofil. Eine Cookie-Einstellung und ein serverseitig gespeicherter Formularentwurf haben unterschiedliche Aufgaben.</p>",
+      "example": "<?php\ndeclare(strict_types=1);\nsession_start(); // vor der HTML-Ausgabe\nif (!isset($_SESSION[\"thema\"])) {\n    $_SESSION[\"thema\"] = \"PHP\";\n}\necho htmlspecialchars($_SESSION[\"thema\"], ENT_QUOTES, \"UTF-8\");",
+      "task": "Nutze die vorbereiteten Cookie- und Session-Aufgaben. Merke eine erlaubte Anzeigeeinstellung per Cookie. Speichere einen geprüften Alias in einer Session und lies ihn auf einer zweiten Seite. Teste fehlende oder manipulierte Eingaben, Ändern und Löschen. Ergänze anschließend höchstens eine dieser Funktionen in dein Formularprojekt.",
+      "checks": [
+        "Wo liegen Cookie-Wert, Session-ID und Session-Nutzdaten?",
+        "Warum zeigt $_COOKIE unmittelbar nach setcookie noch den alten Eingang?",
+        "Was ist an deinem Projekt nach einem neuen Request noch vorhanden?"
+      ],
+      "answers": [
+        "Cookie-Wert und Session-ID-Cookie: Browser; fachliche Session-Nutzdaten im Kurs: Server.",
+        "$_COOKIE stammt aus der eingehenden Anfrage. setcookie beschreibt erst die ausgehende Antwort.",
+        "Das muss praktisch belegt werden: passende Cookies und Daten der gestarteten Session können weiterbestehen; gewöhnliche lokale PHP-Variablen beginnen je Request neu."
+      ],
+      "teacher": "Je eine Cookie- und Session-Aufgabe ist Pflicht; weitere neun Aufgaben sind Reserve. UE 8 ist die praktische Lernzielkontrolle: Datenweg erklären, einen Fehlfall reproduzieren und die Korrektur belegen. OOP und Datenbank bleiben außerhalb dieser fünf Tage."
+    }
+  ],
+  "core_scope": "HTML/CSS bis Cookies und Sessions",
+  "optional": [
+    "OOP",
+    "Datenbank"
+  ],
+  "ue_per_day": 9
+}

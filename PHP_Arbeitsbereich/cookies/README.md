@@ -2,10 +2,10 @@
 
 ## Start
 
-Entpacke den enthaltenen Ordner **PHP_Cookies** direkt nach **C:\xampp\htdocs**.
+Entpacke den enthaltenen vollständigen Ordner **PHP_AI_DEMO** direkt nach **C:\xampp\htdocs**.
 Starte Apache im XAMPP Control Panel und öffne:
 
-    http://localhost/PHP_Cookies/index.html
+    http://localhost/PHP_AI_DEMO/PHP_Arbeitsbereich/cookies/index.html
 
 Die Einstiegseite verlinkt die Demos, das Aufgabenblatt und alle Startformulare.
 Es wird keine Datenbank benötigt. PHP-Dateien nicht per Doppelklick öffnen.
@@ -88,3 +88,6 @@ Bei blockierten Cookies müssen Standards weiter funktionieren. Eine bereits sic
 
 Bei „headers already sent“ zuerst nach einer Ausgabe vor dem PHP-Verarbeitungsblock suchen.
 Dateien als UTF-8 ohne BOM speichern. In reinen PHP-Hilfsdateien das abschließende ?> weglassen.
+
+## Auswahl für Tag 5
+Eine kleine Aufgabe aus diesem Paket ist Pflicht. Die weiteren Aufgaben sind Übungsreserve. Vollständige Demos dienen als Vergleich; das historische separate Lösungen-ZIP ist hier nicht enthalten.

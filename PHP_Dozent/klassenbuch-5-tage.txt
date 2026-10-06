@@ -1,0 +1,54 @@
+Tag 1
+UE 1: Kursstart; Nutzerziel, Schnittstellen und Peripheriegeräte
+UE 2: HTML-Grundgerüst: DOCTYPE, head, body, title und h1
+UE 3: Tags, Elemente, Attribute, id und class am HTML-Tag-Tool
+UE 4: Semantische Struktur, Überschriften, Listen und Navigation
+UE 5: CSS-Regeln: Selektor, Eigenschaft, Wert und Einbindung
+UE 6: Box-Modell, Kontrast, Abstände und sichtbarer Tastaturfokus
+UE 7: Praxis: eine kleine Informationsseite selbst gestalten
+UE 8: KI-Review: zwei konkrete Verbesserungen prüfen und begründen
+UE 9: Wissenscheck, Tastaturtest und Tagesrückblick
+
+Tag 2
+UE 1: HTML/CSS kurz wiederholen; Ziel des Formulars festlegen
+UE 2: form, label, input, select und button sinnvoll verbinden
+UE 3: Attribute action, method, name, value, id und required
+UE 4: GET: Name-Wert-Paare in der URL untersuchen
+UE 5: POST: Formulardaten im Request-Body beobachten
+UE 6: HTTP: Request, Header, Body, Status und Response
+UE 7: Browserprüfung und Serverprüfung unterscheiden; PHP-Demo beobachten
+UE 8: KI-Auftrag: ein Formular auf den heutigen Lernstand begrenzen
+UE 9: Zwei Anfragen vergleichen und den Datenweg erklären
+
+Tag 3
+UE 1: Browser, Webserver und PHP-Interpreter; XAMPP-Start prüfen
+UE 2: PHP-Tags, HTML-Ausgabe, Semikolon, Kommentare und DOCTYPE
+UE 3: Variablen, Werte, int, float, string, bool und array
+UE 4: Zuweisung, Verkettung, == und ===
+UE 5: if, elseif und else anhand kleiner Fälle
+UE 6: Einfaches Array; for und foreach schrittweise verfolgen
+UE 7: Funktion, Parameter, return und declare(strict_types=1)
+UE 8: KI-Review eines kleinen Skripts; erst vorhersagen, dann ausführen
+UE 9: Schreibtischtest und Erklärung der eigenen Lösung
+
+Tag 4
+UE 1: Datenweg wiederholen; HTML-name auf PHP-Schlüssel abbilden
+UE 2: $_GET und $_POST lesen; Anfrageart und Existenz prüfen
+UE 3: Texttyp, trim, Pflichtfeld und erlaubte Werte prüfen
+UE 4: isset, empty und der gültige Wert "0"
+UE 5: Assoziative Arrays und verständliche Fehlerlisten
+UE 6: Funktionen trennen; Nutzereingaben für HTML maskieren
+UE 7: 303-Rückleitung, http_build_query und gültige Werte wieder anzeigen
+UE 8: KI-Formularprojekt im reduzierten Umfang entwickeln und prüfen
+UE 9: Normalfall, Fehlfall und Grenzfall dokumentieren
+
+Tag 5
+UE 1: Formularablauf wiederholen; HTTP-Anfragen und Zustand unterscheiden
+UE 2: Cookies: Set-Cookie, Cookie, Gültigkeit und Browser-Speicher
+UE 3: Cookie-Demo und eine Aufgabe: setzen, lesen, ändern oder löschen
+UE 4: Sessions: ID im Browser und Daten auf dem Server
+UE 5: Session-Demo und eine Aufgabe: starten, speichern und lesen
+UE 6: Löschen, Fehlerfälle und neuer Request; Zustand bewusst testen
+UE 7: KI-Transfer: eine kleine Komfortfunktion ergänzen und reviewen
+UE 8: Praktische Lernzielkontrolle am eigenen Formular
+UE 9: Ergebnisse vorstellen, Kursreview und Ausblick auf Zusatzmaterial

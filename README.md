@@ -1,62 +1,54 @@
 # PHP AI Demo – CourseForge-Kursmaterialien
 
-Arbeitsprobe von Florian Schaffer: ein in der Unterrichtspraxis eingesetztes Materialpaket für einen fünftägigen Kurs mit PHP-Schwerpunkt.
+Arbeitsprobe von Florian Schaffer: ein aus der Unterrichtspraxis weiterentwickeltes Materialpaket. Die aktuelle Fassung führt durch **fünf Tage mit je neun UE** – von HTML/CSS bis Cookies und Sessions.
 
-**[Projektübersicht als PDF](docs/CourseForge_Kursmaterialien_PHP_Florian_Schaffer.pdf)** · [Dozentenfassung](PHP_Dozent/index.html) · [Teilnehmerfassung](PHP_Teilnehmer/index.html) · [Arbeitsbereich](PHP_Arbeitsbereich/index.html)
+**[Teilnehmerfassung](PHP_Teilnehmer/index.html)** · **[Dozentenfassung](PHP_Dozent/index.html)** · [Arbeitsbereich](PHP_Arbeitsbereich/index.html) · [Projektübersicht als PDF](docs/CourseForge_Kursmaterialien_PHP_Florian_Schaffer.pdf)
 
-GitHub zeigt HTML als Quelltext. Für die Darstellung das Repository herunterladen oder klonen und die Startseite lokal öffnen.
+## Fünf Tage / 45 UE
 
-## In fünf Minuten ansehen
+| Tag | Pflichtstoff | Ergebnis |
+| --- | --- | --- |
+| 1 | Schnittstellen, Peripherie, UI/Usability; HTML-Struktur, Tags, Attribute, id/class; CSS-Regeln und Bedienbarkeit | Kleine HTML/CSS-Seite mit Tastaturtest |
+| 2 | HTML-Formulare, name/value, GET/POST, URL/Body, HTTP-Request und Response | Formular und beobachteter Datenweg |
+| 3 | PHP-Tags, DOCTYPE, Variablen, Typen, strict_types, if/else, Arrays, Schleifen, Funktionen | Kleines PHP-Skript und Schreibtischtest |
+| 4 | GET/POST verarbeiten, prüfen, Fehlerlisten, sichere HTML-Ausgabe, 303-Rückweg | Validiertes kleines Formular |
+| 5 | Cookies und Sessions; Speichern, Lesen, Löschen, praktische Lernzielkontrolle | Je eine Zustandsübung und Projektabnahme |
 
-1. Repository herunterladen und vollständig entpacken; die zentrale Datei **index.html** im Browser öffnen.
-2. In **PHP Dozent** einen Themenbaustein, eine Demo und die zugehörigen Aufgaben/Musterlösungen vergleichen.
-3. Unter **PHP Arbeitsbereich → ai** die fünf Formularprojekte und die getrennten Prompt-Muster ansehen.
-4. Die Teilnehmerfassung zeigt die für Lernende zusammengestellten Materialien. Vollständige Fragenpools und Aufgabenlösungen liegen in der Dozentenfassung.
-5. Für PHP-Verarbeitung den Kurs in XAMPP/htdocs ablegen und Apache starten. Alternativ PHP-START.cmd bei installiertem PHP verwenden. Datenbankübungen benötigen zusätzlich MySQL/MariaDB und eine lokale Konfiguration.
+**OOP und Datenbanken sind optional.** Die eigenständigen Pakete liegen unter [Optionales_Zusatzmaterial](Optionales_Zusatzmaterial/index.html). Auch der ältere Datenbankbaustein und die MySQL-Suchreferenz sind nur dort als Anschlussmaterial vorgesehen. Der Kernkurs benötigt keine Datenbank.
 
-## Drei klar benannte Kursbereiche
+Jeder Tag hat Lernziele, neun UE, kurze Erklärungen, kleine Beispiele, verknüpfte Demos, Startdateien, Aufgaben, einen KI-Auftrag und einen Wissenscheck. Die Dozentenfassung ergänzt Ablaufhinweise, Erwartungshorizonte und getrennte Musterlösungen. [kursplan.json](kursplan.json) dokumentiert die Zuordnung.
 
-| Ordner | Zweck |
-| --- | --- |
-| PHP_Dozent | 13 Webbausteine, 78 Kernaufgaben, 26 Demos, Musterlösungen, 156 unterschiedliche Quizfragen, Quellenhinweise und Unterrichtssteuerung |
-| PHP_Teilnehmer | Webkurs, Startdateien, Aufgaben, Demos und Quiz mit zwei Bedienprobe-Fragen; weitere Pools werden gezielt ausgegeben |
-| PHP_Arbeitsbereich | Summary_Code_Together, tägliche Fragenpools, HTML-Tag-Tool, KI-Formularlabor und thematische Übungspakete |
+## Lokal starten
 
-Das durchgängige Lernkonzept lautet: **Demo → Startdateien → eigene Aufgaben/Übungen → Prüfung → Vergleich mit separat bereitgestellten Lösungen**.
+1. Das **gesamte Repository** herunterladen/klonen. GitHub zeigt HTML als Quelltext; lokale Darstellung über index.html.
+2. Für HTTP-Formulare und PHP **PHP-START.cmd im Hauptordner** starten. PHP aus PATH oder C:\xampp\php wird verwendet. Adresse: http://127.0.0.1:8080/.
+3. Alternativ: gesamten Ordner PHP_AI_DEMO unter C:\xampp\htdocs ablegen, Apache starten, http://localhost/PHP_AI_DEMO/ öffnen. MySQL nur für die optionale DB-Erweiterung starten.
+4. Ab Tag 2 die Netzwerkanalyse der Browser-Entwicklerwerkzeuge verwenden. PHP-Dateien nicht per Doppelklick ausführen.
 
-Persönliche Bearbeitungen liegen lokal unter PHP_Arbeitsbereich/Persoenliche_Arbeit. Die .gitignore nimmt neu angelegte persönliche Ordner aus der gemeinsamen Versionierung aus. Sie ersetzt keine Zugriffskontrolle. Gemeinsame Beispiele liegen unter Summary_Code_Together.
+## Material und Werkzeuge
 
-## Prompt Engineering durch praktische Entwicklung
+- [HTML-Tag-Tool](PHP_Arbeitsbereich/html-tag-tool/index.html): direkt aus Teilnehmer- und Dozentenansicht erreichbar, mit Rückwegen.
+- [Summary Code Together](PHP_Arbeitsbereich/Summary_Code_Together/index.html): vorhandene Grundlagen, Arrays, kleine Schritte und Formulare für Tag 3–4.
+- [Cookies](PHP_Arbeitsbereich/cookies/index.html) und [Sessions](PHP_Arbeitsbereich/session/index.html): Erklärung, Demo und Startaufgaben für Tag 5. Je eine Aufgabe ist Pflicht, weitere Aufgaben sind Reserve.
+- [Erwartungshorizonte](PHP_Dozent/tagesloesungen.html): Antworten, Lösungen für neue PHP-Tagesaufgaben und die beiden ausgewählten Zustandsübungen. Die historischen vollständigen Zusatz-Lösungspakete sind nicht enthalten.
+- Der Themenfundus umfasst die ursprünglichen 13 Bausteine (einschließlich der optionalen Datenbank), 78 Aufgaben, 26 Demos und 156 unterschiedliche Fragen. Neue Tagesseiten führen eine passende Auswahl zusammen; die fünf Tage verlangen nicht die vollständige Bearbeitung des Fundus.
 
-Fünf Projekte verbinden HTML, CSS Grid und PHP mit fachlichen Regeln:
+## KI mit wachsendem Lernstand
 
-- Workshop-Anmeldung: Pflichtfelder, optionale Extras und Kostenberechnung.
-- Fahrrad-Werkstattauftrag: bedingte Pflichtfelder, Termin und Budget.
-- Raumreservierung: Kapazität, Zeiträume und Abrechnung.
-- Teamshirt-Konfigurator: abhängige Angaben und Mengenrabatte.
-- PC-Konfigurator: Kompatibilität, Preispositionen und Budgetvergleich.
+Das [KI-Formularlabor](PHP_Arbeitsbereich/ai/index.html) bietet fünf Szenarien: Workshop, Fahrradwerkstatt, Raumreservierung, Teamshirt und PC-Konfigurator. **Ein Projekt auswählen.** Kleine Kursvarianten begrenzen Umfang und Fachregeln; die bisherigen großen PDFs und Musterlösungen dienen der Vertiefung.
 
-Teilnehmende erstellen eigene **Umsetzungs-, Prüf- und Korrekturprompts**. Die Abgabe umfasst die Anwendung, Annahmen und ein Testprotokoll. Lösungen und Prompt-Muster sind getrennt abgelegt.
+HTML/CSS prüfen → Formular planen → kleinen PHP-Code erklären → Eingaben validieren → eine Cookie- oder Session-Funktion ergänzen. Abgabe: eigene Dateien, eigene Prompts, begründete Änderungen und Normal-/Fehl-/Grenzfalltests. [Aktuelle Kursaufträge als PDF](PHP_Arbeitsbereich/ai/PHP_KI_Kursauftraege_5_Tage.pdf).
 
 ## Rolle von CourseForge
 
-Vor der Erstellung stehen Zielgruppe, Lernziele, Themenauswahl, Kursumfang und Prüfkriterien fest. CourseForge arbeitet daraus die Materialien aus. Die Lehrkraft überprüft Inhalte und Lernweg und arbeitet Feedback ein. Kurs-, Ordner- und Dateibezeichnungen werden vorgegeben; diese Veröffentlichung verwendet durchgehend neutrale PHP-Namen.
+Die Lehrkraft benennt zuerst Zielgruppe, Vorwissen, Lernziele, Zeitrahmen, Themenfolge und Prüfkriterien. CourseForge erstellt zusammenhängende Materialien; die Lehrkraft prüft fachlich und didaktisch und arbeitet Feedback ein. Kurs-, Ordner- und Dateibezeichnungen werden vorgegeben und entsprechend zusammengesetzt. Diese Fassung verwendet neutrale PHP-Namen.
 
-Die Ausarbeitung dauerte nach rückblickender Schätzung etwa vier bis fünf Tage mit sieben bis acht Anpassungen. Dies sind projektspezifische Erfahrungswerte, keine gemessenen Arbeitsstunden oder allgemeine Leistungsgarantie.
+Die ursprüngliche Ausarbeitung dauerte nach rückblickender Schätzung etwa vier bis fünf Tage mit sieben bis acht Anpassungen. Das sind projektspezifische Erfahrungswerte, keine gemessenen Arbeitsstunden oder allgemeine Leistungsgarantie. Die hier dokumentierte Tagesstruktur ist eine Weiterentwicklung des Materials.
 
-Der Rahmen beträgt fünf Tage mit jeweils neun Unterrichtseinheiten. Der Materialfundus enthält auch ergänzende Themen; die Lehrkraft wählt passend zur Lerngruppe aus.
+## Zusammenarbeit und Prüfstand
 
-## Prüfstand
+Persönliche Bearbeitungen liegen unter PHP_Arbeitsbereich/Persoenliche_Arbeit und sind über .gitignore von der gemeinsamen Versionierung ausgenommen. Das öffentliche Repository enthält auch Lehrkraftmaterial; die Trennung ist didaktisch und keine Zugriffskontrolle.
 
-Die aktuelle Bereitstellungsprüfung steht in [pruefberichte/bereitstellung.json](pruefberichte/bereitstellung.json). Sie prüft Dateinamen und Inhalte, JSON, lokale HTML-Verweise, JavaScript-Syntax und die aktualisierten Dateimanifeste.
+Die aktuelle Prüfung steht in [pruefberichte/kursstruktur-review.md](pruefberichte/kursstruktur-review.md) und [bereitstellung.json](pruefberichte/bereitstellung.json). Ältere Prüfberichte sind historische Nachweise und keine erneute Prüfung dieses Stands. Ein echter Windows-/XAMPP-Test erfolgt separat.
 
-Die ursprünglichen Prüfberichte zum Kernkurs und Formularlabor sind getrennt enthalten. Sie dokumentieren unter anderem 22 PHP-HTTP-Fälle im Kernkurs und 152 HTTP-Fälle im Formularlabor. Diese Laufzeittests wurden bei der Umbenennung nicht erneut ausgeführt. Ein vollständiger Windows-/XAMPP-End-to-End-Test und der erfolgreiche Datenbankpfad bleiben gesondert zu prüfen.
-
-Aufgaben können bewusst unvollständigen Startcode enthalten. Zwei gemeinsame Formularübungen kennzeichnen die noch zu entwickelnde Verarbeitung ausdrücklich als Übungsauftrag. Die fünf Musterlösungen des KI-Formularlabors liegen unter PHP_Arbeitsbereich/ai/Loesungen.
-
-## Umfang der Veröffentlichung
-
-Veröffentlicht werden die ausgearbeiteten Lernmaterialien. Interne Ausgangspräsentationen, alte Archivverzeichnisse, persönliche Git-Historien und nicht benötigte Vorschauaufnahmen sind nicht Bestandteil des Repositories. Fachliche Quellenbezüge und öffentlich zugängliche technische Referenzen bleiben erhalten.
-
-Alle Geschäftsszenarien verwenden fiktive Daten. Die Beispiele dienen dem Unterricht; sie führen keine echten Bestellungen, Zahlungen oder E-Mails aus.
-
+Interne Ausgangspräsentationen, persönliche Git-Historien und alte Archive sind nicht Teil der Veröffentlichung. Alle Geschäftsszenarien verwenden fiktive Daten; keine echten Bestellungen, Zahlungen oder E-Mails.
