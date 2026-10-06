@@ -1,0 +1,6 @@
+
+/* Ergänzung: vorhandene PHP-Optik, kein neues Navigationskonzept. */
+.sidebar .nav-label{margin-top:15px}.sidebar details{margin:8px 0}.sidebar details nav{padding:4px 0}.sidebar details nav a{font-size:12px;padding:7px 9px}.sidebar nav a{gap:8px}.slide .hero{min-height:360px}.slide .stats{margin-top:24px}.slide .source a{color:#315376}.slide .grid2 .card h3{margin-top:0}.slide .codebox pre{max-height:440px}.slide .codebox code{overflow-wrap:anywhere}.main .instructions{border-top:4px solid var(--teal)}.filelist code{font-size:13px}.plain-section{margin:26px 0}.source-list li{margin:12px 0}.topline span:last-child{white-space:nowrap}
+@media(min-width:1400px){.slide{font-size:18px}.slide pre{font-size:16px}}
+@media(max-width:700px){.topline{flex-direction:column;gap:0}.slide .hero{min-height:330px}.sidebar details nav{grid-template-columns:1fr}.slide .stats{gap:25px}.slide .source{font-size:10px}.slide .codebox pre{max-height:none}}
+@media print{.slide .codebox pre{max-height:none}.hero h1{font-size:40px}.slide .hero{min-height:0}}

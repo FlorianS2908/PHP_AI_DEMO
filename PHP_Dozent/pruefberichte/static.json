@@ -1,0 +1,20 @@
+{
+  "PHP_Dozent": {
+    "html_files": 118,
+    "php_files_linted": 13
+  },
+  "PHP_Teilnehmer": {
+    "html_files": 77,
+    "php_files_linted": 7
+  },
+  "questions": {
+    "unique": 156,
+    "including_mixed_by_type": {
+      "single": 136,
+      "multiple": 36,
+      "matching-postits": 15,
+      "sql-order": 14
+    }
+  },
+  "errors": []
+}

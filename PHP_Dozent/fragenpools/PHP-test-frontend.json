@@ -1,0 +1,929 @@
+{
+  "id": "PHP-test-frontend",
+  "name": "PHP · Schreibtischtest HTML/CSS/UI/UX",
+  "description": "45 Fragen aus den Bausteinpools zusammengestellt; keine zusätzlichen einzigartigen Fragen.",
+  "durationMinutes": 60,
+  "instructions": "Lies die Angaben genau. Bei Mehrfachwahl steht die Zahl richtiger Antworten dabei. Jede vollständig richtig gelöste Frage zählt einen Punkt. Keine Teilpunkte. Übungspool mit sichtbaren Lösungsschlüsseln im JSON.",
+  "topicLabels": {
+    "01": "User Interfaces",
+    "02": "Qualitätssicherung",
+    "03": "UX beschreiben",
+    "04": "UX gestalten",
+    "05": "HTML-Grundlagen",
+    "06": "HTML-Inhalte",
+    "07": "Struktur und Navigation",
+    "08": "Formulare",
+    "09": "CSS und Selektoren",
+    "10": "Farben und Hintergründe",
+    "11": "PHP und Formulardaten",
+    "12": "PHP und Datenbank",
+    "13": "CSS-Layout ergänzen"
+  },
+  "difficultyLabels": {
+    "leicht": "Grundlagen",
+    "mittel": "Anwendung"
+  },
+  "questions": [
+    {
+      "id": "PHP-01-01",
+      "type": "single",
+      "topic": "01",
+      "difficulty": "leicht",
+      "text": "Welche Verbindung beschreibt ein User Interface in Kapitel 1?",
+      "options": [
+        "Mensch und System",
+        "Zwei USB-Geräte",
+        "Zwei Tabellen",
+        "Zwei Softwaremodule"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Die Benutzerschnittstelle verbindet Anwender und System.",
+      "source": "PHP-Kurs_Kapitel 1_User Interfaces_Präsentation.pdf · 3–31"
+    },
+    {
+      "id": "PHP-01-04",
+      "type": "single",
+      "topic": "01",
+      "difficulty": "leicht",
+      "text": "Welche Aussage über den Touchscreen entspricht der Unterlage?",
+      "options": [
+        "Jedes Gerät darf nur eine Prozessart anbieten.",
+        "Ein Gerät kann getrennte Ein- und Ausgabeprozesse ermöglichen.",
+        "Berührung und Anzeige sind derselbe Prozess.",
+        "Ein Touchscreen ist ausschließlich ein Ausgabegerät."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Das Gerät kann beides, die Informationsrichtungen bleiben verschieden.",
+      "source": "PHP-Kurs_Kapitel 1_User Interfaces_Präsentation.pdf · 3–31"
+    },
+    {
+      "id": "PHP-01-08",
+      "type": "single",
+      "topic": "01",
+      "difficulty": "leicht",
+      "text": "Eine GUI enthält ein Menü und eine Spracheingabe. Wie ist das einzuordnen?",
+      "options": [
+        "Schnittstellentypen können kombiniert werden.",
+        "Eine Spracheingabe macht jeden Bildschirm ungültig.",
+        "Ein Menü verhindert grundsätzlich eine GUI.",
+        "Jedes System darf nur einen Typ besitzen."
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Die Unterlage nennt die Kombination mehrerer Schnittstellen ausdrücklich.",
+      "source": "PHP-Kurs_Kapitel 1_User Interfaces_Präsentation.pdf · 3–31"
+    },
+    {
+      "id": "PHP-01-10",
+      "type": "multiple",
+      "topic": "01",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Angaben helfen bei einer begründeten UI-Auswahl?",
+      "options": [
+        "Zufällige Anzahl der Dateien",
+        "Allein die Lieblingsfarbe der Entwicklung",
+        "Nutzerziel",
+        "Vorkenntnisse der Zielgruppe"
+      ],
+      "correct": [
+        2,
+        3
+      ],
+      "explanation": "Ziel und Voraussetzungen bestimmen, welche Interaktion sinnvoll ist.",
+      "source": "PHP-Kurs_Kapitel 1_User Interfaces_Präsentation.pdf · 3–31"
+    },
+    {
+      "id": "PHP-02-01",
+      "type": "single",
+      "topic": "02",
+      "difficulty": "leicht",
+      "text": "Was muss vor einer nachvollziehbaren Testauswertung feststehen?",
+      "options": [
+        "Die tatsächliche Fehlerursache",
+        "Eine bestimmte Anzahl Screenshots",
+        "Die Lieblingsfarbe des Testers",
+        "Das erwartete Ergebnis"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Ohne Soll-Ergebnis ist ein Vergleich nicht nachvollziehbar.",
+      "source": "PHP-Kurs_Kapitel 2_Qualitätssicherung_Präsentation.pdf · 3–35"
+    },
+    {
+      "id": "PHP-02-04",
+      "type": "single",
+      "topic": "02",
+      "difficulty": "leicht",
+      "text": "Erlaubt sind 1 bis 4 Personen. Welche Grenzprüfung ist besonders aussagekräftig?",
+      "options": [
+        "Nur den Seitentitel lesen",
+        "Nur 2 zweimal prüfen",
+        "Nur die Schriftgröße verändern",
+        "0, 1, 4 und 5 prüfen"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Direkt an den Grenzen und daneben zeigen sich typische Grenzfehler.",
+      "source": "PHP-Kurs_Kapitel 2_Qualitätssicherung_Präsentation.pdf · 3–35"
+    },
+    {
+      "id": "PHP-02-08",
+      "type": "single",
+      "topic": "02",
+      "difficulty": "leicht",
+      "text": "Warum ist „Bestanden“ vor der Durchführung problematisch?",
+      "options": [
+        "Die Eingabe muss immer falsch sein.",
+        "Das Ist-Ergebnis wurde noch nicht beobachtet.",
+        "Ein Test braucht keinen Soll-Wert.",
+        "Ein Test darf nie erfolgreich sein."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Ein Ergebnis wird erst nach dem Vergleich von Soll und tatsächlich beobachtetem Ist dokumentiert.",
+      "source": "PHP-Kurs_Kapitel 2_Qualitätssicherung_Präsentation.pdf · 3–35"
+    },
+    {
+      "id": "PHP-02-10",
+      "type": "multiple",
+      "topic": "02",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Inhalte gehören in ein Testprotokoll?",
+      "options": [
+        "Unbegründete Vermutung als gemessener Wert",
+        "Ist-Ergebnis",
+        "Nur ein Dateiname ohne Fallbeschreibung",
+        "Soll-Ergebnis"
+      ],
+      "correct": [
+        1,
+        3
+      ],
+      "explanation": "Soll und Ist werden pro Fall gegenübergestellt.",
+      "source": "PHP-Kurs_Kapitel 2_Qualitätssicherung_Präsentation.pdf · 3–35"
+    },
+    {
+      "id": "PHP-03-01",
+      "type": "single",
+      "topic": "03",
+      "difficulty": "leicht",
+      "text": "Eine Funktion löst ein relevantes Nutzerproblem. Welcher Honeycomb-Begriff passt unmittelbar?",
+      "options": [
+        "Credible",
+        "Useful",
+        "Findable",
+        "Desirable"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Useful beschreibt den konkreten Nutzen.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 1_Präsentation.pdf · 3–19"
+    },
+    {
+      "id": "PHP-03-04",
+      "type": "single",
+      "topic": "03",
+      "difficulty": "leicht",
+      "text": "Welche Änderung passt am besten zu accessible?",
+      "options": [
+        "Hilfe grundsätzlich entfernen",
+        "Alle Texte ausschließlich in Bilder umwandeln",
+        "Interaktion auf eine bestimmte Mausbewegung beschränken",
+        "Alternative geeignete Bedienwege berücksichtigen"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Accessible berücksichtigt unterschiedliche Voraussetzungen.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 1_Präsentation.pdf · 3–19"
+    },
+    {
+      "id": "PHP-03-08",
+      "type": "single",
+      "topic": "03",
+      "difficulty": "leicht",
+      "text": "Eine passende Suchfunktion verlangt unerklärte interne Codes. Welche Einordnung ist schlüssig?",
+      "options": [
+        "Nützlich, aber in der Bedienung verbesserungsbedürftig",
+        "Automatisch in allen sieben Bereichen gut",
+        "Nur das Farbschema ist betroffen",
+        "Nicht nützlich, weil jede schwierige Funktion zwecklos ist"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Useful und usable lassen sich unterscheiden.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 1_Präsentation.pdf · 3–19"
+    },
+    {
+      "id": "PHP-03-10",
+      "type": "multiple",
+      "topic": "03",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Merkmale passen zur Darstellung von desirable?",
+      "options": [
+        "Erzwungenes Flackern",
+        "Ablenkung vom Hauptinhalt",
+        "Störungsfreies Erlebnis",
+        "Klarheit"
+      ],
+      "correct": [
+        2,
+        3
+      ],
+      "explanation": "Die Unterlage betont einladende, klare, nicht störende Gestaltung.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 1_Präsentation.pdf · 3–19"
+    },
+    {
+      "id": "PHP-04-01",
+      "type": "single",
+      "topic": "04",
+      "difficulty": "leicht",
+      "text": "Welcher Text passt zu einer erfolgreichen Suche ohne Treffer?",
+      "options": [
+        "Keine passenden Angebote gefunden.",
+        "Die Verbindung ist zwingend ausgefallen.",
+        "Ihr Kennwort wurde geändert.",
+        "Buchung abgeschlossen."
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Eine leere Trefferliste ist ein eigenständiger Ergebniszustand.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 2_Präsentation.pdf · 4–63"
+    },
+    {
+      "id": "PHP-04-04",
+      "type": "single",
+      "topic": "04",
+      "difficulty": "leicht",
+      "text": "Statt freiem Text werden verfügbare Ziele auswählbar angeboten. Welches Prinzip wird direkt angewendet?",
+      "options": [
+        "Fehlervermeidung",
+        "Nur rückwirkende Dokumentation",
+        "Zufällige Navigation",
+        "Irreführende Erfolgsmeldung"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Geeignete Eingabeformen können bestimmte Tippfehler vermeiden.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 2_Präsentation.pdf · 4–63"
+    },
+    {
+      "id": "PHP-04-08",
+      "type": "single",
+      "topic": "04",
+      "difficulty": "leicht",
+      "text": "Welche Hilfe ist unmittelbar kontextbezogen?",
+      "options": [
+        "Eine versteckte Dokumentation ohne Verweis",
+        "Ein nicht schließbares Werbefenster",
+        "Ein beliebiger Text ohne Bezug zur Eingabe",
+        "Ein kurzer Hinweis am betroffenen Datumsfeld"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Kontextbezogene Hilfe unterstützt genau den aktuellen Arbeitsschritt.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 2_Präsentation.pdf · 4–63"
+    },
+    {
+      "id": "PHP-04-10",
+      "type": "multiple",
+      "topic": "04",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Eigenschaften sollte eine hilfreiche Fehlermeldung haben?",
+      "options": [
+        "Nur einen internen Fehlercode enthalten",
+        "Konkreten nächsten Schritt anbieten",
+        "Problem verständlich benennen",
+        "Der Person ohne Grundlage Schuld zuschreiben"
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "explanation": "Verständlichkeit und Handlungsbezug helfen bei der Korrektur.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 2_Präsentation.pdf · 4–63"
+    },
+    {
+      "id": "PHP-05-01",
+      "type": "single",
+      "topic": "05",
+      "difficulty": "leicht",
+      "text": "Wo steht der sichtbare Inhalt im Kurs-Grundgerüst?",
+      "options": [
+        "Im body",
+        "Ausschließlich im head",
+        "Im Dateinamen",
+        "Im charset-Attribut"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "body enthält den darzustellenden Inhalt.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf · 5–28"
+    },
+    {
+      "id": "PHP-05-04",
+      "type": "single",
+      "topic": "05",
+      "difficulty": "leicht",
+      "text": "Welche Eigenschaft trifft auf IDs im Dokument zu?",
+      "options": [
+        "Eine ID wird nur in CSS deklariert.",
+        "IDs ersetzen automatisch name in Formularen.",
+        "Sie sollen Elemente eindeutig identifizieren.",
+        "Alle Absätze müssen dieselbe ID besitzen."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "IDs haben eine Kennzeichnungsrolle im Dokument.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf · 5–28"
+    },
+    {
+      "id": "PHP-05-08",
+      "type": "single",
+      "topic": "05",
+      "difficulty": "mittel",
+      "text": "Was zeigt ein Browser typischerweise von diesem Inhalt als normalen Seitentext?<pre><code>&lt;!-- Interner Hinweis --&gt;\n&lt;p&gt;Reiseplanung&lt;/p&gt;</code></pre>",
+      "options": [
+        "Interner Hinweis",
+        "Reiseplanung",
+        "Beide Texte hintereinander",
+        "Keinen der Texte"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Kommentare sind kein normal angezeigter Seiteninhalt.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf · 5–28"
+    },
+    {
+      "id": "PHP-05-10",
+      "type": "multiple",
+      "topic": "05",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Prüfungen helfen beim ersten lokalen HTML-Dokument?",
+      "options": [
+        "Zeichencodierung und Umlaute prüfen",
+        "Eine Datenbankanmeldung erzwingen",
+        "Dateiendung kontrollieren",
+        "Jede Datei zwingend in PHP umbenennen"
+      ],
+      "correct": [
+        0,
+        2
+      ],
+      "explanation": "Für die statische HTML-Seite sind Endung und Codierung unmittelbar relevant.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf · 5–28"
+    },
+    {
+      "id": "PHP-06-01",
+      "type": "single",
+      "topic": "06",
+      "difficulty": "leicht",
+      "text": "Warum sollte eine Überschriftenebene gewählt werden?",
+      "options": [
+        "Wegen der inhaltlichen Hierarchie",
+        "Wegen der Zahl der CSS-Dateien",
+        "Nur wegen einer gewünschten Schriftgröße",
+        "Wegen der Dateigröße"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "HTML gliedert Inhalte; CSS kann Größen gestalten.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf · 30–47"
+    },
+    {
+      "id": "PHP-06-04",
+      "type": "single",
+      "topic": "06",
+      "difficulty": "leicht",
+      "text": "Worauf bezieht sich ein relativer Bildpfad in HTML?",
+      "options": [
+        "Auf den Ort der HTML-Datei",
+        "Immer auf den Ordner des Browsers",
+        "Immer auf die Datenbank",
+        "Immer auf C:\\Windows"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Die Ressource muss von der HTML-Datei aus erreichbar sein.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf · 30–47"
+    },
+    {
+      "id": "PHP-06-08",
+      "type": "single",
+      "topic": "06",
+      "difficulty": "leicht",
+      "text": "Was aktiviert controls bei video?",
+      "options": [
+        "Eine neue Videodatei wird erzeugt.",
+        "Die Datenbank startet.",
+        "Die Dateiendung wird geändert.",
+        "Die üblichen Bedienelemente"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "controls stellt eine Steuerung bereit; die Ressource muss vorhanden sein.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf · 30–47"
+    },
+    {
+      "id": "PHP-06-10",
+      "type": "multiple",
+      "topic": "06",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Elemente gliedern die Bereiche einer Datentabelle?",
+      "options": [
+        "tbody",
+        "nav",
+        "thead",
+        "textarea"
+      ],
+      "correct": [
+        0,
+        2
+      ],
+      "explanation": "thead und tbody gliedern Kopf- und Datenbereich.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf · 30–47"
+    },
+    {
+      "id": "PHP-07-01",
+      "type": "single",
+      "topic": "07",
+      "difficulty": "leicht",
+      "text": "Welches Element passt zu einleitenden Informationen?",
+      "options": [
+        "option",
+        "td",
+        "header",
+        "textarea"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "header enthält einleitende Inhalte.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 3–12, 20–21"
+    },
+    {
+      "id": "PHP-07-04",
+      "type": "single",
+      "topic": "07",
+      "difficulty": "leicht",
+      "text": "Welche Rolle hat aside?",
+      "options": [
+        "Ausschließlich die Formularübermittlung",
+        "Die Bildquelle",
+        "Zwingend jede Hauptüberschrift",
+        "Ergänzende Informationen"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "aside ergänzt den Hauptzusammenhang.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 3–12, 20–21"
+    },
+    {
+      "id": "PHP-07-08",
+      "type": "single",
+      "topic": "07",
+      "difficulty": "leicht",
+      "text": "Drei Seiten liegen im selben Ordner. Wie verweist Start auf reisen.html?",
+      "options": [
+        "class=\"reisen.html\" ohne Link",
+        "src=\"reisen.html\" am p",
+        "method=\"reisen.html\"",
+        "href=\"reisen.html\""
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "href benennt das Navigationsziel.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 3–12, 20–21"
+    },
+    {
+      "id": "PHP-07-10",
+      "type": "multiple",
+      "topic": "07",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Punkte gehören zu einem Navigationstest?",
+      "options": [
+        "Rückwege nachvollziehbar",
+        "Links dürfen nur mit Maus funktionieren",
+        "Alle Zieldateien erreichbar",
+        "Jede Seite hat zwingend dieselbe Überschrift"
+      ],
+      "correct": [
+        0,
+        2
+      ],
+      "explanation": "Erreichbarkeit und Orientierung sind konkrete Prüfkriterien.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 3–12, 20–21"
+    },
+    {
+      "id": "PHP-08-01",
+      "type": "single",
+      "topic": "08",
+      "difficulty": "leicht",
+      "text": "Was beschreibt action am form?",
+      "options": [
+        "Die Textfarbe",
+        "Das Ziel der Übermittlung",
+        "Die eindeutige Feld-ID",
+        "Die Zahl der Radio-Optionen"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "action benennt die verarbeitende Adresse.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 14–32"
+    },
+    {
+      "id": "PHP-08-04",
+      "type": "single",
+      "topic": "08",
+      "difficulty": "leicht",
+      "text": "Was bildet die Radio-Gruppe?",
+      "options": [
+        "Identische IDs",
+        "Gleiche Farbe",
+        "Gleicher sichtbarer Text",
+        "Gleicher name-Wert"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Die Optionswerte werden über den gemeinsamen Namen gruppiert.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 14–32"
+    },
+    {
+      "id": "PHP-08-08",
+      "type": "single",
+      "topic": "08",
+      "difficulty": "leicht",
+      "text": "Was setzt type=&quot;reset&quot; zurück?",
+      "options": [
+        "Zwingend jeden Wert auf leeren Text",
+        "Die Formularwerte auf ihre Ausgangswerte",
+        "Den HTML-Standard",
+        "Die gesamte Festplatte"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Reset bedeutet Rückkehr zur Vorbelegung, nicht zwingend Leeren.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 14–32"
+    },
+    {
+      "id": "PHP-08-10",
+      "type": "multiple",
+      "topic": "08",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Aussagen zur lokalen Demo stimmen?",
+      "options": [
+        "Sie weist bereits eine Datenbankspeicherung nach.",
+        "Sie bestätigt automatisch eine Identität.",
+        "Sie ist keine echte Buchung.",
+        "Die Vorschau zeigt Formularnamen und Werte."
+      ],
+      "correct": [
+        2,
+        3
+      ],
+      "explanation": "Die Demo erklärt die Datenstruktur, nicht einen produktiven Geschäftsabschluss.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 14–32"
+    },
+    {
+      "id": "PHP-09-01",
+      "type": "single",
+      "topic": "09",
+      "difficulty": "leicht",
+      "text": "Welcher Bestandteil bestimmt die betroffenen Elemente?",
+      "options": [
+        "Semikolon",
+        "Selektor",
+        "Dateigröße",
+        "Eigenschaftswert"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Der Selektor wählt passende Elemente aus.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 1_Präsentation.pdf · 3–44"
+    },
+    {
+      "id": "PHP-09-04",
+      "type": "single",
+      "topic": "09",
+      "difficulty": "mittel",
+      "text": "Welche Elemente trifft main &gt; p im Beispiel?<pre><code>&lt;main&gt;\n  &lt;p&gt;A&lt;/p&gt;\n  &lt;article&gt;&lt;p&gt;B&lt;/p&gt;&lt;/article&gt;\n&lt;/main&gt;</code></pre>",
+      "options": [
+        "A und B",
+        "Keinen Absatz",
+        "Nur B",
+        "Nur A"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "> verlangt direkte Kinder.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 1_Präsentation.pdf · 3–44"
+    },
+    {
+      "id": "PHP-09-08",
+      "type": "single",
+      "topic": "09",
+      "difficulty": "leicht",
+      "text": "Welche Aussage zu p.hinweis stimmt?",
+      "options": [
+        "Alle p und alle Elemente mit hinweis werden unabhängig ausgewählt.",
+        "Nur Kinder eines Elements hinweis werden ausgewählt.",
+        "Ein p-Element muss zugleich die Klasse hinweis besitzen.",
+        "Es ist ein ID-Selektor."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Zusammengesetzter Selektor: beide Bedingungen am selben Element.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 1_Präsentation.pdf · 3–44"
+    },
+    {
+      "id": "PHP-09-10",
+      "type": "multiple",
+      "topic": "09",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Selektoren sprechen nachfolgende Geschwisterbeziehungen an?",
+      "options": [
+        "h2 + p",
+        "h2 p",
+        "h2 > p",
+        "h2 ~ p"
+      ],
+      "correct": [
+        0,
+        3
+      ],
+      "explanation": "+ beschreibt direkt folgende, ~ passende nachfolgende Geschwister.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 1_Präsentation.pdf · 3–44"
+    },
+    {
+      "id": "PHP-10-01",
+      "type": "single",
+      "topic": "10",
+      "difficulty": "leicht",
+      "text": "Welche Eigenschaft färbt den Text?",
+      "options": [
+        "background-color",
+        "color",
+        "background-repeat",
+        "opacity als reiner Farbwert"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "color steuert die Textfarbe.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 2_Präsentation.pdf · 3–49"
+    },
+    {
+      "id": "PHP-10-04",
+      "type": "single",
+      "topic": "10",
+      "difficulty": "leicht",
+      "text": "Worauf bezieht sich url(&quot;bild.svg&quot;) in einer externen CSS-Datei?",
+      "options": [
+        "Auf den Speicherort dieser CSS-Datei",
+        "Immer auf den Browserordner",
+        "Immer auf den Datenbankordner",
+        "Immer auf das Laufwerk C:"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Relative Ressourcen werden aus Sicht der CSS-Datei aufgelöst.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 2_Präsentation.pdf · 3–49"
+    },
+    {
+      "id": "PHP-10-08",
+      "type": "single",
+      "topic": "10",
+      "difficulty": "leicht",
+      "text": "Welche Funktion erzeugt einen Verlauf um ein Zentrum herum?",
+      "options": [
+        "linear-gradient",
+        "font-gradient",
+        "background-repeat",
+        "conic-gradient"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Konische Verläufe verteilen Farben um das Zentrum.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 2_Präsentation.pdf · 3–49"
+    },
+    {
+      "id": "PHP-10-10",
+      "type": "multiple",
+      "topic": "10",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Aussagen zu Farbkonzepten passen zum Kurs?",
+      "options": [
+        "Alle Menschen empfinden eine Farbe zwingend gleich.",
+        "Beschriftungen werden durch Farbe immer vollständig ersetzt.",
+        "Eine Palette unterstützt konsistente Gestaltung.",
+        "Farbassoziationen sind kontext- und kulturbezogen."
+      ],
+      "correct": [
+        2,
+        3
+      ],
+      "explanation": "Die Unterlage behandelt Schemata und kulturelle Einflüsse, keine universellen Reaktionsgarantien.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 2_Präsentation.pdf · 3–49"
+    },
+    {
+      "id": "PHP-05-05",
+      "type": "single",
+      "topic": "05",
+      "difficulty": "mittel",
+      "text": "Was bewirken die beiden class-Angaben?<pre><code>&lt;p class=&quot;hinweis&quot;&gt;A&lt;/p&gt;\n&lt;p class=&quot;hinweis&quot;&gt;B&lt;/p&gt;</code></pre>",
+      "options": [
+        "Beide Absätze gehören zur Klasse hinweis.",
+        "Beide Absätze besitzen dieselbe ID.",
+        "Nur der zweite Absatz darf dargestellt werden.",
+        "Der Browser sendet sofort eine POST-Anfrage."
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Klassen können mehrere Elemente gruppieren.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf · 5–28"
+    },
+    {
+      "id": "PHP-06-11",
+      "type": "matching-postits",
+      "topic": "06",
+      "difficulty": "mittel",
+      "text": "Ordne die Begriffe ihren Beschreibungen zu.",
+      "items": [
+        {
+          "id": "i0",
+          "text": "caption"
+        },
+        {
+          "id": "i1",
+          "text": "th"
+        },
+        {
+          "id": "i2",
+          "text": "tr"
+        }
+      ],
+      "targets": [
+        {
+          "id": "t2",
+          "text": "Tabellenzeile"
+        },
+        {
+          "id": "t1",
+          "text": "Kopfzelle"
+        },
+        {
+          "id": "t0",
+          "text": "Beschriftung der Tabelle"
+        }
+      ],
+      "pairs": [
+        {
+          "leftId": "i0",
+          "rightId": "t0"
+        },
+        {
+          "leftId": "i1",
+          "rightId": "t1"
+        },
+        {
+          "leftId": "i2",
+          "rightId": "t2"
+        }
+      ],
+      "explanation": "caption: Beschriftung der Tabelle; th: Kopfzelle; tr: Tabellenzeile",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf"
+    },
+    {
+      "id": "PHP-07-12",
+      "type": "sql-order",
+      "topic": "07",
+      "difficulty": "mittel",
+      "text": "Ordne den im Kurs vorgegebenen Arbeitsablauf. Gemeint ist diese didaktische Reihenfolge, nicht die einzig mögliche Vorgehensweise in jedem Projekt.",
+      "blocks": [
+        {
+          "id": "b3",
+          "text": "Alle Wege prüfen"
+        },
+        {
+          "id": "b2",
+          "text": "Links setzen"
+        },
+        {
+          "id": "b1",
+          "text": "Zieldateien anlegen"
+        },
+        {
+          "id": "b0",
+          "text": "Seiten planen"
+        }
+      ],
+      "correctOrder": [
+        "b0",
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "explanation": "Seiten planen → Zieldateien anlegen → Links setzen → Alle Wege prüfen",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf"
+    },
+    {
+      "id": "PHP-08-11",
+      "type": "matching-postits",
+      "topic": "08",
+      "difficulty": "mittel",
+      "text": "Ordne die Begriffe ihren Beschreibungen zu.",
+      "items": [
+        {
+          "id": "i0",
+          "text": "id"
+        },
+        {
+          "id": "i1",
+          "text": "name"
+        },
+        {
+          "id": "i2",
+          "text": "value"
+        }
+      ],
+      "targets": [
+        {
+          "id": "t2",
+          "text": "Wert der gewählten Option"
+        },
+        {
+          "id": "t1",
+          "text": "Übermittelter Feldname"
+        },
+        {
+          "id": "t0",
+          "text": "Kennzeichnung für die Label-Zuordnung"
+        }
+      ],
+      "pairs": [
+        {
+          "leftId": "i0",
+          "rightId": "t0"
+        },
+        {
+          "leftId": "i1",
+          "rightId": "t1"
+        },
+        {
+          "leftId": "i2",
+          "rightId": "t2"
+        }
+      ],
+      "explanation": "id: Kennzeichnung für die Label-Zuordnung; name: Übermittelter Feldname; value: Wert der gewählten Option",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf"
+    },
+    {
+      "id": "PHP-09-06",
+      "type": "single",
+      "topic": "09",
+      "difficulty": "mittel",
+      "text": "Welche Farbe gilt bei normalen Regeln gleicher Herkunft und Ebene?<pre><code>#meldung { color: navy; }\n.hinweis { color: red; }\n/* p mit id=&quot;meldung&quot; und class=&quot;hinweis&quot; */</code></pre>",
+      "options": [
+        "navy",
+        "Zwingend die Browserfarbe",
+        "red",
+        "Beide Farben gleichzeitig"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Der ID-Selektor ist hier spezifischer als die Klasse.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 1_Präsentation.pdf · 3–44"
+    }
+  ]
+}

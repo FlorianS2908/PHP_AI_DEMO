@@ -1,0 +1,294 @@
+{
+  "id": "PHP-03",
+  "name": "PHP · 03 · UX beschreiben",
+  "description": "12 Fragen · Grundlagen, Anwendung, Zuordnung und Reihenfolge",
+  "durationMinutes": 20,
+  "instructions": "Lies die Angaben genau. Bei Mehrfachwahl steht die Zahl richtiger Antworten dabei. Jede vollständig richtig gelöste Frage zählt einen Punkt. Keine Teilpunkte. Übungspool mit sichtbaren Lösungsschlüsseln im JSON.",
+  "topicLabels": {
+    "01": "User Interfaces",
+    "02": "Qualitätssicherung",
+    "03": "UX beschreiben",
+    "04": "UX gestalten",
+    "05": "HTML-Grundlagen",
+    "06": "HTML-Inhalte",
+    "07": "Struktur und Navigation",
+    "08": "Formulare",
+    "09": "CSS und Selektoren",
+    "10": "Farben und Hintergründe",
+    "11": "PHP und Formulardaten",
+    "12": "PHP und Datenbank",
+    "13": "CSS-Layout ergänzen"
+  },
+  "difficultyLabels": {
+    "leicht": "Grundlagen",
+    "mittel": "Anwendung"
+  },
+  "questions": [
+    {
+      "id": "PHP-03-01",
+      "type": "single",
+      "topic": "03",
+      "difficulty": "leicht",
+      "text": "Eine Funktion löst ein relevantes Nutzerproblem. Welcher Honeycomb-Begriff passt unmittelbar?",
+      "options": [
+        "Credible",
+        "Useful",
+        "Findable",
+        "Desirable"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Useful beschreibt den konkreten Nutzen.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 1_Präsentation.pdf · 3–19"
+    },
+    {
+      "id": "PHP-03-02",
+      "type": "single",
+      "topic": "03",
+      "difficulty": "leicht",
+      "text": "Die Zielgruppe versteht Feldnamen und den nächsten Schritt. Welcher Begriff steht im Vordergrund?",
+      "options": [
+        "Usable",
+        "Valuable allein",
+        "Credible allein",
+        "Desirable allein"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Usable betrifft die verständliche und zielführende Bedienung.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 1_Präsentation.pdf · 3–19"
+    },
+    {
+      "id": "PHP-03-03",
+      "type": "single",
+      "topic": "03",
+      "difficulty": "leicht",
+      "text": "Der Hilfebereich ist leicht erreichbar. Welcher Bereich wird direkt unterstützt?",
+      "options": [
+        "Nur Datenintegrität",
+        "Findable",
+        "Nur useful",
+        "Nur Speicherverbrauch"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Findable umfasst das Auffinden von Information und Hilfe.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 1_Präsentation.pdf · 3–19"
+    },
+    {
+      "id": "PHP-03-04",
+      "type": "single",
+      "topic": "03",
+      "difficulty": "leicht",
+      "text": "Welche Änderung passt am besten zu accessible?",
+      "options": [
+        "Hilfe grundsätzlich entfernen",
+        "Alle Texte ausschließlich in Bilder umwandeln",
+        "Interaktion auf eine bestimmte Mausbewegung beschränken",
+        "Alternative geeignete Bedienwege berücksichtigen"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Accessible berücksichtigt unterschiedliche Voraussetzungen.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 1_Präsentation.pdf · 3–19"
+    },
+    {
+      "id": "PHP-03-05",
+      "type": "single",
+      "topic": "03",
+      "difficulty": "leicht",
+      "text": "Welche Aussage einer Suchdemo ist glaubwürdig?",
+      "options": [
+        "Jede Anfrage gelingt garantiert.",
+        "Der angezeigte Preis ist immer ein echtes Marktangebot.",
+        "Es wurden fiktive Angebote gefunden; es ist nichts gebucht.",
+        "Ihre Reise ist verbindlich gebucht, obwohl nichts gespeichert wurde."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Credible verlangt ehrliche Aussagen zum tatsächlich erreichten Zustand.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 1_Präsentation.pdf · 3–19"
+    },
+    {
+      "id": "PHP-03-06",
+      "type": "single",
+      "topic": "03",
+      "difficulty": "leicht",
+      "text": "Was beschreibt valuable in dieser Unterlage?",
+      "options": [
+        "Durchdacht und mit Sorgfalt entwickelt",
+        "Ausschließlich die Anzahl Animationen",
+        "Beliebig viele Zusatzfunktionen",
+        "Nur der höchste Verkaufspreis"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Die Antwort folgt bewusst der Formulierung der bereitgestellten Unterlage.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 1_Präsentation.pdf · 3–19"
+    },
+    {
+      "id": "PHP-03-07",
+      "type": "single",
+      "topic": "03",
+      "difficulty": "leicht",
+      "text": "Welche Aussage ist eine Beobachtung statt eines bloßen Geschmacksurteils?",
+      "options": [
+        "Die Seite ist irgendwie doof.",
+        "Der Suchbutton ist nur mit „Los“ beschriftet.",
+        "Blau gefällt mir nicht.",
+        "Die Oberfläche ist bestimmt schlecht."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Die konkrete Beschriftung ist beobachtbar und kann anhand des Nutzerziels bewertet werden.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 1_Präsentation.pdf · 3–19"
+    },
+    {
+      "id": "PHP-03-08",
+      "type": "single",
+      "topic": "03",
+      "difficulty": "leicht",
+      "text": "Eine passende Suchfunktion verlangt unerklärte interne Codes. Welche Einordnung ist schlüssig?",
+      "options": [
+        "Nützlich, aber in der Bedienung verbesserungsbedürftig",
+        "Automatisch in allen sieben Bereichen gut",
+        "Nur das Farbschema ist betroffen",
+        "Nicht nützlich, weil jede schwierige Funktion zwecklos ist"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Useful und usable lassen sich unterscheiden.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 1_Präsentation.pdf · 3–19"
+    },
+    {
+      "id": "PHP-03-09",
+      "type": "multiple",
+      "topic": "03",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Änderungen unterstützen transparente Kommunikation?",
+      "options": [
+        "Fiktive Werte als fiktiv benennen",
+        "Fehlermeldungen grundsätzlich verstecken",
+        "Demo als Demo kennzeichnen",
+        "Eine nicht erfolgte Buchung bestätigen"
+      ],
+      "correct": [
+        0,
+        2
+      ],
+      "explanation": "Die tatsächlichen Grenzen müssen erkennbar sein.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 1_Präsentation.pdf · 3–19"
+    },
+    {
+      "id": "PHP-03-10",
+      "type": "multiple",
+      "topic": "03",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Merkmale passen zur Darstellung von desirable?",
+      "options": [
+        "Erzwungenes Flackern",
+        "Ablenkung vom Hauptinhalt",
+        "Störungsfreies Erlebnis",
+        "Klarheit"
+      ],
+      "correct": [
+        2,
+        3
+      ],
+      "explanation": "Die Unterlage betont einladende, klare, nicht störende Gestaltung.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 1_Präsentation.pdf · 3–19"
+    },
+    {
+      "id": "PHP-03-11",
+      "type": "matching-postits",
+      "topic": "03",
+      "difficulty": "mittel",
+      "text": "Ordne die Begriffe ihren Beschreibungen zu.",
+      "items": [
+        {
+          "id": "i0",
+          "text": "Useful"
+        },
+        {
+          "id": "i1",
+          "text": "Findable"
+        },
+        {
+          "id": "i2",
+          "text": "Credible"
+        }
+      ],
+      "targets": [
+        {
+          "id": "t2",
+          "text": "Transparent und ehrlich"
+        },
+        {
+          "id": "t1",
+          "text": "Information und Hilfe auffindbar"
+        },
+        {
+          "id": "t0",
+          "text": "Hilft ein Nutzerziel zu erreichen"
+        }
+      ],
+      "pairs": [
+        {
+          "leftId": "i0",
+          "rightId": "t0"
+        },
+        {
+          "leftId": "i1",
+          "rightId": "t1"
+        },
+        {
+          "leftId": "i2",
+          "rightId": "t2"
+        }
+      ],
+      "explanation": "Useful: Hilft ein Nutzerziel zu erreichen; Findable: Information und Hilfe auffindbar; Credible: Transparent und ehrlich",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 1_Präsentation.pdf"
+    },
+    {
+      "id": "PHP-03-12",
+      "type": "sql-order",
+      "topic": "03",
+      "difficulty": "mittel",
+      "text": "Ordne den im Kurs vorgegebenen Arbeitsablauf. Gemeint ist diese didaktische Reihenfolge, nicht die einzig mögliche Vorgehensweise in jedem Projekt.",
+      "blocks": [
+        {
+          "id": "b3",
+          "text": "Verbesserung begründen"
+        },
+        {
+          "id": "b2",
+          "text": "Beobachtung einem Bereich zuordnen"
+        },
+        {
+          "id": "b1",
+          "text": "Oberfläche beobachten"
+        },
+        {
+          "id": "b0",
+          "text": "Nutzerziel festlegen"
+        }
+      ],
+      "correctOrder": [
+        "b0",
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "explanation": "Nutzerziel festlegen → Oberfläche beobachten → Beobachtung einem Bereich zuordnen → Verbesserung begründen",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 1_Präsentation.pdf"
+    }
+  ]
+}

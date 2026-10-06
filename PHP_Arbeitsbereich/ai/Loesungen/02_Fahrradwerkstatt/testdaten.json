@@ -1,0 +1,18 @@
+{
+  "eingabe": {
+    "name": "Alex Beispiel",
+    "email": "alex@example.com",
+    "kontaktweg": "email",
+    "telefon": "",
+    "radtyp": "city",
+    "abgabe": "@future_date",
+    "leistungen": [
+      "inspektion",
+      "bremse"
+    ],
+    "prioritaet": "express",
+    "budget": "80.00",
+    "beschreibung": "Die Bremse schleift."
+  },
+  "erwartete_gesamtsumme": "104,00 €"
+}

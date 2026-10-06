@@ -1,0 +1,304 @@
+{
+  "id": "PHP-12",
+  "name": "PHP · 12 · PHP und Datenbank",
+  "description": "12 Fragen · Grundlagen, Anwendung, Zuordnung und Reihenfolge",
+  "durationMinutes": 20,
+  "instructions": "Lies die Angaben genau. Bei Mehrfachwahl steht die Zahl richtiger Antworten dabei. Jede vollständig richtig gelöste Frage zählt einen Punkt. Keine Teilpunkte. Übungspool mit sichtbaren Lösungsschlüsseln im JSON.",
+  "topicLabels": {
+    "01": "User Interfaces",
+    "02": "Qualitätssicherung",
+    "03": "UX beschreiben",
+    "04": "UX gestalten",
+    "05": "HTML-Grundlagen",
+    "06": "HTML-Inhalte",
+    "07": "Struktur und Navigation",
+    "08": "Formulare",
+    "09": "CSS und Selektoren",
+    "10": "Farben und Hintergründe",
+    "11": "PHP und Formulardaten",
+    "12": "PHP und Datenbank",
+    "13": "CSS-Layout ergänzen"
+  },
+  "difficultyLabels": {
+    "leicht": "Grundlagen",
+    "mittel": "Anwendung"
+  },
+  "questions": [
+    {
+      "id": "PHP-12-01",
+      "type": "single",
+      "topic": "12",
+      "difficulty": "leicht",
+      "text": "Welche vier Angaben gehören zur lokalen DB-Verbindung?",
+      "options": [
+        "Host, Benutzer, Kennwort, Datenbank",
+        "Titel, h1, h2, h3",
+        "Link, Bild, Video, Tabelle",
+        "Farbe, Rahmen, Margin, Padding"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Diese Angaben bestimmen das Verbindungsziel und die Zugangsdaten.",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf · 22–39"
+    },
+    {
+      "id": "PHP-12-02",
+      "type": "single",
+      "topic": "12",
+      "difficulty": "leicht",
+      "text": "Welche Aussage zu MySQLi folgt der Unterlage?",
+      "options": [
+        "Es benötigt immer eigene Benutzerklassen.",
+        "Es kann keine vorbereiteten Anweisungen verwenden.",
+        "Es bietet prozedurale und objektorientierte Aufrufe.",
+        "Es ist ausschließlich ein HTML-Element."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Die Unterlage nennt beide Schnittstellen und Prepared Statements.",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf · 22–39"
+    },
+    {
+      "id": "PHP-12-03",
+      "type": "single",
+      "topic": "12",
+      "difficulty": "mittel",
+      "text": "Was vertritt das Fragezeichen in dieser Anweisung?<pre><code>SELECT ziel, preis_cent FROM angebote WHERE ziel = ?</code></pre>",
+      "options": [
+        "Einen zu bindenden Datenwert",
+        "Ein CSS-Attribut",
+        "Den vollständigen SQL-Befehl",
+        "Immer den Datenbanknamen"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Die SQL-Struktur bleibt fest, der Zielwert wird gebunden.",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf · 22–39"
+    },
+    {
+      "id": "PHP-12-04",
+      "type": "single",
+      "topic": "12",
+      "difficulty": "leicht",
+      "text": "Warum wird ein Formularwert gebunden statt in SQL kopiert?",
+      "options": [
+        "Damit HTML automatisch maskiert wird.",
+        "SQL-Struktur und Datenwert bleiben getrennt.",
+        "Damit jede Suche eine Buchung erzeugt.",
+        "Damit keine Eingabeprüfung mehr erforderlich ist."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Parameterbindung schützt die Abfragestruktur; Eingabeprüfung und HTML-Ausgabe bleiben eigene Aufgaben.",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf · 22–39"
+    },
+    {
+      "id": "PHP-12-05",
+      "type": "single",
+      "topic": "12",
+      "difficulty": "leicht",
+      "text": "Die Abfrage wurde ausgeführt, aber liefert keine Zeilen. Was bedeutet das?",
+      "options": [
+        "Keine passenden Datensätze vorhanden",
+        "Zwingend falsches Kennwort",
+        "Automatische Buchung",
+        "Zwingend PHP-Syntaxfehler"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Leere Liste ist nicht gleich technischer Ausfall.",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf · 22–39"
+    },
+    {
+      "id": "PHP-12-06",
+      "type": "single",
+      "topic": "12",
+      "difficulty": "leicht",
+      "text": "Welche Aufgabe erfüllt die Hilfsdatei db.php?",
+      "options": [
+        "Wiederkehrenden Verbindungsaufbau bereitstellen",
+        "Alle Diagramme als Bilder speichern",
+        "Den Browsertitel zwingend ändern",
+        "Jede Eingabe ungeprüft akzeptieren"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Die Funktion kann von mehreren Seiten genutzt werden.",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf · 22–39"
+    },
+    {
+      "id": "PHP-12-07",
+      "type": "single",
+      "topic": "12",
+      "difficulty": "leicht",
+      "text": "Was ist durch eine angezeigte Trefferliste belegt?",
+      "options": [
+        "Die Suche hat diese Ergebnisse geliefert.",
+        "Eine Zahlung ist abgeschlossen.",
+        "Die Reise ist verbindlich gebucht.",
+        "Eine Identität wurde sicher geprüft."
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Die Suchreferenz implementiert keine Buchung oder Anmeldung.",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf · 22–39"
+    },
+    {
+      "id": "PHP-12-08",
+      "type": "single",
+      "topic": "12",
+      "difficulty": "leicht",
+      "text": "Welche Stelle sollte keine produktiven Zugangsdaten enthalten?",
+      "options": [
+        "Nur der Datenbankserver",
+        "Nur die lokale Konfiguration",
+        "Keine, Zugangsdaten sind immer öffentliche Beispieldaten",
+        "Das allgemein verteilte Kurspaket"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Die Vorlage enthält Platzhalter; reale Werte bleiben lokal.",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf · 22–39"
+    },
+    {
+      "id": "PHP-12-09",
+      "type": "multiple",
+      "topic": "12",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Prüfungen bleiben trotz Parameterbindung sinnvoll?",
+      "options": [
+        "SQL aus Nutzereingaben zusammensetzen?",
+        "HTML-Ausgabe passend maskiert?",
+        "Jeden Fehler als Erfolg anzeigen?",
+        "Ziel fachlich zulässig?"
+      ],
+      "correct": [
+        1,
+        3
+      ],
+      "explanation": "Die Schutzaufgaben sind verschieden und ersetzen einander nicht.",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf · 22–39"
+    },
+    {
+      "id": "PHP-12-10",
+      "type": "multiple",
+      "topic": "12",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Teile sind in der Kurs-Suchreferenz implementiert?",
+      "options": [
+        "Passwortbasierte Anmeldung",
+        "Verbindlicher Buchungsabschluss",
+        "Gefilterte Ergebnisdarstellung",
+        "Zielauswahl"
+      ],
+      "correct": [
+        2,
+        3
+      ],
+      "explanation": "Die Grenzen der Referenz werden ausdrücklich benannt.",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf · 22–39"
+    },
+    {
+      "id": "PHP-12-11",
+      "type": "matching-postits",
+      "topic": "12",
+      "difficulty": "mittel",
+      "text": "Ordne die Begriffe ihren Beschreibungen zu.",
+      "items": [
+        {
+          "id": "i0",
+          "text": "prepare"
+        },
+        {
+          "id": "i1",
+          "text": "bind_param"
+        },
+        {
+          "id": "i2",
+          "text": "execute"
+        }
+      ],
+      "targets": [
+        {
+          "id": "t2",
+          "text": "Vorbereitete Anweisung ausführen"
+        },
+        {
+          "id": "t1",
+          "text": "Parameterwert binden"
+        },
+        {
+          "id": "t0",
+          "text": "Anweisungsstruktur vorbereiten"
+        }
+      ],
+      "pairs": [
+        {
+          "leftId": "i0",
+          "rightId": "t0"
+        },
+        {
+          "leftId": "i1",
+          "rightId": "t1"
+        },
+        {
+          "leftId": "i2",
+          "rightId": "t2"
+        }
+      ],
+      "explanation": "prepare: Anweisungsstruktur vorbereiten; bind_param: Parameterwert binden; execute: Vorbereitete Anweisung ausführen",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf"
+    },
+    {
+      "id": "PHP-12-12",
+      "type": "sql-order",
+      "topic": "12",
+      "difficulty": "mittel",
+      "text": "Ordne den im Kurs vorgegebenen Arbeitsablauf. Gemeint ist diese didaktische Reihenfolge, nicht die einzig mögliche Vorgehensweise in jedem Projekt.",
+      "blocks": [
+        {
+          "id": "b5",
+          "text": "Ergebnis darstellen"
+        },
+        {
+          "id": "b4",
+          "text": "Abfrage ausführen"
+        },
+        {
+          "id": "b3",
+          "text": "Parameter binden"
+        },
+        {
+          "id": "b2",
+          "text": "Anweisung vorbereiten"
+        },
+        {
+          "id": "b1",
+          "text": "Verbindung herstellen"
+        },
+        {
+          "id": "b0",
+          "text": "Suchwert prüfen"
+        }
+      ],
+      "correctOrder": [
+        "b0",
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5"
+      ],
+      "explanation": "Suchwert prüfen → Verbindung herstellen → Anweisung vorbereiten → Parameter binden → Abfrage ausführen → Ergebnis darstellen",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf"
+    }
+  ]
+}

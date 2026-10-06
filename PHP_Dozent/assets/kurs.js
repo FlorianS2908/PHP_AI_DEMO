@@ -1,0 +1,12 @@
+'use strict';
+(()=>{
+ document.querySelectorAll('.sidebar-toggle').forEach(b=>b.addEventListener('click',()=>{const side=b.closest('.sidebar');side.classList.toggle('open');b.setAttribute('aria-expanded',String(side.classList.contains('open')));}));
+ document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{const text=b.closest('.codebox').querySelector('code').textContent;try{await navigator.clipboard.writeText(text);b.textContent='Kopiert';}catch{const r=document.createRange();r.selectNodeContents(b.closest('.codebox').querySelector('code'));const s=window.getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Text markiert';}setTimeout(()=>b.textContent='Code kopieren',1800);}));
+ const slides=[...document.querySelectorAll('.slide')];if(!slides.length)return;
+ const prev=document.getElementById('prev'),next=document.getElementById('next'),counter=document.getElementById('counter'),mode=document.getElementById('mode');let index=0,reading=false;
+ function show(n,focus=false){index=Math.max(0,Math.min(n,slides.length-1));slides.forEach((s,i)=>s.hidden=!reading&&i!==index);counter.textContent=`${index+1} / ${slides.length}`;prev.disabled=index===0;next.disabled=index===slides.length-1;document.querySelectorAll('[data-slide-link]').forEach(a=>{if(a.hash==='#'+slides[index].id)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current')});if(focus&&!reading){const h=slides[index].querySelector('h1,h2');h.tabIndex=-1;h.focus({preventScroll:true});slides[index].scrollTop=0;}}
+ function go(n){show(n,true);try{history.replaceState(null,'','#'+slides[index].id)}catch{location.hash=slides[index].id}}
+ function readHash(){const n=slides.findIndex(s=>'#'+s.id===location.hash);if(n>=0)show(n);else show(0)}
+ prev.addEventListener('click',()=>go(index-1));next.addEventListener('click',()=>go(index+1));mode.addEventListener('click',()=>{reading=!reading;document.body.classList.toggle('reading',reading);mode.textContent=reading?'Folienansicht':'Leseansicht';mode.setAttribute('aria-pressed',String(reading));show(index)});document.getElementById('print').addEventListener('click',()=>window.print());
+ document.addEventListener('keydown',e=>{if(reading||e.altKey||e.ctrlKey||e.metaKey||e.target.closest('input,textarea,select,button,a,summary,[contenteditable=true]'))return;const map={ArrowRight:index+1,ArrowLeft:index-1,Home:0,End:slides.length-1};if(e.key in map){e.preventDefault();go(map[e.key])}});window.addEventListener('hashchange',readHash);readHash();
+})();

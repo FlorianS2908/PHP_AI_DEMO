@@ -1,0 +1,30 @@
+Quellen und Abgrenzung
+
+Neue, vereinfachte Übungsreihe auf Wunsch der Lehrkraft.
+Keine wörtliche Übernahme einer bestehenden Aufgabenserie.
+Grundlage: PHP-Kurs, Kapitel 6 PHP DB, Seiten 17–21
+(Kontrollstrukturen, Arrayfunktionen, Formularauswertung).
+HTML-Bezug: Kapitel 4, HTML Teil 2, Seiten 23–30
+(form/action/method, Eingabetypen, Checkbox und select).
+Zusätzliche Grundlage: PHP_PHP_Arrays_Formulare_Webvariante.html.
+
+Vereinfachung gegenüber der Mehrseiten-Demo: nur vier flache Felder,
+keine verschachtelten Arrays, keine Extras-Listen, keine Speicherung.
+Die HTML-Ausgabemaskierung und kleine vorbereitete Typprüfungen sind
+technische Hilfen; die Aufgaben konzentrieren sich auf den PHP-Block.
+
+Offizielles PHP-Handbuch (für die neue Umsetzung geprüft):
+https://www.php.net/manual/de/language.types.array.php
+https://www.php.net/manual/en/language.variables.external.php
+https://www.php.net/manual/de/reserved.variables.get.php
+https://www.php.net/manual/de/reserved.variables.post.php
+https://www.php.net/manual/de/function.isset.php
+https://www.php.net/manual/de/function.empty.php
+https://www.php.net/manual/de/control-structures.foreach.php
+https://www.php.net/manual/de/control-structures.switch.php
+https://www.php.net/manual/de/function.htmlspecialchars.php
+
+isset ist kein Leertext-Test: bei leerem String ist das Ergebnis true.
+empty behandelt unter anderem auch den String "0" als leer. Deshalb wird
+hier leere Texteingabe nach Typprüfung mit trim($text) === "" geprüft.
+Die spätere Rückkehr zum Formular verwendet wieder die Standardwerte.

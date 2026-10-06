@@ -1,0 +1,294 @@
+{
+  "id": "PHP-04",
+  "name": "PHP · 04 · UX gestalten",
+  "description": "12 Fragen · Grundlagen, Anwendung, Zuordnung und Reihenfolge",
+  "durationMinutes": 20,
+  "instructions": "Lies die Angaben genau. Bei Mehrfachwahl steht die Zahl richtiger Antworten dabei. Jede vollständig richtig gelöste Frage zählt einen Punkt. Keine Teilpunkte. Übungspool mit sichtbaren Lösungsschlüsseln im JSON.",
+  "topicLabels": {
+    "01": "User Interfaces",
+    "02": "Qualitätssicherung",
+    "03": "UX beschreiben",
+    "04": "UX gestalten",
+    "05": "HTML-Grundlagen",
+    "06": "HTML-Inhalte",
+    "07": "Struktur und Navigation",
+    "08": "Formulare",
+    "09": "CSS und Selektoren",
+    "10": "Farben und Hintergründe",
+    "11": "PHP und Formulardaten",
+    "12": "PHP und Datenbank",
+    "13": "CSS-Layout ergänzen"
+  },
+  "difficultyLabels": {
+    "leicht": "Grundlagen",
+    "mittel": "Anwendung"
+  },
+  "questions": [
+    {
+      "id": "PHP-04-01",
+      "type": "single",
+      "topic": "04",
+      "difficulty": "leicht",
+      "text": "Welcher Text passt zu einer erfolgreichen Suche ohne Treffer?",
+      "options": [
+        "Keine passenden Angebote gefunden.",
+        "Die Verbindung ist zwingend ausgefallen.",
+        "Ihr Kennwort wurde geändert.",
+        "Buchung abgeschlossen."
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Eine leere Trefferliste ist ein eigenständiger Ergebniszustand.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 2_Präsentation.pdf · 4–63"
+    },
+    {
+      "id": "PHP-04-02",
+      "type": "single",
+      "topic": "04",
+      "difficulty": "leicht",
+      "text": "Auf drei Seiten heißt dieselbe Aktion „Suchen“. Was wird dadurch unterstützt?",
+      "options": [
+        "Verstecken des Funktionsumfangs",
+        "Unnötige Gedächtnisarbeit",
+        "Interne Konsistenz",
+        "Abbruchverhinderung"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Gleiche Funktion und gleiche Bezeichnung unterstützen Orientierung.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 2_Präsentation.pdf · 4–63"
+    },
+    {
+      "id": "PHP-04-03",
+      "type": "single",
+      "topic": "04",
+      "difficulty": "leicht",
+      "text": "Eine Auswahl kann vor Abschluss geändert werden. Welches Prinzip passt?",
+      "options": [
+        "Automatische Rechtevergabe",
+        "Nur visuelle Ästhetik",
+        "Benutzerfreiheit",
+        "Nur Ressourcenverbrauch"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Korrektur- und Rückwege unterstützen Kontrolle durch die Person.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 2_Präsentation.pdf · 4–63"
+    },
+    {
+      "id": "PHP-04-04",
+      "type": "single",
+      "topic": "04",
+      "difficulty": "leicht",
+      "text": "Statt freiem Text werden verfügbare Ziele auswählbar angeboten. Welches Prinzip wird direkt angewendet?",
+      "options": [
+        "Fehlervermeidung",
+        "Nur rückwirkende Dokumentation",
+        "Zufällige Navigation",
+        "Irreführende Erfolgsmeldung"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Geeignete Eingabeformen können bestimmte Tippfehler vermeiden.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 2_Präsentation.pdf · 4–63"
+    },
+    {
+      "id": "PHP-04-05",
+      "type": "single",
+      "topic": "04",
+      "difficulty": "leicht",
+      "text": "Die Ergebnisansicht wiederholt „Ergebnisse für Paris“. Welchen Nutzen hat das?",
+      "options": [
+        "Sie ersetzt jede Navigation.",
+        "Sie ist eine Datenbankverbindung.",
+        "Sie führt automatisch eine neue Buchung aus.",
+        "Sie macht die aktuelle Auswahl als Merkhilfe sichtbar."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Die Auswahl muss nicht aus dem Gedächtnis rekonstruiert werden.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 2_Präsentation.pdf · 4–63"
+    },
+    {
+      "id": "PHP-04-06",
+      "type": "single",
+      "topic": "04",
+      "difficulty": "leicht",
+      "text": "Welche Aussage zum Minimalismus entspricht dem Kapitel?",
+      "options": [
+        "Immer nur eine einzige Schaltfläche zulassen.",
+        "Alle Hilfen entfernen.",
+        "Jeden Rückweg ausblenden.",
+        "Notwendige Funktionen erhalten, unnötige Ablenkung reduzieren."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Minimalismus ist auf den Zweck bezogen, nicht bloß Reduktion um jeden Preis.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 2_Präsentation.pdf · 4–63"
+    },
+    {
+      "id": "PHP-04-07",
+      "type": "single",
+      "topic": "04",
+      "difficulty": "leicht",
+      "text": "Welcher Fehlertext hilft beim Korrigieren einer fehlenden Angabe?",
+      "options": [
+        "Bitte wähle ein Reiseziel.",
+        "Ungültig",
+        "Fehler 17",
+        "Geht nicht"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Der Text benennt die fehlende Handlung verständlich.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 2_Präsentation.pdf · 4–63"
+    },
+    {
+      "id": "PHP-04-08",
+      "type": "single",
+      "topic": "04",
+      "difficulty": "leicht",
+      "text": "Welche Hilfe ist unmittelbar kontextbezogen?",
+      "options": [
+        "Eine versteckte Dokumentation ohne Verweis",
+        "Ein nicht schließbares Werbefenster",
+        "Ein beliebiger Text ohne Bezug zur Eingabe",
+        "Ein kurzer Hinweis am betroffenen Datumsfeld"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Kontextbezogene Hilfe unterstützt genau den aktuellen Arbeitsschritt.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 2_Präsentation.pdf · 4–63"
+    },
+    {
+      "id": "PHP-04-09",
+      "type": "multiple",
+      "topic": "04",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Funktionen unterstützen Benutzerfreiheit?",
+      "options": [
+        "Ausgang ohne Erklärung blockieren",
+        "Auswahl ändern",
+        "Abbrechen mit nötigem Datenverlusthinweis",
+        "Falsche Bestätigung erzwingen"
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "explanation": "Rückkehr und kontrollierter Abbruch entsprechen dem Prinzip.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 2_Präsentation.pdf · 4–63"
+    },
+    {
+      "id": "PHP-04-10",
+      "type": "multiple",
+      "topic": "04",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Eigenschaften sollte eine hilfreiche Fehlermeldung haben?",
+      "options": [
+        "Nur einen internen Fehlercode enthalten",
+        "Konkreten nächsten Schritt anbieten",
+        "Problem verständlich benennen",
+        "Der Person ohne Grundlage Schuld zuschreiben"
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "explanation": "Verständlichkeit und Handlungsbezug helfen bei der Korrektur.",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 2_Präsentation.pdf · 4–63"
+    },
+    {
+      "id": "PHP-04-11",
+      "type": "matching-postits",
+      "topic": "04",
+      "difficulty": "mittel",
+      "text": "Ordne die Begriffe ihren Beschreibungen zu.",
+      "items": [
+        {
+          "id": "i0",
+          "text": "Konsistenz"
+        },
+        {
+          "id": "i1",
+          "text": "Benutzerfreiheit"
+        },
+        {
+          "id": "i2",
+          "text": "Merkhilfe"
+        }
+      ],
+      "targets": [
+        {
+          "id": "t2",
+          "text": "Aktuelle Auswahl sichtbar halten"
+        },
+        {
+          "id": "t1",
+          "text": "Rückweg und Korrektur ermöglichen"
+        },
+        {
+          "id": "t0",
+          "text": "Gleiche Funktion bleibt gleich erkennbar"
+        }
+      ],
+      "pairs": [
+        {
+          "leftId": "i0",
+          "rightId": "t0"
+        },
+        {
+          "leftId": "i1",
+          "rightId": "t1"
+        },
+        {
+          "leftId": "i2",
+          "rightId": "t2"
+        }
+      ],
+      "explanation": "Konsistenz: Gleiche Funktion bleibt gleich erkennbar; Benutzerfreiheit: Rückweg und Korrektur ermöglichen; Merkhilfe: Aktuelle Auswahl sichtbar halten",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 2_Präsentation.pdf"
+    },
+    {
+      "id": "PHP-04-12",
+      "type": "sql-order",
+      "topic": "04",
+      "difficulty": "mittel",
+      "text": "Ordne den im Kurs vorgegebenen Arbeitsablauf. Gemeint ist diese didaktische Reihenfolge, nicht die einzig mögliche Vorgehensweise in jedem Projekt.",
+      "blocks": [
+        {
+          "id": "b3",
+          "text": "Änderung erneut prüfen"
+        },
+        {
+          "id": "b2",
+          "text": "Änderung entwerfen"
+        },
+        {
+          "id": "b1",
+          "text": "Passendes UX-Prinzip benennen"
+        },
+        {
+          "id": "b0",
+          "text": "Situation beschreiben"
+        }
+      ],
+      "correctOrder": [
+        "b0",
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "explanation": "Situation beschreiben → Passendes UX-Prinzip benennen → Änderung entwerfen → Änderung erneut prüfen",
+      "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 2_Präsentation.pdf"
+    }
+  ]
+}

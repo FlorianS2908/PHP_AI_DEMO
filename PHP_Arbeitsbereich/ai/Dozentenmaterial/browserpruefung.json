@@ -1,0 +1,136 @@
+[
+  {
+    "aufgabe": "01_Workshop",
+    "breite": 1440,
+    "kein_seitenueberlauf": true,
+    "grid_aktiv": true,
+    "js_fehler": []
+  },
+  {
+    "aufgabe": "01_Workshop",
+    "breite": 390,
+    "kein_seitenueberlauf": true,
+    "grid_aktiv": true,
+    "js_fehler": []
+  },
+  {
+    "aufgabe": "02_Fahrradwerkstatt",
+    "breite": 1440,
+    "kein_seitenueberlauf": true,
+    "grid_aktiv": true,
+    "js_fehler": []
+  },
+  {
+    "aufgabe": "02_Fahrradwerkstatt",
+    "breite": 390,
+    "kein_seitenueberlauf": true,
+    "grid_aktiv": true,
+    "js_fehler": []
+  },
+  {
+    "aufgabe": "03_Raumreservierung",
+    "breite": 1440,
+    "kein_seitenueberlauf": true,
+    "grid_aktiv": true,
+    "js_fehler": []
+  },
+  {
+    "aufgabe": "03_Raumreservierung",
+    "breite": 390,
+    "kein_seitenueberlauf": true,
+    "grid_aktiv": true,
+    "js_fehler": []
+  },
+  {
+    "aufgabe": "04_Teamshirt",
+    "breite": 1440,
+    "kein_seitenueberlauf": true,
+    "grid_aktiv": true,
+    "js_fehler": []
+  },
+  {
+    "aufgabe": "04_Teamshirt",
+    "breite": 390,
+    "kein_seitenueberlauf": true,
+    "grid_aktiv": true,
+    "js_fehler": []
+  },
+  {
+    "aufgabe": "05_PC_Konfigurator",
+    "breite": 1440,
+    "kein_seitenueberlauf": true,
+    "grid_aktiv": true,
+    "js_fehler": []
+  },
+  {
+    "aufgabe": "05_PC_Konfigurator",
+    "breite": 390,
+    "kein_seitenueberlauf": true,
+    "grid_aktiv": true,
+    "js_fehler": []
+  },
+  {
+    "test": "Chromium-Darstellung der Serverfehler (HTML über requests geladen)",
+    "erfolgreich": true
+  },
+  {
+    "aufgabe": "01_Workshop",
+    "seite": "Ergebnis",
+    "breite": 1440,
+    "kein_seitenueberlauf": true
+  },
+  {
+    "aufgabe": "01_Workshop",
+    "seite": "Ergebnis",
+    "breite": 390,
+    "kein_seitenueberlauf": true
+  },
+  {
+    "aufgabe": "02_Fahrradwerkstatt",
+    "seite": "Ergebnis",
+    "breite": 1440,
+    "kein_seitenueberlauf": true
+  },
+  {
+    "aufgabe": "02_Fahrradwerkstatt",
+    "seite": "Ergebnis",
+    "breite": 390,
+    "kein_seitenueberlauf": true
+  },
+  {
+    "aufgabe": "03_Raumreservierung",
+    "seite": "Ergebnis",
+    "breite": 1440,
+    "kein_seitenueberlauf": true
+  },
+  {
+    "aufgabe": "03_Raumreservierung",
+    "seite": "Ergebnis",
+    "breite": 390,
+    "kein_seitenueberlauf": true
+  },
+  {
+    "aufgabe": "04_Teamshirt",
+    "seite": "Ergebnis",
+    "breite": 1440,
+    "kein_seitenueberlauf": true
+  },
+  {
+    "aufgabe": "04_Teamshirt",
+    "seite": "Ergebnis",
+    "breite": 390,
+    "kein_seitenueberlauf": true
+  },
+  {
+    "aufgabe": "05_PC_Konfigurator",
+    "seite": "Ergebnis",
+    "breite": 1440,
+    "kein_seitenueberlauf": true
+  },
+  {
+    "aufgabe": "05_PC_Konfigurator",
+    "seite": "Ergebnis",
+    "breite": 390,
+    "kein_seitenueberlauf": true
+  }
+]

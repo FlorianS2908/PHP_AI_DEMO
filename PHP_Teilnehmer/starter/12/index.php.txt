@@ -1,0 +1,5 @@
+<?php
+// Als index.php in deinem Arbeitsordner speichern.
+// TODO: Erstelle eine MySQLi-Abfrage nach einem vorgegebenen Reiseziel. Gib Treffer und leere Liste unterschiedlich aus.
+?>
+<!doctype html><html lang="de"><head><meta charset="utf-8"><title>Meine PHP-Aufgabe</title></head><body><h1>Meine Aufgabe</h1></body></html>

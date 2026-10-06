@@ -1,0 +1,593 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Quelltexte · PHP</title><link rel="stylesheet" href="../assets/kurs.css"><link rel="stylesheet" href="../assets/php-ergaenzung.css"></head><body><a class="skip" href="#inhalt">Zum Inhalt</a><div class="shell"><aside class="sidebar"><div class="brand"><div class="brand-mark">10a</div><div><small>PHP · VERTIEFUNG</small><strong>Webwerkstatt</strong></div></div><a class="back" href="../index.html">← Materialübersicht</a><button class="sidebar-toggle" aria-expanded="false" aria-controls="side-content" type="button">Navigation öffnen</button><div id="side-content"><nav aria-label="Materialien"><a class="btn" href="../webvariante.html">Webvariante</a><a class="btn" href="../demo-start.html">Demos starten</a><a class="btn" href="../quelltexte/index.html">Quelltexte</a><a class="btn" href="../pseudocode.html">Pseudocode</a><a class="btn" href="../aufgaben.html">Aufgaben</a><a class="btn" href="../dozent/loesungen.html">Lösungen</a><a class="btn" href="../dozent/leitfaden.html">Dozentenleitfaden</a><a class="btn" href="../quellen.html">Quellen & Abgrenzung</a></nav><p class="aside-note">Arrays → Formular → POST → neue Ausgabe.</p></div></aside><main id="inhalt" class="main"><div class="topline"><span>PHP · Arrays und mehrseitige Formulare</span><span>Ohne Session / Cookie</span></div><header class="hero"><div class="eyebrow">PHP · PHP-Vertiefung</div><h1>Datei für Datei nachvollziehen.</h1><p>Alle PHP-, HTML- und CSS-Dateien liegen offen im Paket. Hier sind sie auch im Browser lesbar.</p></header><section class="card plain-section filelist"><h2><code>demo/00-mini/ausgabe.php</code></h2><p><a class="btn" href="demo__00-mini__ausgabe.php.txt">Textdatei öffnen</a></p><details><summary>Quelltext direkt lesen</summary><div class="codebox"><div class="codebar"><span>PHP</span><button type="button" data-copy>Code kopieren</button></div><pre><code>&lt;?php
+declare(strict_types=1);
+require __DIR__ . &#x27;/../01-mehrseitig/katalog.php&#x27;;
+require __DIR__ . &#x27;/../01-mehrseitig/funktionen.php&#x27;; // e() maskiert HTML-Text.
+header(&#x27;Cache-Control: no-store&#x27;);
+$fehler = [];
+$auswahl = $_POST[&#x27;auswahl&#x27;] ?? null;
+if (($_SERVER[&#x27;REQUEST_METHOD&#x27;] ?? &#x27;&#x27;) !== &#x27;POST&#x27; || !is_array($auswahl)) {
+    $fehler[] = &#x27;Bitte zuerst das Formular absenden.&#x27;;
+    $auswahl = [];
+}
+$zielId = $auswahl[&#x27;ziel&#x27;] ?? &#x27;&#x27;;
+$extraIds = $auswahl[&#x27;extras&#x27;] ?? []; // leere Checkbox-Gruppe: kein Schlüssel.
+$nachricht = $auswahl[&#x27;nachricht&#x27;] ?? &#x27;&#x27;;
+if (!is_string($zielId) || !array_key_exists($zielId, $ziele)) {
+    $fehler[] = &#x27;Unbekanntes Reiseziel.&#x27;;
+}
+if (!is_string($nachricht) || !text_passt($nachricht, 500)) {
+    $fehler[] = &#x27;Die Nachricht muss Text mit höchstens 500 Zeichen sein.&#x27;;
+    $nachricht = &#x27;&#x27;;
+}
+$namen = [];
+if (!is_array($extraIds) || count($extraIds) &gt; 2) {
+    $fehler[] = &#x27;Extras müssen eine Liste mit höchstens zwei Einträgen sein.&#x27;;
+} else {
+    foreach ($extraIds as $id) {
+        if (!is_string($id) || !in_array($id, [&#x27;museum&#x27;, &#x27;tour&#x27;], true)) {
+            $fehler[] = &#x27;Unbekanntes Extra.&#x27;;
+        } else {
+            $namen[] = $extras[$id][&#x27;titel&#x27;];
+        }
+    }
+}
+if (count($namen) !== count(array_unique($namen))) {
+    $fehler[] = &#x27;Ein Extra wurde doppelt gesendet.&#x27;;
+}
+$text = &#x27;&#x27;;
+if ($fehler === []) {
+    $text = &#x27;Reiseziel: &#x27; . $ziele[$zielId][&#x27;titel&#x27;] . &quot;\n&quot;
+        . &#x27;Extras: &#x27; . ($namen === [] ? &#x27;Keine&#x27; : implode(&#x27;, &#x27;, $namen)) . &quot;\n&quot;
+        . &#x27;Nachricht: &#x27; . $nachricht;
+} else {
+    http_response_code(422);
+}
+?&gt;
+&lt;!doctype html&gt;&lt;html lang=&quot;de&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
+&lt;title&gt;Mini-Demo · Ausgabe&lt;/title&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;../../assets/demo.css&quot;&gt;&lt;/head&gt;
+&lt;body&gt;&lt;main class=&quot;wrap mini&quot;&gt;&lt;p class=&quot;eyebrow&quot;&gt;PHP · Schritt 2: Daten empfangen&lt;/p&gt;
+&lt;h1&gt;Deine Auswahl als Ausgabe&lt;/h1&gt;
+&lt;?php if ($fehler !== []): ?&gt;
+&lt;section class=&quot;card error&quot;&gt;&lt;h2&gt;Eingabe prüfen&lt;/h2&gt;&lt;ul&gt;
+&lt;?php foreach ($fehler as $meldung): ?&gt;&lt;li&gt;&lt;?= e($meldung) ?&gt;&lt;/li&gt;&lt;?php endforeach; ?&gt;
+&lt;/ul&gt;&lt;/section&gt;
+&lt;?php else: ?&gt;
+&lt;section class=&quot;card&quot;&gt;&lt;h2&gt;&lt;?= e($ziele[$zielId][&#x27;titel&#x27;]) ?&gt;&lt;/h2&gt;
+&lt;label for=&quot;ausgabe&quot;&gt;Mit PHP eingesetzter Text&lt;/label&gt;
+&lt;textarea id=&quot;ausgabe&quot; rows=&quot;7&quot; readonly&gt;&lt;?= e($text) ?&gt;&lt;/textarea&gt;
+&lt;h3&gt;Dieselbe Nachricht im gestalteten HTML-Bereich&lt;/h3&gt;
+&lt;div class=&quot;message&quot;&gt;&lt;?= e($nachricht) ?&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;?php endif; ?&gt;
+&lt;details&gt;&lt;summary&gt;Empfangenes Array ansehen&lt;/summary&gt;&lt;pre&gt;&lt;?= e(print_r($_POST, true)) ?&gt;&lt;/pre&gt;&lt;/details&gt;
+&lt;p class=&quot;help&quot;&gt;PHP erzeugt die neue Antwortseite. Keine JavaScript-Simulation, keine Session.&lt;/p&gt;
+&lt;a class=&quot;button secondary&quot; href=&quot;formular.html&quot;&gt;Neues Formular öffnen (ohne Übernahme)&lt;/a&gt;
+&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;</code></pre></div></details></section><section class="card plain-section filelist"><h2><code>demo/00-mini/formular.html</code></h2><p><a class="btn" href="demo__00-mini__formular.html.txt">Textdatei öffnen</a></p><details><summary>Quelltext direkt lesen</summary><div class="codebox"><div class="codebar"><span>HTML</span><button type="button" data-copy>Code kopieren</button></div><pre><code>&lt;!doctype html&gt;
+&lt;html lang=&quot;de&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
+    &lt;title&gt;Mini-Demo · Formular und PHP&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;../../assets/demo.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;&lt;main class=&quot;wrap mini&quot;&gt;
+    &lt;p class=&quot;eyebrow&quot;&gt;PHP · Schritt 1: wenige Felder, echter POST&lt;/p&gt;
+    &lt;h1&gt;Wohin geht die Reise?&lt;/h1&gt;
+    &lt;p&gt;Fiktive Unterrichtsdaten. Über den PHP-Server öffnen, nicht per Doppelklick absenden.&lt;/p&gt;
+    &lt;form class=&quot;card&quot; method=&quot;post&quot; action=&quot;ausgabe.php&quot;&gt;
+        &lt;label for=&quot;ziel&quot;&gt;Reiseziel&lt;/label&gt;
+        &lt;select id=&quot;ziel&quot; name=&quot;auswahl[ziel]&quot; required&gt;
+            &lt;option value=&quot;&quot;&gt;Bitte wählen&lt;/option&gt;
+            &lt;option value=&quot;berlin&quot;&gt;Berlin&lt;/option&gt;
+            &lt;option value=&quot;paris&quot;&gt;Paris&lt;/option&gt;
+            &lt;option value=&quot;rom&quot;&gt;Rom&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;fieldset&gt;&lt;legend&gt;Extras · mehrere möglich&lt;/legend&gt;
+            &lt;label class=&quot;choice&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;auswahl[extras][]&quot; value=&quot;museum&quot;&gt; Museumspass&lt;/label&gt;
+            &lt;label class=&quot;choice&quot;&gt;&lt;input type=&quot;checkbox&quot; name=&quot;auswahl[extras][]&quot; value=&quot;tour&quot;&gt; Stadtführung&lt;/label&gt;
+        &lt;/fieldset&gt;
+        &lt;label for=&quot;text&quot;&gt;Deine Nachricht&lt;/label&gt;
+        &lt;textarea id=&quot;text&quot; name=&quot;auswahl[nachricht]&quot; rows=&quot;3&quot; maxlength=&quot;500&quot;&gt;&lt;/textarea&gt;
+        &lt;div class=&quot;actions&quot;&gt;&lt;button type=&quot;submit&quot;&gt;An PHP senden →&lt;/button&gt;&lt;/div&gt;
+    &lt;/form&gt;
+    &lt;a href=&quot;../../index.html&quot;&gt;Zur Materialübersicht&lt;/a&gt;
+&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;</code></pre></div></details></section><section class="card plain-section filelist"><h2><code>demo/01-mehrseitig/auswahl.php</code></h2><p><a class="btn" href="demo__01-mehrseitig__auswahl.php.txt">Textdatei öffnen</a></p><details><summary>Quelltext direkt lesen</summary><div class="codebox"><div class="codebar"><span>PHP</span><button type="button" data-copy>Code kopieren</button></div><pre><code>&lt;?php
+declare(strict_types=1);
+require __DIR__ . &#x27;/katalog.php&#x27;;
+require __DIR__ . &#x27;/funktionen.php&#x27;;
+header(&#x27;Cache-Control: no-store&#x27;);
+$reise = startwerte();
+$hinweis = &#x27;&#x27;;
+
+// Der Rückweg verwendet POST. Ein normaler Link würde die Auswahl NICHT mitnehmen.
+if (($_SERVER[&#x27;REQUEST_METHOD&#x27;] ?? &#x27;GET&#x27;) === &#x27;POST&#x27;) {
+    $pruefung = pruefe_reise($_POST[&#x27;reise&#x27;] ?? null, $ziele, $extras, $verpflegungen);
+    $reise = $pruefung[&#x27;werte&#x27;];
+    $hinweis = &#x27;Die erneut übermittelten Angaben wurden ins Formular eingesetzt. Prüfe deine Auswahl.&#x27;;
+} elseif (isset($_GET[&#x27;ziel&#x27;])) {
+    // Kleiner GET-Vergleich: auswahl.php?ziel=paris. Nur harmlose Vorbelegung.
+    $ziel = $_GET[&#x27;ziel&#x27;];
+    if (is_string($ziel) &amp;&amp; array_key_exists($ziel, $ziele)) {
+        $reise[&#x27;ziel&#x27;] = $ziel;
+        $hinweis = &#x27;Das Ziel wurde aus dem GET-Parameter vorbelegt. Gesendet wird anschließend per POST.&#x27;;
+    } else {
+        $hinweis = &#x27;Der GET-Parameter enthält kein bekanntes Ziel. Bitte selbst auswählen.&#x27;;
+    }
+}
+echo kopf(&#x27;Deine Reise zusammenstellen&#x27;, 1);
+?&gt;
+&lt;p class=&quot;lead&quot;&gt;Wähle aus dem serverseitigen Katalog. Die Schlüssel werden gesendet – nicht die Preise.&lt;/p&gt;
+&lt;?php if ($hinweis !== &#x27;&#x27;): ?&gt;&lt;p class=&quot;note&quot;&gt;&lt;?= e($hinweis) ?&gt;&lt;/p&gt;&lt;?php endif; ?&gt;
+&lt;div class=&quot;layout&quot;&gt;
+&lt;form class=&quot;card&quot; action=&quot;pruefen.php&quot; method=&quot;post&quot;&gt;
+    &lt;h2&gt;1 · Deine Auswahl&lt;/h2&gt;
+    &lt;label for=&quot;name&quot;&gt;Fiktiver Anzeigename&lt;/label&gt;
+    &lt;input id=&quot;name&quot; name=&quot;reise[name]&quot; maxlength=&quot;60&quot; required value=&quot;&lt;?= e($reise[&#x27;name&#x27;]) ?&gt;&quot; placeholder=&quot;z. B. Alex Beispiel&quot;&gt;
+    &lt;div class=&quot;fields&quot;&gt;
+        &lt;div&gt;&lt;label for=&quot;ziel&quot;&gt;Reiseziel · Dropdown&lt;/label&gt;
+        &lt;select id=&quot;ziel&quot; name=&quot;reise[ziel]&quot; required&gt;
+            &lt;option value=&quot;&quot;&gt;Bitte auswählen&lt;/option&gt;
+            &lt;?php foreach ($ziele as $id =&gt; $ziel): ?&gt;
+                &lt;option value=&quot;&lt;?= e($id) ?&gt;&quot;&lt;?= $reise[&#x27;ziel&#x27;] === $id ? &#x27; selected&#x27; : &#x27;&#x27; ?&gt;&gt;&lt;?= e($ziel[&#x27;titel&#x27;]) ?&gt; · &lt;?= e(euro($ziel[&#x27;preis_cent&#x27;])) ?&gt; / Person&lt;/option&gt;
+            &lt;?php endforeach; ?&gt;
+        &lt;/select&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;label for=&quot;personen&quot;&gt;Personen&lt;/label&gt;
+        &lt;select id=&quot;personen&quot; name=&quot;reise[personen]&quot;&gt;
+            &lt;?php for ($anzahl = 1; $anzahl &lt;= 6; $anzahl++): ?&gt;
+                &lt;option value=&quot;&lt;?= $anzahl ?&gt;&quot;&lt;?= $reise[&#x27;personen&#x27;] === $anzahl ? &#x27; selected&#x27; : &#x27;&#x27; ?&gt;&gt;&lt;?= $anzahl ?&gt;&lt;/option&gt;
+            &lt;?php endfor; ?&gt;
+        &lt;/select&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;label for=&quot;extras&quot;&gt;Extras · Mehrfachauswahl (optional)&lt;/label&gt;
+    &lt;select id=&quot;extras&quot; name=&quot;reise[extras][]&quot; multiple size=&quot;3&quot; aria-describedby=&quot;extras-hilfe&quot;&gt;
+        &lt;?php foreach ($extras as $id =&gt; $extra): ?&gt;
+            &lt;option value=&quot;&lt;?= e($id) ?&gt;&quot;&lt;?= in_array($id, $reise[&#x27;extras&#x27;], true) ? &#x27; selected&#x27; : &#x27;&#x27; ?&gt;&gt;&lt;?= e($extra[&#x27;titel&#x27;]) ?&gt; · &lt;?= e(euro($extra[&#x27;preis_cent&#x27;])) ?&gt; / Person&lt;/option&gt;
+        &lt;?php endforeach; ?&gt;
+    &lt;/select&gt;
+    &lt;p class=&quot;help&quot; id=&quot;extras-hilfe&quot;&gt;Unter Windows: Strg + Klick für mehrere Einträge oder zum Abwählen. Mit Tastatur ist die Bedienung browserabhängig. Ohne Auswahl werden keine Extras gesendet.&lt;/p&gt;
+    &lt;fieldset&gt;&lt;legend&gt;Verpflegung · genau eine Option&lt;/legend&gt;
+        &lt;?php foreach ($verpflegungen as $id =&gt; $verpflegung): ?&gt;
+        &lt;label class=&quot;choice&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;reise[verpflegung]&quot; value=&quot;&lt;?= e($id) ?&gt;&quot;&lt;?= $reise[&#x27;verpflegung&#x27;] === $id ? &#x27; checked&#x27; : &#x27;&#x27; ?&gt;&gt;
+            &lt;span&gt;&lt;?= e($verpflegung[&#x27;titel&#x27;]) ?&gt;&lt;small&gt;&lt;?= e(euro($verpflegung[&#x27;preis_cent&#x27;])) ?&gt; / Person&lt;/small&gt;&lt;/span&gt;&lt;/label&gt;
+        &lt;?php endforeach; ?&gt;
+    &lt;/fieldset&gt;
+    &lt;label for=&quot;nachricht&quot;&gt;Nachricht (optional)&lt;/label&gt;
+    &lt;textarea id=&quot;nachricht&quot; name=&quot;reise[nachricht]&quot; rows=&quot;3&quot; maxlength=&quot;500&quot; placeholder=&quot;Mehrzeiliger Text wird später formatiert ausgegeben.&quot;&gt;&lt;?= e($reise[&#x27;nachricht&#x27;]) ?&gt;&lt;/textarea&gt;
+    &lt;div class=&quot;actions&quot;&gt;&lt;button type=&quot;submit&quot;&gt;Auswahl prüfen →&lt;/button&gt;&lt;a class=&quot;button secondary&quot; href=&quot;auswahl.php&quot;&gt;Neu beginnen&lt;/a&gt;&lt;/div&gt;
+&lt;/form&gt;
+&lt;aside class=&quot;card lesson&quot;&gt;&lt;span class=&quot;pill&quot;&gt;Was passiert hier?&lt;/span&gt;&lt;h2&gt;Vom Schlüssel zur Auswahl&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;paris&lt;/code&gt; ist der technische Schlüssel. &lt;strong&gt;Paris&lt;/strong&gt; ist die sichtbare Beschriftung.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;reise[ziel]       → &quot;paris&quot;
+reise[personen]   → &quot;2&quot;
+reise[extras][]   → &quot;museum&quot;
+reise[extras][]   → &quot;tour&quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;PHP setzt aus den Feldnamen ein verschachteltes Array in &lt;code&gt;$_POST&lt;/code&gt; zusammen.&lt;/p&gt;
+&lt;p class=&quot;note&quot;&gt;Noch kein dauerhaftes Merken: Die Weitergabe erfolgt in jeder Anfrage ausdrücklich neu.&lt;/p&gt;
+&lt;a href=&quot;auswahl.php?ziel=paris&quot;&gt;GET-Vorbelegung ausprobieren: Paris&lt;/a&gt;
+&lt;/aside&gt;&lt;/div&gt;
+&lt;?= fuss() ?&gt;</code></pre></div></details></section><section class="card plain-section filelist"><h2><code>demo/01-mehrseitig/ergebnis.php</code></h2><p><a class="btn" href="demo__01-mehrseitig__ergebnis.php.txt">Textdatei öffnen</a></p><details><summary>Quelltext direkt lesen</summary><div class="codebox"><div class="codebar"><span>PHP</span><button type="button" data-copy>Code kopieren</button></div><pre><code>&lt;?php
+declare(strict_types=1);
+require __DIR__ . &#x27;/katalog.php&#x27;;
+require __DIR__ . &#x27;/funktionen.php&#x27;;
+header(&#x27;Cache-Control: no-store&#x27;);
+if (($_SERVER[&#x27;REQUEST_METHOD&#x27;] ?? &#x27;&#x27;) !== &#x27;POST&#x27;) {
+    http_response_code(405);
+    header(&#x27;Allow: POST&#x27;);
+    echo kopf(&#x27;Keine aktuelle Auswahl übermittelt&#x27;, 3);
+    echo &#x27;&lt;p class=&quot;note&quot;&gt;Ohne neue POST-Daten gibt es hier keine vorherige Reise. Noch keine Session!&lt;/p&gt;&#x27;;
+    echo &#x27;&lt;a class=&quot;button&quot; href=&quot;auswahl.php&quot;&gt;Bei Seite 1 beginnen&lt;/a&gt;&#x27; . fuss();
+    exit;
+}
+// Wieder prüfen: Browserdaten sind auch auf Seite 3 weiterhin nicht vertrauenswürdig.
+$pruefung = pruefe_reise($_POST[&#x27;reise&#x27;] ?? null, $ziele, $extras, $verpflegungen);
+$reise = $pruefung[&#x27;werte&#x27;];
+if (!$pruefung[&#x27;ok&#x27;]) {
+    http_response_code(422);
+    echo kopf(&#x27;Die übermittelten Daten sind nicht gültig&#x27;, 3);
+    echo fehlerseite($pruefung[&#x27;fehler&#x27;], $reise) . fuss();
+    exit;
+}
+$rechnung = berechne_reise($reise, $ziele, $extras, $verpflegungen);
+$zusammenfassung = reise_text($reise, $rechnung, $ziele, $extras, $verpflegungen);
+
+// if / elseif / else: eine zur Personenanzahl passende Textausgabe.
+if ($reise[&#x27;personen&#x27;] === 1) {
+    $gruppenText = &#x27;Eine Person&#x27;;
+} elseif ($reise[&#x27;personen&#x27;] &lt;= 3) {
+    $gruppenText = &#x27;Kleine Reisegruppe&#x27;;
+} else {
+    $gruppenText = &#x27;Große Reisegruppe&#x27;;
+}
+
+// switch: Fallunterscheidung nach dem bereits geprüften Schlüssel.
+switch ($reise[&#x27;verpflegung&#x27;]) {
+    case &#x27;fruehstueck&#x27;:
+        $serviceText = &#x27;Der Frühstücksbaustein ist berücksichtigt.&#x27;;
+        break;
+    case &#x27;halbpension&#x27;:
+        $serviceText = &#x27;Der Halbpensionsbaustein ist berücksichtigt.&#x27;;
+        break;
+    default:
+        $serviceText = &#x27;Es ist keine Verpflegung ausgewählt.&#x27;;
+}
+echo kopf(&#x27;Deine formatierte Zusammenfassung&#x27;, 3);
+?&gt;
+&lt;p class=&quot;lead&quot;&gt;Alle Angaben wurden erneut gelesen und berechnet. Nichts wurde gespeichert oder gebucht.&lt;/p&gt;
+&lt;div class=&quot;layout&quot;&gt;&lt;section class=&quot;card&quot;&gt;
+    &lt;span class=&quot;pill&quot;&gt;&lt;?= e($gruppenText) ?&gt;&lt;/span&gt;
+    &lt;h2&gt;&lt;?= e($reise[&#x27;name&#x27;]) ?&gt; · &lt;?= e($ziele[$reise[&#x27;ziel&#x27;]][&#x27;titel&#x27;]) ?&gt;&lt;/h2&gt;
+    &lt;div class=&quot;table-wrap&quot;&gt;&lt;table&gt;
+        &lt;caption&gt;Fiktive Unterrichtskalkulation · jede Position pro Person, einmalig&lt;/caption&gt;
+        &lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Position&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Einzeln&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Anzahl&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Summe&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+        &lt;tbody&gt;&lt;?php foreach ($rechnung[&#x27;positionen&#x27;] as $position): ?&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;?= e($position[&#x27;titel&#x27;]) ?&gt;&lt;/td&gt;&lt;td&gt;&lt;?= e(euro($position[&#x27;einzel_cent&#x27;])) ?&gt;&lt;/td&gt;&lt;td&gt;&lt;?= $position[&#x27;anzahl&#x27;] ?&gt;&lt;/td&gt;&lt;td&gt;&lt;?= e(euro($position[&#x27;summe_cent&#x27;])) ?&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;?php endforeach; ?&gt;&lt;/tbody&gt;
+    &lt;/table&gt;&lt;/div&gt;
+    &lt;div class=&quot;total&quot;&gt;&lt;span&gt;Gesamt&lt;/span&gt;&lt;output id=&quot;gesamt&quot;&gt;&lt;?= e(euro($rechnung[&#x27;gesamt_cent&#x27;])) ?&gt;&lt;/output&gt;&lt;/div&gt;
+    &lt;p&gt;&lt;?= e($serviceText) ?&gt;&lt;/p&gt;
+    &lt;h3&gt;Deine Nachricht&lt;/h3&gt;
+    &lt;div class=&quot;message&quot;&gt;&lt;?= e($reise[&#x27;nachricht&#x27;] === &#x27;&#x27; ? &#x27;Keine Nachricht angegeben.&#x27; : $reise[&#x27;nachricht&#x27;]) ?&gt;&lt;/div&gt;
+    &lt;p class=&quot;help&quot;&gt;PHP setzt maskierten Text ins HTML ein. CSS erhält Zeilenumbrüche und gestaltet den Ausgabebereich.&lt;/p&gt;
+&lt;/section&gt;
+&lt;aside class=&quot;card lesson&quot;&gt;&lt;h2&gt;Textausgabe zum Kopieren&lt;/h2&gt;
+    &lt;label for=&quot;ausgabe&quot;&gt;Zusammenfassung&lt;/label&gt;
+    &lt;textarea id=&quot;ausgabe&quot; rows=&quot;11&quot; readonly&gt;&lt;?= e($zusammenfassung) ?&gt;&lt;/textarea&gt;
+    &lt;form action=&quot;auswahl.php&quot; method=&quot;post&quot; class=&quot;back-form&quot; id=&quot;zurueck&quot;&gt;
+        &lt;?= hidden_reise($reise) ?&gt;
+        &lt;button type=&quot;submit&quot; class=&quot;secondary&quot;&gt;← Mit diesen Werten weiterarbeiten&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;a class=&quot;button secondary&quot; href=&quot;auswahl.php&quot;&gt;Neue, leere Auswahl&lt;/a&gt;
+    &lt;details&gt;&lt;summary&gt;Warum brauchen wir später Sessions?&lt;/summary&gt;
+    &lt;p&gt;Hier reist jede Auswahl wieder als Formularwert mit. Bei mehr Schritten wird das aufwendig. Eine Session kann geprüfte Werte serverseitig einem Browser zuordnen. Das ist der nächste Lernschritt.&lt;/p&gt;
+    &lt;/details&gt;
+&lt;/aside&gt;&lt;/div&gt;
+&lt;?= fuss() ?&gt;</code></pre></div></details></section><section class="card plain-section filelist"><h2><code>demo/01-mehrseitig/funktionen.php</code></h2><p><a class="btn" href="demo__01-mehrseitig__funktionen.php.txt">Textdatei öffnen</a></p><details><summary>Quelltext direkt lesen</summary><div class="codebox"><div class="codebar"><span>PHP</span><button type="button" data-copy>Code kopieren</button></div><pre><code>&lt;?php
+declare(strict_types=1);
+
+// Zusatzhilfen: Die Fachlogik ist prozedural und verwendet keine eigenen Klassen.
+// Werte erst validieren und bei der HTML-Ausgabe kontextgerecht maskieren.
+function e(string $text): string
+{
+    return htmlspecialchars($text, ENT_QUOTES | ENT_SUBSTITUTE, &#x27;UTF-8&#x27;);
+}
+
+function euro(int $cent): string
+{
+    return number_format($cent / 100, 2, &#x27;,&#x27;, &#x27;.&#x27;) . &#x27; €&#x27;;
+}
+
+function startwerte(): array
+{
+    return [
+        &#x27;name&#x27; =&gt; &#x27;&#x27;, &#x27;ziel&#x27; =&gt; &#x27;&#x27;, &#x27;personen&#x27; =&gt; 1,
+        &#x27;extras&#x27; =&gt; [], &#x27;verpflegung&#x27; =&gt; &#x27;ohne&#x27;, &#x27;nachricht&#x27; =&gt; &#x27;&#x27;,
+    ];
+}
+
+// unicode-fähige Längenprüfung ohne zusätzliche PHP-Erweiterung.
+function text_passt(string $text, int $maxZeichen): bool
+{
+    return preg_match(&#x27;/\A.{0,&#x27; . $maxZeichen . &#x27;}\z/us&#x27;, $text) === 1;
+}
+
+/**
+ * Erwartet genau eine Reise-Struktur aus $_POST[&#x27;reise&#x27;].
+ * Strings bleiben zunächst Strings; Arrays vor Schleifen auf Form prüfen.
+ * Rückgabe: [&#x27;ok&#x27; =&gt; bool, &#x27;werte&#x27; =&gt; array, &#x27;fehler&#x27; =&gt; array].
+ * Unbekannte Felder (z. B. ein eingeschleuster Preis) werden NICHT übernommen.
+ */
+function pruefe_reise($eingabe, array $ziele, array $extras, array $verpflegungen): array
+{
+    $werte = startwerte();
+    $fehler = [];
+    if (!is_array($eingabe)) {
+        return [&#x27;ok&#x27; =&gt; false, &#x27;werte&#x27; =&gt; $werte,
+            &#x27;fehler&#x27; =&gt; [&#x27;Es wurde kein gültiges Reise-Array übermittelt. Bitte bei Seite 1 beginnen.&#x27;]];
+    }
+
+    // Kein (string)-Cast auf ungeprüfte Eingaben: ein manipuliertes Feld kann ein Array sein.
+    foreach ([&#x27;name&#x27;, &#x27;ziel&#x27;, &#x27;personen&#x27;, &#x27;verpflegung&#x27;, &#x27;nachricht&#x27;] as $feld) {
+        $roh = $eingabe[$feld] ?? null;
+        if (!is_string($roh)) {
+            $fehler[] = &#x27;Das Feld „&#x27; . $feld . &#x27;“ fehlt oder ist kein einzelner Textwert.&#x27;;
+            continue;
+        }
+        $werte[$feld] = trim($roh);
+    }
+
+    if ($werte[&#x27;name&#x27;] === &#x27;&#x27; || !text_passt($werte[&#x27;name&#x27;], 60)) {
+        $fehler[] = &#x27;Bitte einen fiktiven Anzeigenamen mit 1 bis 60 Zeichen eingeben.&#x27;;
+    }
+    if (!array_key_exists($werte[&#x27;ziel&#x27;], $ziele)) {
+        $fehler[] = &#x27;Bitte ein Reiseziel aus dem Katalog wählen.&#x27;;
+    }
+    if (!array_key_exists($werte[&#x27;verpflegung&#x27;], $verpflegungen)) {
+        $fehler[] = &#x27;Bitte eine angebotene Verpflegung wählen.&#x27;;
+    }
+    if (!text_passt($werte[&#x27;nachricht&#x27;], 500)) {
+        $fehler[] = &#x27;Die Nachricht darf höchstens 500 Zeichen enthalten und muss gültiger UTF-8-Text sein.&#x27;;
+    }
+
+    // POST liefert bei diesem Formular einen Textwert, keinen fertigen Integer.
+    $personen = filter_var($werte[&#x27;personen&#x27;], FILTER_VALIDATE_INT, [
+        &#x27;options&#x27; =&gt; [&#x27;min_range&#x27; =&gt; 1, &#x27;max_range&#x27; =&gt; 6],
+    ]);
+    if ($personen === false) {
+        $fehler[] = &#x27;Die Personenanzahl muss eine ganze Zahl von 1 bis 6 sein.&#x27;;
+        $werte[&#x27;personen&#x27;] = 1; // sicherer Darstellungswert; ok bleibt false!
+    } else {
+        $werte[&#x27;personen&#x27;] = $personen;
+    }
+
+    // Kein ausgewähltes Extra bedeutet: Schlüssel fehlt. Das ist erlaubt.
+    $rohExtras = $eingabe[&#x27;extras&#x27;] ?? [];
+    if (!is_array($rohExtras)) {
+        $fehler[] = &#x27;Extras müssen als Liste übertragen werden (reise[extras][]).&#x27;;
+    } elseif (count($rohExtras) &gt; count($extras)) {
+        $fehler[] = &#x27;Es wurden zu viele Extras übermittelt.&#x27;;
+    } else {
+        foreach ($rohExtras as $extraId) {
+            if (!is_string($extraId) || !array_key_exists($extraId, $extras)) {
+                $fehler[] = &#x27;Ein Extra ist unbekannt oder besitzt einen ungültigen Datentyp.&#x27;;
+                continue;
+            }
+            if (in_array($extraId, $werte[&#x27;extras&#x27;], true)) {
+                $fehler[] = &#x27;Dasselbe Extra wurde mehrfach übermittelt.&#x27;;
+                continue;
+            }
+            $werte[&#x27;extras&#x27;][] = $extraId;
+        }
+    }
+    return [&#x27;ok&#x27; =&gt; count($fehler) === 0, &#x27;werte&#x27; =&gt; $werte, &#x27;fehler&#x27; =&gt; $fehler];
+}
+
+// Nur NACH erfolgreicher Validierung aufrufen. Keine Preise aus $_POST lesen!
+function berechne_reise(array $reise, array $ziele, array $extras, array $verpflegungen): array
+{
+    $personen = $reise[&#x27;personen&#x27;];
+    $positionen = [];
+    $proPerson = $ziele[$reise[&#x27;ziel&#x27;]][&#x27;preis_cent&#x27;];
+    $positionen[] = [
+        &#x27;titel&#x27; =&gt; &#x27;Reise: &#x27; . $ziele[$reise[&#x27;ziel&#x27;]][&#x27;titel&#x27;],
+        &#x27;einzel_cent&#x27; =&gt; $proPerson, &#x27;anzahl&#x27; =&gt; $personen,
+        &#x27;summe_cent&#x27; =&gt; $proPerson * $personen,
+    ];
+    foreach ($reise[&#x27;extras&#x27;] as $extraId) {
+        $extra = $extras[$extraId];
+        $proPerson += $extra[&#x27;preis_cent&#x27;];
+        $positionen[] = [
+            &#x27;titel&#x27; =&gt; $extra[&#x27;titel&#x27;], &#x27;einzel_cent&#x27; =&gt; $extra[&#x27;preis_cent&#x27;],
+            &#x27;anzahl&#x27; =&gt; $personen, &#x27;summe_cent&#x27; =&gt; $extra[&#x27;preis_cent&#x27;] * $personen,
+        ];
+    }
+    $verpflegung = $verpflegungen[$reise[&#x27;verpflegung&#x27;]];
+    $proPerson += $verpflegung[&#x27;preis_cent&#x27;];
+    $positionen[] = [
+        &#x27;titel&#x27; =&gt; $verpflegung[&#x27;titel&#x27;], &#x27;einzel_cent&#x27; =&gt; $verpflegung[&#x27;preis_cent&#x27;],
+        &#x27;anzahl&#x27; =&gt; $personen, &#x27;summe_cent&#x27; =&gt; $verpflegung[&#x27;preis_cent&#x27;] * $personen,
+    ];
+    return [&#x27;positionen&#x27; =&gt; $positionen, &#x27;pro_person_cent&#x27; =&gt; $proPerson,
+        &#x27;gesamt_cent&#x27; =&gt; $proPerson * $personen];
+}
+
+function reise_text(array $reise, array $rechnung, array $ziele, array $extras, array $verpflegungen): string
+{
+    $extraNamen = [];
+    foreach ($reise[&#x27;extras&#x27;] as $id) {
+        $extraNamen[] = $extras[$id][&#x27;titel&#x27;];
+    }
+    return &#x27;Für: &#x27; . $reise[&#x27;name&#x27;] . &quot;\n&quot;
+        . &#x27;Ziel: &#x27; . $ziele[$reise[&#x27;ziel&#x27;]][&#x27;titel&#x27;] . &quot;\n&quot;
+        . &#x27;Personen: &#x27; . $reise[&#x27;personen&#x27;] . &quot;\n&quot;
+        . &#x27;Extras: &#x27; . ($extraNamen === [] ? &#x27;Keine&#x27; : implode(&#x27;, &#x27;, $extraNamen)) . &quot;\n&quot;
+        . &#x27;Verpflegung: &#x27; . $verpflegungen[$reise[&#x27;verpflegung&#x27;]][&#x27;titel&#x27;] . &quot;\n&quot;
+        . &#x27;Gesamt: &#x27; . euro($rechnung[&#x27;gesamt_cent&#x27;]) . &quot;\n\n&quot;
+        . &#x27;Nachricht: &#x27; . ($reise[&#x27;nachricht&#x27;] === &#x27;&#x27; ? &#x27;Keine Nachricht&#x27; : $reise[&#x27;nachricht&#x27;]);
+}
+
+// Reines Rendering; nur die bekannten Felder werden ausgegeben.
+// $ohneVerpflegung = true, wenn Seite 2 dieses Feld sichtbar neu anbietet.
+function hidden_reise(array $reise, bool $ohneVerpflegung = false): string
+{
+    $html = &#x27;&#x27;;
+    foreach ([&#x27;name&#x27;, &#x27;ziel&#x27;, &#x27;personen&#x27;, &#x27;verpflegung&#x27;, &#x27;nachricht&#x27;] as $feld) {
+        if ($ohneVerpflegung &amp;&amp; $feld === &#x27;verpflegung&#x27;) {
+            continue;
+        }
+        $html .= &#x27;&lt;input type=&quot;hidden&quot; name=&quot;reise[&#x27; . $feld . &#x27;]&quot; value=&quot;&#x27;
+            . e((string)$reise[$feld]) . &#x27;&quot;&gt;&#x27; . &quot;\n&quot;;
+    }
+    foreach ($reise[&#x27;extras&#x27;] as $id) {
+        $html .= &#x27;&lt;input type=&quot;hidden&quot; name=&quot;reise[extras][]&quot; value=&quot;&#x27; . e($id) . &#x27;&quot;&gt;&#x27; . &quot;\n&quot;;
+    }
+    return $html;
+}
+
+function kopf(string $titel, int $schritt): string
+{
+    $schritte = &#x27;&#x27;;
+    foreach ([1 =&gt; &#x27;Auswählen&#x27;, 2 =&gt; &#x27;Prüfen &amp; ändern&#x27;, 3 =&gt; &#x27;Auswerten&#x27;] as $nummer =&gt; $text) {
+        $schritte .= &#x27;&lt;li&#x27; . ($schritt === $nummer ? &#x27; aria-current=&quot;step&quot;&#x27; : &#x27;&#x27;) . &#x27;&gt;&#x27;
+            . &#x27;&lt;span&gt;&#x27; . $nummer . &#x27;&lt;/span&gt;&#x27; . e($text) . &#x27;&lt;/li&gt;&#x27;;
+    }
+    return &#x27;&lt;!doctype html&gt;&lt;html lang=&quot;de&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&#x27;
+        . &#x27;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;&#x27;
+        . &#x27;&lt;title&gt;&#x27; . e($titel) . &#x27; · PHP&lt;/title&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;../../assets/demo.css&quot;&gt;&#x27;
+        . &#x27;&lt;/head&gt;&lt;body&gt;&lt;a class=&quot;skip&quot; href=&quot;#inhalt&quot;&gt;Zum Inhalt&lt;/a&gt;&lt;div class=&quot;wrap&quot;&gt;&#x27;
+        . &#x27;&lt;header class=&quot;app-head&quot;&gt;&lt;a class=&quot;brand&quot; href=&quot;../../index.html&quot;&gt;&lt;span class=&quot;mark&quot;&gt;10a&lt;/span&gt;&#x27;
+        . &#x27;&lt;span&gt;&lt;small&gt;PHP-LERNWERKSTATT&lt;/small&gt;&lt;strong&gt;EuroCityTravel&lt;/strong&gt;&lt;/span&gt;&lt;/a&gt;&#x27;
+        . &#x27;&lt;span class=&quot;pill&quot;&gt;Demo · ohne Speicher&lt;/span&gt;&lt;/header&gt;&#x27;
+        . &#x27;&lt;ol class=&quot;stepper&quot; aria-label=&quot;Formularschritte&quot;&gt;&#x27; . $schritte . &#x27;&lt;/ol&gt;&#x27;
+        . &#x27;&lt;main id=&quot;inhalt&quot;&gt;&lt;div class=&quot;page-head&quot;&gt;&lt;p class=&quot;eyebrow&quot;&gt;ARRAYS · POST · HTML&lt;/p&gt;&lt;h1&gt;&#x27;
+        . e($titel) . &#x27;&lt;/h1&gt;&lt;/div&gt;&#x27;;
+}
+
+function fuss(): string
+{
+    return &#x27;&lt;/main&gt;&lt;footer&gt;&lt;strong&gt;Nur Unterrichtsdaten.&lt;/strong&gt; Keine Buchung, keine Datenbank, &#x27;
+        . &#x27;keine Sessions oder Cookies. Alle Preise sind fiktiv. Eine neue Anfrage braucht die Werte erneut.&#x27;
+        . &#x27;&lt;/footer&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;&#x27;;
+}
+
+function fehlerseite(array $fehler, array $reise): string
+{
+    $html = &#x27;&lt;section class=&quot;card error&quot; role=&quot;alert&quot;&gt;&lt;h2&gt;Bitte Eingaben prüfen&lt;/h2&gt;&lt;ul&gt;&#x27;;
+    foreach ($fehler as $text) {
+        $html .= &#x27;&lt;li&gt;&#x27; . e($text) . &#x27;&lt;/li&gt;&#x27;;
+    }
+    return $html . &#x27;&lt;/ul&gt;&lt;/section&gt;&lt;form action=&quot;auswahl.php&quot; method=&quot;post&quot;&gt;&#x27;
+        . hidden_reise($reise) . &#x27;&lt;button type=&quot;submit&quot;&gt;Zurück zum Formular&lt;/button&gt;&lt;/form&gt;&#x27;;
+}</code></pre></div></details></section><section class="card plain-section filelist"><h2><code>demo/01-mehrseitig/katalog.php</code></h2><p><a class="btn" href="demo__01-mehrseitig__katalog.php.txt">Textdatei öffnen</a></p><details><summary>Quelltext direkt lesen</summary><div class="codebox"><div class="codebar"><span>PHP</span><button type="button" data-copy>Code kopieren</button></div><pre><code>&lt;?php
+declare(strict_types=1);
+
+// Statische Unterrichtsdaten werden bei JEDEM Request neu geladen.
+// Kein Benutzerzustand, keine Session, keine Datenbank. Alle Preise sind fiktiv.
+$ziele = [
+    &#x27;berlin&#x27; =&gt; [&#x27;titel&#x27; =&gt; &#x27;Berlin&#x27;, &#x27;land&#x27; =&gt; &#x27;Deutschland&#x27;, &#x27;preis_cent&#x27; =&gt; 12900],
+    &#x27;paris&#x27;  =&gt; [&#x27;titel&#x27; =&gt; &#x27;Paris&#x27;,  &#x27;land&#x27; =&gt; &#x27;Frankreich&#x27;,  &#x27;preis_cent&#x27; =&gt; 19900],
+    &#x27;rom&#x27;    =&gt; [&#x27;titel&#x27; =&gt; &#x27;Rom&#x27;,    &#x27;land&#x27; =&gt; &#x27;Italien&#x27;,     &#x27;preis_cent&#x27; =&gt; 17900],
+];
+
+// Schlüssel gehen ins Formular, Titel sind die sichtbaren Beschriftungen.
+$extras = [
+    &#x27;museum&#x27;   =&gt; [&#x27;titel&#x27; =&gt; &#x27;Museumspass&#x27;,   &#x27;preis_cent&#x27; =&gt; 2500],
+    &#x27;transfer&#x27; =&gt; [&#x27;titel&#x27; =&gt; &#x27;Transfer&#x27;,     &#x27;preis_cent&#x27; =&gt; 3500],
+    &#x27;tour&#x27;     =&gt; [&#x27;titel&#x27; =&gt; &#x27;Stadtführung&#x27;, &#x27;preis_cent&#x27; =&gt; 1800],
+];
+
+$verpflegungen = [
+    &#x27;ohne&#x27;         =&gt; [&#x27;titel&#x27; =&gt; &#x27;Ohne Verpflegung&#x27;, &#x27;preis_cent&#x27; =&gt; 0],
+    &#x27;fruehstueck&#x27;  =&gt; [&#x27;titel&#x27; =&gt; &#x27;Frühstück&#x27;,         &#x27;preis_cent&#x27; =&gt; 1200],
+    &#x27;halbpension&#x27;  =&gt; [&#x27;titel&#x27; =&gt; &#x27;Halbpension&#x27;,       &#x27;preis_cent&#x27; =&gt; 3000],
+];</code></pre></div></details></section><section class="card plain-section filelist"><h2><code>demo/01-mehrseitig/pruefen.php</code></h2><p><a class="btn" href="demo__01-mehrseitig__pruefen.php.txt">Textdatei öffnen</a></p><details><summary>Quelltext direkt lesen</summary><div class="codebox"><div class="codebar"><span>PHP</span><button type="button" data-copy>Code kopieren</button></div><pre><code>&lt;?php
+declare(strict_types=1);
+require __DIR__ . &#x27;/katalog.php&#x27;;
+require __DIR__ . &#x27;/funktionen.php&#x27;;
+header(&#x27;Cache-Control: no-store&#x27;);
+if (($_SERVER[&#x27;REQUEST_METHOD&#x27;] ?? &#x27;&#x27;) !== &#x27;POST&#x27;) {
+    http_response_code(405);
+    header(&#x27;Allow: POST&#x27;);
+    echo kopf(&#x27;Für diese Seite fehlen die Formulardaten&#x27;, 2);
+    echo &#x27;&lt;p class=&quot;note&quot;&gt;Ein direkter Link ist eine GET-Anfrage. Bitte zuerst das Formular absenden.&lt;/p&gt;&#x27;;
+    echo &#x27;&lt;a class=&quot;button&quot; href=&quot;auswahl.php&quot;&gt;Zu Seite 1&lt;/a&gt;&#x27; . fuss();
+    exit;
+}
+$pruefung = pruefe_reise($_POST[&#x27;reise&#x27;] ?? null, $ziele, $extras, $verpflegungen);
+$reise = $pruefung[&#x27;werte&#x27;];
+if (!$pruefung[&#x27;ok&#x27;]) {
+    http_response_code(422);
+    echo kopf(&#x27;Eingaben noch nicht gültig&#x27;, 2);
+    echo fehlerseite($pruefung[&#x27;fehler&#x27;], $reise) . fuss();
+    exit;
+}
+$rechnung = berechne_reise($reise, $ziele, $extras, $verpflegungen);
+$zusammenfassung = reise_text($reise, $rechnung, $ziele, $extras, $verpflegungen);
+echo kopf(&#x27;Auswahl prüfen und weiterreichen&#x27;, 2);
+?&gt;
+&lt;p class=&quot;lead&quot;&gt;POST empfangen, Struktur geprüft und Preise aus dem Katalog neu berechnet.&lt;/p&gt;
+&lt;div class=&quot;layout&quot;&gt;&lt;section class=&quot;card&quot;&gt;
+    &lt;span class=&quot;pill&quot;&gt;Gültige Auswahl&lt;/span&gt;
+    &lt;h2&gt;&lt;?= e($ziele[$reise[&#x27;ziel&#x27;]][&#x27;titel&#x27;]) ?&gt; für &lt;?= $reise[&#x27;personen&#x27;] ?&gt; Personen&lt;/h2&gt;
+    &lt;label for=&quot;vorschau&quot;&gt;Dynamisch gefülltes Ausgabefeld · reiner Text&lt;/label&gt;
+    &lt;textarea id=&quot;vorschau&quot; readonly rows=&quot;10&quot;&gt;&lt;?= e($zusammenfassung) ?&gt;&lt;/textarea&gt;
+    &lt;p class=&quot;help&quot;&gt;Eine Textarea zeigt Text und Zeilenumbrüche, aber keine formatierten HTML-Elemente.&lt;/p&gt;
+    &lt;details&gt;&lt;summary&gt;Unterrichtsansicht: empfangenes und geprüftes Array&lt;/summary&gt;
+        &lt;h3&gt;$_POST · vom Browser&lt;/h3&gt;&lt;pre&gt;&lt;?= e(print_r($_POST, true)) ?&gt;&lt;/pre&gt;
+        &lt;h3&gt;$reise · nach der Prüfung&lt;/h3&gt;&lt;pre&gt;&lt;?= e(var_export($reise, true)) ?&gt;&lt;/pre&gt;
+        &lt;p&gt;Die Personenanzahl ist jetzt ein Integer. Unbekannte Felder werden nicht übernommen.&lt;/p&gt;
+    &lt;/details&gt;
+&lt;/section&gt;
+&lt;section class=&quot;card lesson&quot;&gt;&lt;h2&gt;2 · Weiterbearbeiten&lt;/h2&gt;
+    &lt;p&gt;Ändere die Verpflegung. Die übrigen Angaben werden als versteckte Felder erneut übertragen.&lt;/p&gt;
+    &lt;form action=&quot;ergebnis.php&quot; method=&quot;post&quot; id=&quot;weiter&quot;&gt;
+        &lt;?= hidden_reise($reise, true) ?&gt;
+        &lt;label for=&quot;verpflegung&quot;&gt;Verpflegung jetzt ändern&lt;/label&gt;
+        &lt;select id=&quot;verpflegung&quot; name=&quot;reise[verpflegung]&quot;&gt;
+            &lt;?php foreach ($verpflegungen as $id =&gt; $option): ?&gt;
+                &lt;option value=&quot;&lt;?= e($id) ?&gt;&quot;&lt;?= $reise[&#x27;verpflegung&#x27;] === $id ? &#x27; selected&#x27; : &#x27;&#x27; ?&gt;&gt;&lt;?= e($option[&#x27;titel&#x27;]) ?&gt; · &lt;?= e(euro($option[&#x27;preis_cent&#x27;])) ?&gt; / Person&lt;/option&gt;
+            &lt;?php endforeach; ?&gt;
+        &lt;/select&gt;
+        &lt;p class=&quot;note warning&quot;&gt;Hidden-Felder sind ein Transportweg, kein Schutz. Seite 3 prüft alles erneut.&lt;/p&gt;
+        &lt;button type=&quot;submit&quot;&gt;Neu berechnen und auswerten →&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;form action=&quot;auswahl.php&quot; method=&quot;post&quot; class=&quot;back-form&quot; id=&quot;bearbeiten&quot;&gt;
+        &lt;?= hidden_reise($reise) ?&gt;
+        &lt;button type=&quot;submit&quot; class=&quot;secondary&quot;&gt;← Ursprüngliche Auswahl bearbeiten&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;p class=&quot;help&quot;&gt;Dieser Rückweg verwendet die auf Seite 2 empfangene Auswahl. Die noch nicht abgesendete Änderung oben wird dabei nicht übernommen.&lt;/p&gt;
+&lt;/section&gt;&lt;/div&gt;
+&lt;?= fuss() ?&gt;</code></pre></div></details></section><section class="card plain-section filelist"><h2><code>demo/02-arrays/arrays-kontrollstrukturen.php</code></h2><p><a class="btn" href="demo__02-arrays__arrays-kontrollstrukturen.php.txt">Textdatei öffnen</a></p><details><summary>Quelltext direkt lesen</summary><div class="codebox"><div class="codebar"><span>PHP</span><button type="button" data-copy>Code kopieren</button></div><pre><code>&lt;?php
+declare(strict_types=1);
+require __DIR__ . &#x27;/../01-mehrseitig/funktionen.php&#x27;;
+
+// Jedes Beispiel lässt sich einzeln im Unterricht verändern.
+// Die Ausgabe wird wirklich von PHP berechnet, nicht durch JavaScript simuliert.
+$liste = [&#x27;Berlin&#x27;, &#x27;Paris&#x27;, &#x27;Rom&#x27;];
+$liste[] = &#x27;Wien&#x27;;
+$reise = [&#x27;ziel&#x27; =&gt; &#x27;Paris&#x27;, &#x27;personen&#x27; =&gt; 2, &#x27;extras&#x27; =&gt; [&#x27;museum&#x27;, &#x27;tour&#x27;]];
+$preise = [&#x27;berlin&#x27; =&gt; 12900, &#x27;paris&#x27; =&gt; 19900, &#x27;rom&#x27; =&gt; 17900];
+$zeilen = [];
+foreach ($preise as $id =&gt; $cent) {
+    $zeilen[] = $id . &#x27; =&gt; &#x27; . euro($cent);
+}
+$gesamt = 0;
+foreach ([2500, 3500, 1800] as $cent) {
+    $gesamt += $cent;
+}
+$nummern = [];
+for ($i = 0; $i &lt; count($liste); $i++) {
+    $nummern[] = $i . &#x27;: &#x27; . $liste[$i];
+}
+$whileWerte = [];
+$i = 0;
+while ($i &lt; 3) {
+    $whileWerte[] = $i;
+    $i++;
+}
+$doWerte = [];
+$i = 5;
+do {
+    $doWerte[] = $i;
+    $i++;
+} while ($i &lt; 3); // erster Durchlauf findet trotzdem statt.
+
+$filter = [];
+foreach ([0, 2500, 3500, 1800] as $cent) {
+    if ($cent === 0) {
+        continue; // nur diesen Durchlauf überspringen.
+    }
+    if ($cent &gt; 3000) {
+        break; // gesamte Schleife beenden.
+    }
+    $filter[] = $cent;
+}
+$kopie = $preise;
+asort($kopie); // Schlüssel erhalten, Werte sortieren.
+$ohne = [&#x27;Berlin&#x27;, &#x27;Paris&#x27;, &#x27;Rom&#x27;];
+unset($ohne[1]); // Schlüssel 1 fehlt; count ist nicht der größte Index.
+$neuIndiziert = array_values($ohne);
+$leerWert = [&#x27;notiz&#x27; =&gt; null];
+$beispiele = [
+    [&#x27;Liste anlegen und erweitern&#x27;, &#x27;$liste = [&quot;Berlin&quot;, &quot;Paris&quot;, &quot;Rom&quot;];&#x27; . &quot;\n&quot; . &#x27;$liste[] = &quot;Wien&quot;;&#x27;, var_export($liste, true)],
+    [&#x27;Assoziativ und verschachtelt&#x27;, &#x27;$reise = [&quot;ziel&quot; =&gt; &quot;Paris&quot;, &quot;personen&quot; =&gt; 2, &quot;extras&quot; =&gt; [&quot;museum&quot;, &quot;tour&quot;]];&#x27; . &quot;\n&quot; . &#x27;$reise[&quot;extras&quot;][0];&#x27;, var_export($reise, true) . &quot;\nErstes Extra: &quot; . $reise[&#x27;extras&#x27;][0]],
+    [&#x27;Schlüssel und Werte durchlaufen&#x27;, &#x27;foreach ($preise as $id =&gt; $cent) { /* $id und $cent verwenden */ }&#x27;, implode(&quot;\n&quot;, $zeilen)],
+    [&#x27;Werte aufsummieren&#x27;, &#x27;$gesamt = 0;&#x27; . &quot;\n&quot; . &#x27;foreach ([2500, 3500, 1800] as $cent) { $gesamt += $cent; }&#x27;, &#x27;Summe: &#x27; . $gesamt . &#x27; Cent = &#x27; . euro($gesamt)],
+    [&#x27;for auf einer lückenlosen Liste&#x27;, &#x27;for ($i = 0; $i &lt; count($liste); $i++) { /* $liste[$i] lesen */ }&#x27;, implode(&quot;\n&quot;, $nummern)],
+    [&#x27;while ist kopfgesteuert&#x27;, &#x27;$i = 0;&#x27; . &quot;\n&quot; . &#x27;while ($i &lt; 3) { /* ausgeben */ $i++; }&#x27;, implode(&#x27;, &#x27;, $whileWerte)],
+    [&#x27;do-while läuft mindestens einmal&#x27;, &#x27;$i = 5;&#x27; . &quot;\n&quot; . &#x27;do { /* ausgeben */ $i++; } while ($i &lt; 3);&#x27;, implode(&#x27;, &#x27;, $doWerte)],
+    [&#x27;continue und break&#x27;, &#x27;foreach ([0, 2500, 3500, 1800] as $cent) {&#x27; . &quot;\n&quot; . &#x27;  if ($cent === 0) { continue; }&#x27; . &quot;\n&quot; . &#x27;  if ($cent &gt; 3000) { break; }&#x27; . &quot;\n&quot; . &#x27;  $filter[] = $cent;&#x27; . &quot;\n&quot; . &#x27;}&#x27;, var_export($filter, true)],
+    [&#x27;asort erhält die Schlüssel&#x27;, &#x27;$kopie = $preise; asort($kopie);&#x27;, var_export($kopie, true)],
+    [&#x27;Löschen und neu indizieren&#x27;, &#x27;unset($ohne[1]);&#x27; . &quot;\n&quot; . &#x27;$neuIndiziert = array_values($ohne);&#x27;, var_export($ohne, true) . &quot;\n\nNeu indiziert:\n&quot; . var_export($neuIndiziert, true)],
+    [&#x27;isset oder array_key_exists?&#x27;, &#x27;$leerWert = [&quot;notiz&quot; =&gt; null];&#x27;, &#x27;isset: &#x27; . var_export(isset($leerWert[&#x27;notiz&#x27;]), true) . &quot;\narray_key_exists: &quot; . var_export(array_key_exists(&#x27;notiz&#x27;, $leerWert), true)],
+];
+?&gt;
+&lt;!doctype html&gt;&lt;html lang=&quot;de&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
+&lt;title&gt;Arrays und Kontrollstrukturen · PHP-Demo&lt;/title&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;../../assets/demo.css&quot;&gt;&lt;/head&gt;
+&lt;body&gt;&lt;main class=&quot;wrap mini&quot;&gt;&lt;p class=&quot;eyebrow&quot;&gt;PHP · Code lesen, vorhersagen, ausführen&lt;/p&gt;
+&lt;h1&gt;Arrays im kleinen Labor&lt;/h1&gt;&lt;p&gt;Die Ausgaben entstehen direkt durch PHP. Lies zuerst den jeweiligen Code.&lt;/p&gt;
+&lt;?php foreach ($beispiele as $beispiel): ?&gt;
+&lt;section class=&quot;card&quot;&gt;&lt;h2&gt;&lt;?= e($beispiel[0]) ?&gt;&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;&lt;?= e($beispiel[1]) ?&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;details&gt;&lt;summary&gt;Berechnete Ausgabe einblenden&lt;/summary&gt;&lt;pre&gt;&lt;?= e($beispiel[2]) ?&gt;&lt;/pre&gt;&lt;/details&gt;&lt;/section&gt;
+&lt;?php endforeach; ?&gt;
+&lt;a href=&quot;../../index.html&quot;&gt;Zur Materialübersicht&lt;/a&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;</code></pre></div></details></section></main></div><script src="../assets/kurs.js"></script></body></html>

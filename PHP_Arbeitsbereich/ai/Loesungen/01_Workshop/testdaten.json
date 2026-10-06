@@ -1,0 +1,16 @@
+{
+  "eingabe": {
+    "name": "Alex Beispiel",
+    "email": "alex@example.com",
+    "kurs": "php",
+    "personen": "2",
+    "format": "praesenz",
+    "extras": [
+      "skript",
+      "beratung"
+    ],
+    "notiz": "Bitte vorn sitzen.",
+    "bestaetigung": "ja"
+  },
+  "erwartete_gesamtsumme": "272,00 €"
+}

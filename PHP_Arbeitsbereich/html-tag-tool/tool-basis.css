@@ -1,0 +1,74 @@
+/* Lokale Basis für das HTML-Tag-Tool.
+   Diese Datei ersetzt KEINE Originaldatei des Gesamtkurses.
+   Alle hier benötigten Designvariablen sind im Tool selbst definiert. */
+:root {
+  --course-color-primary: #007f95;
+  --course-color-secondary: #003964;
+  --course-color-accent: #bdf77a;
+  --course-color-background: #f2f8fb;
+  --course-color-surface: #ffffff;
+  --course-color-text: #173248;
+  --course-color-muted: #5f7284;
+  --course-color-border: #d8e8ee;
+  --course-color-warning: #a26005;
+  --course-color-success: #177449;
+  --course-sidebar-width: 17rem;
+  --course-content-width: 74rem;
+  --course-radius-card: .65rem;
+  --course-radius-button: .45rem;
+  --course-shadow-card: 0 12px 28px rgb(0 57 100 / 10%);
+}
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; line-height: 1.55; }
+button, input, select, textarea { font-family: inherit; }
+pre, code { font-family: Consolas, "Courier New", monospace; }
+.course-backlink {
+  display: block; margin: 0 0 1rem; padding: .65rem .75rem;
+  border: 1px solid var(--course-color-border); border-radius: .45rem;
+  background: #e8fbff; color: var(--course-color-secondary);
+  font-size: .92rem; font-weight: 700; text-decoration: none;
+}
+.course-backlink:hover { background: #d8f4f8; }
+.course-navigation { display: grid; gap: .4rem; }
+.course-navigation a {
+  display: flex; min-height: 44px; align-items: center;
+  border: 1px solid transparent; border-left: 4px solid transparent;
+  border-radius: .4rem; padding: .65rem .75rem;
+  color: var(--course-color-secondary); font-weight: 700;
+  font-size: .94rem; line-height: 1.4; text-decoration: none;
+}
+.course-navigation a:hover { background: #e8fbff; }
+.course-navigation a.is-active, .course-navigation a[aria-current="location"] {
+  border-left-color: var(--course-color-accent);
+  background: var(--course-color-secondary); color: #fff;
+}
+.course-menu-toggle, .course-button {
+  min-height: 44px; align-items: center; justify-content: center;
+  border: 1px solid var(--course-color-primary);
+  border-radius: var(--course-radius-button); padding: .65rem .9rem;
+  background: var(--course-color-primary); color: #fff;
+  font: inherit; font-weight: 700; text-decoration: none; cursor: pointer;
+}
+.course-button { display: inline-flex; }
+.course-menu-toggle { display: none; }
+.course-navigation a:focus-visible, .course-backlink:focus-visible,
+.course-menu-toggle:focus-visible, .course-button:focus-visible {
+  outline: 3px solid var(--course-color-primary); outline-offset: 3px;
+}
+.tool-skip-link {
+  position: fixed; z-index: 2000; left: 1rem; top: .75rem;
+  transform: translateY(-200%); padding: .7rem 1rem;
+  background: #fff; color: var(--course-color-secondary);
+  border: 2px solid var(--course-color-primary); border-radius: .4rem;
+}
+.tool-skip-link:focus { transform: translateY(0); }
+@media (max-width: 768px) {
+  .tool-js .course-menu-toggle { display: flex; width: 100%; }
+  .course-navigation { margin-top: .75rem; }
+  .tool-js .course-navigation:not(.is-open) { display: none; }
+}
+@media print {
+  .tag-tool-layout { display: block !important; }
+  .tag-tool-sidebar, .tool-skip-link { display: none !important; }
+}

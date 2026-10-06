@@ -1,0 +1,3113 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PHP · QuizTool · Schreibtischtests</title>
+  <style>
+    :root {
+      --navy: #003964;
+      --cyan: #00abc7;
+      --lime: #bdf77a;
+      --lime-soft: #eaffd5;
+      --text: #12324a;
+      --muted: #667789;
+      --card: #f6f3f1;
+      --line: #dce9ec;
+      --shadow: 0 28px 70px rgba(0, 34, 59, .18);
+      --good: #168a4a;
+      --bad: #b42318;
+      --warn: #d99a00;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%
+    }
+
+    body {
+      min-height: 100vh;
+      padding: 32px;
+      background: #eef6fa;
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif
+    }
+
+    .app {
+      width: min(1180px, 100%);
+      margin: 0 auto
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 14px
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .88);
+      border: 1px solid rgba(0, 57, 100, .12);
+      box-shadow: 0 10px 30px rgba(0, 57, 100, .08)
+    }
+
+    .badge:before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--cyan);
+      box-shadow: 0 0 0 5px rgba(0, 171, 199, .14)
+    }
+
+    .panel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-top: 6px solid var(--cyan);
+      box-shadow: 0 18px 48px rgba(0, 57, 100, .1);
+      padding: 18px
+    }
+
+    .page {
+      position: relative;
+      width: 100%;
+      min-height: 650px;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: inset 0 0 0 1px rgba(0, 57, 100, .08)
+    }
+
+    .wave {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 118px;
+      z-index: 1;
+      pointer-events: none
+    }
+
+    .brand {
+      position: absolute;
+      z-index: 2;
+      top: 24px;
+      left: 44px;
+      color: #fff;
+      font-weight: 800;
+      font-size: 18px
+    }
+
+    .side {
+      position: absolute;
+      z-index: 2;
+      left: 16px;
+      bottom: 78px;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      color: #b7c5cc;
+      font-size: 10px;
+      letter-spacing: .08em;
+      white-space: nowrap
+    }
+
+    .number {
+      position: absolute;
+      z-index: 2;
+      left: 58px;
+      bottom: 34px;
+      color: #8798a3;
+      font-size: 13px
+    }
+
+    .footer {
+      position: absolute;
+      z-index: 2;
+      right: 72px;
+      bottom: 34px;
+      color: #a7b6bd;
+      font-size: 10px
+    }
+
+    .content {
+      position: relative;
+      z-index: 3;
+      padding: 104px 88px 74px;
+      min-height: 650px
+    }
+
+    .content.split {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 34px;
+      align-items: start
+    }
+
+    .hidden {
+      display: none !important
+    }
+
+    .kicker {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--cyan);
+      font-size: 14px;
+      font-weight: 700
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      color: var(--navy);
+      font-weight: 500;
+      letter-spacing: -.02em;
+      line-height: 1.08
+    }
+
+    h1 {
+      font-size: clamp(36px, 4vw, 56px)
+    }
+
+    h2 {
+      font-size: clamp(26px, 3vw, 40px)
+    }
+
+    h3 {
+      font-size: 22px
+    }
+
+    .rule {
+      width: min(240px, 52%);
+      height: 3px;
+      margin: 16px 0 24px;
+      background: var(--cyan);
+      border-radius: 999px
+    }
+
+    .lead {
+      margin: 0;
+      max-width: 74ch;
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.48
+    }
+
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+      margin-top: 24px
+    }
+
+    .flow span:not(.arrow) {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #fff;
+      border: 2px solid var(--line);
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 8px 18px rgba(0, 57, 100, .06)
+    }
+
+    .arrow {
+      color: var(--cyan);
+      font-weight: 900
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      width: 100%;
+      margin-top: 22px
+    }
+
+    .card,
+    .core,
+    .questionbox {
+      padding: 20px;
+      border-radius: 16px;
+      background: var(--card);
+      border: 1px solid #ded8d3;
+      box-shadow: 0 8px 18px rgba(0, 57, 100, .06);
+      font-size: 14px;
+      line-height: 1.42
+    }
+
+    .core,
+    .questionbox {
+      background: #fff;
+      border: 2px solid var(--line)
+    }
+
+    .card strong,
+    .core strong,
+    .questionbox strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: 15px
+    }
+
+    .core strong,
+    .questionbox strong {
+      color: var(--cyan)
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.1em
+    }
+
+    li {
+      margin-bottom: 6px
+    }
+
+    .quote {
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-left: 4px solid var(--cyan);
+      border-radius: 0 14px 14px 0;
+      background: var(--lime-soft);
+      color: var(--navy);
+      font-weight: 700
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 999px;
+      padding: 11px 18px;
+      background: var(--navy);
+      color: #fff;
+      font: inherit;
+      cursor: pointer;
+      box-shadow: 0 10px 22px rgba(0, 57, 100, .22);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto
+    }
+
+    .btn:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px)
+    }
+
+    .btn.secondary {
+      background: #fff;
+      color: var(--navy);
+      border: 2px solid var(--line);
+      box-shadow: 0 8px 18px rgba(0, 57, 100, .06)
+    }
+
+    .btn.danger {
+      background: #b42318
+    }
+
+    .btn:disabled {
+      opacity: .5;
+      cursor: default;
+      transform: none
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin: 18px 0
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 2px solid var(--line);
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 13px
+    }
+
+    .timer {
+      font-variant-numeric: tabular-nums
+    }
+
+    .poolcard {
+      margin-top: 22px;
+      padding: 18px;
+      border-radius: 20px;
+      background: #f7fbfd;
+      border: 2px solid var(--line);
+      box-shadow: 0 10px 22px rgba(0, 57, 100, .06)
+    }
+
+    .selectrow {
+      display: grid;
+      grid-template-columns: 165px 1fr;
+      gap: 12px;
+      align-items: center;
+      margin: 12px 0
+    }
+
+    .selectrow label {
+      color: var(--navy);
+      font-size: 15px;
+      font-weight: 900
+    }
+
+    .selectwrap {
+      position: relative
+    }
+
+    .selectwrap:after {
+      content: "▾";
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: var(--navy);
+      font-weight: 900
+    }
+
+    .selectrow select {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 100%;
+      border-radius: 999px;
+      border: 2px solid var(--cyan);
+      padding: 13px 46px 13px 18px;
+      background: #ffffff !important;
+      color: #003964 !important;
+      font: inherit;
+      font-weight: 800;
+      box-shadow: 0 8px 18px rgba(0, 57, 100, .08);
+      min-height: 50px;
+    }
+
+    .selectrow select option {
+      background: #fff;
+      color: #12324a;
+      font-weight: 600
+    }
+
+    .quizmeta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 14px
+    }
+
+    .topiclabel {
+      font-weight: 700;
+      color: var(--cyan)
+    }
+
+    .difficulty {
+      font-size: 12px;
+      color: var(--muted)
+    }
+
+    .qtext {
+      background: radial-gradient(circle at top left, #f7fbfd, #fff 62%);
+      border-radius: 18px;
+      padding: 18px 20px;
+      border: 2px solid var(--line);
+      font-size: 17px;
+      line-height: 1.55;
+      margin-bottom: 18px
+    }
+
+    .qtext code,
+    .detailq code {
+      font-family: Consolas, Monaco, 'Courier New', monospace;
+      background: #eef8fb;
+      border: 1px solid #dce9ec;
+      border-radius: 5px;
+      padding: 2px 5px;
+      color: var(--navy)
+    }
+
+    .qtext small {
+      color: var(--muted)
+    }
+
+    .answers {
+      display: flex;
+      flex-direction: column;
+      gap: 10px
+    }
+
+    .answer {
+      width: 100%;
+      text-align: left;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 13px 14px;
+      border-radius: 16px;
+      border: 2px solid var(--line);
+      background: #fff;
+      color: var(--text);
+      font: inherit;
+      cursor: pointer
+    }
+
+    .answer:hover {
+      border-color: var(--cyan)
+    }
+
+    .answer.selected {
+      background: linear-gradient(135deg, #eaffd5, #eef9fc);
+      border-color: var(--cyan)
+    }
+
+    .letter {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      border: 2px solid var(--line);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: var(--navy);
+      flex: 0 0 auto
+    }
+
+    .answer.selected .letter {
+      border-color: var(--cyan);
+      background: #fff
+    }
+
+    .navrow {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 20px;
+      flex-wrap: wrap
+    }
+
+    .navgroup {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap
+    }
+
+    .overviewtoggle {
+      position: absolute;
+      z-index: 4;
+      top: 24px;
+      right: 44px;
+      padding: 8px 13px;
+      background: rgba(255,255,255,.96);
+      color: var(--navy);
+      border: 2px solid rgba(220,233,236,.95);
+      box-shadow: 0 8px 18px rgba(0,57,100,.12)
+    }
+
+    .overview {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 57, 100, .25);
+      display: grid;
+      place-items: center;
+      z-index: 999
+    }
+
+    .overviewbox {
+      width: min(620px, 92vw);
+      max-height: 86vh;
+      overflow: auto;
+      background: #fff;
+      border-radius: 24px;
+      border: 2px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 24px
+    }
+
+    .overviewlist {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0
+    }
+
+    .overviewitem {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 2px solid var(--line);
+      background: #fff;
+      color: var(--navy);
+      font-weight: 700;
+      cursor: pointer
+    }
+
+    .overviewitem.answered {
+      background: var(--lime-soft);
+      border-color: #99d95f
+    }
+
+    .overviewitem.current {
+      box-shadow: 0 0 0 3px rgba(0, 171, 199, .25);
+      border-color: var(--cyan)
+    }
+
+    .resultgrid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px
+    }
+
+    .topic-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 12px
+    }
+
+    .topic-table th,
+    .topic-table td {
+      border: 1px solid var(--line);
+      padding: 8px;
+      text-align: left
+    }
+
+    .topic-table th {
+      background: var(--navy);
+      color: #fff
+    }
+
+    .topic-table tr.topic-highlight td {
+      background: #fff1f1
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-height: 520px;
+      overflow: auto;
+      margin-top: 16px;
+      padding-right: 6px
+    }
+
+    .detail {
+      border-radius: 16px;
+      border: 2px solid var(--line);
+      padding: 16px;
+      background: #fff
+    }
+
+    .detail.correct {
+      border-left: 6px solid var(--good)
+    }
+
+    .detail.wrong {
+      border-left: 6px solid var(--bad)
+    }
+
+    .detailhead {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: start;
+      margin-bottom: 10px
+    }
+
+    .status {
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: 12px;
+      font-weight: 800
+    }
+
+    .status.good {
+      background: #e7f7ed;
+      color: var(--good)
+    }
+
+    .status.bad {
+      background: #fff1f1;
+      color: var(--bad)
+    }
+
+    .detailq {
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: #f6fbfd;
+      border: 1px solid var(--line);
+      margin: 8px 0
+    }
+
+    .detailopts {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px
+    }
+
+    .detailopts li {
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      display: flex;
+      gap: 8px;
+      align-items: flex-start
+    }
+
+    .optcorrect {
+      background: #e7f7ed !important;
+      border-color: var(--good) !important
+    }
+
+    .optwrong {
+      background: #fff1f1 !important;
+      border-color: var(--bad) !important
+    }
+
+    .optmissed {
+      border-color: var(--warn) !important;
+      border-style: dashed !important
+    }
+
+    .small {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.35
+    }
+
+    .progressbar {
+      height: 6px;
+      border-radius: 999px;
+      background: #e8f0f3;
+      overflow: hidden;
+      margin: 12px 0
+    }
+
+    .progressbar span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--cyan), var(--lime));
+      width: 0%
+    }
+
+
+
+    .timer.warn { color: var(--warn); border-color: var(--warn); }
+    .timer.danger { color: var(--bad); border-color: var(--bad); background: #fff1f1; }
+    .quiz-timebox { display:flex; flex-direction:column; align-items:flex-end; gap:6px; }
+    .quiz-timebox .pill { margin:0; }
+    .poolstatus { margin: 12px 0 0; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--muted); font-size: 13px; font-weight: 800; line-height: 1.35; }
+    .poolstatus.good { color: var(--good); border-color: rgba(22,138,74,.32); background: #e7f7ed; }
+    .poolstatus.bad { color: var(--bad); border-color: rgba(180,35,24,.3); background: #fff1f1; }
+
+    .import-zone {
+      margin-top: 14px;
+      padding: 18px;
+      border: 2px dashed var(--cyan);
+      border-radius: 8px;
+      background: linear-gradient(135deg, #ffffff, #eef9fc);
+      color: var(--navy);
+      text-align: center;
+      cursor: pointer;
+      transition: border-color .18s ease, background .18s ease, transform .18s ease, box-shadow .18s ease;
+      outline: none;
+    }
+
+    .import-zone:hover,
+    .import-zone:focus-visible,
+    .import-zone.dragover {
+      border-color: var(--navy);
+      background: var(--lime-soft);
+      box-shadow: 0 0 0 4px rgba(0, 171, 199, .15);
+      transform: translateY(-1px);
+    }
+
+    .import-zone strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+
+    .import-zone span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .import-actions {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    .timewarnmodal {
+      position: fixed;
+      inset: 0;
+      z-index: 1200;
+      display: grid;
+      place-items: center;
+      padding: 22px;
+      background: rgba(0, 57, 100, .34);
+      backdrop-filter: blur(2px);
+    }
+
+    .timewarnbox {
+      width: min(520px, 92vw);
+      border-radius: 24px;
+      border: 2px solid var(--warn);
+      background: #fff;
+      box-shadow: var(--shadow);
+      padding: 26px;
+      color: var(--text);
+    }
+
+    .timewarnbox h3 {
+      margin: 0 0 10px;
+      color: var(--bad);
+      font-size: 28px;
+    }
+
+    .timewarnbox p {
+      margin: 0 0 18px;
+      line-height: 1.45;
+    }
+
+    .timewarnbox .timer-big {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 92px;
+      margin: 8px 0 18px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 2px solid var(--bad);
+      color: var(--bad);
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+      background: #fff1f1;
+    }
+
+    .startactions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px
+    }
+
+
+    /* SQL Drag-&-Drop-Fragen */
+    .sql-order-box {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    .sql-zone {
+      min-height: 190px;
+      padding: 14px;
+      border-radius: 18px;
+      border: 2px dashed var(--line);
+      background: #f7fbfd;
+    }
+
+    .sql-zone.solution {
+      background: linear-gradient(135deg, #ffffff, #f4fbfd);
+      border-color: var(--cyan);
+    }
+
+    .sql-zone h3 {
+      margin: 0 0 10px;
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--navy);
+    }
+
+    .sql-zone .small {
+      margin: 0 0 10px;
+    }
+
+    .sql-chip-list {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .sql-chip {
+      display: flex;
+      align-items: stretch;
+      gap: 8px;
+      border: 2px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 7px 16px rgba(0, 57, 100, .06);
+      cursor: grab;
+      overflow: hidden;
+    }
+
+    .sql-chip:active { cursor: grabbing; }
+    .sql-chip.dragging { opacity: .55; }
+
+    .sql-chip code {
+      display: block;
+      width: 100%;
+      padding: 10px 12px;
+      background: #ffffff;
+      border: 0;
+      color: var(--navy);
+      white-space: pre-wrap;
+      line-height: 1.35;
+      font-family: Consolas, Monaco, 'Courier New', monospace;
+      font-size: 13px;
+    }
+
+    .sql-chip.in-solution {
+      border-color: rgba(0,171,199,.5);
+      background: var(--lime-soft);
+    }
+
+    .sql-chip-actions {
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid var(--line);
+      background: #f7fbfd;
+    }
+
+    .sql-chip-actions button {
+      min-width: 34px;
+      height: 100%;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      background: transparent;
+      color: var(--navy);
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .sql-chip-actions button:last-child { border-bottom: 0; }
+    .sql-chip-actions button:hover { background: #eef8fb; }
+
+    .sql-empty {
+      padding: 16px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.75);
+      color: var(--muted);
+      text-align: center;
+      border: 1px solid var(--line);
+    }
+
+    .sql-result {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .sql-result-box {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px;
+      background: #f7fbfd;
+    }
+
+    .sql-result-box ol {
+      margin: 8px 0 0;
+      padding-left: 22px;
+    }
+
+    .sql-result-box li {
+      margin-bottom: 6px;
+    }
+
+    .sql-result-box code {
+      white-space: pre-wrap;
+      font-size: 12px;
+    }
+
+
+
+
+    /* Post-it-Zuordnungsfragen */
+    .match-board {
+      display: grid;
+      grid-template-columns: minmax(230px, .85fr) minmax(0, 1.35fr);
+      gap: 16px;
+      align-items: start;
+    }
+
+    .match-bank,
+    .match-targets {
+      min-height: 220px;
+      padding: 14px;
+      border-radius: 18px;
+      border: 2px dashed var(--line);
+      background: #f7fbfd;
+    }
+
+    .match-targets {
+      border-color: var(--cyan);
+      background: linear-gradient(135deg, #ffffff, #f4fbfd);
+    }
+
+    .match-bank h3,
+    .match-targets h3 {
+      margin: 0 0 10px;
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--navy);
+    }
+
+    .postit-list,
+    .target-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .postit {
+      position: relative;
+      padding: 12px 14px;
+      border-radius: 12px 12px 18px 12px;
+      background: #fff7ad;
+      border: 1px solid rgba(0, 57, 100, .16);
+      box-shadow: 0 8px 16px rgba(0, 57, 100, .12);
+      color: var(--navy);
+      font-weight: 800;
+      line-height: 1.28;
+      cursor: grab;
+      transform: rotate(-1deg);
+    }
+
+    .postit:nth-child(even) { transform: rotate(1deg); }
+    .postit:active { cursor: grabbing; }
+    .postit.dragging { opacity: .55; }
+    .postit.in-target { transform: none; margin-top: 10px; }
+
+    .postit button {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      width: 24px;
+      height: 24px;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(255,255,255,.85);
+      color: var(--bad);
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .target-card {
+      padding: 13px;
+      border-radius: 16px;
+      border: 2px solid var(--line);
+      background: #fff;
+      box-shadow: 0 8px 18px rgba(0, 57, 100, .06);
+    }
+
+    .target-card.dragover {
+      border-color: var(--cyan);
+      background: var(--lime-soft);
+    }
+
+    .target-title {
+      color: var(--navy);
+      font-weight: 900;
+      line-height: 1.34;
+    }
+
+    .target-drop {
+      min-height: 48px;
+      margin-top: 8px;
+      padding: 8px;
+      border-radius: 12px;
+      border: 1px dashed var(--line);
+      color: var(--muted);
+      background: #f7fbfd;
+    }
+
+    .match-result-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 13px;
+    }
+
+    .match-result-table th,
+    .match-result-table td {
+      border: 1px solid var(--line);
+      padding: 8px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .match-result-table th {
+      background: var(--navy);
+      color: #fff;
+    }
+
+
+    @media(max-width:900px) {
+      body {
+        padding: 16px
+      }
+
+      .content,
+      .content.split {
+        padding: 86px 34px 54px;
+        grid-template-columns: 1fr
+      }
+
+      .cards,
+      .resultgrid {
+        grid-template-columns: 1fr
+      }
+
+      .overviewtoggle {
+        top: 18px;
+        right: 22px
+      }
+
+      .side,
+      .number,
+      .footer {
+        display: none
+      }
+
+      .selectrow {
+        grid-template-columns: 1fr
+      }
+
+      .navrow {
+        flex-direction: column
+      }
+
+      .navgroup {
+        width: 100%
+      }
+
+      .btn {
+        justify-content: center
+      }
+
+      .page {
+        min-height: auto
+      }
+    }
+
+
+
+    /* Post-it-Zuordnungsfragen */
+    .match-board {
+      display: grid;
+      grid-template-columns: minmax(230px, .85fr) minmax(0, 1.35fr);
+      gap: 16px;
+      align-items: start;
+    }
+
+    .match-bank,
+    .match-targets {
+      min-height: 220px;
+      padding: 14px;
+      border-radius: 18px;
+      border: 2px dashed var(--line);
+      background: #f7fbfd;
+    }
+
+    .match-targets {
+      border-color: var(--cyan);
+      background: linear-gradient(135deg, #ffffff, #f4fbfd);
+    }
+
+    .match-bank h3,
+    .match-targets h3 {
+      margin: 0 0 10px;
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--navy);
+    }
+
+    .postit-list,
+    .target-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .postit {
+      position: relative;
+      padding: 12px 14px;
+      border-radius: 12px 12px 18px 12px;
+      background: #fff7ad;
+      border: 1px solid rgba(0, 57, 100, .16);
+      box-shadow: 0 8px 16px rgba(0, 57, 100, .12);
+      color: var(--navy);
+      font-weight: 800;
+      line-height: 1.28;
+      cursor: grab;
+      transform: rotate(-1deg);
+    }
+
+    .postit:nth-child(even) { transform: rotate(1deg); }
+    .postit:active { cursor: grabbing; }
+    .postit.dragging { opacity: .55; }
+    .postit.in-target { transform: none; margin-top: 10px; }
+
+    .postit button {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      width: 24px;
+      height: 24px;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(255,255,255,.85);
+      color: var(--bad);
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .target-card {
+      padding: 13px;
+      border-radius: 16px;
+      border: 2px solid var(--line);
+      background: #fff;
+      box-shadow: 0 8px 18px rgba(0, 57, 100, .06);
+    }
+
+    .target-card.dragover {
+      border-color: var(--cyan);
+      background: var(--lime-soft);
+    }
+
+    .target-title {
+      color: var(--navy);
+      font-weight: 900;
+      line-height: 1.34;
+    }
+
+    .target-drop {
+      min-height: 48px;
+      margin-top: 8px;
+      padding: 8px;
+      border-radius: 12px;
+      border: 1px dashed var(--line);
+      color: var(--muted);
+      background: #f7fbfd;
+    }
+
+    .match-result-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 13px;
+    }
+
+    .match-result-table th,
+    .match-result-table td {
+      border: 1px solid var(--line);
+      padding: 8px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .match-result-table th {
+      background: var(--navy);
+      color: #fff;
+    }
+
+
+    @media(max-width:900px) {
+      .sql-order-box,
+      .sql-result { grid-template-columns: 1fr; }
+      .sql-zone { min-height: 140px; }
+    }
+    /* Wissensfestigung Electron-App Integration */
+    body {
+      padding: 18px;
+      background: #f4f9fb;
+      color: var(--text);
+    }
+
+    .app {
+      width: 100%;
+      max-width: 1180px;
+    }
+
+    .topbar {
+      margin-bottom: 12px;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 12px 28px rgba(0, 57, 100, .06);
+    }
+
+    .badge {
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #f8fbfd;
+      box-shadow: none;
+      color: var(--navy);
+      font-weight: 900;
+    }
+
+    .panel {
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      border-top: 6px solid var(--cyan);
+      background: #ffffff;
+      box-shadow: 0 18px 48px rgba(0, 57, 100, .1);
+      padding: 16px;
+    }
+
+    .page {
+      min-height: 620px;
+      border-radius: 8px;
+      box-shadow: inset 0 0 0 1px rgba(0, 57, 100, .08);
+    }
+
+    .wave {
+      height: 88px;
+    }
+
+    .content {
+      padding: 92px 58px 58px;
+    }
+
+    .content.split {
+      grid-template-columns: minmax(0, 1fr) 330px;
+      gap: 24px;
+    }
+
+    h1, h2, h3 {
+      letter-spacing: 0;
+    }
+
+    h1 {
+      font-size: clamp(34px, 3.2vw, 48px);
+      font-weight: 800;
+    }
+
+    .poolcard,
+    .core,
+    .qtext,
+    .answer,
+    .detail,
+    .overviewbox,
+    .timewarnbox {
+      border-radius: 8px;
+      border-width: 1px;
+      box-shadow: 0 10px 24px rgba(0, 57, 100, .06);
+    }
+
+    .selectrow select,
+    .btn,
+    .overviewitem,
+    .pill,
+    .status {
+      border-radius: 8px;
+    }
+
+    .btn {
+      min-height: 38px;
+      padding: 9px 12px;
+      box-shadow: none;
+    }
+
+    .btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    @media(max-width:900px) {
+      body { padding: 12px; }
+      .content,
+      .content.split { padding: 82px 24px 42px; }
+    }
+  .result-reason {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-left: 4px solid var(--blue);
+      border-radius: 10px;
+      background: #eef6ff;
+    }
+    .detail.correct .result-reason { border-left-color: var(--good); background: #eefaf1; }
+    .detail.wrong .result-reason { border-left-color: var(--bad); background: #fff1f1; }
+    .result-reason p { margin: 7px 0 0; }
+  </style>
+  <style id="general-quiz-theme">
+    :root {
+      --ink: #0b1b4d;
+      --ink-soft: #27456f;
+      --blue: #0074c8;
+      --cyan: #00abc7;
+      --cyan-dark: #008aa0;
+      --green: #1b8f4b;
+      --orange: #f26a21;
+      --red: #bf2f2f;
+      --violet: #6d38b5;
+      --paper: #ffffff;
+      --soft: #f4f8fb;
+      --line: #d8e5ee;
+      --shadow: 0 16px 45px rgba(9, 31, 66, .12);
+      --radius: 22px;
+      --mono: Consolas, "Courier New", monospace;
+      --sans: Arial, Helvetica, sans-serif;
+      --navy: var(--ink);
+      --text: var(--ink);
+      --muted: var(--ink-soft);
+      --card: #f7fafc;
+      --lime: #bdf77a;
+      --lime-soft: #efffdf;
+      --good: #168a4a;
+      --bad: #b42318;
+      --warn: #d99a00;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 0;
+      font-family: var(--sans);
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(0, 171, 199, .10), transparent 28rem),
+        radial-gradient(circle at 90% 20%, rgba(0, 116, 200, .08), transparent 24rem),
+        linear-gradient(180deg, #ffffff 0%, #f3f8fc 100%);
+      line-height: 1.55;
+    }
+
+    .quiz-shell {
+      display: grid;
+      grid-template-columns: 295px minmax(0, 1fr);
+      min-height: 100vh;
+    }
+
+    .quiz-sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      z-index: 30;
+      overflow-y: auto;
+      padding: 28px 22px;
+      background: rgba(255,255,255,.90);
+      backdrop-filter: blur(18px);
+      border-right: 1px solid var(--line);
+    }
+
+    .sidebar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .sidebar-brand-mark {
+      width: 48px;
+      height: 48px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      box-shadow: 0 12px 28px rgba(0, 116, 200, .25);
+    }
+
+    .sidebar-brand small {
+      display: block;
+      color: var(--ink-soft);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+
+    .sidebar-brand strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1.15;
+    }
+
+    .sidebar-backlink {
+      display: block;
+      margin: 0 0 22px;
+      padding: 10px 12px;
+      border: 1px solid #d8f2f7;
+      border-radius: 14px;
+      color: var(--ink-soft);
+      background: #eef9fc;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .sidebar-section-title {
+      margin: 0 0 9px;
+      color: var(--ink-soft);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .sidebar-nav {
+      display: grid;
+      gap: 8px;
+    }
+
+    .sidebar-nav-item {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 10px;
+      align-items: center;
+      padding: 11px 12px;
+      border: 1px solid transparent;
+      border-radius: 14px;
+      color: var(--ink-soft);
+      background: transparent;
+    }
+
+    .sidebar-nav-item.active {
+      color: var(--ink);
+      border-color: rgba(0,171,199,.35);
+      background: linear-gradient(135deg, rgba(0,171,199,.14), rgba(0,116,200,.12));
+    }
+
+    .sidebar-nav-item > span {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .sidebar-nav-item strong,
+    .sidebar-nav-item small { display: block; }
+    .sidebar-nav-item strong { font-size: 14px; }
+    .sidebar-nav-item small { margin-top: 1px; color: var(--ink-soft); font-size: 11px; }
+
+    .sidebar-hint {
+      margin-top: 22px;
+      padding: 14px;
+      border: 1px solid #d8f2f7;
+      border-radius: 16px;
+      color: var(--ink-soft);
+      background: #eef9fc;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .sidebar-hint strong { display: block; margin-bottom: 5px; color: var(--ink); }
+
+    main.app {
+      width: 100%;
+      max-width: 1420px;
+      margin: 0;
+      padding: 28px clamp(18px, 3vw, 48px) 70px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 14px;
+      z-index: 25;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 0 0 18px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      color: var(--ink-soft);
+      background: rgba(255,255,255,.88);
+      box-shadow: 0 12px 30px rgba(9,31,66,.09);
+      backdrop-filter: blur(16px);
+      font-size: 14px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid #d8f2f7;
+      border-radius: 999px;
+      color: var(--ink);
+      background: #eef9fc;
+      box-shadow: none;
+      font-weight: 900;
+    }
+    .badge::before {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 0 5px rgba(0,171,199,.14);
+    }
+    #topCounter { font-weight: 900; }
+
+    .panel {
+      position: relative;
+      overflow: visible;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .page {
+      position: relative;
+      width: 100%;
+      min-height: 0;
+      overflow: visible;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .wave,
+    .page > .brand,
+    .page > .side,
+    .page > .number,
+    .page > .footer { display: none !important; }
+
+    .content,
+    .content.split {
+      position: relative;
+      z-index: 3;
+      min-height: calc(100vh - 125px);
+      padding: clamp(24px, 3vw, 44px);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: rgba(255,255,255,.94);
+      box-shadow: var(--shadow);
+    }
+
+    .content.split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.22fr) minmax(300px, .78fr);
+      gap: clamp(24px, 3vw, 38px);
+      align-items: start;
+    }
+
+    #startScreen::before,
+    #quizScreen::before,
+    #resultScreen::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 8px;
+      border-radius: 28px 28px 0 0;
+      background: linear-gradient(90deg, var(--cyan), var(--blue));
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 13px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: var(--cyan-dark);
+      background: #eef9fc;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      color: var(--ink);
+      font-family: var(--sans);
+      letter-spacing: -.03em;
+      line-height: 1.06;
+    }
+    h1 { font-size: clamp(36px, 4.4vw, 62px); font-weight: 900; }
+    h2 { font-size: clamp(28px, 3.2vw, 44px); font-weight: 900; }
+    h3 { font-size: 22px; font-weight: 900; }
+
+    .rule {
+      width: min(260px, 52%);
+      height: 4px;
+      margin: 17px 0 24px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--cyan), var(--blue));
+    }
+
+    .lead {
+      max-width: 74ch;
+      color: var(--ink-soft);
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.6;
+    }
+
+    .flow { gap: 9px; margin-top: 24px; }
+    .flow span:not(.arrow) {
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink-soft);
+      background: #fff;
+      box-shadow: 0 8px 18px rgba(9,31,66,.06);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .flow .arrow { color: var(--cyan); font-size: 18px; }
+
+    .poolcard,
+    .core,
+    .questionbox,
+    .qtext,
+    .answer,
+    .detail,
+    .sql-zone,
+    .match-bank,
+    .match-targets,
+    .target-card,
+    .overviewbox,
+    .timewarnbox {
+      border-color: var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 12px 28px rgba(9,31,66,.08);
+    }
+
+    .poolcard {
+      margin-top: 26px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, #ffffff, #f6fbfd);
+    }
+
+    .selectrow {
+      grid-template-columns: 175px minmax(0,1fr);
+      gap: 14px;
+      margin: 0 0 16px;
+    }
+    .selectrow label { color: var(--ink); font-weight: 900; }
+    .selectrow select {
+      min-height: 52px;
+      padding: 13px 46px 13px 18px;
+      border: 2px solid rgba(0,171,199,.55);
+      border-radius: 15px;
+      color: var(--ink) !important;
+      background: #fff !important;
+      box-shadow: 0 8px 18px rgba(9,31,66,.07);
+      font-weight: 800;
+    }
+    .selectwrap::after { content: "▾"; color: var(--cyan-dark); }
+    .selectrow select:focus { outline: 3px solid rgba(0,171,199,.16); border-color: var(--cyan); }
+
+    .import-zone {
+      position: relative;
+      margin-top: 15px;
+      padding: 25px 20px;
+      border: 2px dashed rgba(0,171,199,.65);
+      border-radius: 20px;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 18%, rgba(0,171,199,.12), transparent 12rem),
+        linear-gradient(135deg, #ffffff, #eef9fc);
+      text-align: center;
+      cursor: pointer;
+    }
+    .import-zone::before {
+      content: "⇩";
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 10px;
+      border-radius: 16px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      box-shadow: 0 12px 24px rgba(0,116,200,.22);
+      font-size: 28px;
+      font-weight: 900;
+    }
+    .import-zone:hover,
+    .import-zone:focus-visible,
+    .import-zone.dragover {
+      border-color: var(--blue);
+      background: linear-gradient(135deg, #eefcff, #eaf4ff);
+      box-shadow: 0 0 0 5px rgba(0,171,199,.13), 0 16px 34px rgba(9,31,66,.10);
+      transform: translateY(-2px);
+    }
+    .import-zone strong { color: var(--ink); font-size: 17px; }
+    .import-zone span { color: var(--ink-soft); font-weight: 600; }
+
+    .poolstatus {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: var(--ink-soft);
+      background: #f8fbfd;
+    }
+
+    .core {
+      padding: 22px;
+      border: 1px solid var(--line);
+    }
+    .core > strong {
+      display: inline-flex;
+      margin-bottom: 10px;
+      color: var(--cyan-dark);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .quote {
+      margin-top: 16px;
+      padding: 14px 15px;
+      border-left: 5px solid var(--cyan);
+      border-radius: 0 16px 16px 0;
+      color: var(--ink-soft);
+      background: #eef9fc;
+      font-weight: 700;
+    }
+
+    .pill {
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink);
+      background: #fff;
+      font-weight: 900;
+    }
+    .timer { color: var(--blue); border-color: rgba(0,116,200,.30); background: #eef6ff; }
+
+    .btn {
+      min-height: 43px;
+      padding: 10px 16px;
+      border: 0;
+      border-radius: 999px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      box-shadow: 0 12px 24px rgba(0,116,200,.20);
+      font-weight: 900;
+      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 15px 28px rgba(0,116,200,.24); }
+    .btn.secondary {
+      border: 1px solid var(--line);
+      color: var(--ink);
+      background: #fff;
+      box-shadow: 0 8px 18px rgba(9,31,66,.07);
+    }
+    .btn.danger { background: linear-gradient(135deg, #d94135, var(--red)); }
+
+    .overviewtoggle {
+      position: fixed;
+      z-index: 45;
+      top: 84px;
+      right: 28px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.94);
+    }
+
+    .quizmeta {
+      margin: 4px 0 17px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      color: var(--ink-soft);
+      background: #f8fbfd;
+    }
+    .topiclabel { color: var(--cyan-dark); font-weight: 900; }
+    .difficulty { color: var(--ink-soft); font-weight: 800; }
+
+    .progressbar {
+      height: 8px;
+      margin: 14px 0 20px;
+      background: #e8f0f3;
+    }
+    .progressbar span { background: linear-gradient(90deg, var(--cyan), var(--blue)); }
+
+    .qtext {
+      padding: 22px 24px;
+      border: 1px solid var(--line);
+      color: var(--ink);
+      background: linear-gradient(145deg, #ffffff, #f5fafc);
+      font-size: 17px;
+      line-height: 1.6;
+    }
+    .qtext code,
+    .detailq code {
+      border-color: #cceaf1;
+      color: var(--ink);
+      background: #eef9fc;
+    }
+
+    .answers { gap: 12px; }
+    .answer {
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      color: var(--ink-soft);
+      background: #fff;
+      box-shadow: 0 8px 18px rgba(9,31,66,.05);
+      font-weight: 700;
+    }
+    .answer:hover { border-color: var(--cyan); transform: translateX(3px); }
+    .answer.selected {
+      border-color: var(--cyan);
+      color: var(--ink);
+      background: linear-gradient(135deg, #eefcff, #eef6ff);
+      box-shadow: 0 0 0 3px rgba(0,171,199,.12);
+    }
+    .letter {
+      border-color: rgba(0,171,199,.32);
+      color: var(--cyan-dark);
+      background: #eef9fc;
+    }
+
+    .navrow {
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .overview { background: rgba(11,27,77,.32); backdrop-filter: blur(5px); }
+    .overviewbox { border: 1px solid var(--line); padding: 26px; }
+    .overviewitem {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--ink);
+    }
+    .overviewitem.answered { border-color: #8bd0a5; background: #eaf8ef; }
+    .overviewitem.current { border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(0,171,199,.18); }
+
+    .timewarnmodal { background: rgba(11,27,77,.36); backdrop-filter: blur(5px); }
+    .timewarnbox { border: 2px solid var(--orange); padding: 28px; }
+
+    .resultgrid { gap: 20px; }
+    .topic-table {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+    }
+    .topic-table th { background: linear-gradient(135deg, var(--cyan-dark), var(--blue)); }
+    .topic-table th, .topic-table td { border-color: var(--line); padding: 11px 12px; }
+
+    .detail { border: 1px solid var(--line); padding: 18px; }
+    .detail.correct { border-left: 7px solid var(--green); }
+    .detail.wrong { border-left: 7px solid var(--red); }
+
+    .sql-order-box,
+    .match-board { gap: 18px; }
+    .sql-zone,
+    .match-bank,
+    .match-targets {
+      padding: 17px;
+      border: 2px dashed var(--line);
+      background: #f8fbfd;
+    }
+    .sql-zone.solution,
+    .match-targets { border-color: rgba(0,171,199,.55); background: linear-gradient(145deg, #fff, #eef9fc); }
+    .sql-chip,
+    .target-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 8px 18px rgba(9,31,66,.06);
+    }
+    .postit { box-shadow: 0 10px 20px rgba(9,31,66,.13); }
+
+    @media (max-width: 1120px) {
+      .quiz-shell { grid-template-columns: 1fr; }
+      .quiz-sidebar {
+        position: static;
+        height: auto;
+        overflow: visible;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .sidebar-nav { grid-template-columns: repeat(4, minmax(0,1fr)); }
+      .sidebar-hint { display: none; }
+      main.app { max-width: none; }
+      .content.split { grid-template-columns: 1fr; }
+      .overviewtoggle { top: 16px; }
+    }
+
+    @media (max-width: 760px) {
+      .quiz-sidebar { padding: 18px 14px; }
+      .sidebar-nav { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .sidebar-nav-item { grid-template-columns: 30px 1fr; padding: 9px; }
+      .sidebar-nav-item > span { width: 29px; height: 29px; }
+      main.app { padding: 16px 14px 52px; }
+      .topbar { position: static; align-items: flex-start; flex-direction: column; border-radius: 16px; }
+      .content, .content.split { min-height: 0; padding: 26px 18px; border-radius: 22px; }
+      #startScreen::before, #quizScreen::before, #resultScreen::before { border-radius: 22px 22px 0 0; }
+      .selectrow { grid-template-columns: 1fr; }
+      .overviewtoggle { position: static; width: 100%; margin-bottom: 12px; }
+      .quizmeta { align-items: flex-start; flex-direction: column; }
+      .quiz-timebox { align-items: flex-start; }
+      .navrow, .navgroup { width: 100%; }
+      .navgroup .btn { flex: 1; }
+      .resultgrid, .sql-order-box, .sql-result, .match-board { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <style>
+    #answerHint { margin: -4px 0 18px; font-weight: 700; color: var(--navy); }
+    .qtext pre, .detailq pre { max-width: 100%; overflow-x: auto; padding: 14px; background: #eef6fa; border-radius: 6px; text-align: left; font-size: 15px; line-height: 1.55; }
+    .match-select { width: 100%; margin-top: 10px; padding: 10px; border: 1px solid var(--line); border-radius: 6px; color: var(--text); background: white; font: inherit; }
+    .sidebar-brand-mark { font-size: 22px; }
+    #poolDescription { line-height: 1.5; }
+  </style>
+
+  <style>
+    .content > div, .selectwrap, .core, .qtext, .answers, .answer > span:last-child { min-width: 0; }
+    .answer > span:last-child { overflow-wrap: anywhere; }
+    .answer code, .detailopts code { white-space: pre-wrap; font: 14px/1.5 Consolas, Monaco, monospace; }
+    .qtext pre code, .detailq pre code { display: block; padding: 0; border: 0; background: transparent; white-space: pre; }
+    .qtext pre { margin-bottom: 0; }
+    .answer:focus-visible, .btn:focus-visible, .overviewitem:focus-visible, .match-select:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
+    .selectrow { grid-template-columns: 1fr; gap: 7px; }
+    .selectrow select { border-radius: 14px; }
+    @media(max-width: 600px) { .qtext pre { padding: 12px; font-size: 13px; } .qtext { padding: 15px; } }
+  </style>
+</head>
+
+<body class="course-shell">
+  <noscript>Bitte JavaScript aktivieren, um das lokale Quiz-Tool zu verwenden.</noscript>
+  <div class="quiz-shell course-layout">
+    <aside class="quiz-sidebar course-sidebar" aria-label="Quiz-Navigation">
+      <div class="sidebar-brand">
+        <div class="sidebar-brand-mark">10a</div>
+        <div><small>PHP · Wissen festigen</small><strong>QuizTool</strong></div>
+      </div>
+      
+      <div class="sidebar-section-title">Ablauf</div>
+      
+<nav class="sidebar-nav course-navigation" aria-label="Ablauf des Wissenstests" data-course-navigation data-mobile-collapsible="true" id="course-navigation">
+        <div class="sidebar-nav-item active" data-quiz-step="start"><span>1</span><div><strong>Pool wählen</strong><small>Verfügbare Fragenpools</small></div></div>
+        <div class="sidebar-nav-item" data-quiz-step="import"><span>2</span><div><strong>JSON importieren</strong><small>Datei oder Drag-and-drop</small></div></div>
+        <div class="sidebar-nav-item" data-quiz-step="quiz"><span>3</span><div><strong>Test bearbeiten</strong><small>Timer und Übersicht</small></div></div>
+        <div class="sidebar-nav-item" data-quiz-step="result"><span>4</span><div><strong>Auswertung</strong><small>Themen und Lösungen</small></div></div>
+      </nav>
+      <div class="sidebar-hint">
+        <strong>Bedienung</strong>
+        Mit ← / →, den Schaltflächen oder der Fragenübersicht navigieren. Antworten bleiben beim Wechsel erhalten. Code nur lesen, nicht ausführen. JSON-Pools auf die Importfläche ziehen.
+      </div>
+    </aside>
+    <main class="app course-main">
+    <div class="topbar">
+      <div class="badge">PHP · Wissensfestigung</div>
+      <div id="topCounter">Start</div>
+    </div>
+    <section class="panel">
+      <div class="page">
+        <svg class="wave" viewBox="0 0 1600 240" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 0H1600V44C1450 20 1324 54 1204 98C989 177 761 175 548 102C372 42 199 25 0 76V0Z"
+            fill="var(--navy)"></path>
+          <path d="M0 66C160 20 315 28 470 72C322 82 157 112 0 178V66Z" fill="var(--lime)"></path>
+          <path d="M1600 52C1494 23 1398 30 1303 60C1416 72 1518 103 1600 154V52Z" fill="var(--lime)"></path>
+        </svg>
+        <div class="brand">PHP</div>
+        <div class="side">PHP · Wissen festigen</div>
+        <div class="number" id="pageNumber">–</div>
+        <div class="footer">PHP · Wissensfestigung</div>
+        <button id="overviewToggle" class="btn secondary overviewtoggle hidden" type="button">☰ Fragenübersicht</button>
+
+        <section id="startScreen" class="content split">
+          <div>
+            <span class="kicker">PHP · Übungstest</span>
+            <h1>PHP: Wissen prüfen und Code verstehen</h1>
+            <div class="rule"></div>
+            <p class="lead">Wähle einen Schreibtischtest: HTML, CSS, UI und UX oder PHP-Grundlagen mit Kontrollstrukturen. Beide Tests haben 45 Fragen und 60 Minuten. Nach Ablauf wird automatisch ausgewertet. Antwortoptionen werden bei jedem Start neu gemischt; die Fragenfolge bleibt erhalten.</p>
+            <div class="flow"><span>Wiederholen</span><span class="arrow">→</span><span>Anwenden</span><span class="arrow">→</span><span>Auswerten</span><span class="arrow">→</span><span>Festigen</span></div>
+            <div class="poolcard">
+              <div class="selectrow"><label for="poolSelect">Aktiver Fragenpool</label>
+                <div class="selectwrap"><select id="poolSelect"></select></div>
+              </div>
+              <div id="poolDropZone" class="import-zone" role="button" tabindex="0" aria-describedby="poolImportHint">
+                <input id="poolFileInput" class="visually-hidden" type="file" accept=".json,application/json" multiple>
+                <strong>JSON-Fragenpool importieren</strong>
+                <span id="poolImportHint">Eine oder mehrere JSON-Dateien hier ablegen oder per Dateiauswahl öffnen.</span>
+                <div class="import-actions">
+                  <button id="choosePoolFile" class="btn secondary" type="button">JSON auswählen</button>
+                </div>
+              </div>
+              <p id="poolStatus" class="poolstatus">Beide PHP-Tests sind bereits integriert: jeweils 45 Fragen und 60 Minuten. Weitere JSON-Pools lassen sich importieren.</p>
+            </div>
+            <div class="startactions"><button id="startBtn" class="btn" type="button">▶ Test starten</button></div>
+          </div>
+          <div>
+            <div class="core"><strong>Aktueller Pool</strong>
+              <p id="poolName" style="margin:0 0 8px;font-weight:800;color:var(--navy)"></p>
+              <p id="questionCount" class="small" style="margin:0"></p>
+              <p id="poolDescription" class="small"></p>
+              <div class="quote" id="poolInstructions"></div>
+            </div>
+            <div class="core" style="margin-top:16px"><strong>Timer</strong>
+              <p class="pill timer" id="timer">60:00</p>
+              <p class="small">Die Auswertung zeigt Gesamtquote, Themenfelder und eine Detailübersicht.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="quizScreen" class="content hidden">
+          <div class="quizmeta">
+            <div><strong id="questionNumber"></strong><br><span class="topiclabel" id="topicLabel"></span></div>
+            <div class="quiz-timebox"><div class="difficulty" id="difficultyLabel"></div><span class="pill timer" id="quizTimer">--:--</span></div>
+          </div>
+          <div class="progressbar"><span id="progress"></span></div>
+          <div id="questionText" class="qtext"></div>
+          <p id="answerHint" class="small" aria-live="polite"></p>
+          <div id="answers" class="answers"></div>
+          <div class="navrow">
+            <div class="navgroup"><button id="prevBtn" class="btn secondary" type="button">← Zurück</button><button
+                id="nextBtn" class="btn secondary" type="button">Weiter →</button></div>
+            <div class="navgroup"><button id="skipBtn" class="btn secondary" type="button">Nächste offene
+                Frage</button><button id="endBtn" class="btn danger" type="button">Test beenden</button></div>
+          </div>
+        </section>
+
+        <section id="resultScreen" class="content hidden"><span class="kicker">Auswertung</span>
+          <h2>Ergebnis und Themenanalyse</h2>
+          <div class="rule"></div>
+          <div class="resultgrid">
+            <div class="core" id="overall"></div>
+            <div class="core" id="weakest"></div>
+          </div>
+          <div id="topicResults"></div>
+          <div id="details"></div>
+          <div class="startactions"><button id="restartBtn" class="btn" type="button">Nochmal starten</button><button
+              id="backStartBtn" class="btn secondary" type="button">Zur Startseite</button></div>
+        </section>
+
+
+
+        <div id="timeWarningModal" class="timewarnmodal hidden" role="dialog" aria-modal="true" aria-labelledby="timeWarningTitle">
+          <div class="timewarnbox">
+            <span class="kicker">Zeitwarnung</span>
+            <h3 id="timeWarningTitle">Noch 1 Minute</h3>
+            <p>Die Bearbeitungszeit läuft gleich ab. Prüfe jetzt deine offenen Antworten. Wenn die Zeit abgelaufen ist, wird der Test automatisch beendet und ausgewertet.</p>
+            <div class="timer-big" id="timeWarningClock">01:00</div><br>
+            <button id="timeWarningOk" class="btn" type="button">Weiterarbeiten</button>
+          </div>
+        </div>
+
+        <div id="overview" class="overview hidden">
+          <div class="overviewbox">
+            <h3>Fragenübersicht</h3>
+            <p class="small">Klicke auf eine Nummer, um direkt zur Frage zu springen. Grün bedeutet: alle nötigen Eingaben sind vorhanden, noch nicht geprüft.</p>
+            <div id="overviewList" class="overviewlist"></div><button id="closeOverview" class="btn secondary"
+              type="button">Schließen</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    </main>
+  </div>
+  <script>
+    const generalQuizPools = [{"id": "PHP-web-45-60", "name": "PHP · Test 1 · HTML, CSS, UI & UX", "course": "PHP", "version": "1.0", "sourceFileName": "PHP_Test1_HTML_CSS_UI_UX_45Fragen_60Min.json", "description": "45 Fragen: 6 zu User Interfaces, 6 zur Qualitätssicherung, 9 zu User Experience, 12 zu HTML und 12 zu CSS. Mit kurzen Code-Leseaufgaben, Einzel-/Mehrfachwahl, einer Zuordnung und zwei Reihenfolgeaufgaben.", "durationMinutes": 60, "questionCount": 45, "shuffleOptions": true, "shuffleQuestions": false, "topicLabels": {"ui": "User Interfaces", "qs": "Qualitätssicherung", "ux": "User Experience", "html": "HTML – Struktur und Formulare", "css": "CSS – Selektoren und Gestaltung"}, "difficultyLabels": {"leicht": "Einstieg", "mittel": "Anwendung"}, "instructions": "45 Fragen · 60 Minuten. Lies den Code am Schreibtisch; führe ihn während des Tests nicht aus. Die Fragenfolge bleibt erhalten, Antwortoptionen werden beim Teststart neu gemischt. Einzelwahl: genau eine Antwort. Mehrfachwahl: die angegebene Anzahl. Jede vollständig richtige Frage zählt einen Punkt; keine Teilpunkte oder Minuspunkte. Lösungen und Begründungen erscheinen erst nach Testende. Bei Zuordnungen jede Zielkarte belegen; bei Reihenfolgen alle Bausteine verwenden.", "assessment": {"pointsPerQuestion": 1, "maximumPoints": 45, "partialCredit": false, "negativePoints": false, "solutionsAfterFinish": true}, "sources": [{"id": "ui", "file": "PHP-Kurs_Kapitel 1_User Interfaces_Präsentation.pdf", "scope": "Schnittstellenarten, Eingabe und Ausgabe"}, {"id": "qs", "file": "PHP-Kurs_Kapitel 2_Qualitätssicherung_Präsentation.pdf", "scope": "Qualitätsmerkmale, Testprozess und Teststufen"}, {"id": "ux1", "file": "PHP-Kurs_Kapitel 3_User Experience_Teil 1_Präsentation.pdf", "scope": "UX-Honeycomb und Zugänglichkeit"}, {"id": "ux2", "file": "PHP-Kurs_Kapitel 3_User Experience_Teil 2_Präsentation.pptx", "scope": "Feedback, Konsistenz, Fehlervermeidung, Merkhilfen und Minimalismus; Referenzen mit Abschnittsnamen"}, {"id": "html1", "file": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf", "scope": "Grundgerüst, Elemente, Attribute, Inhalte"}, {"id": "html2", "file": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf", "scope": "Semantik und Formulare"}, {"id": "css1", "file": "PHP-Kurs_Kapitel 5_CSS_Teil 1_Präsentation.pdf", "scope": "Einbindung, Syntax, Selektoren, Spezifität und Vererbung"}, {"id": "css2", "file": "PHP-Kurs_Kapitel 5_CSS_Teil 2_Präsentation.pptx", "scope": "Farben, Hintergründe, Farbschemata; Referenzen mit Abschnittsnamen"}, {"id": "html-standard", "url": "https://html.spec.whatwg.org/multipage/forms.html", "scope": "Technische Gegenprüfung: Formulare, Feldnamen, Checkboxen"}, {"id": "html-syntax", "url": "https://html.spec.whatwg.org/multipage/syntax.html#void-elements", "scope": "Void-Elemente"}, {"id": "css-backgrounds", "url": "https://www.w3.org/TR/css-backgrounds-3/#the-background-size", "scope": "cover und contain"}, {"id": "css-cascade", "url": "https://www.w3.org/TR/css-cascade-5/", "scope": "Technische Gegenprüfung: Kaskade, Spezifität, Reihenfolge und Vererbung"}], "questions": [{"id": "PHP-WEB-001", "type": "single-choice", "topic": "ui", "difficulty": "leicht", "text": "Was beschreibt eine Benutzerschnittstelle am treffendsten?", "options": ["Nur die farbliche Gestaltung einer Internetseite.", "Den Speicherbereich, in dem ein Programm installiert ist.", "Die Stelle, über die ein Mensch Informationen mit einem System austauscht und es bedient.", "Ausschließlich die Verbindung zwischen zwei Datenbanken."], "correct": [2], "explanation": "Eine Benutzerschnittstelle vermittelt zwischen Mensch und System. Dazu gehören beispielsweise Bedienelemente, Eingaben und Rückmeldungen; sie ist nicht auf Bildschirmfarben beschränkt.", "skill": "Verstehen", "sourceRefs": ["ui:3–5"], "solution": "Die Stelle, über die ein Mensch Informationen mit einem System austauscht und es bedient."}, {"id": "PHP-WEB-002", "type": "single-choice", "topic": "ui", "difficulty": "leicht", "text": "Eine Person tippt auf einem Touchscreen auf „Weiter“. Anschließend erscheint die nächste Seite. Welche Einordnung passt?", "options": ["Der Touchscreen übernimmt sowohl Eingabe als auch Ausgabe.", "Der Touchscreen ist nur ein Eingabegerät, weil er berührt wird.", "Der Touchscreen ist nur ein Ausgabegerät, weil er Bilder zeigt.", "Es gibt keine Eingabe, solange keine Tastatur verwendet wird."], "correct": [0], "explanation": "Das Berühren liefert die Eingabe. Die sichtbare neue Seite ist eine Ausgabe. Beide Prozesse können über dasselbe Gerät stattfinden.", "skill": "Verstehen", "sourceRefs": ["ui:6–8"], "solution": "Der Touchscreen übernimmt sowohl Eingabe als auch Ausgabe."}, {"id": "PHP-WEB-003", "type": "single-choice", "topic": "ui", "difficulty": "leicht", "text": "Eine Administratorin gibt Befehle wie \u003ccode>cd projekt\u003c/code> in ein Terminal ein. Welche Schnittstelle nutzt sie?", "options": ["Eine Kommandozeilenschnittstelle (CLI).", "Eine sprachgesteuerte Schnittstelle.", "Eine ausschließlich menügesteuerte Schnittstelle.", "Eine Virtual-Reality-Schnittstelle."], "correct": [0], "explanation": "Bei einer CLI werden Befehle in Textform eingegeben. Man muss die passenden Befehle kennen; dafür lassen sich wiederkehrende Abläufe gut automatisieren.", "skill": "Verstehen", "sourceRefs": ["ui:20,27"], "solution": "Eine Kommandozeilenschnittstelle (CLI)."}, {"id": "PHP-WEB-004", "type": "multiple-choice", "topic": "ui", "difficulty": "leicht", "text": "Welche zwei Merkmale passen zu einer grafischen Benutzeroberfläche (GUI)?", "options": ["Sie kann sichtbares Feedback zu Aktionen geben.", "Sie darf grundsätzlich nicht mit Tastaturbefehlen kombiniert werden.", "Ihre Bedienung ist automatisch für jede Zielgruppe fehlerfrei.", "Sie kann Schaltflächen, Symbole und Menüs anbieten."], "correct": [0, 3], "explanation": "Eine GUI stellt Funktionen und Zustände grafisch dar. Gute Bedienbarkeit entsteht aber erst durch ein durchdachtes Design; zusätzliche Tastenkürzel sind möglich.", "skill": "Verstehen", "sourceRefs": ["ui:22,29"], "solution": "Sie kann sichtbares Feedback zu Aktionen geben.; Sie kann Schaltflächen, Symbole und Menüs anbieten."}, {"id": "PHP-WEB-005", "type": "single-choice", "topic": "ui", "difficulty": "leicht", "text": "Eine Anwendung versteht eine gesprochene Frage und antwortet in natürlicher Sprache. Welche UI-Art steht hier im Vordergrund?", "options": ["Ein Hardware-Anschluss.", "Ein Batch-Interface.", "Ein Conversational User Interface.", "Ein rein grafisches Interface."], "correct": [2], "explanation": "Eine dialogorientierte Schnittstelle ermöglicht die Interaktion in menschlicher Sprache. Der Dialog kann gesprochen oder geschrieben sein.", "skill": "Verstehen", "sourceRefs": ["ui:23"], "solution": "Ein Conversational User Interface."}, {"id": "PHP-WEB-006", "type": "single-choice", "topic": "ui", "difficulty": "leicht", "text": "Ein Programm bietet sowohl ein Menü als auch Tastenkürzel für dieselben Aktionen. Wie ist das zu bewerten?", "options": ["Sinnlos: Tastenkürzel dürfen nur andere Funktionen als Menüs auslösen.", "Sinnvoll: Unterschiedliche Zugänge können verschiedene Bedürfnisse unterstützen.", "Unzulässig: Jede Anwendung darf nur eine Art der Bedienung haben.", "Nur zulässig, wenn das Menü vollständig ausgeblendet wird."], "correct": [1], "explanation": "Schnittstellenarten schließen sich nicht gegenseitig aus. Ein sichtbares Menü hilft beim Einstieg, während Tastenkürzel wiederkehrende Arbeit beschleunigen können.", "skill": "Verstehen", "sourceRefs": ["ui:31", "ux2:Flexibilität"], "solution": "Sinnvoll: Unterschiedliche Zugänge können verschiedene Bedürfnisse unterstützen."}, {"id": "PHP-WEB-007", "type": "single-choice", "topic": "qs", "difficulty": "leicht", "text": "Alle vereinbarten Funktionen sind vorhanden. Die Summenberechnung liefert jedoch falsche Ergebnisse. Welches Merkmal ist unmittelbar verletzt?", "options": ["Funktionale Vollständigkeit.", "Auffindbarkeit der Hilfe.", "Funktionale Korrektheit.", "Farbliche Konsistenz."], "correct": [2], "explanation": "Vollständigkeit bedeutet, dass die geforderten Funktionen vorhanden sind. Korrektheit verlangt zusätzlich richtige Ergebnisse. Eine vorhandene, aber falsch rechnende Funktion ist nicht korrekt.", "skill": "Verstehen", "sourceRefs": ["qs:5–8"], "solution": "Funktionale Korrektheit."}, {"id": "PHP-WEB-008", "type": "single-choice", "topic": "qs", "difficulty": "leicht", "text": "Ein Kontaktformular soll ohne Nachricht nicht abgeschickt werden können. Was macht einen dazu passenden Testfall überprüfbar?", "options": ["Nur ein Bildschirmfoto der unveränderten Startseite.", "Eine konkrete Eingabe, ein definierter Testschritt und ein vorher festgelegtes Soll-Ergebnis.", "Nur die Angabe, dass jemand das Formular ausprobieren soll.", "Die spätere Entscheidung, dass jede angezeigte Meldung richtig gewesen sei."], "correct": [1], "explanation": "Beispiel: Nachrichtenfeld leer lassen, „Absenden“ betätigen, Absenden wird verhindert und ein verständlicher Hinweis erscheint. Das Soll-Ergebnis wird vor der Ausführung festgelegt.", "skill": "Verstehen", "sourceRefs": ["qs:8,26"], "solution": "Eine konkrete Eingabe, ein definierter Testschritt und ein vorher festgelegtes Soll-Ergebnis."}, {"id": "PHP-WEB-009", "type": "single-choice", "topic": "qs", "difficulty": "leicht", "text": "Du prüfst ein Formular nur durch Eingaben und sichtbare Ergebnisse. Den Quellcode kennst du nicht. Welcher Ansatz liegt vor?", "options": ["Eine automatische Codeanalyse.", "Ein White-Box-Test.", "Ein Code Review.", "Ein Black-Box-Test."], "correct": [3], "explanation": "Black-Box-Tests prüfen das von außen beobachtbare Verhalten. White-Box-Tests beziehen dagegen die interne Struktur beziehungsweise den Quellcode ein.", "skill": "Verstehen", "sourceRefs": ["qs:27"], "solution": "Ein Black-Box-Test."}, {"id": "PHP-WEB-010", "type": "matching-postits", "topic": "qs", "difficulty": "mittel", "text": "Ordne jeder Testbeschreibung die passende Teststufe zu. Verwende jeden Begriff genau einmal.", "items": [{"id": "i3", "text": "Systemtest"}, {"id": "i1", "text": "Komponententest"}, {"id": "i2", "text": "Integrationstest"}, {"id": "i4", "text": "Abnahmetest"}], "targets": [{"id": "t1", "text": "Eine einzelne Berechnungsfunktion wird isoliert geprüft."}, {"id": "t2", "text": "Das Zusammenspiel von Formular und Verarbeitung wird geprüft."}, {"id": "t4", "text": "Der Auftraggeber prüft die vereinbarten Abnahmekriterien."}, {"id": "t3", "text": "Die gesamte Anwendung wird gegen ihre Anforderungen geprüft."}], "pairs": [{"leftId": "i1", "rightId": "t1"}, {"leftId": "i2", "rightId": "t2"}, {"leftId": "i3", "rightId": "t3"}, {"leftId": "i4", "rightId": "t4"}], "explanation": "Komponenten werden einzeln, Integrationen im Zusammenspiel und Systeme als Ganzes geprüft. Bei der Abnahme steht die Bestätigung der vereinbarten Anforderungen durch den Auftraggeber im Vordergrund.", "skill": "Zuordnen", "sourceRefs": ["qs:28–31"]}, {"id": "PHP-WEB-011", "type": "single-choice", "topic": "qs", "difficulty": "leicht", "text": "Ein Kollege liest deinen Quellcode und bespricht Verständlichkeit, mögliche Fehler und Coding-Standards mit dir. Welche Maßnahme ist das?", "options": ["Ein Code Review.", "Eine Abnahme durch Endkunden.", "Eine Installation.", "Eine reine Laufzeitmessung."], "correct": [0], "explanation": "Ein Code Review ist eine Prüfung des Quellcodes. Es dient unter anderem der Fehlererkennung, der Codequalität und dem Wissenstransfer und ergänzt ausführbare Tests.", "skill": "Verstehen", "sourceRefs": ["qs:34"], "solution": "Ein Code Review."}, {"id": "PHP-WEB-012", "type": "order", "topic": "qs", "difficulty": "mittel", "text": "Bringe die sechs Phasen des in den Unterlagen dargestellten Testprozesses in die richtige Reihenfolge. Verwende alle Bausteine.", "blocks": [{"id": "b3", "text": "Testvorbereitung"}, {"id": "b4", "text": "Testdurchführung"}, {"id": "b5", "text": "Testauswertung"}, {"id": "b6", "text": "Testabschluss"}, {"id": "b1", "text": "Testplanung"}, {"id": "b2", "text": "Testentwurf"}], "correctOrder": ["b1", "b2", "b3", "b4", "b5", "b6"], "explanation": "Zuerst werden Strategie und Testfälle festgelegt. Anschließend werden Umgebung und Daten vorbereitet, die Tests ausgeführt und die Ergebnisse ausgewertet. Danach folgt der Testabschluss.", "skill": "Ablauf ordnen", "sourceRefs": ["qs:26"]}, {"id": "PHP-WEB-013", "type": "single-choice", "topic": "ux", "difficulty": "leicht", "text": "Eine Website sieht ansprechend aus, aber Nutzer finden die gesuchte Information nicht und brechen frustriert ab. Welche Aussage trifft zu?", "options": ["Ansprechende Farben allein garantieren eine gute User Experience.", "Sobald alle Bilder geladen sind, ist die Nutzererfahrung automatisch gut.", "User Experience betrachtet das gesamte Nutzungserlebnis, nicht nur die sichtbare Gestaltung.", "User Experience betrifft ausschließlich die Programmiersprache."], "correct": [2], "explanation": "UX umfasst die Erfahrung mit einem Produkt. Dazu gehören etwa Auffindbarkeit, Nutzen, Bedienbarkeit und Vertrauen. Ein schönes Erscheinungsbild allein reicht nicht aus.", "skill": "Verstehen", "sourceRefs": ["ux1:3–4"], "solution": "User Experience betrachtet das gesamte Nutzungserlebnis, nicht nur die sichtbare Gestaltung."}, {"id": "PHP-WEB-014", "type": "single-choice", "topic": "ux", "difficulty": "leicht", "text": "Die Hilfe ist über ein verständlich beschriftetes Menü und eine Suche schnell erreichbar. Welcher Aspekt des UX-Honeycomb wird besonders unterstützt?", "options": ["Useful – nützlich.", "Credible – glaubwürdig.", "Desirable – ansprechend.", "Findable – auffindbar."], "correct": [3], "explanation": "„Findable“ betrifft das leichte Auffinden von Funktionen und Informationen. Eine klare Struktur und kurze Navigationswege helfen dabei.", "skill": "Verstehen", "sourceRefs": ["ux1:11–12"], "solution": "Findable – auffindbar."}, {"id": "PHP-WEB-015", "type": "multiple-choice", "topic": "ux", "difficulty": "leicht", "text": "Welche zwei Maßnahmen unterstützen die Zugänglichkeit einer Weboberfläche?", "options": ["Hilfetexte stehen nur als Text innerhalb eines Bildes bereit.", "Eingabefelder besitzen passende, zugeordnete Beschriftungen.", "Alle wichtigen Funktionen lassen sich auch mit der Tastatur bedienen.", "Fehler werden ausschließlich durch einen Wechsel von Grün zu Rot markiert."], "correct": [1, 2], "explanation": "Tastaturbedienung und zugeordnete Beschriftungen helfen Menschen mit unterschiedlichen Bedienmöglichkeiten. Farbe allein und Text nur im Bild können wichtige Informationen unzugänglich machen.", "skill": "Verstehen", "sourceRefs": ["ux1:13–14", "html2:16"], "solution": "Eingabefelder besitzen passende, zugeordnete Beschriftungen.; Alle wichtigen Funktionen lassen sich auch mit der Tastatur bedienen."}, {"id": "PHP-WEB-016", "type": "single-choice", "topic": "ux", "difficulty": "leicht", "text": "Nach „Speichern“ dauert die Verarbeitung mehrere Sekunden. Welche Gestaltung ist am sinnvollsten?", "options": ["Ein Verarbeitungsstatus erscheint; Erfolg oder Fehler wird nach Abschluss gemeldet.", "Es erscheint sofort „Erfolgreich gespeichert“, obwohl das Ergebnis noch unbekannt ist.", "Die Oberfläche bleibt ohne Hinweis unverändert.", "Die gesamte Ansicht wird kommentarlos geschlossen."], "correct": [0], "explanation": "Sichtbarkeit des Systemzustands bedeutet, dass Nutzer den tatsächlichen Stand erkennen. Eine Erfolgsmeldung darf den Erfolg nicht nur vorwegnehmen.", "skill": "Verstehen", "sourceRefs": ["ux2:Sichtbarkeit des Systemzustands"], "solution": "Ein Verarbeitungsstatus erscheint; Erfolg oder Fehler wird nach Abschluss gemeldet."}, {"id": "PHP-WEB-017", "type": "single-choice", "topic": "ux", "difficulty": "leicht", "text": "Der Button für „Speichern“ heißt auf einer Seite „Speichern“, auf der nächsten „Ablage“ und steht jeweils an einer anderen Stelle. Welches Prinzip wird vor allem verletzt?", "options": ["Funktionale Vollständigkeit.", "Interne Konsistenz.", "Hardwareunabhängigkeit.", "Transparenz von Hintergrundfarben."], "correct": [1], "explanation": "Gleiche Aktionen sollten innerhalb derselben Anwendung gleich benannt und wiedererkennbar angeordnet sein. Unbegründete Wechsel erschweren die Orientierung.", "skill": "Verstehen", "sourceRefs": ["ux2:Konsistenz"], "solution": "Interne Konsistenz."}, {"id": "PHP-WEB-018", "type": "single-choice", "topic": "ux", "difficulty": "leicht", "text": "Ein Dokument soll endgültig gelöscht werden. Welche Maßnahme verhindert versehentliches Löschen am besten?", "options": ["Die Löschfunktion wird genauso beschriftet wie die Speicherfunktion.", "Der Löschbutton erhält nur ein unbekanntes Symbol.", "Jede ungefährliche Aktion erhält ebenfalls mehrere Warnfenster.", "Ein gezielter Bestätigungsdialog nennt das betroffene Dokument und die Folgen."], "correct": [3], "explanation": "Bei destruktiven Aktionen ist eine konkrete Warnung sinnvoll. Zu viele Warnungen für ungefährliche Vorgänge schwächen dagegen die Aufmerksamkeit für wirklich wichtige Hinweise.", "skill": "Verstehen", "sourceRefs": ["ux2:Fehlervermeidung"], "solution": "Ein gezielter Bestätigungsdialog nennt das betroffene Dokument und die Folgen."}, {"id": "PHP-WEB-019", "type": "single-choice", "topic": "ux", "difficulty": "leicht", "text": "Welche Fehlermeldung hilft bei einer nicht ausgewählten Versandart am besten?", "options": ["Falsche Bedienung!", "Ein unbekanntes Problem liegt vor.", "Bitte wähle eine Versandart aus und sende das Formular erneut ab.", "Error 4711."], "correct": [2], "explanation": "Die Meldung benennt die fehlende Eingabe und den nächsten sinnvollen Schritt. Sie bleibt verständlich und vermeidet Schuldzuweisungen oder reine Fehlercodes.", "skill": "Verstehen", "sourceRefs": ["ux2:Fehlerbehandlung"], "solution": "Bitte wähle eine Versandart aus und sende das Formular erneut ab."}, {"id": "PHP-WEB-020", "type": "single-choice", "topic": "ux", "difficulty": "leicht", "text": "Eine Anwendung zeigt zuletzt geöffnete Dokumente als auswählbare Liste. Welches UX-Prinzip wird besonders unterstützt?", "options": ["Verbergen des Systemzustands.", "Absichtliche Vergrößerung der Gedächtnisleistung.", "Wiedererkennung statt reiner Erinnerung.", "Verzicht auf Navigation."], "correct": [2], "explanation": "Ein sichtbarer Eintrag kann wiedererkannt werden. Nutzer müssen sich weder den vollständigen Namen noch den bisherigen Ablageort aus dem Gedächtnis herleiten.", "skill": "Verstehen", "sourceRefs": ["ux2:Merkhilfen"], "solution": "Wiedererkennung statt reiner Erinnerung."}, {"id": "PHP-WEB-021", "type": "single-choice", "topic": "ux", "difficulty": "leicht", "text": "Wie lässt sich Minimalismus sinnvoll auf eine Bestellübersicht anwenden?", "options": ["Wichtige Funktionen ausblenden, sobald mehr als drei vorhanden sind.", "Notwendige Aktionen und Informationen klar zeigen; Überflüssiges weglassen.", "Alle Beschriftungen entfernen, damit möglichst wenig Text bleibt.", "Jeden freien Bereich mit Animationen und Zusatzangeboten füllen."], "correct": [1], "explanation": "Minimalismus soll die Aufgabe erleichtern. Er bedeutet weder Funktionsverlust noch das Entfernen notwendiger Orientierungshilfen.", "skill": "Verstehen", "sourceRefs": ["ux2:Minimalismus und Ästhetik"], "solution": "Notwendige Aktionen und Informationen klar zeigen; Überflüssiges weglassen."}, {"id": "PHP-WEB-022", "type": "order", "topic": "html", "difficulty": "leicht", "text": "Ordne die Bausteine zu einem vollständigen HTML-Dokument. Verwende alle Bausteine genau einmal.", "blocks": [{"id": "b5", "text": "\u003c/html>"}, {"id": "b2", "text": "\u003chtml lang=\"de\">"}, {"id": "b4", "text": "\u003cbody>\u003ch1>Willkommen\u003c/h1>\u003c/body>"}, {"id": "b1", "text": "\u003c!DOCTYPE html>"}, {"id": "b3", "text": "\u003chead>\u003cmeta charset=\"utf-8\">\u003ctitle>Kurs\u003c/title>\u003c/head>"}], "correctOrder": ["b1", "b2", "b3", "b4", "b5"], "explanation": "Die Doctype-Angabe steht vor dem Wurzelelement html. Innerhalb von html folgen zuerst head mit Metadaten und dann body mit dem Seiteninhalt.", "skill": "Code ordnen", "sourceRefs": ["html1:5–7"]}, {"id": "PHP-WEB-023", "type": "single-choice", "topic": "html", "difficulty": "leicht", "text": "Wo wird der Text „Kursübersicht“ aus dem folgenden Ausschnitt normalerweise angezeigt?\u003cpre>\u003ccode>&lt;head&gt;\n  &lt;meta charset=\"utf-8\"&gt;\n  &lt;title&gt;Kursübersicht&lt;/title&gt;\n&lt;/head&gt;\u003c/code>\u003c/pre>", "options": ["Automatisch als Hauptüberschrift im Seiteninhalt.", "Als Standardwert in jedem Eingabefeld.", "Nur in einer CSS-Datei.", "Als Dokumenttitel, beispielsweise im Browser-Tab."], "correct": [3], "explanation": "Das title-Element beschreibt den Dokumenttitel. Eine sichtbare Hauptüberschrift im Seiteninhalt wird separat, zum Beispiel mit h1 im body, ausgezeichnet.", "skill": "Verstehen", "code": "\u003chead>\n  \u003cmeta charset=\"utf-8\">\n  \u003ctitle>Kursübersicht\u003c/title>\n\u003c/head>", "codeLanguage": "html", "sourceRefs": ["html1:6,15,25–26"], "solution": "Als Dokumenttitel, beispielsweise im Browser-Tab."}, {"id": "PHP-WEB-024", "type": "single-choice", "topic": "html", "difficulty": "leicht", "text": "Welches Element passt semantisch zu einem Bereich mit den wichtigsten Navigationslinks?", "options": ["\u003ccode>&lt;p&gt;\u003c/code>", "\u003ccode>&lt;nav&gt;\u003c/code>", "\u003ccode>&lt;title&gt;\u003c/code>", "\u003ccode>&lt;img&gt;\u003c/code>"], "correct": [1], "explanation": "nav kennzeichnet einen Navigationsbereich. Die semantische Bedeutung hilft, den Zweck der enthaltenen Links zu erkennen; die optische Darstellung wird separat gestaltet.", "skill": "Verstehen", "sourceRefs": ["html2:9"], "solution": "\u003cnav>"}, {"id": "PHP-WEB-025", "type": "single-choice", "topic": "html", "difficulty": "leicht", "text": "Welche Variante verschachtelt die Elemente korrekt?", "options": ["\u003ccode>&lt;strong&gt;&lt;p&gt;Bitte aufpassen.&lt;/strong&gt;&lt;/p&gt;\u003c/code>", "\u003ccode>&lt;p&gt;Bitte &lt;strong&gt;aufpassen.&lt;/p&gt;\u003c/code>", "\u003ccode>&lt;p&gt;Bitte &lt;strong&gt;aufpassen&lt;/strong&gt;.&lt;/p&gt;\u003c/code>", "\u003ccode>&lt;p&gt;Bitte &lt;strong&gt;aufpassen&lt;/p&gt;.&lt;/strong&gt;\u003c/code>"], "correct": [2], "explanation": "Das innere strong-Element wird vor dem äußeren p-Element geschlossen. Sich überkreuzende Start- und End-Tags bilden keine korrekt verschachtelte Struktur.", "skill": "Verstehen", "sourceRefs": ["html1:14–15"], "solution": "\u003cp>Bitte \u003cstrong>aufpassen\u003c/strong>.\u003c/p>"}, {"id": "PHP-WEB-026", "type": "multiple-choice", "topic": "html", "difficulty": "leicht", "text": "Welche zwei Elemente sind in HTML leere Elemente (Void-Elemente) und erhalten kein schließendes End-Tag?", "options": ["\u003ccode>&lt;img&gt;\u003c/code>", "\u003ccode>&lt;textarea&gt;\u003c/code>", "\u003ccode>&lt;input&gt;\u003c/code>", "\u003ccode>&lt;p&gt;\u003c/code>"], "correct": [0, 2], "explanation": "img und input nehmen keinen Elementinhalt auf und besitzen kein End-Tag. Ein abschließender Slash im Start-Tag ist in HTML dafür nicht erforderlich. p und textarea können Inhalt aufnehmen.", "skill": "Verstehen", "sourceRefs": ["html1:11–12,37", "html2:15,24", "html-syntax"], "solution": "\u003cimg>; \u003cinput>"}, {"id": "PHP-WEB-027", "type": "single-choice", "topic": "html", "difficulty": "leicht", "text": "Welche Aussage zu diesem Ausschnitt ist richtig?\u003cpre>\u003ccode>&lt;p id=\"hinweis\" class=\"info wichtig\"&gt;Bitte lesen.&lt;/p&gt;\u003c/code>\u003c/pre>", "options": ["Die id gilt automatisch auch für alle folgenden Absätze.", "Die beiden Klassen dürfen nie zusammen vorkommen.", "Das Element besitzt zwei ids und eine Klasse.", "Das Element besitzt zwei Klassen und eine id."], "correct": [3], "explanation": "Das class-Attribut kann mehrere durch Leerzeichen getrennte Klassennamen enthalten. Die id kennzeichnet ein bestimmtes Element und soll im Dokument eindeutig sein.", "skill": "Verstehen", "code": "\u003cp id=\"hinweis\" class=\"info wichtig\">Bitte lesen.\u003c/p>", "codeLanguage": "html", "sourceRefs": ["html1:23–24", "css1:26–28"], "solution": "Das Element besitzt zwei Klassen und eine id."}, {"id": "PHP-WEB-028", "type": "single-choice", "topic": "html", "difficulty": "leicht", "text": "Welches Attribut legt im folgenden Element das Linkziel fest?\u003cpre>\u003ccode>&lt;a href=\"kontakt.html\"&gt;Zum Kontakt&lt;/a&gt;\u003c/code>\u003c/pre>", "options": ["\u003ccode>alt\u003c/code>", "\u003ccode>href\u003c/code>", "\u003ccode>method\u003c/code>", "\u003ccode>src\u003c/code>"], "correct": [1], "explanation": "href enthält das Ziel des Hyperlinks. „Zum Kontakt“ ist der sichtbare Linktext; kontakt.html ist hier ein relativer Verweis.", "skill": "Verstehen", "code": "\u003ca href=\"kontakt.html\">Zum Kontakt\u003c/a>", "codeLanguage": "html", "sourceRefs": ["html2:20"], "solution": "href"}, {"id": "PHP-WEB-029", "type": "single-choice", "topic": "html", "difficulty": "leicht", "text": "Welcher Alternativtext passt zu einem inhaltlich wichtigen Foto eines roten Not-Aus-Schalters?\u003cpre>\u003ccode>&lt;img src=\"not-aus.jpg\" alt=\"...\"&gt;\u003c/code>\u003c/pre>", "options": ["Bild.", "Hier klicken, ganz toll!", "Roter Not-Aus-Schalter an der Maschine.", "foto_0237_final.jpg"], "correct": [2], "explanation": "Ein Alternativtext beschreibt den für den Kontext wichtigen Bildinhalt. Ein Dateiname oder das Wort „Bild“ vermittelt diese Information nicht.", "skill": "Verstehen", "code": "\u003cimg src=\"not-aus.jpg\" alt=\"...\">", "codeLanguage": "html", "sourceRefs": ["html1:37–38", "ux1:13–14"], "solution": "Roter Not-Aus-Schalter an der Maschine."}, {"id": "PHP-WEB-030", "type": "single-choice", "topic": "html", "difficulty": "leicht", "text": "Wie viele nummerierte Listeneinträge enthält dieser Ausschnitt?\u003cpre>\u003ccode>&lt;ol&gt;\n  &lt;li&gt;Projekt öffnen&lt;/li&gt;\n  &lt;li&gt;Datei bearbeiten&lt;/li&gt;\n  &lt;li&gt;Ergebnis prüfen&lt;/li&gt;\n&lt;/ol&gt;\u003c/code>\u003c/pre>", "options": ["3", "1", "4", "2"], "correct": [0], "explanation": "Die drei li-Elemente sind die Listeneinträge. ol kennzeichnet die geordnete Liste und ist kein zusätzlicher Eintrag.", "skill": "Code lesen", "code": "\u003col>\n  \u003cli>Projekt öffnen\u003c/li>\n  \u003cli>Datei bearbeiten\u003c/li>\n  \u003cli>Ergebnis prüfen\u003c/li>\n\u003c/ol>", "codeLanguage": "html", "sourceRefs": ["html1:41–42"], "solution": "3"}, {"id": "PHP-WEB-031", "type": "single-choice", "topic": "html", "difficulty": "leicht", "text": "Wie viele Tabellenzeilen und Spalten zeigt diese Tabelle?\u003cpre>\u003ccode>&lt;table&gt;\n  &lt;tr&gt;&lt;th&gt;Kurs&lt;/th&gt;&lt;th&gt;Raum&lt;/th&gt;&lt;/tr&gt;\n  &lt;tr&gt;&lt;td&gt;PHP&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;/tr&gt;\n&lt;/table&gt;\u003c/code>\u003c/pre>", "options": ["1 Zeile und 4 Spalten.", "2 Zeilen und 2 Spalten.", "3 Zeilen und 2 Spalten.", "4 Zeilen und 1 Spalte."], "correct": [1], "explanation": "Jedes tr bildet eine Zeile. In beiden Zeilen befinden sich jeweils zwei Zellen. th kennzeichnet Überschriftenzellen, td gewöhnliche Datenzellen.", "skill": "Code lesen", "code": "\u003ctable>\n  \u003ctr>\u003cth>Kurs\u003c/th>\u003cth>Raum\u003c/th>\u003c/tr>\n  \u003ctr>\u003ctd>PHP\u003c/td>\u003ctd>3\u003c/td>\u003c/tr>\n\u003c/table>", "codeLanguage": "html", "sourceRefs": ["html1:44–45"], "solution": "2 Zeilen und 2 Spalten."}, {"id": "PHP-WEB-032", "type": "single-choice", "topic": "html", "difficulty": "leicht", "text": "Welche Änderung verknüpft das label korrekt mit dem Eingabefeld?\u003cpre>\u003ccode>&lt;label for=\"stueck\"&gt;Stückzahl&lt;/label&gt;\n&lt;input id=\"anzahl\" name=\"menge\" type=\"number\"&gt;\u003c/code>\u003c/pre>", "options": ["Im label for=\"menge\" setzen.", "Das Attribut for ersatzlos entfernen.", "Im input name=\"Stückzahl\" setzen.", "Im label for=\"anzahl\" setzen."], "correct": [3], "explanation": "for verweist auf die id des Eingabefelds, hier anzahl. name erfüllt eine andere Aufgabe: Es bezeichnet den Schlüssel bei der Formularübermittlung.", "skill": "Fehler finden", "code": "\u003clabel for=\"stueck\">Stückzahl\u003c/label>\n\u003cinput id=\"anzahl\" name=\"menge\" type=\"number\">", "codeLanguage": "html", "sourceRefs": ["html2:16"], "solution": "Im label for=\"anzahl\" setzen."}, {"id": "PHP-WEB-033", "type": "single-choice", "topic": "html", "difficulty": "leicht", "text": "Das Formular wird unverändert über seinen Button abgeschickt. Welches Paar entsteht aus dem Eingabefeld?\u003cpre>\u003ccode>&lt;form action=\"auswerten.php\" method=\"post\"&gt;\n  &lt;input id=\"titel\" name=\"thema\" value=\"HTML\"&gt;\n  &lt;button type=\"submit\"&gt;Absenden&lt;/button&gt;\n&lt;/form&gt;\u003c/code>\u003c/pre>", "options": ["\u003ccode>thema=HTML\u003c/code>", "\u003ccode>HTML=thema\u003c/code>", "\u003ccode>thema=titel\u003c/code>", "\u003ccode>titel=HTML\u003c/code>"], "correct": [0], "explanation": "name liefert den Namen des übertragenen Felds, value den hier unveränderten Wert. id dient der Identifikation im Dokument. Der Button besitzt kein name und liefert deshalb kein zusätzliches benanntes Feld.", "skill": "Code lesen", "code": "\u003cform action=\"auswerten.php\" method=\"post\">\n  \u003cinput id=\"titel\" name=\"thema\" value=\"HTML\">\n  \u003cbutton type=\"submit\">Absenden\u003c/button>\n\u003c/form>", "codeLanguage": "html", "sourceRefs": ["html2:23–24", "html-standard"], "solution": "thema=HTML"}, {"id": "PHP-WEB-034", "type": "single-choice", "topic": "css", "difficulty": "leicht", "text": "Welche Variante bindet die Datei style.css als externes Stylesheet im head ein?", "options": ["\u003ccode>&lt;style src=\"style.css\"&gt;&lt;/style&gt;\u003c/code>", "\u003ccode>&lt;link rel=\"stylesheet\" href=\"style.css\"&gt;\u003c/code>", "\u003ccode>&lt;css file=\"style.css\"&gt;\u003c/code>", "\u003ccode>&lt;a href=\"style.css\"&gt;Style&lt;/a&gt;\u003c/code>"], "correct": [1], "explanation": "link mit rel=\"stylesheet\" verknüpft das Dokument mit der CSS-Datei. HTML beschreibt die Inhalte und ihre Struktur; CSS übernimmt hier die Darstellung. Ein a-Element wäre dagegen ein sichtbarer Hyperlink.", "skill": "Verstehen", "sourceRefs": ["css1:3,8–10"], "solution": "\u003clink rel=\"stylesheet\" href=\"style.css\">"}, {"id": "PHP-WEB-035", "type": "single-choice", "topic": "css", "difficulty": "leicht", "text": "Welche Korrektur macht aus dieser Zeile eine gültige CSS-Regel?\u003cpre>\u003ccode>p { color = navy; }\u003c/code>\u003c/pre>", "options": ["color = navy durch color: navy ersetzen.", "Den Selektor p durch \u003cp> ersetzen.", "Die geschweiften Klammern durch runde Klammern ersetzen.", "navy durch \"navy\" ersetzen und das Gleichheitszeichen beibehalten."], "correct": [0], "explanation": "In einer CSS-Deklaration trennt ein Doppelpunkt die Eigenschaft vom Wert. Der Selektor steht vor dem Deklarationsblock in geschweiften Klammern.", "skill": "Fehler finden", "code": "p { color = navy; }", "codeLanguage": "css", "sourceRefs": ["css1:5–7"], "solution": "color = navy durch color: navy ersetzen."}, {"id": "PHP-WEB-036", "type": "single-choice", "topic": "css", "difficulty": "leicht", "text": "Welche Texte werden direkt vom Selektor \u003ccode>p.info\u003c/code> ausgewählt?\u003cpre>\u003ccode>&lt;p class=\"info\"&gt;A&lt;/p&gt;\n&lt;div class=\"info\"&gt;B&lt;/div&gt;\n&lt;p&gt;C&lt;/p&gt;\u003c/code>\u003c/pre>", "options": ["A und C.", "A, B und C.", "A und B.", "Nur A."], "correct": [3], "explanation": "p.info verlangt gleichzeitig den Elementtyp p und die Klasse info. B ist ein div, C besitzt die Klasse info nicht.", "skill": "Selektor nachvollziehen", "code": "\u003cp class=\"info\">A\u003c/p>\n\u003cdiv class=\"info\">B\u003c/div>\n\u003cp>C\u003c/p>", "codeLanguage": "html", "sourceRefs": ["css1:Zusammengesetzte Selektoren"], "solution": "Nur A."}, {"id": "PHP-WEB-037", "type": "single-choice", "topic": "css", "difficulty": "leicht", "text": "Welche Texte werden direkt vom Selektor \u003ccode>div &gt; p\u003c/code> ausgewählt?\u003cpre>\u003ccode>&lt;div&gt;\n  &lt;p&gt;A&lt;/p&gt;\n  &lt;section&gt;&lt;p&gt;B&lt;/p&gt;&lt;/section&gt;\n&lt;/div&gt;\n&lt;p&gt;C&lt;/p&gt;\u003c/code>\u003c/pre>", "options": ["A und B.", "A, B und C.", "Nur B.", "Nur A."], "correct": [3], "explanation": "Der Kindkombinator &gt; wählt nur direkte Kinder. A ist ein direktes p-Kind des div. B ist erst innerhalb von section verschachtelt; C liegt außerhalb.", "skill": "Selektor nachvollziehen", "code": "\u003cdiv>\n  \u003cp>A\u003c/p>\n  \u003csection>\u003cp>B\u003c/p>\u003c/section>\n\u003c/div>\n\u003cp>C\u003c/p>", "codeLanguage": "html", "sourceRefs": ["css1:31–35"], "solution": "Nur A."}, {"id": "PHP-WEB-038", "type": "single-choice", "topic": "css", "difficulty": "mittel", "text": "Welche Textfarbe erhält „Hinweis“? Es gelten nur diese Regeln; kein !important, keine Ebenen (Layers) und keine Inline-Styles.\u003cpre>\u003ccode>&lt;style&gt;\n  #meldung { color: green; }\n  .info { color: red; }\n  p { color: blue; }\n&lt;/style&gt;\n&lt;p id=\"meldung\" class=\"info\"&gt;Hinweis&lt;/p&gt;\u003c/code>\u003c/pre>", "options": ["Grün.", "Schwarz.", "Rot.", "Blau."], "correct": [0], "explanation": "Der id-Selektor #meldung ist spezifischer als die Klasse .info und der Elementselektor p. Unter den hier gleichen übrigen Kaskadenbedingungen setzt er sich deshalb durch.", "skill": "CSS-Ergebnis bestimmen", "code": "\u003cstyle>\n  #meldung { color: green; }\n  .info { color: red; }\n  p { color: blue; }\n\u003c/style>\n\u003cp id=\"meldung\" class=\"info\">Hinweis\u003c/p>", "codeLanguage": "html", "sourceRefs": ["css1:Spezifizität", "css-cascade"], "solution": "Grün."}, {"id": "PHP-WEB-039", "type": "single-choice", "topic": "css", "difficulty": "mittel", "text": "Welche Textfarbe erhält „Text“? Es gelten nur die dargestellten Regeln.\u003cpre>\u003ccode>&lt;style&gt;\n  .rot { color: red; }\n  .blau { color: blue; }\n&lt;/style&gt;\n&lt;p class=\"blau rot\"&gt;Text&lt;/p&gt;\u003c/code>\u003c/pre>", "options": ["Eine Mischung aus Rot und Blau.", "Rot.", "Die Reihenfolge im class-Attribut entscheidet, also Rot.", "Blau."], "correct": [3], "explanation": "Beide Klassenselektoren haben dieselbe Spezifität. Die später im Stylesheet stehende passende Regel gewinnt. Die Reihenfolge der Klassen im HTML-Attribut verändert das nicht.", "skill": "CSS-Ergebnis bestimmen", "code": "\u003cstyle>\n  .rot { color: red; }\n  .blau { color: blue; }\n\u003c/style>\n\u003cp class=\"blau rot\">Text\u003c/p>", "codeLanguage": "html", "sourceRefs": ["css1:28,Spezifizität", "css-cascade"], "solution": "Blau."}, {"id": "PHP-WEB-040", "type": "single-choice", "topic": "css", "difficulty": "leicht", "text": "Welche Farbe erhält der Absatztext, wenn keine weiteren Regeln gelten?\u003cpre>\u003ccode>&lt;style&gt;\n  div { color: blue; }\n&lt;/style&gt;\n&lt;div&gt;&lt;p&gt;Hinweis&lt;/p&gt;&lt;/div&gt;\u003c/code>\u003c/pre>", "options": ["Rot als Standardfarbe aller Absätze.", "Blau durch Vererbung vom umgebenden div.", "Blau, weil div automatisch alle Elemente im Dokument selektiert.", "Keine Farbe, weil p keine eigene CSS-Regel hat."], "correct": [1], "explanation": "Die Eigenschaft color wird vererbt. Hat das Kind keine eigene passende Farbangabe, übernimmt es hier den Wert des Elternteils. Nicht jede CSS-Eigenschaft wird automatisch vererbt.", "skill": "CSS-Ergebnis bestimmen", "code": "\u003cstyle>\n  div { color: blue; }\n\u003c/style>\n\u003cdiv>\u003cp>Hinweis\u003c/p>\u003c/div>", "codeLanguage": "html", "sourceRefs": ["css1:Vererbung", "css-cascade"], "solution": "Blau durch Vererbung vom umgebenden div."}, {"id": "PHP-WEB-041", "type": "single-choice", "topic": "css", "difficulty": "leicht", "text": "Der Hintergrund einer Karte soll halbtransparent sein, der Text aber seine volle Deckkraft behalten. Welche Angabe passt?", "options": ["\u003ccode>background-color: rgba(0, 0, 255, 0.5);\u003c/code>", "\u003ccode>background-color: transparent;\u003c/code>", "\u003ccode>opacity: 0.5;\u003c/code>", "\u003ccode>color: rgba(0, 0, 255, 0.5);\u003c/code>"], "correct": [0], "explanation": "Ein Alphawert in der Hintergrundfarbe beeinflusst nur diese Farbe. opacity wirkt auf das gesamte zusammengesetzte Element einschließlich seines Textes.", "skill": "Verstehen", "sourceRefs": ["css2:Transparenz,Fazit Farben und Hintergründe"], "solution": "background-color: rgba(0, 0, 255, 0.5);"}, {"id": "PHP-WEB-042", "type": "single-choice", "topic": "css", "difficulty": "leicht", "text": "Ein Hintergrundbild soll ohne Verzerrung die gesamte Fläche eines Elements abdecken. Abschneiden an den Rändern ist erlaubt. Welcher Wert passt zu background-size?", "options": ["\u003ccode>cover\u003c/code>", "\u003ccode>repeat-x\u003c/code>", "\u003ccode>contain\u003c/code>", "\u003ccode>center\u003c/code>"], "correct": [0], "explanation": "cover skaliert proportional so, dass die Fläche vollständig bedeckt ist. Dabei können Bildränder abgeschnitten werden. contain zeigt dagegen das ganze Bild, gegebenenfalls mit freien Bereichen.", "skill": "Verstehen", "sourceRefs": ["css2:Hintergrundgröße", "css-backgrounds"], "solution": "cover"}, {"id": "PHP-WEB-043", "type": "single-choice", "topic": "css", "difficulty": "leicht", "text": "Wie verläuft der Farbverlauf dieser Regel?\u003cpre>\u003ccode>background-image: linear-gradient(to right, red, blue);\u003c/code>\u003c/pre>", "options": ["Von Rot oben zu Blau unten.", "Von Rot links zu Blau rechts.", "Vom roten Mittelpunkt kreisförmig nach außen.", "Von Blau links zu Rot rechts."], "correct": [1], "explanation": "to right legt die Richtung nach rechts fest. Die erste Farbe befindet sich am Anfang, die zweite am Ende des linearen Verlaufs.", "skill": "CSS-Ergebnis bestimmen", "code": "background-image: linear-gradient(to right, red, blue);", "codeLanguage": "css", "sourceRefs": ["css2:Linearverlauf"], "solution": "Von Rot links zu Blau rechts."}, {"id": "PHP-WEB-044", "type": "single-choice", "topic": "css", "difficulty": "leicht", "text": "Welche Beschreibung passt zu einem komplementären Farbschema?", "options": ["Jede Ansicht verwendet eine neue, zufällig gewählte Farbpalette.", "Es werden nur Schattierungen eines einzigen Farbtons verwendet.", "Zwei Farbtöne liegen sich auf dem Farbkreis gegenüber.", "Drei direkt benachbarte Farbtöne werden kombiniert."], "correct": [2], "explanation": "Komplementärfarben liegen sich im verwendeten Farbkreis gegenüber. Ein monochromatisches Schema verwendet dagegen Abstufungen eines Farbtons; ein analoges Schema benachbarte Farbtöne.", "skill": "Verstehen", "sourceRefs": ["css2:Farbschemata"], "solution": "Zwei Farbtöne liegen sich auf dem Farbkreis gegenüber."}, {"id": "PHP-WEB-045", "type": "multiple-choice", "topic": "css", "difficulty": "leicht", "text": "Welche zwei Aussagen sind bei Farben und Nutzerführung sinnvoll?", "options": ["Rot wird ausnahmslos von allen Menschen gleich wahrgenommen.", "Farbassoziationen können vom kulturellen Kontext und von Personen abhängen.", "Je mehr unterschiedliche Signalfarben gleichzeitig erscheinen, desto eindeutiger ist die Oberfläche immer.", "Eine Fehlermeldung sollte zusätzlich zur Farbe verständlichen Text oder ein Symbol bieten."], "correct": [1, 3], "explanation": "Farbe kann Orientierung unterstützen, ist aber nicht für alle Menschen gleich wahrnehmbar oder gleichbedeutend. Zusätzliche Beschriftungen und ein konsistentes Farbschema helfen, Informationen eindeutig zu vermitteln.", "skill": "Verstehen", "sourceRefs": ["css2:Kleine Farbpsychologie,Farbschemata", "ux1:13–14"], "solution": "Farbassoziationen können vom kulturellen Kontext und von Personen abhängen.; Eine Fehlermeldung sollte zusätzlich zur Farbe verständlichen Text oder ein Symbol bieten."}]}, {"id": "PHP-php-45-60", "name": "PHP · Test 2 · PHP-Grundlagen & Kontrollstrukturen", "course": "PHP", "version": "1.0", "sourceFileName": "PHP_Test2_PHP_Grundlagen_45Fragen_60Min.json", "description": "45 Fragen mit Schwerpunkt Code lesen: Variablen, Operatoren, Arrays, if/elseif/else, switch, for, while, do-while, foreach, break, continue, GET/POST und einfache Funktionen. Ohne Sessions, OOP, Passwortvalidierung und Datenbanken.", "durationMinutes": 60, "questionCount": 45, "shuffleOptions": true, "shuffleQuestions": false, "topicLabels": {"grundlagen": "PHP-Basics und Operatoren", "bedingungen": "Bedingungen und Verzweigungen", "switch": "switch, case und default", "schleifen": "Schleifen und Arrays", "steuerung": "break, continue und Fehlersuche", "formulare": "GET, POST und Formularauswertung", "funktionen": "Funktionen und return"}, "difficultyLabels": {"leicht": "Einstieg", "mittel": "Anwendung"}, "instructions": "45 Fragen · 60 Minuten. Lies den Code am Schreibtisch; führe ihn während des Tests nicht aus. Die Fragenfolge bleibt erhalten, Antwortoptionen werden beim Teststart neu gemischt. Einzelwahl: genau eine Antwort. Mehrfachwahl: die angegebene Anzahl. Jede vollständig richtige Frage zählt einen Punkt; keine Teilpunkte oder Minuspunkte. Lösungen und Begründungen erscheinen erst nach Testende. Jeder Codeausschnitt wird unabhängig betrachtet. Echo-Ausgaben werden ohne zusätzliche Zeichen aneinandergereiht. Request-Werte sind in der jeweiligen Frage fest vorgegeben. Beispiele zeigen bewusst nur den abgefragten Lernschritt, keine vollständige Formularabsicherung.", "assessment": {"pointsPerQuestion": 1, "maximumPoints": 45, "partialCredit": false, "negativePoints": false, "solutionsAfterFinish": true}, "sources": [{"id": "php", "file": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf", "scope": "Vor allem Seiten 8–21: PHP-Grundlagen, Operatoren, Schleifen, Bedingungen, Funktionen und Formulardaten; Datenbank-/OOP-Teil nicht geprüft"}, {"id": "html2", "file": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf", "scope": "Formulare und Beschriftungen"}, {"id": "php-control", "url": "https://www.php.net/manual/en/language.control-structures.php"}, {"id": "php-switch", "url": "https://www.php.net/manual/en/control-structures.switch.php"}, {"id": "php-foreach", "url": "https://www.php.net/manual/en/control-structures.foreach.php"}, {"id": "php-break", "url": "https://www.php.net/manual/en/control-structures.break.php"}, {"id": "php-continue", "url": "https://www.php.net/manual/en/control-structures.continue.php"}, {"id": "php-get", "url": "https://www.php.net/manual/en/reserved.variables.get.php"}, {"id": "php-post", "url": "https://www.php.net/manual/en/reserved.variables.post.php"}, {"id": "html-standard", "url": "https://html.spec.whatwg.org/multipage/forms.html"}], "questions": [{"id": "PHP-PHP-001", "type": "single-choice", "topic": "grundlagen", "difficulty": "leicht", "text": "Wo wird PHP-Code bei einer üblichen PHP-Webanwendung ausgeführt?", "options": ["Ausschließlich im Browser, sobald er eine HTML-Datei öffnet.", "Auf dem Webserver durch PHP; der Browser erhält die erzeugte Antwort.", "Im CSS-Stylesheet des Browsers.", "Erst beim Drucken der Webseite."], "correct": [1], "explanation": "Der Server verarbeitet PHP und liefert das Ergebnis an den Browser, beispielsweise HTML. Für die Ausführung einer PHP-Webseite reicht ein Doppelklick auf eine lokale Datei normalerweise nicht aus.", "skill": "Verstehen", "sourceRefs": ["php:8–14"], "solution": "Auf dem Webserver durch PHP; der Browser erhält die erzeugte Antwort."}, {"id": "PHP-PHP-002", "type": "single-choice", "topic": "grundlagen", "difficulty": "leicht", "text": "Welche Variante gibt innerhalb einer PHP-Datei korrekt den Text Hallo aus?", "options": ["\u003ccode>&lt;?php echo \"Hallo\"; ?&gt;\u003c/code>", "\u003ccode>&lt;?php printText(\"Hallo\"); ?&gt;\u003c/code>", "\u003ccode>&lt;php&gt;echo \"Hallo\";&lt;/php&gt;\u003c/code>", "\u003ccode>&lt;?php echo Hallo ?&gt;\u003c/code>"], "correct": [0], "explanation": "Ein PHP-Block beginnt mit &lt;?php. echo gibt den Text in Anführungszeichen aus. Das Semikolon beendet hier die Anweisung; eine Funktion printText ist in diesem Beispiel nicht definiert.", "skill": "Verstehen", "sourceRefs": ["php:13"], "solution": "\u003c?php echo \"Hallo\"; ?>"}, {"id": "PHP-PHP-003", "type": "single-choice", "topic": "grundlagen", "difficulty": "leicht", "text": "Was wird ausgegeben?\u003cpre>\u003ccode>&lt;?php\n$preis = 2;\n$Preis = 3;\necho $preis;\necho $Preis;\u003c/code>\u003c/pre>", "options": ["\u003ccode>23\u003c/code>", "\u003ccode>32\u003c/code>", "\u003ccode>Ein Fehler, weil die Namen identisch wären.\u003c/code>", "\u003ccode>22\u003c/code>"], "correct": [0], "explanation": "Variablennamen in PHP unterscheiden Groß- und Kleinschreibung. $preis und $Preis sind zwei verschiedene Variablen. Die beiden echo-Anweisungen geben ohne Trennzeichen 2 und 3 aus.", "skill": "Ausgabe bestimmen", "code": "\u003c?php\n$preis = 2;\n$Preis = 3;\necho $preis;\necho $Preis;", "codeLanguage": "php", "sourceRefs": ["php:14"], "solution": "23"}, {"id": "PHP-PHP-004", "type": "single-choice", "topic": "grundlagen", "difficulty": "leicht", "text": "Was wird ausgegeben?\u003cpre>\u003ccode>&lt;?php\n$a = 4;\n$b = 3;\necho $a + $b * 2;\u003c/code>\u003c/pre>", "options": ["\u003ccode>20\u003c/code>", "\u003ccode>14\u003c/code>", "\u003ccode>9\u003c/code>", "\u003ccode>10\u003c/code>"], "correct": [3], "explanation": "Zuerst wird $b * 2 berechnet: 3 * 2 = 6. Danach wird $a addiert: 4 + 6 = 10. Multiplikation hat Vorrang vor Addition.", "skill": "Ausgabe bestimmen", "code": "\u003c?php\n$a = 4;\n$b = 3;\necho $a + $b * 2;", "codeLanguage": "php", "sourceRefs": ["php:14–15"], "solution": "10"}, {"id": "PHP-PHP-005", "type": "single-choice", "topic": "grundlagen", "difficulty": "leicht", "text": "Was wird ausgegeben?\u003cpre>\u003ccode>&lt;?php\n$text = \"Hallo \";\n$text = $text . \"Kurs\";\n$text .= \"!\";\necho $text;\u003c/code>\u003c/pre>", "options": ["\u003ccode>HalloKurs!\u003c/code>", "\u003ccode>!Hallo Kurs\u003c/code>", "\u003ccode>Hallo Kurs!\u003c/code>", "\u003ccode>Hallo !Kurs\u003c/code>"], "correct": [2], "explanation": "Der Punkt verbindet Zeichenketten. .= hängt den rechten Text an die vorhandene Variable an. Das Leerzeichen ist bereits in „Hallo “ enthalten.", "skill": "Ausgabe bestimmen", "code": "\u003c?php\n$text = \"Hallo \";\n$text = $text . \"Kurs\";\n$text .= \"!\";\necho $text;", "codeLanguage": "php", "sourceRefs": ["php:14–15"], "solution": "Hallo Kurs!"}, {"id": "PHP-PHP-006", "type": "single-choice", "topic": "grundlagen", "difficulty": "leicht", "text": "Welcher Text wird ausgegeben?\u003cpre>\u003ccode>&lt;?php\n$themen = [\"HTML\", \"CSS\", \"PHP\"];\necho $themen[1];\u003c/code>\u003c/pre>", "options": ["\u003ccode>Ein Fehler, weil es keinen Index 1 gibt.\u003c/code>", "\u003ccode>HTML\u003c/code>", "\u003ccode>CSS\u003c/code>", "\u003ccode>PHP\u003c/code>"], "correct": [2], "explanation": "Bei dieser automatisch nummerierten Liste beginnt die Zählung mit Index 0. Index 0 enthält HTML, Index 1 CSS und Index 2 PHP.", "skill": "Array lesen", "code": "\u003c?php\n$themen = [\"HTML\", \"CSS\", \"PHP\"];\necho $themen[1];", "codeLanguage": "php", "sourceRefs": ["php:17,19"], "solution": "CSS"}, {"id": "PHP-PHP-007", "type": "multiple-choice", "topic": "grundlagen", "difficulty": "mittel", "text": "Welche zwei Aussagen über die Vergleiche treffen zu?\u003cpre>\u003ccode>&lt;?php\n$a = 5;\n$b = \"5\";\u003c/code>\u003c/pre>", "options": ["\u003ccode>$a === $b\u003c/code> ergibt false.", "\u003ccode>$a === $b\u003c/code> ergibt true.", "\u003ccode>$a == $b\u003c/code> ergibt false.", "\u003ccode>$a == $b\u003c/code> ergibt true."], "correct": [0, 3], "explanation": "== vergleicht die Werte mit möglichen Typumwandlungen. === verlangt zusätzlich denselben Datentyp. Hier stehen eine Ganzzahl und eine Zeichenkette mit demselben numerischen Wert gegenüber.", "skill": "Vergleiche verstehen", "code": "\u003c?php\n$a = 5;\n$b = \"5\";", "codeLanguage": "php", "sourceRefs": ["php:16"], "solution": "$a === $b ergibt false.; $a == $b ergibt true."}, {"id": "PHP-PHP-008", "type": "single-choice", "topic": "grundlagen", "difficulty": "leicht", "text": "Was wird ausgegeben?\u003cpre>\u003ccode>&lt;?php\n$zahl = 2;\n// $zahl = 12;\n$zahl++;\n$zahl += 2;\necho $zahl;\u003c/code>\u003c/pre>", "options": ["\u003ccode>5\u003c/code>", "\u003ccode>6\u003c/code>", "\u003ccode>4\u003c/code>", "\u003ccode>15\u003c/code>"], "correct": [0], "explanation": "Die auskommentierte Zeile wird nicht ausgeführt. $zahl++ erhöht 2 auf 3. Anschließend erhöht += 2 den Wert auf 5.", "skill": "Ausgabe bestimmen", "code": "\u003c?php\n$zahl = 2;\n// $zahl = 12;\n$zahl++;\n$zahl += 2;\necho $zahl;", "codeLanguage": "php", "sourceRefs": ["php:13–15"], "solution": "5"}, {"id": "PHP-PHP-009", "type": "single-choice", "topic": "bedingungen", "difficulty": "leicht", "text": "Welche Ausgabe entsteht?\u003cpre>\u003ccode>&lt;?php\n$temperatur = 18;\nif ($temperatur &gt; 20) {\n    echo \"Warm\";\n}\necho \"Start\";\u003c/code>\u003c/pre>", "options": ["\u003ccode>Es gibt keine Ausgabe.\u003c/code>", "\u003ccode>WarmStart\u003c/code>", "\u003ccode>Warm\u003c/code>", "\u003ccode>Start\u003c/code>"], "correct": [3], "explanation": "Die Bedingung 18 &gt; 20 ist falsch. Deshalb entfällt der if-Block. Die nachfolgende echo-Anweisung wird unabhängig davon ausgeführt.", "skill": "Zweig verfolgen", "code": "\u003c?php\n$temperatur = 18;\nif ($temperatur > 20) {\n    echo \"Warm\";\n}\necho \"Start\";", "codeLanguage": "php", "sourceRefs": ["php:18"], "solution": "Start"}, {"id": "PHP-PHP-010", "type": "single-choice", "topic": "bedingungen", "difficulty": "leicht", "text": "Welche Ausgabe entsteht an dieser Grenze?\u003cpre>\u003ccode>&lt;?php\n$summe = 50;\nif ($summe &gt;= 50) {\n    echo \"Freier Versand\";\n} else {\n    echo \"Versandkosten\";\n}\u003c/code>\u003c/pre>", "options": ["\u003ccode>Es gibt keine Ausgabe.\u003c/code>", "\u003ccode>Versandkosten\u003c/code>", "\u003ccode>Beide Texte\u003c/code>", "\u003ccode>Freier Versand\u003c/code>"], "correct": [3], "explanation": "&gt;= schließt den Grenzwert ein. Bei genau 50 ist die Bedingung wahr; der else-Zweig wird nicht ausgeführt.", "skill": "Grenzwert prüfen", "code": "\u003c?php\n$summe = 50;\nif ($summe >= 50) {\n    echo \"Freier Versand\";\n} else {\n    echo \"Versandkosten\";\n}", "codeLanguage": "php", "sourceRefs": ["php:15,18"], "solution": "Freier Versand"}, {"id": "PHP-PHP-011", "type": "single-choice", "topic": "bedingungen", "difficulty": "leicht", "text": "Welche Ausgabe entsteht?\u003cpre>\u003ccode>&lt;?php\n$punkte = 75;\nif ($punkte &gt;= 90) {\n    echo \"Sehr gut\";\n} elseif ($punkte &gt;= 50) {\n    echo \"Bestanden\";\n} else {\n    echo \"Wiederholen\";\n}\u003c/code>\u003c/pre>", "options": ["\u003ccode>Wiederholen\u003c/code>", "\u003ccode>Bestanden\u003c/code>", "\u003ccode>Sehr gutBestanden\u003c/code>", "\u003ccode>Sehr gut\u003c/code>"], "correct": [1], "explanation": "75 erreicht die erste Grenze von 90 nicht. Die zweite Bedingung ist wahr. In einer if/elseif/else-Kette wird nur der erste zutreffende Zweig ausgeführt.", "skill": "Zweig verfolgen", "code": "\u003c?php\n$punkte = 75;\nif ($punkte >= 90) {\n    echo \"Sehr gut\";\n} elseif ($punkte >= 50) {\n    echo \"Bestanden\";\n} else {\n    echo \"Wiederholen\";\n}", "codeLanguage": "php", "sourceRefs": ["php:18"], "solution": "Bestanden"}, {"id": "PHP-PHP-012", "type": "single-choice", "topic": "bedingungen", "difficulty": "leicht", "text": "Welche Ausgabe entsteht bei zwei getrennten if-Anweisungen?\u003cpre>\u003ccode>&lt;?php\n$zahl = 7;\nif ($zahl &gt; 0) {\n    echo \"A\";\n}\nif ($zahl &gt; 5) {\n    echo \"B\";\n}\u003c/code>\u003c/pre>", "options": ["\u003ccode>A\u003c/code>", "\u003ccode>Es gibt keine Ausgabe.\u003c/code>", "\u003ccode>B\u003c/code>", "\u003ccode>AB\u003c/code>"], "correct": [3], "explanation": "Es handelt sich nicht um eine elseif-Kette. Beide Bedingungen werden nacheinander geprüft und sind bei 7 wahr. Deshalb werden A und anschließend B ausgegeben.", "skill": "Zweige vergleichen", "code": "\u003c?php\n$zahl = 7;\nif ($zahl > 0) {\n    echo \"A\";\n}\nif ($zahl > 5) {\n    echo \"B\";\n}", "codeLanguage": "php", "sourceRefs": ["php:18"], "solution": "AB"}, {"id": "PHP-PHP-013", "type": "single-choice", "topic": "bedingungen", "difficulty": "leicht", "text": "Welche Ausgabe entsteht?\u003cpre>\u003ccode>&lt;?php\n$bezahlt = true;\n$bereit = false;\nif ($bezahlt &amp;&amp; $bereit) {\n    echo \"Abholen\";\n} else {\n    echo \"Keine Abholung\";\n}\u003c/code>\u003c/pre>", "options": ["\u003ccode>Abholen\u003c/code>", "\u003ccode>true\u003c/code>", "\u003ccode>Keine Abholung\u003c/code>", "\u003ccode>false\u003c/code>"], "correct": [2], "explanation": "Bei &amp;&amp; müssen beide Bedingungen wahr sein. $bezahlt ist zwar true, $bereit aber false. Daher wird der else-Zweig ausgeführt.", "skill": "Logik verstehen", "code": "\u003c?php\n$bezahlt = true;\n$bereit = false;\nif ($bezahlt && $bereit) {\n    echo \"Abholen\";\n} else {\n    echo \"Keine Abholung\";\n}", "codeLanguage": "php", "sourceRefs": ["php:15,18"], "solution": "Keine Abholung"}, {"id": "PHP-PHP-014", "type": "single-choice", "topic": "bedingungen", "difficulty": "leicht", "text": "Welche Ausgabe entsteht?\u003cpre>\u003ccode>&lt;?php\n$feiertag = false;\n$unterricht = false;\nif ($feiertag || !$unterricht) {\n    echo \"Pause\";\n} else {\n    echo \"Arbeit\";\n}\u003c/code>\u003c/pre>", "options": ["\u003ccode>Pause\u003c/code>", "\u003ccode>PauseArbeit\u003c/code>", "\u003ccode>Es gibt keine Ausgabe.\u003c/code>", "\u003ccode>Arbeit\u003c/code>"], "correct": [0], "explanation": "Bei || genügt eine wahre Teilbedingung. !$unterricht negiert false zu true. Die Gesamtbedingung ist daher wahr, obwohl $feiertag false ist.", "skill": "Logik verstehen", "code": "\u003c?php\n$feiertag = false;\n$unterricht = false;\nif ($feiertag || !$unterricht) {\n    echo \"Pause\";\n} else {\n    echo \"Arbeit\";\n}", "codeLanguage": "php", "sourceRefs": ["php:15,18"], "solution": "Pause"}, {"id": "PHP-PHP-015", "type": "single-choice", "topic": "bedingungen", "difficulty": "leicht", "text": "Welchen Wert gibt der ternäre Ausdruck aus?\u003cpre>\u003ccode>&lt;?php\n$plaetze = 0;\n$text = ($plaetze &gt; 0) ? \"frei\" : \"voll\";\necho $text;\u003c/code>\u003c/pre>", "options": ["\u003ccode>0\u003c/code>", "\u003ccode>true\u003c/code>", "\u003ccode>voll\u003c/code>", "\u003ccode>frei\u003c/code>"], "correct": [2], "explanation": "Der ternäre Operator prüft zuerst die Bedingung vor dem Fragezeichen. Bei false wird der Wert nach dem Doppelpunkt verwendet. 0 &gt; 0 ist falsch, also lautet das Ergebnis „voll“.", "skill": "Kurzschreibweise lesen", "code": "\u003c?php\n$plaetze = 0;\n$text = ($plaetze > 0) ? \"frei\" : \"voll\";\necho $text;", "codeLanguage": "php", "sourceRefs": ["php:18"], "solution": "voll"}, {"id": "PHP-PHP-016", "type": "multiple-choice", "topic": "bedingungen", "difficulty": "mittel", "text": "Welche zwei Aussagen stimmen nach der Ausführung?\u003cpre>\u003ccode>&lt;?php\n$punkte = 0;\nif (4 &gt; 2) {\n    if (2 &gt; 3) {\n        $punkte += 3;\n    } else {\n        $punkte += 1;\n    }\n}\necho $punkte;\u003c/code>\u003c/pre>", "options": ["Die Variable $punkte enthält am Ende 3.", "Die Variable $punkte enthält am Ende 1.", "Die Ausgabe lautet 1.", "Die Ausgabe lautet 3."], "correct": [1, 2], "explanation": "Die äußere Bedingung ist wahr. Die innere Bedingung 2 &gt; 3 ist falsch, deshalb addiert ihr else-Zweig 1. Andere Änderungen finden nicht statt.", "skill": "Verschachtelung lesen", "code": "\u003c?php\n$punkte = 0;\nif (4 > 2) {\n    if (2 > 3) {\n        $punkte += 3;\n    } else {\n        $punkte += 1;\n    }\n}\necho $punkte;", "codeLanguage": "php", "sourceRefs": ["php:18"], "solution": "Die Variable $punkte enthält am Ende 1.; Die Ausgabe lautet 1."}, {"id": "PHP-PHP-017", "type": "single-choice", "topic": "switch", "difficulty": "leicht", "text": "Welche Ausgabe entsteht?\u003cpre>\u003ccode>&lt;?php\n$wahl = 2;\nswitch ($wahl) {\n    case 1: echo \"HTML\"; break;\n    case 2: echo \"CSS\"; break;\n    default: echo \"Andere\";\n}\u003c/code>\u003c/pre>", "options": ["\u003ccode>HTMLCSSAndere\u003c/code>", "\u003ccode>Andere\u003c/code>", "\u003ccode>HTML\u003c/code>", "\u003ccode>CSS\u003c/code>"], "correct": [3], "explanation": "Der Wert 2 passt zu case 2. Nach der Ausgabe beendet break die switch-Anweisung. default wird nicht ausgeführt.", "skill": "case verfolgen", "code": "\u003c?php\n$wahl = 2;\nswitch ($wahl) {\n    case 1: echo \"HTML\"; break;\n    case 2: echo \"CSS\"; break;\n    default: echo \"Andere\";\n}", "codeLanguage": "php", "sourceRefs": ["php:18"], "solution": "CSS"}, {"id": "PHP-PHP-018", "type": "single-choice", "topic": "switch", "difficulty": "leicht", "text": "Welche Ausgabe entsteht, wenn kein case passt?\u003cpre>\u003ccode>&lt;?php\n$status = \"offen\";\nswitch ($status) {\n    case \"neu\": echo \"Neu\"; break;\n    case \"fertig\": echo \"Fertig\"; break;\n    default: echo \"Unbekannt\";\n}\u003c/code>\u003c/pre>", "options": ["\u003ccode>Neu\u003c/code>", "\u003ccode>Unbekannt\u003c/code>", "\u003ccode>Fertig\u003c/code>", "\u003ccode>Es gibt keine Ausgabe.\u003c/code>"], "correct": [1], "explanation": "Für „offen“ ist kein passender case vorhanden. Daher beginnt die Verarbeitung im default-Zweig.", "skill": "default verfolgen", "code": "\u003c?php\n$status = \"offen\";\nswitch ($status) {\n    case \"neu\": echo \"Neu\"; break;\n    case \"fertig\": echo \"Fertig\"; break;\n    default: echo \"Unbekannt\";\n}", "codeLanguage": "php", "sourceRefs": ["php:18"], "solution": "Unbekannt"}, {"id": "PHP-PHP-019", "type": "single-choice", "topic": "switch", "difficulty": "mittel", "text": "Welche Ausgabe entsteht durch das fehlende break nach case 1?\u003cpre>\u003ccode>&lt;?php\n$wahl = 1;\nswitch ($wahl) {\n    case 1: echo \"A\";\n    case 2: echo \"B\"; break;\n    default: echo \"C\";\n}\u003c/code>\u003c/pre>", "options": ["\u003ccode>AB\u003c/code>", "\u003ccode>B\u003c/code>", "\u003ccode>A\u003c/code>", "\u003ccode>ABC\u003c/code>"], "correct": [0], "explanation": "Bei case 1 wird A ausgegeben. Ohne break läuft die Ausführung in den nächsten Zweig weiter und gibt B aus. Das dortige break verhindert C.", "skill": "Fall-through erkennen", "code": "\u003c?php\n$wahl = 1;\nswitch ($wahl) {\n    case 1: echo \"A\";\n    case 2: echo \"B\"; break;\n    default: echo \"C\";\n}", "codeLanguage": "php", "sourceRefs": ["php:18", "php-switch"], "solution": "AB"}, {"id": "PHP-PHP-020", "type": "single-choice", "topic": "switch", "difficulty": "leicht", "text": "Welche Ausgabe entsteht bei zusammengefassten Fällen?\u003cpre>\u003ccode>&lt;?php\n$tag = 7;\nswitch ($tag) {\n    case 6:\n    case 7:\n        echo \"Wochenende\";\n        break;\n    default:\n        echo \"Werktag\";\n}\u003c/code>\u003c/pre>", "options": ["\u003ccode>WochenendeWerktag\u003c/code>", "\u003ccode>Werktag\u003c/code>", "\u003ccode>Wochenende\u003c/code>", "\u003ccode>7\u003c/code>"], "correct": [2], "explanation": "case 6 und case 7 führen hier zum gleichen Anweisungsblock. Bei 7 wird „Wochenende“ ausgegeben und anschließend die switch-Anweisung verlassen.", "skill": "Fälle zusammenfassen", "code": "\u003c?php\n$tag = 7;\nswitch ($tag) {\n    case 6:\n    case 7:\n        echo \"Wochenende\";\n        break;\n    default:\n        echo \"Werktag\";\n}", "codeLanguage": "php", "sourceRefs": ["php:18", "php-switch"], "solution": "Wochenende"}, {"id": "PHP-PHP-021", "type": "single-choice", "topic": "schleifen", "difficulty": "leicht", "text": "Welche Ausgabe erzeugt die for-Schleife?\u003cpre>\u003ccode>&lt;?php\nfor ($i = 1; $i &lt;= 3; $i++) {\n    echo $i;\n}\u003c/code>\u003c/pre>", "options": ["\u003ccode>123\u003c/code>", "\u003ccode>0123\u003c/code>", "\u003ccode>1234\u003c/code>", "\u003ccode>234\u003c/code>"], "correct": [0], "explanation": "Die Schleife startet bei 1, läuft solange $i &lt;= 3 gilt und erhöht $i nach jedem Durchlauf. Ausgegeben werden 1, 2 und 3 ohne Trennzeichen.", "skill": "Schleife durchlaufen", "code": "\u003c?php\nfor ($i = 1; $i \u003c= 3; $i++) {\n    echo $i;\n}", "codeLanguage": "php", "sourceRefs": ["php:17"], "solution": "123"}, {"id": "PHP-PHP-022", "type": "single-choice", "topic": "schleifen", "difficulty": "leicht", "text": "Welche Zahlenfolge entsteht?\u003cpre>\u003ccode>&lt;?php\nfor ($i = 2; $i &lt;= 6; $i += 2) {\n    echo $i;\n}\u003c/code>\u003c/pre>", "options": ["\u003ccode>23456\u003c/code>", "\u003ccode>248\u003c/code>", "\u003ccode>246\u003c/code>", "\u003ccode>0246\u003c/code>"], "correct": [2], "explanation": "Der Startwert ist 2 und die Schrittweite beträgt 2. Die Körperdurchläufe verwenden 2, 4 und 6. Bei 8 ist die Bedingung falsch.", "skill": "Schrittweite verfolgen", "code": "\u003c?php\nfor ($i = 2; $i \u003c= 6; $i += 2) {\n    echo $i;\n}", "codeLanguage": "php", "sourceRefs": ["php:15,17"], "solution": "246"}, {"id": "PHP-PHP-023", "type": "single-choice", "topic": "schleifen", "difficulty": "mittel", "text": "Welcher Wert steht nach der Schleife in \u003ccode>$i\u003c/code> und wird ausgegeben?\u003cpre>\u003ccode>&lt;?php\nfor ($i = 0; $i &lt; 3; $i++) {\n    // Kein Ausgabebefehl im Schleifenkörper.\n}\necho $i;\u003c/code>\u003c/pre>", "options": ["\u003ccode>0\u003c/code>", "\u003ccode>2\u003c/code>", "\u003ccode>4\u003c/code>", "\u003ccode>3\u003c/code>"], "correct": [3], "explanation": "Der Schleifenkörper läuft für 0, 1 und 2. Nach dem letzten Durchlauf wird $i auf 3 erhöht. Dann ist 3 &lt; 3 falsch; ausgegeben wird der Endwert 3.", "skill": "Endwert bestimmen", "code": "\u003c?php\nfor ($i = 0; $i \u003c 3; $i++) {\n    // Kein Ausgabebefehl im Schleifenkörper.\n}\necho $i;", "codeLanguage": "php", "sourceRefs": ["php:17"], "solution": "3"}, {"id": "PHP-PHP-024", "type": "single-choice", "topic": "schleifen", "difficulty": "leicht", "text": "Welche Ausgabe erzeugt die while-Schleife?\u003cpre>\u003ccode>&lt;?php\n$n = 3;\nwhile ($n &gt; 0) {\n    echo $n;\n    $n--;\n}\u003c/code>\u003c/pre>", "options": ["\u003ccode>3210\u003c/code>", "\u003ccode>321\u003c/code>", "\u003ccode>32\u003c/code>", "\u003ccode>123\u003c/code>"], "correct": [1], "explanation": "Vor jedem Durchlauf wird $n &gt; 0 geprüft. Ausgegeben werden 3, 2 und 1. Nach der Verringerung auf 0 endet die Schleife.", "skill": "Schleife durchlaufen", "code": "\u003c?php\n$n = 3;\nwhile ($n > 0) {\n    echo $n;\n    $n--;\n}", "codeLanguage": "php", "sourceRefs": ["php:17"], "solution": "321"}, {"id": "PHP-PHP-025", "type": "single-choice", "topic": "schleifen", "difficulty": "leicht", "text": "Welche Ausgabe entsteht, wenn die while-Bedingung bereits am Anfang falsch ist?\u003cpre>\u003ccode>&lt;?php\n$n = 5;\nwhile ($n &lt; 3) {\n    echo \"X\";\n    $n++;\n}\necho \"Ende\";\u003c/code>\u003c/pre>", "options": ["\u003ccode>Ende\u003c/code>", "\u003ccode>Es entsteht eine Endlosschleife.\u003c/code>", "\u003ccode>XXEnde\u003c/code>", "\u003ccode>XEnde\u003c/code>"], "correct": [0], "explanation": "Eine while-Schleife prüft vor dem ersten Durchlauf. 5 &lt; 3 ist falsch; ihr Körper läuft kein einziges Mal. Die Anweisung nach der Schleife gibt Ende aus.", "skill": "Einstiegsbedingung prüfen", "code": "\u003c?php\n$n = 5;\nwhile ($n \u003c 3) {\n    echo \"X\";\n    $n++;\n}\necho \"Ende\";", "codeLanguage": "php", "sourceRefs": ["php:17"], "solution": "Ende"}, {"id": "PHP-PHP-026", "type": "single-choice", "topic": "schleifen", "difficulty": "mittel", "text": "Welche Summe wird ausgegeben?\u003cpre>\u003ccode>&lt;?php\n$i = 1;\n$summe = 0;\nwhile ($i &lt;= 3) {\n    $summe += $i;\n    $i++;\n}\necho $summe;\u003c/code>\u003c/pre>", "options": ["\u003ccode>7\u003c/code>", "\u003ccode>6\u003c/code>", "\u003ccode>3\u003c/code>", "\u003ccode>5\u003c/code>"], "correct": [1], "explanation": "Die drei Durchläufe addieren 1, dann 2 und dann 3. Die Zwischensummen sind 1, 3 und 6. Anschließend wird nur die Gesamtsumme ausgegeben.", "skill": "Variablenverlauf prüfen", "code": "\u003c?php\n$i = 1;\n$summe = 0;\nwhile ($i \u003c= 3) {\n    $summe += $i;\n    $i++;\n}\necho $summe;", "codeLanguage": "php", "sourceRefs": ["php:15,17"], "solution": "6"}, {"id": "PHP-PHP-027", "type": "single-choice", "topic": "schleifen", "difficulty": "leicht", "text": "Welche Ausgabe entsteht hier im Unterschied zu einer while-Schleife?\u003cpre>\u003ccode>&lt;?php\n$n = 5;\ndo {\n    echo $n;\n    $n++;\n} while ($n &lt; 3);\u003c/code>\u003c/pre>", "options": ["\u003ccode>56\u003c/code>", "\u003ccode>Es gibt keine Ausgabe.\u003c/code>", "\u003ccode>3\u003c/code>", "\u003ccode>5\u003c/code>"], "correct": [3], "explanation": "do … while prüft erst nach dem Körper. Daher wird 5 einmal ausgegeben, danach $n auf 6 erhöht. Erst jetzt wird 6 &lt; 3 geprüft und die Schleife beendet.", "skill": "Fußgesteuerte Schleife verstehen", "code": "\u003c?php\n$n = 5;\ndo {\n    echo $n;\n    $n++;\n} while ($n \u003c 3);", "codeLanguage": "php", "sourceRefs": ["php:17"], "solution": "5"}, {"id": "PHP-PHP-028", "type": "single-choice", "topic": "schleifen", "difficulty": "leicht", "text": "Welche Ausgabe erzeugt diese do-while-Schleife?\u003cpre>\u003ccode>&lt;?php\n$n = 0;\ndo {\n    $n++;\n    echo $n;\n} while ($n &lt; 3);\u003c/code>\u003c/pre>", "options": ["\u003ccode>1\u003c/code>", "\u003ccode>123\u003c/code>", "\u003ccode>012\u003c/code>", "\u003ccode>1234\u003c/code>"], "correct": [1], "explanation": "Jeder Durchlauf erhöht zuerst $n und gibt dann den neuen Wert aus. Nach 1 und 2 ist die Bedingung noch wahr. Nach der Ausgabe von 3 endet die Schleife.", "skill": "Reihenfolge im Körper beachten", "code": "\u003c?php\n$n = 0;\ndo {\n    $n++;\n    echo $n;\n} while ($n \u003c 3);", "codeLanguage": "php", "sourceRefs": ["php:17"], "solution": "123"}, {"id": "PHP-PHP-029", "type": "single-choice", "topic": "schleifen", "difficulty": "leicht", "text": "Welche Ausgabe entsteht durch foreach?\u003cpre>\u003ccode>&lt;?php\n$liste = [\"K\", \"L\", \"M\"];\nforeach ($liste as $wert) {\n    echo $wert;\n}\u003c/code>\u003c/pre>", "options": ["\u003ccode>[K,L,M]\u003c/code>", "\u003ccode>012\u003c/code>", "\u003ccode>KLM\u003c/code>", "\u003ccode>M\u003c/code>"], "correct": [2], "explanation": "foreach liefert nacheinander die Werte der Liste an $wert. Die drei echo-Aufrufe werden ohne zusätzliche Trennzeichen zusammengefügt.", "skill": "Array durchlaufen", "code": "\u003c?php\n$liste = [\"K\", \"L\", \"M\"];\nforeach ($liste as $wert) {\n    echo $wert;\n}", "codeLanguage": "php", "sourceRefs": ["php:17"], "solution": "KLM"}, {"id": "PHP-PHP-030", "type": "single-choice", "topic": "schleifen", "difficulty": "mittel", "text": "Welche Ausgabe entsteht beim Durchlaufen von Schlüsseln und Werten?\u003cpre>\u003ccode>&lt;?php\n$bestand = [\"A\" =&gt; 2, \"B\" =&gt; 3];\nforeach ($bestand as $name =&gt; $menge) {\n    echo $name . $menge;\n}\u003c/code>\u003c/pre>", "options": ["\u003ccode>23AB\u003c/code>", "\u003ccode>A2B3\u003c/code>", "\u003ccode>2A3B\u003c/code>", "\u003ccode>AB23\u003c/code>"], "correct": [1], "explanation": "Bei foreach ($bestand as $name =&gt; $menge) erhält $name den Schlüssel und $menge den Wert. Der Punkt verbindet beides. Die Einträge werden hier in ihrer Einfügereihenfolge durchlaufen.", "skill": "Schlüssel und Wert unterscheiden", "code": "\u003c?php\n$bestand = [\"A\" => 2, \"B\" => 3];\nforeach ($bestand as $name => $menge) {\n    echo $name . $menge;\n}", "codeLanguage": "php", "sourceRefs": ["php:17", "php-foreach"], "solution": "A2B3"}, {"id": "PHP-PHP-031", "type": "single-choice", "topic": "schleifen", "difficulty": "leicht", "text": "Welche Summe wird ausgegeben?\u003cpre>\u003ccode>&lt;?php\n$zahlen = [2, 3, 5];\n$summe = 0;\nforeach ($zahlen as $zahl) {\n    $summe += $zahl;\n}\necho $summe;\u003c/code>\u003c/pre>", "options": ["\u003ccode>235\u003c/code>", "\u003ccode>5\u003c/code>", "\u003ccode>10\u003c/code>", "\u003ccode>3\u003c/code>"], "correct": [2], "explanation": "Die foreach-Schleife addiert alle drei Werte: 2 + 3 + 5 = 10. Es wird weder die Anzahl der Elemente noch eine Aneinanderreihung ihrer Texte ausgegeben.", "skill": "Arraywerte aufsummieren", "code": "\u003c?php\n$zahlen = [2, 3, 5];\n$summe = 0;\nforeach ($zahlen as $zahl) {\n    $summe += $zahl;\n}\necho $summe;", "codeLanguage": "php", "sourceRefs": ["php:15,17"], "solution": "10"}, {"id": "PHP-PHP-032", "type": "single-choice", "topic": "schleifen", "difficulty": "mittel", "text": "Wie viele Sternchen werden insgesamt ausgegeben?\u003cpre>\u003ccode>&lt;?php\nfor ($zeile = 1; $zeile &lt;= 2; $zeile++) {\n    for ($spalte = 1; $spalte &lt;= 3; $spalte++) {\n        echo \"*\";\n    }\n}\u003c/code>\u003c/pre>", "options": ["\u003ccode>5\u003c/code>", "\u003ccode>3\u003c/code>", "\u003ccode>6\u003c/code>", "\u003ccode>2\u003c/code>"], "correct": [2], "explanation": "Die äußere Schleife läuft zweimal. Für jeden dieser Durchläufe startet die innere Schleife neu bei 1 und läuft dreimal. Insgesamt entstehen 2 × 3 = 6 Sternchen.", "skill": "Verschachtelte Schleifen zählen", "code": "\u003c?php\nfor ($zeile = 1; $zeile \u003c= 2; $zeile++) {\n    for ($spalte = 1; $spalte \u003c= 3; $spalte++) {\n        echo \"*\";\n    }\n}", "codeLanguage": "php", "sourceRefs": ["php:17"], "solution": "6"}, {"id": "PHP-PHP-033", "type": "single-choice", "topic": "steuerung", "difficulty": "leicht", "text": "Welche Ausgabe entsteht durch break?\u003cpre>\u003ccode>&lt;?php\nfor ($i = 1; $i &lt;= 5; $i++) {\n    if ($i === 3) {\n        break;\n    }\n    echo $i;\n}\u003c/code>\u003c/pre>", "options": ["\u003ccode>12345\u003c/code>", "\u003ccode>12\u003c/code>", "\u003ccode>45\u003c/code>", "\u003ccode>123\u003c/code>"], "correct": [1], "explanation": "Bei $i = 3 wird break vor dem echo erreicht. Es beendet die Schleife sofort. Deshalb wurden nur 1 und 2 ausgegeben.", "skill": "Abbruch verfolgen", "code": "\u003c?php\nfor ($i = 1; $i \u003c= 5; $i++) {\n    if ($i === 3) {\n        break;\n    }\n    echo $i;\n}", "codeLanguage": "php", "sourceRefs": ["php-break"], "solution": "12"}, {"id": "PHP-PHP-034", "type": "single-choice", "topic": "steuerung", "difficulty": "leicht", "text": "Welche Ausgabe entsteht durch continue?\u003cpre>\u003ccode>&lt;?php\nfor ($i = 1; $i &lt;= 4; $i++) {\n    if ($i === 2) {\n        continue;\n    }\n    echo $i;\n}\u003c/code>\u003c/pre>", "options": ["\u003ccode>134\u003c/code>", "\u003ccode>34\u003c/code>", "\u003ccode>1234\u003c/code>", "\u003ccode>1\u003c/code>"], "correct": [0], "explanation": "continue überspringt bei $i = 2 den Rest dieses Durchlaufs. Danach wird die for-Schleife mit ihrer Erhöhung fortgesetzt. 1, 3 und 4 werden ausgegeben.", "skill": "Durchlauf überspringen", "code": "\u003c?php\nfor ($i = 1; $i \u003c= 4; $i++) {\n    if ($i === 2) {\n        continue;\n    }\n    echo $i;\n}", "codeLanguage": "php", "sourceRefs": ["php-continue"], "solution": "134"}, {"id": "PHP-PHP-035", "type": "single-choice", "topic": "steuerung", "difficulty": "mittel", "text": "Welche Ausgabe entsteht mit Modulo und continue?\u003cpre>\u003ccode>&lt;?php\nforeach ([1, 2, 3, 4] as $zahl) {\n    if ($zahl % 2 !== 0) {\n        continue;\n    }\n    echo $zahl;\n}\u003c/code>\u003c/pre>", "options": ["\u003ccode>24\u003c/code>", "\u003ccode>2\u003c/code>", "\u003ccode>13\u003c/code>", "\u003ccode>1234\u003c/code>"], "correct": [0], "explanation": "Bei ungeraden Zahlen ist der Rest bei Division durch 2 ungleich 0. Diese Durchläufe werden übersprungen. Ausgegeben werden nur die geraden Werte 2 und 4.", "skill": "Bedingung und Schleife verbinden", "code": "\u003c?php\nforeach ([1, 2, 3, 4] as $zahl) {\n    if ($zahl % 2 !== 0) {\n        continue;\n    }\n    echo $zahl;\n}", "codeLanguage": "php", "sourceRefs": ["php:15,17", "php-continue"], "solution": "24"}, {"id": "PHP-PHP-036", "type": "single-choice", "topic": "steuerung", "difficulty": "mittel", "text": "Die Schleife soll 1, 2 und 3 ausgeben und danach enden. Welche einzelne Ergänzung an der markierten Stelle erreicht das?\u003cpre>\u003ccode>&lt;?php\n$i = 1;\nwhile ($i &lt;= 3) {\n    echo $i;\n    // Hier genau eine Anweisung ergänzen.\n}\u003c/code>\u003c/pre>", "options": ["\u003ccode>$i = 1;\u003c/code>", "\u003ccode>continue;\u003c/code>", "\u003ccode>$i++;\u003c/code>", "\u003ccode>$i--;\u003c/code>"], "correct": [2], "explanation": "Ohne Änderung von $i bleibt 1 &lt;= 3 dauerhaft wahr. $i++ nach der Ausgabe sorgt für die Werte 1, 2 und 3 und anschließend für das Ende bei $i = 4.", "skill": "Endlosschleife korrigieren", "code": "\u003c?php\n$i = 1;\nwhile ($i \u003c= 3) {\n    echo $i;\n    // Hier genau eine Anweisung ergänzen.\n}", "codeLanguage": "php", "sourceRefs": ["php:17"], "solution": "$i++;"}, {"id": "PHP-PHP-037", "type": "single-choice", "topic": "formulare", "difficulty": "leicht", "text": "Der Aufruf lautet \u003ccode>liste.php?seite=3\u003c/code>. Welcher Ausdruck liest den übergebenen Wert für seite?", "options": ["\u003ccode>$GET.seite\u003c/code>", "\u003ccode>$_GET[\"seite\"]\u003c/code>", "\u003ccode>$_POST[\"seite\"]\u003c/code>", "\u003ccode>$_GET[3]\u003c/code>"], "correct": [1], "explanation": "Der benannte URL-Parameter wird über seinen Schlüssel im Array $_GET angesprochen. Die 3 ist der Wert, nicht der Name des Parameters.", "skill": "GET lesen", "sourceRefs": ["php:21", "php-get"], "solution": "$_GET[\"seite\"]"}, {"id": "PHP-PHP-038", "type": "single-choice", "topic": "formulare", "difficulty": "leicht", "text": "Das Formular wird unverändert abgeschickt. Welcher Zugriff liest den Feldwert in auswerten.php?\u003cpre>\u003ccode>&lt;form action=\"auswerten.php\" method=\"post\"&gt;\n  &lt;label for=\"anzahl\"&gt;Menge&lt;/label&gt;\n  &lt;input id=\"anzahl\" name=\"menge\" value=\"2\"&gt;\n  &lt;button type=\"submit\"&gt;Senden&lt;/button&gt;\n&lt;/form&gt;\u003c/code>\u003c/pre>", "options": ["\u003ccode>$_GET[\"menge\"]\u003c/code>", "\u003ccode>$_POST[\"2\"]\u003c/code>", "\u003ccode>$_POST[\"anzahl\"]\u003c/code>", "\u003ccode>$_POST[\"menge\"]\u003c/code>"], "correct": [3], "explanation": "method=\"post\" sendet die Formulardaten per POST. Als Schlüssel wird das name-Attribut menge verwendet. id=\"anzahl\" verknüpft hier nur das Feld mit seiner Beschriftung.", "skill": "Formular und PHP verbinden", "code": "\u003cform action=\"auswerten.php\" method=\"post\">\n  \u003clabel for=\"anzahl\">Menge\u003c/label>\n  \u003cinput id=\"anzahl\" name=\"menge\" value=\"2\">\n  \u003cbutton type=\"submit\">Senden\u003c/button>\n\u003c/form>", "codeLanguage": "html", "sourceRefs": ["php:21", "html2:16,23", "php-post"], "solution": "$_POST[\"menge\"]"}, {"id": "PHP-PHP-039", "type": "single-choice", "topic": "formulare", "difficulty": "leicht", "text": "Aufruf: \u003ccode>rechnen.php?zahl=4\u003c/code>. Welche Ausgabe entsteht? Der Parameter ist vorhanden und enthält genau die angegebene Ziffer.\u003cpre>\u003ccode>&lt;?php\n$zahl = (int) $_GET[\"zahl\"];\necho $zahl * 2;\u003c/code>\u003c/pre>", "options": ["\u003ccode>44\u003c/code>", "\u003ccode>8\u003c/code>", "\u003ccode>0\u003c/code>", "\u003ccode>4\u003c/code>"], "correct": [1], "explanation": "Der übergebene Text „4“ wird hier ausdrücklich mit (int) in eine Ganzzahl umgewandelt und mit 2 multipliziert. Das Ergebnis ist 8. Dieses kleine Beispiel prüft noch keine beliebigen Benutzereingaben.", "skill": "GET-Code durchlaufen", "code": "\u003c?php\n$zahl = (int) $_GET[\"zahl\"];\necho $zahl * 2;", "codeLanguage": "php", "sourceRefs": ["php:14–16,21", "php-get"], "solution": "8"}, {"id": "PHP-PHP-040", "type": "single-choice", "topic": "formulare", "difficulty": "mittel", "text": "Ein normales POST-Formular übermittelt für menge den Wert \u003ccode>\"2\"\u003c/code>. Welche Ausgabe entsteht?\u003cpre>\u003ccode>&lt;?php\n$menge = $_POST[\"menge\"];\nif ($menge === 2) {\n    echo \"Ganzzahl\";\n} elseif ($menge === \"2\") {\n    echo \"Textwert\";\n}\u003c/code>\u003c/pre>", "options": ["\u003ccode>TextwertGanzzahl\u003c/code>", "\u003ccode>Textwert\u003c/code>", "\u003ccode>Ganzzahl\u003c/code>", "\u003ccode>Es gibt keine Ausgabe.\u003c/code>"], "correct": [1], "explanation": "Ein einzelner gewöhnlicher Formularwert kommt als Zeichenkette an. Der strikte Vergleich mit der Ganzzahl 2 ist deshalb falsch. Der Vergleich mit dem Text „2“ ist wahr.", "skill": "Formularwert und Typ prüfen", "code": "\u003c?php\n$menge = $_POST[\"menge\"];\nif ($menge === 2) {\n    echo \"Ganzzahl\";\n} elseif ($menge === \"2\") {\n    echo \"Textwert\";\n}", "codeLanguage": "php", "sourceRefs": ["php:16,18,21", "php-post"], "solution": "Textwert"}, {"id": "PHP-PHP-041", "type": "single-choice", "topic": "formulare", "difficulty": "leicht", "text": "Das Skript wird ohne URL-Parameter aufgerufen. Welche Ausgabe entsteht? \u003ccode>isset\u003c/code> prüft hier, ob der Eintrag vorhanden und nicht null ist.\u003cpre>\u003ccode>&lt;?php\nif (isset($_GET[\"wahl\"])) {\n    echo \"Auswahl vorhanden\";\n} else {\n    echo \"Keine Auswahl\";\n}\u003c/code>\u003c/pre>", "options": ["\u003ccode>null\u003c/code>", "\u003ccode>Auswahl vorhanden\u003c/code>", "\u003ccode>Ein Fehler durch den fehlenden Eintrag.\u003c/code>", "\u003ccode>Keine Auswahl\u003c/code>"], "correct": [3], "explanation": "isset kann prüfen, ob ein fehlender Arrayeintrag gesetzt ist, ohne ihn direkt ausgeben zu müssen. Da wahl nicht vorhanden ist, wird der else-Zweig ausgeführt.", "skill": "Fehlenden Parameter behandeln", "code": "\u003c?php\nif (isset($_GET[\"wahl\"])) {\n    echo \"Auswahl vorhanden\";\n} else {\n    echo \"Keine Auswahl\";\n}", "codeLanguage": "php", "sourceRefs": ["php:18,21", "php-get"], "solution": "Keine Auswahl"}, {"id": "PHP-PHP-042", "type": "single-choice", "topic": "formulare", "difficulty": "leicht", "text": "Ein normales Formular wird per POST gesendet. Seine Checkbox \u003ccode>&lt;input type=\"checkbox\" name=\"info\" value=\"ja\"&gt;\u003c/code> war nicht angehakt; es gibt kein anderes Feld namens info. Welche Ausgabe entsteht?\u003cpre>\u003ccode>&lt;?php\nif (isset($_POST[\"info\"])) {\n    echo \"Gewählt\";\n} else {\n    echo \"Nicht gewählt\";\n}\u003c/code>\u003c/pre>", "options": ["\u003ccode>Gewählt\u003c/code>", "\u003ccode>false\u003c/code>", "\u003ccode>ja\u003c/code>", "\u003ccode>Nicht gewählt\u003c/code>"], "correct": [3], "explanation": "Eine nicht angehakte Checkbox wird in einem gewöhnlichen HTML-Formular nicht als Feld übermittelt. Der Schlüssel info fehlt deshalb; isset liefert false und der else-Zweig wird ausgeführt.", "skill": "Checkbox und Bedingung lesen", "code": "\u003c?php\nif (isset($_POST[\"info\"])) {\n    echo \"Gewählt\";\n} else {\n    echo \"Nicht gewählt\";\n}", "codeLanguage": "php", "sourceRefs": ["html-standard", "php-post"], "solution": "Nicht gewählt"}, {"id": "PHP-PHP-043", "type": "multiple-choice", "topic": "formulare", "difficulty": "leicht", "text": "Welche zwei Aussagen zu normalen HTML-Formularen und GET/POST stimmen?", "options": ["Bei POST stehen die übermittelten Formulardaten im Request-Body statt als angehängte Formularwerte in der URL.", "POST verschlüsselt die Daten automatisch, auch ohne HTTPS.", "Bei GET werden benannte Formulardaten typischerweise an die Ziel-URL angehängt.", "Das id-Attribut ersetzt beim Absenden grundsätzlich das name-Attribut."], "correct": [0, 2], "explanation": "GET-Formulare übertragen ihre Felder im URL-Abfrageteil, POST-Formulare im Nachrichtenkörper. POST allein bietet keine Verschlüsselung. Die Feldschlüssel stammen vom name-Attribut, nicht von id.", "skill": "Verstehen", "sourceRefs": ["html2:23", "html-standard", "php-get", "php-post"], "solution": "Bei POST stehen die übermittelten Formulardaten im Request-Body statt als angehängte Formularwerte in der URL.; Bei GET werden benannte Formulardaten typischerweise an die Ziel-URL angehängt."}, {"id": "PHP-PHP-044", "type": "single-choice", "topic": "funktionen", "difficulty": "leicht", "text": "Welche Ausgabe entsteht nach dem Funktionsaufruf?\u003cpre>\u003ccode>&lt;?php\nfunction addiere($a, $b) {\n    return $a + $b;\n}\n$ergebnis = addiere(2, 4);\necho $ergebnis + 2;\u003c/code>\u003c/pre>", "options": ["\u003ccode>8\u003c/code>", "\u003ccode>24\u003c/code>", "\u003ccode>6\u003c/code>", "\u003ccode>Es gibt keine Ausgabe, weil return nichts direkt ausgibt.\u003c/code>"], "correct": [0], "explanation": "addiere(2, 4) liefert 6 zurück. Der Aufrufer speichert diesen Wert in $ergebnis und gibt anschließend 6 + 2 aus. return liefert einen Wert an den Aufrufer; echo übernimmt die sichtbare Ausgabe.", "skill": "Funktion verfolgen", "code": "\u003c?php\nfunction addiere($a, $b) {\n    return $a + $b;\n}\n$ergebnis = addiere(2, 4);\necho $ergebnis + 2;", "codeLanguage": "php", "sourceRefs": ["php:20"], "solution": "8"}, {"id": "PHP-PHP-045", "type": "single-choice", "topic": "funktionen", "difficulty": "leicht", "text": "Welche Ausgabe entsteht durch das frühe return?\u003cpre>\u003ccode>&lt;?php\nfunction beurteile($menge) {\n    if ($menge &lt;= 0) {\n        return \"ungueltig\";\n    }\n    return \"ok\";\n}\necho beurteile(0);\u003c/code>\u003c/pre>", "options": ["\u003ccode>ungueltig\u003c/code>", "\u003ccode>ok\u003c/code>", "\u003ccode>0\u003c/code>", "\u003ccode>ungueltigok\u003c/code>"], "correct": [0], "explanation": "Bei $menge = 0 ist die erste Bedingung wahr. return beendet die Funktion sofort und liefert „ungueltig“. Das zweite return wird bei diesem Aufruf nicht erreicht.", "skill": "Frühen Rücksprung erkennen", "code": "\u003c?php\nfunction beurteile($menge) {\n    if ($menge \u003c= 0) {\n        return \"ungueltig\";\n    }\n    return \"ok\";\n}\necho beurteile(0);", "codeLanguage": "php", "sourceRefs": ["php:18,20"], "solution": "ungueltig"}], "excludedTopics": ["Sessions", "Cookies", "Klassen und Objekte", "Vererbung", "Passwortvalidierung", "Passwort-Hashing", "Authentifizierung", "Datenbankzugriffe", "Frameworks"], "controlStructures": ["if", "elseif", "else", "switch", "case", "default", "for", "while", "do-while", "foreach", "break", "continue", "return"], "supplementalExpressions": ["ternärer Operator ?:", "Vergleichsoperatoren", "logische Operatoren", "Modulo"]}];
+    let pools = generalQuizPools;
+    let currentPool = pools[0];
+    let attemptQuestions = null;
+    let deadline = null;
+    let index = 0;
+    let answers = [];
+    let seconds = 60 * 60;
+    let timerId = null;
+    let finished = false;
+    let finishReason = '';
+    let warningShown = false;
+
+    const $ = id => document.getElementById(id);
+    const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+
+    function qs() { return attemptQuestions || currentPool.questions || []; }
+    function labels() { return currentPool.topicLabels || {}; }
+    function diffLabels() { return currentPool.difficultyLabels || {}; }
+
+
+    function isSqlOrderQuestion(q) {
+      const rawType = String(q && (q.type || q.questionType || q.mode || q.kind || '')).toLowerCase();
+      return rawType === 'sql-order' || rawType === 'sql_dragdrop' || rawType === 'dragdrop-sql' || rawType === 'dragdrop' || rawType === 'order' || rawType === 'ordering' || (q && Array.isArray(q.blocks) && Array.isArray(q.correctOrder));
+    }
+
+    function isSingleChoiceQuestion(q) {
+      return !isMatchingQuestion(q) && !isSqlOrderQuestion(q) && (q.correct || []).length === 1;
+    }
+
+    function isMatchingQuestion(q) {
+      const rawType = String(q && (q.type || q.questionType || q.mode || q.kind || '')).toLowerCase();
+      return rawType === 'matching-postits' || rawType === 'matching' || rawType === 'zuordnung' || rawType === 'zuordnung-postits' || rawType.includes('postit') || (q && Array.isArray(q.items) && Array.isArray(q.targets) && Array.isArray(q.pairs));
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? '').replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[ch]));
+    }
+
+
+    function safeMarkup(value) {
+      const template = document.createElement('template');
+      template.innerHTML = String(value ?? '');
+      const allowed = new Set(['B','STRONG','EM','I','CODE','PRE','P','BR','SMALL','SPAN','UL','OL','LI','TABLE','THEAD','TBODY','TR','TD','TH']);
+      const drop = new Set(['SCRIPT','STYLE','IFRAME','OBJECT','EMBED','SVG','MATH','LINK','META','BASE','IMG','FORM','INPUT','BUTTON']);
+      function clean(node) {
+        if (node.nodeType === Node.TEXT_NODE) return document.createTextNode(node.textContent);
+        const result = node.nodeType === Node.ELEMENT_NODE && allowed.has(node.tagName)
+          ? document.createElement(node.tagName.toLowerCase()) : document.createDocumentFragment();
+        if (node.nodeType === Node.ELEMENT_NODE && drop.has(node.tagName)) return document.createDocumentFragment();
+        node.childNodes.forEach(child => result.appendChild(clean(child)));
+        return result;
+      }
+      const holder = document.createElement('div');
+      template.content.childNodes.forEach(node => holder.appendChild(clean(node)));
+      return holder.innerHTML;
+    }
+
+    function shuffled(values) {
+      const result = [...values];
+      for (let i = result.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [result[i], result[j]] = [result[j], result[i]];
+      }
+      return result;
+    }
+
+    function longestRun(values) {
+      let longest = 0, count = 0, previous;
+      values.forEach(value => { count = value === previous ? count + 1 : 1; previous = value; longest = Math.max(longest, count); });
+      return longest;
+    }
+
+    function prepareAttempt() {
+      attemptQuestions = JSON.parse(JSON.stringify(currentPool.questions || []));
+      if (currentPool.shuffleOptions !== false) {
+        // Balance the correct position for single-choice questions of the same length.
+        const groups = {};
+        attemptQuestions.forEach(q => {
+          if (isSingleChoiceQuestion(q) && Array.isArray(q.options)) {
+            const n = q.options.length;
+            (groups[n] ||= []).push(q);
+          }
+        });
+        Object.values(groups).forEach(group => {
+          const n = group[0].options.length;
+          const offset = Math.floor(Math.random() * n);
+          let targets = group.map((_, i) => (i + offset) % n);
+          for (let t = 0; t < 100; t++) {
+            targets = shuffled(targets);
+            if (longestRun(targets) <= 2) break;
+          }
+          group.forEach((q, i) => {
+            const right = q.correct[0];
+            const order = shuffled(q.options.map((_, j) => j).filter(j => j !== right));
+            order.splice(targets[i], 0, right);
+            const old = q.options;
+            q.options = order.map(j => old[j]);
+            q.correct = [targets[i]];
+          });
+        });
+        attemptQuestions.forEach(q => {
+          if (Array.isArray(q.options) && !isSingleChoiceQuestion(q) && !isMatchingQuestion(q) && !isSqlOrderQuestion(q)) {
+            const order = shuffled(q.options.map((_, i) => i));
+            const old = q.options, right = [...q.correct];
+            q.options = order.map(i => old[i]);
+            q.correct = order.map((oldIndex, newIndex) => right.includes(oldIndex) ? newIndex : -1).filter(i => i >= 0);
+          }
+          if (isSqlOrderQuestion(q)) q.blocks = shuffled(q.blocks || []);
+          if (isMatchingQuestion(q)) { q.items = shuffled(q.items || []); q.targets = shuffled(q.targets || []); }
+        });
+      }
+    }
+
+    function beginTest() {
+      if (!(currentPool.questions || []).length) { alert('Der Fragenpool enthält keine Fragen.'); return; }
+      init();
+      prepareAttempt();
+      show('quizScreen');
+      render();
+      startTimer();
+      window.scrollTo({top: 0, behavior: 'instant'});
+    }
+
+    function blockText(q, id) {
+      const block = (q.blocks || []).find(b => b.id === id);
+      return block ? block.text : id;
+    }
+
+    function sqlCode(value) {
+      return '<code>' + escapeHtml(value).replace(/\n/g, '<br>') + '</code>';
+    }
+
+    function setPoolStatus(text, state = '') {
+      const el = $('poolStatus');
+      if (!el) return;
+      el.textContent = text;
+      el.classList.remove('good', 'bad');
+      if (state) el.classList.add(state);
+    }
+
+    function durationSeconds(pool = currentPool) {
+      const sec = Number(pool.durationSeconds || pool.timeLimitSeconds || 0);
+      if (Number.isFinite(sec) && sec > 0) return Math.round(sec);
+      const min = Number(pool.durationMinutes || pool.timeLimitMinutes || pool.duration || 60);
+      return Math.round((Number.isFinite(min) && min > 0 ? min : 60) * 60);
+    }
+
+    function durationMinutes(pool = currentPool) {
+      return Math.round(durationSeconds(pool) / 60);
+    }
+
+    function updateStart() {
+      $('poolSelect').innerHTML = '';
+      pools.forEach(p => {
+        const o = document.createElement('option');
+        o.value = p.id;
+        o.textContent = (p.name || 'Fragenpool') + ' · ' + ((p.questions || []).length) + ' Fragen · ' + durationMinutes(p) + ' Minuten';
+        if (p === currentPool) o.selected = true;
+        $('poolSelect').appendChild(o);
+      });
+      $('poolName').textContent = currentPool.name || 'Fragenpool';
+      $('poolDescription').textContent = currentPool.description || '';
+      $('poolInstructions').textContent = currentPool.instructions || 'Einzelwahl: eine Antwort. Mehrfachwahl: alle richtigen Antworten markieren. Reihenfolge und Zuordnungen müssen vollständig stimmen. Jede richtige Frage zählt einen Punkt; es gibt keine Teilpunkte.';
+      $('questionCount').textContent = qs().length + ' Fragen · ' + Object.keys(labels()).length + ' Themenfelder · ' + durationMinutes() + ' Minuten Bearbeitungszeit';
+      $('topCounter').textContent = 'Start';
+      $('pageNumber').textContent = '–';
+    }
+
+    function init() {
+      clearInterval(timerId);
+      timerId = null;
+      deadline = null;
+      attemptQuestions = null;
+      index = 0;
+      answers = new Array(qs().length).fill(null);
+      seconds = durationSeconds();
+      finished = false;
+      finishReason = '';
+      warningShown = false;
+      hideTimeWarning();
+      updateTimer();
+      updateStart();
+    }
+
+    function formatTime(value) {
+      const safe = Math.max(0, value);
+      const m = Math.floor(safe / 60), s = safe % 60;
+      return String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+    }
+
+    function updateTimer() {
+      const safe = Math.max(0, seconds);
+      const text = formatTime(safe);
+      ['timer', 'quizTimer', 'timeWarningClock'].forEach(id => {
+        const el = $(id);
+        if (!el) return;
+        el.textContent = text;
+        el.classList.toggle('warn', safe > 60 && safe <= 300);
+        el.classList.toggle('danger', safe <= 60);
+      });
+    }
+
+    function showTimeWarning() {
+      const modal = $('timeWarningModal');
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function hideTimeWarning() {
+      const modal = $('timeWarningModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function maybeShowTimeWarning() {
+      if (!finished && !warningShown && seconds > 0 && seconds <= 60) {
+        warningShown = true;
+        updateTimer();
+        showTimeWarning();
+      }
+    }
+
+    function tickTimer() {
+      if (finished || deadline === null) return;
+      seconds = Math.max(0, Math.ceil((deadline - Date.now()) / 1000));
+      updateTimer();
+      if (seconds <= 0) endTest('timeout');
+      else maybeShowTimeWarning();
+    }
+
+    function startTimer() {
+      clearInterval(timerId);
+      deadline = Date.now() + durationSeconds() * 1000;
+      tickTimer();
+      timerId = setInterval(tickTimer, 250);
+    }
+
+    function show(screen) {
+      ['startScreen', 'quizScreen', 'resultScreen'].forEach(id => $(id).classList.add('hidden'));
+      $(screen).classList.remove('hidden');
+      $('overviewToggle').classList.toggle('hidden', screen !== 'quizScreen');
+      const activeStep = screen === 'quizScreen' ? 'quiz' : (screen === 'resultScreen' ? 'result' : 'start');
+      document.querySelectorAll('[data-quiz-step]').forEach(item => {
+        item.classList.toggle('active', item.dataset.quizStep === activeStep);
+        if (item.dataset.quizStep === activeStep) item.setAttribute('aria-current', 'step');
+        else item.removeAttribute('aria-current');
+      });
+    }
+
+
+
+    function getAnswerOrder() {
+      return Array.isArray(answers[index]) ? [...answers[index]] : [];
+    }
+
+    function setAnswerOrder(order) {
+      answers[index] = order;
+    }
+
+    function insertSqlBlock(blockId, targetIndex = null) {
+      const q = qs()[index];
+      if (!isSqlOrderQuestion(q) || !blockId) return;
+      const validIds = (q.blocks || []).map(b => b.id);
+      if (!validIds.includes(blockId)) return;
+      const order = getAnswerOrder().filter(id => id !== blockId);
+      const pos = targetIndex === null || targetIndex === undefined ? order.length : Math.max(0, Math.min(Number(targetIndex), order.length));
+      order.splice(pos, 0, blockId);
+      setAnswerOrder(order);
+      render();
+    }
+
+    function removeSqlBlock(blockId) {
+      setAnswerOrder(getAnswerOrder().filter(id => id !== blockId));
+      render();
+    }
+
+    function moveSqlBlock(blockId, delta) {
+      const order = getAnswerOrder();
+      const pos = order.indexOf(blockId);
+      if (pos < 0) return;
+      const next = Math.max(0, Math.min(order.length - 1, pos + delta));
+      if (next === pos) return;
+      order.splice(pos, 1);
+      order.splice(next, 0, blockId);
+      setAnswerOrder(order);
+      render();
+    }
+
+    function enableDrop(el, handler) {
+      el.ondragover = ev => { ev.preventDefault(); el.classList.add('dragover'); };
+      el.ondragleave = () => el.classList.remove('dragover');
+      el.ondrop = ev => {
+        ev.preventDefault();
+        el.classList.remove('dragover');
+        const blockId = ev.dataTransfer.getData('text/plain');
+        handler(blockId, ev);
+      };
+    }
+
+    function makeSqlChip(q, block, inSolution, pos) {
+      const chip = document.createElement('div');
+      chip.className = 'sql-chip' + (inSolution ? ' in-solution' : '');
+      chip.draggable = true;
+      chip.dataset.blockId = block.id;
+      chip.innerHTML = sqlCode(block.text);
+      chip.ondragstart = ev => {
+        chip.classList.add('dragging');
+        ev.dataTransfer.setData('text/plain', block.id);
+        ev.dataTransfer.effectAllowed = 'move';
+      };
+      chip.ondragend = () => chip.classList.remove('dragging');
+      if (inSolution) {
+        enableDrop(chip, blockId => insertSqlBlock(blockId, pos));
+        const actions = document.createElement('div');
+        actions.className = 'sql-chip-actions';
+        actions.innerHTML = '<button type="button" title="nach oben">↑</button><button type="button" title="nach unten">↓</button><button type="button" title="entfernen">×</button>';
+        actions.children[0].onclick = ev => { ev.stopPropagation(); moveSqlBlock(block.id, -1); };
+        actions.children[1].onclick = ev => { ev.stopPropagation(); moveSqlBlock(block.id, 1); };
+        actions.children[2].onclick = ev => { ev.stopPropagation(); removeSqlBlock(block.id); };
+        chip.appendChild(actions);
+      } else {
+        chip.title = 'Klicken oder ziehen, um den Baustein zu verwenden';
+        chip.onclick = () => insertSqlBlock(block.id);
+      }
+      return chip;
+    }
+
+    function renderSqlOrder(q) {
+      const order = getAnswerOrder();
+      const used = new Set(order);
+      const available = (q.blocks || []).filter(b => !used.has(b.id));
+      const answerBlocks = order.map(id => (q.blocks || []).find(b => b.id === id)).filter(Boolean);
+      const wrapper = document.createElement('div');
+      wrapper.className = 'sql-order-box';
+      wrapper.innerHTML = '<div class="sql-zone bank"><h3>Verfügbare Bausteine</h3><p class="small">Klicke oder ziehe Bausteine nach rechts.</p><div class="sql-chip-list" id="sqlAvailable"></div></div><div class="sql-zone solution" id="sqlSolutionZone"><h3>Deine Reihenfolge</h3><p class="small">Nur benötigte Bausteine verwenden. Innerhalb der Lösung kannst du Bausteine verschieben.</p><div class="sql-chip-list" id="sqlSolution"></div></div>';
+      $('answers').appendChild(wrapper);
+      const availableEl = $('sqlAvailable');
+      const solutionEl = $('sqlSolution');
+      const zoneEl = $('sqlSolutionZone');
+      if (!available.length) availableEl.innerHTML = '<div class="sql-empty">Keine weiteren Bausteine verfügbar.</div>';
+      available.forEach(block => availableEl.appendChild(makeSqlChip(q, block, false)));
+      if (!answerBlocks.length) solutionEl.innerHTML = '<div class="sql-empty">Bausteine hier ablegen.</div>';
+      answerBlocks.forEach((block, pos) => solutionEl.appendChild(makeSqlChip(q, block, true, pos)));
+      enableDrop(zoneEl, blockId => insertSqlBlock(blockId));
+    }
+
+
+    function itemText(q, id) {
+      const item = (q.items || []).find(x => x.id === id);
+      return item ? item.text : id;
+    }
+
+    function targetText(q, id) {
+      const target = (q.targets || []).find(x => x.id === id);
+      return target ? target.text : id;
+    }
+
+    function getMatchAnswer() {
+      const a = answers[index];
+      return a && typeof a === 'object' && !Array.isArray(a) ? { ...a } : {};
+    }
+
+    function setMatchAnswer(answer) {
+      answers[index] = answer;
+    }
+
+    function placeMatch(itemId, targetId) {
+      const q = qs()[index];
+      if (!isMatchingQuestion(q) || !itemId || !targetId) return;
+      const itemIds = (q.items || []).map(x => x.id);
+      const targetIds = (q.targets || []).map(x => x.id);
+      if (!itemIds.includes(itemId) || !targetIds.includes(targetId)) return;
+      const answer = getMatchAnswer();
+      Object.keys(answer).forEach(key => { if (answer[key] === itemId) delete answer[key]; });
+      answer[targetId] = itemId;
+      setMatchAnswer(answer);
+      render();
+    }
+
+    function removeMatch(targetId) {
+      const answer = getMatchAnswer();
+      delete answer[targetId];
+      setMatchAnswer(answer);
+      render();
+    }
+
+    function makePostitChip(q, item, inTarget = false, targetId = null) {
+      const chip = document.createElement('div');
+      chip.className = 'postit' + (inTarget ? ' in-target' : '');
+      chip.draggable = true;
+      chip.dataset.itemId = item.id;
+      chip.textContent = item.text;
+      chip.ondragstart = ev => {
+        chip.classList.add('dragging');
+        ev.dataTransfer.setData('text/plain', item.id);
+        ev.dataTransfer.effectAllowed = 'move';
+      };
+      chip.ondragend = () => chip.classList.remove('dragging');
+      if (inTarget) {
+        const remove = document.createElement('button');
+        remove.type = 'button';
+        remove.textContent = '×';
+        remove.title = 'Zuordnung entfernen';
+        remove.onclick = ev => { ev.stopPropagation(); removeMatch(targetId); };
+        chip.appendChild(remove);
+      }
+      return chip;
+    }
+
+    function renderMatching(q) {
+      const answer = getMatchAnswer();
+      const used = new Set(Object.values(answer));
+      const available = (q.items || []).filter(item => !used.has(item.id));
+      const wrapper = document.createElement('div');
+      wrapper.className = 'match-board';
+      wrapper.innerHTML = '<div class="match-bank"><h3>Post-its</h3><p class="small">Ziehe die Begriffe auf die Zielkarten oder nutze die Auswahlfelder.</p><div class="postit-list" id="postitAvailable"></div></div><div class="match-targets"><h3>Zielkarten</h3><p class="small">Jede Zielkarte benötigt genau ein passendes Post-it.</p><div class="target-list" id="matchTargets"></div></div>';
+      $('answers').appendChild(wrapper);
+      const availableEl = $('postitAvailable');
+      const targetsEl = $('matchTargets');
+      if (!available.length) availableEl.innerHTML = '<div class="sql-empty">Alle Post-its wurden zugeordnet.</div>';
+      available.forEach(item => availableEl.appendChild(makePostitChip(q, item)));
+      (q.targets || []).forEach(target => {
+        const card = document.createElement('div');
+        card.className = 'target-card';
+        card.dataset.targetId = target.id;
+        const drop = document.createElement('div');
+        drop.className = 'target-drop';
+        const assignedId = answer[target.id];
+        const assigned = (q.items || []).find(item => item.id === assignedId);
+        card.innerHTML = '<div class="target-title">' + escapeHtml(target.text) + '</div>';
+        if (assigned) drop.appendChild(makePostitChip(q, assigned, true, target.id));
+        else drop.innerHTML = 'Post-it hier ablegen';
+        card.appendChild(drop);
+        const select = document.createElement('select');
+        select.className = 'match-select';
+        select.setAttribute('aria-label', 'Zuordnung: ' + target.text);
+        select.add(new Option('Begriff auswählen …', ''));
+        (q.items || []).forEach(item => select.add(new Option(item.text, item.id)));
+        select.value = assignedId || '';
+        select.onchange = () => { if (select.value) placeMatch(select.value, target.id); else removeMatch(target.id); };
+        card.appendChild(select);
+        enableDrop(card, itemId => placeMatch(itemId, target.id));
+        targetsEl.appendChild(card);
+      });
+    }
+
+    function render() {
+      const q = qs()[index];
+      if (!q) return;
+      $('questionNumber').textContent = 'Frage ' + (index + 1) + ' von ' + qs().length;
+      $('topCounter').textContent = 'Frage ' + (index + 1) + ' von ' + qs().length;
+      $('pageNumber').textContent = String(index + 1);
+      $('topicLabel').textContent = labels()[q.topic] || q.topic || 'Allgemein';
+      $('difficultyLabel').textContent = 'Schwierigkeit: ' + (diffLabels()[q.difficulty] || q.difficulty || '');
+      $('questionText').innerHTML = safeMarkup(q.text || '');
+      $('answerHint').textContent = isMatchingQuestion(q) ? 'Zuordnung: Belege jede Zielkarte mit einem passenden Begriff.' : isSqlOrderQuestion(q) ? 'Reihenfolge: Beachte die Arbeitsanweisung und ordne die Bausteine.' : isSingleChoiceQuestion(q) ? 'Einzelwahl: Wähle genau eine Antwort.' : 'Mehrfachwahl: Wähle genau ' + (q.correct || []).length + ' Antworten.';
+      $('progress').style.width = ((index + 1) / qs().length * 100) + '%';
+      const cur = answers[index] || [];
+      $('answers').innerHTML = '';
+      if (isMatchingQuestion(q)) {
+        renderMatching(q);
+      } else if (isSqlOrderQuestion(q)) {
+        renderSqlOrder(q);
+      } else {
+        (q.options || []).forEach((opt, i) => {
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.className = 'answer' + (cur.includes(i) ? ' selected' : '');
+          b.setAttribute('aria-pressed', String(cur.includes(i)));
+          b.innerHTML = '<span class="letter">' + (letters[i] || '?') + '</span><span>' + safeMarkup(opt) + '</span>';
+          b.onclick = () => {
+            const a = Array.isArray(answers[index]) ? [...answers[index]] : [];
+            const pos = a.indexOf(i);
+            if (isSingleChoiceQuestion(q)) {
+              answers[index] = pos < 0 ? [i] : [];
+            } else {
+              if (pos < 0) a.push(i); else a.splice(pos, 1);
+              answers[index] = a;
+            }
+            render();
+            const selectedButton = $('answers').children[i];
+            if (selectedButton) selectedButton.focus({preventScroll: true});
+          };
+          $('answers').appendChild(b);
+        });
+      }
+      $('prevBtn').disabled = index === 0;
+      $('nextBtn').disabled = index === qs().length - 1;
+    }
+
+    function answered(i) {
+      const q = qs()[i];
+      const a = answers[i] || [];
+      if (isMatchingQuestion(q)) return a && typeof a === 'object' && !Array.isArray(a) && Object.keys(a).length >= (q.pairs || []).length;
+      if (isSqlOrderQuestion(q)) return Array.isArray(a) && a.length >= (q.correctOrder || []).length;
+      return Array.isArray(a) && a.length === (q.correct || []).length;
+    }
+    function correct(i) {
+      const q = qs()[i];
+      if (isMatchingQuestion(q)) {
+        const a = answers[i] && typeof answers[i] === 'object' && !Array.isArray(answers[i]) ? answers[i] : {};
+        const c = q.pairs || [];
+        return c.length > 0 && Object.keys(a).length === c.length && c.every(pair => a[pair.rightId] === pair.leftId);
+      }
+      if (isSqlOrderQuestion(q)) {
+        const a = Array.isArray(answers[i]) ? answers[i] : [];
+        const c = q.correctOrder || [];
+        return a.length === c.length && a.every((v, j) => v === c[j]);
+      }
+      const a = (answers[i] || []).slice().sort((x, y) => x - y);
+      const c = (q.correct || []).slice().sort((x, y) => x - y);
+      return a.length === c.length && a.every((v, j) => v === c[j]);
+    }
+
+    function renderOverview() {
+      const el = $('overviewList');
+      el.innerHTML = '';
+      qs().forEach((q, i) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'overviewitem ' + (answered(i) ? 'answered ' : '') + (i === index ? 'current' : '');
+        b.textContent = i + 1;
+        b.onclick = () => { index = i; render(); $('overview').classList.add('hidden'); };
+        el.appendChild(b);
+      });
+    }
+
+    function nextUnanswered() {
+      for (let off = 1; off <= qs().length; off++) {
+        const i = (index + off) % qs().length;
+        if (!answered(i)) { index = i; render(); return; }
+      }
+      alert('Alle Fragen sind beantwortet.');
+    }
+
+    function endTest(reason = 'manual') {
+      if (finished) return;
+      finished = true;
+      $('overview').classList.add('hidden');
+      finishReason = reason;
+      clearInterval(timerId);
+      hideTimeWarning();
+      show('resultScreen');
+      renderResults();
+    }
+
+    function renderResults() {
+      const total = qs().length;
+      let good = 0;
+      const stats = {};
+      qs().forEach((q, i) => {
+        const t = q.topic || 'default';
+        stats[t] = stats[t] || { total: 0, correct: 0 };
+        stats[t].total++;
+        if (correct(i)) { stats[t].correct++; good++; }
+      });
+      const percent = total ? Math.round(good / total * 100) : 0;
+      $('overall').innerHTML = '<strong>Gesamt</strong><p>Richtig: <b>' + good + ' von ' + total + '</b></p><p>Quote: <b>' + percent + '%</b></p><p>Beantwortet: ' + qs().filter((_, idx) => answered(idx)).length + ' von ' + total + '</p><p>Bearbeitungszeit laut Pool: <b>' + durationMinutes() + ' Minuten</b></p><p>Status: <b>' + (finishReason === 'timeout' ? 'Zeit abgelaufen - automatisch beendet' : 'manuell beendet') + '</b></p>';
+      const rows = Object.keys(stats).map(k => ({ key: k, label: labels()[k] || k, total: stats[k].total, correct: stats[k].correct, wrong: stats[k].total - stats[k].correct }));
+      rows.forEach(r => { r.correctPct = Math.round(r.correct / r.total * 100); r.wrongPct = 100 - r.correctPct; });
+      const maxWrong = rows.length ? Math.max(...rows.map(r => r.wrongPct)) : 0;
+      const weak = rows.find(r => r.wrongPct === maxWrong) || { label: 'Keine Daten', wrong: 0, total: 0 };
+      $('weakest').innerHTML = '<strong>Größter Wiederholungsbedarf</strong><p><b>' + escapeHtml(weak.label) + '</b></p><p>' + weak.wrong + ' Fehler bei ' + weak.total + ' Fragen</p><p class="small">Markierte Zeile in der Tabelle.</p>';
+      if (total > 0 && good === total) $('weakest').innerHTML = '<strong>Alle Themen sicher beantwortet</strong><p>Du hast alle Fragen richtig gelöst.</p>';
+      let html = '<h3 style="margin-top:22px">Themenfelder</h3><table class="topic-table course-table"><thead><tr><th>Thema</th><th>Richtig</th><th>Falsch</th><th>Richtig %</th><th>Falsch %</th></tr></thead><tbody>';
+      rows.forEach(r => { html += '<tr class="' + (maxWrong > 0 && r.wrongPct === maxWrong ? 'topic-highlight' : '') + '"><td>' + escapeHtml(r.label) + '</td><td>' + r.correct + ' / ' + r.total + '</td><td>' + r.wrong + '</td><td>' + r.correctPct + '%</td><td>' + r.wrongPct + '%</td></tr>'; });
+      html += '</tbody></table>';
+      $('topicResults').innerHTML = html;
+      let det = '<h3 style="margin-top:24px">Detaillierte Auswertung</h3><div class="details">';
+      qs().forEach((q, i) => {
+        const ok = correct(i), a = answers[i] || [];
+        det += '<div class="detail ' + (ok ? 'correct' : 'wrong') + '"><div class="detailhead"><div><b>Frage ' + (i + 1) + '</b><br><span class="small">' + escapeHtml(labels()[q.topic] || q.topic || 'Allgemein') + ' · ' + escapeHtml(q.difficulty || '') + '</span></div><span class="status ' + (ok ? 'good' : 'bad') + '">' + (ok ? 'Richtig' : 'Falsch') + '</span></div><div class="detailq">' + safeMarkup(q.text) + '</div>';
+        if (isMatchingQuestion(q)) {
+          const ans = a && typeof a === 'object' && !Array.isArray(a) ? a : {};
+          det += '<table class="match-result-table course-table"><thead><tr><th>Zielkarte</th><th>Deine Zuordnung</th><th>Richtig</th></tr></thead><tbody>';
+          (q.targets || []).forEach(target => {
+            const pair = (q.pairs || []).find(p => p.rightId === target.id) || {};
+            det += '<tr><td>' + escapeHtml(target.text) + '</td><td>' + escapeHtml(ans[target.id] ? itemText(q, ans[target.id]) : 'nicht zugeordnet') + '</td><td>' + escapeHtml(pair.leftId ? itemText(q, pair.leftId) : '') + '</td></tr>';
+          });
+          det += '</tbody></table>';
+        } else if (isSqlOrderQuestion(q)) {
+          const correctOrder = q.correctOrder || [];
+          const unused = (q.blocks || []).filter(b => !correctOrder.includes(b.id)).map(b => b.text);
+          det += '<div class="sql-result"><div class="sql-result-box"><b>Deine Reihenfolge</b><ol>';
+          (Array.isArray(a) ? a : []).forEach(id => { det += '<li>' + sqlCode(blockText(q, id)) + '</li>'; });
+          if (!Array.isArray(a) || !a.length) det += '<li class="small">Keine Bausteine abgelegt.</li>';
+          det += '</ol></div><div class="sql-result-box"><b>Richtige Reihenfolge</b><ol>';
+          correctOrder.forEach(id => { det += '<li>' + sqlCode(blockText(q, id)) + '</li>'; });
+          det += '</ol></div></div>';
+          if (unused.length) det += '<p class="small"><b>Nicht benötigte Bausteine:</b> ' + unused.map(x => '<code>' + escapeHtml(x) + '</code>').join(' · ') + '</p>';
+        } else {
+          const c = q.correct || [];
+          det += '<ul class="detailopts">';
+          (q.options || []).forEach((opt, j) => {
+            let cls = '';
+            if (a.includes(j) && c.includes(j)) cls = 'optcorrect';
+            else if (a.includes(j) && !c.includes(j)) cls = 'optwrong';
+            else if (!a.includes(j) && c.includes(j)) cls = 'optmissed';
+            det += '<li class="' + cls + '"><span class="letter">' + (letters[j] || '?') + '</span><span>' + safeMarkup(opt) + '</span></li>';
+          });
+          det += '</ul>';
+        }
+        const selectedAnswers = !isMatchingQuestion(q) && !isSqlOrderQuestion(q)
+          ? (Array.isArray(a) && a.length ? a.map(answerIndex => (q.options || [])[answerIndex]).filter(Boolean).join(' · ') : 'keine Antwort')
+          : '';
+        const correctAnswers = !isMatchingQuestion(q) && !isSqlOrderQuestion(q)
+          ? (q.correct || []).map(answerIndex => (q.options || [])[answerIndex]).filter(Boolean).join(' · ')
+          : '';
+        const reason = q.explanation || 'Die richtige Lösung ergibt sich aus der dargestellten Regel beziehungsweise Reihenfolge.';
+        det += '<div class="result-reason"><b>' + (ok ? 'Warum ist die Antwort richtig?' : 'Warum ist die Antwort falsch?') + '</b>';
+        if (!ok && selectedAnswers) det += '<p><b>Deine Auswahl:</b> ' + safeMarkup(selectedAnswers) + '</p>';
+        if (correctAnswers) det += '<p><b>Richtige Antwort:</b> ' + safeMarkup(correctAnswers) + '</p>';
+        det += '<p>' + safeMarkup(reason) + '</p></div>'; 
+        det += '</div>';
+      });
+      det += '</div>';
+      $('details').innerHTML = det;
+    }
+
+    function optionIndexFromValue(value, options) {
+      if (typeof value === 'number' && Number.isInteger(value)) return value;
+      if (typeof value !== 'string') return null;
+      const raw = value.trim();
+      if (/^\d+$/.test(raw)) return Number(raw);
+      const upper = raw.toUpperCase();
+      const lettersMap = { A: 0, B: 1, C: 2, D: 3, E: 4, F: 5 };
+      if (upper in lettersMap) return lettersMap[upper];
+      const textIndex = (options || []).findIndex(o => String(o).trim() === raw);
+      return textIndex >= 0 ? textIndex : null;
+    }
+
+
+
+    function normalizeBlocks(rawBlocks) {
+      if (!Array.isArray(rawBlocks) || !rawBlocks.length) return [];
+      const used = new Set();
+      return rawBlocks.map((block, i) => {
+        const text = typeof block === 'string' ? block : String(block.text ?? block.code ?? block.label ?? block.value ?? block.content ?? ('Baustein ' + (i + 1)));
+        let id = typeof block === 'object' && block ? String(block.id ?? block.key ?? block.value ?? ('b' + (i + 1))) : 'b' + (i + 1);
+        id = id.replace(/\s+/g, '_');
+        if (used.has(id)) id = id + '_' + (i + 1);
+        used.add(id);
+        return { id, text };
+      });
+    }
+
+    function normalizeOrder(rawOrder, blocks) {
+      let values = [];
+      if (Array.isArray(rawOrder)) values = rawOrder;
+      else if (typeof rawOrder === 'number') values = [rawOrder];
+      else if (typeof rawOrder === 'string') values = rawOrder.split(/[;,|]/).map(x => x.trim()).filter(Boolean);
+      const result = [];
+      values.forEach(v => {
+        let id = null;
+        if (typeof v === 'number' && Number.isInteger(v) && blocks[v]) id = blocks[v].id;
+        else if (typeof v === 'object' && v) id = v.id || blocks.find(b => b.text === v.text || b.text === v.code || b.id === v.key)?.id;
+        else if (typeof v === 'string') {
+          const raw = v.trim();
+          if (/^\d+$/.test(raw) && blocks[Number(raw)]) id = blocks[Number(raw)].id;
+          id = id || (blocks.find(b => b.id === raw || b.text.trim() === raw)?.id);
+        }
+        if (id && blocks.some(b => b.id === id) && !result.includes(id)) result.push(id);
+      });
+      return result;
+    }
+
+
+    function normalizeMatching(nq, questionNumber) {
+      nq.type = 'matching-postits';
+      nq.items = normalizeBlocks(nq.items || nq.leftItems || nq.postits || nq.terms || []);
+      nq.targets = normalizeBlocks(nq.targets || nq.rightItems || nq.cards || nq.definitions || []);
+      if (!nq.items.length || !nq.targets.length) throw new Error('Frage ' + questionNumber + ' benötigt items und targets für die Zuordnung.');
+      const rawPairs = Array.isArray(nq.pairs) ? nq.pairs : (Array.isArray(nq.matches) ? nq.matches : Array.isArray(nq.zuordnungen) ? nq.zuordnungen : []);
+      const pairs = [];
+      rawPairs.forEach(pair => {
+        let leftId = pair.leftId || pair.itemId || pair.left || pair.term || null;
+        let rightId = pair.rightId || pair.targetId || pair.right || pair.definition || null;
+        if (leftId && !nq.items.some(item => item.id === leftId)) {
+          const found = nq.items.find(item => item.text === leftId);
+          if (found) leftId = found.id;
+        }
+        if (rightId && !nq.targets.some(target => target.id === rightId)) {
+          const found = nq.targets.find(target => target.text === rightId);
+          if (found) rightId = found.id;
+        }
+        if (leftId && rightId && nq.items.some(item => item.id === leftId) && nq.targets.some(target => target.id === rightId)) pairs.push({ leftId, rightId });
+      });
+      if (!pairs.length) throw new Error('Frage ' + questionNumber + ' benötigt gültige pairs für die Zuordnung.');
+      nq.pairs = pairs;
+      return nq;
+    }
+
+    function normalizeCorrect(raw, options) {
+      let values = [];
+      if (Array.isArray(raw)) values = raw;
+      else if (typeof raw === 'number') values = [raw];
+      else if (typeof raw === 'string') values = raw.split(/[;,|]/).map(x => x.trim()).filter(Boolean);
+      const result = [];
+      values.forEach(v => {
+        const idx = optionIndexFromValue(v, options);
+        if (idx !== null && idx >= 0 && idx < options.length && !result.includes(idx)) result.push(idx);
+      });
+      return result.sort((a, b) => a - b);
+    }
+
+    function normalizePool(data, filename = 'Fragenpool') {
+      let pool;
+      if (Array.isArray(data)) {
+        pool = { name: filename.replace(/\.json$/i, ''), questions: data, topicLabels: {}, difficultyLabels: {} };
+      } else if (data && Array.isArray(data.questions)) {
+        pool = { ...data };
+      } else if (data && Array.isArray(data.items)) {
+        pool = { ...data, questions: data.items };
+      } else {
+        throw new Error('Keine questions-Liste gefunden. Erwartet wird ein Objekt mit questions, items oder eine direkte Fragenliste.');
+      }
+      pool.id = 'pool_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+      pool.name = pool.name || filename.replace(/\.json$/i, '') || 'Geladener Fragenpool';
+      pool.topicLabels = pool.topicLabels || pool.topics || {};
+      pool.difficultyLabels = pool.difficultyLabels || pool.difficultyLevels || {};
+      if (!pool.questions.length) throw new Error('Der Fragenpool enthält keine Fragen.');
+      const seenIds = new Set();
+      pool.questions = pool.questions.map((q, i) => {
+        if (!q || typeof q !== 'object') throw new Error('Frage ' + (i + 1) + ' ist kein gültiges Objekt.');
+        const nq = { ...q };
+        nq.id = nq.id || i + 1;
+        if (seenIds.has(String(nq.id))) throw new Error('Doppelte Frage-ID: ' + nq.id);
+        seenIds.add(String(nq.id));
+        nq.text = nq.text || nq.question || nq.frage || nq.title || ('Frage ' + (i + 1));
+        nq.topic = nq.topic || nq.thema || 'default';
+        nq.difficulty = nq.difficulty || nq.schwierigkeit || 'mittel';
+        const explicitType = String(nq.type || nq.questionType || nq.mode || nq.kind || '').toLowerCase();
+        const looksLikeMatching = explicitType.includes('match') || explicitType.includes('zuord') || explicitType.includes('postit') || (Array.isArray(nq.items) && Array.isArray(nq.targets)) || Array.isArray(nq.pairs);
+        if (looksLikeMatching) {
+          return normalizeMatching(nq, i + 1);
+        }
+        const looksLikeDrag = explicitType.includes('drag') || explicitType.includes('order') || Array.isArray(nq.blocks) || Array.isArray(nq.correctOrder);
+        if (looksLikeDrag) {
+          nq.type = 'sql-order';
+          nq.blocks = normalizeBlocks(nq.blocks || nq.bausteine || nq.syntaxBlocks || nq.parts || nq.options || []);
+          if (!nq.blocks.length) throw new Error('Frage ' + (i + 1) + ' hat keine Bausteine in blocks.');
+          nq.correctOrder = normalizeOrder(nq.correctOrder ?? nq.order ?? nq.solutionOrder ?? nq.correctSequence ?? nq.solution ?? nq.correct, nq.blocks);
+          if (!nq.correctOrder.length) throw new Error('Frage ' + (i + 1) + ' hat keine gültige Lösung in correctOrder.');
+          return nq;
+        }
+        nq.options = nq.options || nq.answers || nq.antworten || nq.choices || [];
+        if (!Array.isArray(nq.options) || nq.options.length === 0) throw new Error('Frage ' + (i + 1) + ' hat keine Antwortoptionen.');
+        const rawCorrect = nq.correct ?? nq.correctAnswers ?? nq.correctIndices ?? nq.solution ?? nq.answer;
+        if (Array.isArray(rawCorrect) && rawCorrect.some(v => typeof v === 'number' && (!Number.isInteger(v) || v < 0 || v >= nq.options.length))) throw new Error('Frage ' + (i + 1) + ' enthält einen ungültigen Lösungsindex.');
+        nq.correct = normalizeCorrect(rawCorrect, nq.options);
+        if (!nq.correct.length) throw new Error('Frage ' + (i + 1) + ' hat keine gültige Lösung in correct.');
+        if (explicitType === 'single-choice' && nq.correct.length !== 1) throw new Error('Frage ' + (i + 1) + ': Einzelwahl benötigt genau eine Lösung.');
+        return nq;
+      });
+      return pool;
+    }
+
+    function readJsonFile(file) {
+      if (!file) return Promise.reject(new Error('Keine Datei ausgewählt.'));
+      if (typeof file.text === 'function') {
+        return file.text().then(text => JSON.parse(String(text).replace(/^\uFEFF/, '')));
+      }
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          try {
+            resolve(JSON.parse(String(reader.result || '').replace(/^\uFEFF/, '')));
+          } catch (error) {
+            reject(error);
+          }
+        };
+        reader.onerror = () => reject(reader.error || new Error('Die Datei konnte nicht gelesen werden.'));
+        reader.readAsText(file, 'utf-8');
+      });
+    }
+
+    async function importPoolFiles(fileList) {
+      const files = Array.from(fileList || []).filter(file => /\.json$/i.test(file.name || '') || file.type === 'application/json');
+      if (!files.length) {
+        setPoolStatus('Bitte eine gültige JSON-Datei auswählen oder in das Importfeld ziehen.', 'bad');
+        return;
+      }
+
+      setPoolStatus(files.length === 1 ? 'JSON-Fragenpool wird geprüft und importiert ...' : files.length + ' JSON-Fragenpools werden geprüft und importiert ...');
+      const imported = [];
+      const errors = [];
+
+      for (const file of files) {
+        try {
+          const data = await readJsonFile(file);
+          const pool = normalizePool(data, file.name || 'Fragenpool.json');
+          pool.importedFrom = file.name || 'JSON-Datei';
+          pools.push(pool);
+          imported.push(pool);
+        } catch (error) {
+          errors.push((file.name || 'Unbekannte Datei') + ': ' + (error && error.message ? error.message : String(error)));
+        }
+      }
+
+      if (imported.length) {
+        currentPool = imported[imported.length - 1];
+        init();
+        const questionTotal = imported.reduce((sum, pool) => sum + (pool.questions || []).length, 0);
+        let message = imported.length + ' Fragenpool' + (imported.length === 1 ? '' : 's') + ' erfolgreich importiert · ' + questionTotal + ' Fragen insgesamt.';
+        if (errors.length) message += ' Nicht importiert: ' + errors.join(' | ');
+        setPoolStatus(message, errors.length ? 'bad' : 'good');
+      } else {
+        setPoolStatus('Import fehlgeschlagen: ' + errors.join(' | '), 'bad');
+      }
+    }
+
+    async function loadJsonPoolFromParameter() {
+      const requestedPool = new URLSearchParams(window.location.search).get('pool');
+      if (!requestedPool) return;
+      const safeFileName = requestedPool.split(/[\\/]/).pop();
+      if (!safeFileName || !/\.json$/i.test(safeFileName)) {
+        setPoolStatus('Automatischer Fragenpool konnte nicht geladen werden: ungültiger Dateiname.', 'bad');
+        return;
+      }
+      const useBuiltInFallback = () => {
+        const normalizedName = safeFileName.toLowerCase();
+        const embedded = generalQuizPools.find(pool => (pool.sourceFileName || '').toLowerCase() === normalizedName);
+        if (embedded) { currentPool = embedded; init(); setPoolStatus('Integrierter Fragenpool ausgewählt: ' + embedded.name, 'good'); return true; }
+        return false;
+      };
+      if (window.location.protocol === 'file:' && useBuiltInFallback()) return;
+      try {
+        setPoolStatus('Lade freigegebenen Fragenpool ...');
+        const response = await fetch(safeFileName, { cache: 'no-store' });
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        const data = await response.json();
+        const pool = normalizePool(data, safeFileName);
+        pools.push(pool);
+        currentPool = pool;
+        init();
+        setPoolStatus('Freigegebener Fragenpool geladen: ' + pool.name + ' - ' + pool.questions.length + ' Fragen - ' + durationMinutes(pool) + ' Minuten', 'good');
+      } catch (err) {
+        if (useBuiltInFallback()) return;
+        setPoolStatus('Automatischer Fragenpool konnte nicht geladen werden: ' + err.message, 'bad');
+      }
+    }
+
+    $('startBtn').onclick = beginTest;
+    $('prevBtn').onclick = () => { if (index > 0) { index--; render(); } };
+    $('nextBtn').onclick = () => { if (index < qs().length - 1) { index++; render(); } };
+    $('skipBtn').onclick = nextUnanswered;
+    $('endBtn').onclick = () => { if (confirm('Test beenden und auswerten? Noch nicht vollständig beantwortet: ' + qs().filter((_, i) => !answered(i)).length)) endTest('manual'); };
+    $('overviewToggle').onclick = () => { renderOverview(); $('overview').classList.remove('hidden'); };
+    $('closeOverview').onclick = () => $('overview').classList.add('hidden');
+    $('restartBtn').onclick = beginTest;
+    $('backStartBtn').onclick = () => { clearInterval(timerId); hideTimeWarning(); init(); show('startScreen'); };
+    $('poolSelect').onchange = e => { currentPool = pools.find(p => p.id === e.target.value) || pools[0]; init(); };
+    $('timeWarningOk').onclick = () => hideTimeWarning();
+
+    const poolDropZone = $('poolDropZone');
+    const poolFileInput = $('poolFileInput');
+    const choosePoolFile = $('choosePoolFile');
+
+    function openPoolFileDialog() {
+      poolFileInput.value = '';
+      poolFileInput.click();
+    }
+
+    choosePoolFile.onclick = event => {
+      event.preventDefault();
+      event.stopPropagation();
+      openPoolFileDialog();
+    };
+
+    poolDropZone.onclick = event => {
+      if (event.target !== poolFileInput && event.target !== choosePoolFile) openPoolFileDialog();
+    };
+
+    poolDropZone.onkeydown = event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openPoolFileDialog();
+      }
+    };
+
+    poolFileInput.onchange = event => importPoolFiles(event.target.files);
+
+    poolDropZone.ondragenter = event => {
+      event.preventDefault();
+      poolDropZone.classList.add('dragover');
+    };
+    poolDropZone.ondragover = event => {
+      event.preventDefault();
+      event.dataTransfer.dropEffect = 'copy';
+      poolDropZone.classList.add('dragover');
+    };
+    poolDropZone.ondragleave = event => {
+      if (!poolDropZone.contains(event.relatedTarget)) poolDropZone.classList.remove('dragover');
+    };
+    poolDropZone.ondrop = event => {
+      event.preventDefault();
+      event.stopPropagation();
+      poolDropZone.classList.remove('dragover');
+      importPoolFiles(event.dataTransfer.files);
+    };
+
+    window.addEventListener('dragover', event => {
+      if (event.dataTransfer && Array.from(event.dataTransfer.types || []).includes('Files')) event.preventDefault();
+    });
+    window.addEventListener('drop', event => {
+      if (event.dataTransfer && event.dataTransfer.files && event.dataTransfer.files.length && !poolDropZone.contains(event.target)) {
+        event.preventDefault();
+      }
+    });
+
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        $('overview').classList.add('hidden');
+        hideTimeWarning();
+        return;
+      }
+      if ($('quizScreen').classList.contains('hidden') || finished) return;
+      if (!$('overview').classList.contains('hidden') || !$('timeWarningModal').classList.contains('hidden')) return;
+      if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+      if (event.target.closest('input, textarea, select, [contenteditable="true"]')) return;
+      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+      event.preventDefault();
+      tickTimer();
+      if (finished) return;
+      index = Math.max(0, Math.min(qs().length - 1, index + (event.key === 'ArrowRight' ? 1 : -1)));
+      render();
+    });
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) tickTimer(); });
+    window.addEventListener('focus', tickTimer);
+    document.addEventListener('click', event => {
+      if (deadline === null || finished) return;
+      tickTimer();
+      if (finished) { event.preventDefault(); event.stopImmediatePropagation(); }
+    }, true);
+    window.addEventListener('beforeunload', event => {
+      if (deadline !== null && !finished) { event.preventDefault(); event.returnValue = ''; }
+    });
+
+    init();
+    show('startScreen');
+    loadJsonPoolFromParameter();
+
+  </script>
+</body>
+
+</html>
+

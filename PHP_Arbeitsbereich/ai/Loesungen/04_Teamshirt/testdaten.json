@@ -1,0 +1,19 @@
+{
+  "eingabe": {
+    "name": "Alex Beispiel",
+    "email": "alex@example.com",
+    "modell": "sport",
+    "menge": "10",
+    "groesse": "m",
+    "farbe": "#245678",
+    "wunschtermin": "@future_date",
+    "druck": "ja",
+    "drucktext": "Team Code",
+    "druckposition": "brust",
+    "extras": [
+      "verpackung"
+    ],
+    "notiz": ""
+  },
+  "erwartete_gesamtsumme": "281,00 €"
+}

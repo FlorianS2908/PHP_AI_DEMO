@@ -1,0 +1,33 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lösungen · PHP</title><link rel="stylesheet" href="../assets/kurs.css"><link rel="stylesheet" href="../assets/php-ergaenzung.css"></head><body><a class="skip" href="#inhalt">Zum Inhalt</a><div class="shell"><aside class="sidebar"><div class="brand"><div class="brand-mark">10a</div><div><small>PHP · VERTIEFUNG</small><strong>Webwerkstatt</strong></div></div><a class="back" href="../index.html">← Materialübersicht</a><button class="sidebar-toggle" aria-expanded="false" aria-controls="side-content" type="button">Navigation öffnen</button><div id="side-content"><nav aria-label="Materialien"><a class="btn" href="../webvariante.html">Webvariante</a><a class="btn" href="../demo-start.html">Demos starten</a><a class="btn" href="../quelltexte/index.html">Quelltexte</a><a class="btn" href="../pseudocode.html">Pseudocode</a><a class="btn" href="../aufgaben.html">Aufgaben</a><a class="btn" href="../dozent/loesungen.html">Lösungen</a><a class="btn" href="../dozent/leitfaden.html">Dozentenleitfaden</a><a class="btn" href="../quellen.html">Quellen & Abgrenzung</a></nav><p class="aside-note">Arrays → Formular → POST → neue Ausgabe.</p></div></aside><main id="inhalt" class="main"><div class="topline"><span>PHP · Arrays und mehrseitige Formulare</span><span>Ohne Session / Cookie</span></div><header class="hero"><div class="eyebrow">PHP · PHP-Vertiefung</div><h1>Lösungshinweise und Muster.</h1><p>Dozentenfassung. Die vollständige Demo ist Referenz; Aufgabe 5 ist eine bewusst zusätzliche Erweiterung.</p></header><section class="card task"><span class="tag">Aufgabe 1</span><h2>Verschachtelte Daten lesen</h2><p>Das angegebene Array mit genau drei Schlüsseln hat count 3; die Extras-Liste hat count 2; Index 1 enthält tour.</p><div class="codebox"><div class="codebar"><span>Muster / gezielte Ergänzung</span><button type="button" data-copy>Code kopieren</button></div><pre><code>$reise = [&#x27;ziel&#x27; =&gt; &#x27;paris&#x27;, &#x27;personen&#x27; =&gt; 3, &#x27;extras&#x27; =&gt; [&#x27;museum&#x27;, &#x27;tour&#x27;]];
+echo count($reise) . &#x27;\n&#x27;;
+echo count($reise[&#x27;extras&#x27;]) . &#x27;\n&#x27;;
+echo $reise[&#x27;extras&#x27;][1];</code></pre></div></section><section class="card task"><span class="tag">Aufgabe 2</span><h2>Ein neues Ziel anbieten</h2><p>Ein weiterer Eintrag genügt. Die bestehende Schleife und die Schlüsselprüfung übernehmen das Ziel automatisch. 15900 × 2 = 31800 Cent.</p><div class="codebox"><div class="codebar"><span>Muster / gezielte Ergänzung</span><button type="button" data-copy>Code kopieren</button></div><pre><code>$ziele[&#x27;wien&#x27;] = [
+    &#x27;titel&#x27; =&gt; &#x27;Wien&#x27;, &#x27;land&#x27; =&gt; &#x27;Österreich&#x27;, &#x27;preis_cent&#x27; =&gt; 15900,
+];</code></pre></div></section><section class="card task"><span class="tag">Aufgabe 3</span><h2>Mehrfach-Select gegen Checkboxen tauschen</h2><p>Die Empfangsstruktur bleibt unverändert. Dadurch funktionieren die bisherige Prüfung, Rechnung und Hidden-Weitergabe weiter.</p><div class="codebox"><div class="codebar"><span>Muster / gezielte Ergänzung</span><button type="button" data-copy>Code kopieren</button></div><pre><code>&lt;?php foreach ($extras as $id =&gt; $extra): ?&gt;
+&lt;label&gt;
+  &lt;input type=&quot;checkbox&quot; name=&quot;reise[extras][]&quot; value=&quot;&lt;?= e($id) ?&gt;&quot;
+    &lt;?= in_array($id, $reise[&#x27;extras&#x27;], true) ? &#x27; checked&#x27; : &#x27;&#x27; ?&gt;&gt;
+  &lt;?= e($extra[&#x27;titel&#x27;]) ?&gt;
+&lt;/label&gt;
+&lt;?php endforeach; ?&gt;</code></pre></div></section><section class="card task"><span class="tag">Aufgabe 4</span><h2>Pseudocode in eine Preisfunktion übersetzen</h2><p>Der Rechenweg ist pro Person 19900 + 2500 + 1800 + 1200 bzw. + 3000. Mit zwei Personen entstehen die genannten Summen.</p><div class="codebox"><div class="codebar"><span>Muster / gezielte Ergänzung</span><button type="button" data-copy>Code kopieren</button></div><pre><code>function gesamtCent(array $reise, array $ziele, array $extras, array $verpflegungen): int
+{
+    $summe = $ziele[$reise[&#x27;ziel&#x27;]][&#x27;preis_cent&#x27;];
+    foreach ($reise[&#x27;extras&#x27;] as $id) {
+        $summe += $extras[$id][&#x27;preis_cent&#x27;];
+    }
+    $summe += $verpflegungen[$reise[&#x27;verpflegung&#x27;]][&#x27;preis_cent&#x27;];
+    return $summe * $reise[&#x27;personen&#x27;];
+}</code></pre></div></section><section class="card task"><span class="tag">Aufgabe 5</span><h2>Eine weitere Auswahl mitnehmen</h2><p>Neue Daten erfordern einen vollständigen Datenvertrag. Die folgenden Ergänzungen gehören an die entsprechenden Stellen, nicht gemeinsam ans Dateiende.</p><div class="codebox"><div class="codebar"><span>Muster / gezielte Ergänzung</span><button type="button" data-copy>Code kopieren</button></div><pre><code>// startwerte(): &#x27;anreise&#x27; =&gt; &#x27;selbst&#x27; ergänzen
+// In beiden skalaren Feldlisten &#x27;anreise&#x27; ergänzen.
+// Nach dem Einlesen in pruefe_reise():
+if (!in_array($werte[&#x27;anreise&#x27;], [&#x27;selbst&#x27;, &#x27;bahn&#x27;], true)) {
+    $fehler[] = &#x27;Bitte Selbstanreise oder Bahn wählen.&#x27;;
+}
+// In der Ausgabe nach erfolgreicher Prüfung:
+$anreiseTexte = [&#x27;selbst&#x27; =&gt; &#x27;Selbstanreise&#x27;, &#x27;bahn&#x27; =&gt; &#x27;Bahn&#x27;];
+echo e($anreiseTexte[$reise[&#x27;anreise&#x27;]]);</code></pre></div></section><section class="card task"><span class="tag">Aufgabe 6</span><h2>Ausgabe und Fehlerfälle prüfen</h2><p>Die Trennung ist entscheidend: Validierung sichert erwartete Form und erlaubte Werte, nicht die Identität oder Unverändertheit eines früheren Requests. HTML-Maskierung hält den Nachrichtentext im vorgesehenen Ausgabekontext.</p><div class="codebox"><div class="codebar"><span>Muster / gezielte Ergänzung</span><button type="button" data-copy>Code kopieren</button></div><pre><code>// Lokaler Testtext – als Nachricht, nicht als Programm ausführen:
+&lt;/textarea&gt;&lt;script&gt;alert(1)&lt;/script&gt;
+
+// Erwartung: sichtbarer Text, kein neues script-Element.
+// Direkte GET-Aufrufe von pruefen.php und ergebnis.php: HTTP 405.
+// Ungültige POST-Struktur: HTTP 422.</code></pre></div></section></main></div><script src="../assets/kurs.js"></script></body></html>

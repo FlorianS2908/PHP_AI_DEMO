@@ -1,0 +1,299 @@
+{
+  "id": "PHP-09",
+  "name": "PHP · 09 · CSS und Selektoren",
+  "description": "12 Fragen · Grundlagen, Anwendung, Zuordnung und Reihenfolge",
+  "durationMinutes": 20,
+  "instructions": "Lies die Angaben genau. Bei Mehrfachwahl steht die Zahl richtiger Antworten dabei. Jede vollständig richtig gelöste Frage zählt einen Punkt. Keine Teilpunkte. Übungspool mit sichtbaren Lösungsschlüsseln im JSON.",
+  "topicLabels": {
+    "01": "User Interfaces",
+    "02": "Qualitätssicherung",
+    "03": "UX beschreiben",
+    "04": "UX gestalten",
+    "05": "HTML-Grundlagen",
+    "06": "HTML-Inhalte",
+    "07": "Struktur und Navigation",
+    "08": "Formulare",
+    "09": "CSS und Selektoren",
+    "10": "Farben und Hintergründe",
+    "11": "PHP und Formulardaten",
+    "12": "PHP und Datenbank",
+    "13": "CSS-Layout ergänzen"
+  },
+  "difficultyLabels": {
+    "leicht": "Grundlagen",
+    "mittel": "Anwendung"
+  },
+  "questions": [
+    {
+      "id": "PHP-09-01",
+      "type": "single",
+      "topic": "09",
+      "difficulty": "leicht",
+      "text": "Welcher Bestandteil bestimmt die betroffenen Elemente?",
+      "options": [
+        "Semikolon",
+        "Selektor",
+        "Dateigröße",
+        "Eigenschaftswert"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Der Selektor wählt passende Elemente aus.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 1_Präsentation.pdf · 3–44"
+    },
+    {
+      "id": "PHP-09-02",
+      "type": "single",
+      "topic": "09",
+      "difficulty": "leicht",
+      "text": "Wie wird ein externes Stylesheet eingebunden?",
+      "options": [
+        "<link rel=\"stylesheet\" href=\"style.css\">",
+        "<a method=\"style.css\">",
+        "<style src=\"style.css\"></style>",
+        "<css>style.css</css>"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "link mit rel und href stellt die Verknüpfung her.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 1_Präsentation.pdf · 3–44"
+    },
+    {
+      "id": "PHP-09-03",
+      "type": "single",
+      "topic": "09",
+      "difficulty": "leicht",
+      "text": "Welcher Selektor spricht die Klasse hinweis an?",
+      "options": [
+        ".hinweis",
+        "#hinweis",
+        "@hinweis",
+        "hinweis ohne Punkt als Klassenform"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": ". kennzeichnet einen Klassenselektor.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 1_Präsentation.pdf · 3–44"
+    },
+    {
+      "id": "PHP-09-04",
+      "type": "single",
+      "topic": "09",
+      "difficulty": "mittel",
+      "text": "Welche Elemente trifft main &gt; p im Beispiel?<pre><code>&lt;main&gt;\n  &lt;p&gt;A&lt;/p&gt;\n  &lt;article&gt;&lt;p&gt;B&lt;/p&gt;&lt;/article&gt;\n&lt;/main&gt;</code></pre>",
+      "options": [
+        "A und B",
+        "Keinen Absatz",
+        "Nur B",
+        "Nur A"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "> verlangt direkte Kinder.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 1_Präsentation.pdf · 3–44"
+    },
+    {
+      "id": "PHP-09-05",
+      "type": "single",
+      "topic": "09",
+      "difficulty": "leicht",
+      "text": "Was bedeutet h1, h2 als Selektorgruppe?",
+      "options": [
+        "h1-Elemente und h2-Elemente",
+        "Nur h2 direkt nach h1",
+        "Ein einziges Element namens h1h2",
+        "Nur h2 innerhalb h1"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Das Komma gruppiert unabhängige Selektoren.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 1_Präsentation.pdf · 3–44"
+    },
+    {
+      "id": "PHP-09-06",
+      "type": "single",
+      "topic": "09",
+      "difficulty": "mittel",
+      "text": "Welche Farbe gilt bei normalen Regeln gleicher Herkunft und Ebene?<pre><code>#meldung { color: navy; }\n.hinweis { color: red; }\n/* p mit id=&quot;meldung&quot; und class=&quot;hinweis&quot; */</code></pre>",
+      "options": [
+        "navy",
+        "Zwingend die Browserfarbe",
+        "red",
+        "Beide Farben gleichzeitig"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Der ID-Selektor ist hier spezifischer als die Klasse.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 1_Präsentation.pdf · 3–44"
+    },
+    {
+      "id": "PHP-09-07",
+      "type": "single",
+      "topic": "09",
+      "difficulty": "leicht",
+      "text": "Bei gleicher Herkunft, Wichtigkeit, Ebene und Spezifität: Was entscheidet?",
+      "options": [
+        "Alphabetische Reihenfolge der Werte",
+        "Mehr Kommentare",
+        "Kürzerer Dateiname",
+        "Spätere Quellreihenfolge"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Die Reihenfolge ist erst bei Gleichstand der maßgeblichen früheren Kriterien entscheidend.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 1_Präsentation.pdf · 3–44"
+    },
+    {
+      "id": "PHP-09-08",
+      "type": "single",
+      "topic": "09",
+      "difficulty": "leicht",
+      "text": "Welche Aussage zu p.hinweis stimmt?",
+      "options": [
+        "Alle p und alle Elemente mit hinweis werden unabhängig ausgewählt.",
+        "Nur Kinder eines Elements hinweis werden ausgewählt.",
+        "Ein p-Element muss zugleich die Klasse hinweis besitzen.",
+        "Es ist ein ID-Selektor."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Zusammengesetzter Selektor: beide Bedingungen am selben Element.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 1_Präsentation.pdf · 3–44"
+    },
+    {
+      "id": "PHP-09-09",
+      "type": "multiple",
+      "topic": "09",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Aussagen zu CSS stimmen?",
+      "options": [
+        "Internes CSS gewinnt ausnahmslos gegen externes.",
+        "IDs dürfen zur eindeutigen Kennzeichnung beliebig dupliziert werden.",
+        "Externe Stylesheets können mehrere Seiten gestalten.",
+        "Nicht alle Eigenschaften werden vererbt."
+      ],
+      "correct": [
+        2,
+        3
+      ],
+      "explanation": "Vererbung ist eigenschaftsabhängig; externe Regeln sind wiederverwendbar.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 1_Präsentation.pdf · 3–44"
+    },
+    {
+      "id": "PHP-09-10",
+      "type": "multiple",
+      "topic": "09",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Selektoren sprechen nachfolgende Geschwisterbeziehungen an?",
+      "options": [
+        "h2 + p",
+        "h2 p",
+        "h2 > p",
+        "h2 ~ p"
+      ],
+      "correct": [
+        0,
+        3
+      ],
+      "explanation": "+ beschreibt direkt folgende, ~ passende nachfolgende Geschwister.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 1_Präsentation.pdf · 3–44"
+    },
+    {
+      "id": "PHP-09-11",
+      "type": "matching-postits",
+      "topic": "09",
+      "difficulty": "mittel",
+      "text": "Ordne die Begriffe ihren Beschreibungen zu.",
+      "items": [
+        {
+          "id": "i0",
+          "text": "main p"
+        },
+        {
+          "id": "i1",
+          "text": "main > p"
+        },
+        {
+          "id": "i2",
+          "text": "h2 + p"
+        }
+      ],
+      "targets": [
+        {
+          "id": "t2",
+          "text": "Direkt nachfolgendes passendes Geschwister"
+        },
+        {
+          "id": "t1",
+          "text": "Direkte passende Kinder"
+        },
+        {
+          "id": "t0",
+          "text": "Passende Nachkommen"
+        }
+      ],
+      "pairs": [
+        {
+          "leftId": "i0",
+          "rightId": "t0"
+        },
+        {
+          "leftId": "i1",
+          "rightId": "t1"
+        },
+        {
+          "leftId": "i2",
+          "rightId": "t2"
+        }
+      ],
+      "explanation": "main p: Passende Nachkommen; main > p: Direkte passende Kinder; h2 + p: Direkt nachfolgendes passendes Geschwister",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 1_Präsentation.pdf"
+    },
+    {
+      "id": "PHP-09-12",
+      "type": "sql-order",
+      "topic": "09",
+      "difficulty": "mittel",
+      "text": "Ordne den im Kurs vorgegebenen Arbeitsablauf. Gemeint ist diese didaktische Reihenfolge, nicht die einzig mögliche Vorgehensweise in jedem Projekt.",
+      "blocks": [
+        {
+          "id": "b4",
+          "text": "Wirkung prüfen"
+        },
+        {
+          "id": "b3",
+          "text": "Datei speichern"
+        },
+        {
+          "id": "b2",
+          "text": "Deklarationen ergänzen"
+        },
+        {
+          "id": "b1",
+          "text": "Selektor bestimmen"
+        },
+        {
+          "id": "b0",
+          "text": "HTML-Struktur lesen"
+        }
+      ],
+      "correctOrder": [
+        "b0",
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "explanation": "HTML-Struktur lesen → Selektor bestimmen → Deklarationen ergänzen → Datei speichern → Wirkung prüfen",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 1_Präsentation.pdf"
+    }
+  ]
+}

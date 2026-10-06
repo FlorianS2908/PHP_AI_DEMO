@@ -1,0 +1,236 @@
+{
+    "php": "8.4.23",
+    "ausgefuehrt": "2026-09-28T10:02:50+00:00",
+    "tests": [
+        {
+            "test": "Normale Auswahl gültig",
+            "ok": true
+        },
+        {
+            "test": "Personenzahl wird Integer",
+            "ok": true
+        },
+        {
+            "test": "Rechnung Paris, 2, Museum + Tour + Frühstück",
+            "ok": true
+        },
+        {
+            "test": "Vier korrekte Rechnungspositionen",
+            "ok": true
+        },
+        {
+            "test": "Positionssumme entspricht Gesamt",
+            "ok": true
+        },
+        {
+            "test": "Formatierte Summe",
+            "ok": true
+        },
+        {
+            "test": "Änderung Halbpension ergibt 54400 Cent",
+            "ok": true
+        },
+        {
+            "test": "Fehlende Extras sind eine gültige leere Liste",
+            "ok": true
+        },
+        {
+            "test": "Explizit leere Extras gültig",
+            "ok": true
+        },
+        {
+            "test": "Trim und UTF-8-Name",
+            "ok": true
+        },
+        {
+            "test": "500 Unicode-Zeichen gültig",
+            "ok": true
+        },
+        {
+            "test": "501 Zeichen ungültig",
+            "ok": true
+        },
+        {
+            "test": "Ungültiges UTF-8 verwerfen",
+            "ok": true
+        },
+        {
+            "test": "Ungültige Reise-Struktur 0",
+            "ok": true
+        },
+        {
+            "test": "Ungültige Reise-Struktur 1",
+            "ok": true
+        },
+        {
+            "test": "Ungültige Reise-Struktur 2",
+            "ok": true
+        },
+        {
+            "test": "Ungültige Reise-Struktur 3",
+            "ok": true
+        },
+        {
+            "test": "Ungültige Reise-Struktur 4",
+            "ok": true
+        },
+        {
+            "test": "Fehlendes skalares Feld name",
+            "ok": true
+        },
+        {
+            "test": "Array statt Text bei name",
+            "ok": true
+        },
+        {
+            "test": "Fehlendes skalares Feld ziel",
+            "ok": true
+        },
+        {
+            "test": "Array statt Text bei ziel",
+            "ok": true
+        },
+        {
+            "test": "Fehlendes skalares Feld personen",
+            "ok": true
+        },
+        {
+            "test": "Array statt Text bei personen",
+            "ok": true
+        },
+        {
+            "test": "Fehlendes skalares Feld verpflegung",
+            "ok": true
+        },
+        {
+            "test": "Array statt Text bei verpflegung",
+            "ok": true
+        },
+        {
+            "test": "Fehlendes skalares Feld nachricht",
+            "ok": true
+        },
+        {
+            "test": "Array statt Text bei nachricht",
+            "ok": true
+        },
+        {
+            "test": "Ungültige Personen 0",
+            "ok": true
+        },
+        {
+            "test": "Ungültige Personen 7",
+            "ok": true
+        },
+        {
+            "test": "Ungültige Personen -1",
+            "ok": true
+        },
+        {
+            "test": "Ungültige Personen 2.5",
+            "ok": true
+        },
+        {
+            "test": "Ungültige Personen abc",
+            "ok": true
+        },
+        {
+            "test": "Ungültige Personen 1e2",
+            "ok": true
+        },
+        {
+            "test": "Ungültige Personen 999999999999999999999",
+            "ok": true
+        },
+        {
+            "test": "Gültiger Personen-Grenzwert 1",
+            "ok": true
+        },
+        {
+            "test": "Gültiger Personen-Grenzwert 6",
+            "ok": true
+        },
+        {
+            "test": "Ungültige Ziel-ID unbekannt",
+            "ok": true
+        },
+        {
+            "test": "Ungültige Ziel-ID ",
+            "ok": true
+        },
+        {
+            "test": "Ungültige Ziel-ID ..\/datei",
+            "ok": true
+        },
+        {
+            "test": "Unbekannte Verpflegung",
+            "ok": true
+        },
+        {
+            "test": "Leerer Name ungültig",
+            "ok": true
+        },
+        {
+            "test": "Zu langer Name ungültig",
+            "ok": true
+        },
+        {
+            "test": "Ungültige Extras-Struktur\/-Werte 0",
+            "ok": true
+        },
+        {
+            "test": "Ungültige Extras-Struktur\/-Werte 1",
+            "ok": true
+        },
+        {
+            "test": "Ungültige Extras-Struktur\/-Werte 2",
+            "ok": true
+        },
+        {
+            "test": "Ungültige Extras-Struktur\/-Werte 3",
+            "ok": true
+        },
+        {
+            "test": "Ungültige Extras-Struktur\/-Werte 4",
+            "ok": true
+        },
+        {
+            "test": "Unbekannte Preis- und Rollenfelder werden nicht übernommen",
+            "ok": true
+        },
+        {
+            "test": "Manipulierter Preis verändert Summe nicht",
+            "ok": true
+        },
+        {
+            "test": "HTML-Zeichen bleiben erlaubter Text",
+            "ok": true
+        },
+        {
+            "test": "HTML-Text korrekt maskiert",
+            "ok": true
+        },
+        {
+            "test": "Kein unverarbeitetes Script im Hidden-HTML",
+            "ok": true
+        },
+        {
+            "test": "Zwei Extras als einzelne Hidden-Felder",
+            "ok": true
+        },
+        {
+            "test": "Weitergabe ohne doppeltes Verpflegungsfeld",
+            "ok": true
+        },
+        {
+            "test": "Hidden enthält keinen Preis",
+            "ok": true
+        },
+        {
+            "test": "Alle Extras und sechs Personen",
+            "ok": true
+        }
+    ],
+    "anzahl": 57,
+    "erfolgreich": 57
+}

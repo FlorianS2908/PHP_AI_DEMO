@@ -1,0 +1,294 @@
+{
+  "id": "PHP-01",
+  "name": "PHP · 01 · User Interfaces",
+  "description": "12 Fragen · Grundlagen, Anwendung, Zuordnung und Reihenfolge",
+  "durationMinutes": 20,
+  "instructions": "Lies die Angaben genau. Bei Mehrfachwahl steht die Zahl richtiger Antworten dabei. Jede vollständig richtig gelöste Frage zählt einen Punkt. Keine Teilpunkte. Übungspool mit sichtbaren Lösungsschlüsseln im JSON.",
+  "topicLabels": {
+    "01": "User Interfaces",
+    "02": "Qualitätssicherung",
+    "03": "UX beschreiben",
+    "04": "UX gestalten",
+    "05": "HTML-Grundlagen",
+    "06": "HTML-Inhalte",
+    "07": "Struktur und Navigation",
+    "08": "Formulare",
+    "09": "CSS und Selektoren",
+    "10": "Farben und Hintergründe",
+    "11": "PHP und Formulardaten",
+    "12": "PHP und Datenbank",
+    "13": "CSS-Layout ergänzen"
+  },
+  "difficultyLabels": {
+    "leicht": "Grundlagen",
+    "mittel": "Anwendung"
+  },
+  "questions": [
+    {
+      "id": "PHP-01-01",
+      "type": "single",
+      "topic": "01",
+      "difficulty": "leicht",
+      "text": "Welche Verbindung beschreibt ein User Interface in Kapitel 1?",
+      "options": [
+        "Mensch und System",
+        "Zwei USB-Geräte",
+        "Zwei Tabellen",
+        "Zwei Softwaremodule"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Die Benutzerschnittstelle verbindet Anwender und System.",
+      "source": "PHP-Kurs_Kapitel 1_User Interfaces_Präsentation.pdf · 3–31"
+    },
+    {
+      "id": "PHP-01-02",
+      "type": "single",
+      "topic": "01",
+      "difficulty": "leicht",
+      "text": "Eine Person berührt ein Ziel auf dem Touchscreen. Welche Einordnung trifft auf diese Handlung zu?",
+      "options": [
+        "Eingabe",
+        "Darstellungsregel",
+        "Datensicherung",
+        "Ausgabe"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Die Berührung transportiert eine Auswahl zum System.",
+      "source": "PHP-Kurs_Kapitel 1_User Interfaces_Präsentation.pdf · 3–31"
+    },
+    {
+      "id": "PHP-01-03",
+      "type": "single",
+      "topic": "01",
+      "difficulty": "leicht",
+      "text": "Die Ergebnisliste erscheint auf dem Bildschirm. Was ist das aus Sicht der Person?",
+      "options": [
+        "Ausgabe",
+        "Klassenschnittstelle",
+        "Software-API",
+        "Eingabe"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Die dargestellte Information wird vom System zum Menschen vermittelt.",
+      "source": "PHP-Kurs_Kapitel 1_User Interfaces_Präsentation.pdf · 3–31"
+    },
+    {
+      "id": "PHP-01-04",
+      "type": "single",
+      "topic": "01",
+      "difficulty": "leicht",
+      "text": "Welche Aussage über den Touchscreen entspricht der Unterlage?",
+      "options": [
+        "Jedes Gerät darf nur eine Prozessart anbieten.",
+        "Ein Gerät kann getrennte Ein- und Ausgabeprozesse ermöglichen.",
+        "Berührung und Anzeige sind derselbe Prozess.",
+        "Ein Touchscreen ist ausschließlich ein Ausgabegerät."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Das Gerät kann beides, die Informationsrichtungen bleiben verschieden.",
+      "source": "PHP-Kurs_Kapitel 1_User Interfaces_Präsentation.pdf · 3–31"
+    },
+    {
+      "id": "PHP-01-05",
+      "type": "single",
+      "topic": "01",
+      "difficulty": "leicht",
+      "text": "Was kennzeichnet eine menügeführte Oberfläche?",
+      "options": [
+        "Jede Handlung benötigt einen frei geschriebenen Befehl.",
+        "Sie benötigt zwingend Fotos.",
+        "Sie kann keine Untermenüs enthalten.",
+        "Auswählbare Menüpunkte leiten die Interaktion."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Menüs machen verfügbare Optionen sichtbar und können auch textbasiert sein.",
+      "source": "PHP-Kurs_Kapitel 1_User Interfaces_Präsentation.pdf · 3–31"
+    },
+    {
+      "id": "PHP-01-06",
+      "type": "single",
+      "topic": "01",
+      "difficulty": "leicht",
+      "text": "Welche Beschreibung passt zur dialogorientierten Schnittstelle?",
+      "options": [
+        "Ausschließlich ein grafisches Auswahlmenü",
+        "Interaktion in menschlicher Sprache als Text oder Ton",
+        "Ausschließlich automatisch abgearbeitete Lochkarten",
+        "Ausschließlich ein physischer Drehknopf"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Conversational Interfaces verwenden menschliche Sprache.",
+      "source": "PHP-Kurs_Kapitel 1_User Interfaces_Präsentation.pdf · 3–31"
+    },
+    {
+      "id": "PHP-01-07",
+      "type": "single",
+      "topic": "01",
+      "difficulty": "leicht",
+      "text": "Ein Reisender kennt keine Befehlssyntax. Welche begründete Entwurfsentscheidung passt?",
+      "options": [
+        "Alle Rückmeldungen ausblenden.",
+        "Nur einen unerklärten Befehlseingabeprompt zeigen.",
+        "Zulässige Ziele sichtbar zur Auswahl anbieten.",
+        "Die Auswahlmöglichkeiten erst nach Fehlern nennen."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Sichtbare Optionen vermindern hier die nötige Erinnerung an Befehle.",
+      "source": "PHP-Kurs_Kapitel 1_User Interfaces_Präsentation.pdf · 3–31"
+    },
+    {
+      "id": "PHP-01-08",
+      "type": "single",
+      "topic": "01",
+      "difficulty": "leicht",
+      "text": "Eine GUI enthält ein Menü und eine Spracheingabe. Wie ist das einzuordnen?",
+      "options": [
+        "Schnittstellentypen können kombiniert werden.",
+        "Eine Spracheingabe macht jeden Bildschirm ungültig.",
+        "Ein Menü verhindert grundsätzlich eine GUI.",
+        "Jedes System darf nur einen Typ besitzen."
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Die Unterlage nennt die Kombination mehrerer Schnittstellen ausdrücklich.",
+      "source": "PHP-Kurs_Kapitel 1_User Interfaces_Präsentation.pdf · 3–31"
+    },
+    {
+      "id": "PHP-01-09",
+      "type": "multiple",
+      "topic": "01",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Beispiele sind Eingabegeräte?",
+      "options": [
+        "Projektor",
+        "Maus",
+        "Mikrofon",
+        "Lautsprecher"
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "explanation": "Maus und Mikrofon liefern Signale an das System.",
+      "source": "PHP-Kurs_Kapitel 1_User Interfaces_Präsentation.pdf · 3–31"
+    },
+    {
+      "id": "PHP-01-10",
+      "type": "multiple",
+      "topic": "01",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Angaben helfen bei einer begründeten UI-Auswahl?",
+      "options": [
+        "Zufällige Anzahl der Dateien",
+        "Allein die Lieblingsfarbe der Entwicklung",
+        "Nutzerziel",
+        "Vorkenntnisse der Zielgruppe"
+      ],
+      "correct": [
+        2,
+        3
+      ],
+      "explanation": "Ziel und Voraussetzungen bestimmen, welche Interaktion sinnvoll ist.",
+      "source": "PHP-Kurs_Kapitel 1_User Interfaces_Präsentation.pdf · 3–31"
+    },
+    {
+      "id": "PHP-01-11",
+      "type": "matching-postits",
+      "topic": "01",
+      "difficulty": "mittel",
+      "text": "Ordne die Begriffe ihren Beschreibungen zu.",
+      "items": [
+        {
+          "id": "i0",
+          "text": "Eingabe"
+        },
+        {
+          "id": "i1",
+          "text": "Ausgabe"
+        },
+        {
+          "id": "i2",
+          "text": "API"
+        }
+      ],
+      "targets": [
+        {
+          "id": "t2",
+          "text": "Schnittstelle zwischen Software-Systemen"
+        },
+        {
+          "id": "t1",
+          "text": "Information vom System zum Menschen"
+        },
+        {
+          "id": "t0",
+          "text": "Information vom Menschen zum System"
+        }
+      ],
+      "pairs": [
+        {
+          "leftId": "i0",
+          "rightId": "t0"
+        },
+        {
+          "leftId": "i1",
+          "rightId": "t1"
+        },
+        {
+          "leftId": "i2",
+          "rightId": "t2"
+        }
+      ],
+      "explanation": "Eingabe: Information vom Menschen zum System; Ausgabe: Information vom System zum Menschen; API: Schnittstelle zwischen Software-Systemen",
+      "source": "PHP-Kurs_Kapitel 1_User Interfaces_Präsentation.pdf"
+    },
+    {
+      "id": "PHP-01-12",
+      "type": "sql-order",
+      "topic": "01",
+      "difficulty": "mittel",
+      "text": "Ordne den im Kurs vorgegebenen Arbeitsablauf. Gemeint ist diese didaktische Reihenfolge, nicht die einzig mögliche Vorgehensweise in jedem Projekt.",
+      "blocks": [
+        {
+          "id": "b3",
+          "text": "Rückmeldung festlegen"
+        },
+        {
+          "id": "b2",
+          "text": "Verarbeitung beschreiben"
+        },
+        {
+          "id": "b1",
+          "text": "Passende Eingabe entwerfen"
+        },
+        {
+          "id": "b0",
+          "text": "Nutzerziel klären"
+        }
+      ],
+      "correctOrder": [
+        "b0",
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "explanation": "Nutzerziel klären → Passende Eingabe entwerfen → Verarbeitung beschreiben → Rückmeldung festlegen",
+      "source": "PHP-Kurs_Kapitel 1_User Interfaces_Präsentation.pdf"
+    }
+  ]
+}

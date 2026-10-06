@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Aufgabe 12 · Reiseanfrage · PHP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body><main class="wrap">
+  <div class="topline"><span class="brand">PHP · PHP-BASIS</span><span class="badge">Aufgabe 12</span></div>
+  <header class="hero"><h1>Eine kleine Reiseanfrage</h1><p>Ein Formular. Vier Felder. Immer eine neue PHP-Aufgabe.</p></header>
+  <form class="card" action="auswertung.php" method="get">
+    <div class="field">
+      <label for="vorname">Vorname</label>
+      <input type="text" id="vorname" name="vorname" value="Mia" maxlength="80" autocomplete="off">
+    </div>
+    <div class="grid">
+      <div class="field">
+        <label for="ziel">Reiseziel</label>
+        <select id="ziel" name="ziel">
+          <option value="">Bitte wählen</option>
+          <option value="berlin">Berlin</option>
+          <option value="paris" selected>Paris</option>
+          <option value="rom">Rom</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="personen">Personen</label>
+        <select id="personen" name="personen">
+          <option value="">Bitte wählen</option>
+          <option value="1">1 Person</option>
+          <option value="2" selected>2 Personen</option>
+          <option value="3">3 Personen</option>
+          <option value="4">4 Personen</option>
+        </select>
+      </div>
+    </div>
+    <label class="check" for="newsletter"><input type="checkbox" id="newsletter" name="newsletter" value="ja">Newsletter gewünscht</label>
+    <button type="submit">An PHP senden</button>
+    <p class="hint">Leere Angaben sind zum Üben absichtlich möglich. PHP soll sie prüfen.</p>
+  </form>
+  <footer>Lokale Unterrichtsübung · keine Buchung · keine Speicherung<br><a href="../index.html">Zur Aufgabenübersicht</a></footer>
+</main></body>
+</html>

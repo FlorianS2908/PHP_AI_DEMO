@@ -1,0 +1,10 @@
+{
+  "teilnehmer_seiten": 12,
+  "dozenten_seiten": 8,
+  "individuelle_aufgaben": 5,
+  "textmarker_mit_pypdf_pro_seite": true,
+  "textmarker_mit_poppler_anzahl": 12,
+  "visuell_identisch_zur_sauberen_referenz": true,
+  "keine_ki_verhaltensgarantie": true,
+  "php_lint_dateien": 35
+}

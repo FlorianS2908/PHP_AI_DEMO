@@ -1,0 +1,18 @@
+{
+  "eingabe": {
+    "name": "Alex Beispiel",
+    "email": "alex@example.com",
+    "budget": "900.00",
+    "zweck": "gaming",
+    "cpu": "leistung",
+    "ram": "r16",
+    "grafik": "dediziert",
+    "speicher": "s1000",
+    "extras": [
+      "wlan"
+    ],
+    "montage": "ja",
+    "notiz": "Leise bitte."
+  },
+  "erwartete_gesamtsumme": "1.024,00 €"
+}

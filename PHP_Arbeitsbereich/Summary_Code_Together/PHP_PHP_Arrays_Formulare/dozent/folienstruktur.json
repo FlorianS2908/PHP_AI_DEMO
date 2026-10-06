@@ -1,0 +1,290 @@
+[
+  {
+    "nummer": 1,
+    "id": "start",
+    "titel": "Arrays treffen Formulare",
+    "gruppe": "Einstieg"
+  },
+  {
+    "nummer": 2,
+    "id": "lernziele",
+    "titel": "Was du anschließend erklären kannst",
+    "gruppe": "Einstieg"
+  },
+  {
+    "nummer": 3,
+    "id": "unterrichtsbezug",
+    "titel": "Aus den Unterlagen zur Vertiefung",
+    "gruppe": "Einstieg"
+  },
+  {
+    "nummer": 4,
+    "id": "datenformen",
+    "titel": "Vom Einzelwert zur Datenstruktur",
+    "gruppe": "Grundlagen"
+  },
+  {
+    "nummer": 5,
+    "id": "liste",
+    "titel": "Indexierte Arrays: eine Liste",
+    "gruppe": "Grundlagen"
+  },
+  {
+    "nummer": 6,
+    "id": "assoziativ",
+    "titel": "Assoziative Arrays: sprechende Schlüssel",
+    "gruppe": "Grundlagen"
+  },
+  {
+    "nummer": 7,
+    "id": "katalog",
+    "titel": "Verschachtelte Arrays: unser Katalog",
+    "gruppe": "Grundlagen"
+  },
+  {
+    "nummer": 8,
+    "id": "array-werkzeuge",
+    "titel": "Prüfen, ergänzen und löschen",
+    "gruppe": "Grundlagen"
+  },
+  {
+    "nummer": 9,
+    "id": "schluessel-pruefen",
+    "titel": "Schlüssel oder Wert gesucht?",
+    "gruppe": "Grundlagen"
+  },
+  {
+    "nummer": 10,
+    "id": "sortieren",
+    "titel": "Sortieren: Beziehungen erhalten",
+    "gruppe": "Grundlagen"
+  },
+  {
+    "nummer": 11,
+    "id": "foreach",
+    "titel": "foreach verbindet Katalog und Ausgabe",
+    "gruppe": "Kontrollstrukturen"
+  },
+  {
+    "nummer": 12,
+    "id": "bedingungen",
+    "titel": "if, elseif und else",
+    "gruppe": "Kontrollstrukturen"
+  },
+  {
+    "nummer": 13,
+    "id": "switch",
+    "titel": "switch: Auswahlfälle verständlich abbilden",
+    "gruppe": "Kontrollstrukturen"
+  },
+  {
+    "nummer": 14,
+    "id": "for",
+    "titel": "for: feste Anzahl von Möglichkeiten",
+    "gruppe": "Kontrollstrukturen"
+  },
+  {
+    "nummer": 15,
+    "id": "while-do",
+    "titel": "while und do-while: Zeitpunkt der Prüfung",
+    "gruppe": "Kontrollstrukturen"
+  },
+  {
+    "nummer": 16,
+    "id": "abbruch",
+    "titel": "continue und break unterscheiden",
+    "gruppe": "Kontrollstrukturen"
+  },
+  {
+    "nummer": 17,
+    "id": "pseudocode-preis",
+    "titel": "Zuerst Pseudocode: Preise sammeln",
+    "gruppe": "Kontrollstrukturen"
+  },
+  {
+    "nummer": 18,
+    "id": "formularvertrag",
+    "titel": "Der Formularname ist die Schnittstelle",
+    "gruppe": "Formulare"
+  },
+  {
+    "nummer": 19,
+    "id": "dropdown",
+    "titel": "Dropdown / Combo-Box: select und option",
+    "gruppe": "Formulare"
+  },
+  {
+    "nummer": 20,
+    "id": "mehrfach",
+    "titel": "Mehrfachauswahl braucht eine Liste",
+    "gruppe": "Formulare"
+  },
+  {
+    "nummer": 21,
+    "id": "checkbox-radio",
+    "titel": "Checkboxen und Radiobuttons",
+    "gruppe": "Formulare"
+  },
+  {
+    "nummer": 22,
+    "id": "post-array",
+    "titel": "Was genau kommt beim Server an?",
+    "gruppe": "Formulare"
+  },
+  {
+    "nummer": 23,
+    "id": "eingangstypen",
+    "titel": "HTML-number ist noch kein PHP-Integer",
+    "gruppe": "Formulare"
+  },
+  {
+    "nummer": 24,
+    "id": "get-post",
+    "titel": "GET und POST sind Übertragungswege",
+    "gruppe": "Formulare"
+  },
+  {
+    "nummer": 25,
+    "id": "mini-demo",
+    "titel": "Demo 1: ein kleines Formular wirklich absenden",
+    "gruppe": "Mehrseiten-Demo"
+  },
+  {
+    "nummer": 26,
+    "id": "dateien",
+    "titel": "Demo 2: drei Seiten und zwei Hilfsdateien",
+    "gruppe": "Mehrseiten-Demo"
+  },
+  {
+    "nummer": 27,
+    "id": "rueckgabe",
+    "titel": "Ein Prüfergebnis ist ebenfalls ein Array",
+    "gruppe": "Mehrseiten-Demo"
+  },
+  {
+    "nummer": 28,
+    "id": "erlaubte-ids",
+    "titel": "Auswahl-IDs gegen den Katalog prüfen",
+    "gruppe": "Mehrseiten-Demo"
+  },
+  {
+    "nummer": 29,
+    "id": "berechnen",
+    "titel": "Aus IDs werden Positionen und Preise",
+    "gruppe": "Mehrseiten-Demo"
+  },
+  {
+    "nummer": 30,
+    "id": "textfeld",
+    "titel": "Ein Ausgabefeld serverseitig füllen",
+    "gruppe": "Ausgabe"
+  },
+  {
+    "nummer": 31,
+    "id": "htmlbereich",
+    "titel": "Formatiertes HTML ist ein anderer Ausgabebereich",
+    "gruppe": "Ausgabe"
+  },
+  {
+    "nummer": 32,
+    "id": "maskieren",
+    "titel": "Nutzereingaben bleiben Text",
+    "gruppe": "Ausgabe"
+  },
+  {
+    "nummer": 33,
+    "id": "hidden",
+    "titel": "Seite 2 muss die Angaben erneut senden",
+    "gruppe": "Weitergabe"
+  },
+  {
+    "nummer": 34,
+    "id": "hidden-liste",
+    "titel": "Mehrere Werte: mehrere Hidden-Felder",
+    "gruppe": "Weitergabe"
+  },
+  {
+    "nummer": 35,
+    "id": "weiterbearbeiten",
+    "titel": "Seite 2 ergänzt eine neue Auswahl",
+    "gruppe": "Weitergabe"
+  },
+  {
+    "nummer": 36,
+    "id": "seite3",
+    "titel": "Seite 3: erneut prüfen und neu rechnen",
+    "gruppe": "Weitergabe"
+  },
+  {
+    "nummer": 37,
+    "id": "rueckweg",
+    "titel": "Zurückgehen ohne Session",
+    "gruppe": "Weitergabe"
+  },
+  {
+    "nummer": 38,
+    "id": "vorbelegen",
+    "titel": "Werte wieder ins Formular einsetzen",
+    "gruppe": "Weitergabe"
+  },
+  {
+    "nummer": 39,
+    "id": "durchlauf",
+    "titel": "Ein gemeinsamer Schreibtischtest",
+    "gruppe": "Transfer"
+  },
+  {
+    "nummer": 40,
+    "id": "pseudocode-ablauf",
+    "titel": "Pseudocode: der vollständige Seitenwechsel",
+    "gruppe": "Transfer"
+  },
+  {
+    "nummer": 41,
+    "id": "fehlerfaelle",
+    "titel": "Fehlerfälle sind Teil der Demo",
+    "gruppe": "Transfer"
+  },
+  {
+    "nummer": 42,
+    "id": "grenzen",
+    "titel": "Was diese Demo bewusst nicht absichert",
+    "gruppe": "Transfer"
+  },
+  {
+    "nummer": 43,
+    "id": "zustand",
+    "titel": "Übertragen ist nicht dasselbe wie merken",
+    "gruppe": "Session-Ausblick"
+  },
+  {
+    "nummer": 44,
+    "id": "session-ausblick",
+    "titel": "Nächster Schritt: Session statt Hidden-Kette",
+    "gruppe": "Session-Ausblick"
+  },
+  {
+    "nummer": 45,
+    "id": "cookie-ausblick",
+    "titel": "Nächster Schritt: kleine Einstellungen als Cookie",
+    "gruppe": "Session-Ausblick"
+  },
+  {
+    "nummer": 46,
+    "id": "uebungen",
+    "titel": "Jetzt selbst umsetzen",
+    "gruppe": "Abschluss"
+  },
+  {
+    "nummer": 47,
+    "id": "start-anleitung",
+    "titel": "So startest du Webvariante und Demo",
+    "gruppe": "Abschluss"
+  },
+  {
+    "nummer": 48,
+    "id": "rueckblick",
+    "titel": "Was jetzt sitzen sollte",
+    "gruppe": "Abschluss"
+  }
+]

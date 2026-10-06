@@ -1,0 +1,896 @@
+{
+  "id": "PHP-lzk-pool-04-25fragen-40min",
+  "name": "PHP · LZK-Vorbereitung 04 · Bedienung und Fehlerverständnis",
+  "course": "PHP",
+  "version": "1.0",
+  "sourceFileName": "PHP_LZK_Pool_04_Bedienung_und_Fehlerverstaendnis_25Fragen_40Min.json",
+  "description": "Gemischter Vorbereitungstest 04: 25 Fragen zu User Interfaces, Qualitätssicherung, UX und Gestaltung, HTML, CSS sowie PHP. Bearbeitungszeit: 40 Minuten. 20 Einzelwahl- und 5 Mehrfachwahlfragen mit Lösungen und Begründungen.",
+  "durationMinutes": 40,
+  "durationSeconds": 2400,
+  "timeLimitMinutes": 40,
+  "timeLimitSeconds": 2400,
+  "questionCount": 25,
+  "instructions": "Bearbeite alle 25 Fragen in 40 Minuten. Einzelwahl: genau eine Antwort. Mehrfachwahl: genau zwei Antworten. Jede vollständig richtig beantwortete Frage zählt einen Punkt; keine Teilpunkte und keine Minuspunkte. Lies Code und Rahmenbedingungen genau. Alle Beispiele stehen für sich; vorgegebene Daten sind erfunden. Die Qualitäts- und UX-Begriffe folgen den Unterrichtspräsentationen. Dies ist Übungsmaterial, keine Vorhersage der tatsächlichen LZK.",
+  "topicLabels": {
+    "ui": "User Interfaces: Arten, Eingabe und Ausgabe",
+    "qs": "Qualitätssicherung: Qualitätsmerkmale und Prüfverfahren",
+    "ux": "User Experience und Gestaltungsgrundlagen",
+    "html": "HTML: Aufbau, Semantik und Formulare",
+    "css": "CSS: Syntax, Selektoren, Farben und Darstellung",
+    "php": "PHP: Grundlagen, Formulardaten und Codeverständnis"
+  },
+  "difficultyLabels": {
+    "leicht": "Grundlagen",
+    "mittel": "Anwendung und Codeverständnis",
+    "anspruchsvoll": "Transfer und genaue Abgrenzung"
+  },
+  "questionTypeCounts": {
+    "single-choice": 20,
+    "multiple-choice": 5
+  },
+  "topicQuestionCounts": {
+    "ui": 2,
+    "qs": 3,
+    "ux": 5,
+    "html": 4,
+    "css": 6,
+    "php": 5
+  },
+  "scoring": {
+    "maximumPoints": 25,
+    "pointsPerCorrectQuestion": 1,
+    "multipleChoice": "exact-set",
+    "partialCredit": false,
+    "negativePoints": false
+  },
+  "sourcePolicy": {
+    "primaryBasis": "Die acht gelesenen Unterrichtspräsentationen zu PHP, Kapitel 1 bis 5.",
+    "supplement": "PHP und einzelne zusätzliche Gestaltungs- beziehungsweise CSS-Grundlagen stammen aus der hochgeladenen XML-Vorlage. Eine separate PHP-Präsentation war nicht auffindbar.",
+    "formulation": "Fragen, Anwendungssituationen und Codebeispiele wurden neu formuliert. Begriffe und Themen sind über sourceLocations zugeordnet; die Dateien sind keine wortgetreue Konvertierung der XML-Vorlage.",
+    "technicalVerification": "Offizielle Sprach- und Webdokumentationen dienen nur dem fachlichen Abgleich. Bei Präzisierungen gegenüber der Vorlage stehen Hinweise in sourceNote; die Unterrichtsquellen werden nicht als aktuelle Normfassungen ausgegeben.",
+    "scope": "Keine Sessions, Cookies, Klassen, Datenbankprogrammierung oder Passwortvalidierung. Berechtigungen werden nur als Qualitätsmerkmal behandelt."
+  },
+  "editorialNotes": [
+    "Doppelte Vorlagefragen werden nicht durch bloße Umnummerierung wiederverwendet. Über die fünf Pools werden dieselben Lernziele mit unterschiedlichen Aufgabenformaten vertieft.",
+    "Die Begriffe zur Softwarequalität sowie die Darstellung von valuable folgen ausdrücklich der Unterrichtsquelle.",
+    "Die numerischen und textuellen Ausgaben aller vollständigen PHP-Beispiele wurden vor der Abgabe mit der PHP-Laufzeit geprüft."
+  ],
+  "sources": [
+    {
+      "id": "ppt-ui",
+      "type": "Unterrichtsquelle",
+      "title": "PHP-Kurs_Kapitel 1_User Interfaces_Präsentation.pptx"
+    },
+    {
+      "id": "ppt-qs",
+      "type": "Unterrichtsquelle",
+      "title": "PHP-Kurs_Kapitel 2_Qualitätssicherung_Präsentation.pptx"
+    },
+    {
+      "id": "ppt-ux1",
+      "type": "Unterrichtsquelle",
+      "title": "PHP-Kurs_Kapitel 3_User Experience_Teil 1_Präsentation.pptx"
+    },
+    {
+      "id": "ppt-ux2",
+      "type": "Unterrichtsquelle",
+      "title": "PHP-Kurs_Kapitel 3_User Experience_Teil 2_Präsentation.pptx"
+    },
+    {
+      "id": "ppt-html1",
+      "type": "Unterrichtsquelle",
+      "title": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pptx"
+    },
+    {
+      "id": "ppt-html2",
+      "type": "Unterrichtsquelle",
+      "title": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pptx"
+    },
+    {
+      "id": "ppt-css1",
+      "type": "Unterrichtsquelle",
+      "title": "PHP-Kurs_Kapitel 5_CSS_Teil 1_Präsentation.pptx"
+    },
+    {
+      "id": "ppt-css2",
+      "type": "Unterrichtsquelle",
+      "title": "PHP-Kurs_Kapitel 5_CSS_Teil 2_Präsentation.pptx"
+    },
+    {
+      "id": "xml-vorlage",
+      "type": "Ergänzende Aufgabenquelle",
+      "title": "quiz-PHPV2 14.09.2026 EACGRNK-PHP-20260929-0821.xml",
+      "note": "Thematische Orientierung, insbesondere für PHP und ergänzende Gestaltungsfragen. Keine ungeprüfte Übernahme der Lösungsschlüssel."
+    },
+    {
+      "id": "check-html",
+      "type": "Fachlicher Abgleich",
+      "title": "WHATWG HTML Standard: Forms",
+      "url": "https://html.spec.whatwg.org/multipage/forms.html",
+      "accessed": "2026-09-29"
+    },
+    {
+      "id": "check-selectors",
+      "type": "Fachlicher Abgleich",
+      "title": "W3C Selectors Level 4",
+      "url": "https://www.w3.org/TR/selectors-4/",
+      "accessed": "2026-09-29"
+    },
+    {
+      "id": "check-php",
+      "type": "Fachlicher Abgleich",
+      "title": "PHP-Handbuch: Sprachreferenz",
+      "url": "https://www.php.net/manual/en/langref.php",
+      "accessed": "2026-09-29"
+    }
+  ],
+  "questions": [
+    {
+      "id": "PHP-LZK40-P04-001",
+      "type": "single-choice",
+      "topic": "html",
+      "difficulty": "mittel",
+      "text": "<p>Wohin und mit welcher Methode sendet dieses Formular seine Daten bei einer normalen Übermittlung ohne zusätzliche Überschreibungen?</p><pre><code>&lt;form action=\"reservierung.php\" method=\"post\"&gt;\n  &lt;input name=\"name\" type=\"text\"&gt;\n  &lt;button type=\"submit\"&gt;Anfragen&lt;/button&gt;\n&lt;/form&gt;</code></pre>",
+      "options": [
+        "An die aktuelle HTML-Seite mit GET, unabhängig vom action-Wert.",
+        "An die aktuelle HTML-Seite mit POST, unabhängig vom action-Wert.",
+        "An reservierung.php mit POST.",
+        "An reservierung.php mit GET."
+      ],
+      "correct": [
+        2
+      ],
+      "solution": "An reservierung.php mit POST.",
+      "explanation": "Action bestimmt die Zieladresse; method legt hier POST fest. Der submit-Button löst die Formularübermittlung aus, ohne diese Vorgaben zu ändern.",
+      "sourceIds": [
+        "ppt-html2"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-html2",
+          "section": "Interaktive Elemente: Formulare; Schaltflächen"
+        }
+      ],
+      "verificationSourceIds": [
+        "check-html"
+      ],
+      "construction": "Neu formuliertes Codebeispiel zur Anwendung der angegebenen Quellthemen.",
+      "codeLanguage": "html"
+    },
+    {
+      "id": "PHP-LZK40-P04-002",
+      "type": "multiple-choice",
+      "topic": "php",
+      "difficulty": "leicht",
+      "text": "<p>Welche zwei Zuordnungen von PHP-Wert und Datentyp sind richtig?</p><p><strong>Mehrfachwahl: Wähle genau zwei Antworten.</strong></p>",
+      "options": [
+        "<code>true</code> ist ein boolescher Wert.",
+        "<code>3</code> ohne Anführungszeichen ist ein string.",
+        "<code>12.5</code> ist ein float.",
+        "<code>\"Ada\"</code> hat den eigenständigen PHP-Datentyp char."
+      ],
+      "correct": [
+        0,
+        2
+      ],
+      "solution": "<code>true</code> ist ein boolescher Wert. · <code>12.5</code> ist ein float.",
+      "explanation": "12.5 ist eine Gleitkommazahl, true ein boolescher Wert. PHP verwendet für \"Ada\" den Typ string und besitzt keinen eigenständigen Typ char; 3 ist hier ein int.",
+      "sourceIds": [
+        "xml-vorlage"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "xml-vorlage",
+          "section": "Frage 57109070"
+        }
+      ],
+      "verificationSourceIds": [
+        "check-php"
+      ],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P04-003",
+      "type": "single-choice",
+      "topic": "css",
+      "difficulty": "mittel",
+      "text": "<p>Welcher CSS-Verlauf ordnet seine Farben um einen Mittelpunkt herum nach dem Winkel an?</p>",
+      "options": [
+        "<code>radial-gradient(...)</code>.",
+        "<code>conic-gradient(...)</code>.",
+        "<code>repeating-linear-gradient(...)</code>.",
+        "<code>linear-gradient(...)</code>."
+      ],
+      "correct": [
+        1
+      ],
+      "solution": "<code>conic-gradient(...)</code>.",
+      "explanation": "Ein konischer Verlauf verläuft um den Mittelpunkt herum. Ein radialer Verlauf geht dagegen von innen nach außen; ein linearer Verlauf folgt einer geraden Richtung.",
+      "sourceIds": [
+        "ppt-css2"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-css2",
+          "section": "Farben und Hintergründe: Konischer Verlauf"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P04-004",
+      "type": "single-choice",
+      "topic": "ux",
+      "difficulty": "leicht",
+      "text": "<p>Welcher Honeycomb-Begriff beschreibt vor allem die ästhetische und emotionale Anziehungskraft eines Produkts?</p>",
+      "options": [
+        "Findable.",
+        "Desirable.",
+        "Credible.",
+        "Accessible."
+      ],
+      "correct": [
+        1
+      ],
+      "solution": "Desirable.",
+      "explanation": "Desirable bezieht sich auf eine ansprechende, einladende Wirkung. Die Präsentation nennt dafür Klarheit und ein störungsarmes Erlebnis.",
+      "sourceIds": [
+        "ppt-ux1"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-ux1",
+          "section": "desirable"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P04-005",
+      "type": "single-choice",
+      "topic": "php",
+      "difficulty": "anspruchsvoll",
+      "text": "<p>Welche Ausgabe erzeugt das Skript? Achte darauf, dass nach der Schleife weiterer Code steht.</p><pre><code>&lt;?php\nfor ($i = 1; $i &lt;= 4; $i++) {\n    if ($i === 3) {\n        break;\n    }\n    echo $i;\n}\necho \"|Ende\";</code></pre>",
+      "options": [
+        "1234|Ende",
+        "|Ende",
+        "12",
+        "12|Ende"
+      ],
+      "correct": [
+        3
+      ],
+      "solution": "12|Ende",
+      "explanation": "Bei i=3 wird break ausgeführt, bevor 3 ausgegeben wird. Break beendet die Schleife, aber nicht das ganze Skript; die Ausgabe nach der Schleife erfolgt weiterhin.",
+      "sourceIds": [
+        "xml-vorlage"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "xml-vorlage",
+          "section": "Frage 57109071"
+        },
+        {
+          "sourceId": "xml-vorlage",
+          "section": "Frage 57109230"
+        },
+        {
+          "sourceId": "xml-vorlage",
+          "section": "Frage 57109052"
+        }
+      ],
+      "verificationSourceIds": [
+        "check-php"
+      ],
+      "construction": "Neu formuliertes Codebeispiel zur Anwendung der angegebenen Quellthemen.",
+      "codeLanguage": "php",
+      "sourceNote": "Die break-Frage ist ausdrücklich auf den Schleifenabbruch bei anschließender Fortsetzung des Skripts eingegrenzt."
+    },
+    {
+      "id": "PHP-LZK40-P04-006",
+      "type": "single-choice",
+      "topic": "css",
+      "difficulty": "leicht",
+      "text": "<p>Welche Eigenschaft verändert den linken Außenabstand eines Elements?</p>",
+      "options": [
+        "<code>padding-left</code>.",
+        "<code>font-size</code>.",
+        "<code>line-height</code>.",
+        "<code>margin-left</code>."
+      ],
+      "correct": [
+        3
+      ],
+      "solution": "<code>margin-left</code>.",
+      "explanation": "Margin-left verändert den linken Außenabstand. Padding-left verändert dagegen den linken Innenabstand zwischen Inhalt und Rahmen.",
+      "sourceIds": [
+        "xml-vorlage"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "xml-vorlage",
+          "section": "Frage 57109056"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P04-007",
+      "type": "single-choice",
+      "topic": "html",
+      "difficulty": "leicht",
+      "text": "<p>Du möchtest drei Arbeitsschritte in einer festgelegten Reihenfolge als nummerierte Liste darstellen. Welche Grundstruktur passt? Es gibt keine zusätzlichen CSS-Regeln.</p>",
+      "options": [
+        "<code>&lt;ol&gt;&lt;li&gt;Start&lt;/li&gt;&lt;li&gt;Prüfen&lt;/li&gt;&lt;li&gt;Abgeben&lt;/li&gt;&lt;/ol&gt;</code>",
+        "<code>&lt;ul&gt;&lt;li&gt;Start&lt;/li&gt;&lt;li&gt;Prüfen&lt;/li&gt;&lt;li&gt;Abgeben&lt;/li&gt;&lt;/ul&gt;</code>",
+        "<code>&lt;table&gt;&lt;li&gt;Start&lt;/li&gt;&lt;li&gt;Prüfen&lt;/li&gt;&lt;li&gt;Abgeben&lt;/li&gt;&lt;/table&gt;</code>",
+        "<code>&lt;li&gt;&lt;ol&gt;Start&lt;/ol&gt;&lt;ol&gt;Prüfen&lt;/ol&gt;&lt;ol&gt;Abgeben&lt;/ol&gt;&lt;/li&gt;</code>"
+      ],
+      "correct": [
+        0
+      ],
+      "solution": "<code>&lt;ol&gt;&lt;li&gt;Start&lt;/li&gt;&lt;li&gt;Prüfen&lt;/li&gt;&lt;li&gt;Abgeben&lt;/li&gt;&lt;/ol&gt;</code>",
+      "explanation": "Ol ist eine geordnete Liste. Ihre einzelnen Einträge stehen in li-Elementen; td wäre eine Tabellenzelle.",
+      "sourceIds": [
+        "ppt-html1"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-html1",
+          "section": "Inhaltliche Elemente: Listen"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P04-008",
+      "type": "single-choice",
+      "topic": "php",
+      "difficulty": "mittel",
+      "text": "<p>Welche Bedingung prüft bei einem normalen PHP-Webaufruf ausdrücklich, ob die Anfrage mit der HTTP-Methode POST eingegangen ist?</p>",
+      "options": [
+        "<code>$_SERVER[\"REQUEST_METHOD\"] === \"POST\"</code>",
+        "<code>isset($_POST[\"submit\"])</code>",
+        "<code>$_SERVER[\"REQUEST_METHOD\"] === \"GET\"</code>",
+        "<code>$_GET[\"method\"] === \"POST\"</code>"
+      ],
+      "correct": [
+        0
+      ],
+      "solution": "<code>$_SERVER[\"REQUEST_METHOD\"] === \"POST\"</code>",
+      "explanation": "REQUEST_METHOD enthält die verwendete HTTP-Methode. Ein Feld namens submit muss dagegen nicht vorhanden sein; seine Existenz ist kein allgemeiner Ersatz für die Methodenprüfung.",
+      "sourceIds": [
+        "xml-vorlage"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "xml-vorlage",
+          "section": "Frage 57109052"
+        }
+      ],
+      "verificationSourceIds": [
+        "check-php"
+      ],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P04-009",
+      "type": "multiple-choice",
+      "topic": "qs",
+      "difficulty": "anspruchsvoll",
+      "text": "<p>Welche zwei Beschreibungen von Maßnahmen zur Qualitätssicherung stimmen?</p><p><strong>Mehrfachwahl: Wähle genau zwei Antworten.</strong></p>",
+      "options": [
+        "Qualitätssicherung beginnt erst, wenn die gesamte Anwendung an den Kunden übergeben wurde.",
+        "Beim Pair Programming arbeiten zwei Personen gemeinsam am Code und tauschen ihre Rollen regelmäßig.",
+        "Ein automatischer Syntaxcheck ersetzt jeden Test der fachlichen Anforderungen.",
+        "Bei einem Code Review prüfen andere Personen den Quellcode und können auch Verbesserungen der Verständlichkeit vorschlagen."
+      ],
+      "correct": [
+        1,
+        3
+      ],
+      "solution": "Beim Pair Programming arbeiten zwei Personen gemeinsam am Code und tauschen ihre Rollen regelmäßig. · Bei einem Code Review prüfen andere Personen den Quellcode und können auch Verbesserungen der Verständlichkeit vorschlagen.",
+      "explanation": "Code Reviews und Pair Programming unterstützen sowohl Qualität als auch Wissenstransfer. Qualitätssicherung umfasst mehr als Syntaxprüfungen und beginnt bereits während der Planung und Entwicklung.",
+      "sourceIds": [
+        "ppt-qs"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-qs",
+          "section": "Code Review; Pair Programming; Fazit zur Qualitätssicherung"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P04-010",
+      "type": "single-choice",
+      "topic": "css",
+      "difficulty": "mittel",
+      "text": "<p>Wofür steht der Alpha-Wert 0.25 in dieser Farbe?</p><pre><code>background-color: rgba(20, 40, 60, 0.25);</code></pre>",
+      "options": [
+        "Für 25 Prozent Transparenz und damit 75 Prozent Deckkraft.",
+        "Für einen Rotanteil von genau 25 Prozent.",
+        "Für 25 Prozent Deckkraft der angegebenen Farbe.",
+        "Für eine Verringerung der Elementbreite auf 25 Prozent."
+      ],
+      "correct": [
+        2
+      ],
+      "solution": "Für 25 Prozent Deckkraft der angegebenen Farbe.",
+      "explanation": "Der Alpha-Wert steuert die Deckkraft der Farbe: 0 ist vollständig transparent, 1 vollständig deckend. Er ist hier unabhängig von den drei RGB-Kanälen.",
+      "sourceIds": [
+        "ppt-css2"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-css2",
+          "section": "Farben und Hintergründe: Transparenz"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formuliertes Codebeispiel zur Anwendung der angegebenen Quellthemen.",
+      "codeLanguage": "css"
+    },
+    {
+      "id": "PHP-LZK40-P04-011",
+      "type": "single-choice",
+      "topic": "ux",
+      "difficulty": "leicht",
+      "text": "<p>In einem Formular stehen Straße, Postleitzahl und Ort eng beieinander; zur Zahlungsart bleibt ein größerer Abstand. Welches Gestaltungsprinzip wird eingesetzt?</p>",
+      "options": [
+        "Ausrichtung an einer gemeinsamen Außenkante.",
+        "Wiederholung derselben Schriftart.",
+        "Nähe zur Gruppierung zusammengehöriger Inhalte.",
+        "Kontrast durch unterschiedliche Textfarben."
+      ],
+      "correct": [
+        2
+      ],
+      "solution": "Nähe zur Gruppierung zusammengehöriger Inhalte.",
+      "explanation": "Räumliche Nähe lässt zusammengehörige Elemente als Gruppe erscheinen. Der größere Abstand trennt die Adressdaten optisch von einem anderen Themenbereich.",
+      "sourceIds": [
+        "xml-vorlage"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "xml-vorlage",
+          "section": "Frage 57109076"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P04-012",
+      "type": "single-choice",
+      "topic": "ui",
+      "difficulty": "leicht",
+      "text": "<p>Welches Beispiel ist ein Hardware User Interface im Sinne der Präsentation?</p>",
+      "options": [
+        "Ein physischer Drehknopf zur Lautstärkeregelung.",
+        "Eine Tabellenbeziehung in einer Datenbank.",
+        "Eine Methode, die nur innerhalb eines Programms aufgerufen wird.",
+        "Ein JSON-Datenaustausch zwischen zwei Programmen."
+      ],
+      "correct": [
+        0
+      ],
+      "solution": "Ein physischer Drehknopf zur Lautstärkeregelung.",
+      "explanation": "Hardware User Interfaces sind physische Bedienelemente wie Schalter, Knöpfe und Hebel. Der Drehknopf verbindet eine Bedienhandlung unmittelbar mit dem System.",
+      "sourceIds": [
+        "ppt-ui"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-ui",
+          "section": "Benutzerschnittstellen unterscheiden: Hardware user interface"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P04-013",
+      "type": "multiple-choice",
+      "topic": "html",
+      "difficulty": "mittel",
+      "text": "<p>Welche zwei Aussagen zum img-Element stimmen?</p><p><strong>Mehrfachwahl: Wähle genau zwei Antworten.</strong></p>",
+      "options": [
+        "Das alt-Attribut kann eine passende textliche Alternative zum Bild bereitstellen.",
+        "Das src-Attribut verweist auf die einzubindende Bildressource.",
+        "Der Bildinhalt muss zwingend als Text zwischen <code>&lt;img&gt;</code> und <code>&lt;/img&gt;</code> stehen.",
+        "Das alt-Attribut muss immer exakt mit dem Dateinamen übereinstimmen."
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "solution": "Das alt-Attribut kann eine passende textliche Alternative zum Bild bereitstellen. · Das src-Attribut verweist auf die einzubindende Bildressource.",
+      "explanation": "Img ist ein leeres Element mit einem Verweis auf die Bildquelle. Alt beschreibt eine textliche Alternative und ist nicht auf den Dateinamen festgelegt.",
+      "sourceIds": [
+        "ppt-html1"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-html1",
+          "section": "Inhaltliche Elemente: Bilder"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P04-014",
+      "type": "multiple-choice",
+      "topic": "css",
+      "difficulty": "anspruchsvoll",
+      "text": "<p>Die Präsentation behandelt Farbassoziationen. Welche zwei Aussagen berücksichtigen ihre dort genannten Grenzen?</p><p><strong>Mehrfachwahl: Wähle genau zwei Antworten.</strong></p>",
+      "options": [
+        "Die Wahrnehmung einzelner Personen kann von den genannten Assoziationen abweichen.",
+        "Ein blau gestaltetes Formular ist allein durch seine Farbe technisch vor Datenmissbrauch geschützt.",
+        "Jede Farbe löst bei jedem Menschen zwangsläufig dasselbe Gefühl aus.",
+        "Die dargestellten Farbassoziationen sind kulturell geprägt."
+      ],
+      "correct": [
+        0,
+        3
+      ],
+      "solution": "Die Wahrnehmung einzelner Personen kann von den genannten Assoziationen abweichen. · Die dargestellten Farbassoziationen sind kulturell geprägt.",
+      "explanation": "Die Präsentation weist ausdrücklich auf kulturelle Prägung und individuelle Unterschiede hin. Eine Farbassoziation ist weder ein universelles Naturgesetz noch eine technische Schutzmaßnahme.",
+      "sourceIds": [
+        "ppt-css2"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-css2",
+          "section": "Kleine Farbpsychologie: Fazit"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P04-015",
+      "type": "single-choice",
+      "topic": "ux",
+      "difficulty": "mittel",
+      "text": "<p>Neue Anwender nutzen ein Menü; erfahrene Anwender können dieselbe Aktion zusätzlich mit einem Tastenkürzel auslösen. Welche Strategie wird umgesetzt?</p>",
+      "options": [
+        "Das Abschaffen des regulären Bedienwegs.",
+        "Ein Widerspruch, weil eine Funktion nur einen Bedienweg haben darf.",
+        "Die zwingende Bevorzugung erfahrener Anwender ohne Alternative.",
+        "Flexibilität durch einen zusätzlichen Beschleuniger."
+      ],
+      "correct": [
+        3
+      ],
+      "solution": "Flexibilität durch einen zusätzlichen Beschleuniger.",
+      "explanation": "Tastenkürzel sind Beschleuniger für häufig wiederholte Aufgaben. Der sichtbare Menüweg bleibt zugleich für neue Anwender verfügbar.",
+      "sourceIds": [
+        "ppt-ux2"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-ux2",
+          "section": "Flexibilität: Erfahrungsstand berücksichtigen; Beschleuniger"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P04-016",
+      "type": "single-choice",
+      "topic": "css",
+      "difficulty": "leicht",
+      "text": "<p>Welche CSS-Regel setzt die Hintergrundfarbe aller p-Elemente auf Rot?</p>",
+      "options": [
+        "<code>p { background color: red; }</code>",
+        "<code>p { background-color: red; }</code>",
+        "<code>p ( background-color: red; )</code>",
+        "<code>p { background-color = red; }</code>"
+      ],
+      "correct": [
+        1
+      ],
+      "solution": "<code>p { background-color: red; }</code>",
+      "explanation": "Der Deklarationsblock steht in geschweiften Klammern. Eigenschaft und Wert werden durch einen Doppelpunkt getrennt; der Eigenschaftsname background-color enthält einen Bindestrich.",
+      "sourceIds": [
+        "ppt-css1"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-css1",
+          "section": "Grundlagen und Syntax: CSS-Regel und Deklaration"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P04-017",
+      "type": "single-choice",
+      "topic": "ui",
+      "difficulty": "mittel",
+      "text": "<p>Welche Beschreibung passt zur in der Präsentation dargestellten Virtual-Reality-Benutzerschnittstelle?</p>",
+      "options": [
+        "Es handelt sich zwingend um eine reine Textkonsole ohne grafische Darstellung.",
+        "Die reale Umgebung wird durch eine virtuelle Darstellung ersetzt; Eingaben können etwa über Bewegung oder Gesten erfolgen.",
+        "Es werden ausschließlich ausgedruckte Papierformulare eingelesen.",
+        "Die Schnittstelle kann grundsätzlich keine Nutzereingaben entgegennehmen."
+      ],
+      "correct": [
+        1
+      ],
+      "solution": "Die reale Umgebung wird durch eine virtuelle Darstellung ersetzt; Eingaben können etwa über Bewegung oder Gesten erfolgen.",
+      "explanation": "Die Präsentation beschreibt das Eintauchen in eine virtuelle Darstellung, bei der die echte Welt ausgeblendet wird. Als mögliche Eingaben nennt sie unter anderem Gesten und Bewegung.",
+      "sourceIds": [
+        "ppt-ui"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-ui",
+          "section": "Benutzerschnittstellen unterscheiden: Virtual reality user interface"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P04-018",
+      "type": "single-choice",
+      "topic": "php",
+      "difficulty": "leicht",
+      "text": "<p>Welche Schreibweise eröffnet einen PHP-Codebereich mit dem vollständigen PHP-Öffnungstag?</p>",
+      "options": [
+        "<code>&lt;php&gt;</code>",
+        "<code>&lt;script-php&gt;</code>",
+        "<code>&lt;!PHP&gt;</code>",
+        "<code>&lt;?php</code>"
+      ],
+      "correct": [
+        3
+      ],
+      "solution": "<code>&lt;?php</code>",
+      "explanation": "Der vollständige Öffnungstag ist &lt;?php. Er eröffnet einen PHP-Codebereich; nicht jede einzelne Anweisung benötigt einen eigenen Öffnungstag.",
+      "sourceIds": [
+        "xml-vorlage"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "xml-vorlage",
+          "section": "Frage 57109067"
+        },
+        {
+          "sourceId": "xml-vorlage",
+          "section": "Frage 57109217"
+        }
+      ],
+      "verificationSourceIds": [
+        "check-php"
+      ],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations.",
+      "sourceNote": "Die pauschale Frage nach dem Beginn aller PHP-Anweisungen wurde auf den Beginn eines PHP-Codebereichs präzisiert."
+    },
+    {
+      "id": "PHP-LZK40-P04-019",
+      "type": "multiple-choice",
+      "topic": "ux",
+      "difficulty": "anspruchsvoll",
+      "text": "<p>Welche zwei Hilfsangebote passen zu den UX-Empfehlungen der Präsentation?</p><p><strong>Mehrfachwahl: Wähle genau zwei Antworten.</strong></p>",
+      "options": [
+        "Jeden Nutzer vor jeder Eingabe durch dieselbe lange Einführung führen.",
+        "Bei Problemen ausschließlich die vollständige interne Programmliste ohne Erläuterung anzeigen.",
+        "Eine kurze, passende Erklärung direkt am betroffenen Eingabefeld anbieten.",
+        "Einen ausführlichen Assistenten optional machen, statt erfahrene Anwender bei jeder Nutzung dazu zu zwingen."
+      ],
+      "correct": [
+        2,
+        3
+      ],
+      "solution": "Eine kurze, passende Erklärung direkt am betroffenen Eingabefeld anbieten. · Einen ausführlichen Assistenten optional machen, statt erfahrene Anwender bei jeder Nutzung dazu zu zwingen.",
+      "explanation": "Hilfe soll im passenden Kontext verfügbar sein und den Arbeitsfluss nicht unnötig unterbrechen. Umfangreichere Hilfen sollten nach Bedarf genutzt werden können.",
+      "sourceIds": [
+        "ppt-ux2"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-ux2",
+          "section": "Merkhilfen: Hilfe an Ort und Stelle; Hilfe: Unaufdringlichkeit praktizieren"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P04-020",
+      "type": "single-choice",
+      "topic": "css",
+      "difficulty": "anspruchsvoll",
+      "text": "<p>Welcher Absatz wird vom Selektor <code>h2 + p</code> erfasst?</p><pre><code>&lt;section&gt;\n  &lt;h2&gt;Hinweise&lt;/h2&gt;\n  &lt;p&gt;A&lt;/p&gt;\n  &lt;div&gt;Trenner&lt;/div&gt;\n  &lt;p&gt;B&lt;/p&gt;\n&lt;/section&gt;</code></pre>",
+      "options": [
+        "Nur A.",
+        "Nur B.",
+        "A und B.",
+        "Keiner der beiden Absätze."
+      ],
+      "correct": [
+        0
+      ],
+      "solution": "Nur A.",
+      "explanation": "Das Plus wählt das unmittelbar folgende Geschwisterelement aus, wenn es zum rechten Selektor passt. Nur Absatz A steht direkt nach h2; B folgt nach einem div.",
+      "sourceIds": [
+        "ppt-css1"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-css1",
+          "section": "Selektoren: Benachbarte Geschwister; Kombinatoren"
+        }
+      ],
+      "verificationSourceIds": [
+        "check-selectors"
+      ],
+      "construction": "Neu formuliertes Codebeispiel zur Anwendung der angegebenen Quellthemen.",
+      "codeLanguage": "html"
+    },
+    {
+      "id": "PHP-LZK40-P04-021",
+      "type": "single-choice",
+      "topic": "qs",
+      "difficulty": "mittel",
+      "text": "<p>Ein Test wurde ausgeführt. Nun werden für jeden Testfall Soll- und Ist-Ergebnis verglichen und im Testprotokoll festgehalten. Welche Phase des dargestellten Testprozesses ist das?</p>",
+      "options": [
+        "Testentwurf.",
+        "Testplanung.",
+        "Testauswertung.",
+        "Testvorbereitung."
+      ],
+      "correct": [
+        2
+      ],
+      "solution": "Testauswertung.",
+      "explanation": "Die Testauswertung umfasst den Vergleich der erwarteten und tatsächlichen Ergebnisse sowie ihre Dokumentation. Die Vorbereitung stellt zuvor zum Beispiel Umgebung und Testdaten bereit.",
+      "sourceIds": [
+        "ppt-qs"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-qs",
+          "section": "Softwarequalität sicherstellen: Der Testprozess"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P04-022",
+      "type": "single-choice",
+      "topic": "php",
+      "difficulty": "mittel",
+      "text": "<p>Welche Zahl wird außerhalb der Funktion ausgegeben?</p><pre><code>&lt;?php\nfunction erhoehe($wert) {\n    $wert = $wert + 3;\n}\n$zahl = 8;\nerhoehe($zahl);\necho $zahl;</code></pre>",
+      "options": [
+        "0",
+        "11",
+        "8",
+        "3"
+      ],
+      "correct": [
+        2
+      ],
+      "solution": "8",
+      "explanation": "Der Parameter erhält hier den Wert von $zahl, aber keine Referenz darauf. Die Änderung an $wert innerhalb der Funktion ändert daher die äußere Variable $zahl nicht.",
+      "sourceIds": [
+        "xml-vorlage"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "xml-vorlage",
+          "section": "Frage 57109235"
+        },
+        {
+          "sourceId": "xml-vorlage",
+          "section": "Frage 57109237"
+        }
+      ],
+      "verificationSourceIds": [
+        "check-php"
+      ],
+      "construction": "Neu formuliertes Codebeispiel zur Anwendung der angegebenen Quellthemen.",
+      "codeLanguage": "php"
+    },
+    {
+      "id": "PHP-LZK40-P04-023",
+      "type": "single-choice",
+      "topic": "ux",
+      "difficulty": "mittel",
+      "text": "<p>Eine Anwendung zeigt verständlich benannte Menüeinträge, statt den Nutzer auswendig gelernte Befehle eingeben zu lassen. Welches Prinzip wird damit genutzt?</p>",
+      "options": [
+        "Wiedererkennung statt Erinnerung.",
+        "Fehlerbehandlung nach einer Störung.",
+        "Sichtbarkeit des Systemzustands.",
+        "Benutzerfreiheit durch Abbrechen."
+      ],
+      "correct": [
+        0
+      ],
+      "solution": "Wiedererkennung statt Erinnerung.",
+      "explanation": "Sichtbare Optionen können wiedererkannt werden. Die Nutzer müssen die Bezeichnungen und möglichen Aktionen dadurch nicht vollständig aus dem Gedächtnis abrufen.",
+      "sourceIds": [
+        "ppt-ux2"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-ux2",
+          "section": "Merkhilfen: Wiedererkennung statt Erinnerung; Einfache Erkennung"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P04-024",
+      "type": "single-choice",
+      "topic": "html",
+      "difficulty": "leicht",
+      "text": "<p>Welches semantische Element eignet sich für eine Fußzeile mit Angaben zum Autor und Copyright?</p>",
+      "options": [
+        "<code>&lt;header&gt;</code>.",
+        "<code>&lt;nav&gt;</code>.",
+        "<code>&lt;article&gt;</code>.",
+        "<code>&lt;footer&gt;</code>."
+      ],
+      "correct": [
+        3
+      ],
+      "solution": "<code>&lt;footer&gt;</code>.",
+      "explanation": "Footer kennzeichnet abschließende Informationen zu einem Dokument oder Abschnitt. Die Präsentation nennt unter anderem Autor- und Copyright-Angaben.",
+      "sourceIds": [
+        "ppt-html2"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-html2",
+          "section": "Strukturelemente: Fußzeile"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P04-025",
+      "type": "single-choice",
+      "topic": "qs",
+      "difficulty": "leicht",
+      "text": "<p>Ein Team untersucht Antwortzeiten und Speicherverbrauch einer Anwendung. Welches Qualitätsmerkmal bewertet es vor allem?</p>",
+      "options": [
+        "Kompatibilität.",
+        "Performanz.",
+        "Wartbarkeit.",
+        "Portierbarkeit."
+      ],
+      "correct": [
+        1
+      ],
+      "solution": "Performanz.",
+      "explanation": "Performanz beschreibt den Umgang mit Zeit und Ressourcen. Die Präsentation weist darauf hin, dass sich Optimierungsziele dabei auch gegenseitig beeinflussen können.",
+      "sourceIds": [
+        "ppt-qs"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-qs",
+          "section": "Performanz"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    }
+  ]
+}

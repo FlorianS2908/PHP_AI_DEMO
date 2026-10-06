@@ -1,0 +1,1200 @@
+{
+  "id": "PHP-php-45-60",
+  "name": "PHP · Test 2 · PHP-Grundlagen & Kontrollstrukturen",
+  "course": "PHP",
+  "version": "1.0",
+  "sourceFileName": "PHP_Test2_PHP_Grundlagen_45Fragen_60Min.json",
+  "description": "45 Fragen mit Schwerpunkt Code lesen: Variablen, Operatoren, Arrays, if/elseif/else, switch, for, while, do-while, foreach, break, continue, GET/POST und einfache Funktionen. Ohne Sessions, OOP, Passwortvalidierung und Datenbanken.",
+  "durationMinutes": 60,
+  "questionCount": 45,
+  "shuffleOptions": true,
+  "shuffleQuestions": false,
+  "topicLabels": {
+    "grundlagen": "PHP-Basics und Operatoren",
+    "bedingungen": "Bedingungen und Verzweigungen",
+    "switch": "switch, case und default",
+    "schleifen": "Schleifen und Arrays",
+    "steuerung": "break, continue und Fehlersuche",
+    "formulare": "GET, POST und Formularauswertung",
+    "funktionen": "Funktionen und return"
+  },
+  "difficultyLabels": {
+    "leicht": "Einstieg",
+    "mittel": "Anwendung"
+  },
+  "instructions": "45 Fragen · 60 Minuten. Lies den Code am Schreibtisch; führe ihn während des Tests nicht aus. Die Fragenfolge bleibt erhalten, Antwortoptionen werden beim Teststart neu gemischt. Einzelwahl: genau eine Antwort. Mehrfachwahl: die angegebene Anzahl. Jede vollständig richtige Frage zählt einen Punkt; keine Teilpunkte oder Minuspunkte. Lösungen und Begründungen erscheinen erst nach Testende. Jeder Codeausschnitt wird unabhängig betrachtet. Echo-Ausgaben werden ohne zusätzliche Zeichen aneinandergereiht. Request-Werte sind in der jeweiligen Frage fest vorgegeben. Beispiele zeigen bewusst nur den abgefragten Lernschritt, keine vollständige Formularabsicherung.",
+  "assessment": {
+    "pointsPerQuestion": 1,
+    "maximumPoints": 45,
+    "partialCredit": false,
+    "negativePoints": false,
+    "solutionsAfterFinish": true
+  },
+  "sources": [
+    {
+      "id": "php",
+      "file": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf",
+      "scope": "Vor allem Seiten 8–21: PHP-Grundlagen, Operatoren, Schleifen, Bedingungen, Funktionen und Formulardaten; Datenbank-/OOP-Teil nicht geprüft"
+    },
+    {
+      "id": "html2",
+      "file": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf",
+      "scope": "Formulare und Beschriftungen"
+    },
+    {
+      "id": "php-control",
+      "url": "https://www.php.net/manual/en/language.control-structures.php"
+    },
+    {
+      "id": "php-switch",
+      "url": "https://www.php.net/manual/en/control-structures.switch.php"
+    },
+    {
+      "id": "php-foreach",
+      "url": "https://www.php.net/manual/en/control-structures.foreach.php"
+    },
+    {
+      "id": "php-break",
+      "url": "https://www.php.net/manual/en/control-structures.break.php"
+    },
+    {
+      "id": "php-continue",
+      "url": "https://www.php.net/manual/en/control-structures.continue.php"
+    },
+    {
+      "id": "php-get",
+      "url": "https://www.php.net/manual/en/reserved.variables.get.php"
+    },
+    {
+      "id": "php-post",
+      "url": "https://www.php.net/manual/en/reserved.variables.post.php"
+    },
+    {
+      "id": "html-standard",
+      "url": "https://html.spec.whatwg.org/multipage/forms.html"
+    }
+  ],
+  "questions": [
+    {
+      "id": "PHP-PHP-001",
+      "type": "single-choice",
+      "topic": "grundlagen",
+      "difficulty": "leicht",
+      "text": "Wo wird PHP-Code bei einer üblichen PHP-Webanwendung ausgeführt?",
+      "options": [
+        "Ausschließlich im Browser, sobald er eine HTML-Datei öffnet.",
+        "Auf dem Webserver durch PHP; der Browser erhält die erzeugte Antwort.",
+        "Im CSS-Stylesheet des Browsers.",
+        "Erst beim Drucken der Webseite."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Der Server verarbeitet PHP und liefert das Ergebnis an den Browser, beispielsweise HTML. Für die Ausführung einer PHP-Webseite reicht ein Doppelklick auf eine lokale Datei normalerweise nicht aus.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "php:8–14"
+      ],
+      "solution": "Auf dem Webserver durch PHP; der Browser erhält die erzeugte Antwort."
+    },
+    {
+      "id": "PHP-PHP-002",
+      "type": "single-choice",
+      "topic": "grundlagen",
+      "difficulty": "leicht",
+      "text": "Welche Variante gibt innerhalb einer PHP-Datei korrekt den Text Hallo aus?",
+      "options": [
+        "<code>&lt;?php echo \"Hallo\"; ?&gt;</code>",
+        "<code>&lt;?php printText(\"Hallo\"); ?&gt;</code>",
+        "<code>&lt;php&gt;echo \"Hallo\";&lt;/php&gt;</code>",
+        "<code>&lt;?php echo Hallo ?&gt;</code>"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Ein PHP-Block beginnt mit &lt;?php. echo gibt den Text in Anführungszeichen aus. Das Semikolon beendet hier die Anweisung; eine Funktion printText ist in diesem Beispiel nicht definiert.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "php:13"
+      ],
+      "solution": "<?php echo \"Hallo\"; ?>"
+    },
+    {
+      "id": "PHP-PHP-003",
+      "type": "single-choice",
+      "topic": "grundlagen",
+      "difficulty": "leicht",
+      "text": "Was wird ausgegeben?<pre><code>&lt;?php\n$preis = 2;\n$Preis = 3;\necho $preis;\necho $Preis;</code></pre>",
+      "options": [
+        "<code>23</code>",
+        "<code>32</code>",
+        "<code>Ein Fehler, weil die Namen identisch wären.</code>",
+        "<code>22</code>"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Variablennamen in PHP unterscheiden Groß- und Kleinschreibung. $preis und $Preis sind zwei verschiedene Variablen. Die beiden echo-Anweisungen geben ohne Trennzeichen 2 und 3 aus.",
+      "skill": "Ausgabe bestimmen",
+      "code": "<?php\n$preis = 2;\n$Preis = 3;\necho $preis;\necho $Preis;",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:14"
+      ],
+      "solution": "23"
+    },
+    {
+      "id": "PHP-PHP-004",
+      "type": "single-choice",
+      "topic": "grundlagen",
+      "difficulty": "leicht",
+      "text": "Was wird ausgegeben?<pre><code>&lt;?php\n$a = 4;\n$b = 3;\necho $a + $b * 2;</code></pre>",
+      "options": [
+        "<code>20</code>",
+        "<code>14</code>",
+        "<code>9</code>",
+        "<code>10</code>"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Zuerst wird $b * 2 berechnet: 3 * 2 = 6. Danach wird $a addiert: 4 + 6 = 10. Multiplikation hat Vorrang vor Addition.",
+      "skill": "Ausgabe bestimmen",
+      "code": "<?php\n$a = 4;\n$b = 3;\necho $a + $b * 2;",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:14–15"
+      ],
+      "solution": "10"
+    },
+    {
+      "id": "PHP-PHP-005",
+      "type": "single-choice",
+      "topic": "grundlagen",
+      "difficulty": "leicht",
+      "text": "Was wird ausgegeben?<pre><code>&lt;?php\n$text = \"Hallo \";\n$text = $text . \"Kurs\";\n$text .= \"!\";\necho $text;</code></pre>",
+      "options": [
+        "<code>HalloKurs!</code>",
+        "<code>!Hallo Kurs</code>",
+        "<code>Hallo Kurs!</code>",
+        "<code>Hallo !Kurs</code>"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Der Punkt verbindet Zeichenketten. .= hängt den rechten Text an die vorhandene Variable an. Das Leerzeichen ist bereits in „Hallo “ enthalten.",
+      "skill": "Ausgabe bestimmen",
+      "code": "<?php\n$text = \"Hallo \";\n$text = $text . \"Kurs\";\n$text .= \"!\";\necho $text;",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:14–15"
+      ],
+      "solution": "Hallo Kurs!"
+    },
+    {
+      "id": "PHP-PHP-006",
+      "type": "single-choice",
+      "topic": "grundlagen",
+      "difficulty": "leicht",
+      "text": "Welcher Text wird ausgegeben?<pre><code>&lt;?php\n$themen = [\"HTML\", \"CSS\", \"PHP\"];\necho $themen[1];</code></pre>",
+      "options": [
+        "<code>Ein Fehler, weil es keinen Index 1 gibt.</code>",
+        "<code>HTML</code>",
+        "<code>CSS</code>",
+        "<code>PHP</code>"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Bei dieser automatisch nummerierten Liste beginnt die Zählung mit Index 0. Index 0 enthält HTML, Index 1 CSS und Index 2 PHP.",
+      "skill": "Array lesen",
+      "code": "<?php\n$themen = [\"HTML\", \"CSS\", \"PHP\"];\necho $themen[1];",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:17,19"
+      ],
+      "solution": "CSS"
+    },
+    {
+      "id": "PHP-PHP-007",
+      "type": "multiple-choice",
+      "topic": "grundlagen",
+      "difficulty": "mittel",
+      "text": "Welche zwei Aussagen über die Vergleiche treffen zu?<pre><code>&lt;?php\n$a = 5;\n$b = \"5\";</code></pre>",
+      "options": [
+        "<code>$a === $b</code> ergibt false.",
+        "<code>$a === $b</code> ergibt true.",
+        "<code>$a == $b</code> ergibt false.",
+        "<code>$a == $b</code> ergibt true."
+      ],
+      "correct": [
+        0,
+        3
+      ],
+      "explanation": "== vergleicht die Werte mit möglichen Typumwandlungen. === verlangt zusätzlich denselben Datentyp. Hier stehen eine Ganzzahl und eine Zeichenkette mit demselben numerischen Wert gegenüber.",
+      "skill": "Vergleiche verstehen",
+      "code": "<?php\n$a = 5;\n$b = \"5\";",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:16"
+      ],
+      "solution": "$a === $b ergibt false.; $a == $b ergibt true."
+    },
+    {
+      "id": "PHP-PHP-008",
+      "type": "single-choice",
+      "topic": "grundlagen",
+      "difficulty": "leicht",
+      "text": "Was wird ausgegeben?<pre><code>&lt;?php\n$zahl = 2;\n// $zahl = 12;\n$zahl++;\n$zahl += 2;\necho $zahl;</code></pre>",
+      "options": [
+        "<code>5</code>",
+        "<code>6</code>",
+        "<code>4</code>",
+        "<code>15</code>"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Die auskommentierte Zeile wird nicht ausgeführt. $zahl++ erhöht 2 auf 3. Anschließend erhöht += 2 den Wert auf 5.",
+      "skill": "Ausgabe bestimmen",
+      "code": "<?php\n$zahl = 2;\n// $zahl = 12;\n$zahl++;\n$zahl += 2;\necho $zahl;",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:13–15"
+      ],
+      "solution": "5"
+    },
+    {
+      "id": "PHP-PHP-009",
+      "type": "single-choice",
+      "topic": "bedingungen",
+      "difficulty": "leicht",
+      "text": "Welche Ausgabe entsteht?<pre><code>&lt;?php\n$temperatur = 18;\nif ($temperatur &gt; 20) {\n    echo \"Warm\";\n}\necho \"Start\";</code></pre>",
+      "options": [
+        "<code>Es gibt keine Ausgabe.</code>",
+        "<code>WarmStart</code>",
+        "<code>Warm</code>",
+        "<code>Start</code>"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Die Bedingung 18 &gt; 20 ist falsch. Deshalb entfällt der if-Block. Die nachfolgende echo-Anweisung wird unabhängig davon ausgeführt.",
+      "skill": "Zweig verfolgen",
+      "code": "<?php\n$temperatur = 18;\nif ($temperatur > 20) {\n    echo \"Warm\";\n}\necho \"Start\";",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:18"
+      ],
+      "solution": "Start"
+    },
+    {
+      "id": "PHP-PHP-010",
+      "type": "single-choice",
+      "topic": "bedingungen",
+      "difficulty": "leicht",
+      "text": "Welche Ausgabe entsteht an dieser Grenze?<pre><code>&lt;?php\n$summe = 50;\nif ($summe &gt;= 50) {\n    echo \"Freier Versand\";\n} else {\n    echo \"Versandkosten\";\n}</code></pre>",
+      "options": [
+        "<code>Es gibt keine Ausgabe.</code>",
+        "<code>Versandkosten</code>",
+        "<code>Beide Texte</code>",
+        "<code>Freier Versand</code>"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "&gt;= schließt den Grenzwert ein. Bei genau 50 ist die Bedingung wahr; der else-Zweig wird nicht ausgeführt.",
+      "skill": "Grenzwert prüfen",
+      "code": "<?php\n$summe = 50;\nif ($summe >= 50) {\n    echo \"Freier Versand\";\n} else {\n    echo \"Versandkosten\";\n}",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:15,18"
+      ],
+      "solution": "Freier Versand"
+    },
+    {
+      "id": "PHP-PHP-011",
+      "type": "single-choice",
+      "topic": "bedingungen",
+      "difficulty": "leicht",
+      "text": "Welche Ausgabe entsteht?<pre><code>&lt;?php\n$punkte = 75;\nif ($punkte &gt;= 90) {\n    echo \"Sehr gut\";\n} elseif ($punkte &gt;= 50) {\n    echo \"Bestanden\";\n} else {\n    echo \"Wiederholen\";\n}</code></pre>",
+      "options": [
+        "<code>Wiederholen</code>",
+        "<code>Bestanden</code>",
+        "<code>Sehr gutBestanden</code>",
+        "<code>Sehr gut</code>"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "75 erreicht die erste Grenze von 90 nicht. Die zweite Bedingung ist wahr. In einer if/elseif/else-Kette wird nur der erste zutreffende Zweig ausgeführt.",
+      "skill": "Zweig verfolgen",
+      "code": "<?php\n$punkte = 75;\nif ($punkte >= 90) {\n    echo \"Sehr gut\";\n} elseif ($punkte >= 50) {\n    echo \"Bestanden\";\n} else {\n    echo \"Wiederholen\";\n}",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:18"
+      ],
+      "solution": "Bestanden"
+    },
+    {
+      "id": "PHP-PHP-012",
+      "type": "single-choice",
+      "topic": "bedingungen",
+      "difficulty": "leicht",
+      "text": "Welche Ausgabe entsteht bei zwei getrennten if-Anweisungen?<pre><code>&lt;?php\n$zahl = 7;\nif ($zahl &gt; 0) {\n    echo \"A\";\n}\nif ($zahl &gt; 5) {\n    echo \"B\";\n}</code></pre>",
+      "options": [
+        "<code>A</code>",
+        "<code>Es gibt keine Ausgabe.</code>",
+        "<code>B</code>",
+        "<code>AB</code>"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Es handelt sich nicht um eine elseif-Kette. Beide Bedingungen werden nacheinander geprüft und sind bei 7 wahr. Deshalb werden A und anschließend B ausgegeben.",
+      "skill": "Zweige vergleichen",
+      "code": "<?php\n$zahl = 7;\nif ($zahl > 0) {\n    echo \"A\";\n}\nif ($zahl > 5) {\n    echo \"B\";\n}",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:18"
+      ],
+      "solution": "AB"
+    },
+    {
+      "id": "PHP-PHP-013",
+      "type": "single-choice",
+      "topic": "bedingungen",
+      "difficulty": "leicht",
+      "text": "Welche Ausgabe entsteht?<pre><code>&lt;?php\n$bezahlt = true;\n$bereit = false;\nif ($bezahlt &amp;&amp; $bereit) {\n    echo \"Abholen\";\n} else {\n    echo \"Keine Abholung\";\n}</code></pre>",
+      "options": [
+        "<code>Abholen</code>",
+        "<code>true</code>",
+        "<code>Keine Abholung</code>",
+        "<code>false</code>"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Bei &amp;&amp; müssen beide Bedingungen wahr sein. $bezahlt ist zwar true, $bereit aber false. Daher wird der else-Zweig ausgeführt.",
+      "skill": "Logik verstehen",
+      "code": "<?php\n$bezahlt = true;\n$bereit = false;\nif ($bezahlt && $bereit) {\n    echo \"Abholen\";\n} else {\n    echo \"Keine Abholung\";\n}",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:15,18"
+      ],
+      "solution": "Keine Abholung"
+    },
+    {
+      "id": "PHP-PHP-014",
+      "type": "single-choice",
+      "topic": "bedingungen",
+      "difficulty": "leicht",
+      "text": "Welche Ausgabe entsteht?<pre><code>&lt;?php\n$feiertag = false;\n$unterricht = false;\nif ($feiertag || !$unterricht) {\n    echo \"Pause\";\n} else {\n    echo \"Arbeit\";\n}</code></pre>",
+      "options": [
+        "<code>Pause</code>",
+        "<code>PauseArbeit</code>",
+        "<code>Es gibt keine Ausgabe.</code>",
+        "<code>Arbeit</code>"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Bei || genügt eine wahre Teilbedingung. !$unterricht negiert false zu true. Die Gesamtbedingung ist daher wahr, obwohl $feiertag false ist.",
+      "skill": "Logik verstehen",
+      "code": "<?php\n$feiertag = false;\n$unterricht = false;\nif ($feiertag || !$unterricht) {\n    echo \"Pause\";\n} else {\n    echo \"Arbeit\";\n}",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:15,18"
+      ],
+      "solution": "Pause"
+    },
+    {
+      "id": "PHP-PHP-015",
+      "type": "single-choice",
+      "topic": "bedingungen",
+      "difficulty": "leicht",
+      "text": "Welchen Wert gibt der ternäre Ausdruck aus?<pre><code>&lt;?php\n$plaetze = 0;\n$text = ($plaetze &gt; 0) ? \"frei\" : \"voll\";\necho $text;</code></pre>",
+      "options": [
+        "<code>0</code>",
+        "<code>true</code>",
+        "<code>voll</code>",
+        "<code>frei</code>"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Der ternäre Operator prüft zuerst die Bedingung vor dem Fragezeichen. Bei false wird der Wert nach dem Doppelpunkt verwendet. 0 &gt; 0 ist falsch, also lautet das Ergebnis „voll“.",
+      "skill": "Kurzschreibweise lesen",
+      "code": "<?php\n$plaetze = 0;\n$text = ($plaetze > 0) ? \"frei\" : \"voll\";\necho $text;",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:18"
+      ],
+      "solution": "voll"
+    },
+    {
+      "id": "PHP-PHP-016",
+      "type": "multiple-choice",
+      "topic": "bedingungen",
+      "difficulty": "mittel",
+      "text": "Welche zwei Aussagen stimmen nach der Ausführung?<pre><code>&lt;?php\n$punkte = 0;\nif (4 &gt; 2) {\n    if (2 &gt; 3) {\n        $punkte += 3;\n    } else {\n        $punkte += 1;\n    }\n}\necho $punkte;</code></pre>",
+      "options": [
+        "Die Variable $punkte enthält am Ende 3.",
+        "Die Variable $punkte enthält am Ende 1.",
+        "Die Ausgabe lautet 1.",
+        "Die Ausgabe lautet 3."
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "explanation": "Die äußere Bedingung ist wahr. Die innere Bedingung 2 &gt; 3 ist falsch, deshalb addiert ihr else-Zweig 1. Andere Änderungen finden nicht statt.",
+      "skill": "Verschachtelung lesen",
+      "code": "<?php\n$punkte = 0;\nif (4 > 2) {\n    if (2 > 3) {\n        $punkte += 3;\n    } else {\n        $punkte += 1;\n    }\n}\necho $punkte;",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:18"
+      ],
+      "solution": "Die Variable $punkte enthält am Ende 1.; Die Ausgabe lautet 1."
+    },
+    {
+      "id": "PHP-PHP-017",
+      "type": "single-choice",
+      "topic": "switch",
+      "difficulty": "leicht",
+      "text": "Welche Ausgabe entsteht?<pre><code>&lt;?php\n$wahl = 2;\nswitch ($wahl) {\n    case 1: echo \"HTML\"; break;\n    case 2: echo \"CSS\"; break;\n    default: echo \"Andere\";\n}</code></pre>",
+      "options": [
+        "<code>HTMLCSSAndere</code>",
+        "<code>Andere</code>",
+        "<code>HTML</code>",
+        "<code>CSS</code>"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Der Wert 2 passt zu case 2. Nach der Ausgabe beendet break die switch-Anweisung. default wird nicht ausgeführt.",
+      "skill": "case verfolgen",
+      "code": "<?php\n$wahl = 2;\nswitch ($wahl) {\n    case 1: echo \"HTML\"; break;\n    case 2: echo \"CSS\"; break;\n    default: echo \"Andere\";\n}",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:18"
+      ],
+      "solution": "CSS"
+    },
+    {
+      "id": "PHP-PHP-018",
+      "type": "single-choice",
+      "topic": "switch",
+      "difficulty": "leicht",
+      "text": "Welche Ausgabe entsteht, wenn kein case passt?<pre><code>&lt;?php\n$status = \"offen\";\nswitch ($status) {\n    case \"neu\": echo \"Neu\"; break;\n    case \"fertig\": echo \"Fertig\"; break;\n    default: echo \"Unbekannt\";\n}</code></pre>",
+      "options": [
+        "<code>Neu</code>",
+        "<code>Unbekannt</code>",
+        "<code>Fertig</code>",
+        "<code>Es gibt keine Ausgabe.</code>"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Für „offen“ ist kein passender case vorhanden. Daher beginnt die Verarbeitung im default-Zweig.",
+      "skill": "default verfolgen",
+      "code": "<?php\n$status = \"offen\";\nswitch ($status) {\n    case \"neu\": echo \"Neu\"; break;\n    case \"fertig\": echo \"Fertig\"; break;\n    default: echo \"Unbekannt\";\n}",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:18"
+      ],
+      "solution": "Unbekannt"
+    },
+    {
+      "id": "PHP-PHP-019",
+      "type": "single-choice",
+      "topic": "switch",
+      "difficulty": "mittel",
+      "text": "Welche Ausgabe entsteht durch das fehlende break nach case 1?<pre><code>&lt;?php\n$wahl = 1;\nswitch ($wahl) {\n    case 1: echo \"A\";\n    case 2: echo \"B\"; break;\n    default: echo \"C\";\n}</code></pre>",
+      "options": [
+        "<code>AB</code>",
+        "<code>B</code>",
+        "<code>A</code>",
+        "<code>ABC</code>"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Bei case 1 wird A ausgegeben. Ohne break läuft die Ausführung in den nächsten Zweig weiter und gibt B aus. Das dortige break verhindert C.",
+      "skill": "Fall-through erkennen",
+      "code": "<?php\n$wahl = 1;\nswitch ($wahl) {\n    case 1: echo \"A\";\n    case 2: echo \"B\"; break;\n    default: echo \"C\";\n}",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:18",
+        "php-switch"
+      ],
+      "solution": "AB"
+    },
+    {
+      "id": "PHP-PHP-020",
+      "type": "single-choice",
+      "topic": "switch",
+      "difficulty": "leicht",
+      "text": "Welche Ausgabe entsteht bei zusammengefassten Fällen?<pre><code>&lt;?php\n$tag = 7;\nswitch ($tag) {\n    case 6:\n    case 7:\n        echo \"Wochenende\";\n        break;\n    default:\n        echo \"Werktag\";\n}</code></pre>",
+      "options": [
+        "<code>WochenendeWerktag</code>",
+        "<code>Werktag</code>",
+        "<code>Wochenende</code>",
+        "<code>7</code>"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "case 6 und case 7 führen hier zum gleichen Anweisungsblock. Bei 7 wird „Wochenende“ ausgegeben und anschließend die switch-Anweisung verlassen.",
+      "skill": "Fälle zusammenfassen",
+      "code": "<?php\n$tag = 7;\nswitch ($tag) {\n    case 6:\n    case 7:\n        echo \"Wochenende\";\n        break;\n    default:\n        echo \"Werktag\";\n}",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:18",
+        "php-switch"
+      ],
+      "solution": "Wochenende"
+    },
+    {
+      "id": "PHP-PHP-021",
+      "type": "single-choice",
+      "topic": "schleifen",
+      "difficulty": "leicht",
+      "text": "Welche Ausgabe erzeugt die for-Schleife?<pre><code>&lt;?php\nfor ($i = 1; $i &lt;= 3; $i++) {\n    echo $i;\n}</code></pre>",
+      "options": [
+        "<code>123</code>",
+        "<code>0123</code>",
+        "<code>1234</code>",
+        "<code>234</code>"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Die Schleife startet bei 1, läuft solange $i &lt;= 3 gilt und erhöht $i nach jedem Durchlauf. Ausgegeben werden 1, 2 und 3 ohne Trennzeichen.",
+      "skill": "Schleife durchlaufen",
+      "code": "<?php\nfor ($i = 1; $i <= 3; $i++) {\n    echo $i;\n}",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:17"
+      ],
+      "solution": "123"
+    },
+    {
+      "id": "PHP-PHP-022",
+      "type": "single-choice",
+      "topic": "schleifen",
+      "difficulty": "leicht",
+      "text": "Welche Zahlenfolge entsteht?<pre><code>&lt;?php\nfor ($i = 2; $i &lt;= 6; $i += 2) {\n    echo $i;\n}</code></pre>",
+      "options": [
+        "<code>23456</code>",
+        "<code>248</code>",
+        "<code>246</code>",
+        "<code>0246</code>"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Der Startwert ist 2 und die Schrittweite beträgt 2. Die Körperdurchläufe verwenden 2, 4 und 6. Bei 8 ist die Bedingung falsch.",
+      "skill": "Schrittweite verfolgen",
+      "code": "<?php\nfor ($i = 2; $i <= 6; $i += 2) {\n    echo $i;\n}",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:15,17"
+      ],
+      "solution": "246"
+    },
+    {
+      "id": "PHP-PHP-023",
+      "type": "single-choice",
+      "topic": "schleifen",
+      "difficulty": "mittel",
+      "text": "Welcher Wert steht nach der Schleife in <code>$i</code> und wird ausgegeben?<pre><code>&lt;?php\nfor ($i = 0; $i &lt; 3; $i++) {\n    // Kein Ausgabebefehl im Schleifenkörper.\n}\necho $i;</code></pre>",
+      "options": [
+        "<code>0</code>",
+        "<code>2</code>",
+        "<code>4</code>",
+        "<code>3</code>"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Der Schleifenkörper läuft für 0, 1 und 2. Nach dem letzten Durchlauf wird $i auf 3 erhöht. Dann ist 3 &lt; 3 falsch; ausgegeben wird der Endwert 3.",
+      "skill": "Endwert bestimmen",
+      "code": "<?php\nfor ($i = 0; $i < 3; $i++) {\n    // Kein Ausgabebefehl im Schleifenkörper.\n}\necho $i;",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:17"
+      ],
+      "solution": "3"
+    },
+    {
+      "id": "PHP-PHP-024",
+      "type": "single-choice",
+      "topic": "schleifen",
+      "difficulty": "leicht",
+      "text": "Welche Ausgabe erzeugt die while-Schleife?<pre><code>&lt;?php\n$n = 3;\nwhile ($n &gt; 0) {\n    echo $n;\n    $n--;\n}</code></pre>",
+      "options": [
+        "<code>3210</code>",
+        "<code>321</code>",
+        "<code>32</code>",
+        "<code>123</code>"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Vor jedem Durchlauf wird $n &gt; 0 geprüft. Ausgegeben werden 3, 2 und 1. Nach der Verringerung auf 0 endet die Schleife.",
+      "skill": "Schleife durchlaufen",
+      "code": "<?php\n$n = 3;\nwhile ($n > 0) {\n    echo $n;\n    $n--;\n}",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:17"
+      ],
+      "solution": "321"
+    },
+    {
+      "id": "PHP-PHP-025",
+      "type": "single-choice",
+      "topic": "schleifen",
+      "difficulty": "leicht",
+      "text": "Welche Ausgabe entsteht, wenn die while-Bedingung bereits am Anfang falsch ist?<pre><code>&lt;?php\n$n = 5;\nwhile ($n &lt; 3) {\n    echo \"X\";\n    $n++;\n}\necho \"Ende\";</code></pre>",
+      "options": [
+        "<code>Ende</code>",
+        "<code>Es entsteht eine Endlosschleife.</code>",
+        "<code>XXEnde</code>",
+        "<code>XEnde</code>"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Eine while-Schleife prüft vor dem ersten Durchlauf. 5 &lt; 3 ist falsch; ihr Körper läuft kein einziges Mal. Die Anweisung nach der Schleife gibt Ende aus.",
+      "skill": "Einstiegsbedingung prüfen",
+      "code": "<?php\n$n = 5;\nwhile ($n < 3) {\n    echo \"X\";\n    $n++;\n}\necho \"Ende\";",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:17"
+      ],
+      "solution": "Ende"
+    },
+    {
+      "id": "PHP-PHP-026",
+      "type": "single-choice",
+      "topic": "schleifen",
+      "difficulty": "mittel",
+      "text": "Welche Summe wird ausgegeben?<pre><code>&lt;?php\n$i = 1;\n$summe = 0;\nwhile ($i &lt;= 3) {\n    $summe += $i;\n    $i++;\n}\necho $summe;</code></pre>",
+      "options": [
+        "<code>7</code>",
+        "<code>6</code>",
+        "<code>3</code>",
+        "<code>5</code>"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Die drei Durchläufe addieren 1, dann 2 und dann 3. Die Zwischensummen sind 1, 3 und 6. Anschließend wird nur die Gesamtsumme ausgegeben.",
+      "skill": "Variablenverlauf prüfen",
+      "code": "<?php\n$i = 1;\n$summe = 0;\nwhile ($i <= 3) {\n    $summe += $i;\n    $i++;\n}\necho $summe;",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:15,17"
+      ],
+      "solution": "6"
+    },
+    {
+      "id": "PHP-PHP-027",
+      "type": "single-choice",
+      "topic": "schleifen",
+      "difficulty": "leicht",
+      "text": "Welche Ausgabe entsteht hier im Unterschied zu einer while-Schleife?<pre><code>&lt;?php\n$n = 5;\ndo {\n    echo $n;\n    $n++;\n} while ($n &lt; 3);</code></pre>",
+      "options": [
+        "<code>56</code>",
+        "<code>Es gibt keine Ausgabe.</code>",
+        "<code>3</code>",
+        "<code>5</code>"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "do … while prüft erst nach dem Körper. Daher wird 5 einmal ausgegeben, danach $n auf 6 erhöht. Erst jetzt wird 6 &lt; 3 geprüft und die Schleife beendet.",
+      "skill": "Fußgesteuerte Schleife verstehen",
+      "code": "<?php\n$n = 5;\ndo {\n    echo $n;\n    $n++;\n} while ($n < 3);",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:17"
+      ],
+      "solution": "5"
+    },
+    {
+      "id": "PHP-PHP-028",
+      "type": "single-choice",
+      "topic": "schleifen",
+      "difficulty": "leicht",
+      "text": "Welche Ausgabe erzeugt diese do-while-Schleife?<pre><code>&lt;?php\n$n = 0;\ndo {\n    $n++;\n    echo $n;\n} while ($n &lt; 3);</code></pre>",
+      "options": [
+        "<code>1</code>",
+        "<code>123</code>",
+        "<code>012</code>",
+        "<code>1234</code>"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Jeder Durchlauf erhöht zuerst $n und gibt dann den neuen Wert aus. Nach 1 und 2 ist die Bedingung noch wahr. Nach der Ausgabe von 3 endet die Schleife.",
+      "skill": "Reihenfolge im Körper beachten",
+      "code": "<?php\n$n = 0;\ndo {\n    $n++;\n    echo $n;\n} while ($n < 3);",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:17"
+      ],
+      "solution": "123"
+    },
+    {
+      "id": "PHP-PHP-029",
+      "type": "single-choice",
+      "topic": "schleifen",
+      "difficulty": "leicht",
+      "text": "Welche Ausgabe entsteht durch foreach?<pre><code>&lt;?php\n$liste = [\"K\", \"L\", \"M\"];\nforeach ($liste as $wert) {\n    echo $wert;\n}</code></pre>",
+      "options": [
+        "<code>[K,L,M]</code>",
+        "<code>012</code>",
+        "<code>KLM</code>",
+        "<code>M</code>"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "foreach liefert nacheinander die Werte der Liste an $wert. Die drei echo-Aufrufe werden ohne zusätzliche Trennzeichen zusammengefügt.",
+      "skill": "Array durchlaufen",
+      "code": "<?php\n$liste = [\"K\", \"L\", \"M\"];\nforeach ($liste as $wert) {\n    echo $wert;\n}",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:17"
+      ],
+      "solution": "KLM"
+    },
+    {
+      "id": "PHP-PHP-030",
+      "type": "single-choice",
+      "topic": "schleifen",
+      "difficulty": "mittel",
+      "text": "Welche Ausgabe entsteht beim Durchlaufen von Schlüsseln und Werten?<pre><code>&lt;?php\n$bestand = [\"A\" =&gt; 2, \"B\" =&gt; 3];\nforeach ($bestand as $name =&gt; $menge) {\n    echo $name . $menge;\n}</code></pre>",
+      "options": [
+        "<code>23AB</code>",
+        "<code>A2B3</code>",
+        "<code>2A3B</code>",
+        "<code>AB23</code>"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Bei foreach ($bestand as $name =&gt; $menge) erhält $name den Schlüssel und $menge den Wert. Der Punkt verbindet beides. Die Einträge werden hier in ihrer Einfügereihenfolge durchlaufen.",
+      "skill": "Schlüssel und Wert unterscheiden",
+      "code": "<?php\n$bestand = [\"A\" => 2, \"B\" => 3];\nforeach ($bestand as $name => $menge) {\n    echo $name . $menge;\n}",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:17",
+        "php-foreach"
+      ],
+      "solution": "A2B3"
+    },
+    {
+      "id": "PHP-PHP-031",
+      "type": "single-choice",
+      "topic": "schleifen",
+      "difficulty": "leicht",
+      "text": "Welche Summe wird ausgegeben?<pre><code>&lt;?php\n$zahlen = [2, 3, 5];\n$summe = 0;\nforeach ($zahlen as $zahl) {\n    $summe += $zahl;\n}\necho $summe;</code></pre>",
+      "options": [
+        "<code>235</code>",
+        "<code>5</code>",
+        "<code>10</code>",
+        "<code>3</code>"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Die foreach-Schleife addiert alle drei Werte: 2 + 3 + 5 = 10. Es wird weder die Anzahl der Elemente noch eine Aneinanderreihung ihrer Texte ausgegeben.",
+      "skill": "Arraywerte aufsummieren",
+      "code": "<?php\n$zahlen = [2, 3, 5];\n$summe = 0;\nforeach ($zahlen as $zahl) {\n    $summe += $zahl;\n}\necho $summe;",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:15,17"
+      ],
+      "solution": "10"
+    },
+    {
+      "id": "PHP-PHP-032",
+      "type": "single-choice",
+      "topic": "schleifen",
+      "difficulty": "mittel",
+      "text": "Wie viele Sternchen werden insgesamt ausgegeben?<pre><code>&lt;?php\nfor ($zeile = 1; $zeile &lt;= 2; $zeile++) {\n    for ($spalte = 1; $spalte &lt;= 3; $spalte++) {\n        echo \"*\";\n    }\n}</code></pre>",
+      "options": [
+        "<code>5</code>",
+        "<code>3</code>",
+        "<code>6</code>",
+        "<code>2</code>"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Die äußere Schleife läuft zweimal. Für jeden dieser Durchläufe startet die innere Schleife neu bei 1 und läuft dreimal. Insgesamt entstehen 2 × 3 = 6 Sternchen.",
+      "skill": "Verschachtelte Schleifen zählen",
+      "code": "<?php\nfor ($zeile = 1; $zeile <= 2; $zeile++) {\n    for ($spalte = 1; $spalte <= 3; $spalte++) {\n        echo \"*\";\n    }\n}",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:17"
+      ],
+      "solution": "6"
+    },
+    {
+      "id": "PHP-PHP-033",
+      "type": "single-choice",
+      "topic": "steuerung",
+      "difficulty": "leicht",
+      "text": "Welche Ausgabe entsteht durch break?<pre><code>&lt;?php\nfor ($i = 1; $i &lt;= 5; $i++) {\n    if ($i === 3) {\n        break;\n    }\n    echo $i;\n}</code></pre>",
+      "options": [
+        "<code>12345</code>",
+        "<code>12</code>",
+        "<code>45</code>",
+        "<code>123</code>"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Bei $i = 3 wird break vor dem echo erreicht. Es beendet die Schleife sofort. Deshalb wurden nur 1 und 2 ausgegeben.",
+      "skill": "Abbruch verfolgen",
+      "code": "<?php\nfor ($i = 1; $i <= 5; $i++) {\n    if ($i === 3) {\n        break;\n    }\n    echo $i;\n}",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php-break"
+      ],
+      "solution": "12"
+    },
+    {
+      "id": "PHP-PHP-034",
+      "type": "single-choice",
+      "topic": "steuerung",
+      "difficulty": "leicht",
+      "text": "Welche Ausgabe entsteht durch continue?<pre><code>&lt;?php\nfor ($i = 1; $i &lt;= 4; $i++) {\n    if ($i === 2) {\n        continue;\n    }\n    echo $i;\n}</code></pre>",
+      "options": [
+        "<code>134</code>",
+        "<code>34</code>",
+        "<code>1234</code>",
+        "<code>1</code>"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "continue überspringt bei $i = 2 den Rest dieses Durchlaufs. Danach wird die for-Schleife mit ihrer Erhöhung fortgesetzt. 1, 3 und 4 werden ausgegeben.",
+      "skill": "Durchlauf überspringen",
+      "code": "<?php\nfor ($i = 1; $i <= 4; $i++) {\n    if ($i === 2) {\n        continue;\n    }\n    echo $i;\n}",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php-continue"
+      ],
+      "solution": "134"
+    },
+    {
+      "id": "PHP-PHP-035",
+      "type": "single-choice",
+      "topic": "steuerung",
+      "difficulty": "mittel",
+      "text": "Welche Ausgabe entsteht mit Modulo und continue?<pre><code>&lt;?php\nforeach ([1, 2, 3, 4] as $zahl) {\n    if ($zahl % 2 !== 0) {\n        continue;\n    }\n    echo $zahl;\n}</code></pre>",
+      "options": [
+        "<code>24</code>",
+        "<code>2</code>",
+        "<code>13</code>",
+        "<code>1234</code>"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Bei ungeraden Zahlen ist der Rest bei Division durch 2 ungleich 0. Diese Durchläufe werden übersprungen. Ausgegeben werden nur die geraden Werte 2 und 4.",
+      "skill": "Bedingung und Schleife verbinden",
+      "code": "<?php\nforeach ([1, 2, 3, 4] as $zahl) {\n    if ($zahl % 2 !== 0) {\n        continue;\n    }\n    echo $zahl;\n}",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:15,17",
+        "php-continue"
+      ],
+      "solution": "24"
+    },
+    {
+      "id": "PHP-PHP-036",
+      "type": "single-choice",
+      "topic": "steuerung",
+      "difficulty": "mittel",
+      "text": "Die Schleife soll 1, 2 und 3 ausgeben und danach enden. Welche einzelne Ergänzung an der markierten Stelle erreicht das?<pre><code>&lt;?php\n$i = 1;\nwhile ($i &lt;= 3) {\n    echo $i;\n    // Hier genau eine Anweisung ergänzen.\n}</code></pre>",
+      "options": [
+        "<code>$i = 1;</code>",
+        "<code>continue;</code>",
+        "<code>$i++;</code>",
+        "<code>$i--;</code>"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Ohne Änderung von $i bleibt 1 &lt;= 3 dauerhaft wahr. $i++ nach der Ausgabe sorgt für die Werte 1, 2 und 3 und anschließend für das Ende bei $i = 4.",
+      "skill": "Endlosschleife korrigieren",
+      "code": "<?php\n$i = 1;\nwhile ($i <= 3) {\n    echo $i;\n    // Hier genau eine Anweisung ergänzen.\n}",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:17"
+      ],
+      "solution": "$i++;"
+    },
+    {
+      "id": "PHP-PHP-037",
+      "type": "single-choice",
+      "topic": "formulare",
+      "difficulty": "leicht",
+      "text": "Der Aufruf lautet <code>liste.php?seite=3</code>. Welcher Ausdruck liest den übergebenen Wert für seite?",
+      "options": [
+        "<code>$GET.seite</code>",
+        "<code>$_GET[\"seite\"]</code>",
+        "<code>$_POST[\"seite\"]</code>",
+        "<code>$_GET[3]</code>"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Der benannte URL-Parameter wird über seinen Schlüssel im Array $_GET angesprochen. Die 3 ist der Wert, nicht der Name des Parameters.",
+      "skill": "GET lesen",
+      "sourceRefs": [
+        "php:21",
+        "php-get"
+      ],
+      "solution": "$_GET[\"seite\"]"
+    },
+    {
+      "id": "PHP-PHP-038",
+      "type": "single-choice",
+      "topic": "formulare",
+      "difficulty": "leicht",
+      "text": "Das Formular wird unverändert abgeschickt. Welcher Zugriff liest den Feldwert in auswerten.php?<pre><code>&lt;form action=\"auswerten.php\" method=\"post\"&gt;\n  &lt;label for=\"anzahl\"&gt;Menge&lt;/label&gt;\n  &lt;input id=\"anzahl\" name=\"menge\" value=\"2\"&gt;\n  &lt;button type=\"submit\"&gt;Senden&lt;/button&gt;\n&lt;/form&gt;</code></pre>",
+      "options": [
+        "<code>$_GET[\"menge\"]</code>",
+        "<code>$_POST[\"2\"]</code>",
+        "<code>$_POST[\"anzahl\"]</code>",
+        "<code>$_POST[\"menge\"]</code>"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "method=\"post\" sendet die Formulardaten per POST. Als Schlüssel wird das name-Attribut menge verwendet. id=\"anzahl\" verknüpft hier nur das Feld mit seiner Beschriftung.",
+      "skill": "Formular und PHP verbinden",
+      "code": "<form action=\"auswerten.php\" method=\"post\">\n  <label for=\"anzahl\">Menge</label>\n  <input id=\"anzahl\" name=\"menge\" value=\"2\">\n  <button type=\"submit\">Senden</button>\n</form>",
+      "codeLanguage": "html",
+      "sourceRefs": [
+        "php:21",
+        "html2:16,23",
+        "php-post"
+      ],
+      "solution": "$_POST[\"menge\"]"
+    },
+    {
+      "id": "PHP-PHP-039",
+      "type": "single-choice",
+      "topic": "formulare",
+      "difficulty": "leicht",
+      "text": "Aufruf: <code>rechnen.php?zahl=4</code>. Welche Ausgabe entsteht? Der Parameter ist vorhanden und enthält genau die angegebene Ziffer.<pre><code>&lt;?php\n$zahl = (int) $_GET[\"zahl\"];\necho $zahl * 2;</code></pre>",
+      "options": [
+        "<code>44</code>",
+        "<code>8</code>",
+        "<code>0</code>",
+        "<code>4</code>"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Der übergebene Text „4“ wird hier ausdrücklich mit (int) in eine Ganzzahl umgewandelt und mit 2 multipliziert. Das Ergebnis ist 8. Dieses kleine Beispiel prüft noch keine beliebigen Benutzereingaben.",
+      "skill": "GET-Code durchlaufen",
+      "code": "<?php\n$zahl = (int) $_GET[\"zahl\"];\necho $zahl * 2;",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:14–16,21",
+        "php-get"
+      ],
+      "solution": "8"
+    },
+    {
+      "id": "PHP-PHP-040",
+      "type": "single-choice",
+      "topic": "formulare",
+      "difficulty": "mittel",
+      "text": "Ein normales POST-Formular übermittelt für menge den Wert <code>\"2\"</code>. Welche Ausgabe entsteht?<pre><code>&lt;?php\n$menge = $_POST[\"menge\"];\nif ($menge === 2) {\n    echo \"Ganzzahl\";\n} elseif ($menge === \"2\") {\n    echo \"Textwert\";\n}</code></pre>",
+      "options": [
+        "<code>TextwertGanzzahl</code>",
+        "<code>Textwert</code>",
+        "<code>Ganzzahl</code>",
+        "<code>Es gibt keine Ausgabe.</code>"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Ein einzelner gewöhnlicher Formularwert kommt als Zeichenkette an. Der strikte Vergleich mit der Ganzzahl 2 ist deshalb falsch. Der Vergleich mit dem Text „2“ ist wahr.",
+      "skill": "Formularwert und Typ prüfen",
+      "code": "<?php\n$menge = $_POST[\"menge\"];\nif ($menge === 2) {\n    echo \"Ganzzahl\";\n} elseif ($menge === \"2\") {\n    echo \"Textwert\";\n}",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:16,18,21",
+        "php-post"
+      ],
+      "solution": "Textwert"
+    },
+    {
+      "id": "PHP-PHP-041",
+      "type": "single-choice",
+      "topic": "formulare",
+      "difficulty": "leicht",
+      "text": "Das Skript wird ohne URL-Parameter aufgerufen. Welche Ausgabe entsteht? <code>isset</code> prüft hier, ob der Eintrag vorhanden und nicht null ist.<pre><code>&lt;?php\nif (isset($_GET[\"wahl\"])) {\n    echo \"Auswahl vorhanden\";\n} else {\n    echo \"Keine Auswahl\";\n}</code></pre>",
+      "options": [
+        "<code>null</code>",
+        "<code>Auswahl vorhanden</code>",
+        "<code>Ein Fehler durch den fehlenden Eintrag.</code>",
+        "<code>Keine Auswahl</code>"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "isset kann prüfen, ob ein fehlender Arrayeintrag gesetzt ist, ohne ihn direkt ausgeben zu müssen. Da wahl nicht vorhanden ist, wird der else-Zweig ausgeführt.",
+      "skill": "Fehlenden Parameter behandeln",
+      "code": "<?php\nif (isset($_GET[\"wahl\"])) {\n    echo \"Auswahl vorhanden\";\n} else {\n    echo \"Keine Auswahl\";\n}",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:18,21",
+        "php-get"
+      ],
+      "solution": "Keine Auswahl"
+    },
+    {
+      "id": "PHP-PHP-042",
+      "type": "single-choice",
+      "topic": "formulare",
+      "difficulty": "leicht",
+      "text": "Ein normales Formular wird per POST gesendet. Seine Checkbox <code>&lt;input type=\"checkbox\" name=\"info\" value=\"ja\"&gt;</code> war nicht angehakt; es gibt kein anderes Feld namens info. Welche Ausgabe entsteht?<pre><code>&lt;?php\nif (isset($_POST[\"info\"])) {\n    echo \"Gewählt\";\n} else {\n    echo \"Nicht gewählt\";\n}</code></pre>",
+      "options": [
+        "<code>Gewählt</code>",
+        "<code>false</code>",
+        "<code>ja</code>",
+        "<code>Nicht gewählt</code>"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Eine nicht angehakte Checkbox wird in einem gewöhnlichen HTML-Formular nicht als Feld übermittelt. Der Schlüssel info fehlt deshalb; isset liefert false und der else-Zweig wird ausgeführt.",
+      "skill": "Checkbox und Bedingung lesen",
+      "code": "<?php\nif (isset($_POST[\"info\"])) {\n    echo \"Gewählt\";\n} else {\n    echo \"Nicht gewählt\";\n}",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "html-standard",
+        "php-post"
+      ],
+      "solution": "Nicht gewählt"
+    },
+    {
+      "id": "PHP-PHP-043",
+      "type": "multiple-choice",
+      "topic": "formulare",
+      "difficulty": "leicht",
+      "text": "Welche zwei Aussagen zu normalen HTML-Formularen und GET/POST stimmen?",
+      "options": [
+        "Bei POST stehen die übermittelten Formulardaten im Request-Body statt als angehängte Formularwerte in der URL.",
+        "POST verschlüsselt die Daten automatisch, auch ohne HTTPS.",
+        "Bei GET werden benannte Formulardaten typischerweise an die Ziel-URL angehängt.",
+        "Das id-Attribut ersetzt beim Absenden grundsätzlich das name-Attribut."
+      ],
+      "correct": [
+        0,
+        2
+      ],
+      "explanation": "GET-Formulare übertragen ihre Felder im URL-Abfrageteil, POST-Formulare im Nachrichtenkörper. POST allein bietet keine Verschlüsselung. Die Feldschlüssel stammen vom name-Attribut, nicht von id.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "html2:23",
+        "html-standard",
+        "php-get",
+        "php-post"
+      ],
+      "solution": "Bei POST stehen die übermittelten Formulardaten im Request-Body statt als angehängte Formularwerte in der URL.; Bei GET werden benannte Formulardaten typischerweise an die Ziel-URL angehängt."
+    },
+    {
+      "id": "PHP-PHP-044",
+      "type": "single-choice",
+      "topic": "funktionen",
+      "difficulty": "leicht",
+      "text": "Welche Ausgabe entsteht nach dem Funktionsaufruf?<pre><code>&lt;?php\nfunction addiere($a, $b) {\n    return $a + $b;\n}\n$ergebnis = addiere(2, 4);\necho $ergebnis + 2;</code></pre>",
+      "options": [
+        "<code>8</code>",
+        "<code>24</code>",
+        "<code>6</code>",
+        "<code>Es gibt keine Ausgabe, weil return nichts direkt ausgibt.</code>"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "addiere(2, 4) liefert 6 zurück. Der Aufrufer speichert diesen Wert in $ergebnis und gibt anschließend 6 + 2 aus. return liefert einen Wert an den Aufrufer; echo übernimmt die sichtbare Ausgabe.",
+      "skill": "Funktion verfolgen",
+      "code": "<?php\nfunction addiere($a, $b) {\n    return $a + $b;\n}\n$ergebnis = addiere(2, 4);\necho $ergebnis + 2;",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:20"
+      ],
+      "solution": "8"
+    },
+    {
+      "id": "PHP-PHP-045",
+      "type": "single-choice",
+      "topic": "funktionen",
+      "difficulty": "leicht",
+      "text": "Welche Ausgabe entsteht durch das frühe return?<pre><code>&lt;?php\nfunction beurteile($menge) {\n    if ($menge &lt;= 0) {\n        return \"ungueltig\";\n    }\n    return \"ok\";\n}\necho beurteile(0);</code></pre>",
+      "options": [
+        "<code>ungueltig</code>",
+        "<code>ok</code>",
+        "<code>0</code>",
+        "<code>ungueltigok</code>"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Bei $menge = 0 ist die erste Bedingung wahr. return beendet die Funktion sofort und liefert „ungueltig“. Das zweite return wird bei diesem Aufruf nicht erreicht.",
+      "skill": "Frühen Rücksprung erkennen",
+      "code": "<?php\nfunction beurteile($menge) {\n    if ($menge <= 0) {\n        return \"ungueltig\";\n    }\n    return \"ok\";\n}\necho beurteile(0);",
+      "codeLanguage": "php",
+      "sourceRefs": [
+        "php:18,20"
+      ],
+      "solution": "ungueltig"
+    }
+  ],
+  "excludedTopics": [
+    "Sessions",
+    "Cookies",
+    "Klassen und Objekte",
+    "Vererbung",
+    "Passwortvalidierung",
+    "Passwort-Hashing",
+    "Authentifizierung",
+    "Datenbankzugriffe",
+    "Frameworks"
+  ],
+  "controlStructures": [
+    "if",
+    "elseif",
+    "else",
+    "switch",
+    "case",
+    "default",
+    "for",
+    "while",
+    "do-while",
+    "foreach",
+    "break",
+    "continue",
+    "return"
+  ],
+  "supplementalExpressions": [
+    "ternärer Operator ?:",
+    "Vergleichsoperatoren",
+    "logische Operatoren",
+    "Modulo"
+  ]
+}

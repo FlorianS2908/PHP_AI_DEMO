@@ -1,0 +1,317 @@
+{
+  "umgebung": "PHP 8.4.23 / Linux; HTTP-Tests mit requests. Chromium-Darstellung und Interaktion per set_content. Direkte Browsernavigation zu localhost hier administrativ gesperrt. Windows/XAMPP nicht getestet.",
+  "anzahl": 62,
+  "erfolgreich": 62,
+  "tests": [
+    {
+      "test": "PHP-Syntax: tests/run.php",
+      "ok": true,
+      "detail": "No syntax errors detected in /mnt/data/PHP_PHP_Arrays_Formulare/tests/run.php"
+    },
+    {
+      "test": "PHP-Syntax: demo/00-mini/ausgabe.php",
+      "ok": true,
+      "detail": "No syntax errors detected in /mnt/data/PHP_PHP_Arrays_Formulare/demo/00-mini/ausgabe.php"
+    },
+    {
+      "test": "PHP-Syntax: demo/01-mehrseitig/auswahl.php",
+      "ok": true,
+      "detail": "No syntax errors detected in /mnt/data/PHP_PHP_Arrays_Formulare/demo/01-mehrseitig/auswahl.php"
+    },
+    {
+      "test": "PHP-Syntax: demo/01-mehrseitig/funktionen.php",
+      "ok": true,
+      "detail": "No syntax errors detected in /mnt/data/PHP_PHP_Arrays_Formulare/demo/01-mehrseitig/funktionen.php"
+    },
+    {
+      "test": "PHP-Syntax: demo/01-mehrseitig/katalog.php",
+      "ok": true,
+      "detail": "No syntax errors detected in /mnt/data/PHP_PHP_Arrays_Formulare/demo/01-mehrseitig/katalog.php"
+    },
+    {
+      "test": "PHP-Syntax: demo/01-mehrseitig/pruefen.php",
+      "ok": true,
+      "detail": "No syntax errors detected in /mnt/data/PHP_PHP_Arrays_Formulare/demo/01-mehrseitig/pruefen.php"
+    },
+    {
+      "test": "PHP-Syntax: demo/01-mehrseitig/ergebnis.php",
+      "ok": true,
+      "detail": "No syntax errors detected in /mnt/data/PHP_PHP_Arrays_Formulare/demo/01-mehrseitig/ergebnis.php"
+    },
+    {
+      "test": "PHP-Syntax: demo/02-arrays/arrays-kontrollstrukturen.php",
+      "ok": true,
+      "detail": "No syntax errors detected in /mnt/data/PHP_PHP_Arrays_Formulare/demo/02-arrays/arrays-kontrollstrukturen.php"
+    },
+    {
+      "test": "pruefen.php Direktaufruf abgefangen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "pruefen.php POST verarbeitet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "pruefen.php keine Cookies gesetzt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "pruefen.php keine PHP-Warnungen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "pruefen.php ungültig: [('reise[ziel][]', 'paris')]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "pruefen.php ungültig: [('reise[ziel]', 'unbekannt')]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "pruefen.php ungültig: [('reise[personen]', '0')]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "pruefen.php ungültig: [('reise[personen]', '2.5')]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "pruefen.php ungültig: [('reise[extras]', 'museum')]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "pruefen.php ungültig: [('reise[extras][0][]', 'museum')]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "pruefen.php ungültig: [('reise[extras][]', 'museum'), ('reise[extras][]', 'museum')]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "pruefen.php keine Extras erlaubt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "pruefen.php Reise muss Array sein",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "ergebnis.php Direktaufruf abgefangen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "ergebnis.php POST verarbeitet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "ergebnis.php keine Cookies gesetzt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "ergebnis.php keine PHP-Warnungen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "ergebnis.php ungültig: [('reise[ziel][]', 'paris')]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "ergebnis.php ungültig: [('reise[ziel]', 'unbekannt')]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "ergebnis.php ungültig: [('reise[personen]', '0')]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "ergebnis.php ungültig: [('reise[personen]', '2.5')]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "ergebnis.php ungültig: [('reise[extras]', 'museum')]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "ergebnis.php ungültig: [('reise[extras][0][]', 'museum')]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "ergebnis.php ungültig: [('reise[extras][]', 'museum'), ('reise[extras][]', 'museum')]",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "ergebnis.php keine Extras erlaubt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "ergebnis.php Reise muss Array sein",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "Seite 2 Vorschau 508 Euro",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "Zwei übertragene Extras",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "Verpflegung nicht doppelt als Hidden",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "Schritt 3 neu berechnet trotz manipuliertem Preis",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "Vier formatierte Tabellenpositionen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "Nutzerscript nicht als HTML eingefügt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "Textarea enthält Nachricht als Text",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "Rückweg bewahrt Namen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "Rückweg bewahrt Mehrfachauswahl",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "Rückweg bewahrt neue Verpflegung",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "Rückweg bewahrt Nachricht",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "Neuer GET startet leer",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "48 Folien",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "Einzelfolienansicht",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "Pfeil weiter",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "Pfeil zurück",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "Ende erreicht letzte Folie",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "Pos1 erreicht erste Folie",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "48 Folien ohne horizontalen Überlauf",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "test": "Leseansicht",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "Zurück zur Folienansicht",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "Druckansicht alle Folien",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "Formularfelder bedienbar",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "Ausgabefeld im Browser formatiert",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "Keine XSS-Ausführung",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "test": "Formular mobil ohne Überlauf",
+      "ok": true,
+      "detail": "{'s': 390, 'w': 390}"
+    },
+    {
+      "test": "Webvariante mobil ohne Überlauf",
+      "ok": true,
+      "detail": "{'s': 390, 'w': 390}"
+    },
+    {
+      "test": "Keine JavaScript-Laufzeitfehler",
+      "ok": true,
+      "detail": "[]"
+    }
+  ]
+}

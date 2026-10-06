@@ -1,0 +1,1218 @@
+{
+  "id": "PHP-web-45-60",
+  "name": "PHP · Test 1 · HTML, CSS, UI & UX",
+  "course": "PHP",
+  "version": "1.0",
+  "sourceFileName": "PHP_Test1_HTML_CSS_UI_UX_45Fragen_60Min.json",
+  "description": "45 Fragen: 6 zu User Interfaces, 6 zur Qualitätssicherung, 9 zu User Experience, 12 zu HTML und 12 zu CSS. Mit kurzen Code-Leseaufgaben, Einzel-/Mehrfachwahl, einer Zuordnung und zwei Reihenfolgeaufgaben.",
+  "durationMinutes": 60,
+  "questionCount": 45,
+  "shuffleOptions": true,
+  "shuffleQuestions": false,
+  "topicLabels": {
+    "ui": "User Interfaces",
+    "qs": "Qualitätssicherung",
+    "ux": "User Experience",
+    "html": "HTML – Struktur und Formulare",
+    "css": "CSS – Selektoren und Gestaltung"
+  },
+  "difficultyLabels": {
+    "leicht": "Einstieg",
+    "mittel": "Anwendung"
+  },
+  "instructions": "45 Fragen · 60 Minuten. Lies den Code am Schreibtisch; führe ihn während des Tests nicht aus. Die Fragenfolge bleibt erhalten, Antwortoptionen werden beim Teststart neu gemischt. Einzelwahl: genau eine Antwort. Mehrfachwahl: die angegebene Anzahl. Jede vollständig richtige Frage zählt einen Punkt; keine Teilpunkte oder Minuspunkte. Lösungen und Begründungen erscheinen erst nach Testende. Bei Zuordnungen jede Zielkarte belegen; bei Reihenfolgen alle Bausteine verwenden.",
+  "assessment": {
+    "pointsPerQuestion": 1,
+    "maximumPoints": 45,
+    "partialCredit": false,
+    "negativePoints": false,
+    "solutionsAfterFinish": true
+  },
+  "sources": [
+    {
+      "id": "ui",
+      "file": "PHP-Kurs_Kapitel 1_User Interfaces_Präsentation.pdf",
+      "scope": "Schnittstellenarten, Eingabe und Ausgabe"
+    },
+    {
+      "id": "qs",
+      "file": "PHP-Kurs_Kapitel 2_Qualitätssicherung_Präsentation.pdf",
+      "scope": "Qualitätsmerkmale, Testprozess und Teststufen"
+    },
+    {
+      "id": "ux1",
+      "file": "PHP-Kurs_Kapitel 3_User Experience_Teil 1_Präsentation.pdf",
+      "scope": "UX-Honeycomb und Zugänglichkeit"
+    },
+    {
+      "id": "ux2",
+      "file": "PHP-Kurs_Kapitel 3_User Experience_Teil 2_Präsentation.pptx",
+      "scope": "Feedback, Konsistenz, Fehlervermeidung, Merkhilfen und Minimalismus; Referenzen mit Abschnittsnamen"
+    },
+    {
+      "id": "html1",
+      "file": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf",
+      "scope": "Grundgerüst, Elemente, Attribute, Inhalte"
+    },
+    {
+      "id": "html2",
+      "file": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf",
+      "scope": "Semantik und Formulare"
+    },
+    {
+      "id": "css1",
+      "file": "PHP-Kurs_Kapitel 5_CSS_Teil 1_Präsentation.pdf",
+      "scope": "Einbindung, Syntax, Selektoren, Spezifität und Vererbung"
+    },
+    {
+      "id": "css2",
+      "file": "PHP-Kurs_Kapitel 5_CSS_Teil 2_Präsentation.pptx",
+      "scope": "Farben, Hintergründe, Farbschemata; Referenzen mit Abschnittsnamen"
+    },
+    {
+      "id": "html-standard",
+      "url": "https://html.spec.whatwg.org/multipage/forms.html",
+      "scope": "Technische Gegenprüfung: Formulare, Feldnamen, Checkboxen"
+    },
+    {
+      "id": "html-syntax",
+      "url": "https://html.spec.whatwg.org/multipage/syntax.html#void-elements",
+      "scope": "Void-Elemente"
+    },
+    {
+      "id": "css-backgrounds",
+      "url": "https://www.w3.org/TR/css-backgrounds-3/#the-background-size",
+      "scope": "cover und contain"
+    },
+    {
+      "id": "css-cascade",
+      "url": "https://www.w3.org/TR/css-cascade-5/",
+      "scope": "Technische Gegenprüfung: Kaskade, Spezifität, Reihenfolge und Vererbung"
+    }
+  ],
+  "questions": [
+    {
+      "id": "PHP-WEB-001",
+      "type": "single-choice",
+      "topic": "ui",
+      "difficulty": "leicht",
+      "text": "Was beschreibt eine Benutzerschnittstelle am treffendsten?",
+      "options": [
+        "Nur die farbliche Gestaltung einer Internetseite.",
+        "Den Speicherbereich, in dem ein Programm installiert ist.",
+        "Die Stelle, über die ein Mensch Informationen mit einem System austauscht und es bedient.",
+        "Ausschließlich die Verbindung zwischen zwei Datenbanken."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Eine Benutzerschnittstelle vermittelt zwischen Mensch und System. Dazu gehören beispielsweise Bedienelemente, Eingaben und Rückmeldungen; sie ist nicht auf Bildschirmfarben beschränkt.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "ui:3–5"
+      ],
+      "solution": "Die Stelle, über die ein Mensch Informationen mit einem System austauscht und es bedient."
+    },
+    {
+      "id": "PHP-WEB-002",
+      "type": "single-choice",
+      "topic": "ui",
+      "difficulty": "leicht",
+      "text": "Eine Person tippt auf einem Touchscreen auf „Weiter“. Anschließend erscheint die nächste Seite. Welche Einordnung passt?",
+      "options": [
+        "Der Touchscreen übernimmt sowohl Eingabe als auch Ausgabe.",
+        "Der Touchscreen ist nur ein Eingabegerät, weil er berührt wird.",
+        "Der Touchscreen ist nur ein Ausgabegerät, weil er Bilder zeigt.",
+        "Es gibt keine Eingabe, solange keine Tastatur verwendet wird."
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Das Berühren liefert die Eingabe. Die sichtbare neue Seite ist eine Ausgabe. Beide Prozesse können über dasselbe Gerät stattfinden.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "ui:6–8"
+      ],
+      "solution": "Der Touchscreen übernimmt sowohl Eingabe als auch Ausgabe."
+    },
+    {
+      "id": "PHP-WEB-003",
+      "type": "single-choice",
+      "topic": "ui",
+      "difficulty": "leicht",
+      "text": "Eine Administratorin gibt Befehle wie <code>cd projekt</code> in ein Terminal ein. Welche Schnittstelle nutzt sie?",
+      "options": [
+        "Eine Kommandozeilenschnittstelle (CLI).",
+        "Eine sprachgesteuerte Schnittstelle.",
+        "Eine ausschließlich menügesteuerte Schnittstelle.",
+        "Eine Virtual-Reality-Schnittstelle."
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Bei einer CLI werden Befehle in Textform eingegeben. Man muss die passenden Befehle kennen; dafür lassen sich wiederkehrende Abläufe gut automatisieren.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "ui:20,27"
+      ],
+      "solution": "Eine Kommandozeilenschnittstelle (CLI)."
+    },
+    {
+      "id": "PHP-WEB-004",
+      "type": "multiple-choice",
+      "topic": "ui",
+      "difficulty": "leicht",
+      "text": "Welche zwei Merkmale passen zu einer grafischen Benutzeroberfläche (GUI)?",
+      "options": [
+        "Sie kann sichtbares Feedback zu Aktionen geben.",
+        "Sie darf grundsätzlich nicht mit Tastaturbefehlen kombiniert werden.",
+        "Ihre Bedienung ist automatisch für jede Zielgruppe fehlerfrei.",
+        "Sie kann Schaltflächen, Symbole und Menüs anbieten."
+      ],
+      "correct": [
+        0,
+        3
+      ],
+      "explanation": "Eine GUI stellt Funktionen und Zustände grafisch dar. Gute Bedienbarkeit entsteht aber erst durch ein durchdachtes Design; zusätzliche Tastenkürzel sind möglich.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "ui:22,29"
+      ],
+      "solution": "Sie kann sichtbares Feedback zu Aktionen geben.; Sie kann Schaltflächen, Symbole und Menüs anbieten."
+    },
+    {
+      "id": "PHP-WEB-005",
+      "type": "single-choice",
+      "topic": "ui",
+      "difficulty": "leicht",
+      "text": "Eine Anwendung versteht eine gesprochene Frage und antwortet in natürlicher Sprache. Welche UI-Art steht hier im Vordergrund?",
+      "options": [
+        "Ein Hardware-Anschluss.",
+        "Ein Batch-Interface.",
+        "Ein Conversational User Interface.",
+        "Ein rein grafisches Interface."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Eine dialogorientierte Schnittstelle ermöglicht die Interaktion in menschlicher Sprache. Der Dialog kann gesprochen oder geschrieben sein.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "ui:23"
+      ],
+      "solution": "Ein Conversational User Interface."
+    },
+    {
+      "id": "PHP-WEB-006",
+      "type": "single-choice",
+      "topic": "ui",
+      "difficulty": "leicht",
+      "text": "Ein Programm bietet sowohl ein Menü als auch Tastenkürzel für dieselben Aktionen. Wie ist das zu bewerten?",
+      "options": [
+        "Sinnlos: Tastenkürzel dürfen nur andere Funktionen als Menüs auslösen.",
+        "Sinnvoll: Unterschiedliche Zugänge können verschiedene Bedürfnisse unterstützen.",
+        "Unzulässig: Jede Anwendung darf nur eine Art der Bedienung haben.",
+        "Nur zulässig, wenn das Menü vollständig ausgeblendet wird."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Schnittstellenarten schließen sich nicht gegenseitig aus. Ein sichtbares Menü hilft beim Einstieg, während Tastenkürzel wiederkehrende Arbeit beschleunigen können.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "ui:31",
+        "ux2:Flexibilität"
+      ],
+      "solution": "Sinnvoll: Unterschiedliche Zugänge können verschiedene Bedürfnisse unterstützen."
+    },
+    {
+      "id": "PHP-WEB-007",
+      "type": "single-choice",
+      "topic": "qs",
+      "difficulty": "leicht",
+      "text": "Alle vereinbarten Funktionen sind vorhanden. Die Summenberechnung liefert jedoch falsche Ergebnisse. Welches Merkmal ist unmittelbar verletzt?",
+      "options": [
+        "Funktionale Vollständigkeit.",
+        "Auffindbarkeit der Hilfe.",
+        "Funktionale Korrektheit.",
+        "Farbliche Konsistenz."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Vollständigkeit bedeutet, dass die geforderten Funktionen vorhanden sind. Korrektheit verlangt zusätzlich richtige Ergebnisse. Eine vorhandene, aber falsch rechnende Funktion ist nicht korrekt.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "qs:5–8"
+      ],
+      "solution": "Funktionale Korrektheit."
+    },
+    {
+      "id": "PHP-WEB-008",
+      "type": "single-choice",
+      "topic": "qs",
+      "difficulty": "leicht",
+      "text": "Ein Kontaktformular soll ohne Nachricht nicht abgeschickt werden können. Was macht einen dazu passenden Testfall überprüfbar?",
+      "options": [
+        "Nur ein Bildschirmfoto der unveränderten Startseite.",
+        "Eine konkrete Eingabe, ein definierter Testschritt und ein vorher festgelegtes Soll-Ergebnis.",
+        "Nur die Angabe, dass jemand das Formular ausprobieren soll.",
+        "Die spätere Entscheidung, dass jede angezeigte Meldung richtig gewesen sei."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Beispiel: Nachrichtenfeld leer lassen, „Absenden“ betätigen, Absenden wird verhindert und ein verständlicher Hinweis erscheint. Das Soll-Ergebnis wird vor der Ausführung festgelegt.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "qs:8,26"
+      ],
+      "solution": "Eine konkrete Eingabe, ein definierter Testschritt und ein vorher festgelegtes Soll-Ergebnis."
+    },
+    {
+      "id": "PHP-WEB-009",
+      "type": "single-choice",
+      "topic": "qs",
+      "difficulty": "leicht",
+      "text": "Du prüfst ein Formular nur durch Eingaben und sichtbare Ergebnisse. Den Quellcode kennst du nicht. Welcher Ansatz liegt vor?",
+      "options": [
+        "Eine automatische Codeanalyse.",
+        "Ein White-Box-Test.",
+        "Ein Code Review.",
+        "Ein Black-Box-Test."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Black-Box-Tests prüfen das von außen beobachtbare Verhalten. White-Box-Tests beziehen dagegen die interne Struktur beziehungsweise den Quellcode ein.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "qs:27"
+      ],
+      "solution": "Ein Black-Box-Test."
+    },
+    {
+      "id": "PHP-WEB-010",
+      "type": "matching-postits",
+      "topic": "qs",
+      "difficulty": "mittel",
+      "text": "Ordne jeder Testbeschreibung die passende Teststufe zu. Verwende jeden Begriff genau einmal.",
+      "items": [
+        {
+          "id": "i3",
+          "text": "Systemtest"
+        },
+        {
+          "id": "i1",
+          "text": "Komponententest"
+        },
+        {
+          "id": "i2",
+          "text": "Integrationstest"
+        },
+        {
+          "id": "i4",
+          "text": "Abnahmetest"
+        }
+      ],
+      "targets": [
+        {
+          "id": "t1",
+          "text": "Eine einzelne Berechnungsfunktion wird isoliert geprüft."
+        },
+        {
+          "id": "t2",
+          "text": "Das Zusammenspiel von Formular und Verarbeitung wird geprüft."
+        },
+        {
+          "id": "t4",
+          "text": "Der Auftraggeber prüft die vereinbarten Abnahmekriterien."
+        },
+        {
+          "id": "t3",
+          "text": "Die gesamte Anwendung wird gegen ihre Anforderungen geprüft."
+        }
+      ],
+      "pairs": [
+        {
+          "leftId": "i1",
+          "rightId": "t1"
+        },
+        {
+          "leftId": "i2",
+          "rightId": "t2"
+        },
+        {
+          "leftId": "i3",
+          "rightId": "t3"
+        },
+        {
+          "leftId": "i4",
+          "rightId": "t4"
+        }
+      ],
+      "explanation": "Komponenten werden einzeln, Integrationen im Zusammenspiel und Systeme als Ganzes geprüft. Bei der Abnahme steht die Bestätigung der vereinbarten Anforderungen durch den Auftraggeber im Vordergrund.",
+      "skill": "Zuordnen",
+      "sourceRefs": [
+        "qs:28–31"
+      ]
+    },
+    {
+      "id": "PHP-WEB-011",
+      "type": "single-choice",
+      "topic": "qs",
+      "difficulty": "leicht",
+      "text": "Ein Kollege liest deinen Quellcode und bespricht Verständlichkeit, mögliche Fehler und Coding-Standards mit dir. Welche Maßnahme ist das?",
+      "options": [
+        "Ein Code Review.",
+        "Eine Abnahme durch Endkunden.",
+        "Eine Installation.",
+        "Eine reine Laufzeitmessung."
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Ein Code Review ist eine Prüfung des Quellcodes. Es dient unter anderem der Fehlererkennung, der Codequalität und dem Wissenstransfer und ergänzt ausführbare Tests.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "qs:34"
+      ],
+      "solution": "Ein Code Review."
+    },
+    {
+      "id": "PHP-WEB-012",
+      "type": "order",
+      "topic": "qs",
+      "difficulty": "mittel",
+      "text": "Bringe die sechs Phasen des in den Unterlagen dargestellten Testprozesses in die richtige Reihenfolge. Verwende alle Bausteine.",
+      "blocks": [
+        {
+          "id": "b3",
+          "text": "Testvorbereitung"
+        },
+        {
+          "id": "b4",
+          "text": "Testdurchführung"
+        },
+        {
+          "id": "b5",
+          "text": "Testauswertung"
+        },
+        {
+          "id": "b6",
+          "text": "Testabschluss"
+        },
+        {
+          "id": "b1",
+          "text": "Testplanung"
+        },
+        {
+          "id": "b2",
+          "text": "Testentwurf"
+        }
+      ],
+      "correctOrder": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6"
+      ],
+      "explanation": "Zuerst werden Strategie und Testfälle festgelegt. Anschließend werden Umgebung und Daten vorbereitet, die Tests ausgeführt und die Ergebnisse ausgewertet. Danach folgt der Testabschluss.",
+      "skill": "Ablauf ordnen",
+      "sourceRefs": [
+        "qs:26"
+      ]
+    },
+    {
+      "id": "PHP-WEB-013",
+      "type": "single-choice",
+      "topic": "ux",
+      "difficulty": "leicht",
+      "text": "Eine Website sieht ansprechend aus, aber Nutzer finden die gesuchte Information nicht und brechen frustriert ab. Welche Aussage trifft zu?",
+      "options": [
+        "Ansprechende Farben allein garantieren eine gute User Experience.",
+        "Sobald alle Bilder geladen sind, ist die Nutzererfahrung automatisch gut.",
+        "User Experience betrachtet das gesamte Nutzungserlebnis, nicht nur die sichtbare Gestaltung.",
+        "User Experience betrifft ausschließlich die Programmiersprache."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "UX umfasst die Erfahrung mit einem Produkt. Dazu gehören etwa Auffindbarkeit, Nutzen, Bedienbarkeit und Vertrauen. Ein schönes Erscheinungsbild allein reicht nicht aus.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "ux1:3–4"
+      ],
+      "solution": "User Experience betrachtet das gesamte Nutzungserlebnis, nicht nur die sichtbare Gestaltung."
+    },
+    {
+      "id": "PHP-WEB-014",
+      "type": "single-choice",
+      "topic": "ux",
+      "difficulty": "leicht",
+      "text": "Die Hilfe ist über ein verständlich beschriftetes Menü und eine Suche schnell erreichbar. Welcher Aspekt des UX-Honeycomb wird besonders unterstützt?",
+      "options": [
+        "Useful – nützlich.",
+        "Credible – glaubwürdig.",
+        "Desirable – ansprechend.",
+        "Findable – auffindbar."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "„Findable“ betrifft das leichte Auffinden von Funktionen und Informationen. Eine klare Struktur und kurze Navigationswege helfen dabei.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "ux1:11–12"
+      ],
+      "solution": "Findable – auffindbar."
+    },
+    {
+      "id": "PHP-WEB-015",
+      "type": "multiple-choice",
+      "topic": "ux",
+      "difficulty": "leicht",
+      "text": "Welche zwei Maßnahmen unterstützen die Zugänglichkeit einer Weboberfläche?",
+      "options": [
+        "Hilfetexte stehen nur als Text innerhalb eines Bildes bereit.",
+        "Eingabefelder besitzen passende, zugeordnete Beschriftungen.",
+        "Alle wichtigen Funktionen lassen sich auch mit der Tastatur bedienen.",
+        "Fehler werden ausschließlich durch einen Wechsel von Grün zu Rot markiert."
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "explanation": "Tastaturbedienung und zugeordnete Beschriftungen helfen Menschen mit unterschiedlichen Bedienmöglichkeiten. Farbe allein und Text nur im Bild können wichtige Informationen unzugänglich machen.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "ux1:13–14",
+        "html2:16"
+      ],
+      "solution": "Eingabefelder besitzen passende, zugeordnete Beschriftungen.; Alle wichtigen Funktionen lassen sich auch mit der Tastatur bedienen."
+    },
+    {
+      "id": "PHP-WEB-016",
+      "type": "single-choice",
+      "topic": "ux",
+      "difficulty": "leicht",
+      "text": "Nach „Speichern“ dauert die Verarbeitung mehrere Sekunden. Welche Gestaltung ist am sinnvollsten?",
+      "options": [
+        "Ein Verarbeitungsstatus erscheint; Erfolg oder Fehler wird nach Abschluss gemeldet.",
+        "Es erscheint sofort „Erfolgreich gespeichert“, obwohl das Ergebnis noch unbekannt ist.",
+        "Die Oberfläche bleibt ohne Hinweis unverändert.",
+        "Die gesamte Ansicht wird kommentarlos geschlossen."
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Sichtbarkeit des Systemzustands bedeutet, dass Nutzer den tatsächlichen Stand erkennen. Eine Erfolgsmeldung darf den Erfolg nicht nur vorwegnehmen.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "ux2:Sichtbarkeit des Systemzustands"
+      ],
+      "solution": "Ein Verarbeitungsstatus erscheint; Erfolg oder Fehler wird nach Abschluss gemeldet."
+    },
+    {
+      "id": "PHP-WEB-017",
+      "type": "single-choice",
+      "topic": "ux",
+      "difficulty": "leicht",
+      "text": "Der Button für „Speichern“ heißt auf einer Seite „Speichern“, auf der nächsten „Ablage“ und steht jeweils an einer anderen Stelle. Welches Prinzip wird vor allem verletzt?",
+      "options": [
+        "Funktionale Vollständigkeit.",
+        "Interne Konsistenz.",
+        "Hardwareunabhängigkeit.",
+        "Transparenz von Hintergrundfarben."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Gleiche Aktionen sollten innerhalb derselben Anwendung gleich benannt und wiedererkennbar angeordnet sein. Unbegründete Wechsel erschweren die Orientierung.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "ux2:Konsistenz"
+      ],
+      "solution": "Interne Konsistenz."
+    },
+    {
+      "id": "PHP-WEB-018",
+      "type": "single-choice",
+      "topic": "ux",
+      "difficulty": "leicht",
+      "text": "Ein Dokument soll endgültig gelöscht werden. Welche Maßnahme verhindert versehentliches Löschen am besten?",
+      "options": [
+        "Die Löschfunktion wird genauso beschriftet wie die Speicherfunktion.",
+        "Der Löschbutton erhält nur ein unbekanntes Symbol.",
+        "Jede ungefährliche Aktion erhält ebenfalls mehrere Warnfenster.",
+        "Ein gezielter Bestätigungsdialog nennt das betroffene Dokument und die Folgen."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Bei destruktiven Aktionen ist eine konkrete Warnung sinnvoll. Zu viele Warnungen für ungefährliche Vorgänge schwächen dagegen die Aufmerksamkeit für wirklich wichtige Hinweise.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "ux2:Fehlervermeidung"
+      ],
+      "solution": "Ein gezielter Bestätigungsdialog nennt das betroffene Dokument und die Folgen."
+    },
+    {
+      "id": "PHP-WEB-019",
+      "type": "single-choice",
+      "topic": "ux",
+      "difficulty": "leicht",
+      "text": "Welche Fehlermeldung hilft bei einer nicht ausgewählten Versandart am besten?",
+      "options": [
+        "Falsche Bedienung!",
+        "Ein unbekanntes Problem liegt vor.",
+        "Bitte wähle eine Versandart aus und sende das Formular erneut ab.",
+        "Error 4711."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Die Meldung benennt die fehlende Eingabe und den nächsten sinnvollen Schritt. Sie bleibt verständlich und vermeidet Schuldzuweisungen oder reine Fehlercodes.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "ux2:Fehlerbehandlung"
+      ],
+      "solution": "Bitte wähle eine Versandart aus und sende das Formular erneut ab."
+    },
+    {
+      "id": "PHP-WEB-020",
+      "type": "single-choice",
+      "topic": "ux",
+      "difficulty": "leicht",
+      "text": "Eine Anwendung zeigt zuletzt geöffnete Dokumente als auswählbare Liste. Welches UX-Prinzip wird besonders unterstützt?",
+      "options": [
+        "Verbergen des Systemzustands.",
+        "Absichtliche Vergrößerung der Gedächtnisleistung.",
+        "Wiedererkennung statt reiner Erinnerung.",
+        "Verzicht auf Navigation."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Ein sichtbarer Eintrag kann wiedererkannt werden. Nutzer müssen sich weder den vollständigen Namen noch den bisherigen Ablageort aus dem Gedächtnis herleiten.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "ux2:Merkhilfen"
+      ],
+      "solution": "Wiedererkennung statt reiner Erinnerung."
+    },
+    {
+      "id": "PHP-WEB-021",
+      "type": "single-choice",
+      "topic": "ux",
+      "difficulty": "leicht",
+      "text": "Wie lässt sich Minimalismus sinnvoll auf eine Bestellübersicht anwenden?",
+      "options": [
+        "Wichtige Funktionen ausblenden, sobald mehr als drei vorhanden sind.",
+        "Notwendige Aktionen und Informationen klar zeigen; Überflüssiges weglassen.",
+        "Alle Beschriftungen entfernen, damit möglichst wenig Text bleibt.",
+        "Jeden freien Bereich mit Animationen und Zusatzangeboten füllen."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Minimalismus soll die Aufgabe erleichtern. Er bedeutet weder Funktionsverlust noch das Entfernen notwendiger Orientierungshilfen.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "ux2:Minimalismus und Ästhetik"
+      ],
+      "solution": "Notwendige Aktionen und Informationen klar zeigen; Überflüssiges weglassen."
+    },
+    {
+      "id": "PHP-WEB-022",
+      "type": "order",
+      "topic": "html",
+      "difficulty": "leicht",
+      "text": "Ordne die Bausteine zu einem vollständigen HTML-Dokument. Verwende alle Bausteine genau einmal.",
+      "blocks": [
+        {
+          "id": "b5",
+          "text": "</html>"
+        },
+        {
+          "id": "b2",
+          "text": "<html lang=\"de\">"
+        },
+        {
+          "id": "b4",
+          "text": "<body><h1>Willkommen</h1></body>"
+        },
+        {
+          "id": "b1",
+          "text": "<!DOCTYPE html>"
+        },
+        {
+          "id": "b3",
+          "text": "<head><meta charset=\"utf-8\"><title>Kurs</title></head>"
+        }
+      ],
+      "correctOrder": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5"
+      ],
+      "explanation": "Die Doctype-Angabe steht vor dem Wurzelelement html. Innerhalb von html folgen zuerst head mit Metadaten und dann body mit dem Seiteninhalt.",
+      "skill": "Code ordnen",
+      "sourceRefs": [
+        "html1:5–7"
+      ]
+    },
+    {
+      "id": "PHP-WEB-023",
+      "type": "single-choice",
+      "topic": "html",
+      "difficulty": "leicht",
+      "text": "Wo wird der Text „Kursübersicht“ aus dem folgenden Ausschnitt normalerweise angezeigt?<pre><code>&lt;head&gt;\n  &lt;meta charset=\"utf-8\"&gt;\n  &lt;title&gt;Kursübersicht&lt;/title&gt;\n&lt;/head&gt;</code></pre>",
+      "options": [
+        "Automatisch als Hauptüberschrift im Seiteninhalt.",
+        "Als Standardwert in jedem Eingabefeld.",
+        "Nur in einer CSS-Datei.",
+        "Als Dokumenttitel, beispielsweise im Browser-Tab."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Das title-Element beschreibt den Dokumenttitel. Eine sichtbare Hauptüberschrift im Seiteninhalt wird separat, zum Beispiel mit h1 im body, ausgezeichnet.",
+      "skill": "Verstehen",
+      "code": "<head>\n  <meta charset=\"utf-8\">\n  <title>Kursübersicht</title>\n</head>",
+      "codeLanguage": "html",
+      "sourceRefs": [
+        "html1:6,15,25–26"
+      ],
+      "solution": "Als Dokumenttitel, beispielsweise im Browser-Tab."
+    },
+    {
+      "id": "PHP-WEB-024",
+      "type": "single-choice",
+      "topic": "html",
+      "difficulty": "leicht",
+      "text": "Welches Element passt semantisch zu einem Bereich mit den wichtigsten Navigationslinks?",
+      "options": [
+        "<code>&lt;p&gt;</code>",
+        "<code>&lt;nav&gt;</code>",
+        "<code>&lt;title&gt;</code>",
+        "<code>&lt;img&gt;</code>"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "nav kennzeichnet einen Navigationsbereich. Die semantische Bedeutung hilft, den Zweck der enthaltenen Links zu erkennen; die optische Darstellung wird separat gestaltet.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "html2:9"
+      ],
+      "solution": "<nav>"
+    },
+    {
+      "id": "PHP-WEB-025",
+      "type": "single-choice",
+      "topic": "html",
+      "difficulty": "leicht",
+      "text": "Welche Variante verschachtelt die Elemente korrekt?",
+      "options": [
+        "<code>&lt;strong&gt;&lt;p&gt;Bitte aufpassen.&lt;/strong&gt;&lt;/p&gt;</code>",
+        "<code>&lt;p&gt;Bitte &lt;strong&gt;aufpassen.&lt;/p&gt;</code>",
+        "<code>&lt;p&gt;Bitte &lt;strong&gt;aufpassen&lt;/strong&gt;.&lt;/p&gt;</code>",
+        "<code>&lt;p&gt;Bitte &lt;strong&gt;aufpassen&lt;/p&gt;.&lt;/strong&gt;</code>"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Das innere strong-Element wird vor dem äußeren p-Element geschlossen. Sich überkreuzende Start- und End-Tags bilden keine korrekt verschachtelte Struktur.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "html1:14–15"
+      ],
+      "solution": "<p>Bitte <strong>aufpassen</strong>.</p>"
+    },
+    {
+      "id": "PHP-WEB-026",
+      "type": "multiple-choice",
+      "topic": "html",
+      "difficulty": "leicht",
+      "text": "Welche zwei Elemente sind in HTML leere Elemente (Void-Elemente) und erhalten kein schließendes End-Tag?",
+      "options": [
+        "<code>&lt;img&gt;</code>",
+        "<code>&lt;textarea&gt;</code>",
+        "<code>&lt;input&gt;</code>",
+        "<code>&lt;p&gt;</code>"
+      ],
+      "correct": [
+        0,
+        2
+      ],
+      "explanation": "img und input nehmen keinen Elementinhalt auf und besitzen kein End-Tag. Ein abschließender Slash im Start-Tag ist in HTML dafür nicht erforderlich. p und textarea können Inhalt aufnehmen.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "html1:11–12,37",
+        "html2:15,24",
+        "html-syntax"
+      ],
+      "solution": "<img>; <input>"
+    },
+    {
+      "id": "PHP-WEB-027",
+      "type": "single-choice",
+      "topic": "html",
+      "difficulty": "leicht",
+      "text": "Welche Aussage zu diesem Ausschnitt ist richtig?<pre><code>&lt;p id=\"hinweis\" class=\"info wichtig\"&gt;Bitte lesen.&lt;/p&gt;</code></pre>",
+      "options": [
+        "Die id gilt automatisch auch für alle folgenden Absätze.",
+        "Die beiden Klassen dürfen nie zusammen vorkommen.",
+        "Das Element besitzt zwei ids und eine Klasse.",
+        "Das Element besitzt zwei Klassen und eine id."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Das class-Attribut kann mehrere durch Leerzeichen getrennte Klassennamen enthalten. Die id kennzeichnet ein bestimmtes Element und soll im Dokument eindeutig sein.",
+      "skill": "Verstehen",
+      "code": "<p id=\"hinweis\" class=\"info wichtig\">Bitte lesen.</p>",
+      "codeLanguage": "html",
+      "sourceRefs": [
+        "html1:23–24",
+        "css1:26–28"
+      ],
+      "solution": "Das Element besitzt zwei Klassen und eine id."
+    },
+    {
+      "id": "PHP-WEB-028",
+      "type": "single-choice",
+      "topic": "html",
+      "difficulty": "leicht",
+      "text": "Welches Attribut legt im folgenden Element das Linkziel fest?<pre><code>&lt;a href=\"kontakt.html\"&gt;Zum Kontakt&lt;/a&gt;</code></pre>",
+      "options": [
+        "<code>alt</code>",
+        "<code>href</code>",
+        "<code>method</code>",
+        "<code>src</code>"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "href enthält das Ziel des Hyperlinks. „Zum Kontakt“ ist der sichtbare Linktext; kontakt.html ist hier ein relativer Verweis.",
+      "skill": "Verstehen",
+      "code": "<a href=\"kontakt.html\">Zum Kontakt</a>",
+      "codeLanguage": "html",
+      "sourceRefs": [
+        "html2:20"
+      ],
+      "solution": "href"
+    },
+    {
+      "id": "PHP-WEB-029",
+      "type": "single-choice",
+      "topic": "html",
+      "difficulty": "leicht",
+      "text": "Welcher Alternativtext passt zu einem inhaltlich wichtigen Foto eines roten Not-Aus-Schalters?<pre><code>&lt;img src=\"not-aus.jpg\" alt=\"...\"&gt;</code></pre>",
+      "options": [
+        "Bild.",
+        "Hier klicken, ganz toll!",
+        "Roter Not-Aus-Schalter an der Maschine.",
+        "foto_0237_final.jpg"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Ein Alternativtext beschreibt den für den Kontext wichtigen Bildinhalt. Ein Dateiname oder das Wort „Bild“ vermittelt diese Information nicht.",
+      "skill": "Verstehen",
+      "code": "<img src=\"not-aus.jpg\" alt=\"...\">",
+      "codeLanguage": "html",
+      "sourceRefs": [
+        "html1:37–38",
+        "ux1:13–14"
+      ],
+      "solution": "Roter Not-Aus-Schalter an der Maschine."
+    },
+    {
+      "id": "PHP-WEB-030",
+      "type": "single-choice",
+      "topic": "html",
+      "difficulty": "leicht",
+      "text": "Wie viele nummerierte Listeneinträge enthält dieser Ausschnitt?<pre><code>&lt;ol&gt;\n  &lt;li&gt;Projekt öffnen&lt;/li&gt;\n  &lt;li&gt;Datei bearbeiten&lt;/li&gt;\n  &lt;li&gt;Ergebnis prüfen&lt;/li&gt;\n&lt;/ol&gt;</code></pre>",
+      "options": [
+        "3",
+        "1",
+        "4",
+        "2"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Die drei li-Elemente sind die Listeneinträge. ol kennzeichnet die geordnete Liste und ist kein zusätzlicher Eintrag.",
+      "skill": "Code lesen",
+      "code": "<ol>\n  <li>Projekt öffnen</li>\n  <li>Datei bearbeiten</li>\n  <li>Ergebnis prüfen</li>\n</ol>",
+      "codeLanguage": "html",
+      "sourceRefs": [
+        "html1:41–42"
+      ],
+      "solution": "3"
+    },
+    {
+      "id": "PHP-WEB-031",
+      "type": "single-choice",
+      "topic": "html",
+      "difficulty": "leicht",
+      "text": "Wie viele Tabellenzeilen und Spalten zeigt diese Tabelle?<pre><code>&lt;table&gt;\n  &lt;tr&gt;&lt;th&gt;Kurs&lt;/th&gt;&lt;th&gt;Raum&lt;/th&gt;&lt;/tr&gt;\n  &lt;tr&gt;&lt;td&gt;PHP&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;/tr&gt;\n&lt;/table&gt;</code></pre>",
+      "options": [
+        "1 Zeile und 4 Spalten.",
+        "2 Zeilen und 2 Spalten.",
+        "3 Zeilen und 2 Spalten.",
+        "4 Zeilen und 1 Spalte."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Jedes tr bildet eine Zeile. In beiden Zeilen befinden sich jeweils zwei Zellen. th kennzeichnet Überschriftenzellen, td gewöhnliche Datenzellen.",
+      "skill": "Code lesen",
+      "code": "<table>\n  <tr><th>Kurs</th><th>Raum</th></tr>\n  <tr><td>PHP</td><td>3</td></tr>\n</table>",
+      "codeLanguage": "html",
+      "sourceRefs": [
+        "html1:44–45"
+      ],
+      "solution": "2 Zeilen und 2 Spalten."
+    },
+    {
+      "id": "PHP-WEB-032",
+      "type": "single-choice",
+      "topic": "html",
+      "difficulty": "leicht",
+      "text": "Welche Änderung verknüpft das label korrekt mit dem Eingabefeld?<pre><code>&lt;label for=\"stueck\"&gt;Stückzahl&lt;/label&gt;\n&lt;input id=\"anzahl\" name=\"menge\" type=\"number\"&gt;</code></pre>",
+      "options": [
+        "Im label for=\"menge\" setzen.",
+        "Das Attribut for ersatzlos entfernen.",
+        "Im input name=\"Stückzahl\" setzen.",
+        "Im label for=\"anzahl\" setzen."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "for verweist auf die id des Eingabefelds, hier anzahl. name erfüllt eine andere Aufgabe: Es bezeichnet den Schlüssel bei der Formularübermittlung.",
+      "skill": "Fehler finden",
+      "code": "<label for=\"stueck\">Stückzahl</label>\n<input id=\"anzahl\" name=\"menge\" type=\"number\">",
+      "codeLanguage": "html",
+      "sourceRefs": [
+        "html2:16"
+      ],
+      "solution": "Im label for=\"anzahl\" setzen."
+    },
+    {
+      "id": "PHP-WEB-033",
+      "type": "single-choice",
+      "topic": "html",
+      "difficulty": "leicht",
+      "text": "Das Formular wird unverändert über seinen Button abgeschickt. Welches Paar entsteht aus dem Eingabefeld?<pre><code>&lt;form action=\"auswerten.php\" method=\"post\"&gt;\n  &lt;input id=\"titel\" name=\"thema\" value=\"HTML\"&gt;\n  &lt;button type=\"submit\"&gt;Absenden&lt;/button&gt;\n&lt;/form&gt;</code></pre>",
+      "options": [
+        "<code>thema=HTML</code>",
+        "<code>HTML=thema</code>",
+        "<code>thema=titel</code>",
+        "<code>titel=HTML</code>"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "name liefert den Namen des übertragenen Felds, value den hier unveränderten Wert. id dient der Identifikation im Dokument. Der Button besitzt kein name und liefert deshalb kein zusätzliches benanntes Feld.",
+      "skill": "Code lesen",
+      "code": "<form action=\"auswerten.php\" method=\"post\">\n  <input id=\"titel\" name=\"thema\" value=\"HTML\">\n  <button type=\"submit\">Absenden</button>\n</form>",
+      "codeLanguage": "html",
+      "sourceRefs": [
+        "html2:23–24",
+        "html-standard"
+      ],
+      "solution": "thema=HTML"
+    },
+    {
+      "id": "PHP-WEB-034",
+      "type": "single-choice",
+      "topic": "css",
+      "difficulty": "leicht",
+      "text": "Welche Variante bindet die Datei style.css als externes Stylesheet im head ein?",
+      "options": [
+        "<code>&lt;style src=\"style.css\"&gt;&lt;/style&gt;</code>",
+        "<code>&lt;link rel=\"stylesheet\" href=\"style.css\"&gt;</code>",
+        "<code>&lt;css file=\"style.css\"&gt;</code>",
+        "<code>&lt;a href=\"style.css\"&gt;Style&lt;/a&gt;</code>"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "link mit rel=\"stylesheet\" verknüpft das Dokument mit der CSS-Datei. HTML beschreibt die Inhalte und ihre Struktur; CSS übernimmt hier die Darstellung. Ein a-Element wäre dagegen ein sichtbarer Hyperlink.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "css1:3,8–10"
+      ],
+      "solution": "<link rel=\"stylesheet\" href=\"style.css\">"
+    },
+    {
+      "id": "PHP-WEB-035",
+      "type": "single-choice",
+      "topic": "css",
+      "difficulty": "leicht",
+      "text": "Welche Korrektur macht aus dieser Zeile eine gültige CSS-Regel?<pre><code>p { color = navy; }</code></pre>",
+      "options": [
+        "color = navy durch color: navy ersetzen.",
+        "Den Selektor p durch <p> ersetzen.",
+        "Die geschweiften Klammern durch runde Klammern ersetzen.",
+        "navy durch \"navy\" ersetzen und das Gleichheitszeichen beibehalten."
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "In einer CSS-Deklaration trennt ein Doppelpunkt die Eigenschaft vom Wert. Der Selektor steht vor dem Deklarationsblock in geschweiften Klammern.",
+      "skill": "Fehler finden",
+      "code": "p { color = navy; }",
+      "codeLanguage": "css",
+      "sourceRefs": [
+        "css1:5–7"
+      ],
+      "solution": "color = navy durch color: navy ersetzen."
+    },
+    {
+      "id": "PHP-WEB-036",
+      "type": "single-choice",
+      "topic": "css",
+      "difficulty": "leicht",
+      "text": "Welche Texte werden direkt vom Selektor <code>p.info</code> ausgewählt?<pre><code>&lt;p class=\"info\"&gt;A&lt;/p&gt;\n&lt;div class=\"info\"&gt;B&lt;/div&gt;\n&lt;p&gt;C&lt;/p&gt;</code></pre>",
+      "options": [
+        "A und C.",
+        "A, B und C.",
+        "A und B.",
+        "Nur A."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "p.info verlangt gleichzeitig den Elementtyp p und die Klasse info. B ist ein div, C besitzt die Klasse info nicht.",
+      "skill": "Selektor nachvollziehen",
+      "code": "<p class=\"info\">A</p>\n<div class=\"info\">B</div>\n<p>C</p>",
+      "codeLanguage": "html",
+      "sourceRefs": [
+        "css1:Zusammengesetzte Selektoren"
+      ],
+      "solution": "Nur A."
+    },
+    {
+      "id": "PHP-WEB-037",
+      "type": "single-choice",
+      "topic": "css",
+      "difficulty": "leicht",
+      "text": "Welche Texte werden direkt vom Selektor <code>div &gt; p</code> ausgewählt?<pre><code>&lt;div&gt;\n  &lt;p&gt;A&lt;/p&gt;\n  &lt;section&gt;&lt;p&gt;B&lt;/p&gt;&lt;/section&gt;\n&lt;/div&gt;\n&lt;p&gt;C&lt;/p&gt;</code></pre>",
+      "options": [
+        "A und B.",
+        "A, B und C.",
+        "Nur B.",
+        "Nur A."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Der Kindkombinator &gt; wählt nur direkte Kinder. A ist ein direktes p-Kind des div. B ist erst innerhalb von section verschachtelt; C liegt außerhalb.",
+      "skill": "Selektor nachvollziehen",
+      "code": "<div>\n  <p>A</p>\n  <section><p>B</p></section>\n</div>\n<p>C</p>",
+      "codeLanguage": "html",
+      "sourceRefs": [
+        "css1:31–35"
+      ],
+      "solution": "Nur A."
+    },
+    {
+      "id": "PHP-WEB-038",
+      "type": "single-choice",
+      "topic": "css",
+      "difficulty": "mittel",
+      "text": "Welche Textfarbe erhält „Hinweis“? Es gelten nur diese Regeln; kein !important, keine Ebenen (Layers) und keine Inline-Styles.<pre><code>&lt;style&gt;\n  #meldung { color: green; }\n  .info { color: red; }\n  p { color: blue; }\n&lt;/style&gt;\n&lt;p id=\"meldung\" class=\"info\"&gt;Hinweis&lt;/p&gt;</code></pre>",
+      "options": [
+        "Grün.",
+        "Schwarz.",
+        "Rot.",
+        "Blau."
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Der id-Selektor #meldung ist spezifischer als die Klasse .info und der Elementselektor p. Unter den hier gleichen übrigen Kaskadenbedingungen setzt er sich deshalb durch.",
+      "skill": "CSS-Ergebnis bestimmen",
+      "code": "<style>\n  #meldung { color: green; }\n  .info { color: red; }\n  p { color: blue; }\n</style>\n<p id=\"meldung\" class=\"info\">Hinweis</p>",
+      "codeLanguage": "html",
+      "sourceRefs": [
+        "css1:Spezifizität",
+        "css-cascade"
+      ],
+      "solution": "Grün."
+    },
+    {
+      "id": "PHP-WEB-039",
+      "type": "single-choice",
+      "topic": "css",
+      "difficulty": "mittel",
+      "text": "Welche Textfarbe erhält „Text“? Es gelten nur die dargestellten Regeln.<pre><code>&lt;style&gt;\n  .rot { color: red; }\n  .blau { color: blue; }\n&lt;/style&gt;\n&lt;p class=\"blau rot\"&gt;Text&lt;/p&gt;</code></pre>",
+      "options": [
+        "Eine Mischung aus Rot und Blau.",
+        "Rot.",
+        "Die Reihenfolge im class-Attribut entscheidet, also Rot.",
+        "Blau."
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Beide Klassenselektoren haben dieselbe Spezifität. Die später im Stylesheet stehende passende Regel gewinnt. Die Reihenfolge der Klassen im HTML-Attribut verändert das nicht.",
+      "skill": "CSS-Ergebnis bestimmen",
+      "code": "<style>\n  .rot { color: red; }\n  .blau { color: blue; }\n</style>\n<p class=\"blau rot\">Text</p>",
+      "codeLanguage": "html",
+      "sourceRefs": [
+        "css1:28,Spezifizität",
+        "css-cascade"
+      ],
+      "solution": "Blau."
+    },
+    {
+      "id": "PHP-WEB-040",
+      "type": "single-choice",
+      "topic": "css",
+      "difficulty": "leicht",
+      "text": "Welche Farbe erhält der Absatztext, wenn keine weiteren Regeln gelten?<pre><code>&lt;style&gt;\n  div { color: blue; }\n&lt;/style&gt;\n&lt;div&gt;&lt;p&gt;Hinweis&lt;/p&gt;&lt;/div&gt;</code></pre>",
+      "options": [
+        "Rot als Standardfarbe aller Absätze.",
+        "Blau durch Vererbung vom umgebenden div.",
+        "Blau, weil div automatisch alle Elemente im Dokument selektiert.",
+        "Keine Farbe, weil p keine eigene CSS-Regel hat."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Die Eigenschaft color wird vererbt. Hat das Kind keine eigene passende Farbangabe, übernimmt es hier den Wert des Elternteils. Nicht jede CSS-Eigenschaft wird automatisch vererbt.",
+      "skill": "CSS-Ergebnis bestimmen",
+      "code": "<style>\n  div { color: blue; }\n</style>\n<div><p>Hinweis</p></div>",
+      "codeLanguage": "html",
+      "sourceRefs": [
+        "css1:Vererbung",
+        "css-cascade"
+      ],
+      "solution": "Blau durch Vererbung vom umgebenden div."
+    },
+    {
+      "id": "PHP-WEB-041",
+      "type": "single-choice",
+      "topic": "css",
+      "difficulty": "leicht",
+      "text": "Der Hintergrund einer Karte soll halbtransparent sein, der Text aber seine volle Deckkraft behalten. Welche Angabe passt?",
+      "options": [
+        "<code>background-color: rgba(0, 0, 255, 0.5);</code>",
+        "<code>background-color: transparent;</code>",
+        "<code>opacity: 0.5;</code>",
+        "<code>color: rgba(0, 0, 255, 0.5);</code>"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Ein Alphawert in der Hintergrundfarbe beeinflusst nur diese Farbe. opacity wirkt auf das gesamte zusammengesetzte Element einschließlich seines Textes.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "css2:Transparenz,Fazit Farben und Hintergründe"
+      ],
+      "solution": "background-color: rgba(0, 0, 255, 0.5);"
+    },
+    {
+      "id": "PHP-WEB-042",
+      "type": "single-choice",
+      "topic": "css",
+      "difficulty": "leicht",
+      "text": "Ein Hintergrundbild soll ohne Verzerrung die gesamte Fläche eines Elements abdecken. Abschneiden an den Rändern ist erlaubt. Welcher Wert passt zu background-size?",
+      "options": [
+        "<code>cover</code>",
+        "<code>repeat-x</code>",
+        "<code>contain</code>",
+        "<code>center</code>"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "cover skaliert proportional so, dass die Fläche vollständig bedeckt ist. Dabei können Bildränder abgeschnitten werden. contain zeigt dagegen das ganze Bild, gegebenenfalls mit freien Bereichen.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "css2:Hintergrundgröße",
+        "css-backgrounds"
+      ],
+      "solution": "cover"
+    },
+    {
+      "id": "PHP-WEB-043",
+      "type": "single-choice",
+      "topic": "css",
+      "difficulty": "leicht",
+      "text": "Wie verläuft der Farbverlauf dieser Regel?<pre><code>background-image: linear-gradient(to right, red, blue);</code></pre>",
+      "options": [
+        "Von Rot oben zu Blau unten.",
+        "Von Rot links zu Blau rechts.",
+        "Vom roten Mittelpunkt kreisförmig nach außen.",
+        "Von Blau links zu Rot rechts."
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "to right legt die Richtung nach rechts fest. Die erste Farbe befindet sich am Anfang, die zweite am Ende des linearen Verlaufs.",
+      "skill": "CSS-Ergebnis bestimmen",
+      "code": "background-image: linear-gradient(to right, red, blue);",
+      "codeLanguage": "css",
+      "sourceRefs": [
+        "css2:Linearverlauf"
+      ],
+      "solution": "Von Rot links zu Blau rechts."
+    },
+    {
+      "id": "PHP-WEB-044",
+      "type": "single-choice",
+      "topic": "css",
+      "difficulty": "leicht",
+      "text": "Welche Beschreibung passt zu einem komplementären Farbschema?",
+      "options": [
+        "Jede Ansicht verwendet eine neue, zufällig gewählte Farbpalette.",
+        "Es werden nur Schattierungen eines einzigen Farbtons verwendet.",
+        "Zwei Farbtöne liegen sich auf dem Farbkreis gegenüber.",
+        "Drei direkt benachbarte Farbtöne werden kombiniert."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Komplementärfarben liegen sich im verwendeten Farbkreis gegenüber. Ein monochromatisches Schema verwendet dagegen Abstufungen eines Farbtons; ein analoges Schema benachbarte Farbtöne.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "css2:Farbschemata"
+      ],
+      "solution": "Zwei Farbtöne liegen sich auf dem Farbkreis gegenüber."
+    },
+    {
+      "id": "PHP-WEB-045",
+      "type": "multiple-choice",
+      "topic": "css",
+      "difficulty": "leicht",
+      "text": "Welche zwei Aussagen sind bei Farben und Nutzerführung sinnvoll?",
+      "options": [
+        "Rot wird ausnahmslos von allen Menschen gleich wahrgenommen.",
+        "Farbassoziationen können vom kulturellen Kontext und von Personen abhängen.",
+        "Je mehr unterschiedliche Signalfarben gleichzeitig erscheinen, desto eindeutiger ist die Oberfläche immer.",
+        "Eine Fehlermeldung sollte zusätzlich zur Farbe verständlichen Text oder ein Symbol bieten."
+      ],
+      "correct": [
+        1,
+        3
+      ],
+      "explanation": "Farbe kann Orientierung unterstützen, ist aber nicht für alle Menschen gleich wahrnehmbar oder gleichbedeutend. Zusätzliche Beschriftungen und ein konsistentes Farbschema helfen, Informationen eindeutig zu vermitteln.",
+      "skill": "Verstehen",
+      "sourceRefs": [
+        "css2:Kleine Farbpsychologie,Farbschemata",
+        "ux1:13–14"
+      ],
+      "solution": "Farbassoziationen können vom kulturellen Kontext und von Personen abhängen.; Eine Fehlermeldung sollte zusätzlich zur Farbe verständlichen Text oder ein Symbol bieten."
+    }
+  ]
+}

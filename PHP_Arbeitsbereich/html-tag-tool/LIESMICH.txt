@@ -1,0 +1,83 @@
+HTML-TAG-TOOL – REPARIERTE, EIGENSTÄNDIGE FASSUNG
+================================================
+
+START UNTER WINDOWS
+1. ZIP vollständig entpacken. Nicht innerhalb der ZIP starten.
+2. START.cmd im Ordner html-tag-tool doppelklicken.
+3. Das Konsolenfenster geöffnet lassen. Beenden mit Strg+C.
+
+Der Starter benötigt Python 3.8 oder neuer, aber keine Zusatzpakete.
+Er installiert nichts und bindet den Server ausschließlich an 127.0.0.1.
+Ist Port 8765 belegt, wird automatisch ein freier Port verwendet.
+Die Browseradresse wird im Startfenster angezeigt.
+
+Alternative mit vorhandenem XAMPP:
+Den Ordner html-tag-tool nach C:\xampp\htdocs kopieren, Apache starten
+und http://localhost/html-tag-tool/index.html öffnen.
+
+Die Dateien sind lokal verlinkt und benötigen kein Internet.
+Ein Direktaufruf der index.html per Doppelklick kann für die Übersicht
+verwendet werden. Für Fensterwechsel und Experimentierlabor ist der
+Start über START.cmd oder XAMPP der vorgesehene Weg. Die zusätzlichen
+Browser-Sicherheitsregeln für file:// werden dadurch vermieden, ohne
+Browser-Sicherheitsfunktionen abzuschalten.
+
+URSACHE IM HOCHGELADENEN PAKET
+In der index.html wurden folgende Dateien außerhalb des Tool-Ordners
+angefordert; keine davon war im hochgeladenen ZIP enthalten:
+  ../tag-01/assets/css/lernfeld.css
+  ../global.css
+  ../shared/course-config.js
+  ../shared/progress-store.js
+  ../shared/progress-integration.js
+  ../global.js
+Auch fachinfo.html verwies auf ../global.css.
+
+Die lokale html-tag-tool.css enthielt unter anderem:
+  background: var(--course-color-secondary);
+Die benötigte Variable war in den mitgelieferten Dateien nicht definiert.
+Dadurch fehlte die dunkle Hintergrundfarbe, während die weiße Schrift
+weiterhin gesetzt war. Fehlende Grundstile betrafen außerdem Navigation,
+Abstände, Karten und die Fachinfo-Seite.
+
+ÄNDERUNGEN
+- tool-basis.css enthält die für dieses Modul benötigten Farben,
+  Größen, Grundstile und die Gestaltung der Seitennavigation.
+- Die Startseite und die Fachinfo-Seite laden ausschließlich mitgelieferte
+  CSS-/JS-Dateien. Kein automatischer Zugriff auf übergeordnete Dateien.
+- Die vorhandene Tag-Navigation ist nach tool-navigation.js ausgelagert.
+  Der mobile Menüschalter ist lokal funktionsfähig.
+- Alle 5 Tagesbereiche, 58 Tag-Karten, 290 CSS-Auswahlvarianten und alle
+  Fachinfo-Datensätze bleiben erhalten. fachinfo-daten.js ist unverändert.
+- Fachinfo-Fenster werden über denselben Fensternamen wiederverwendet,
+  ohne direkt auf Location eines zuvor geöffneten Fensters zuzugreifen.
+- Bei blockiertem Popup bleibt der Link für dieselbe Seite verfügbar.
+- Fehlt die Clipboard-API, wird der CSS-Text zum manuellen Kopieren markiert.
+- START.cmd/starten.py bieten einen lokalen HTTP-Start ohne Zusatzpakete.
+
+GRENZE DIESER REPARATUR: GESAMTKURS-INTEGRATION
+Die Originaldateien global.css, global.js, lernfeld.css sowie die drei
+shared-Skripte lagen nicht vor. Die neuen lokalen Dateien sind ein
+Ersatz für die Darstellung und Tool-Bedienung, keine Rekonstruktion der
+Original-Kursdateien. Die pixelgenaue Übereinstimmung mit der unbekannten
+Gesamtkurs-Gestaltung kann daher nicht zugesichert werden.
+
+Die kursweite Fortschrittsspeicherung ist in dieser eigenständigen Fassung
+nicht eingebunden. Es wird kein gespeicherter Kursfortschritt gelöscht.
+Die Dateien und Seiten des übrigen Kurses werden nicht verändert.
+
+LINK ZUR VORHANDENEN LERNÜBERSICHT
+Standardmäßig führt der Rücklink zur Einführung innerhalb des Tools.
+Im vollständigen Kursprojekt kann in tool-config.js eingestellt werden:
+  courseOverviewUrl: "../index.html"
+Die ../index.html muss dann tatsächlich vorhanden sein. Für diesen Modus
+bitte den gesamten Kurs über XAMPP oder einen anderen lokalen Webserver
+starten, nicht nur den einzelnen Tool-Ordner über START.cmd.
+
+EINBAU INS BESTEHENDE PROJEKT
+Zuerst den bisherigen Ordner html-tag-tool sichern. Danach den entpackten
+Ordner aus diesem Paket an dessen Stelle einsetzen. Keine CSS-/JS-Dateien
+anderer Ordner verschieben oder überschreiben. Danach die Seite neu laden.
+
+WEITERE DATEIEN
+PRUEFBERICHT.txt dokumentiert die ausgeführten Prüfungen und ihre Grenzen.

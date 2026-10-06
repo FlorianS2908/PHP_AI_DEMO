@@ -1,0 +1,81 @@
+/* Eigenständiges CSS. Konkrete Gestaltungswerte sind hier eine Musterentscheidung. */
+:root{--bg:#f3f6fa;--surface:#fff;--ink:#172b3c;--muted:#4b6070;--accent:#175b8a;--soft:#eaf3fb;--line:#b7c6d2;--error:#9e2334;--errorbg:#fff2f3;--success:#176445;--successbg:#edf9f2;--warn:#775209;--warnbg:#fff8e5;--radius:1rem}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}
+body.werkstatt{--accent:#256347;--soft:#eaf5ed;--bg:#f4f6f1}
+body.raum{--accent:#524299;--soft:#f0edfc;--bg:#f5f4fa}
+body.shirt{--accent:#923967;--soft:#fbedf4;--bg:#fcf5f8}
+body.pc{--accent:#205778;--soft:#e8f2f7;--bg:#edf2f7}
+a{color:var(--accent);text-underline-offset:.2em}
+.topbar{background:var(--ink);color:#fff;padding:.7rem max(1rem,calc((100vw - 72rem)/2));display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.84rem;letter-spacing:.04em}
+main{max-width:72rem;margin:auto;padding:2rem 1.25rem 3rem}
+.hero{max-width:54rem;margin:0 0 1.75rem}
+.eyebrow{color:var(--accent);font-weight:750;text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;margin:0 0 .65rem}
+h1{font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.12;margin:0 0 .8rem;letter-spacing:-.035em;display:flex;align-items:center;gap:.7rem}
+h1 .icon{width:1.1em;height:1.1em;flex:none}
+h2{font-size:1.15rem;margin:0 0 1rem;line-height:1.4;display:flex;align-items:center;gap:.5rem}
+p{margin:.4rem 0 1rem}
+.hero p,.muted,.hinweis{color:var(--muted)}
+.icon{width:1.2em;height:1.2em;vertical-align:-.2em;flex-shrink:0}
+.layout{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(15rem,1fr);gap:1.5rem;align-items:start}
+.form-sections{display:grid;grid-template-columns:minmax(0,1fr);gap:1.25rem;min-width:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.45rem;min-width:0}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem 1.15rem}
+.feld{min-width:0}
+.wide{grid-column:1/-1}
+label,.gruppen-label{display:block;font-weight:650;margin-bottom:.35rem}
+.pflicht{font-weight:450;font-size:.8rem;color:var(--muted);white-space:nowrap}
+input:not([type="checkbox"]):not([type="radio"]),select,textarea{width:100%;min-width:0;min-height:2.8rem;padding:.65rem .75rem;font:inherit;color:var(--ink);background:#fff;border:1px solid #8399aa;border-radius:.45rem}
+input[type="color"]{height:3rem;padding:.3rem!important}
+textarea{min-height:7rem;resize:vertical}
+input[type="checkbox"],input[type="radio"]{accent-color:var(--accent);width:1.1rem;height:1.1rem;flex:none}
+fieldset.auswahl{padding:0;margin:0;border:0;min-width:0}
+fieldset.auswahl legend{font-weight:650;margin-bottom:.45rem}
+.optionen{display:flex;flex-wrap:wrap;gap:.55rem}
+.option{display:flex;align-items:flex-start;gap:.55rem;border:1px solid var(--line);padding:.6rem .75rem;border-radius:.5rem;margin:0;font-weight:450;cursor:pointer;background:#fff}
+.option input{margin-top:.3rem}
+.option:has(input:checked){border-color:var(--accent);background:var(--soft);box-shadow:inset 0 0 0 1px var(--accent)}
+.hinweis{font-size:.86rem;margin:.35rem 0 0}
+.feldfehler{display:flex;align-items:flex-start;gap:.4rem;color:var(--error);font-size:.9rem;margin:.4rem 0 0;font-weight:600}
+[aria-invalid="true"]{border-color:var(--error)!important}
+.auswahl[aria-invalid="true"]{padding:.5rem;border:2px solid var(--error);border-radius:.5rem}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.notice{padding:1.1rem 1.25rem;border-radius:.65rem;margin-bottom:1.25rem;border:1px solid currentColor}
+.notice h2{margin-bottom:.35rem}
+.notice p:last-child{margin-bottom:0}
+.notice.error{color:var(--error);background:var(--errorbg)}
+.notice.success{color:var(--success);background:var(--successbg)}
+.notice.warning{color:var(--warn);background:var(--warnbg)}
+.notice ul{margin:.5rem 0 0;padding-left:1.4rem}
+.notice a{color:inherit}
+.aside{background:var(--soft);position:sticky;top:1rem}
+.aside p:last-child{margin-bottom:0}
+.actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;padding:.4rem 0}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:3rem;border:0;border-radius:.55rem;padding:.75rem 1.2rem;background:var(--accent);color:#fff;font:inherit;font-weight:700;cursor:pointer;text-decoration:none}
+.button:hover{filter:brightness(.88)}
+.secondary{color:var(--accent);background:var(--soft);border:1px solid var(--accent)}
+.result-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.5rem;margin:1.5rem 0}
+.details{display:grid;grid-template-columns:minmax(7rem,1fr) minmax(0,1.6fr);gap:.55rem 1rem;margin:0}
+dt{font-weight:650}dd{margin:0;overflow-wrap:anywhere;white-space:pre-wrap}
+.table-scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+caption{text-align:left;color:var(--muted);margin-bottom:.65rem}
+th,td{text-align:left;padding:.7rem .45rem;border-bottom:1px solid var(--line);vertical-align:top}
+th:not(:first-child),td:not(:first-child){text-align:right;white-space:nowrap}
+.total{font-size:1.2rem;font-weight:750;display:flex;justify-content:space-between;gap:1rem;margin:1rem 0 0}
+.swatch{display:inline-block;width:3rem;height:2rem;border:1px solid var(--ink);border-radius:.3rem;vertical-align:middle;margin-right:.5rem}
+footer{font-size:.84rem;color:var(--muted);margin-top:2rem}
+/* Unterschiedliche Grid-Anordnungen bleiben in sinnvoller DOM-/Tab-Reihenfolge. */
+.werkstatt .layout{grid-template-columns:minmax(0,1fr)}
+.werkstatt .form-sections{grid-template-columns:repeat(2,minmax(0,1fr))}
+.werkstatt .section-3,.werkstatt .actions{grid-column:1/-1}
+.werkstatt .aside{position:static}
+.raum .section-2 .fields{grid-template-areas:"raum personen" "beginn ende" "bestuhlung bestuhlung"}
+.raum .feld-raum{grid-area:raum}.raum .feld-personen{grid-area:personen}.raum .feld-beginn{grid-area:beginn}.raum .feld-ende{grid-area:ende}.raum .feld-bestuhlung{grid-area:bestuhlung}
+.shirt .layout{grid-template-columns:minmax(0,1.7fr) minmax(17rem,1fr)}
+.pc .layout{grid-template-columns:minmax(0,2.4fr) minmax(15rem,1fr)}
+.pc .section-2 .fields{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:58rem){.layout,.shirt .layout,.pc .layout{grid-template-columns:minmax(0,1fr)}.aside{position:static}.werkstatt .form-sections{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:38rem){main{padding:1.5rem .85rem}.card{padding:1.1rem}.fields,.result-grid{grid-template-columns:minmax(0,1fr)}.details{grid-template-columns:minmax(0,1fr)}dd{margin-bottom:.6rem}.raum .section-2 .fields{grid-template-areas:"raum" "personen" "beginn" "ende" "bestuhlung"}.pc .section-2 .fields{grid-template-columns:minmax(0,1fr)}.optionen{flex-direction:column}.actions>*{width:100%}.topbar{font-size:.75rem}}
+@media print{body{background:#fff}.topbar,.actions{display:none}main{max-width:none;padding:0}.card{break-inside:avoid}.aside{position:static}}

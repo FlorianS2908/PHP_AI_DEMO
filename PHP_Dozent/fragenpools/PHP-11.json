@@ -1,0 +1,299 @@
+{
+  "id": "PHP-11",
+  "name": "PHP · 11 · PHP und Formulardaten",
+  "description": "12 Fragen · Grundlagen, Anwendung, Zuordnung und Reihenfolge",
+  "durationMinutes": 20,
+  "instructions": "Lies die Angaben genau. Bei Mehrfachwahl steht die Zahl richtiger Antworten dabei. Jede vollständig richtig gelöste Frage zählt einen Punkt. Keine Teilpunkte. Übungspool mit sichtbaren Lösungsschlüsseln im JSON.",
+  "topicLabels": {
+    "01": "User Interfaces",
+    "02": "Qualitätssicherung",
+    "03": "UX beschreiben",
+    "04": "UX gestalten",
+    "05": "HTML-Grundlagen",
+    "06": "HTML-Inhalte",
+    "07": "Struktur und Navigation",
+    "08": "Formulare",
+    "09": "CSS und Selektoren",
+    "10": "Farben und Hintergründe",
+    "11": "PHP und Formulardaten",
+    "12": "PHP und Datenbank",
+    "13": "CSS-Layout ergänzen"
+  },
+  "difficultyLabels": {
+    "leicht": "Grundlagen",
+    "mittel": "Anwendung"
+  },
+  "questions": [
+    {
+      "id": "PHP-11-01",
+      "type": "single",
+      "topic": "11",
+      "difficulty": "mittel",
+      "text": "Was wird ausgegeben?<pre><code>$text = &quot;Paris&quot;;\n$text .= &quot;!&quot;;\necho $text;</code></pre>",
+      "options": [
+        "!Paris",
+        "Ein Syntaxfehler wegen .=",
+        "Paris",
+        "Paris!"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": ".= hängt rechts an.",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf · 4–21"
+    },
+    {
+      "id": "PHP-11-02",
+      "type": "single",
+      "topic": "11",
+      "difficulty": "mittel",
+      "text": "Welches Ergebnis hat der strikte Vergleich?<pre><code>var_export(3 === &quot;3&quot;);</code></pre>",
+      "options": [
+        "false",
+        "Die Zahl 3",
+        "true",
+        "Die Zeichenkette 3"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "=== verlangt passenden Wert und Typ; Integer und String unterscheiden sich.",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf · 4–21"
+    },
+    {
+      "id": "PHP-11-03",
+      "type": "single",
+      "topic": "11",
+      "difficulty": "mittel",
+      "text": "Welcher Text wird ausgegeben?<pre><code>$p = 3;\nif ($p === 1) { echo &quot;Einzeln&quot;; }\nelseif ($p &lt;= 4) { echo &quot;Klein&quot;; }\nelse { echo &quot;Groß&quot;; }</code></pre>",
+      "options": [
+        "KleinGroß",
+        "Einzeln",
+        "Klein",
+        "Groß"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Der erste zutreffende Zweig wird ausgeführt.",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf · 4–21"
+    },
+    {
+      "id": "PHP-11-04",
+      "type": "single",
+      "topic": "11",
+      "difficulty": "mittel",
+      "text": "Was wird ausgegeben?<pre><code>$ziel = &quot;Rom&quot;;\nswitch ($ziel) {\n case &quot;Paris&quot;: echo &quot;A&quot;; break;\n case &quot;Rom&quot;: echo &quot;B&quot;; break;\n default: echo &quot;C&quot;;\n}</code></pre>",
+      "options": [
+        "B",
+        "BC",
+        "C",
+        "AB"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "break beendet die Fallbehandlung.",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf · 4–21"
+    },
+    {
+      "id": "PHP-11-05",
+      "type": "single",
+      "topic": "11",
+      "difficulty": "mittel",
+      "text": "Wie oft wird der Schleifenkörper ausgeführt?<pre><code>$i = 3;\nwhile ($i &lt; 3) { echo $i; $i++; }</code></pre>",
+      "options": [
+        "0-mal",
+        "Unendlich oft",
+        "1-mal",
+        "3-mal"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Die Bedingung ist bereits vor dem ersten Durchlauf falsch.",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf · 4–21"
+    },
+    {
+      "id": "PHP-11-06",
+      "type": "single",
+      "topic": "11",
+      "difficulty": "mittel",
+      "text": "Was wird ausgegeben?<pre><code>$i = 3;\ndo { echo $i; $i++; } while ($i &lt; 3);</code></pre>",
+      "options": [
+        "34",
+        "Keine Ausgabe",
+        "012",
+        "3"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "do-while prüft erst nach der ersten Ausführung.",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf · 4–21"
+    },
+    {
+      "id": "PHP-11-07",
+      "type": "single",
+      "topic": "11",
+      "difficulty": "mittel",
+      "text": "Welcher Wert wird ausgegeben?<pre><code>$summe = 0;\nfor ($i = 1; $i &lt;= 3; $i++) { $summe += $i; }\necho $summe;</code></pre>",
+      "options": [
+        "6",
+        "4",
+        "3",
+        "10"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "1 + 2 + 3 ergibt 6.",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf · 4–21"
+    },
+    {
+      "id": "PHP-11-08",
+      "type": "single",
+      "topic": "11",
+      "difficulty": "mittel",
+      "text": "Was wird ausgegeben?<pre><code>$ziele = [&quot;Paris&quot;, &quot;Rom&quot;];\nforeach ($ziele as $ziel) { echo $ziel . &quot; &quot;; }</code></pre>",
+      "options": [
+        "Paris Rom ",
+        "Paris Paris ",
+        "Rom Paris ",
+        "0 1 "
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "foreach liefert die vorhandenen Werte in dieser Array-Reihenfolge.",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf · 4–21"
+    },
+    {
+      "id": "PHP-11-09",
+      "type": "multiple",
+      "topic": "11",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Aussagen zu Formulardaten stimmen?",
+      "options": [
+        "POST-Werte werden hier aus $_POST gelesen.",
+        "GET benötigt niemals eine Anfrage.",
+        "id ersetzt immer name.",
+        "name im Formular legt den übermittelten Schlüssel fest."
+      ],
+      "correct": [
+        0,
+        3
+      ],
+      "explanation": "Anfrageart und Feldname müssen zur PHP-Verarbeitung passen.",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf · 4–21"
+    },
+    {
+      "id": "PHP-11-10",
+      "type": "multiple",
+      "topic": "11",
+      "difficulty": "mittel",
+      "text": "Welche ZWEI Aussagen zur Funktion stimmen?<pre><code>function preis($cent, $anzahl) { return $cent * $anzahl; }\n$ergebnis = preis(12500, 3);</code></pre>",
+      "options": [
+        "Sie erzeugt zwingend einen HTML-Absatz.",
+        "Die Multiplikation liegt innerhalb der Funktion.",
+        "Sie liefert 37500 zurück.",
+        "Sie benötigt eine Session."
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "explanation": "return liefert den berechneten Wert. Ausgabe und Session sind davon unabhängig.",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf · 4–21"
+    },
+    {
+      "id": "PHP-11-11",
+      "type": "matching-postits",
+      "topic": "11",
+      "difficulty": "mittel",
+      "text": "Ordne die Begriffe ihren Beschreibungen zu.",
+      "items": [
+        {
+          "id": "i0",
+          "text": "while"
+        },
+        {
+          "id": "i1",
+          "text": "do-while"
+        },
+        {
+          "id": "i2",
+          "text": "foreach"
+        }
+      ],
+      "targets": [
+        {
+          "id": "t2",
+          "text": "Vorhandene Einträge durchlaufen"
+        },
+        {
+          "id": "t1",
+          "text": "Erste Prüfung nach dem Körper"
+        },
+        {
+          "id": "t0",
+          "text": "Prüfung vor dem Körper"
+        }
+      ],
+      "pairs": [
+        {
+          "leftId": "i0",
+          "rightId": "t0"
+        },
+        {
+          "leftId": "i1",
+          "rightId": "t1"
+        },
+        {
+          "leftId": "i2",
+          "rightId": "t2"
+        }
+      ],
+      "explanation": "while: Prüfung vor dem Körper; do-while: Erste Prüfung nach dem Körper; foreach: Vorhandene Einträge durchlaufen",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf"
+    },
+    {
+      "id": "PHP-11-12",
+      "type": "sql-order",
+      "topic": "11",
+      "difficulty": "mittel",
+      "text": "Ordne den im Kurs vorgegebenen Arbeitsablauf. Gemeint ist diese didaktische Reihenfolge, nicht die einzig mögliche Vorgehensweise in jedem Projekt.",
+      "blocks": [
+        {
+          "id": "b4",
+          "text": "Antwort im Browser darstellen"
+        },
+        {
+          "id": "b3",
+          "text": "HTML-Antwort erzeugen"
+        },
+        {
+          "id": "b2",
+          "text": "Werte serverseitig prüfen"
+        },
+        {
+          "id": "b1",
+          "text": "HTTP-Anfrage senden"
+        },
+        {
+          "id": "b0",
+          "text": "Formular ausfüllen"
+        }
+      ],
+      "correctOrder": [
+        "b0",
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "explanation": "Formular ausfüllen → HTTP-Anfrage senden → Werte serverseitig prüfen → HTML-Antwort erzeugen → Antwort im Browser darstellen",
+      "source": "PHP-Kurs_Kapitel 6_PHP DB_Präsentation.pdf"
+    }
+  ]
+}

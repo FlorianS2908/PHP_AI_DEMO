@@ -1,0 +1,1651 @@
+[
+  {
+    "id": "01",
+    "title": "User Interfaces",
+    "subtitle": "Nutzerziel, Eingabe und Rückmeldung",
+    "source": "ui",
+    "pages": "3–31",
+    "topics": [
+      {
+        "title": "Was ist eine Benutzerschnittstelle?",
+        "lead": "Eine Benutzerschnittstelle stellt die Verbindung zwischen einer Person und einem System her. Sie ist nicht auf Webseiten beschränkt.",
+        "points": [
+          "Eine Reisende wählt ein Ziel; die Oberfläche zeigt Angebote.",
+          "Auch ein Fahrkartenautomat oder ein Haushaltsgerät besitzt Bedienelemente.",
+          "Frage zuerst nach der Handlung der Person und dem erwarteten Ergebnis."
+        ],
+        "code": "Mensch → Eingabe → System → Ausgabe → Mensch",
+        "result": "Beispiel: Ziel auswählen → Suche auslösen → Angebote sehen.",
+        "page": "3–5"
+      },
+      {
+        "title": "Schnittstelle ist nicht gleich Schnittstelle",
+        "lead": "Die Unterlage unterscheidet mehrere Bedeutungen desselben Wortes. Wir betrachten in PHP vor allem die Mensch-System-Verbindung.",
+        "points": [
+          "User Interface: Mensch und System.",
+          "Hardware-Schnittstelle: zum Beispiel ein USB-Anschluss.",
+          "Software-Schnittstelle: zum Beispiel eine API; ein OOP-Interface ist nochmals ein eigener Begriff."
+        ],
+        "code": "Reiseformular → User Interface\nUSB-Anschluss → Hardware-Schnittstelle\nDatenaustausch zwischen Programmen → Software-Schnittstelle",
+        "result": "Eine Datenbankverbindung ist nicht automatisch eine Benutzeroberfläche.",
+        "page": "4"
+      },
+      {
+        "title": "Eingabe und Ausgabe auseinanderhalten",
+        "lead": "Eingaben transportieren Informationen oder Anweisungen zum System. Ausgaben machen Ergebnisse und Zustände für Menschen wahrnehmbar.",
+        "points": [
+          "Maus, Tastatur, Mikrofon oder Sensor liefern Eingaben.",
+          "Bildschirm, Lautsprecher oder Drucker stellen Ausgaben bereit.",
+          "Beim Touchscreen können beide Prozesse über dasselbe Gerät stattfinden."
+        ],
+        "code": "Touchscreen berühren → Eingabe\nAusgewählten Zielort anzeigen → Ausgabe",
+        "result": "Das gemeinsame Gerät hebt die Unterscheidung der Prozesse nicht auf.",
+        "page": "6–12"
+      },
+      {
+        "title": "Text, Menü und Grafik",
+        "lead": "Eine textbasierte Schnittstelle nimmt textuelle Anweisungen entgegen. Menüs zeigen auswählbare Möglichkeiten; eine GUI verwendet grafische Bedienelemente.",
+        "points": [
+          "CLI: Befehle müssen bekannt oder nachgeschlagen werden.",
+          "Menü: Optionen sind sichtbar, können aber in Untermenüs liegen.",
+          "GUI: flexible Darstellung und visuelle Rückmeldung; Gestaltung muss durchdacht sein."
+        ],
+        "code": "CLI-Skizze: suche ziel=Paris\nMenü: Reisen → Städte → Paris\nGUI: Auswahlfeld „Reiseziel“ + „Angebote suchen“",
+        "result": "Die CLI-Zeile ist eine Interaktionsskizze, kein echter Systembefehl.",
+        "page": "20–22, 26–29"
+      },
+      {
+        "title": "Weitere Arten der Interaktion",
+        "lead": "Das Kapitel ergänzt Hardware-, Batch-, dialogorientierte, Virtual-Reality- und Brain-Computer-Schnittstellen.",
+        "points": [
+          "Hardware: physische Schalter und Regler. Batch: gebündelte Verarbeitung; die Unterlage nutzt historische Lochkarten als Beispiel.",
+          "Conversational: menschliche Sprache als Text oder Ton.",
+          "VR und Brain-Computer werden als weitere Kategorien vorgestellt; Aussagen zum damaligen Entwicklungsstand sind keine aktuellen Marktangaben."
+        ],
+        "code": "",
+        "result": "Welcher Typ passt zur Aufgabe – und welche Voraussetzungen setzt er voraus?",
+        "page": "18–19, 23–25"
+      },
+      {
+        "title": "Nicht pauschal bewerten, sondern begründen",
+        "lead": "Die Unterlage fordert den Vergleich von CLI, Menü, GUI und Dialog. Schnittstellentypen können kombiniert werden.",
+        "points": [
+          "Beschreibe Zielgruppe, Tätigkeit und verfügbare Geräte.",
+          "Formuliere einen Vorteil und eine konkrete Schwierigkeit.",
+          "Eine GUI kann zugleich ein Menü und eine Spracheingabe anbieten."
+        ],
+        "code": "Situation: Eine unerfahrene Person möchte genau ein Ziel auswählen.\nEntwurf: Sichtbare Auswahl und klar beschriftete Suchaktion.",
+        "result": "Begründung: Die zulässigen Möglichkeiten sind erkennbar; keine Befehlssyntax muss erinnert werden.",
+        "page": "26–31"
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Ein- und Ausgabe beobachten",
+        "task": "Öffne Demo 1. Notiere zwei Handlungen der Person und zwei sichtbare Systeminformationen. Ordne sie Eingabe oder Ausgabe zu.",
+        "hint": "Nicht das Gerät, sondern den konkreten Prozess beschreiben.",
+        "criteria": "Vier zugeordnete Beobachtungen und ein erklärter Touchscreen-Sonderfall.",
+        "solution": "Zielauswahl und Klick sind Eingaben; Optionsliste und lokale Bestätigung sind Ausgaben. Ein Touchscreen bietet beide Prozesse."
+      },
+      {
+        "title": "Begriffe sortieren",
+        "task": "Ordne Reiseformular, USB-Anschluss, Datenaustausch-API und öffentliches OOP-Interface den vier Bedeutungen von Schnittstelle zu.",
+        "hint": "Vergleiche die Beteiligten auf beiden Seiten.",
+        "criteria": "Jede Zuordnung ist durch einen Satz begründet.",
+        "solution": "Reiseformular: Mensch/System. USB: Hardware/Hardware. API: Software/Software. OOP-Interface: sichtbarer Vertrag einer Programmkomponente."
+      },
+      {
+        "title": "Geräteübersicht erstellen",
+        "task": "Erstelle eine Tabelle mit fünf Eingabe- und fünf Ausgabebeispielen aus Kapitel 1. Ergänze jeweils den übertragenen Informationstyp.",
+        "hint": "Ton, Berührung, Bild, Druck und Vibration helfen beim Unterscheiden.",
+        "criteria": "Zehn Beispiele, keine bloße Namensliste.",
+        "solution": "Eingabe etwa Mausbewegung, Tastendruck, Mikrofonton, Schalterstellung, Sensorsignal. Ausgabe etwa Bildschirmbild, Lautsprecherton, Ausdruck, Projektorbild und Vibration."
+      },
+      {
+        "title": "Vier Bedienformen vergleichen",
+        "task": "Vergleicht in Paaren CLI, Menü, GUI und Dialog für eine Reisesuche. Nennt pro Form einen Vorteil und eine Schwierigkeit.",
+        "hint": "Eine Person argumentiert aus Nutzersicht, die andere aus Entwicklersicht.",
+        "criteria": "Vier begründete Vergleiche statt allgemeiner Aussagen wie immer besser.",
+        "solution": "CLI: kurze wiederholbare Anweisung, aber Syntaxkenntnis. Menü: erkennbare Optionen, aber Suchwege. GUI: gut sichtbare Auswahl, aber Gestaltungsaufwand. Dialog: sprachlicher Wunsch, aber Rückfragen bei Mehrdeutigkeit."
+      },
+      {
+        "title": "Erste Oberfläche skizzieren",
+        "task": "Skizziere eine Zielauswahl für EuroCityTravel. Markiere Eingabe, Aktion, Ergebnis und Rückweg.",
+        "hint": "Zunächst Papier oder Textskizze, noch kein CSS nötig.",
+        "criteria": "Vier Bereiche sind eindeutig beschriftet und auf das Nutzerziel bezogen.",
+        "solution": "Muster: Auswahl Reiseziel → Angebote suchen → Ergebnisliste → Auswahl ändern. Demo 2 zeigt eine mögliche Einteilung."
+      },
+      {
+        "title": "Entwurf erklären und prüfen",
+        "task": "Lass eine andere Person deinen Entwurf ohne Erklärung lesen. Notiere ihre erste erwartete Handlung und eine offene Frage.",
+        "hint": "Beobachtung und eigene Interpretation getrennt aufschreiben.",
+        "criteria": "Ein beobachteter Ablauf und eine begründete Überarbeitung.",
+        "solution": "Es gibt keine einheitliche Beobachtung. Bewertet wird, ob eine Änderung aus tatsächlicher Rückmeldung abgeleitet wird, etwa eine präzisere Beschriftung."
+      }
+    ]
+  },
+  {
+    "id": "02",
+    "title": "Qualitätssicherung",
+    "subtitle": "Anforderungen prüfbar machen",
+    "source": "qs",
+    "pages": "3–35",
+    "topics": [
+      {
+        "title": "Qualität beginnt mit Anforderungen",
+        "lead": "Softwarequalität beschreibt in der Unterlage die Eignung, vorher definierte Anforderungen und Bedürfnisse zu erfüllen.",
+        "points": [
+          "„Die Suche ist gut“ legt kein überprüfbares Ergebnis fest.",
+          "„Bei Ziel Paris erscheinen nur Paris-Angebote“ lässt sich prüfen.",
+          "Anforderungsänderungen erfordern eine erneute Betrachtung der Vollständigkeit."
+        ],
+        "code": "Anforderung: Erlaubt sind 1 bis 4 Personen.\nTest: Eingabe 0.\nSoll: Eingabe wird abgewiesen.",
+        "result": "Das Soll steht vor der Testdurchführung fest.",
+        "page": "3, 5–8"
+      },
+      {
+        "title": "Qualitätsmerkmale der Unterlage",
+        "lead": "Das Kapitel nennt Funktionalität, Gebrauchstauglichkeit, Sicherheit, Zuverlässigkeit, Performanz, Portierbarkeit, Kompatibilität und Wartbarkeit.",
+        "points": [
+          "Vollständigkeit: Alle vereinbarten Funktionen sind vorhanden. Korrektheit: Sie liefern richtige Ergebnisse.",
+          "Performanz betrifft Zeit und Ressourcen; Wartbarkeit verständliche und veränderbare Struktur.",
+          "Das ist die Begriffsauswahl dieser Unterlage, keine Behauptung über die neueste Normfassung."
+        ],
+        "code": "Dateiaustausch über JSON → Kompatibilität\nÄnderung an einer gemeinsamen CSS-Datei → Wartbarkeit\nSuche liefert nur passende Ziele → funktionale Korrektheit",
+        "result": "Eine Funktion kann vorhanden sein und trotzdem falsch rechnen.",
+        "page": "4–23"
+      },
+      {
+        "title": "Testfall und Testprotokoll",
+        "lead": "Ein Testfall beschreibt Ausgangslage, Eingabe oder Schritte und Soll-Ergebnis. Im Protokoll kommt nach der Durchführung das Ist-Ergebnis hinzu.",
+        "points": [
+          "Nutze eine eindeutige Test-ID.",
+          "Prüfe Normalfall, Grenzwerte und fehlende Angaben.",
+          "„Bestanden“ erst eintragen, nachdem Soll und Ist verglichen wurden."
+        ],
+        "code": "T01 | Personen=1 | akzeptieren | Ist: noch offen\nT02 | Personen=4 | akzeptieren | Ist: noch offen\nT03 | Personen=5 | abweisen    | Ist: noch offen",
+        "result": "Die Werte sind eine neu formulierte Unterrichtsanforderung.",
+        "page": "8, 26"
+      },
+      {
+        "title": "Der Testprozess",
+        "lead": "Die sechs Schritte werden in der Unterlage als zusammenhängender Prozess dargestellt.",
+        "points": [
+          "Planung: Strategie und Zuständigkeit. Entwurf: Fälle und Erfolgskriterien.",
+          "Vorbereitung: Umgebung und Daten. Durchführung: Fälle ausführen.",
+          "Auswertung: Soll/Ist dokumentieren. Abschluss: Ergebnisse vorstellen."
+        ],
+        "code": "Planung → Entwurf → Vorbereitung\n→ Durchführung → Auswertung → Abschluss",
+        "result": "Testen umfasst mehr als das Ausführen einzelner Klicks.",
+        "page": "25–26"
+      },
+      {
+        "title": "Black-Box, White-Box und Teststufen",
+        "lead": "Black-Box betrachtet Ergebnisse ohne Bezug auf den Quellcode. White-Box berücksichtigt dessen Struktur. Davon zu unterscheiden ist die Teststufe.",
+        "points": [
+          "Komponente: einzelne Funktion isoliert.",
+          "Integration: Zusammenspiel, etwa Formular und Verarbeitung.",
+          "System und Abnahme: gesamte Anwendung beziehungsweise vereinbarte Anforderungen bei Übergabe."
+        ],
+        "code": "White-Box: beide Zweige einer if-Anweisung berücksichtigen.\nBlack-Box: Eingabe 5 → erwartete Fehlermeldung.",
+        "result": "Testansatz und Teststufe beschreiben unterschiedliche Eigenschaften eines Tests.",
+        "page": "27–31"
+      },
+      {
+        "title": "Qualität im Entwicklungsprozess",
+        "lead": "Codeanalyse, Debugging, Reviews und Pair Programming ergänzen ausführbare Tests.",
+        "points": [
+          "Codeanalyse untersucht Quelltext, häufig automatisiert.",
+          "Debugging verfolgt den Kontrollfluss und sucht Fehlerursachen.",
+          "Im Review liest eine andere Person mit; beim Pair Programming wechseln Driver und Observer."
+        ],
+        "code": "",
+        "result": "Ein Test zeigt eine Abweichung; Debugging hilft, ihre Ursache einzugrenzen.",
+        "page": "32–35"
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Testbeschreibung verbessern",
+        "task": "Verbessere den Satz „Formular anklicken und gucken, ob es geht“. Lege Ziel, Eingabe und Soll fest.",
+        "hint": "Verwende die Personenanforderung 1 bis 4.",
+        "criteria": "Ein vollständiger Testfall mit eindeutiger Erwartung.",
+        "solution": "T01: Formular geöffnet; 0 Personen eingeben und absenden; Soll: keine Übernahme, verständlicher Hinweis."
+      },
+      {
+        "title": "Grenzwerte untersuchen",
+        "task": "Teste Demo 1 mit leerer Eingabe, 0, 1, 4 und 5. Dokumentiere Soll und Ist getrennt.",
+        "hint": "Die Demo nutzt browserseitige Prüfung; das ist kein Nachweis serverseitiger Prüfung.",
+        "criteria": "Fünf tatsächlich ausgeführte Fälle mit Ergebnis und Browserangabe.",
+        "solution": "Leer, 0 und 5 werden im Demoformular abgewiesen; 1 und 4 akzeptiert. Das tatsächliche Ist musst du in deinem Browser beobachten."
+      },
+      {
+        "title": "Qualitätsanforderungen formulieren",
+        "task": "Formuliere für Reisesuche je eine Anforderung zur Korrektheit, Gebrauchstauglichkeit und Wartbarkeit.",
+        "hint": "Verknüpfe jeden Begriff mit etwas Beobachtbarem.",
+        "criteria": "Drei unterscheidbare Anforderungen.",
+        "solution": "Korrektheit: Treffer passen zum Ziel. Gebrauchstauglichkeit: Feld und Aktion verständlich beschriftet. Wartbarkeit: wiederkehrende Gestaltung in gemeinsamer CSS-Datei."
+      },
+      {
+        "title": "Teststufen zuordnen",
+        "task": "Ordne Preisfunktion, Formularübergabe, kompletter Suchablauf und gemeinsame Kundenabnahme passenden Teststufen zu.",
+        "hint": "Prüfgegenstand statt Dateiendung betrachten.",
+        "criteria": "Vier Zuordnungen mit Begründung.",
+        "solution": "Preisfunktion: Komponente. Formular an Verarbeitung: Integration. Ganzer Suchablauf im Anwendungskontext: System. Vereinbarte Übergabe: Abnahme."
+      },
+      {
+        "title": "Review zu zweit durchführen",
+        "task": "Lest eine Demo-Datei gemeinsam. Dokumentiert eine Stärke, eine Frage und eine begründete Änderung. Tauscht anschließend die Rollen.",
+        "hint": "Nicht nur Rechtschreibung, auch Struktur und Anforderung prüfen.",
+        "criteria": "Reviewprotokoll mit drei konkreten Quelltextbezügen.",
+        "solution": "Möglich sind etwa konsistente Namen als Stärke, ein unklarer Feldzweck als Frage und eine bessere Label-Zuordnung als Änderung."
+      },
+      {
+        "title": "Kleinen Testplan schreiben",
+        "task": "Erstelle einen Testplan für die Reiseauswahl mit fünf Fällen, Zuständigkeit, Umgebung und Abnahmekriterium.",
+        "hint": "Nutze die mitgelieferte Protokollvorlage.",
+        "criteria": "Planung, Soll-Ergebnisse und spätere Ist-Felder sind getrennt.",
+        "solution": "Die Lösungsvorlage zeigt Normalfall, leeres Ziel, unerlaubtes Ziel, keine Treffer und technischen Fehler als unterschiedliche Situationen."
+      }
+    ]
+  },
+  {
+    "id": "03",
+    "title": "UX beschreiben",
+    "subtitle": "Die sieben Bereiche des Honeycomb",
+    "source": "ux1",
+    "pages": "3–19",
+    "topics": [
+      {
+        "title": "Die Nutzererfahrung als Ganzes",
+        "lead": "UX beschreibt die Beziehung einer Person zu einem Produkt und die Einzelheiten ihrer Erfahrung. Das Kapitel betrachtet UX als eigene Disziplin.",
+        "points": [
+          "Eine optisch gelungene Seite kann trotzdem am Nutzerziel vorbeigehen.",
+          "Frage nach Situation, Erwartung und tatsächlicher Erfahrung.",
+          "Das Honeycomb bietet sieben unterschiedliche Blickrichtungen."
+        ],
+        "code": "useful · usable · desirable · findable\naccessible · credible · valuable",
+        "result": "Die folgenden Übersetzungen und Schwerpunkte folgen der Unterlage.",
+        "page": "3–4, 19"
+      },
+      {
+        "title": "Useful und usable",
+        "lead": "Useful fragt nach dem Nutzen: Wird ein relevantes Problem gelöst? Usable fragt nach der verständlichen und zielführenden Bedienung.",
+        "points": [
+          "Useful: Die Reisesuche hilft beim Finden eines passenden Angebots.",
+          "Usable: Eine Person versteht die Felder und den nächsten Schritt.",
+          "Die Sprache orientiert sich an der Zielgruppe, nicht an internen Spaltennamen."
+        ],
+        "code": "„dest_fk“ → interne Bezeichnung\n„Reiseziel“ → nutzerbezogene Beschriftung",
+        "result": "Eine nützliche Funktion wird erst durch passende Bedienung gut nutzbar.",
+        "page": "5–8"
+      },
+      {
+        "title": "Desirable und findable",
+        "lead": "Desirable steht hier für einladende, klare und störungsfreie Gestaltung. Findable betrifft das Auffinden von Informationen, Funktionen und Hilfe.",
+        "points": [
+          "Reduziere Ablenkung vom eigentlichen Arbeitsziel.",
+          "Ordne Navigation und Überschriften nachvollziehbar.",
+          "Eine sichtbare Suchfunktion hilft nur, wenn ihre Bezeichnung verstanden wird."
+        ],
+        "code": "",
+        "result": "Bewerte ein konkretes Merkmal: „Der Hilfe-Link ist direkt bei der Aufgabe“ statt „Sieht schön aus“.",
+        "page": "9–12"
+      },
+      {
+        "title": "Accessible",
+        "lead": "Die Unterlage fordert, unterschiedliche Bedürfnisse zu berücksichtigen und die Zielgruppe nicht unnötig einzuschränken.",
+        "points": [
+          "Biete geeignete Bedienmöglichkeiten und verfügbare Hilfe.",
+          "Beschriftungen unterstützen die Orientierung, auch bei assistiver Nutzung.",
+          "Annahmen über Geräte und Fähigkeiten der Zielgruppe müssen begründet sein."
+        ],
+        "code": "<label for=\"ziel\">Reiseziel</label>\n<select id=\"ziel\" name=\"ziel\">\n  <option>Paris</option>\n</select>",
+        "result": "Das HTML-Beispiel ist ein späterer technischer Transfer zu Kapitel 4.",
+        "page": "13–14"
+      },
+      {
+        "title": "Credible und valuable",
+        "lead": "Credible: transparent und ehrlich. Valuable: in der Darstellung der Unterlage durchdacht, sorgfältig und hochwertig entwickelt.",
+        "points": [
+          "Keine Erfolgsmeldung für eine nicht erfolgte Buchung.",
+          "Details und Begriffe über mehrere Ansichten hinweg abstimmen.",
+          "Konkrete Vorteile und verlässlicher Service sind wichtiger als bloße Effekte."
+        ],
+        "code": "Ungenau: „Reise gebucht!“\nPassend zur Suchdemo: „Drei Beispielangebote gefunden.“",
+        "result": "Die Aussage muss dem tatsächlich erreichten Zustand entsprechen.",
+        "page": "15–19"
+      },
+      {
+        "title": "Beobachtung → Zuordnung → Verbesserung",
+        "lead": "Der Nutzen der Begriffe entsteht, wenn sie auf eine konkrete Oberfläche angewendet werden.",
+        "points": [
+          "Notiere zunächst eine beobachtbare Eigenschaft.",
+          "Ordne sie einem oder mehreren Honeycomb-Bereichen zu.",
+          "Schlage eine konkrete Verbesserung vor und begründe die erwartete Wirkung."
+        ],
+        "code": "Beobachtung: Feldzweck nicht benannt.\nZuordnung: usable / accessible.\nÄnderung: ausdrückliche Beschriftung „Reiseziel“.",
+        "result": "Mehrere Zuordnungen sind zulässig, wenn sie begründet sind.",
+        "page": "19"
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Sieben Begriffe erklären",
+        "task": "Schreibe zu jedem Honeycomb-Begriff einen kurzen Erklärungssatz in eigenen Worten.",
+        "hint": "Behalte die Begriffe der Unterlage bei.",
+        "criteria": "Alle sieben Bereiche sind unterscheidbar erklärt.",
+        "solution": "Useful: Nutzen; usable: Bedienbarkeit; desirable: einladender Eindruck; findable: Auffindbarkeit; accessible: unterschiedliche Bedürfnisse; credible: Ehrlichkeit; valuable: Sorgfalt und konkrete Vorteile."
+      },
+      {
+        "title": "Zwei Ansichten vergleichen",
+        "task": "Vergleiche Demo 1 und Demo 2. Notiere vier beobachtbare Unterschiede.",
+        "hint": "Geschmacksurteile durch konkrete Merkmale ersetzen.",
+        "criteria": "Vier Merkmale mit Auswirkungen auf die Aufgabe.",
+        "solution": "Beispiele: deutlichere Beschriftung, sichtbare Hilfe, klare nächste Aktion und ehrlicher Demo-Hinweis."
+      },
+      {
+        "title": "Bewertungsmatrix erstellen",
+        "task": "Erstelle eine Honeycomb-Matrix für eine Reiseseite: Bereich, Prüffrage, Beobachtung, Verbesserung.",
+        "hint": "Die Beobachtung darf zunächst offen bleiben.",
+        "criteria": "Sieben sinnvolle Prüffragen, keine siebenmal gleiche Frage.",
+        "solution": "Beispielfragen: Löst die Suche mein Problem? Verstehe ich die Felder? Lenkt Gestaltung ab? Finde ich Hilfe? Kann ich passend bedienen? Stimmen Aussagen? Wirkt der Ablauf sorgfältig?"
+      },
+      {
+        "title": "Nutzen und Bedienbarkeit trennen",
+        "task": "Erkläre einen Fall, in dem eine Suchfunktion nützlich, aber schwer zu bedienen ist.",
+        "hint": "Eine Funktion kann das richtige Problem lösen und trotzdem unklare Eingaben verlangen.",
+        "criteria": "Ein konkretes Beispiel mit getrennten Begründungen.",
+        "solution": "Die Suche findet geeignete Reisen, verlangt aber unerklärte Flughafencodes. Useful ist gegeben, usable wird durch die unklare Sprache eingeschränkt."
+      },
+      {
+        "title": "Drei Verbesserungen entwerfen",
+        "task": "Entwirf für die Demo drei Text- oder Strukturänderungen. Ordne sie jeweils mindestens einem Honeycomb-Bereich zu.",
+        "hint": "Die vorhandene Aufgabe nicht um beliebige Zusatzfunktionen erweitern.",
+        "criteria": "Drei nachvollziehbare Änderungen und begründete Zuordnung.",
+        "solution": "Zum Beispiel klare Zielbeschriftung, Hilfe am Formular und ausdrücklich als Beispiel gekennzeichnete Preise."
+      },
+      {
+        "title": "Peer-Feedback aufnehmen",
+        "task": "Stelle deinen Entwurf einer anderen Person vor. Lass sie das Nutzerziel und den nächsten Schritt benennen.",
+        "hint": "Nicht vorher verraten, welche Schaltfläche gemeint ist.",
+        "criteria": "Beobachtung und daraus abgeleitete Überarbeitung.",
+        "solution": "Die Lösung ist offen. Maßgeblich ist die dokumentierte Rückmeldung statt einer erfundenen pauschalen Erfolgsaussage."
+      }
+    ]
+  },
+  {
+    "id": "04",
+    "title": "UX gestalten",
+    "subtitle": "Feedback, Konsistenz und hilfreiche Fehlertexte",
+    "source": "ux2",
+    "pages": "4–63",
+    "topics": [
+      {
+        "title": "Systemzustand und Wirklichkeitsbezug",
+        "lead": "Zeige relevante Zustände und reagiere verständlich auf Eingaben. Benutze Begriffe und Reihenfolgen aus der Welt der Zielgruppe.",
+        "points": [
+          "Suche gestartet, keine Treffer und technischer Fehler sind unterschiedliche Zustände.",
+          "Vertraute Begriffe ersparen Nachschlagen.",
+          "Informationen müssen zur Rolle und zur aktuellen Aufgabe passen."
+        ],
+        "code": "Nicht: „Status 0“\nSondern: „Keine passenden Angebote gefunden. Ändere die Auswahl.“",
+        "result": "Eine leere Trefferliste bedeutet nicht automatisch einen technischen Fehler.",
+        "page": "4–11"
+      },
+      {
+        "title": "Benutzerfreiheit und Konsistenz",
+        "lead": "Rückwege, Abbruch und passende Korrekturmöglichkeiten unterstützen selbstständiges Arbeiten. Wiederkehrende Funktionen bleiben gleich erkennbar.",
+        "points": [
+          "Verliert eine Person beim Abbruch Eingaben, sollte das erklärt werden.",
+          "Interne Konsistenz: Begriffe und Gestaltung innerhalb der Anwendung.",
+          "Externe Konsistenz: vertraute Konventionen aus anderen Anwendungen."
+        ],
+        "code": "Auswahl → Ergebnisse → Auswahl ändern\nGleiche Suchaktion auf allen Seiten: „Angebote suchen“",
+        "result": "Minimalismus darf den Rückweg nicht entfernen.",
+        "page": "12–21"
+      },
+      {
+        "title": "Fehler vermeiden, bevor sie auftreten",
+        "lead": "Die Unterlage nennt klare Bedienelemente, passende Einschränkungen, Vorschläge, bereinigte Texteingaben und Vorschauen.",
+        "points": [
+          "Eine begrenzte Zielauswahl verringert ungewollte Schreibvarianten.",
+          "Standardwerte sind erkennbar und dürfen nicht unbemerkt falsche Angaben erzeugen.",
+          "Warnungen vor destruktiven Aktionen gezielt statt ständig einsetzen."
+        ],
+        "code": "Feste Zielmenge: Berlin, Paris, Rom\n→ Auswahl statt beliebigem Schreibformat",
+        "result": "Browserseitige Eingabehilfen ersetzen später keine serverseitige Prüfung. Dieser technische Hinweis ist ein Transfer.",
+        "page": "22–31"
+      },
+      {
+        "title": "Merkhilfen und Flexibilität",
+        "lead": "Wiedererkennung, sichtbare vorherige Schritte und kontextnahe Hilfe reduzieren Gedächtnisarbeit. Unterschiedliche Nutzungsweisen brauchen passende Wege.",
+        "points": [
+          "Zeige die aktuelle Auswahl bei einer Ergebnisansicht erneut an.",
+          "Erfahrene Menschen können Beschleuniger nutzen; Einsteiger brauchen erkennbare Wege.",
+          "Anpassungen und Assistenten sollen nicht unnötig erzwungen werden."
+        ],
+        "code": "Ergebnisse für: Paris\n[Auswahl ändern]",
+        "result": "Die Wiederholung einer Auswahl ist eine Merkhilfe, nicht nur Dekoration.",
+        "page": "32–43"
+      },
+      {
+        "title": "Minimalismus und Fehlerbehandlung",
+        "lead": "Klarheit entsteht durch Konzentration auf die Aufgabe. Fehlermeldungen benennen das Problem und bieten einen nächsten Schritt.",
+        "points": [
+          "Nicht alles gleichzeitig zeigen; notwendige Funktionen aber erhalten.",
+          "Fehlermeldungen nicht nur als Farbe darstellen.",
+          "Keine Schuldzuweisung und keine kryptischen internen Meldungen."
+        ],
+        "code": "Problem: Ziel fehlt.\nMeldung: „Bitte wähle ein Reiseziel.“\nNächster Schritt: Zielauswahl sichtbar anbieten.",
+        "result": "Ein verständlicher Fehlertext gehört zur Oberfläche.",
+        "page": "44–53"
+      },
+      {
+        "title": "Hilfe im passenden Kontext",
+        "lead": "Kurze Hinweise, optionale Assistenten, FAQ und Dokumentation ergänzen sich. Die Unterlage empfiehlt auffindbare und konkrete Hilfe.",
+        "points": [
+          "Ein Feldhinweis erklärt die unmittelbar benötigte Angabe.",
+          "Ausführliche Abläufe gehören in eine erreichbare Dokumentation.",
+          "Nicht jede Richtlinie ist für jedes Produkt gleich wichtig; Aufwand und Nutzerziel abwägen."
+        ],
+        "code": "<details>\n  <summary>Wird hier gebucht?</summary>\n  <p>Nein. Dies ist eine Suchdemo.</p>\n</details>",
+        "result": "Neues HTML-Beispiel zur Veranschaulichung des Hilfeprinzips.",
+        "page": "54–63"
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Zustände richtig benennen",
+        "task": "Ordne „Ziel fehlt“, „Keine Angebote“, „Verbindung fehlgeschlagen“ drei unterschiedlichen Meldungstexten zu.",
+        "hint": "Erfolgreiche Suche ohne Treffer ist nicht derselbe Fall wie Ausfall.",
+        "criteria": "Drei präzise Meldungen mit sinnvollem nächsten Schritt.",
+        "solution": "Ziel fehlt: auswählen. Keine Treffer: Auswahl ändern. Technischer Fehler: später erneut versuchen beziehungsweise die lokale Umgebung prüfen."
+      },
+      {
+        "title": "Fehlertexte überarbeiten",
+        "task": "Verbessere „Fehler 17“, „Ungültig“ und „Fertig“ für konkrete Situationen einer Reisesuche.",
+        "hint": "Was ist passiert? Was kann die Person jetzt tun?",
+        "criteria": "Drei konkrete statt allgemeiner Meldungen.",
+        "solution": "„Bitte wähle ein Ziel.“ „Bitte prüfe die Anzahl der Personen.“ „Die Suchergebnisse sind geladen; wähle ein Angebot.“"
+      },
+      {
+        "title": "Zehn Prinzipien prüfen",
+        "task": "Erstelle eine Checkliste mit den zehn Kategorien aus UX Teil 2. Verbinde jede Kategorie mit einer Frage an die Demo.",
+        "hint": "Die Kategorien stehen auch in der Zusammenfassung der Musterlösung.",
+        "criteria": "Zehn unterscheidbare Fragen.",
+        "solution": "Systemzustand, Wirklichkeitsbezug, Benutzerfreiheit, Konsistenz, Fehlervermeidung, Merkhilfen, Flexibilität, Minimalismus/Ästhetik, Fehlerbehandlung und Hilfe."
+      },
+      {
+        "title": "Konsistenz herstellen",
+        "task": "Entwirf eine gemeinsame Bezeichnung für Suchaktion und Rückweg auf drei Seiten. Notiere eine gemeinsame Position.",
+        "hint": "Gleiche Funktion soll nicht einmal Los und einmal Ausführen heißen.",
+        "criteria": "Begriffe sind gleichbleibend und ihre Positionen begründet.",
+        "solution": "Beispiel: überall „Angebote suchen“ am Ende der Eingabe; „Auswahl ändern“ oberhalb der Ergebnisse. Andere konsistente Anordnungen sind möglich."
+      },
+      {
+        "title": "Hilfe und Rückweg ergänzen",
+        "task": "Ergänze in einer neuen HTML-Datei eine Ergebniszusammenfassung, einen Rücklink und eine aufklappbare Hilfe.",
+        "hint": "Orientiere dich am Quelltext von Demo 2; keine Buchung behaupten.",
+        "criteria": "Alle drei Elemente sind bedienbar und beschriftet.",
+        "solution": "Die Musterdatei zeigt die aktuelle Auswahl, den Rückweg zu einer vorhandenen ID und eine Hilfe zur Demo-Abgrenzung."
+      },
+      {
+        "title": "Gruppenauswertung präsentieren",
+        "task": "Prüft eine vorhandene Weboberfläche anhand der Kategorien. Stellt positive und negative Beobachtungen in fünf Minuten vor.",
+        "hint": "Dieser Auftrag greift UX Teil 2, Seite 63 auf.",
+        "criteria": "Konkrete Beispiele, Kategoriebezug und mindestens zwei Verbesserungsvorschläge.",
+        "solution": "Bewertung offen: Jede Behauptung muss an einem beobachteten Element oder Ablauf erläutert werden."
+      }
+    ]
+  },
+  {
+    "id": "05",
+    "title": "HTML-Grundlagen",
+    "subtitle": "Dateien, Elemente und saubere Verschachtelung",
+    "source": "h1",
+    "pages": "5–28",
+    "topics": [
+      {
+        "title": "Grundgerüst einer HTML-Datei",
+        "lead": "Ein Dokument trennt Metainformationen im head vom sichtbaren Inhalt im body. Die Struktur wird durch Elemente ausgezeichnet.",
+        "points": [
+          "Speichere als index.html und mit UTF-8.",
+          "title beschreibt den Dokumenttitel, h1 eine sichtbare Hauptüberschrift.",
+          "Einrückung hilft beim Lesen der Verschachtelung."
+        ],
+        "code": "<!doctype html>\n<html lang=\"de\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Reiseplanung</title>\n</head>\n<body>\n  <h1>Meine Reiseplanung</h1>\n</body>\n</html>",
+        "result": "Vergleiche Titel im Browser-Tab und Überschrift auf der Seite.",
+        "page": "5–7, 15, 25–26"
+      },
+      {
+        "title": "Element, Tag und Inhalt",
+        "lead": "Bei einem Container stehen Inhalte zwischen Start- und End-Tag. Leere Elemente wie br oder img haben keinen solchen Inhaltsbereich.",
+        "points": [
+          "Der Schrägstrich kennzeichnet das End-Tag eines Containers.",
+          "Korrektur K6: Bei leeren Elementen in HTML ist der abschließende Schrägstrich nicht erforderlich.",
+          "Die Beispiele nutzen vollständige End-Tags bei Containern, damit die Struktur sichtbar bleibt."
+        ],
+        "code": "<p>Ein Absatz mit <strong>wichtiger Information</strong>.</p>\n<br>\n<img src=\"bild.svg\" alt=\"Beschriebene Beispielgrafik\">",
+        "result": "strong liegt innerhalb des Absatzes; das Bild besitzt kein schließendes img-Tag.",
+        "page": "8–15"
+      },
+      {
+        "title": "Verschachtelung und Semantik",
+        "lead": "HTML beschreibt die Bedeutung und Beziehung von Inhalten. Wähle das Element nach seinem Zweck, nicht nach einer zufälligen Standarddarstellung.",
+        "points": [
+          "Ein Absatz bleibt ein Absatz, auch wenn CSS ihn groß darstellt.",
+          "Eine Überschrift erhält ein Überschriftenelement.",
+          "Nicht jedes Element darf beliebige andere Elemente enthalten."
+        ],
+        "code": "<article>\n  <h2>Reiseinformationen</h2>\n  <p>Die Informationen stehen in einem Absatz.</p>\n</article>",
+        "result": "Die innere Struktur wird vor dem äußeren Container geschlossen.",
+        "page": "14–18"
+      },
+      {
+        "title": "Attribute, IDs und Klassen",
+        "lead": "Attribute ergänzen ein Element. Eine ID identifiziert es im Dokument; eine Klasse fasst mehrere Elemente zur gemeinsamen Ansprache zusammen.",
+        "points": [
+          "Attribute stehen im Start-Tag.",
+          "Mehrere Elemente können dieselbe Klasse besitzen, IDs bleiben eindeutig.",
+          "Korrektur K7: Der Kurs beginnt Bezeichner mit Buchstaben als einfache Konvention, nicht als allgemeines HTML-Verbot für Ziffern."
+        ],
+        "code": "<p id=\"hinweis-a\" class=\"hinweis\">Erster Hinweis</p>\n<p id=\"hinweis-b\" class=\"hinweis\">Zweiter Hinweis</p>",
+        "result": "Zwei IDs, eine gemeinsame Klasse.",
+        "page": "21–24"
+      },
+      {
+        "title": "Kommentare und Zeichencodierung",
+        "lead": "Kommentare erläutern den Quelltext. UTF-8 sorgt zusammen mit korrekt gespeicherten Dateien dafür, dass beispielsweise Umlaute lesbar sind.",
+        "points": [
+          "Kommentare erscheinen nicht als normaler Seiteninhalt.",
+          "Korrektur K8: Der Tippfehler „UFT-8“ wird als UTF-8 geschrieben.",
+          "Öffne nach Änderungen die gespeicherte Datei erneut beziehungsweise lade sie neu."
+        ],
+        "code": "<!-- Hier beginnen die Reiseinformationen. -->\n<meta charset=\"utf-8\">",
+        "result": "Die meta-Angabe gehört in den head.",
+        "page": "19–20, 25–26"
+      },
+      {
+        "title": "Datei, Darstellung und DOM unterscheiden",
+        "lead": "Der Browser liest das Dokument und bildet daraus eine Dokumentstruktur im Speicher. CSS gestaltet ihre Darstellung.",
+        "points": [
+          "Quelltext und Bildschirmdarstellung sind unterschiedliche Ansichten derselben Seite.",
+          "Korrektur K9 zur DOM-Folie: PHP läuft in unserem Kurs serverseitig; Änderungen am lebenden Browser-DOM sind nicht unmittelbar PHP-Ausführung.",
+          "Nutze im Browser „Seitenquelltext anzeigen“ und die Entwicklerwerkzeuge zum Vergleichen."
+        ],
+        "code": "Datei → Browser liest HTML → Dokumentstruktur → Darstellung",
+        "result": "Der Browser kann ungünstiges HTML teilweise reparieren. Eine sichtbare Seite beweist deshalb nicht fehlerfreien Quelltext.",
+        "page": "27–28"
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Grundgerüst lesen",
+        "task": "Öffne Demo 1. Zeige head, title, body und h1 im Quelltext und vergleiche die Darstellung.",
+        "hint": "Browser-Tab ist nicht gleich Seitenüberschrift.",
+        "criteria": "Vier Elemente gefunden; ihre Aufgaben erklärt.",
+        "solution": "head enthält Metadaten, title den Dokumenttitel, body sichtbare Inhalte, h1 eine Hauptüberschrift."
+      },
+      {
+        "title": "Verschachtelung korrigieren",
+        "task": "Korrigiere: <p>Reise nach <strong>Paris</p></strong>. Begründe die Reihenfolge.",
+        "hint": "Das zuletzt geöffnete innere Element wird hier zuerst geschlossen.",
+        "criteria": "Korrekte Verschachtelung und ein Erklärungssatz.",
+        "solution": "<p>Reise nach <strong>Paris</strong></p>"
+      },
+      {
+        "title": "Eigene Datei anlegen",
+        "task": "Erstelle index.html neu. Ergänze deutsches lang, UTF-8, Titel, Hauptüberschrift und einen Absatz.",
+        "hint": "Nutze den leeren Starter, nicht die fertige Lösung.",
+        "criteria": "Datei öffnet lokal und enthält alle fünf Angaben.",
+        "solution": "Die Musterdatei 03.html enthält ein vollständiges Grundgerüst für eine fiktive Reiseplanung."
+      },
+      {
+        "title": "Klassen und IDs verwenden",
+        "task": "Erstelle zwei Hinweise mit gemeinsamer Klasse hinweis und unterschiedlichen IDs. Kommentiere ihren Zweck.",
+        "hint": "Eine ID ist innerhalb des Dokuments eindeutig.",
+        "criteria": "Zwei eindeutige IDs, eine gemeinsame Klasse, ein Kommentar.",
+        "solution": "Die Musterdatei 04.html verwendet hinweis-a und hinweis-b mit der Klasse hinweis."
+      },
+      {
+        "title": "Profilseite übertragen",
+        "task": "Lege profil.html ohne Kopieren einer vollständigen Musterseite an. Verwende fiktive Angaben, eine Überschrift und zwei Absätze.",
+        "hint": "Baue von außen nach innen: html → head/body → Inhalte.",
+        "criteria": "Eigene Datei mit lesbarer Einrückung und sinnvollem Titel.",
+        "solution": "Musterdatei 05.html zeigt eine mögliche Profilseite; Inhalte dürfen anders gewählt sein."
+      },
+      {
+        "title": "Struktur prüfen",
+        "task": "Prüfe die Dateien aus Aufgabe 3–5 auf Endungen, Codierung, eindeutige IDs und geschlossene Container.",
+        "hint": "Dokumentiere Dateiname und Prüfergebnis.",
+        "criteria": "Vier konkrete Prüfpunkte je Datei statt nur „läuft“.",
+        "solution": "Die Lösung ist ein Prüfprotokoll. Sichtbare Umlaute prüfen Codierung praktisch; IDs und Verschachtelung werden zusätzlich im Quelltext gelesen."
+      }
+    ]
+  },
+  {
+    "id": "06",
+    "title": "HTML-Inhalte",
+    "subtitle": "Texte, Medien, Listen und Tabellen",
+    "source": "h1",
+    "pages": "30–47",
+    "topics": [
+      {
+        "title": "Überschriften bilden eine Hierarchie",
+        "lead": "Die Unterlage verwendet h1 für die Hauptüberschrift und h2 bis h6 für untergeordnete Ebenen.",
+        "points": [
+          "Gliedere nach Inhalt und Bedeutung.",
+          "Nutze nicht die Überschriftenebene als Ersatz für Schriftgrößen-CSS.",
+          "Unser Kursmuster verwendet eine Hauptüberschrift pro Seite."
+        ],
+        "code": "<h1>Reiseinformationen</h1>\n<h2>Anreise</h2>\n<p>Informationen zur Anreise.</p>\n<h2>Unterkunft</h2>\n<p>Informationen zur Unterkunft.</p>",
+        "result": "Die beiden h2-Abschnitte sind gleichrangig.",
+        "page": "31–36"
+      },
+      {
+        "title": "Absätze und Zeilenumbrüche",
+        "lead": "p gliedert Text in Absätze. br erzeugt einen Zeilenumbruch innerhalb eines geeigneten Textzusammenhangs.",
+        "points": [
+          "Trenne unterschiedliche Gedanken durch Absätze.",
+          "Verwende keine Kette von br als Layoutsystem.",
+          "Die Darstellung von Abständen wird später über CSS gesteuert."
+        ],
+        "code": "<p>Die Reise beginnt am Bahnhof.</p>\n<p>Treffpunkt:<br>Haupteingang, Bereich A</p>",
+        "result": "Ein neuer Absatz und ein Umbruch erfüllen unterschiedliche Zwecke.",
+        "page": "34–36"
+      },
+      {
+        "title": "Bilder mit passenden Pfaden",
+        "lead": "img verweist auf eine Bilddatei. src nennt den Pfad, alt einen textlichen Ersatz für ihren Informationsgehalt.",
+        "points": [
+          "Ein relativer HTML-Pfad bezieht sich auf die HTML-Datei.",
+          "Die Mediendatei muss tatsächlich vorhanden sein.",
+          "Die Kursgrafik ist als Beispielgrafik gekennzeichnet, kein echtes Reisefoto."
+        ],
+        "code": "<img src=\"../../assets/beispiel.svg\"\n     alt=\"Beispielgrafik mit Kreis und Rahmen\"\n     width=\"640\" height=\"360\">",
+        "result": "Prüfe das Ergebnis nach dem Kopieren des gesamten Ordners.",
+        "page": "37–39"
+      },
+      {
+        "title": "Video und Audio benötigen Ressourcen",
+        "lead": "Das Kapitel zeigt video, controls und autoplay und erwähnt audio. Ein Element allein erzeugt keine Mediendatei.",
+        "points": [
+          "controls bietet eine sichtbare Steuerung.",
+          "Die Kursdemo enthält ein kurzes synthetisches Video mit Untertiteln.",
+          "Autoplay wird im Lernbeispiel nicht erzwungen."
+        ],
+        "code": "<video controls width=\"480\">\n  <source src=\"../../assets/demo.mp4\" type=\"video/mp4\">\n  <track src=\"../../assets/demo.vtt\" kind=\"captions\"\n         srclang=\"de\" label=\"Deutsch\" default>\n  Dein Browser kann dieses Video nicht anzeigen.\n</video>",
+        "result": "source und Untertitel sind gekennzeichnete didaktische Ergänzungen zum einfachen video-Beispiel.",
+        "page": "40"
+      },
+      {
+        "title": "Geordnet oder ungeordnet?",
+        "lead": "ul beschreibt eine ungeordnete, ol eine geordnete Liste. Die Einträge liegen jeweils in li-Elementen.",
+        "points": [
+          "Eine Packliste hat meist keine zwingende Reihenfolge.",
+          "Eine Arbeitsanleitung kann eine Reihenfolge benötigen.",
+          "Der Listentyp beschreibt den Inhalt, nicht nur das Aussehen der Aufzählungszeichen."
+        ],
+        "code": "<ul>\n  <li>Notizbuch</li>\n  <li>Ladekabel</li>\n</ul>\n<ol>\n  <li>Datei speichern</li>\n  <li>Im Browser prüfen</li>\n</ol>",
+        "result": "li wird innerhalb der Liste verwendet.",
+        "page": "41–43"
+      },
+      {
+        "title": "Datentabellen nachvollziehbar aufbauen",
+        "lead": "Zusammengehörige Daten werden in Zeilen und Spalten angeordnet. caption benennt die Tabelle, th ihre Kopfzellen.",
+        "points": [
+          "tr enthält eine Zeile, td eine Datenzelle.",
+          "thead und tbody trennen Kopf- und Datenbereich.",
+          "Tabellen hier für Daten nutzen, nicht als Ersatz für das Seitenlayout."
+        ],
+        "code": "<table>\n  <caption>Fiktive Angebote</caption>\n  <thead><tr><th>Ziel</th><th>Nächte</th></tr></thead>\n  <tbody>\n    <tr><td>Paris</td><td>3</td></tr>\n    <tr><td>Rom</td><td>4</td></tr>\n  </tbody>\n</table>",
+        "result": "Die Kopf- und Datenzeilen besitzen dieselbe Spaltenstruktur.",
+        "page": "44–47"
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Inhalte untersuchen",
+        "task": "Finde in Demo 1 Überschriften, Absätze, Bild und Liste. Erkläre den jeweiligen Zweck.",
+        "hint": "Nicht nur die Elementnamen abschreiben.",
+        "criteria": "Vier begründete Zuordnungen.",
+        "solution": "Überschriften gliedern; Absätze erklären; die Grafik ist visuell; die Liste bündelt gleichartige Einträge."
+      },
+      {
+        "title": "Tabellenfehler finden",
+        "task": "Eine Tabelle hat die Spalten Ziel und Nächte, eine Datenzeile enthält aber Paris, 3 und 300 Euro. Wie korrigierst du die Struktur?",
+        "hint": "Entscheide zuerst, welche Daten wirklich dargestellt werden sollen.",
+        "criteria": "Eine konsistente Spaltenentscheidung.",
+        "solution": "Entweder die Preiszelle entfernen oder eine dritte Kopfzelle Preis und passende Daten für alle Zeilen ergänzen."
+      },
+      {
+        "title": "Angebotstabelle erstellen",
+        "task": "Erstelle eine Tabelle mit caption, den Spalten Ziel/Nächte/Preis und zwei fiktiven Angeboten.",
+        "hint": "Zuerst Kopfstruktur, dann Datenzeilen.",
+        "criteria": "Zwei vollständige Zeilen und aussagekräftige Kopfzellen.",
+        "solution": "Muster 03.html enthält zwei entsprechend gekennzeichnete fiktive Angebote."
+      },
+      {
+        "title": "Medienseite erstellen",
+        "task": "Erstelle eine Seite mit der vorhandenen Kursgrafik und dem Kursvideo. Ergänze Beschreibung und Alternativtext.",
+        "hint": "Relative Pfade der mitgelieferten Ressourcen verwenden.",
+        "criteria": "Bild lädt, Video hat controls, Text beschreibt die synthetischen Inhalte.",
+        "solution": "Muster 04.html verbindet die real vorhandenen Dateien beispiel.svg, demo.mp4 und demo.vtt."
+      },
+      {
+        "title": "Reiseinformation gestalten",
+        "task": "Lege eine neue Informationsseite mit einer Hauptüberschrift, zwei Abschnitten, zwei Absätzen und Packliste an.",
+        "hint": "HTML beschreibt zunächst nur Struktur und Inhalt.",
+        "criteria": "Hierarchie und Inhaltsformen sind nachvollziehbar.",
+        "solution": "Muster 05.html zeigt Anreise und Unterkunft als gleichrangige Abschnitte und eine ungeordnete Packliste."
+      },
+      {
+        "title": "Medien und Daten prüfen",
+        "task": "Prüfe Pfade, Tabelle, Alternativtext und Video-Steuerung. Dokumentiere mindestens einen bewusst herbeigeführten Pfadfehler.",
+        "hint": "Ändere den Pfad testweise und stelle ihn danach wieder her.",
+        "criteria": "Ein nachweisbarer Fehlerfall und korrigierter Endzustand.",
+        "solution": "Ein falscher Bildname verhindert das Laden. Der Alternativtext und die Quellenprüfung helfen beim Erkennen; der richtige relative Pfad stellt die Darstellung wieder her."
+      }
+    ]
+  },
+  {
+    "id": "07",
+    "title": "Struktur und Navigation",
+    "subtitle": "Informationen ordnen und Seiten verbinden",
+    "source": "h2",
+    "pages": "3–12, 20–21",
+    "topics": [
+      {
+        "title": "Informationsarchitektur vor Dekoration",
+        "lead": "Die Unterlage nennt das Ordnen zusammengehöriger Inhalte und eine übersichtliche Aufteilung als Aufgabe der Strukturelemente.",
+        "points": [
+          "Sammle Inhalte und ordne sie dem jeweiligen Zweck zu.",
+          "Wiederkehrende Navigation und Hauptinhalt sind unterscheidbar.",
+          "Nicht jede Gruppierung braucht dieselbe Art Container."
+        ],
+        "code": "Kopf → Navigation → Hauptinhalt → Zusatzinformation → Fuß",
+        "result": "Zunächst eine inhaltliche Skizze erstellen, erst danach CSS ergänzen.",
+        "page": "3"
+      },
+      {
+        "title": "Header, main und footer",
+        "lead": "header führt ein, main enthält den zentralen Seiteninhalt und footer ergänzt abschließende Informationen.",
+        "points": [
+          "Unser Seitenmuster hat ein sichtbares main-Element.",
+          "Eine Suchfunktion kann zum Hauptinhalt einer Suchseite gehören. Das Beispiel ist nach ihrem Zweck zu beurteilen.",
+          "Quelltextreihenfolge soll den Inhalt nachvollziehbar machen."
+        ],
+        "code": "<header><h1>EuroCityTravel</h1></header>\n<main><h2>Reiseinformationen</h2><p>…</p></main>\n<footer><p>Lokale Unterrichtsseite</p></footer>",
+        "result": "Korrektur K10: main verbietet nicht allgemein Suchfelder, wenn diese den zentralen Inhalt bilden.",
+        "page": "4–6"
+      },
+      {
+        "title": "Article, aside und div",
+        "lead": "article bündelt einen in sich verständlichen Beitrag. aside enthält ergänzende Informationen. div hat keine besondere semantische Bedeutung.",
+        "points": [
+          "Ein Angebot kann ein eigenständiger Beitrag sein.",
+          "Ein erklärender Hinweis kann ergänzend stehen.",
+          "Korrektur K10: Ein div ist kein Freibrief für beliebige ungültige Verschachtelung."
+        ],
+        "code": "<article>\n  <h2>Fiktive Städtereise</h2>\n  <p>Informationen zum Angebot.</p>\n</article>\n<aside><h2>Hinweis</h2><p>Keine echte Buchung.</p></aside>",
+        "result": "Ein Container erhält seine Rolle nicht allein durch seine Position am Bildschirm.",
+        "page": "7–12"
+      },
+      {
+        "title": "Navigation mit nav und a",
+        "lead": "nav bündelt wichtige Navigationslinks. a verweist über href auf ein Ziel.",
+        "points": [
+          "Ein relativer Dateiname verbindet Seiten im selben Ordner.",
+          "Ein Fragment wie #angebote verweist auf eine ID im Dokument.",
+          "Nicht jeder einzelne Link muss in einem nav stehen."
+        ],
+        "code": "<nav aria-label=\"Hauptnavigation\">\n  <a href=\"index.html\">Start</a>\n  <a href=\"reisen.html\">Reisen</a>\n  <a href=\"kontakt.html\">Kontakt</a>\n</nav>",
+        "result": "aria-label ist eine gekennzeichnete Ergänzung für eine verständliche Navigationsbezeichnung.",
+        "page": "9, 20"
+      },
+      {
+        "title": "Links und Schaltflächen nicht vermischen",
+        "lead": "Ein Link führt zu einem Ziel; eine Schaltfläche löst eine Aktion aus. Ein ähnliches Aussehen macht sie nicht semantisch identisch.",
+        "points": [
+          "Korrektur K1: Die a/button-Verschachtelung auf Seite 21 wird nicht als Muster übernommen.",
+          "Ein Link kann direkt per CSS wie eine Schaltfläche aussehen.",
+          "Eine Formularübermittlung verwendet eine passende submit-Schaltfläche."
+        ],
+        "code": "<a class=\"button-link\" href=\"reisen.html\">Reisen ansehen</a>\n<button type=\"submit\">Anfrage senden</button>",
+        "result": "Kein button innerhalb des a-Elements.",
+        "page": "20–21; K1"
+      },
+      {
+        "title": "Navigationswege praktisch prüfen",
+        "lead": "Die Benutzerfreiheit aus Kapitel 3 wird bei Navigation konkret: Menschen sollen sich orientieren und zurückkehren können.",
+        "points": [
+          "Gleiche Funktion überall gleich benennen.",
+          "Jeder Link benötigt eine existierende Zieldatei beziehungsweise ID.",
+          "Prüfe auch Tastatur und Browser-Zurück."
+        ],
+        "code": "Start → Reisen → Kontakt → Start",
+        "result": "Eine erreichbare Startseite und nachvollziehbare Rückwege gehören zum Test.",
+        "page": "9, 12, 20; Transfer aus UX"
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Seitenbereiche markieren",
+        "task": "Markiere die Bereiche in Demo 1 und ordne sie header, main, article, aside und footer zu.",
+        "hint": "Zweck statt Farbe betrachten.",
+        "criteria": "Fünf Rollen verständlich erklärt.",
+        "solution": "Kopf führt ein, main enthält Hauptinhalt, article einen Beitrag, aside ergänzt, footer schließt ab."
+      },
+      {
+        "title": "Linkfehler korrigieren",
+        "task": "Korrigiere einen Verweis href=\"#angebote\", wenn der Zielbereich id=\"angebot\" heißt. Erkläre die Ursache.",
+        "hint": "Fragment und ID müssen zusammenpassen.",
+        "criteria": "Korrigierter Verweis oder korrigierte ID.",
+        "solution": "Zum Beispiel href=\"#angebot\" verwenden. Ein ähnlicher Name ist nicht derselbe Bezeichner."
+      },
+      {
+        "title": "Semantische Seite aufbauen",
+        "task": "Erstelle eine Seite mit Kopf, Navigation, Hauptinhalt und Fuß. Ergänze einen Sprunglink zum Hauptinhalt.",
+        "hint": "Die Ziel-ID muss vorhanden sein.",
+        "criteria": "Alle vier Bereiche und ein funktionierender Sprunglink.",
+        "solution": "Muster 03.html enthält diese Bereiche und den Sprung zu id=\"inhalt\"."
+      },
+      {
+        "title": "Drei Seiten verknüpfen",
+        "task": "Lege index.html, reisen.html und kontakt.html an. Verbinde sie durch dieselbe Navigation und eigene Dokumenttitel.",
+        "hint": "Alle drei Dateien zunächst im selben Ordner ablegen.",
+        "criteria": "Von jeder Seite sind die beiden anderen erreichbar.",
+        "solution": "Die Musterlösung 04/index.html mit reisen.html und kontakt.html ist vollständig verlinkt."
+      },
+      {
+        "title": "Link gestalten",
+        "task": "Gestalte einen Link zur Reiseseite wie eine Schaltfläche, ohne ein button darin zu verschachteln.",
+        "hint": "Klasse am a-Element und externe CSS-Datei verwenden.",
+        "criteria": "Navigation funktioniert; HTML bleibt ein Link.",
+        "solution": "Muster 05.html nutzt die Klasse button-link. Der Link wird gestaltet, nicht in ein anderes interaktives Element eingebettet."
+      },
+      {
+        "title": "Navigation abnehmen",
+        "task": "Prüfe alle sechs Richtungen zwischen den drei Seiten, die Sprungmarke und Browser-Zurück.",
+        "hint": "Eine Prüftabelle verhindert ausgelassene Verbindungen.",
+        "criteria": "Mindestens acht dokumentierte Navigationsprüfungen.",
+        "solution": "Der Lösungshinweis enthält die erwarteten Ziele; das tatsächliche Ist muss beobachtet werden."
+      }
+    ]
+  },
+  {
+    "id": "08",
+    "title": "Formulare",
+    "subtitle": "Beschriftung, Feldname und übermittelter Wert",
+    "source": "h2",
+    "pages": "14–32",
+    "topics": [
+      {
+        "title": "Ein Formular hat ein Übermittlungsziel",
+        "lead": "form gruppiert Eingabeelemente. action bezeichnet die Verarbeitung, method die HTTP-Methode. HTML allein implementiert keine Datenbankverarbeitung.",
+        "points": [
+          "Im Grundlagenbereich zeigen die Demos eine ausdrücklich lokale Vorschau.",
+          "In Modul 11 werden Daten tatsächlich an PHP übergeben.",
+          "Ein submit-Button löst die Übermittlung des zugeordneten Formulars aus."
+        ],
+        "code": "<form action=\"auswerten.php\" method=\"post\">\n  <!-- Hier stehen die Eingabeelemente. -->\n  <button type=\"submit\">Anfrage senden</button>\n</form>",
+        "result": "auswerten.php muss später als reale Verarbeitung vorhanden sein.",
+        "page": "23, 32"
+      },
+      {
+        "title": "Label, ID und Name erfüllen verschiedene Rollen",
+        "lead": "label beschriftet. for und id stellen eine ausdrückliche Zuordnung her. name benennt den zu übermittelnden Feldwert.",
+        "points": [
+          "Eine passende ID allein ersetzt kein name.",
+          "Die Beschriftung bleibt auch dann sichtbar, wenn ein Feld ausgefüllt ist.",
+          "Verwende eindeutige IDs für einzelne Felder."
+        ],
+        "code": "<label for=\"ziel\">Reiseziel</label>\n<input id=\"ziel\" name=\"reiseziel\" type=\"text\">",
+        "result": "Beschriftungszuordnung: ziel. Übermittlungsname: reiseziel.",
+        "page": "15–16, 24"
+      },
+      {
+        "title": "Radio oder Checkbox?",
+        "lead": "Radio-Buttons derselben Gruppe teilen einen name-Wert. Checkboxen erlauben voneinander unabhängige Auswahlmöglichkeiten.",
+        "points": [
+          "Für Hotel ja/nein ist genau eine Option sinnvoll.",
+          "Jede Radio-Option hat eigenen Wert und eindeutige ID.",
+          "Im Kurs verwenden unabhängige Wünsche unterschiedliche Feldnamen."
+        ],
+        "code": "<label><input type=\"radio\" name=\"hotel\" value=\"ja\"> Ja</label>\n<label><input type=\"radio\" name=\"hotel\" value=\"nein\"> Nein</label>\n<label><input type=\"checkbox\" name=\"transfer\" value=\"ja\"> Transfer</label>",
+        "result": "Die beiden Hotelwerte gehören zusammen, der Transfer ist unabhängig.",
+        "page": "25–28"
+      },
+      {
+        "title": "Auswahl und mehrzeiliger Text",
+        "lead": "select enthält option-Elemente. textarea nimmt einen mehrzeiligen Inhalt auf.",
+        "points": [
+          "Bei einer Option können sichtbare Beschriftung und value getrennt sein.",
+          "Der Vorbelegungstext einer textarea steht zwischen ihren Tags.",
+          "rows legt eine Ausgangshöhe fest, nicht die Bedeutung des Inhalts."
+        ],
+        "code": "<label for=\"ort\">Ziel</label>\n<select id=\"ort\" name=\"ziel\">\n  <option value=\"PAR\">Paris</option>\n  <option value=\"ROM\">Rom</option>\n</select>\n<textarea name=\"hinweise\" rows=\"3\">Bitte beachten …</textarea>",
+        "result": "Bei Paris wird hier der Wert PAR übermittelt.",
+        "page": "15, 29–31"
+      },
+      {
+        "title": "Button-Typen ausdrücklich festlegen",
+        "lead": "submit sendet, reset setzt die Formularwerte auf ihre Ausgangswerte zurück und button benötigt für eigene Aktionen zusätzliche Logik.",
+        "points": [
+          "Eine Schaltfläche namens „Absenden“ mit type button ist ohne Logik keine Verarbeitung.",
+          "Korrektur K11: Die Zuordnung zu einem Formular muss nicht immer durch räumliche Verschachtelung erfolgen; unsere Grundlagenbeispiele verschachteln bewusst.",
+          "Ungewolltes Zurücksetzen kann Eingaben verwerfen."
+        ],
+        "code": "<button type=\"submit\">Anfrage senden</button>\n<button type=\"reset\">Ausgangswerte</button>\n<button type=\"button\">Ohne eigene Aktion</button>",
+        "result": "Die sichtbare Aufschrift ersetzt nicht den Button-Typ.",
+        "page": "17–18, 23"
+      },
+      {
+        "title": "Vorhersagen, ausfüllen und prüfen",
+        "lead": "Lies zuerst Namen und Werte im Quelltext. Fülle dann das Formular aus und vergleiche die lokale Vorschau.",
+        "points": [
+          "Nicht ausgewählte Checkboxen erscheinen nicht als angekreuzte Werte.",
+          "Prüfe Radio-Gruppierung, Auswahlwerte und Label-Klick.",
+          "Eine lokale Vorschau ist weder Serverübermittlung noch Buchung."
+        ],
+        "code": "name=\"ziel\" + value=\"PAR\" → ziel: PAR",
+        "result": "Für die Vorschau ist kleine separate Werkzeuglogik vorhanden; sie ist kein neues JavaScript-Lernkapitel.",
+        "page": "23–32; didaktische Demo"
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Namen und Werte lesen",
+        "task": "Lies Demo 1 und sage voraus, welche Namen/Werte die Auswahl Paris und Hotel ja erzeugen.",
+        "hint": "Sichtbare Texte können von values abweichen.",
+        "criteria": "Vorhersage wird mit der Vorschau verglichen.",
+        "solution": "Maßgeblich sind name und value, nicht id oder die sichtbare Überschrift."
+      },
+      {
+        "title": "Label-Fehler beheben",
+        "task": "Korrigiere label for=\"datum\" zu einem Feld mit id=\"abreise\". Ergänze dem Feld einen Übermittlungsnamen.",
+        "hint": "Entweder for oder id angleichen und name ergänzen.",
+        "criteria": "Label-Klick fokussiert das Feld; Vorschau enthält den Wert.",
+        "solution": "label for=\"abreise\" und input id=\"abreise\" name=\"abreise\" type=\"date\"."
+      },
+      {
+        "title": "Reiseformular erstellen",
+        "task": "Erstelle Reiseziel, Abreisedatum und Hinweise mit Beschriftung, name und submit-Button. Nutze die lokale Vorschau im Starter.",
+        "hint": "Ziel als select, Datum als date, Hinweise als textarea.",
+        "criteria": "Drei Felder samt Namen werden korrekt dargestellt.",
+        "solution": "Muster 03.html enthält ein vollständiges lokal simuliertes Anfrageformular."
+      },
+      {
+        "title": "Auswahlmöglichkeiten erweitern",
+        "task": "Ergänze Hotel ja/nein und die unabhängigen Optionen Frühstück und Transfer.",
+        "hint": "Radio-Gruppe gleicher Name; Checkboxen getrennte Namen.",
+        "criteria": "Genau eine Hoteloption, beide Zusatzwünsche gleichzeitig möglich.",
+        "solution": "Muster 04.html zeigt die Gruppierung und getrennte Werte."
+      },
+      {
+        "title": "Kontaktformular übertragen",
+        "task": "Erstelle eine neue Seite für eine fiktive Kursanfrage mit Kursauswahl, Textnotiz und Rücksetzbutton.",
+        "hint": "Keine echten persönlichen Daten verwenden.",
+        "criteria": "Klare Beschriftungen, funktionierende Vorschau und erklärte Reset-Wirkung.",
+        "solution": "Muster 05.html zeigt eine mögliche Kursanfrage; es werden keine Daten gesendet."
+      },
+      {
+        "title": "Formularprüfung dokumentieren",
+        "task": "Prüfe Beschriftungszuordnung, Tab-Reihenfolge, Radio-Gruppe, Checkboxen, Auswahlwerte und Reset.",
+        "hint": "Für jeden Punkt konkrete Eingabe und Ergebnis nennen.",
+        "criteria": "Sechs belegte Prüfungen, nicht nur ein Screenshot.",
+        "solution": "Die erwarteten Wirkungen folgen den Elementen; Ist-Ergebnisse werden im eigenen Browser eingetragen."
+      }
+    ]
+  },
+  {
+    "id": "09",
+    "title": "CSS und Selektoren",
+    "subtitle": "Regeln lesen, anwenden und erklären",
+    "source": "c1",
+    "pages": "3–44",
+    "topics": [
+      {
+        "title": "CSS trennt Inhalt und Darstellung",
+        "lead": "HTML gliedert die Informationen. CSS legt visuelle Eigenschaften und Layout fest. Eine CSS-Regel verbindet einen Selektor mit einem Deklarationsblock.",
+        "points": [
+          "Selektor: Welche Elemente?",
+          "Eigenschaft: Was wird gestaltet?",
+          "Wert: Welche Ausprägung wird verwendet?"
+        ],
+        "code": "p {\n  color: navy;\n  background-color: lightblue;\n}",
+        "result": "p ist der Selektor; color und background-color sind Eigenschaften.",
+        "page": "3–7"
+      },
+      {
+        "title": "Drei Wege zur CSS-Einbindung",
+        "lead": "Die Unterlage unterscheidet externes Stylesheet, internes style-Element und Inline-Deklarationen.",
+        "points": [
+          "Externes CSS kann mehrere Seiten gemeinsam gestalten.",
+          "Internes CSS gehört im Kurs in den head einer Seite.",
+          "Inline-CSS betrifft ein einzelnes Element und erschwert gemeinsame Änderungen."
+        ],
+        "code": "<!-- im head -->\n<link rel=\"stylesheet\" href=\"style.css\">\n\n/* in style.css */\nh1 { color: navy; }",
+        "result": "Das link-Element bindet CSS ein; es ist kein sichtbarer Navigationslink.",
+        "page": "8–16"
+      },
+      {
+        "title": "Element, Klasse, ID, Gruppe",
+        "lead": "Ein Elementselektor spricht einen Typ an. Punkt und Hash kennzeichnen Klassen- und ID-Selektoren. Mit Kommas werden Selektoren gruppiert.",
+        "points": [
+          "Eine Klasse kann mehrere Elemente verschiedener Typen ansprechen.",
+          "Ein Element kann mehrere Klassen besitzen.",
+          "Korrektur K12: ID- und Klassennamen sind im normalen HTML-Standards-Modus nicht pauschal unabhängig von Groß-/Kleinschreibung."
+        ],
+        "code": "p { color: navy; }\n.hinweis { background-color: lightblue; }\n#start { font-weight: bold; }\nh1, h2 { color: darkblue; }",
+        "result": "hinweis und Hinweis werden im Kurs nicht als derselbe Klassenname verwendet.",
+        "page": "22–30; K12"
+      },
+      {
+        "title": "Beziehungen mit Kombinatoren ausdrücken",
+        "lead": "Leerzeichen, >, + und ~ sprechen unterschiedliche Beziehungen im Dokument an.",
+        "points": [
+          "main p: passende Nachkommen auf beliebiger Tiefe.",
+          "main > p: direkte p-Kinder.",
+          "h2 + p: direkt nachfolgender p-Geschwisterknoten; h2 ~ p: passende nachfolgende Geschwister."
+        ],
+        "code": "<main>\n  <p>Direktes Kind</p>\n  <article><p>Tieferer Nachkomme</p></article>\n</main>\n\nmain > p { border: 2px solid navy; }",
+        "result": "Nur der erste Absatz wird von main > p erfasst.",
+        "page": "31–38"
+      },
+      {
+        "title": "Kaskade und Spezifität richtig einordnen",
+        "lead": "Korrektur K2: Internes CSS gewinnt nicht automatisch gegen externes. Bei gleichrangigen normalen Regeln derselben Herkunft und Ebene entscheidet zunächst die Spezifität.",
+        "points": [
+          "Ein einfacher ID-Selektor ist spezifischer als ein einfacher Klassenselektor.",
+          "Bei gleicher Spezifität entscheidet die spätere Quellreihenfolge.",
+          "Weitere Kaskadenstufen sind im gesonderten Korrekturverzeichnis verlinkt."
+        ],
+        "code": "#meldung { color: navy; }\n.hinweis { color: red; }\n\n/* Element: id=\"meldung\" class=\"hinweis\" */",
+        "result": "In dieser eingegrenzten Vergleichssituation ist der Text navy.",
+        "page": "17–18, 41; K2"
+      },
+      {
+        "title": "Zusammengesetzte Selektoren und Vererbung",
+        "lead": "p.hinweis verlangt zugleich Elementtyp p und Klasse hinweis. Vererbung übernimmt bestimmte Eigenschaften von Eltern, aber nicht alle.",
+        "points": [
+          "p.hinweis ist keine Liste zweier unabhängiger Selektoren.",
+          "color kann über einen Elternbereich vererbt werden.",
+          "Eine passende eigene Deklaration am Kind ist nicht mit geerbtem Wert gleichzusetzen."
+        ],
+        "code": "article { color: navy; }\np.hinweis { color: darkred; }",
+        "result": "Der gekennzeichnete Absatz kann eine andere Farbe als der geerbte Grundwert erhalten.",
+        "page": "39–44"
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Regelbestandteile benennen",
+        "task": "Zerlege .angebot { color: navy; } in Selektor, Eigenschaft und Wert.",
+        "hint": "Die geschweiften Klammern begrenzen den Block.",
+        "criteria": "Drei richtig benannte Bestandteile.",
+        "solution": "Selektor .angebot; Eigenschaft color; Wert navy."
+      },
+      {
+        "title": "Wirkung vorhersagen",
+        "task": "Lies Demo 1, bevor du sie öffnest. Welche Farbe bekommt der Absatz mit ID und Klasse?",
+        "hint": "Die Demo enthält normale Regeln ohne zusätzliche Ebenen.",
+        "criteria": "Vorhersage und Begründung mit Spezifität.",
+        "solution": "Der ID-Selektor bestimmt die Textfarbe; die später geschriebene einfache Klasse gewinnt nicht allein wegen ihrer Position."
+      },
+      {
+        "title": "Externes Stylesheet schreiben",
+        "task": "Erstelle zwei Angebotsartikel mit gemeinsamer Klasse angebot. Setze Farbe, Hintergrund und Rahmen ausschließlich in style.css.",
+        "hint": "Zuerst die link-Verknüpfung prüfen.",
+        "criteria": "Beide Artikel werden gemeinsam gestaltet, ohne style-Attribute.",
+        "solution": "Muster 03.html und 03.css zeigen eine gemeinsame Klassenregel."
+      },
+      {
+        "title": "Direkte Kinder auswählen",
+        "task": "Erstelle main mit einem direkten Absatz und einem Absatz in article. Rahme ausschließlich das direkte Kind ein.",
+        "hint": "Kindkombinator statt Nachkommenselektor.",
+        "criteria": "Nur der geforderte Absatz hat einen Rahmen.",
+        "solution": "Muster 04.html verwendet main > p."
+      },
+      {
+        "title": "Wiederverwendung übertragen",
+        "task": "Gestalte Überschriften und Hinweise auf einer neuen Informationsseite mit Gruppen- und Klassenselektoren.",
+        "hint": "Wiederkehrende Regeln zusammenfassen.",
+        "criteria": "Mindestens ein Gruppen- und ein Klassenselektor erfüllen einen erkennbaren Zweck.",
+        "solution": "Muster 05.html kombiniert h1,h2 und .hinweis. Einzelne Inhalte bleiben semantisch ausgezeichnet."
+      },
+      {
+        "title": "CSS-Fehler systematisch suchen",
+        "task": "Baue absichtlich einen falschen CSS-Dateipfad und einen falschen Klassennamen ein. Finde und behebe beide Fehler.",
+        "hint": "Datei laden und Selektor treffen sind zwei verschiedene Prüfungen.",
+        "criteria": "Zwei dokumentierte Ursachen und korrigierter Endzustand.",
+        "solution": "Falscher Pfad: Regeln werden nicht geladen. Falscher Klassenname: Datei lädt, aber Selektor erfasst das Element nicht."
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "title": "Farben und Hintergründe",
+    "subtitle": "Farbwerte, Bilder und einheitliche Gestaltung",
+    "source": "c2",
+    "pages": "3–49",
+    "topics": [
+      {
+        "title": "Farbwerte ausdrücken",
+        "lead": "Die Unterlage zeigt Farbnamen sowie RGB-, HEX- und HSL-Schreibweisen. Text- und Hintergrundfarbe werden getrennt eingestellt.",
+        "points": [
+          "color gestaltet Text.",
+          "background-color gestaltet den Hintergrund.",
+          "Eine kleine konsistent eingesetzte Palette erleichtert ein gemeinsames Design."
+        ],
+        "code": ".hinweis {\n  color: #0b1b4d;\n  background-color: rgb(234, 247, 251);\n}",
+        "result": "Die verwendeten Farben sind Kursbeispiele, keine allgemeingültige Markenpalette.",
+        "page": "3–5, 44"
+      },
+      {
+        "title": "Alpha und opacity unterscheiden",
+        "lead": "Ein Alpha-Wert gehört zur jeweiligen Farbe. opacity wirkt auf die Darstellung des gesamten Elements einschließlich seines Inhalts.",
+        "points": [
+          "Alpha 0 ist transparent; 1 ist deckend.",
+          "Ein halbtransparenter Hintergrund muss den Text nicht halbtransparent machen.",
+          "Vergleiche beide Varianten vor demselben Hintergrund."
+        ],
+        "code": ".nur-hintergrund { background: rgba(0, 116, 200, .25); }\n.ganzes-element { background: rgb(0, 116, 200); opacity: .25; }",
+        "result": "In der zweiten Variante wird auch der Text mit abgeschwächt.",
+        "page": "6, 32"
+      },
+      {
+        "title": "Hintergrundbild und Wiederholung",
+        "lead": "background-image nutzt eine URL. Relative Pfade in einer CSS-Datei beziehen sich auf diese CSS-Datei.",
+        "points": [
+          "repeat wiederholt, no-repeat zeigt das Bild einmal.",
+          "repeat-x und repeat-y beschränken die Wiederholungsrichtung.",
+          "background-position richtet es aus, beispielsweise center top."
+        ],
+        "code": ".flaeche {\n  background-image: url(\"../../assets/beispiel.svg\");\n  background-repeat: no-repeat;\n  background-position: center;\n}",
+        "result": "Anders als img trägt ein reines Hintergrundbild keinen eigenen alt-Text.",
+        "page": "7–13"
+      },
+      {
+        "title": "Cover und contain vergleichen",
+        "lead": "Korrektur K3: cover erhält bei Bildern mit natürlichem Seitenverhältnis dieses Verhältnis und kann Teile abschneiden. contain hält das ganze Bild im Bereich.",
+        "points": [
+          "cover: Fläche gefüllt, Bildausschnitt eventuell beschnitten.",
+          "contain: vollständiges Bild, freie Fläche möglich.",
+          "Die Demo verwendet dasselbe Bild und denselben Rahmen für beide Fälle."
+        ],
+        "code": ".cover { background-size: cover; }\n.contain { background-size: contain; }",
+        "result": "Cover verzerrt die Kreisform der Beispielgrafik nicht.",
+        "page": "14–17; K3"
+      },
+      {
+        "title": "Drei Arten von Verläufen",
+        "lead": "Lineare Verläufe gehen entlang einer Richtung, radiale vom Zentrum nach außen und konische um das Zentrum herum.",
+        "points": [
+          "Die Verläufe werden als background-image eingesetzt.",
+          "Farbstopps steuern die Übergänge.",
+          "Gestalterische Effekte dürfen den Vordergrund nicht unlesbar machen."
+        ],
+        "code": ".linear { background-image: linear-gradient(to right, navy, skyblue); }\n.radial { background-image: radial-gradient(circle, white, navy); }\n.konisch { background-image: conic-gradient(navy, skyblue, navy); }",
+        "result": "Die drei Flächen sind in Demo 2 unmittelbar vergleichbar.",
+        "page": "18–32"
+      },
+      {
+        "title": "Farbwirkung und Farbschema",
+        "lead": "Die Unterlage verbindet Farben mit kulturell geprägten Assoziationen und stellt monochromatische, komplementäre, analoge und triadische Schemata vor.",
+        "points": [
+          "Die Farbwirkung ist keine Garantie für die Reaktion jeder Person.",
+          "Lege Rollen für Grundfarbe, Hintergrund, Text und Akzent fest.",
+          "Informationen nicht ausschließlich von einer Farbe abhängig machen."
+        ],
+        "code": "Monochromatisch: ein Farbton in Varianten.\nKomplementär: gegenüberliegende Farbtöne.\nAnalog: benachbarte Farbtöne.\nTriadisch: drei gleichmäßig verteilte Farbtöne.",
+        "result": "Benennung und Erklärung folgen der Unterlage; keine pauschalen psychologischen Versprechen.",
+        "page": "34–49"
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Farbwerte lesen",
+        "task": "Benenne in der Demo Textfarbe und Hintergrundfarbe sowie deren Schreibweise.",
+        "hint": "Eigenschaft und Farbmodell getrennt benennen.",
+        "criteria": "Zwei Eigenschaften und mindestens zwei Wertschreibweisen.",
+        "solution": "color ist Textfarbe; background-color Hintergrund. #… ist HEX, rgb(…) RGB."
+      },
+      {
+        "title": "Transparenz beobachten",
+        "task": "Vergleiche Alpha-Hintergrund und opacity. Beschreibe, was mit dem Text geschieht.",
+        "hint": "Nicht nur den Hintergrund anschauen.",
+        "criteria": "Ein beobachtbarer Unterschied mit Ursache.",
+        "solution": "Bei opacity wird das Element samt Text abgeschwächt; ein Alpha-Hintergrund lässt die eigene Textfarbe unverändert."
+      },
+      {
+        "title": "Cover/Contain-Demo nachbauen",
+        "task": "Erstelle zwei gleich große Flächen mit derselben Kursgrafik und no-repeat. Verwende cover beziehungsweise contain.",
+        "hint": "Bild und Fläche sollten verschiedene Seitenverhältnisse besitzen.",
+        "criteria": "Ausschnitt und freie Fläche sind sichtbar vergleichbar.",
+        "solution": "Muster 03.html und CSS setzen beide Größenregeln in identischen Rahmen um."
+      },
+      {
+        "title": "Verläufe vergleichen",
+        "task": "Erstelle drei beschriftete Flächen mit linearem, radialem und konischem Verlauf.",
+        "hint": "Die Beschriftung außerhalb der Verlaufsfläche hält sie lesbar.",
+        "criteria": "Drei unterschiedliche Verlaufsfunktionen mit richtigen Namen.",
+        "solution": "Muster 04.html nutzt linear-gradient, radial-gradient und conic-gradient."
+      },
+      {
+        "title": "Kleine Palette anwenden",
+        "task": "Gestalte eine Reiseseite mit festen Rollen für Hintergrund, Text und Akzent. Schreibe eine Begründung für die Rollen.",
+        "hint": "Nicht jede Karte bekommt zufällig eine neue Farbe.",
+        "criteria": "Einheitliche Gestaltung und sichtbare Texte bei allen Flächen.",
+        "solution": "Muster 05.html zeigt eine mögliche blaue Palette. Andere begründete Lösungen sind zulässig."
+      },
+      {
+        "title": "Lesbarkeit und Pfade prüfen",
+        "task": "Prüfe Hintergrundpfad, Bildausschnitt und lesbare Beschriftungen. Dokumentiere einen Fehler und seine Behebung.",
+        "hint": "Für die Lesbarkeit auch den ungünstigsten Bildausschnitt anschauen.",
+        "criteria": "Drei Prüfpunkte und ein konkreter Fehlerfall.",
+        "solution": "Die Musterprüfung unterscheidet fehlendes Bild, unerwarteten Ausschnitt und überdeckten Text; jede Ursache verlangt eine andere Änderung."
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "title": "PHP und Formulardaten",
+    "subtitle": "Code lesen, Kontrollstrukturen und GET/POST",
+    "source": "php",
+    "pages": "4–21",
+    "topics": [
+      {
+        "title": "Request, Verarbeitung und Response",
+        "lead": "In unserem Kurs verarbeitet PHP Anfragen auf dem Server und erzeugt eine Antwort für den Browser. Die Unterlage zeigt den Weg von Client über Webserver zum PHP-Interpreter.",
+        "points": [
+          "HTML kann statisch vorliegen oder als Ergebnis der Verarbeitung entstehen.",
+          "Eine PHP-Datei muss über eine PHP-Umgebung ausgeführt werden.",
+          "Ein Doppelklick auf eine Quelldatei ist keine PHP-Serverausführung."
+        ],
+        "code": "Browser → HTTP-Anfrage → Webserver/PHP\n→ erzeugtes HTML → Browser",
+        "result": "Die Diagramme auf den Seiten 8–9 liefern die Grundlage für diesen Ablauf.",
+        "page": "4–13"
+      },
+      {
+        "title": "Variablen, Zuweisung und Zeichenketten",
+        "lead": "Variablen beginnen mit $. Korrektur K4: = weist einen Wert zu; . verbindet Zeichenketten und .= hängt rechts an.",
+        "points": [
+          "== vergleicht Werte unter den Vergleichsregeln von PHP.",
+          "=== berücksichtigt Wert und Typ.",
+          "Vollständige Anweisungen enden im Beispiel mit Semikolon."
+        ],
+        "code": "$anzahl = 2;\n$text = \"Paris\";\n$text .= \" für \" . $anzahl . \" Personen\";\necho $text;",
+        "result": "Ausgabe: Paris für 2 Personen. Die Operatorentabelle der Unterlage wurde hierzu ausdrücklich korrigiert.",
+        "page": "14–16; K4"
+      },
+      {
+        "title": "If, elseif, else und ternärer Ausdruck",
+        "lead": "Eine Bedingung bestimmt, welcher Zweig ausgeführt wird. Bei einer Kette wird der erste zutreffende Zweig genommen.",
+        "points": [
+          "Vergleiche die Werte schrittweise.",
+          "Der else-Zweig deckt den verbleibenden Fall ab.",
+          "Ein ternärer Ausdruck wählt einen von zwei Werten."
+        ],
+        "code": "$personen = 3;\nif ($personen === 1) {\n  echo \"Einzelreise\";\n} elseif ($personen <= 4) {\n  echo \"Kleine Gruppe\";\n} else {\n  echo \"Große Gruppe\";\n}\n$text = $personen > 1 ? \"Mehrere\" : \"Eine Person\";",
+        "result": "Ausgabe des if-Blocks: Kleine Gruppe. Wert von $text: Mehrere.",
+        "page": "18"
+      },
+      {
+        "title": "Switch und break",
+        "lead": "switch wählt einen passenden case. break beendet in diesem Beispiel die Fallbehandlung; ohne break kann der folgende Code ebenfalls ausgeführt werden.",
+        "points": [
+          "Prüfe den Ausgangswert vor der Fallauswahl.",
+          "default behandelt Werte ohne passenden case.",
+          "Verwechsle die Fallauswahl nicht mit einer Schleife."
+        ],
+        "code": "$ziel = \"Rom\";\nswitch ($ziel) {\n  case \"Paris\": echo \"Frankreich\"; break;\n  case \"Rom\": echo \"Italien\"; break;\n  default: echo \"Unbekannt\";\n}",
+        "result": "Ausgabe: Italien.",
+        "page": "18"
+      },
+      {
+        "title": "While und do-while",
+        "lead": "while prüft vor dem Schleifenkörper. do-while führt den Körper vor der ersten Bedingungsprüfung aus. Die fehlerhaften Syntaxfragmente der Unterlage sind in K4 dokumentiert.",
+        "points": [
+          "Notiere Startwert, Bedingung, Körper und Änderung.",
+          "Ein fehlendes Hochzählen kann eine Endlosschleife verursachen.",
+          "do-while kann den Körper auch bei anfangs falscher Bedingung einmal ausführen."
+        ],
+        "code": "$i = 3;\nwhile ($i < 3) { echo $i; $i++; }\necho \" / \";\ndo { echo $i; $i++; } while ($i < 3);",
+        "result": "Ausgabe:  / 3. while führt hier keinen Durchlauf aus, do-while einen.",
+        "page": "17; K4"
+      },
+      {
+        "title": "For und foreach",
+        "lead": "for bündelt Initialisierung, Bedingung und Änderung. foreach durchläuft die Einträge einer vorhandenen Sammlung.",
+        "points": [
+          "Bei for die Grenze genau lesen: < ist nicht <=.",
+          "foreach liefert hier jeweils den Wert eines Array-Eintrags.",
+          "Für Codeverständnis jeden Durchlauf mit Zwischenwerten notieren."
+        ],
+        "code": "for ($i = 1; $i <= 3; $i++) { echo $i . \" \"; }\n$ziele = [\"Paris\", \"Rom\"];\nforeach ($ziele as $ziel) { echo $ziel . \" \"; }",
+        "result": "Ausgabe: 1 2 3 Paris Rom (mit Leerzeichen).",
+        "page": "17"
+      },
+      {
+        "title": "Funktionen mit Rückgabewert",
+        "lead": "Eine Funktion bündelt einen Verarbeitungsschritt. Parameter nehmen Eingabewerte auf; return liefert ein Ergebnis an den Aufrufer.",
+        "points": [
+          "Berechnung und HTML-Ausgabe lassen sich trennen.",
+          "Benenne Funktionen nach ihrer Aufgabe.",
+          "Die Unterlage nennt daneben Array-, String-, Datum-, Datei- und mathematische Funktionen."
+        ],
+        "code": "function gesamtpreis($preisCent, $personen) {\n  return $preisCent * $personen;\n}\n$summe = gesamtpreis(12500, 3);\necho $summe;",
+        "result": "Ausgabe: 37500. Die Cent-Rechnung ist ein didaktisches Beispiel.",
+        "page": "19–20"
+      },
+      {
+        "title": "GET und POST lesen",
+        "lead": "Formularnamen werden zu Schlüsseln in $_GET beziehungsweise $_POST. Die Verarbeitung muss auch ohne übermittelte Werte verständlich reagieren.",
+        "points": [
+          "Prüfe die Anfrageart und fehlende Angaben.",
+          "E1: HTML-Ausgabe von Nutzereingaben wird passend maskiert; das ist ausdrücklich ergänzter Schutz, keine Passwortprüfung.",
+          "Sessions, eigene Klassen und Anmeldung gehören nicht zu diesem Grundlagenpool."
+        ],
+        "code": "$roh = $_POST[\"ziel\"] ?? \"\";\n$ziel = is_string($roh) ? trim($roh) : \"\";\necho htmlspecialchars($ziel, ENT_QUOTES, \"UTF-8\");",
+        "result": "Die vollständige POST-Demo und ein GET-Beispiel sind als PHP-Dateien enthalten.",
+        "page": "21; E1"
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Code per Hand ausführen",
+        "task": "Notiere die Ausgabe der while/do-while-Folie und erkläre die unterschiedliche Anzahl der Durchläufe.",
+        "hint": "Prüfzeitpunkt der Bedingung vergleichen.",
+        "criteria": "Ausgabe und Anzahl beider Schleifen korrekt.",
+        "solution": "while: 0 Durchläufe. do-while: 1 Durchlauf mit 3. Dazwischen wird „ / “ ausgegeben."
+      },
+      {
+        "title": "Fehler in einer for-Schleife beheben",
+        "task": "Korrigiere for ($i=0; i<3; i++) { echo $i; }. Welche Ausgabe entsteht?",
+        "hint": "In PHP muss jedes Variablenvorkommen mit $ beginnen.",
+        "criteria": "Lauffähiger Code und vorhergesagte Ausgabe.",
+        "solution": "for ($i=0; $i<3; $i++) { echo $i; } erzeugt 012."
+      },
+      {
+        "title": "POST verarbeiten",
+        "task": "Erstelle Formular und Verarbeitung für ein Reiseziel. Behandle Direktaufruf ohne POST, fehlenden Wert und eine Texteingabe.",
+        "hint": "Nutze das enthaltene Beispiel zur Anfrageprüfung und E1-Ausgabe.",
+        "criteria": "Keine undefinierte Variable; Text wird als Text ausgegeben.",
+        "solution": "Muster 03.php verarbeitet das Feld ziel, prüft die Form und gibt eine maskierte Rückmeldung aus."
+      },
+      {
+        "title": "Alle Kontrollstrukturen üben",
+        "task": "Lege 04.php an: if/elseif/else für Gruppengröße, switch für Ziel, for und while für 1–3, do-while mit Startwert 3, foreach für zwei Ziele.",
+        "hint": "Jeden Abschnitt beschriften und die Ausgabe zuerst notieren.",
+        "criteria": "Alle sechs Konstruktionen vorhanden und ihre Ausgaben begründet.",
+        "solution": "Muster 04.php zeigt sechs voneinander getrennte Abschnitte. Die Kontrollstrukturen werden nicht in eine schwer lesbare Funktion verschachtelt."
+      },
+      {
+        "title": "Preisfunktion und GET",
+        "task": "Schreibe eine Preisfunktion und rufe sie mit 12500 Cent und 3 Personen auf. Lies außerdem den Zieltext aus einer GET-Anfrage und stelle ihn maskiert dar.",
+        "hint": "Berechnung gibt einen Wert zurück; HTML-Ausgabe folgt danach.",
+        "criteria": "37500 als Rechenwert; fehlender GET-Wert wird berücksichtigt.",
+        "solution": "Muster 05.php trennt Funktion, Anfragewert und Ausgabe."
+      },
+      {
+        "title": "Schreibtischtest dokumentieren",
+        "task": "Wähle zwei Schleifen und lege Tabellen für Durchlauf, Bedingung, Variable und Ausgabe an. Vergleiche mit PHP.",
+        "hint": "Erst Handrechnung, dann Ausführung.",
+        "criteria": "Zwei vollständige Ablaufprotokolle mit Vergleich.",
+        "solution": "Für for 1–3 entstehen drei Ausgaben; danach ist die Bedingung mit 4 falsch. Für do-while mit Start 3 und Bedingung <3 gibt es einen Körperdurchlauf."
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "title": "PHP und Datenbank",
+    "subtitle": "Verbindung, Parameter und Ergebnisliste",
+    "source": "php",
+    "pages": "22–39",
+    "topics": [
+      {
+        "title": "Datenbankzugriff als weiterer Verarbeitungsschritt",
+        "lead": "PHP nimmt die Anfrage entgegen, stellt eine Datenbankverbindung her und verarbeitet das Ergebnis einer SQL-Abfrage.",
+        "points": [
+          "Die Unterlage empfiehlt MySQLi beziehungsweise PDO statt der alten mysql-Schnittstelle.",
+          "Für diesen Kurs verwenden wir MySQLi.",
+          "Die lokale Konfiguration enthält keine produktiven Zugangsdaten."
+        ],
+        "code": "$db = mysqli_connect($host, $user, $passwort, $datenbank);\nmysqli_set_charset($db, \"utf8mb4\");",
+        "result": "Host, Benutzer, Kennwort und Datenbank stammen aus einer eigenen lokalen Konfiguration.",
+        "page": "22–25"
+      },
+      {
+        "title": "Prozedural und objektorientiert",
+        "lead": "MySQLi bietet beide Aufrufstile. Der Kurs nutzt im Pflichtbeispiel die prozedurale Variante; die objektorientierte Form wird entsprechend der Quelle zum Vergleich gezeigt.",
+        "points": [
+          "Prozedural: Verbindung als Argument.",
+          "Objektorientiert: Methodenaufruf an Verbindung beziehungsweise Ergebnis.",
+          "Eigene PHP-Klassen sind als optionaler Quellenabschnitt 26–27 markiert, nicht im Grundlagenquiz vorausgesetzt."
+        ],
+        "code": "// prozedural\nmysqli_close($db);\n// entsprechende objektorientierte Schreibweise\n$db->close();",
+        "result": "Keine Vermischung von zwei Schreibstilen innerhalb eines kleinen Beispiels nötig.",
+        "page": "24–29"
+      },
+      {
+        "title": "Eine Hilfsfunktion verwenden",
+        "lead": "Der wiederkehrende Verbindungsaufbau kann in einer gesonderten Datei gebündelt werden. Das entspricht dem Utility-Beispiel der Unterlage.",
+        "points": [
+          "require_once bindet die Hilfsdatei ein.",
+          "Die Funktion liefert die Verbindung zurück.",
+          "Konfiguration und Darstellung bleiben getrennt."
+        ],
+        "code": "require_once __DIR__ . \"/db.php\";\n$db = db_connect();",
+        "result": "Das vollständige Beispiel liegt in backend/db.php.",
+        "page": "29"
+      },
+      {
+        "title": "Werte an vorbereitete Abfragen binden",
+        "lead": "Korrektur K5: Der direkt in SQL kopierte Formularwert der Folien 30–31 wird durch einen gebundenen Parameter ersetzt. Prepared Statements sind bereits auf Folie 24 genannt.",
+        "points": [
+          "SQL-Struktur und eingegebener Wert bleiben getrennt.",
+          "Der Platzhalter steht dort, wo der Datenwert benötigt wird.",
+          "Eine fachliche Prüfung zulässiger Ziele bleibt trotzdem sinnvoll."
+        ],
+        "code": "$sql = \"SELECT ziel, preis_cent FROM angebote WHERE ziel = ?\";\n$stmt = mysqli_prepare($db, $sql);\nmysqli_stmt_bind_param($stmt, \"s\", $ziel);\nmysqli_stmt_execute($stmt);",
+        "result": "Der Zielwert wird nicht durch Zeichenkettenverkettung in den SQL-Code geschrieben.",
+        "page": "24, 30–31; K5"
+      },
+      {
+        "title": "Treffer, leere Liste und Fehler unterscheiden",
+        "lead": "Eine ausgeführte SELECT-Abfrage kann passende Datensätze oder keine Treffer liefern. Ein technischer Fehler ist ein anderer Zustand.",
+        "points": [
+          "Ergebnisse in verständliche HTML-Inhalte übertragen.",
+          "E1: Auch Werte aus einer Datenbank werden beim HTML-Ausgeben maskiert.",
+          "Interne Fehlerdetails nicht unkontrolliert als Bedienhinweis ausgeben."
+        ],
+        "code": "Abfrage erfolgreich + Treffer → Ergebnistabelle\nAbfrage erfolgreich + keine Treffer → „Keine Angebote“\nTechnischer Fehler → passende Fehlermeldung",
+        "result": "Keine dieser Aussagen bedeutet „Buchung abgeschlossen“.",
+        "page": "25, 28, 30–35"
+      },
+      {
+        "title": "EuroCityTravel zusammenführen",
+        "lead": "Die Vorlage nennt Anmeldung, Reisesuche, Ergebnisse und Buchungsabschluss als Projektabschnitte. Unser ausgearbeitetes Kursprojekt konzentriert sich auf die vollständige Suchstrecke.",
+        "points": [
+          "index.php: Auswahl und Anfrage.",
+          "Ergebnisdarstellung: Filter, Trefferzahl und Rückmeldung.",
+          "Original-Aufträge zu login.php, buchung.php und buchabschl.php bleiben sichtbar als weiterführende, hier nicht implementierte Projektstufen."
+        ],
+        "code": "Formular → Prüfung → Verbindung → SELECT mit Parameter\n→ Daten lesen → HTML-Tabelle → Auswahl ändern",
+        "result": "Kein vorgetäuschter Login, keine Buchung und keine Zahlung.",
+        "page": "32–39"
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Verbindung erklären",
+        "task": "Benenne die vier Verbindungsangaben und erkläre, warum die Konfiguration separat liegt.",
+        "hint": "Host und Datenbankname sind unterschiedliche Angaben.",
+        "criteria": "Vier Angaben und nachvollziehbare Trennung.",
+        "solution": "Host, Benutzer, Kennwort, Datenbank. Eine separate lokale Datei verhindert, dass reale Zugangsdaten Teil allgemeiner Unterrichtsdateien werden."
+      },
+      {
+        "title": "SQL-Struktur erkennen",
+        "task": "Markiere in der Folienabfrage Struktur, Platzhalter und Parameterbindung.",
+        "hint": "Das ? ist kein Zielname.",
+        "criteria": "Die drei Rollen sind korrekt zugeordnet.",
+        "solution": "SELECT/WHERE sind Struktur, ? ist der Platzhalter, bind_param bindet den Wert als Zeichenkette."
+      },
+      {
+        "title": "Vorbereitete Suche nachbauen",
+        "task": "Erstelle eine MySQLi-Abfrage nach einem vorgegebenen Reiseziel. Gib Treffer und leere Liste unterschiedlich aus.",
+        "hint": "Das Unterrichtsschema unter backend/schema.sql verwenden.",
+        "criteria": "Parameterbindung vorhanden; zwei Ergebniszustände erkennbar.",
+        "solution": "Muster 03.php verwendet die gemeinsame Suchfunktion und zeigt eine Liste mit dem Ziel Paris."
+      },
+      {
+        "title": "Formular und Suche verbinden",
+        "task": "Verarbeite ein ausgewähltes Ziel aus GET, prüfe es und stelle die gefilterten Angebote als Tabelle dar.",
+        "hint": "Formularname, PHP-Schlüssel und SQL-Parameter bewusst verbinden.",
+        "criteria": "Zielprüfung, gebundene Abfrage und verständliche Ausgabe.",
+        "solution": "Muster 04.php ist eine eigenständige Suchansicht mit Auswahl und Ergebnissen."
+      },
+      {
+        "title": "Ausgabeseite übertragen",
+        "task": "Erstelle eine zweite Suchansicht mit denselben Verarbeitungsfunktionen, aber eigener HTML-Struktur für Angebotskarten.",
+        "hint": "Datenzugriff wiederverwenden, nicht zweimal kopieren.",
+        "criteria": "Gleiche gefilterte Daten, andere semantisch nachvollziehbare Darstellung.",
+        "solution": "Muster 05.php verwendet die gemeinsame Suche und article-Karten statt einer Tabelle."
+      },
+      {
+        "title": "Integration prüfen",
+        "task": "Prüfe zulässiges Ziel, fehlendes Ziel, unerlaubten Wert, erlaubtes Ziel ohne Treffer und fehlende DB-Konfiguration.",
+        "hint": "Rom/Paris/Berlin sowie Wien sind im Kursszenario zulässig; Wien hat bewusst keine Datensätze.",
+        "criteria": "Fünf Fälle mit Soll/Ist und klarer Fehlerabgrenzung.",
+        "solution": "Normale Ziele liefern passende Beispiele. Fehlendes Ziel fordert Auswahl, unerlaubter Wert wird abgewiesen, Wien liefert leere Liste. Ohne Konfiguration erscheint ein technischer Hinweis statt Buchungserfolg."
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "title": "CSS-Layout ergänzen",
+    "subtitle": "Gesonderter Aufbaukurs aus Webgrundlagen",
+    "source": "extra",
+    "pages": "CSS-Rolle, Box-Modell, Einheiten, Variablen, Layout und DevTools",
+    "topics": [
+      {
+        "title": "Ergänzung aus Webgrundlagen",
+        "lead": "Dieser Baustein ergänzt die PHP-PDFs um die bereits vorhandenen Webgrundlagen-Themen. Er wird nicht als weiteres Kapitel der neun PDFs ausgegeben.",
+        "points": [
+          "Box-Modell und Einheiten.",
+          "Custom Properties und kleine Layouts.",
+          "Prüfung im Browser und bei unterschiedlicher Breite."
+        ],
+        "code": "",
+        "result": "Die Ergänzung dient dem technischen Transfer in ein handhabbares Seitenlayout.",
+        "page": "Referenzabschnitte Box-Modell bis DevTools"
+      },
+      {
+        "title": "Inhalt, padding, border und margin",
+        "lead": "Das Box-Modell unterscheidet Inhalt, Innenabstand, Rahmen und Außenabstand.",
+        "points": [
+          "padding liegt zwischen Inhalt und Rahmen.",
+          "margin liegt außerhalb des Rahmens.",
+          "Bei box-sizing: border-box werden Innenabstand und Rahmen in eine gesetzte Breite einbezogen."
+        ],
+        "code": ".karte {\n  box-sizing: border-box;\n  width: 280px;\n  padding: 20px;\n  border: 2px solid navy;\n  margin: 16px;\n}",
+        "result": "Margin gehört weiterhin nicht zur gesetzten Boxbreite.",
+        "page": "Box-Modell"
+      },
+      {
+        "title": "Werte und Einheiten gezielt wählen",
+        "lead": "Die Referenz betrachtet px, rem und relative Werte. Der Bezug eines Wertes hängt von der Eigenschaft ab.",
+        "points": [
+          "rem bei Schriftgrößen bezieht sich auf das Wurzelelement.",
+          "Prozentangaben benötigen einen jeweiligen Bezugswert.",
+          "Vermeide starre Breiten, die kleine Ansichten ohne Grund überlaufen lassen."
+        ],
+        "code": "body { font-size: 1rem; }\n.inhalt { width: 90%; max-width: 1000px; }",
+        "result": "Im Browser die tatsächliche Größe prüfen, statt sie aus dem Wert zu erraten.",
+        "page": "Werte und Einheiten"
+      },
+      {
+        "title": "Wiederkehrende Werte benennen",
+        "lead": "Custom Properties speichern wiederverwendbare Gestaltungswerte. var liest sie aus.",
+        "points": [
+          "Der Name beginnt mit zwei Bindestrichen.",
+          "Eine gemeinsame Definition vermeidet abweichende Einzelwerte.",
+          "Namen sollten die Rolle erklären. "
+        ],
+        "code": ":root { --akzent: #0074c8; }\n.karte { border-color: var(--akzent); }\n.navigation a { color: var(--akzent); }",
+        "result": "Eine Änderung an --akzent betrifft beide Regeln.",
+        "page": "CSS Custom Properties"
+      },
+      {
+        "title": "Layout mit Flexbox und Umbruch",
+        "lead": "Als gekennzeichnete didaktische Ausarbeitung der Layout-Grundlagen verwenden wir eine kleine Flex-Navigation.",
+        "points": [
+          "Der Container erhält display: flex.",
+          "gap hält Abstände zwischen Elementen.",
+          "flex-wrap erlaubt Umbruch, statt Links aus dem Fenster zu schieben."
+        ],
+        "code": ".navigation {\n  display: flex;\n  gap: 1rem;\n  flex-wrap: wrap;\n}",
+        "result": "Für den Einstieg zuerst Container und seine unmittelbaren Kinder identifizieren.",
+        "page": "Layout-Grundlagen; ergänzende Ausarbeitung"
+      },
+      {
+        "title": "Mit Browserwerkzeugen überprüfen",
+        "lead": "Die Referenz verwendet DevTools, um angewendete Regeln, Überschreibungen und Größen zu untersuchen.",
+        "points": [
+          "Prüfe eine breite und eine schmale Ansicht.",
+          "Gehe interaktive Elemente mit Tab durch und beobachte den Fokus.",
+          "Ändere für Experimente immer nur eine Eigenschaft und vergleiche."
+        ],
+        "code": "a:focus-visible {\n  outline: 3px solid #b44f00;\n  outline-offset: 3px;\n}",
+        "result": "Fokusgestaltung ist hier eine gekennzeichnete Bedienbarkeits-Ergänzung.",
+        "page": "DevTools; ergänzender Fokuscheck"
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Boxbereiche benennen",
+        "task": "Unterscheide in Demo 1 Inhalt, padding, border und margin.",
+        "hint": "Von innen nach außen lesen.",
+        "criteria": "Vier korrekt benannte Bereiche.",
+        "solution": "Inhalt → Innenabstand → Rahmen → Außenabstand."
+      },
+      {
+        "title": "Breite berechnen",
+        "task": "Eine border-box hat width 280px, je 20px padding und je 2px border. Wie breit ist ihr Inhaltsbereich?",
+        "hint": "Links und rechts jeweils abziehen.",
+        "criteria": "236px und ein nachvollziehbarer Rechenweg.",
+        "solution": "280 − 40 − 4 = 236 Pixel. Margin gehört nicht zur gesetzten Breite."
+      },
+      {
+        "title": "Karte aufbauen",
+        "task": "Erstelle eine Karte mit border-box, Innenabstand, Rahmen und Außenabstand. Verändere nacheinander zwei Werte.",
+        "hint": "Nur eine Änderung auf einmal durchführen.",
+        "criteria": "Boxbereiche sind im Ergebnis unterscheidbar.",
+        "solution": "Muster 03.html und CSS zeigen eine Karte mit beschrifteter Umgebung."
+      },
+      {
+        "title": "Flexible Navigation erstellen",
+        "task": "Lege drei Links in einen Flex-Container. Ergänze gap und erlaubten Umbruch.",
+        "hint": "Bei kleiner Fensterbreite testen.",
+        "criteria": "Links bleiben erreichbar und überlappen nicht.",
+        "solution": "Muster 04.html setzt flex-wrap: wrap am Container."
+      },
+      {
+        "title": "Kartengruppe übertragen",
+        "task": "Erstelle drei Angebotskarten mit gemeinsamer Akzentvariable. Passe die Anordnung an unterschiedliche Breiten an.",
+        "hint": "Die Variable in :root definieren und mehrfach verwenden.",
+        "criteria": "Drei Karten, zentrale Farbe, nachvollziehbarer Umbruch.",
+        "solution": "Muster 05.html nutzt eine flexible Kartengruppe und dieselbe Custom Property."
+      },
+      {
+        "title": "Breite und Fokus prüfen",
+        "task": "Prüfe 1280px und 390px Ansichtsbreite sowie Tastaturnavigation. Dokumentiere Überläufe und Fokusmarkierungen.",
+        "hint": "Ein Layout ist erst nach Prüfung in den betrachteten Breiten abgenommen.",
+        "criteria": "Zwei Breiten und ein Fokusdurchlauf dokumentiert.",
+        "solution": "Die Lösung ist ein tatsächliches Prüfprotokoll; eine pauschale Aussage „responsive“ genügt nicht."
+      }
+    ]
+  }
+]

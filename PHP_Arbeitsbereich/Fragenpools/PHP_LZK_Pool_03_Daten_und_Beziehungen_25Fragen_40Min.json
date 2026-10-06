@@ -1,0 +1,940 @@
+{
+  "id": "PHP-lzk-pool-03-25fragen-40min",
+  "name": "PHP · LZK-Vorbereitung 03 · Daten und Beziehungen",
+  "course": "PHP",
+  "version": "1.0",
+  "sourceFileName": "PHP_LZK_Pool_03_Daten_und_Beziehungen_25Fragen_40Min.json",
+  "description": "Gemischter Vorbereitungstest 03: 25 Fragen zu User Interfaces, Qualitätssicherung, UX und Gestaltung, HTML, CSS sowie PHP. Bearbeitungszeit: 40 Minuten. 20 Einzelwahl- und 5 Mehrfachwahlfragen mit Lösungen und Begründungen.",
+  "durationMinutes": 40,
+  "durationSeconds": 2400,
+  "timeLimitMinutes": 40,
+  "timeLimitSeconds": 2400,
+  "questionCount": 25,
+  "instructions": "Bearbeite alle 25 Fragen in 40 Minuten. Einzelwahl: genau eine Antwort. Mehrfachwahl: genau zwei Antworten. Jede vollständig richtig beantwortete Frage zählt einen Punkt; keine Teilpunkte und keine Minuspunkte. Lies Code und Rahmenbedingungen genau. Alle Beispiele stehen für sich; vorgegebene Daten sind erfunden. Die Qualitäts- und UX-Begriffe folgen den Unterrichtspräsentationen. Dies ist Übungsmaterial, keine Vorhersage der tatsächlichen LZK.",
+  "topicLabels": {
+    "ui": "User Interfaces: Arten, Eingabe und Ausgabe",
+    "qs": "Qualitätssicherung: Qualitätsmerkmale und Prüfverfahren",
+    "ux": "User Experience und Gestaltungsgrundlagen",
+    "html": "HTML: Aufbau, Semantik und Formulare",
+    "css": "CSS: Syntax, Selektoren, Farben und Darstellung",
+    "php": "PHP: Grundlagen, Formulardaten und Codeverständnis"
+  },
+  "difficultyLabels": {
+    "leicht": "Grundlagen",
+    "mittel": "Anwendung und Codeverständnis",
+    "anspruchsvoll": "Transfer und genaue Abgrenzung"
+  },
+  "questionTypeCounts": {
+    "single-choice": 20,
+    "multiple-choice": 5
+  },
+  "topicQuestionCounts": {
+    "ui": 2,
+    "qs": 3,
+    "ux": 5,
+    "html": 4,
+    "css": 6,
+    "php": 5
+  },
+  "scoring": {
+    "maximumPoints": 25,
+    "pointsPerCorrectQuestion": 1,
+    "multipleChoice": "exact-set",
+    "partialCredit": false,
+    "negativePoints": false
+  },
+  "sourcePolicy": {
+    "primaryBasis": "Die acht gelesenen Unterrichtspräsentationen zu PHP, Kapitel 1 bis 5.",
+    "supplement": "PHP und einzelne zusätzliche Gestaltungs- beziehungsweise CSS-Grundlagen stammen aus der hochgeladenen XML-Vorlage. Eine separate PHP-Präsentation war nicht auffindbar.",
+    "formulation": "Fragen, Anwendungssituationen und Codebeispiele wurden neu formuliert. Begriffe und Themen sind über sourceLocations zugeordnet; die Dateien sind keine wortgetreue Konvertierung der XML-Vorlage.",
+    "technicalVerification": "Offizielle Sprach- und Webdokumentationen dienen nur dem fachlichen Abgleich. Bei Präzisierungen gegenüber der Vorlage stehen Hinweise in sourceNote; die Unterrichtsquellen werden nicht als aktuelle Normfassungen ausgegeben.",
+    "scope": "Keine Sessions, Cookies, Klassen, Datenbankprogrammierung oder Passwortvalidierung. Berechtigungen werden nur als Qualitätsmerkmal behandelt."
+  },
+  "editorialNotes": [
+    "Doppelte Vorlagefragen werden nicht durch bloße Umnummerierung wiederverwendet. Über die fünf Pools werden dieselben Lernziele mit unterschiedlichen Aufgabenformaten vertieft.",
+    "Die Begriffe zur Softwarequalität sowie die Darstellung von valuable folgen ausdrücklich der Unterrichtsquelle.",
+    "Die numerischen und textuellen Ausgaben aller vollständigen PHP-Beispiele wurden vor der Abgabe mit der PHP-Laufzeit geprüft."
+  ],
+  "sources": [
+    {
+      "id": "ppt-ui",
+      "type": "Unterrichtsquelle",
+      "title": "PHP-Kurs_Kapitel 1_User Interfaces_Präsentation.pptx"
+    },
+    {
+      "id": "ppt-qs",
+      "type": "Unterrichtsquelle",
+      "title": "PHP-Kurs_Kapitel 2_Qualitätssicherung_Präsentation.pptx"
+    },
+    {
+      "id": "ppt-ux1",
+      "type": "Unterrichtsquelle",
+      "title": "PHP-Kurs_Kapitel 3_User Experience_Teil 1_Präsentation.pptx"
+    },
+    {
+      "id": "ppt-ux2",
+      "type": "Unterrichtsquelle",
+      "title": "PHP-Kurs_Kapitel 3_User Experience_Teil 2_Präsentation.pptx"
+    },
+    {
+      "id": "ppt-html1",
+      "type": "Unterrichtsquelle",
+      "title": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pptx"
+    },
+    {
+      "id": "ppt-html2",
+      "type": "Unterrichtsquelle",
+      "title": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pptx"
+    },
+    {
+      "id": "ppt-css1",
+      "type": "Unterrichtsquelle",
+      "title": "PHP-Kurs_Kapitel 5_CSS_Teil 1_Präsentation.pptx"
+    },
+    {
+      "id": "ppt-css2",
+      "type": "Unterrichtsquelle",
+      "title": "PHP-Kurs_Kapitel 5_CSS_Teil 2_Präsentation.pptx"
+    },
+    {
+      "id": "xml-vorlage",
+      "type": "Ergänzende Aufgabenquelle",
+      "title": "quiz-PHPV2 14.09.2026 EACGRNK-PHP-20260929-0821.xml",
+      "note": "Thematische Orientierung, insbesondere für PHP und ergänzende Gestaltungsfragen. Keine ungeprüfte Übernahme der Lösungsschlüssel."
+    },
+    {
+      "id": "check-html",
+      "type": "Fachlicher Abgleich",
+      "title": "WHATWG HTML Standard: Forms",
+      "url": "https://html.spec.whatwg.org/multipage/forms.html",
+      "accessed": "2026-09-29"
+    },
+    {
+      "id": "check-selectors",
+      "type": "Fachlicher Abgleich",
+      "title": "W3C Selectors Level 4",
+      "url": "https://www.w3.org/TR/selectors-4/",
+      "accessed": "2026-09-29"
+    },
+    {
+      "id": "check-backgrounds",
+      "type": "Fachlicher Abgleich",
+      "title": "W3C CSS Backgrounds and Borders Level 3",
+      "url": "https://www.w3.org/TR/css-backgrounds-3/",
+      "accessed": "2026-09-29"
+    },
+    {
+      "id": "check-php",
+      "type": "Fachlicher Abgleich",
+      "title": "PHP-Handbuch: Sprachreferenz",
+      "url": "https://www.php.net/manual/en/langref.php",
+      "accessed": "2026-09-29"
+    },
+    {
+      "id": "check-foreach",
+      "type": "Fachlicher Abgleich",
+      "title": "PHP-Handbuch: foreach",
+      "url": "https://www.php.net/manual/en/control-structures.foreach.php",
+      "accessed": "2026-09-29"
+    },
+    {
+      "id": "check-isset",
+      "type": "Fachlicher Abgleich",
+      "title": "PHP-Handbuch: isset",
+      "url": "https://www.php.net/manual/en/function.isset.php",
+      "accessed": "2026-09-29"
+    },
+    {
+      "id": "check-include",
+      "type": "Fachlicher Abgleich",
+      "title": "PHP-Handbuch: include_once",
+      "url": "https://www.php.net/manual/en/function.include-once.php",
+      "accessed": "2026-09-29"
+    }
+  ],
+  "questions": [
+    {
+      "id": "PHP-LZK40-P03-001",
+      "type": "single-choice",
+      "topic": "ux",
+      "difficulty": "leicht",
+      "text": "<p>Welcher Honeycomb-Begriff bezeichnet die Zugänglichkeit auch für Menschen mit Einschränkungen?</p>",
+      "options": [
+        "Accessible.",
+        "Credible.",
+        "Desirable.",
+        "Findable."
+      ],
+      "correct": [
+        0
+      ],
+      "solution": "Accessible.",
+      "explanation": "Accessible bezieht sich auf Zugänglichkeit und die Berücksichtigung unterschiedlicher Bedürfnisse, etwa durch alternative Bedienmöglichkeiten.",
+      "sourceIds": [
+        "ppt-ux1"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-ux1",
+          "section": "accessible"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P03-002",
+      "type": "multiple-choice",
+      "topic": "php",
+      "difficulty": "leicht",
+      "text": "<p>Welche zwei Aussagen zu einer selbst geschriebenen PHP-Funktion stimmen?</p><p><strong>Mehrfachwahl: Wähle genau zwei Antworten.</strong></p>",
+      "options": [
+        "Für jeden Funktionsaufruf muss die Funktion innerhalb desselben Skripts neu deklariert werden.",
+        "Die Deklaration einer benannten Funktion beginnt mit dem Schlüsselwort function.",
+        "Jeder zurückgegebene Wert wird automatisch mit echo angezeigt.",
+        "Return kann einen Wert an die aufrufende Stelle zurückgeben."
+      ],
+      "correct": [
+        1,
+        3
+      ],
+      "solution": "Die Deklaration einer benannten Funktion beginnt mit dem Schlüsselwort function. · Return kann einen Wert an die aufrufende Stelle zurückgeben.",
+      "explanation": "Function leitet die Funktionsdeklaration ein. Ein Rückgabewert kann weiterverarbeitet oder ausgegeben werden; eine Ausgabe geschieht aber nicht automatisch durch return.",
+      "sourceIds": [
+        "xml-vorlage"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "xml-vorlage",
+          "section": "Frage 57109069"
+        },
+        {
+          "sourceId": "xml-vorlage",
+          "section": "Frage 57109229"
+        }
+      ],
+      "verificationSourceIds": [
+        "check-php"
+      ],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P03-003",
+      "type": "single-choice",
+      "topic": "css",
+      "difficulty": "anspruchsvoll",
+      "text": "<p>Welches Element passt zum zusammengesetzten Selektor <code>p.hinweis.wichtig</code>?</p>",
+      "options": [
+        "<code>&lt;p class=\"hinweis\"&gt;Text&lt;/p&gt;</code>",
+        "<code>&lt;div class=\"hinweis wichtig\"&gt;Text&lt;/div&gt;</code>",
+        "<code>&lt;p class=\"hinweis wichtig\"&gt;Text&lt;/p&gt;</code>",
+        "<code>&lt;p id=\"hinweis\" class=\"wichtig\"&gt;Text&lt;/p&gt;</code>"
+      ],
+      "correct": [
+        2
+      ],
+      "solution": "<code>&lt;p class=\"hinweis wichtig\"&gt;Text&lt;/p&gt;</code>",
+      "explanation": "Das Element muss ein p sein und beide Klassen besitzen. Eine passende id ersetzt dabei nicht die geforderte Klasse hinweis.",
+      "sourceIds": [
+        "ppt-css1"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-css1",
+          "section": "Selektoren: Zusammengesetzte Selektoren"
+        }
+      ],
+      "verificationSourceIds": [
+        "check-selectors"
+      ],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P03-004",
+      "type": "single-choice",
+      "topic": "ux",
+      "difficulty": "leicht",
+      "text": "<p>Was bedeutet Weißraum in einem Layout?</p>",
+      "options": [
+        "Jeder Bereich mit exakt der Farbe #FFFFFF, auch wenn er vollständig mit Text gefüllt ist.",
+        "Eine ausschließlich für Werbebanner reservierte Fläche.",
+        "Freie Fläche zwischen oder um Inhalte, die gliedert und optisch entlastet.",
+        "Ein Druckfehler, bei dem der ganze Inhalt fehlt."
+      ],
+      "correct": [
+        2
+      ],
+      "solution": "Freie Fläche zwischen oder um Inhalte, die gliedert und optisch entlastet.",
+      "explanation": "Weißraum bezeichnet bewusst freigelassene Fläche und muss nicht tatsächlich weiß sein. Er kann Inhalte voneinander abgrenzen und ein Layout übersichtlicher machen.",
+      "sourceIds": [
+        "xml-vorlage",
+        "ppt-ux2"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "xml-vorlage",
+          "section": "Frage 57109066"
+        },
+        {
+          "sourceId": "ppt-ux2",
+          "section": "Minimalismus und Ästhetik"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P03-005",
+      "type": "multiple-choice",
+      "topic": "html",
+      "difficulty": "mittel",
+      "text": "<p>Welche zwei Aussagen über id und class in einem HTML-Dokument sind richtig?</p><p><strong>Mehrfachwahl: Wähle genau zwei Antworten.</strong></p>",
+      "options": [
+        "Derselbe class-Name kann mehreren Elementen zugewiesen werden.",
+        "Ein id-Wert soll ein Element innerhalb des Dokuments eindeutig identifizieren.",
+        "Alle Elemente mit derselben Klasse müssen denselben HTML-Elementtyp haben.",
+        "Ein Element darf nicht gleichzeitig ein id- und ein class-Attribut besitzen."
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "solution": "Derselbe class-Name kann mehreren Elementen zugewiesen werden. · Ein id-Wert soll ein Element innerhalb des Dokuments eindeutig identifizieren.",
+      "explanation": "IDs dienen der eindeutigen Identifikation innerhalb eines Dokuments; Klassen dürfen wiederverwendet werden. Auch unterschiedliche Elementtypen können dieselbe Klasse besitzen.",
+      "sourceIds": [
+        "ppt-html1",
+        "ppt-css1"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-html1",
+          "section": "Grundlagen und Syntax: Klassen und Ids"
+        },
+        {
+          "sourceId": "ppt-css1",
+          "section": "Selektoren: Klassenselektoren"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P03-006",
+      "type": "single-choice",
+      "topic": "php",
+      "difficulty": "mittel",
+      "text": "<p>Welche Summe gibt dieser Array-Durchlauf aus?</p><pre><code>&lt;?php\n$mengen = [\"Tee\" =&gt; 2, \"Saft\" =&gt; 3, \"Wasser\" =&gt; 4];\n$summe = 0;\nforeach ($mengen as $menge) {\n    $summe += $menge;\n}\necho $summe;</code></pre>",
+      "options": [
+        "3",
+        "9",
+        "0",
+        "234"
+      ],
+      "correct": [
+        1
+      ],
+      "solution": "9",
+      "explanation": "Foreach liefert nacheinander die Werte 2, 3 und 4. Sie werden zu 9 addiert. Fachliche Präzisierung zur XML-Vorlage: foreach ist für diesen direkten Array-Durchlauf ohne eigenen Zählindex geeignet.",
+      "sourceIds": [
+        "xml-vorlage"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "xml-vorlage",
+          "section": "Frage 57109230"
+        },
+        {
+          "sourceId": "xml-vorlage",
+          "section": "Frage 57109232"
+        },
+        {
+          "sourceId": "xml-vorlage",
+          "section": "Frage 57109073"
+        }
+      ],
+      "verificationSourceIds": [
+        "check-foreach"
+      ],
+      "construction": "Neu formuliertes Codebeispiel zur Anwendung der angegebenen Quellthemen.",
+      "codeLanguage": "php",
+      "sourceNote": "Die mehrdeutige Array-Durchlauf-Frage 57109230 wurde neu gefasst und mit foreach konkretisiert."
+    },
+    {
+      "id": "PHP-LZK40-P03-007",
+      "type": "single-choice",
+      "topic": "css",
+      "difficulty": "mittel",
+      "text": "<p>Die eingebundene Datei liegt unter <code>/projekt/css/style.css</code>. Darin steht die gezeigte Regel. Auf welche Bilddatei verweist die relative URL?</p><pre><code>body {\n  background-image: url(\"../bilder/meer.jpg\");\n}</code></pre>",
+      "options": [
+        "<code>/projekt/meer.jpg</code>",
+        "<code>/bilder/meer.jpg</code>",
+        "<code>/projekt/css/bilder/meer.jpg</code>",
+        "<code>/projekt/bilder/meer.jpg</code>"
+      ],
+      "correct": [
+        3
+      ],
+      "solution": "<code>/projekt/bilder/meer.jpg</code>",
+      "explanation": "Relative Bild-URLs in einer externen CSS-Datei beziehen sich auf den Ort dieser CSS-Datei. .. führt von css zurück nach projekt, danach folgt der Ordner bilder.",
+      "sourceIds": [
+        "ppt-css2"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-css2",
+          "section": "Farben und Hintergründe: Hintergrundbilder; Dateipfad in CSS"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formuliertes Codebeispiel zur Anwendung der angegebenen Quellthemen.",
+      "codeLanguage": "css"
+    },
+    {
+      "id": "PHP-LZK40-P03-008",
+      "type": "single-choice",
+      "topic": "html",
+      "difficulty": "leicht",
+      "text": "<p>Welche Angabe deklariert im head eines HTML-Dokuments die Zeichencodierung UTF-8?</p>",
+      "options": [
+        "<code>&lt;meta charset=\"UTF-8\"&gt;</code>",
+        "<code>&lt;title charset=\"UTF-8\"&gt;</code>",
+        "<code>&lt;html class=\"UTF-8\"&gt;</code>",
+        "<code>&lt;body encoding=\"UTF-8\"&gt;</code>"
+      ],
+      "correct": [
+        0
+      ],
+      "solution": "<code>&lt;meta charset=\"UTF-8\"&gt;</code>",
+      "explanation": "Die Zeichencodierung wird über charset am meta-Element angegeben. Die Datei sollte entsprechend gespeichert sein; eine Angabe allein repariert keine falsch codierten Dateidaten.",
+      "sourceIds": [
+        "ppt-html1"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-html1",
+          "section": "Grundlagen und Syntax: Zeichencodierung"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P03-009",
+      "type": "single-choice",
+      "topic": "php",
+      "difficulty": "anspruchsvoll",
+      "text": "<p>Welche Ausgabe erzeugt isset in diesem Beispiel?</p><pre><code>&lt;?php\n$a = \"\";\n$b = null;\necho isset($a) ? \"ja\" : \"nein\";\necho \"|\";\necho isset($b) ? \"ja\" : \"nein\";</code></pre>",
+      "options": [
+        "nein|ja",
+        "ja|ja",
+        "nein|nein",
+        "ja|nein"
+      ],
+      "correct": [
+        3
+      ],
+      "solution": "ja|nein",
+      "explanation": "Ein leerer String ist ein vorhandener Wert und nicht null; isset($a) ist deshalb true. Bei $b ist der Wert null, daher ergibt isset($b) false. Isset prüft nicht, ob ein Text inhaltlich ausgefüllt ist.",
+      "sourceIds": [
+        "xml-vorlage"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "xml-vorlage",
+          "section": "Frage 57109074"
+        }
+      ],
+      "verificationSourceIds": [
+        "check-isset"
+      ],
+      "construction": "Neu formuliertes Codebeispiel zur Anwendung der angegebenen Quellthemen.",
+      "codeLanguage": "php"
+    },
+    {
+      "id": "PHP-LZK40-P03-010",
+      "type": "multiple-choice",
+      "topic": "qs",
+      "difficulty": "anspruchsvoll",
+      "text": "<p>Welche zwei Aussagen unterscheiden Black-Box- und White-Box-Tests korrekt?</p><p><strong>Mehrfachwahl: Wähle genau zwei Antworten.</strong></p>",
+      "options": [
+        "Ein Black-Box-Test darf keine erwarteten Ergebnisse verwenden.",
+        "Ein Black-Box-Test kann Testfälle aus Anforderungen ableiten, ohne den Quellcode einzubeziehen.",
+        "Ein White-Box-Test berücksichtigt die innere Struktur, zum Beispiel Verzweigungen im Quellcode.",
+        "Ein White-Box-Test garantiert, dass keine Anforderung übersehen wurde."
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "solution": "Ein Black-Box-Test kann Testfälle aus Anforderungen ableiten, ohne den Quellcode einzubeziehen. · Ein White-Box-Test berücksichtigt die innere Struktur, zum Beispiel Verzweigungen im Quellcode.",
+      "explanation": "Die Verfahren unterscheiden sich durch ihre Informationsbasis: äußeres Verhalten beziehungsweise innere Struktur. Beide benötigen geeignete Prüfkriterien; keines garantiert allein vollständige Fehlerfreiheit oder Anforderungsabdeckung.",
+      "sourceIds": [
+        "ppt-qs"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-qs",
+          "section": "Softwarequalität sicherstellen: Black-Box- und White-Box-Tests"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P03-011",
+      "type": "single-choice",
+      "topic": "html",
+      "difficulty": "leicht",
+      "text": "<p>Welches Element ist für einen Bereich mit den wichtigsten Navigationslinks einer Website vorgesehen?</p>",
+      "options": [
+        "<code>&lt;footer&gt;</code>.",
+        "<code>&lt;aside&gt;</code>.",
+        "<code>&lt;nav&gt;</code>.",
+        "<code>&lt;header&gt;</code>."
+      ],
+      "correct": [
+        2
+      ],
+      "solution": "<code>&lt;nav&gt;</code>.",
+      "explanation": "Nav kennzeichnet einen Navigationsbereich. Nicht jeder einzelne Link einer Seite muss innerhalb eines nav-Elements stehen.",
+      "sourceIds": [
+        "ppt-html2"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-html2",
+          "section": "Strukturelemente: Navigationsmenü"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P03-012",
+      "type": "single-choice",
+      "topic": "css",
+      "difficulty": "leicht",
+      "text": "<p>Die Datei index.html liegt im Projektordner. Die CSS-Datei liegt im Unterordner css und heißt style.css. Welche Einbindung passt, wenn kein base-Element vorhanden ist?</p>",
+      "options": [
+        "<code>&lt;a rel=\"stylesheet\" src=\"css/style.css\"&gt;CSS&lt;/a&gt;</code>",
+        "<code>&lt;link rel=\"stylesheet\" href=\"css/style.css\"&gt;</code>",
+        "<code>&lt;style href=\"css/style.css\"&gt;&lt;/style&gt;</code>",
+        "<code>&lt;link rel=\"stylesheet\" href=\"style.css\"&gt;</code>"
+      ],
+      "correct": [
+        1
+      ],
+      "solution": "<code>&lt;link rel=\"stylesheet\" href=\"css/style.css\"&gt;</code>",
+      "explanation": "Ein externes Stylesheet wird mit link, rel=\"stylesheet\" und dem passenden href-Pfad eingebunden. Der relative Pfad führt von index.html in den Unterordner css.",
+      "sourceIds": [
+        "ppt-css1"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-css1",
+          "section": "Grundlagen und Syntax: HTML und CSS verbinden"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P03-013",
+      "type": "single-choice",
+      "topic": "php",
+      "difficulty": "leicht",
+      "text": "<p>Eine vorhandene PHP-Hilfsdatei soll innerhalb desselben Skriptaufrufs auch bei mehrfacher Einbindungsanweisung höchstens einmal eingebunden werden. Welche Anweisung erfüllt das?</p>",
+      "options": [
+        "<code>include_once \"hilfe.php\";</code>",
+        "<code>import_once \"hilfe.php\";</code>",
+        "<code>echo \"hilfe.php\";</code>",
+        "<code>include \"hilfe.php\";</code>"
+      ],
+      "correct": [
+        0
+      ],
+      "solution": "<code>include_once \"hilfe.php\";</code>",
+      "explanation": "Include_once prüft, ob die Datei bereits eingebunden wurde. Eine normale include-Anweisung verhindert eine erneute Einbindung nicht automatisch.",
+      "sourceIds": [
+        "xml-vorlage"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "xml-vorlage",
+          "section": "Frage 57109227"
+        }
+      ],
+      "verificationSourceIds": [
+        "check-include"
+      ],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P03-014",
+      "type": "single-choice",
+      "topic": "ui",
+      "difficulty": "mittel",
+      "text": "<p>Ein Drucker besitzt eigene Tasten und ein Display. Gleichzeitig gibt er Dokumente eines PCs auf Papier aus. Welche Aussage beschreibt dieses Beispiel?</p>",
+      "options": [
+        "Der Drucker kann eine eigene Benutzerschnittstelle besitzen und zugleich Ausgabegerät eines größeren Systems sein.",
+        "Das Display des Druckers übernimmt automatisch alle Eingaben der PC-Tastatur.",
+        "Der Drucker kann nicht Teil der PC-Schnittstelle sein, weil er eigene Bedienelemente hat.",
+        "Die Druckertasten werden durch den Anschluss an einen PC zu reinen Ausgabegeräten."
+      ],
+      "correct": [
+        0
+      ],
+      "solution": "Der Drucker kann eine eigene Benutzerschnittstelle besitzen und zugleich Ausgabegerät eines größeren Systems sein.",
+      "explanation": "Benutzerschnittstellen können kombiniert werden. Ein Gerät kann eine eigene Bedienoberfläche besitzen und zugleich eine Funktion innerhalb einer anderen Schnittstelle übernehmen.",
+      "sourceIds": [
+        "ppt-ui"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-ui",
+          "section": "Benutzerschnittstellen beschreiben: Drucker und modulare Schnittstellen"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P03-015",
+      "type": "single-choice",
+      "topic": "ux",
+      "difficulty": "mittel",
+      "text": "<p>Ein mehrstufiger Vorgang lässt sich abbrechen. Vor dem Verlust ungespeicherter Eingaben erscheint ein verständlicher Hinweis. Welches UX-Prinzip wird dadurch unterstützt?</p>",
+      "options": [
+        "Wiedererkennung statt Erinnerung.",
+        "Wirklichkeitsbezug.",
+        "Benutzerfreiheit.",
+        "Externe Konsistenz."
+      ],
+      "correct": [
+        2
+      ],
+      "solution": "Benutzerfreiheit.",
+      "explanation": "Benutzerfreiheit umfasst unter anderem das Abbrechen und Rückgängigmachen. Ein Hinweis auf möglichen Datenverlust macht die Entscheidung nachvollziehbar.",
+      "sourceIds": [
+        "ppt-ux2"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-ux2",
+          "section": "Benutzerfreiheit: Abbrechen"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P03-016",
+      "type": "multiple-choice",
+      "topic": "css",
+      "difficulty": "mittel",
+      "text": "<p>Welche zwei Aussagen über Hintergrundbilder sind richtig?</p><p><strong>Mehrfachwahl: Wähle genau zwei Antworten.</strong></p>",
+      "options": [
+        "Contain skaliert ein normales Rasterbild proportional so, dass es vollständig in den Hintergrundbereich passt.",
+        "Background-image benötigt im selben Element zwingend ein zusätzliches img-Element.",
+        "No-repeat verhindert, dass das Hintergrundbild gekachelt wird.",
+        "Cover macht jedes Hintergrundbild unabhängig vom Ausgangsbild quadratisch."
+      ],
+      "correct": [
+        0,
+        2
+      ],
+      "solution": "Contain skaliert ein normales Rasterbild proportional so, dass es vollständig in den Hintergrundbereich passt. · No-repeat verhindert, dass das Hintergrundbild gekachelt wird.",
+      "explanation": "Contain erhält das Seitenverhältnis und kann freie Fläche lassen. No-repeat verhindert Wiederholungen. Ein CSS-Hintergrundbild benötigt kein img-Element, und cover verzerrt das Seitenverhältnis nicht.",
+      "sourceIds": [
+        "ppt-css2"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-css2",
+          "section": "Farben und Hintergründe: background-size; Hintergrundbilder; Bildwiederholung"
+        }
+      ],
+      "verificationSourceIds": [
+        "check-backgrounds"
+      ],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations.",
+      "sourceNote": "Cover und contain werden mit Erhalt des natürlichen Seitenverhältnisses beschrieben."
+    },
+    {
+      "id": "PHP-LZK40-P03-017",
+      "type": "single-choice",
+      "topic": "qs",
+      "difficulty": "mittel",
+      "text": "<p>Ein Formular und ein Verarbeitungsmodul wurden einzeln getestet. Nun wird geprüft, ob die Formulardaten korrekt beim Modul ankommen und verarbeitet werden. Welche Teststufe steht im Mittelpunkt?</p>",
+      "options": [
+        "Abnahmetest.",
+        "Code Review.",
+        "Komponententest.",
+        "Integrationstest."
+      ],
+      "correct": [
+        3
+      ],
+      "solution": "Integrationstest.",
+      "explanation": "Hier wird die Zusammenarbeit mehrerer Komponenten einschließlich ihrer Schnittstelle geprüft. Das ist der Schwerpunkt eines Integrationstests.",
+      "sourceIds": [
+        "ppt-qs"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-qs",
+          "section": "Softwarequalität sicherstellen: Integrationstest"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P03-018",
+      "type": "single-choice",
+      "topic": "ux",
+      "difficulty": "mittel",
+      "text": "<p>Auf jeder Seite derselben Anwendung steht die Schaltfläche Speichern an derselben Stelle und verhält sich gleich. Wie heißt diese Form der Konsistenz?</p>",
+      "options": [
+        "Benutzerfreiheit.",
+        "Interne Konsistenz.",
+        "Wirklichkeitsbezug.",
+        "Externe Konsistenz."
+      ],
+      "correct": [
+        1
+      ],
+      "solution": "Interne Konsistenz.",
+      "explanation": "Interne Konsistenz bedeutet eine einheitliche Gestaltung und ein erwartbares Verhalten innerhalb eines Produkts oder einer Produktgruppe.",
+      "sourceIds": [
+        "ppt-ux2"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-ux2",
+          "section": "Konsistenz: Interne Konsistenz"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P03-019",
+      "type": "single-choice",
+      "topic": "ui",
+      "difficulty": "leicht",
+      "text": "<p>Was kennzeichnet ein Conversational User Interface?</p>",
+      "options": [
+        "Es ermöglicht einen Austausch in menschlicher Sprache, als Text oder akustisch.",
+        "Es besteht zwingend aus Lochkarten und einem Papierdrucker.",
+        "Es überträgt ausschließlich Maschinencode zwischen zwei Prozessoren.",
+        "Es erlaubt ausschließlich die Auswahl aus gezeichneten Symbolen."
+      ],
+      "correct": [
+        0
+      ],
+      "solution": "Es ermöglicht einen Austausch in menschlicher Sprache, als Text oder akustisch.",
+      "explanation": "Conversational Interfaces setzen menschliche Sprache für die Interaktion ein. Die Präsentation nennt sowohl Text als auch akustische Sprache; eine solche Schnittstelle ist nicht zwingend nur sprachgesteuert.",
+      "sourceIds": [
+        "ppt-ui"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-ui",
+          "section": "Benutzerschnittstellen unterscheiden: Conversational user interface"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P03-020",
+      "type": "single-choice",
+      "topic": "php",
+      "difficulty": "mittel",
+      "text": "<p>Welche Ausgabe ergibt sich nach den Zuweisungen?</p><pre><code>&lt;?php\n$a = $b = $c = 7;\n$b = $b + 1;\necho $a . \"|\" . $b . \"|\" . $c;</code></pre>",
+      "options": [
+        "8|8|8",
+        "7|7|7",
+        "8|7|8",
+        "7|8|7"
+      ],
+      "correct": [
+        3
+      ],
+      "solution": "7|8|7",
+      "explanation": "Die verkettete Zuweisung setzt zunächst alle drei Variablen auf 7. Die spätere Änderung betrifft nur $b; es wurden keine Referenzen zwischen den Variablen angelegt.",
+      "sourceIds": [
+        "xml-vorlage"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "xml-vorlage",
+          "section": "Frage 57109236"
+        },
+        {
+          "sourceId": "xml-vorlage",
+          "section": "Frage 57109224"
+        }
+      ],
+      "verificationSourceIds": [
+        "check-php"
+      ],
+      "construction": "Neu formuliertes Codebeispiel zur Anwendung der angegebenen Quellthemen.",
+      "codeLanguage": "php"
+    },
+    {
+      "id": "PHP-LZK40-P03-021",
+      "type": "single-choice",
+      "topic": "qs",
+      "difficulty": "leicht",
+      "text": "<p>Eine Anwendung soll über längere Zeit stabil arbeiten und gespeicherte Einstellungen verlässlich wieder bereitstellen. Welches Qualitätsmerkmal passt am besten?</p>",
+      "options": [
+        "Funktionale Vollständigkeit.",
+        "Portierbarkeit.",
+        "Kompatibilität.",
+        "Zuverlässigkeit."
+      ],
+      "correct": [
+        3
+      ],
+      "solution": "Zuverlässigkeit.",
+      "explanation": "Zuverlässigkeit betrifft die beständige Erfüllung der vorgesehenen Funktionen unter festgelegten Bedingungen. Stabiles Verhalten und verlässliche Speicherung gehören dazu.",
+      "sourceIds": [
+        "ppt-qs"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-qs",
+          "section": "Zuverlässigkeit"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P03-022",
+      "type": "single-choice",
+      "topic": "css",
+      "difficulty": "mittel",
+      "text": "<p>Wie verläuft dieser Farbverlauf?</p><pre><code>background-image: linear-gradient(to right, red, blue);</code></pre>",
+      "options": [
+        "Von Blau links zu Rot rechts.",
+        "Von Rot links zu Blau rechts.",
+        "Von Rot in der Mitte zu Blau am Rand.",
+        "Rot und Blau werden ohne Übergang als Schachbrett verteilt."
+      ],
+      "correct": [
+        1
+      ],
+      "solution": "Von Rot links zu Blau rechts.",
+      "explanation": "To right legt die Verlaufsrichtung nach rechts fest. Die erste Farbe liegt am Anfang des Verlaufs, die zweite am Ende.",
+      "sourceIds": [
+        "ppt-css2"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-css2",
+          "section": "Farben und Hintergründe: Linearverlauf"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formuliertes Codebeispiel zur Anwendung der angegebenen Quellthemen.",
+      "codeLanguage": "css"
+    },
+    {
+      "id": "PHP-LZK40-P03-023",
+      "type": "multiple-choice",
+      "topic": "ux",
+      "difficulty": "anspruchsvoll",
+      "text": "<p>Eine Eingabe konnte nicht gespeichert werden. Welche zwei Eigenschaften sollte die Fehlermeldung aus UX-Sicht besitzen?</p><p><strong>Mehrfachwahl: Wähle genau zwei Antworten.</strong></p>",
+      "options": [
+        "Sie behauptet einen Erfolg, damit der Nutzer nicht verunsichert wird.",
+        "Sie besteht ausschließlich aus einer internen Speicheradresse.",
+        "Sie nennt einen konkreten nächsten Schritt zur Behebung des Problems.",
+        "Sie erklärt in verständlicher Sprache, was nicht funktioniert hat."
+      ],
+      "correct": [
+        2,
+        3
+      ],
+      "solution": "Sie nennt einen konkreten nächsten Schritt zur Behebung des Problems. · Sie erklärt in verständlicher Sprache, was nicht funktioniert hat.",
+      "explanation": "Eine hilfreiche Fehlermeldung macht das Problem nachvollziehbar und bietet eine Handlungsmöglichkeit. Technische Rätseltexte oder eine falsche Erfolgsmeldung helfen nicht.",
+      "sourceIds": [
+        "ppt-ux2"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-ux2",
+          "section": "Fehlerbehandlung: Fehler erklären; Fehler beheben"
+        }
+      ],
+      "verificationSourceIds": [],
+      "construction": "Neu formulierte Übungsfrage; Stoffbezug siehe sourceLocations."
+    },
+    {
+      "id": "PHP-LZK40-P03-024",
+      "type": "single-choice",
+      "topic": "html",
+      "difficulty": "mittel",
+      "text": "<p>Das Formular wird erfolgreich abgeschickt, während Hotelzimmer ausgewählt ist. Welches Name-Wert-Paar liefert dieses select-Element?</p><pre><code>&lt;select id=\"auswahl\" name=\"unterkunft\"&gt;\n  &lt;option value=\"hotel\" selected&gt;Hotelzimmer&lt;/option&gt;\n  &lt;option value=\"wohnung\"&gt;Ferienwohnung&lt;/option&gt;\n&lt;/select&gt;</code></pre>",
+      "options": [
+        "auswahl=Hotelzimmer",
+        "unterkunft=hotel",
+        "hotel=unterkunft",
+        "unterkunft=Hotelzimmer"
+      ],
+      "correct": [
+        1
+      ],
+      "solution": "unterkunft=hotel",
+      "explanation": "Der name-Wert des select-Elements liefert den Schlüssel unterkunft. Der value-Wert der ausgewählten option liefert hotel; der sichtbare Text ist hier nicht der übertragene Wert.",
+      "sourceIds": [
+        "ppt-html2"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-html2",
+          "section": "Interaktive Elemente: Auswahl / select"
+        }
+      ],
+      "verificationSourceIds": [
+        "check-html"
+      ],
+      "construction": "Neu formuliertes Codebeispiel zur Anwendung der angegebenen Quellthemen.",
+      "codeLanguage": "html"
+    },
+    {
+      "id": "PHP-LZK40-P03-025",
+      "type": "single-choice",
+      "topic": "css",
+      "difficulty": "anspruchsvoll",
+      "text": "<p>Welche Absatztexte werden vom Selektor <code>main &gt; p</code> erfasst?</p><pre><code>&lt;main&gt;\n  &lt;p&gt;Direkt&lt;/p&gt;\n  &lt;div&gt;&lt;p&gt;Verschachtelt&lt;/p&gt;&lt;/div&gt;\n&lt;/main&gt;</code></pre>",
+      "options": [
+        "Direkt und Verschachtelt.",
+        "Nur Verschachtelt.",
+        "Nur Direkt.",
+        "Keiner der beiden Texte."
+      ],
+      "correct": [
+        2
+      ],
+      "solution": "Nur Direkt.",
+      "explanation": "Der Kindkombinator &gt; wählt nur direkte Kinder. Der zweite Absatz liegt in einem div und ist daher zwar ein Nachkomme, aber kein direktes Kind von main.",
+      "sourceIds": [
+        "ppt-css1"
+      ],
+      "sourceLocations": [
+        {
+          "sourceId": "ppt-css1",
+          "section": "Selektoren: Kombinatoren; Kinder selektieren"
+        }
+      ],
+      "verificationSourceIds": [
+        "check-selectors"
+      ],
+      "construction": "Neu formuliertes Codebeispiel zur Anwendung der angegebenen Quellthemen.",
+      "codeLanguage": "html"
+    }
+  ]
+}

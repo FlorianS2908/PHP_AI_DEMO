@@ -1,0 +1,294 @@
+{
+  "id": "PHP-07",
+  "name": "PHP · 07 · Struktur und Navigation",
+  "description": "12 Fragen · Grundlagen, Anwendung, Zuordnung und Reihenfolge",
+  "durationMinutes": 20,
+  "instructions": "Lies die Angaben genau. Bei Mehrfachwahl steht die Zahl richtiger Antworten dabei. Jede vollständig richtig gelöste Frage zählt einen Punkt. Keine Teilpunkte. Übungspool mit sichtbaren Lösungsschlüsseln im JSON.",
+  "topicLabels": {
+    "01": "User Interfaces",
+    "02": "Qualitätssicherung",
+    "03": "UX beschreiben",
+    "04": "UX gestalten",
+    "05": "HTML-Grundlagen",
+    "06": "HTML-Inhalte",
+    "07": "Struktur und Navigation",
+    "08": "Formulare",
+    "09": "CSS und Selektoren",
+    "10": "Farben und Hintergründe",
+    "11": "PHP und Formulardaten",
+    "12": "PHP und Datenbank",
+    "13": "CSS-Layout ergänzen"
+  },
+  "difficultyLabels": {
+    "leicht": "Grundlagen",
+    "mittel": "Anwendung"
+  },
+  "questions": [
+    {
+      "id": "PHP-07-01",
+      "type": "single",
+      "topic": "07",
+      "difficulty": "leicht",
+      "text": "Welches Element passt zu einleitenden Informationen?",
+      "options": [
+        "option",
+        "td",
+        "header",
+        "textarea"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "header enthält einleitende Inhalte.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 3–12, 20–21"
+    },
+    {
+      "id": "PHP-07-02",
+      "type": "single",
+      "topic": "07",
+      "difficulty": "leicht",
+      "text": "Welches Element kennzeichnet im Kurs den Hauptinhalt?",
+      "options": [
+        "title",
+        "main",
+        "meta",
+        "link"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "main bezeichnet den zentralen Inhalt der Seite.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 3–12, 20–21"
+    },
+    {
+      "id": "PHP-07-03",
+      "type": "single",
+      "topic": "07",
+      "difficulty": "leicht",
+      "text": "Welches Element passt zu einem eigenständig verständlichen Beitrag?",
+      "options": [
+        "input",
+        "caption",
+        "meta",
+        "article"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "article ist für in sich verständliche Inhalte vorgesehen.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 3–12, 20–21"
+    },
+    {
+      "id": "PHP-07-04",
+      "type": "single",
+      "topic": "07",
+      "difficulty": "leicht",
+      "text": "Welche Rolle hat aside?",
+      "options": [
+        "Ausschließlich die Formularübermittlung",
+        "Die Bildquelle",
+        "Zwingend jede Hauptüberschrift",
+        "Ergänzende Informationen"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "aside ergänzt den Hauptzusammenhang.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 3–12, 20–21"
+    },
+    {
+      "id": "PHP-07-05",
+      "type": "single",
+      "topic": "07",
+      "difficulty": "leicht",
+      "text": "Welches Element gruppiert eine Hauptnavigation?",
+      "options": [
+        "nav",
+        "thead",
+        "strong",
+        "textarea"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "nav bündelt relevante Navigationsverweise.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 3–12, 20–21"
+    },
+    {
+      "id": "PHP-07-06",
+      "type": "single",
+      "topic": "07",
+      "difficulty": "leicht",
+      "text": "Wohin führt href=&quot;#angebote&quot;?",
+      "options": [
+        "Zur Datenbanktabelle angebote",
+        "Immer zu einer neuen Datei angebote.html",
+        "Zur passenden ID angebote im Dokument",
+        "Zu einer CSS-Klasse beliebigen Namens"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Ein Fragment verweist hier auf eine ID.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 3–12, 20–21"
+    },
+    {
+      "id": "PHP-07-07",
+      "type": "single",
+      "topic": "07",
+      "difficulty": "leicht",
+      "text": "Welche Gestaltung hält die Link-Semantik korrekt?",
+      "options": [
+        "Ein a-Element direkt per Klasse gestalten",
+        "Immer einen button in a verschachteln",
+        "href durch method ersetzen",
+        "Einen nicht bedienbaren Absatz als Link bezeichnen"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Die Korrektur K1 vermeidet interaktive Verschachtelung.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 3–12, 20–21"
+    },
+    {
+      "id": "PHP-07-08",
+      "type": "single",
+      "topic": "07",
+      "difficulty": "leicht",
+      "text": "Drei Seiten liegen im selben Ordner. Wie verweist Start auf reisen.html?",
+      "options": [
+        "class=\"reisen.html\" ohne Link",
+        "src=\"reisen.html\" am p",
+        "method=\"reisen.html\"",
+        "href=\"reisen.html\""
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "href benennt das Navigationsziel.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 3–12, 20–21"
+    },
+    {
+      "id": "PHP-07-09",
+      "type": "multiple",
+      "topic": "07",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Angaben sind für einen funktionierenden Sprunglink zusammengehörig?",
+      "options": [
+        "Eine zufällige Farbe",
+        "id=\"inhalt\" am Ziel",
+        "name=\"anderer-wert\" allein",
+        "href=\"#inhalt\""
+      ],
+      "correct": [
+        1,
+        3
+      ],
+      "explanation": "Fragment und ID müssen zusammenpassen.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 3–12, 20–21"
+    },
+    {
+      "id": "PHP-07-10",
+      "type": "multiple",
+      "topic": "07",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Punkte gehören zu einem Navigationstest?",
+      "options": [
+        "Rückwege nachvollziehbar",
+        "Links dürfen nur mit Maus funktionieren",
+        "Alle Zieldateien erreichbar",
+        "Jede Seite hat zwingend dieselbe Überschrift"
+      ],
+      "correct": [
+        0,
+        2
+      ],
+      "explanation": "Erreichbarkeit und Orientierung sind konkrete Prüfkriterien.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 3–12, 20–21"
+    },
+    {
+      "id": "PHP-07-11",
+      "type": "matching-postits",
+      "topic": "07",
+      "difficulty": "mittel",
+      "text": "Ordne die Begriffe ihren Beschreibungen zu.",
+      "items": [
+        {
+          "id": "i0",
+          "text": "nav"
+        },
+        {
+          "id": "i1",
+          "text": "article"
+        },
+        {
+          "id": "i2",
+          "text": "aside"
+        }
+      ],
+      "targets": [
+        {
+          "id": "t2",
+          "text": "Ergänzende Information"
+        },
+        {
+          "id": "t1",
+          "text": "Eigenständiger Beitrag"
+        },
+        {
+          "id": "t0",
+          "text": "Navigationsbereich"
+        }
+      ],
+      "pairs": [
+        {
+          "leftId": "i0",
+          "rightId": "t0"
+        },
+        {
+          "leftId": "i1",
+          "rightId": "t1"
+        },
+        {
+          "leftId": "i2",
+          "rightId": "t2"
+        }
+      ],
+      "explanation": "nav: Navigationsbereich; article: Eigenständiger Beitrag; aside: Ergänzende Information",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf"
+    },
+    {
+      "id": "PHP-07-12",
+      "type": "sql-order",
+      "topic": "07",
+      "difficulty": "mittel",
+      "text": "Ordne den im Kurs vorgegebenen Arbeitsablauf. Gemeint ist diese didaktische Reihenfolge, nicht die einzig mögliche Vorgehensweise in jedem Projekt.",
+      "blocks": [
+        {
+          "id": "b3",
+          "text": "Alle Wege prüfen"
+        },
+        {
+          "id": "b2",
+          "text": "Links setzen"
+        },
+        {
+          "id": "b1",
+          "text": "Zieldateien anlegen"
+        },
+        {
+          "id": "b0",
+          "text": "Seiten planen"
+        }
+      ],
+      "correctOrder": [
+        "b0",
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "explanation": "Seiten planen → Zieldateien anlegen → Links setzen → Alle Wege prüfen",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf"
+    }
+  ]
+}

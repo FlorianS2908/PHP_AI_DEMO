@@ -1,0 +1,227 @@
+[
+  {
+    "datei": "PHP-START.cmd",
+    "bytes": 971,
+    "sha256": "73b501b8c28eb170eb08d70c8d0418635c37adf8955ec3d8a273b3a823623825"
+  },
+  {
+    "datei": "README.txt",
+    "bytes": 3106,
+    "sha256": "8e437728292beb0e6f955ffd5681d1a5ab4ddab5cbf28ab6eeb4d254e137fb36"
+  },
+  {
+    "datei": "START-Webvariante.cmd",
+    "bytes": 45,
+    "sha256": "ea9d5d0b93d307de56862aeae353c7b9baabdc983e1b59963ffd3b3f0569566d"
+  },
+  {
+    "datei": "assets/demo.css",
+    "bytes": 5906,
+    "sha256": "ed34488ad0c33792dcf96c39bc6386468eeba2eb3deb9c97e1cb36441dc8845c"
+  },
+  {
+    "datei": "assets/kurs.css",
+    "bytes": 9546,
+    "sha256": "7c63f431be6e2f554164a2e904f2d535b4d60215a435887a6b3ce26527fad8ec"
+  },
+  {
+    "datei": "assets/kurs.js",
+    "bytes": 2544,
+    "sha256": "9163d8da23089c9a299a24a99d3c2df25d366ac0097834d8d762e299287b24d9"
+  },
+  {
+    "datei": "assets/php-ergaenzung.css",
+    "bytes": 1052,
+    "sha256": "6a2fdae618ff259a3bc4972d653b4a0301aeeb43e25c296c83f28c7dbe5acfe6"
+  },
+  {
+    "datei": "aufgaben.html",
+    "bytes": 6237,
+    "sha256": "297c4f13bf48455a8675ce539c5e24d54e2a6f93aac336c3df0f9985c37814d3"
+  },
+  {
+    "datei": "demo/00-mini/ausgabe.php",
+    "bytes": 2776,
+    "sha256": "5c9e661e0f8f4233e4c240b31b50949eee286c13de8416e567cf637cad604663"
+  },
+  {
+    "datei": "demo/00-mini/formular.html",
+    "bytes": 1502,
+    "sha256": "23666e1341c2c10cc95265ce42ffe2ee5290dc08b5e3f19d50dd7a3e22fc1b64"
+  },
+  {
+    "datei": "demo/01-mehrseitig/auswahl.php",
+    "bytes": 4562,
+    "sha256": "164200bd989288cd962a91dbdc00acdb024e8361c7424a93c411127aa5e55a47"
+  },
+  {
+    "datei": "demo/01-mehrseitig/ergebnis.php",
+    "bytes": 3902,
+    "sha256": "c673693db029c36a3ee3997e4d9af10c70908c3cfd8e02e69d1f85b78c633d79"
+  },
+  {
+    "datei": "demo/01-mehrseitig/funktionen.php",
+    "bytes": 8394,
+    "sha256": "26dff79488f28562c6ff7794d609d3f8a38a5e85be9ac56303a08690086d2aa2"
+  },
+  {
+    "datei": "demo/01-mehrseitig/katalog.php",
+    "bytes": 1013,
+    "sha256": "c3fe18e8c3a10686e32463c85185edfbce45cf2cf418e964b199384bed9f1a0d"
+  },
+  {
+    "datei": "demo/01-mehrseitig/pruefen.php",
+    "bytes": 3242,
+    "sha256": "1006c9e1c9c8f4a990d06c0ce45b763cfc107cf4c87ce4e6fd9b9ce9c2cd82f0"
+  },
+  {
+    "datei": "demo/02-arrays/arrays-kontrollstrukturen.php",
+    "bytes": 4007,
+    "sha256": "24eff43b15f34c815cf1bd7acf687a1d0b57b350d88892409fa73ffd5d629b88"
+  },
+  {
+    "datei": "demo-start.html",
+    "bytes": 3178,
+    "sha256": "8901a555fafda7e0ae9321b46ca51dc1caae430e88fd1ccd04ed410aa5a86fb8"
+  },
+  {
+    "datei": "dozent/browser-http-tests.json",
+    "bytes": 7566,
+    "sha256": "7eace80e250952a321304eb7172382b38b427f7dc525d15914bfa3a2f183effd"
+  },
+  {
+    "datei": "dozent/dateipruefung.json",
+    "bytes": 53,
+    "sha256": "53b467b19bfccc87e49d33c66d6682db15879ea5e52dfd6ace8373d4e5ca22fa"
+  },
+  {
+    "datei": "dozent/folienstruktur.json",
+    "bytes": 6311,
+    "sha256": "10298929f22846e5dd32aa9927bc0aeee53788531ad9aae61774876ffb301bce"
+  },
+  {
+    "datei": "dozent/leitfaden.html",
+    "bytes": 5093,
+    "sha256": "61165cf5f71f2bf8130ce654d208a9ef3c12e1a0e53a208d27b8eb51eff5517d"
+  },
+  {
+    "datei": "dozent/loesungen.html",
+    "bytes": 6433,
+    "sha256": "2cd022eef5bfa2f6940579bdf806aacc8f7e169016d2814dff40625441b30cfa"
+  },
+  {
+    "datei": "dozent/mini-http-tests.json",
+    "bytes": 479,
+    "sha256": "1017872948a0051f6d0d01da91f1c702d0f5b72718e12e6d0f81c05963c3c4da"
+  },
+  {
+    "datei": "dozent/php-tests.json",
+    "bytes": 5724,
+    "sha256": "e5ad9557c8901da9bd17d7cfbb1c38138d328b7f52b64a0d184c383d9bec464e"
+  },
+  {
+    "datei": "dozent/testprotokoll.html",
+    "bytes": 11899,
+    "sha256": "07d575b78d48da3afe87bf2bb1d6799eff6f0f576d7ef73b644c9879de9883b4"
+  },
+  {
+    "datei": "dozent/vorschau/ergebnis.png",
+    "bytes": 364114,
+    "sha256": "08dcf27ef612d4c8aa4f8f6f24be72ed049a10bce3cb58ce82c09ebfbe9aa4ac"
+  },
+  {
+    "datei": "dozent/vorschau/formular.png",
+    "bytes": 395769,
+    "sha256": "644b97d487ccd0dff45e2724d5559ad0f8d9f53a5ee586d988ce50536341a15a"
+  },
+  {
+    "datei": "dozent/vorschau/mobile-folie.png",
+    "bytes": 94362,
+    "sha256": "c2e6fa840a7459eb8de289d37ed0a5f59bacc48302bcd32d35eae31743b5ed00"
+  },
+  {
+    "datei": "dozent/vorschau/mobile-formular.png",
+    "bytes": 209479,
+    "sha256": "63d79303e46f6005712e04872c945d71a8e23f40ddc5166ecd95c0d91205d33c"
+  },
+  {
+    "datei": "dozent/vorschau/web-start.png",
+    "bytes": 255982,
+    "sha256": "15f08d600de4dbf033172ab8c0deb88ab85b9732050f488bbfb8ebfcecbb8474"
+  },
+  {
+    "datei": "index.html",
+    "bytes": 3725,
+    "sha256": "e3f403f966352ddd0a039d95a34f04c1bba82d05931cbcf5270d8b41cb70d33d"
+  },
+  {
+    "datei": "pseudocode.html",
+    "bytes": 4394,
+    "sha256": "7b5bf3a479ba37eba3995d39d79c7ad8de78e2d2a423304c2aeea2c8d3608456"
+  },
+  {
+    "datei": "pseudocode.txt",
+    "bytes": 2514,
+    "sha256": "0d9d21cad07b16f47f37921e619e5007ace314ea7d71f97f470e09a47d98de67"
+  },
+  {
+    "datei": "quellen.html",
+    "bytes": 5306,
+    "sha256": "79a24208da866aac27da81ebca209cc22fe4ccba772c3f1c2c3214416362e2a5"
+  },
+  {
+    "datei": "quelltexte/demo__00-mini__ausgabe.php.txt",
+    "bytes": 2776,
+    "sha256": "5c9e661e0f8f4233e4c240b31b50949eee286c13de8416e567cf637cad604663"
+  },
+  {
+    "datei": "quelltexte/demo__00-mini__formular.html.txt",
+    "bytes": 1502,
+    "sha256": "23666e1341c2c10cc95265ce42ffe2ee5290dc08b5e3f19d50dd7a3e22fc1b64"
+  },
+  {
+    "datei": "quelltexte/demo__01-mehrseitig__auswahl.php.txt",
+    "bytes": 4562,
+    "sha256": "164200bd989288cd962a91dbdc00acdb024e8361c7424a93c411127aa5e55a47"
+  },
+  {
+    "datei": "quelltexte/demo__01-mehrseitig__ergebnis.php.txt",
+    "bytes": 3902,
+    "sha256": "c673693db029c36a3ee3997e4d9af10c70908c3cfd8e02e69d1f85b78c633d79"
+  },
+  {
+    "datei": "quelltexte/demo__01-mehrseitig__funktionen.php.txt",
+    "bytes": 8394,
+    "sha256": "26dff79488f28562c6ff7794d609d3f8a38a5e85be9ac56303a08690086d2aa2"
+  },
+  {
+    "datei": "quelltexte/demo__01-mehrseitig__katalog.php.txt",
+    "bytes": 1013,
+    "sha256": "c3fe18e8c3a10686e32463c85185edfbce45cf2cf418e964b199384bed9f1a0d"
+  },
+  {
+    "datei": "quelltexte/demo__01-mehrseitig__pruefen.php.txt",
+    "bytes": 3242,
+    "sha256": "1006c9e1c9c8f4a990d06c0ce45b763cfc107cf4c87ce4e6fd9b9ce9c2cd82f0"
+  },
+  {
+    "datei": "quelltexte/demo__02-arrays__arrays-kontrollstrukturen.php.txt",
+    "bytes": 4007,
+    "sha256": "24eff43b15f34c815cf1bd7acf687a1d0b57b350d88892409fa73ffd5d629b88"
+  },
+  {
+    "datei": "quelltexte/index.html",
+    "bytes": 43926,
+    "sha256": "0912b54b3d499b6f2b2f9f9067168bd9522892ea9cb6c786b4a0513f1635950f"
+  },
+  {
+    "datei": "tests/run.php",
+    "bytes": 5722,
+    "sha256": "3f9bd9dacaf9e80979b25eaa2d5804292ad7b2fe89fb66bbaa9f1cc2f3cb2a44"
+  },
+  {
+    "datei": "webvariante.html",
+    "bytes": 75030,
+    "sha256": "39884ed04d58298e49d456dedb00da84765258d89576ff63391f29700130893a"
+  }
+]

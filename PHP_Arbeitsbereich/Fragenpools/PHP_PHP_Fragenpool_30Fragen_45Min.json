@@ -1,0 +1,779 @@
+{
+  "id": "PHP-php-grundlagen-30fragen-45min",
+  "name": "PHP · PHP-Grundlagen · 30 Fragen · 45 Minuten",
+  "course": "PHP",
+  "version": "1.0",
+  "sourceFileName": "PHP_PHP_Fragenpool_30Fragen_45Min.json",
+  "description": "Schreibtischtest zu PHP-Grundlagen, GET/POST, einfachen Datenprüfungen, Arrays und Kontrollstrukturen. 24 Einzelwahl- und 6 Mehrfachwahlfragen mit kurzen Codebeispielen, Lösungen und Begründungen. Keine Sessions, Cookies, Klassen, Datenbanken oder Passwortthemen.",
+  "durationMinutes": 45,
+  "durationSeconds": 2700,
+  "questionCount": 30,
+  "instructions": "Bearbeitungszeit: 45 Minuten für alle 30 Fragen einschließlich Kontrolle. Einzelwahl: genau eine Antwort. Mehrfachwahl: genau zwei Antworten. Jede vollständig richtige Frage zählt einen Punkt; es gibt keine Teilpunkte. Lies die Codebeispiele als Schreibtischtest, ohne sie auszuführen. Gehe von PHP 8.x und den jeweils angegebenen Werten aus. Zuweisungen an $_GET oder $_POST simulieren nur die Testdaten der betreffenden Frage. Lösungen und Begründungen sind für die Auswertung hinterlegt.",
+  "topicLabels": {
+    "grundlagen": "PHP, Syntax, Variablen und Operatoren",
+    "formulare": "GET, POST und Formularübermittlung",
+    "datenpruefung": "isset, empty und Ersatzwerte",
+    "arrays": "Indizierte und assoziative Arrays, foreach",
+    "verzweigungen": "if, elseif, else, switch und ternärer Operator",
+    "schleifen": "for, while, do-while, break und continue",
+    "funktionen": "Einfache Funktionen und return"
+  },
+  "difficultyLabels": {
+    "leicht": "Grundlagen",
+    "mittel": "Code lesen und anwenden",
+    "anspruchsvoll": "Verschachtelte Abläufe"
+  },
+  "sources": [
+    {
+      "id": "php-tutorial",
+      "title": "PHP-Handbuch: PHP-Webseiten und erste Schritte",
+      "url": "https://www.php.net/manual/en/tutorial.firstpage.php"
+    },
+    {
+      "id": "php-string",
+      "title": "PHP-Handbuch: String-Operatoren",
+      "url": "https://www.php.net/manual/en/language.operators.string.php"
+    },
+    {
+      "id": "php-comparison",
+      "title": "PHP-Handbuch: Vergleiche, ternärer Operator und Null-Koaleszenz",
+      "url": "https://www.php.net/manual/en/language.operators.comparison.php"
+    },
+    {
+      "id": "php-syntax",
+      "title": "PHP-Handbuch: Trennung von Anweisungen",
+      "url": "https://www.php.net/manual/en/language.basic-syntax.instruction-separation.php"
+    },
+    {
+      "id": "php-get",
+      "title": "PHP-Handbuch: $_GET",
+      "url": "https://www.php.net/manual/en/reserved.variables.get.php"
+    },
+    {
+      "id": "php-post",
+      "title": "PHP-Handbuch: $_POST",
+      "url": "https://www.php.net/manual/en/reserved.variables.post.php"
+    },
+    {
+      "id": "php-external",
+      "title": "PHP-Handbuch: Variablen aus externen Quellen",
+      "url": "https://www.php.net/manual/en/language.variables.external.php"
+    },
+    {
+      "id": "mdn-form",
+      "title": "MDN: Formulardaten senden",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Sending_and_retrieving_form_data"
+    },
+    {
+      "id": "php-isset",
+      "title": "PHP-Handbuch: isset",
+      "url": "https://www.php.net/manual/en/function.isset.php"
+    },
+    {
+      "id": "php-empty",
+      "title": "PHP-Handbuch: empty",
+      "url": "https://www.php.net/manual/en/function.empty.php"
+    },
+    {
+      "id": "mdn-checkbox",
+      "title": "MDN: Checkbox und Formularübermittlung",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/checkbox"
+    },
+    {
+      "id": "php-arrays",
+      "title": "PHP-Handbuch: Arrays",
+      "url": "https://www.php.net/manual/en/language.types.array.php"
+    },
+    {
+      "id": "php-foreach",
+      "title": "PHP-Handbuch: foreach",
+      "url": "https://www.php.net/manual/en/control-structures.foreach.php"
+    },
+    {
+      "id": "php-if",
+      "title": "PHP-Handbuch: if",
+      "url": "https://www.php.net/manual/en/control-structures.if.php"
+    },
+    {
+      "id": "php-switch",
+      "title": "PHP-Handbuch: switch",
+      "url": "https://www.php.net/manual/en/control-structures.switch.php"
+    },
+    {
+      "id": "php-for",
+      "title": "PHP-Handbuch: for",
+      "url": "https://www.php.net/manual/en/control-structures.for.php"
+    },
+    {
+      "id": "php-while",
+      "title": "PHP-Handbuch: while",
+      "url": "https://www.php.net/manual/en/control-structures.while.php"
+    },
+    {
+      "id": "php-do-while",
+      "title": "PHP-Handbuch: do-while",
+      "url": "https://www.php.net/manual/en/control-structures.do.while.php"
+    },
+    {
+      "id": "php-break",
+      "title": "PHP-Handbuch: break",
+      "url": "https://www.php.net/manual/en/control-structures.break.php"
+    },
+    {
+      "id": "php-continue",
+      "title": "PHP-Handbuch: continue",
+      "url": "https://www.php.net/manual/en/control-structures.continue.php"
+    },
+    {
+      "id": "php-return",
+      "title": "PHP-Handbuch: return",
+      "url": "https://www.php.net/manual/en/function.return.php"
+    }
+  ],
+  "questions": [
+    {
+      "id": "PHP-PHP45-001",
+      "type": "single-choice",
+      "topic": "grundlagen",
+      "difficulty": "leicht",
+      "text": "Wo wird PHP-Code bei einer üblichen Webanwendung verarbeitet, die über einen passend eingerichteten Webserver aufgerufen wird?",
+      "options": [
+        "Durch die PHP-Laufzeit auf der Serverseite.",
+        "Durch den Browser, sobald eine Datei die Endung .php besitzt.",
+        "Durch die CSS-Engine im Browser.",
+        "Ausschließlich in der Datenbank."
+      ],
+      "correct": [
+        0
+      ],
+      "solution": "Durch die PHP-Laufzeit auf der Serverseite.",
+      "explanation": "Die PHP-Laufzeit verarbeitet den Code auf der Serverseite. Der Browser erhält die erzeugte Antwort, zum Beispiel HTML. Die Dateiendung allein richtet keine PHP-Ausführung ein.",
+      "sourceIds": [
+        "php-tutorial"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-002",
+      "type": "single-choice",
+      "topic": "grundlagen",
+      "difficulty": "leicht",
+      "text": "Welche Ausgabe erzeugt dieser Code?<pre><code class=\"language-php\">&lt;?php\n$preis = 5;\n$aufschlag = 2;\n$summe = $preis + $aufschlag;\necho \"Summe: \" . $summe;</code></pre>",
+      "options": [
+        "Summe: $summe",
+        "7",
+        "Summe: 7",
+        "Summe: 52"
+      ],
+      "correct": [
+        2
+      ],
+      "solution": "Summe: 7",
+      "explanation": "Die beiden Zahlen werden zuerst zu 7 addiert. Der Punkt verbindet anschließend den Text mit dem Ergebnis. Der Variablenwert wird ausgegeben, nicht der Variablenname.",
+      "sourceIds": [
+        "php-string"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-003",
+      "type": "multiple-choice",
+      "topic": "grundlagen",
+      "difficulty": "mittel",
+      "text": "Die Variable enthält ausdrücklich eine Zeichenkette. Welche Aussagen über die Vergleiche sind richtig? <strong>Wähle genau zwei Antworten.</strong><pre><code class=\"language-php\">&lt;?php\n$personen = \"3\";</code></pre>",
+      "options": [
+        "$personen == 3 ergibt true.",
+        "$personen !== \"3\" ergibt true.",
+        "$personen === \"3\" ergibt true.",
+        "$personen === 3 ergibt true."
+      ],
+      "correct": [
+        0,
+        2
+      ],
+      "solution": "$personen == 3 ergibt true.; $personen === \"3\" ergibt true.",
+      "explanation": "Bei == können für den Vergleich Typumwandlungen erfolgen: Die numerische Zeichenkette \"3\" und die Zahl 3 gelten als gleich. === verlangt zusätzlich denselben Datentyp. Deshalb ist nur der strikte Vergleich mit der Zeichenkette \"3\" wahr; !== \"3\" ist falsch.",
+      "sourceIds": [
+        "php-comparison"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-004",
+      "type": "single-choice",
+      "topic": "grundlagen",
+      "difficulty": "leicht",
+      "text": "Welche Änderung behebt den Syntaxfehler in diesem Ausschnitt?<pre><code class=\"language-php\">&lt;?php\n$anzahl = 3\necho $anzahl;</code></pre>",
+      "options": [
+        "Die Zahl 3 in Anführungszeichen setzen.",
+        "Die Anweisung echo durch print ersetzen.",
+        "Den Variablennamen $anzahl überall ohne Dollarzeichen schreiben.",
+        "Nach der Zuweisung $anzahl = 3 ein Semikolon ergänzen."
+      ],
+      "correct": [
+        3
+      ],
+      "solution": "Nach der Zuweisung $anzahl = 3 ein Semikolon ergänzen.",
+      "explanation": "Die Zuweisung muss vor der folgenden echo-Anweisung mit einem Semikolon abgeschlossen werden. Ein Zeilenumbruch trennt diese beiden Anweisungen nicht. Die anderen Änderungen ersetzen das fehlende Semikolon nicht.",
+      "sourceIds": [
+        "php-syntax"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-005",
+      "type": "single-choice",
+      "topic": "formulare",
+      "difficulty": "leicht",
+      "text": "Das Skript wird mit der URL http://localhost/reise.php?reiseziel=Rom&amp;personen=2 aufgerufen. Mit welchem Ausdruck wird das Reiseziel aus den URL-Parametern gelesen?",
+      "options": [
+        "$_GET[\"Rom\"]",
+        "$_POST[\"reiseziel\"]",
+        "$_GET[\"reiseziel\"]",
+        "$reiseziel[\"GET\"]"
+      ],
+      "correct": [
+        2
+      ],
+      "solution": "$_GET[\"reiseziel\"]",
+      "explanation": "Der URL-Parameter heißt reiseziel. Deshalb wird sein Wert über diesen Schlüssel in $_GET gelesen. Rom ist der Wert und nicht der Schlüssel.",
+      "sourceIds": [
+        "php-get"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-006",
+      "type": "single-choice",
+      "topic": "formulare",
+      "difficulty": "leicht",
+      "text": "Das Formular wird unverändert abgeschickt. Welcher Zugriff liefert im PHP-Empfänger die Zeichenkette \"Lea\"?<pre><code class=\"language-html\">&lt;form action=\"teilnehmer.php\" method=\"post\"&gt;\n  &lt;input type=\"text\" id=\"eingabe\" name=\"vorname\" value=\"Lea\"&gt;\n  &lt;button type=\"submit\"&gt;Absenden&lt;/button&gt;\n&lt;/form&gt;</code></pre>",
+      "options": [
+        "$_POST[\"Lea\"]",
+        "$_POST[\"vorname\"]",
+        "$_GET[\"vorname\"]",
+        "$_POST[\"eingabe\"]"
+      ],
+      "correct": [
+        1
+      ],
+      "solution": "$_POST[\"vorname\"]",
+      "explanation": "method=\"post\" legt hier eine POST-Formularübermittlung fest. Das name-Attribut bestimmt den Schlüssel vorname. Die id eingabe dient nicht als Schlüssel der übermittelten Formulardaten.",
+      "sourceIds": [
+        "php-post",
+        "php-external"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-007",
+      "type": "multiple-choice",
+      "topic": "formulare",
+      "difficulty": "leicht",
+      "text": "Dieses Formular ist vollständig gezeigt. Es wird ohne JavaScript abgeschickt. Warum fehlt der eingegebene Vorname unter $_POST[\"vorname\"], und welche Änderung hilft? <strong>Wähle genau zwei Antworten.</strong><pre><code class=\"language-html\">&lt;form action=\"teilnehmer.php\" method=\"post\"&gt;\n  &lt;input type=\"text\" id=\"vorname\" value=\"Lea\"&gt;\n  &lt;button type=\"submit\"&gt;Absenden&lt;/button&gt;\n&lt;/form&gt;</code></pre>",
+      "options": [
+        "Mit required wird der Wert automatisch unter dem Schlüssel vorname übertragen.",
+        "Das Eingabefeld benötigt name=\"vorname\", damit sein Wert unter diesem Namen übertragen wird.",
+        "Der Wechsel zu method=\"get\" ergänzt den fehlenden Namen automatisch.",
+        "Das vorhandene id-Attribut allein legt keinen Namen für die Formularübermittlung fest."
+      ],
+      "correct": [
+        1,
+        3
+      ],
+      "solution": "Das Eingabefeld benötigt name=\"vorname\", damit sein Wert unter diesem Namen übertragen wird.; Das vorhandene id-Attribut allein legt keinen Namen für die Formularübermittlung fest.",
+      "explanation": "Dem Textfeld fehlt das name-Attribut. Ergänze name=\"vorname\". Die id allein reicht für die Übermittlung nicht aus. required betrifft die Eingabeprüfung im Browser; ein Wechsel der Übertragungsmethode ergänzt ebenfalls kein name-Attribut.",
+      "sourceIds": [
+        "mdn-form"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-008",
+      "type": "multiple-choice",
+      "topic": "formulare",
+      "difficulty": "mittel",
+      "text": "Welche Aussagen zur normalen Übermittlung von HTML-Formularen mit GET und POST sind richtig? <strong>Wähle genau zwei Antworten.</strong>",
+      "options": [
+        "Bei einer GET-Formularübermittlung werden die Formulardaten in die Anfrage-URL aufgenommen.",
+        "Auch per POST empfangene Formulardaten müssen auf der Serverseite geprüft werden.",
+        "Die Methode POST verschlüsselt die Formulardaten automatisch.",
+        "POST wandelt sämtliche Eingaben automatisch in ganze Zahlen um."
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "solution": "Bei einer GET-Formularübermittlung werden die Formulardaten in die Anfrage-URL aufgenommen.; Auch per POST empfangene Formulardaten müssen auf der Serverseite geprüft werden.",
+      "explanation": "GET-Formulardaten stehen in der Anfrage-URL. Bei POST werden die Formulardaten im Anfragekörper übertragen. Keine dieser Methoden ersetzt die serverseitige Prüfung. POST allein verschlüsselt nichts; dafür ist eine geschützte Übertragung, etwa über HTTPS, erforderlich.",
+      "sourceIds": [
+        "mdn-form",
+        "php-external"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-009",
+      "type": "single-choice",
+      "topic": "datenpruefung",
+      "difficulty": "leicht",
+      "text": "Für diesen Test werden keine POST-Felder übergeben. Was wird ausgegeben?<pre><code class=\"language-php\">&lt;?php\n$_POST = [];\n\nif (isset($_POST[\"vorname\"])) {\n    echo \"Name vorhanden\";\n} else {\n    echo \"Name fehlt\";\n}</code></pre>",
+      "options": [
+        "Der Code erzeugt keine Ausgabe.",
+        "Name vorhanden",
+        "Name fehlt",
+        "vorname"
+      ],
+      "correct": [
+        2
+      ],
+      "solution": "Name fehlt",
+      "explanation": "Im leeren Array gibt es keinen Schlüssel vorname. isset liefert daher false, und der else-Zweig wird ausgeführt. Die Prüfung selbst löst bei einem fehlenden Schlüssel keine Warnung aus.",
+      "sourceIds": [
+        "php-isset"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-010",
+      "type": "multiple-choice",
+      "topic": "datenpruefung",
+      "difficulty": "mittel",
+      "text": "Der Formularwert wird für den Test so vorgegeben. Welche Aussagen sind richtig? <strong>Wähle genau zwei Antworten.</strong><pre><code class=\"language-php\">&lt;?php\n$_POST = [\"anzahl\" =&gt; \"0\"];</code></pre>",
+      "options": [
+        "Der Schlüssel anzahl ist im Array nicht vorhanden.",
+        "isset($_POST[\"anzahl\"]) ergibt true.",
+        "empty($_POST[\"anzahl\"]) ergibt true.",
+        "Der zugewiesene Wert hat den Datentyp Integer."
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "solution": "isset($_POST[\"anzahl\"]) ergibt true.; empty($_POST[\"anzahl\"]) ergibt true.",
+      "explanation": "Der Schlüssel existiert und sein Wert ist nicht null, daher ist isset wahr. empty behandelt auch die Zeichenkette \"0\" als leer. Wegen der Anführungszeichen ist der Wert hier eine Zeichenkette und kein Integer. empty allein eignet sich deshalb nicht für jede Prüfung, ob ein Eingabefeld vorhanden ist.",
+      "sourceIds": [
+        "php-isset",
+        "php-empty"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-011",
+      "type": "single-choice",
+      "topic": "datenpruefung",
+      "difficulty": "leicht",
+      "text": "Welcher Wert wird ausgegeben, wenn die GET-Daten genau dem gezeigten Array entsprechen?<pre><code class=\"language-php\">&lt;?php\n$_GET = [\"reiseziel\" =&gt; \"Berlin\"];\n$unterkunft = $_GET[\"unterkunft\"] ?? \"Hotel\";\necho $unterkunft;</code></pre>",
+      "options": [
+        "Hotel",
+        "unterkunft",
+        "Der Code erzeugt keine Ausgabe.",
+        "Berlin"
+      ],
+      "correct": [
+        0
+      ],
+      "solution": "Hotel",
+      "explanation": "Der Schlüssel unterkunft fehlt. Der Operator ?? liefert in diesem Fall den Ersatzwert rechts, also Hotel. Er verwendet den Ersatzwert, wenn der linke Wert nicht vorhanden oder null ist.",
+      "sourceIds": [
+        "php-comparison"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-012",
+      "type": "multiple-choice",
+      "topic": "formulare",
+      "difficulty": "mittel",
+      "text": "Das vollständig gezeigte Formular wird ohne JavaScript und ohne angekreuzte Checkbox abgeschickt. Es gibt kein zusätzliches verstecktes Feld. Welche Aussagen sind richtig? <strong>Wähle genau zwei Antworten.</strong><pre><code class=\"language-html\">&lt;form action=\"teilnehmer.php\" method=\"post\"&gt;\n  &lt;input type=\"checkbox\" name=\"newsletter\" value=\"ja\"&gt;\n  &lt;button type=\"submit\"&gt;Absenden&lt;/button&gt;\n&lt;/form&gt;</code></pre>",
+      "options": [
+        "Der Schlüssel newsletter wird durch diese Checkbox nicht übermittelt.",
+        "Unter $_POST[\"newsletter\"] wird automatisch die Zeichenkette \"false\" übermittelt.",
+        "Der Wert ja wird anstelle von newsletter als Schlüssel übermittelt.",
+        "isset($_POST[\"newsletter\"]) ergibt nach dieser Übermittlung false."
+      ],
+      "correct": [
+        0,
+        3
+      ],
+      "solution": "Der Schlüssel newsletter wird durch diese Checkbox nicht übermittelt.; isset($_POST[\"newsletter\"]) ergibt nach dieser Übermittlung false.",
+      "explanation": "Eine nicht angekreuzte Checkbox wird bei der normalen Formularübermittlung ausgelassen. Ohne ein zusätzliches Feld gibt es deshalb keinen Schlüssel newsletter, und isset ist false. Wird sie angekreuzt, lautet das übermittelte Paar newsletter=ja.",
+      "sourceIds": [
+        "mdn-checkbox",
+        "php-isset"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-013",
+      "type": "single-choice",
+      "topic": "arrays",
+      "difficulty": "leicht",
+      "text": "Welche Ausgabe erzeugt der Zugriff auf dieses assoziative Array?<pre><code class=\"language-php\">&lt;?php\n$reise = [\"ziel\" =&gt; \"Rom\", \"personen\" =&gt; 2];\necho $reise[\"ziel\"];</code></pre>",
+      "options": [
+        "ziel",
+        "2",
+        "Rom",
+        "personen"
+      ],
+      "correct": [
+        2
+      ],
+      "solution": "Rom",
+      "explanation": "Der Ausdruck $reise[\"ziel\"] liest den Wert, der zum Schlüssel ziel gehört. Dieser Wert ist Rom. Der Schlüssel selbst wird nicht ausgegeben.",
+      "sourceIds": [
+        "php-arrays"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-014",
+      "type": "single-choice",
+      "topic": "arrays",
+      "difficulty": "mittel",
+      "text": "Wie lautet die Ausgabe nach dem Ändern und Ergänzen des Arrays?<pre><code class=\"language-php\">&lt;?php\n$reise = [\"ziel\" =&gt; \"Rom\", \"personen\" =&gt; 2];\n$reise[\"personen\"] = 4;\n$reise[\"unterkunft\"] = \"Hotel\";\necho count($reise) . \"/\" . $reise[\"personen\"];</code></pre>",
+      "options": [
+        "2/4",
+        "4/4",
+        "3/2",
+        "3/4"
+      ],
+      "correct": [
+        3
+      ],
+      "solution": "3/4",
+      "explanation": "Die Zuweisung an personen ersetzt den bisherigen Wert 2 durch 4. Sie legt keinen zweiten Eintrag mit demselben Schlüssel an. unterkunft ist ein neuer Schlüssel. Deshalb enthält das Array drei Einträge, und personen hat den Wert 4.",
+      "sourceIds": [
+        "php-arrays"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-015",
+      "type": "single-choice",
+      "topic": "arrays",
+      "difficulty": "leicht",
+      "text": "Welcher Eintrag wird aus diesem Array ausgegeben?<pre><code class=\"language-php\">&lt;?php\n$farben = [\"Blau\", \"Grün\", \"Rot\"];\necho $farben[1];</code></pre>",
+      "options": [
+        "Grün",
+        "Rot",
+        "1",
+        "Blau"
+      ],
+      "correct": [
+        0
+      ],
+      "solution": "Grün",
+      "explanation": "Bei dieser Schreibweise erhält das erste Element den Index 0, das zweite den Index 1 und das dritte den Index 2. Mit [1] wird deshalb Grün gelesen.",
+      "sourceIds": [
+        "php-arrays"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-016",
+      "type": "single-choice",
+      "topic": "arrays",
+      "difficulty": "mittel",
+      "text": "Die Schleife gibt Schlüssel und Werte aus. Welche vollständige Ausgabe entsteht?<pre><code class=\"language-php\">&lt;?php\n$daten = [\"ort\" =&gt; \"Bonn\", \"tage\" =&gt; 2];\nforeach ($daten as $schluessel =&gt; $wert) {\n    echo $schluessel . \":\" . $wert . \"|\";\n}</code></pre>",
+      "options": [
+        "ort:Bonn|tage:2|",
+        "0:Bonn|1:2|",
+        "Bonn:ort|2:tage|",
+        "ort:tage|Bonn:2|"
+      ],
+      "correct": [
+        0
+      ],
+      "solution": "ort:Bonn|tage:2|",
+      "explanation": "In foreach steht links von =&gt; der Schlüssel und rechts der Wert. Zuerst werden ort und Bonn verarbeitet, danach tage und 2. Jeder Durchlauf hängt einen senkrechten Strich an.",
+      "sourceIds": [
+        "php-foreach"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-017",
+      "type": "single-choice",
+      "topic": "arrays",
+      "difficulty": "mittel",
+      "text": "Welche Summe bleibt nach dieser Schleife übrig?<pre><code class=\"language-php\">&lt;?php\n$preise = [\"Kaffee\" =&gt; 5, \"Kuchen\" =&gt; 9, \"Wasser\" =&gt; 3];\n$summe = 0;\nforeach ($preise as $preis) {\n    if ($preis &gt;= 5) {\n        $summe += $preis;\n    }\n}\necho $summe;</code></pre>",
+      "options": [
+        "9",
+        "14",
+        "17",
+        "5"
+      ],
+      "correct": [
+        1
+      ],
+      "solution": "14",
+      "explanation": "Nur Werte ab einschließlich 5 werden addiert. Die Werte 5 und 9 erfüllen die Bedingung, 3 nicht. Die Summe ist daher 0 + 5 + 9 = 14.",
+      "sourceIds": [
+        "php-foreach",
+        "php-if"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-018",
+      "type": "single-choice",
+      "topic": "verzweigungen",
+      "difficulty": "mittel",
+      "text": "Welcher Zweig wird für den angegebenen Grenzwert ausgeführt?<pre><code class=\"language-php\">&lt;?php\n$alter = 18;\nif ($alter &lt; 18) {\n    echo \"Jugend\";\n} elseif ($alter === 18) {\n    echo \"Start\";\n} else {\n    echo \"Erwachsen\";\n}</code></pre>",
+      "options": [
+        "StartErwachsen",
+        "Start",
+        "Erwachsen",
+        "Jugend"
+      ],
+      "correct": [
+        1
+      ],
+      "solution": "Start",
+      "explanation": "18 ist nicht kleiner als 18. Die folgende Prüfung auf den Integer 18 ist wahr, daher wird Start ausgegeben. Der else-Zweig gehört zu derselben Kette und wird nicht zusätzlich ausgeführt.",
+      "sourceIds": [
+        "php-if",
+        "php-comparison"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-019",
+      "type": "single-choice",
+      "topic": "verzweigungen",
+      "difficulty": "mittel",
+      "text": "Hier stehen zwei eigenständige if-Anweisungen. Welche Ausgabe entsteht?<pre><code class=\"language-php\">&lt;?php\n$anzahl = 4;\nif ($anzahl &gt;= 2) {\n    echo \"A\";\n}\nif ($anzahl &gt;= 4) {\n    echo \"B\";\n} else {\n    echo \"C\";\n}</code></pre>",
+      "options": [
+        "AC",
+        "A",
+        "B",
+        "AB"
+      ],
+      "correct": [
+        3
+      ],
+      "solution": "AB",
+      "explanation": "Beide if-Bedingungen sind wahr. Die erste gibt A aus, die zweite B. Das else gehört zur zweiten if-Anweisung und wird nicht ausgeführt. echo ergänzt keine automatischen Trennzeichen.",
+      "sourceIds": [
+        "php-if"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-020",
+      "type": "single-choice",
+      "topic": "verzweigungen",
+      "difficulty": "leicht",
+      "text": "Welche Ausgabe erzeugt diese Auswahl der Unterkunft?<pre><code class=\"language-php\">&lt;?php\n$unterkunft = \"hotel\";\nswitch ($unterkunft) {\n    case \"hotel\":\n        echo \"H\";\n        break;\n    case \"camping\":\n        echo \"C\";\n        break;\n    default:\n        echo \"?\";\n}</code></pre>",
+      "options": [
+        "C",
+        "HC",
+        "?",
+        "H"
+      ],
+      "correct": [
+        3
+      ],
+      "solution": "H",
+      "explanation": "Der Wert hotel passt zum ersten case. H wird ausgegeben. Das folgende break beendet die switch-Anweisung, sodass die weiteren Ausgaben nicht erreicht werden.",
+      "sourceIds": [
+        "php-switch"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-021",
+      "type": "multiple-choice",
+      "topic": "verzweigungen",
+      "difficulty": "mittel",
+      "text": "Welche Aussagen über diesen switch-Ablauf sind richtig? <strong>Wähle genau zwei Antworten.</strong><pre><code class=\"language-php\">&lt;?php\n$ziel = \"Wien\";\nswitch ($ziel) {\n    case \"Rom\":\n        echo \"Italien\";\n        break;\n    case \"Paris\":\n        echo \"Frankreich\";\n        break;\n    default:\n        echo \"Unbekannt\";\n}</code></pre>",
+      "options": [
+        "Ohne default wäre die switch-Anweisung syntaktisch ungültig.",
+        "Wenn kein case passt, wird automatisch der erste case ausgeführt.",
+        "Der Code gibt Unbekannt aus.",
+        "default wird hier ausgeführt, weil keiner der case-Werte zu Wien passt."
+      ],
+      "correct": [
+        2,
+        3
+      ],
+      "solution": "Der Code gibt Unbekannt aus.; default wird hier ausgeführt, weil keiner der case-Werte zu Wien passt.",
+      "explanation": "Wien passt weder zu Rom noch zu Paris. Deshalb beginnt die Ausführung im default-Zweig und gibt Unbekannt aus. Ein default-Zweig ist nicht vorgeschrieben; ohne ihn gäbe es hier keine Ausgabe.",
+      "sourceIds": [
+        "php-switch"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-022",
+      "type": "single-choice",
+      "topic": "verzweigungen",
+      "difficulty": "mittel",
+      "text": "Im ersten case fehlt break. Welche Ausgabe entsteht dadurch?<pre><code class=\"language-php\">&lt;?php\n$stufe = 1;\nswitch ($stufe) {\n    case 1:\n        echo \"A\";\n    case 2:\n        echo \"B\";\n        break;\n    default:\n        echo \"C\";\n}</code></pre>",
+      "options": [
+        "ABC",
+        "B",
+        "A",
+        "AB"
+      ],
+      "correct": [
+        3
+      ],
+      "solution": "AB",
+      "explanation": "Die Ausführung beginnt bei case 1 und gibt A aus. Ohne break läuft sie anschließend in den folgenden case weiter und gibt B aus. Erst dessen break beendet switch; C wird nicht ausgegeben.",
+      "sourceIds": [
+        "php-switch"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-023",
+      "type": "single-choice",
+      "topic": "verzweigungen",
+      "difficulty": "mittel",
+      "text": "Die erlaubte Personenzahl liegt zwischen 1 und 6 einschließlich. Welche Ausgabe entsteht?<pre><code class=\"language-php\">&lt;?php\n$personen = 6;\n$erlaubt = ($personen &gt;= 1 &amp;&amp; $personen &lt;= 6);\necho $erlaubt ? \"OK\" : \"Nein\";</code></pre>",
+      "options": [
+        "true",
+        "Nein",
+        "OK",
+        "6"
+      ],
+      "correct": [
+        2
+      ],
+      "solution": "OK",
+      "explanation": "6 erfüllt beide Vergleiche: mindestens 1 und höchstens 6. Das logische UND liefert true. Der ternäre Operator wählt deshalb den Text vor dem Doppelpunkt, also OK.",
+      "sourceIds": [
+        "php-comparison"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-024",
+      "type": "single-choice",
+      "topic": "schleifen",
+      "difficulty": "mittel",
+      "text": "Welche Zahl gibt diese for-Schleife am Ende aus?<pre><code class=\"language-php\">&lt;?php\n$summe = 0;\nfor ($i = 1; $i &lt;= 4; $i++) {\n    $summe += $i;\n}\necho $summe;</code></pre>",
+      "options": [
+        "10",
+        "4",
+        "6",
+        "15"
+      ],
+      "correct": [
+        0
+      ],
+      "solution": "10",
+      "explanation": "Die Schleife verarbeitet die Werte 1, 2, 3 und 4. Die Bedingung &lt;= 4 schließt 4 ein. Addiert werden 1 + 2 + 3 + 4 = 10.",
+      "sourceIds": [
+        "php-for"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-025",
+      "type": "single-choice",
+      "topic": "schleifen",
+      "difficulty": "mittel",
+      "text": "Welche vollständige Ausgabe erzeugt diese while-Schleife?<pre><code class=\"language-php\">&lt;?php\n$i = 1;\nwhile ($i &lt; 6) {\n    echo $i;\n    $i += 2;\n}</code></pre>",
+      "options": [
+        "246",
+        "135",
+        "12345",
+        "1357"
+      ],
+      "correct": [
+        1
+      ],
+      "solution": "135",
+      "explanation": "Der Zähler startet bei 1 und steigt jeweils um 2. Ausgegeben werden 1, 3 und 5. Danach ist der Zähler 7 und die Bedingung 7 &lt; 6 falsch. Zwischen den Ausgaben stehen keine Leerzeichen.",
+      "sourceIds": [
+        "php-while"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-026",
+      "type": "single-choice",
+      "topic": "schleifen",
+      "difficulty": "mittel",
+      "text": "Was gibt diese do-while-Schleife aus?<pre><code class=\"language-php\">&lt;?php\n$i = 5;\ndo {\n    echo $i;\n    $i++;\n} while ($i &lt; 3);</code></pre>",
+      "options": [
+        "6",
+        "Der Code erzeugt keine Ausgabe.",
+        "5",
+        "567"
+      ],
+      "correct": [
+        2
+      ],
+      "solution": "5",
+      "explanation": "Bei do-while wird der Schleifenrumpf vor der ersten Bedingungsprüfung ausgeführt. Deshalb erscheint zunächst 5. Anschließend steigt i auf 6; die Bedingung 6 &lt; 3 ist falsch, und die Schleife endet.",
+      "sourceIds": [
+        "php-do-while"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-027",
+      "type": "single-choice",
+      "topic": "schleifen",
+      "difficulty": "mittel",
+      "text": "Welche Ausgabe entsteht durch den vorzeitigen Abbruch?<pre><code class=\"language-php\">&lt;?php\nfor ($i = 1; $i &lt;= 5; $i++) {\n    if ($i === 3) {\n        break;\n    }\n    echo $i;\n}</code></pre>",
+      "options": [
+        "12",
+        "1245",
+        "123",
+        "12345"
+      ],
+      "correct": [
+        0
+      ],
+      "solution": "12",
+      "explanation": "Die Werte 1 und 2 werden ausgegeben. Bei i = 3 wird break bereits vor echo erreicht und beendet die Schleife. Deshalb erscheinen weder 3 noch die folgenden Werte.",
+      "sourceIds": [
+        "php-break",
+        "php-for"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-028",
+      "type": "single-choice",
+      "topic": "schleifen",
+      "difficulty": "mittel",
+      "text": "Welche Summe wird ausgegeben? Beachte den Restoperator % und continue.<pre><code class=\"language-php\">&lt;?php\n$summe = 0;\nfor ($i = 1; $i &lt;= 5; $i++) {\n    if ($i % 2 === 0) {\n        continue;\n    }\n    $summe += $i;\n}\necho $summe;</code></pre>",
+      "options": [
+        "1",
+        "9",
+        "6",
+        "15"
+      ],
+      "correct": [
+        1
+      ],
+      "solution": "9",
+      "explanation": "Bei den geraden Zahlen 2 und 4 ist der Rest bei Division durch 2 gleich 0. continue überspringt für diese Durchläufe die Addition. Die Schleife läuft weiter; addiert werden 1 + 3 + 5 = 9.",
+      "sourceIds": [
+        "php-continue",
+        "php-for"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-029",
+      "type": "single-choice",
+      "topic": "schleifen",
+      "difficulty": "anspruchsvoll",
+      "text": "Die Schleifen sind verschachtelt. Welche vollständige Ausgabe entsteht?<pre><code class=\"language-php\">&lt;?php\nfor ($zeile = 1; $zeile &lt;= 2; $zeile++) {\n    for ($spalte = 1; $spalte &lt;= 3; $spalte++) {\n        echo \"*\";\n    }\n    echo \"|\";\n}</code></pre>",
+      "options": [
+        "**|**|**|",
+        "******|",
+        "*|*|",
+        "***|***|"
+      ],
+      "correct": [
+        3
+      ],
+      "solution": "***|***|",
+      "explanation": "Die äußere Schleife läuft zweimal. In jedem äußeren Durchlauf startet spalte erneut bei 1, und die innere Schleife gibt drei Sterne aus. Danach folgt jeweils genau ein senkrechter Strich.",
+      "sourceIds": [
+        "php-for"
+      ]
+    },
+    {
+      "id": "PHP-PHP45-030",
+      "type": "single-choice",
+      "topic": "funktionen",
+      "difficulty": "mittel",
+      "text": "Welche Ausgabe entsteht durch die beiden Funktionsaufrufe?<pre><code class=\"language-php\">&lt;?php\nfunction gesamtpreis($personen) {\n    if ($personen &lt; 1) {\n        return 0;\n    }\n    return $personen * 5;\n}\n\necho gesamtpreis(0) . \":\" . gesamtpreis(3);</code></pre>",
+      "options": [
+        "5:15",
+        "0:15",
+        "0",
+        "0:3"
+      ],
+      "correct": [
+        1
+      ],
+      "solution": "0:15",
+      "explanation": "Beim Aufruf mit 0 wird return 0 erreicht. Das beendet diesen Funktionsaufruf, nicht das gesamte Skript. Beim Aufruf mit 3 ist die Bedingung falsch; zurückgegeben wird 3 * 5 = 15. echo verbindet beide Ergebnisse mit einem Doppelpunkt.",
+      "sourceIds": [
+        "php-return"
+      ]
+    }
+  ]
+}

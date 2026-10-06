@@ -1,0 +1,299 @@
+{
+  "id": "PHP-10",
+  "name": "PHP · 10 · Farben und Hintergründe",
+  "description": "12 Fragen · Grundlagen, Anwendung, Zuordnung und Reihenfolge",
+  "durationMinutes": 20,
+  "instructions": "Lies die Angaben genau. Bei Mehrfachwahl steht die Zahl richtiger Antworten dabei. Jede vollständig richtig gelöste Frage zählt einen Punkt. Keine Teilpunkte. Übungspool mit sichtbaren Lösungsschlüsseln im JSON.",
+  "topicLabels": {
+    "01": "User Interfaces",
+    "02": "Qualitätssicherung",
+    "03": "UX beschreiben",
+    "04": "UX gestalten",
+    "05": "HTML-Grundlagen",
+    "06": "HTML-Inhalte",
+    "07": "Struktur und Navigation",
+    "08": "Formulare",
+    "09": "CSS und Selektoren",
+    "10": "Farben und Hintergründe",
+    "11": "PHP und Formulardaten",
+    "12": "PHP und Datenbank",
+    "13": "CSS-Layout ergänzen"
+  },
+  "difficultyLabels": {
+    "leicht": "Grundlagen",
+    "mittel": "Anwendung"
+  },
+  "questions": [
+    {
+      "id": "PHP-10-01",
+      "type": "single",
+      "topic": "10",
+      "difficulty": "leicht",
+      "text": "Welche Eigenschaft färbt den Text?",
+      "options": [
+        "background-color",
+        "color",
+        "background-repeat",
+        "opacity als reiner Farbwert"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "color steuert die Textfarbe.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 2_Präsentation.pdf · 3–49"
+    },
+    {
+      "id": "PHP-10-02",
+      "type": "single",
+      "topic": "10",
+      "difficulty": "leicht",
+      "text": "Welche Schreibweise ist ein HEX-Farbwert?",
+      "options": [
+        "rgb(0,116,200)",
+        "navy",
+        "hsl(205,100%,39%)",
+        "#0074c8"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "HEX beginnt hier mit #; die anderen sind andere gültige Farbformen.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 2_Präsentation.pdf · 3–49"
+    },
+    {
+      "id": "PHP-10-03",
+      "type": "single",
+      "topic": "10",
+      "difficulty": "leicht",
+      "text": "Was bewirkt opacity am Element?",
+      "options": [
+        "Nur eine einzelne Hintergrundfarbe wird transparent.",
+        "Alle Nachfahren werden aus dem HTML gelöscht.",
+        "Auch sein Inhalt wird in der Darstellung abgeschwächt.",
+        "Die Bilddatei wird verkleinert."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "opacity betrifft das gesamte gerenderte Element.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 2_Präsentation.pdf · 3–49"
+    },
+    {
+      "id": "PHP-10-04",
+      "type": "single",
+      "topic": "10",
+      "difficulty": "leicht",
+      "text": "Worauf bezieht sich url(&quot;bild.svg&quot;) in einer externen CSS-Datei?",
+      "options": [
+        "Auf den Speicherort dieser CSS-Datei",
+        "Immer auf den Browserordner",
+        "Immer auf den Datenbankordner",
+        "Immer auf das Laufwerk C:"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Relative Ressourcen werden aus Sicht der CSS-Datei aufgelöst.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 2_Präsentation.pdf · 3–49"
+    },
+    {
+      "id": "PHP-10-05",
+      "type": "single",
+      "topic": "10",
+      "difficulty": "leicht",
+      "text": "Welche Einstellung unterdrückt die Wiederholung des Hintergrundbilds?",
+      "options": [
+        "background-size: cover",
+        "background-position: center",
+        "background-repeat: no-repeat",
+        "color: transparent"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Wiederholung und Größe sind verschiedene Eigenschaften.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 2_Präsentation.pdf · 3–49"
+    },
+    {
+      "id": "PHP-10-06",
+      "type": "single",
+      "topic": "10",
+      "difficulty": "leicht",
+      "text": "Welche Aussage zu cover passt zur korrigierten Erklärung?",
+      "options": [
+        "Das Seitenverhältnis bleibt erhalten; ein Ausschnitt kann fehlen.",
+        "Das Bild bleibt zwingend vollständig sichtbar.",
+        "Das Bild wird stets verzerrt.",
+        "Es entstehen immer vier Kopien."
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "K3: cover füllt den Bereich unter Erhalt des natürlichen Seitenverhältnisses.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 2_Präsentation.pdf · 3–49"
+    },
+    {
+      "id": "PHP-10-07",
+      "type": "single",
+      "topic": "10",
+      "difficulty": "leicht",
+      "text": "Welche Einstellung hält das ganze Bild im Hintergrundbereich sichtbar?",
+      "options": [
+        "cover unabhängig vom Seitenverhältnis",
+        "left top allein",
+        "contain",
+        "repeat-x"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Contain kann freie Fläche lassen, erhält aber das vollständige Bild.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 2_Präsentation.pdf · 3–49"
+    },
+    {
+      "id": "PHP-10-08",
+      "type": "single",
+      "topic": "10",
+      "difficulty": "leicht",
+      "text": "Welche Funktion erzeugt einen Verlauf um ein Zentrum herum?",
+      "options": [
+        "linear-gradient",
+        "font-gradient",
+        "background-repeat",
+        "conic-gradient"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Konische Verläufe verteilen Farben um das Zentrum.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 2_Präsentation.pdf · 3–49"
+    },
+    {
+      "id": "PHP-10-09",
+      "type": "multiple",
+      "topic": "10",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Eigenschaften betreffen die Platzierung beziehungsweise Wiederholung eines Hintergrundbilds?",
+      "options": [
+        "font-family",
+        "background-position",
+        "background-repeat",
+        "text-align als Bildwiederholung"
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "explanation": "Position und Wiederholung werden unabhängig von Textausrichtung gesetzt.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 2_Präsentation.pdf · 3–49"
+    },
+    {
+      "id": "PHP-10-10",
+      "type": "multiple",
+      "topic": "10",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Aussagen zu Farbkonzepten passen zum Kurs?",
+      "options": [
+        "Alle Menschen empfinden eine Farbe zwingend gleich.",
+        "Beschriftungen werden durch Farbe immer vollständig ersetzt.",
+        "Eine Palette unterstützt konsistente Gestaltung.",
+        "Farbassoziationen sind kontext- und kulturbezogen."
+      ],
+      "correct": [
+        2,
+        3
+      ],
+      "explanation": "Die Unterlage behandelt Schemata und kulturelle Einflüsse, keine universellen Reaktionsgarantien.",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 2_Präsentation.pdf · 3–49"
+    },
+    {
+      "id": "PHP-10-11",
+      "type": "matching-postits",
+      "topic": "10",
+      "difficulty": "mittel",
+      "text": "Ordne die Begriffe ihren Beschreibungen zu.",
+      "items": [
+        {
+          "id": "i0",
+          "text": "linear-gradient"
+        },
+        {
+          "id": "i1",
+          "text": "radial-gradient"
+        },
+        {
+          "id": "i2",
+          "text": "conic-gradient"
+        }
+      ],
+      "targets": [
+        {
+          "id": "t2",
+          "text": "Verlauf um ein Zentrum"
+        },
+        {
+          "id": "t1",
+          "text": "Verlauf vom Zentrum nach außen"
+        },
+        {
+          "id": "t0",
+          "text": "Verlauf entlang einer Richtung"
+        }
+      ],
+      "pairs": [
+        {
+          "leftId": "i0",
+          "rightId": "t0"
+        },
+        {
+          "leftId": "i1",
+          "rightId": "t1"
+        },
+        {
+          "leftId": "i2",
+          "rightId": "t2"
+        }
+      ],
+      "explanation": "linear-gradient: Verlauf entlang einer Richtung; radial-gradient: Verlauf vom Zentrum nach außen; conic-gradient: Verlauf um ein Zentrum",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 2_Präsentation.pdf"
+    },
+    {
+      "id": "PHP-10-12",
+      "type": "sql-order",
+      "topic": "10",
+      "difficulty": "mittel",
+      "text": "Ordne den im Kurs vorgegebenen Arbeitsablauf. Gemeint ist diese didaktische Reihenfolge, nicht die einzig mögliche Vorgehensweise in jedem Projekt.",
+      "blocks": [
+        {
+          "id": "b4",
+          "text": "Lesbarkeit prüfen"
+        },
+        {
+          "id": "b3",
+          "text": "Farben anwenden"
+        },
+        {
+          "id": "b2",
+          "text": "Rollen zuweisen"
+        },
+        {
+          "id": "b1",
+          "text": "Palette wählen"
+        },
+        {
+          "id": "b0",
+          "text": "Gestaltungsziel bestimmen"
+        }
+      ],
+      "correctOrder": [
+        "b0",
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "explanation": "Gestaltungsziel bestimmen → Palette wählen → Rollen zuweisen → Farben anwenden → Lesbarkeit prüfen",
+      "source": "PHP-Kurs_Kapitel 5_CSS_Teil 2_Präsentation.pdf"
+    }
+  ]
+}

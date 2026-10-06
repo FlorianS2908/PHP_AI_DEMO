@@ -1,0 +1,9 @@
+Vorstellung, Erwartungen, Kursorganisation und gemeinsame Arbeitsweise.
+Benutzerschnittstellen sowie Eingabe- und Ausgabegeräte unterscheiden.
+CLI, Menü, GUI und dialogorientierte Schnittstellen anhand von Demos vergleichen.
+Partnerarbeit: Oberflächen untersuchen und Beobachtungen begründen.
+Reisebüro-Szenario: Nutzerziele und erste Anforderungen beschreiben.
+Qualitätseinstieg: Testfälle mit Eingaben und Soll-Ergebnissen formulieren.
+HTML-Vorgriff: Datei anlegen, Grundgerüst und erste Inhalte schreiben.
+HTML-Übung: Überschrift, Absatz und Liste ergänzen; Ergebnisse prüfen.
+Fragenpool bearbeiten, Lösungen besprechen und den Lernerfolg reflektieren.

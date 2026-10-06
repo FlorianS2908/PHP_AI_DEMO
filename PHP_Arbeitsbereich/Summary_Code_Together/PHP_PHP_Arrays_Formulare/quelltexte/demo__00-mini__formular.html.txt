@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Mini-Demo · Formular und PHP</title>
+    <link rel="stylesheet" href="../../assets/demo.css">
+</head>
+<body><main class="wrap mini">
+    <p class="eyebrow">PHP · Schritt 1: wenige Felder, echter POST</p>
+    <h1>Wohin geht die Reise?</h1>
+    <p>Fiktive Unterrichtsdaten. Über den PHP-Server öffnen, nicht per Doppelklick absenden.</p>
+    <form class="card" method="post" action="ausgabe.php">
+        <label for="ziel">Reiseziel</label>
+        <select id="ziel" name="auswahl[ziel]" required>
+            <option value="">Bitte wählen</option>
+            <option value="berlin">Berlin</option>
+            <option value="paris">Paris</option>
+            <option value="rom">Rom</option>
+        </select>
+        <fieldset><legend>Extras · mehrere möglich</legend>
+            <label class="choice"><input type="checkbox" name="auswahl[extras][]" value="museum"> Museumspass</label>
+            <label class="choice"><input type="checkbox" name="auswahl[extras][]" value="tour"> Stadtführung</label>
+        </fieldset>
+        <label for="text">Deine Nachricht</label>
+        <textarea id="text" name="auswahl[nachricht]" rows="3" maxlength="500"></textarea>
+        <div class="actions"><button type="submit">An PHP senden →</button></div>
+    </form>
+    <a href="../../index.html">Zur Materialübersicht</a>
+</main></body></html>

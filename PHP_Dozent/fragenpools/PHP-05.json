@@ -1,0 +1,299 @@
+{
+  "id": "PHP-05",
+  "name": "PHP · 05 · HTML-Grundlagen",
+  "description": "12 Fragen · Grundlagen, Anwendung, Zuordnung und Reihenfolge",
+  "durationMinutes": 20,
+  "instructions": "Lies die Angaben genau. Bei Mehrfachwahl steht die Zahl richtiger Antworten dabei. Jede vollständig richtig gelöste Frage zählt einen Punkt. Keine Teilpunkte. Übungspool mit sichtbaren Lösungsschlüsseln im JSON.",
+  "topicLabels": {
+    "01": "User Interfaces",
+    "02": "Qualitätssicherung",
+    "03": "UX beschreiben",
+    "04": "UX gestalten",
+    "05": "HTML-Grundlagen",
+    "06": "HTML-Inhalte",
+    "07": "Struktur und Navigation",
+    "08": "Formulare",
+    "09": "CSS und Selektoren",
+    "10": "Farben und Hintergründe",
+    "11": "PHP und Formulardaten",
+    "12": "PHP und Datenbank",
+    "13": "CSS-Layout ergänzen"
+  },
+  "difficultyLabels": {
+    "leicht": "Grundlagen",
+    "mittel": "Anwendung"
+  },
+  "questions": [
+    {
+      "id": "PHP-05-01",
+      "type": "single",
+      "topic": "05",
+      "difficulty": "leicht",
+      "text": "Wo steht der sichtbare Inhalt im Kurs-Grundgerüst?",
+      "options": [
+        "Im body",
+        "Ausschließlich im head",
+        "Im Dateinamen",
+        "Im charset-Attribut"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "body enthält den darzustellenden Inhalt.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf · 5–28"
+    },
+    {
+      "id": "PHP-05-02",
+      "type": "single",
+      "topic": "05",
+      "difficulty": "leicht",
+      "text": "Was ist der Unterschied zwischen title und h1?",
+      "options": [
+        "title bezeichnet das Dokument, h1 eine sichtbare Hauptüberschrift.",
+        "Beide sind zwingend dieselbe Bildschirmstelle.",
+        "title ist ein CSS-Selektor.",
+        "h1 gehört ausschließlich in head."
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Vergleiche Browser-Tab und sichtbare Seite.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf · 5–28"
+    },
+    {
+      "id": "PHP-05-03",
+      "type": "single",
+      "topic": "05",
+      "difficulty": "leicht",
+      "text": "Welche Verschachtelung ist korrekt?",
+      "options": [
+        "</p><strong>Text<p></strong>",
+        "<p>Text <strong>wichtig</p></strong>",
+        "<p>Text <strong>wichtig</strong></p>",
+        "<p><strong>Text</p>"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "Der innere Container wird hier vor dem äußeren geschlossen.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf · 5–28"
+    },
+    {
+      "id": "PHP-05-04",
+      "type": "single",
+      "topic": "05",
+      "difficulty": "leicht",
+      "text": "Welche Eigenschaft trifft auf IDs im Dokument zu?",
+      "options": [
+        "Eine ID wird nur in CSS deklariert.",
+        "IDs ersetzen automatisch name in Formularen.",
+        "Sie sollen Elemente eindeutig identifizieren.",
+        "Alle Absätze müssen dieselbe ID besitzen."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "IDs haben eine Kennzeichnungsrolle im Dokument.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf · 5–28"
+    },
+    {
+      "id": "PHP-05-05",
+      "type": "single",
+      "topic": "05",
+      "difficulty": "mittel",
+      "text": "Was bewirken die beiden class-Angaben?<pre><code>&lt;p class=&quot;hinweis&quot;&gt;A&lt;/p&gt;\n&lt;p class=&quot;hinweis&quot;&gt;B&lt;/p&gt;</code></pre>",
+      "options": [
+        "Beide Absätze gehören zur Klasse hinweis.",
+        "Beide Absätze besitzen dieselbe ID.",
+        "Nur der zweite Absatz darf dargestellt werden.",
+        "Der Browser sendet sofort eine POST-Anfrage."
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Klassen können mehrere Elemente gruppieren.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf · 5–28"
+    },
+    {
+      "id": "PHP-05-06",
+      "type": "single",
+      "topic": "05",
+      "difficulty": "leicht",
+      "text": "Wo steht ein Attribut im üblichen Containerbeispiel?",
+      "options": [
+        "Im Start-Tag",
+        "Nur nach dem schließenden html",
+        "In einer separaten SQL-Datei",
+        "Nur im End-Tag"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Attribute werden im Start-Tag notiert.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf · 5–28"
+    },
+    {
+      "id": "PHP-05-07",
+      "type": "single",
+      "topic": "05",
+      "difficulty": "leicht",
+      "text": "Welche Angabe bezeichnet die verwendete Zeichencodierung korrekt?",
+      "options": [
+        "UTF-8",
+        "CSS-8",
+        "UFT-8",
+        "HTML-Encoding-Tag"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Der Tippfehler der Vorlage ist im Kurs als Korrektur markiert.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf · 5–28"
+    },
+    {
+      "id": "PHP-05-08",
+      "type": "single",
+      "topic": "05",
+      "difficulty": "mittel",
+      "text": "Was zeigt ein Browser typischerweise von diesem Inhalt als normalen Seitentext?<pre><code>&lt;!-- Interner Hinweis --&gt;\n&lt;p&gt;Reiseplanung&lt;/p&gt;</code></pre>",
+      "options": [
+        "Interner Hinweis",
+        "Reiseplanung",
+        "Beide Texte hintereinander",
+        "Keinen der Texte"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Kommentare sind kein normal angezeigter Seiteninhalt.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf · 5–28"
+    },
+    {
+      "id": "PHP-05-09",
+      "type": "multiple",
+      "topic": "05",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Elemente haben im gezeigten HTML keinen Inhaltsbereich mit End-Tag?",
+      "options": [
+        "p",
+        "img",
+        "br",
+        "article"
+      ],
+      "correct": [
+        1,
+        2
+      ],
+      "explanation": "img und br sind leere Elemente; p und article Container.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf · 5–28"
+    },
+    {
+      "id": "PHP-05-10",
+      "type": "multiple",
+      "topic": "05",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Prüfungen helfen beim ersten lokalen HTML-Dokument?",
+      "options": [
+        "Zeichencodierung und Umlaute prüfen",
+        "Eine Datenbankanmeldung erzwingen",
+        "Dateiendung kontrollieren",
+        "Jede Datei zwingend in PHP umbenennen"
+      ],
+      "correct": [
+        0,
+        2
+      ],
+      "explanation": "Für die statische HTML-Seite sind Endung und Codierung unmittelbar relevant.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf · 5–28"
+    },
+    {
+      "id": "PHP-05-11",
+      "type": "matching-postits",
+      "topic": "05",
+      "difficulty": "mittel",
+      "text": "Ordne die Begriffe ihren Beschreibungen zu.",
+      "items": [
+        {
+          "id": "i0",
+          "text": "head"
+        },
+        {
+          "id": "i1",
+          "text": "body"
+        },
+        {
+          "id": "i2",
+          "text": "class"
+        }
+      ],
+      "targets": [
+        {
+          "id": "t2",
+          "text": "Gemeinsame Kennzeichnung mehrerer Elemente"
+        },
+        {
+          "id": "t1",
+          "text": "Sichtbarer Seiteninhalt"
+        },
+        {
+          "id": "t0",
+          "text": "Metainformationen"
+        }
+      ],
+      "pairs": [
+        {
+          "leftId": "i0",
+          "rightId": "t0"
+        },
+        {
+          "leftId": "i1",
+          "rightId": "t1"
+        },
+        {
+          "leftId": "i2",
+          "rightId": "t2"
+        }
+      ],
+      "explanation": "head: Metainformationen; body: Sichtbarer Seiteninhalt; class: Gemeinsame Kennzeichnung mehrerer Elemente",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf"
+    },
+    {
+      "id": "PHP-05-12",
+      "type": "sql-order",
+      "topic": "05",
+      "difficulty": "mittel",
+      "text": "Ordne den im Kurs vorgegebenen Arbeitsablauf. Gemeint ist diese didaktische Reihenfolge, nicht die einzig mögliche Vorgehensweise in jedem Projekt.",
+      "blocks": [
+        {
+          "id": "b4",
+          "text": "Im Browser prüfen"
+        },
+        {
+          "id": "b3",
+          "text": "Speichern"
+        },
+        {
+          "id": "b2",
+          "text": "Inhalte ergänzen"
+        },
+        {
+          "id": "b1",
+          "text": "Grundgerüst schreiben"
+        },
+        {
+          "id": "b0",
+          "text": "Datei anlegen"
+        }
+      ],
+      "correctOrder": [
+        "b0",
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "explanation": "Datei anlegen → Grundgerüst schreiben → Inhalte ergänzen → Speichern → Im Browser prüfen",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 1_Präsentation.pdf"
+    }
+  ]
+}

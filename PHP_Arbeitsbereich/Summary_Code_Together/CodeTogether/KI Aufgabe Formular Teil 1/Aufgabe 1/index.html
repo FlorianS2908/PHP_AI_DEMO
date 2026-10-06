@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urlaubsfinder | PHP</title>
+  <!-- Relativer Pfad: Die CSS-Datei liegt im selben Ordner. -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="page">
+    <header>
+      <p class="kicker">Urlaubsfinder · Deine nächste Auszeit</p>
+      <h1>Finde deinen nächsten Urlaub</h1>
+      <p class="intro">Wohin soll es gehen? Wähle dein Ziel und deine Reisedaten.</p>
+    </header>
+
+    <section class="card" aria-label="Reisesuche">
+      <p class="form-note">Die mit * markierten Felder sind Pflichtangaben.</p>
+
+      <!-- GET überträgt die benannten Felder in der Anfrage-URL. -->
+      <form action="reise.php" method="get" class="form-grid">
+        <div class="field full-width">
+          <label for="reiseziel">Reiseziel *</label>
+          <input type="text" id="reiseziel" name="reiseziel" placeholder="Zum Beispiel Lissabon" required>
+        </div>
+
+        <div class="field">
+          <label for="anreise">Anreise *</label>
+          <input type="date" id="anreise" name="anreise" required>
+        </div>
+
+        <div class="field">
+          <label for="abreise">Abreise *</label>
+          <input type="date" id="abreise" name="abreise" required>
+        </div>
+
+        <div class="field">
+          <label for="reisende">Reisende</label>
+          <select id="reisende" name="reisende">
+            <option value="1">1 Person</option>
+            <option value="2" selected>2 Personen</option>
+            <option value="3">3 Personen</option>
+            <option value="4">4 Personen</option>
+            <option value="5">5 Personen</option>
+            <option value="6">6 Personen</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="unterkunft">Unterkunft</label>
+          <select id="unterkunft" name="unterkunft">
+            <option value="hotel">Hotel</option>
+            <option value="ferienwohnung">Ferienwohnung</option>
+            <option value="camping">Camping</option>
+          </select>
+        </div>
+
+        <button type="submit" class="full-width">Reise suchen</button>
+      </form>
+    </section>
+
+    <p class="demo-note">PHP · Übungsformular. Die PHP-Auswertung ist nicht enthalten.</p>
+  </main>
+</body>
+
+</html>

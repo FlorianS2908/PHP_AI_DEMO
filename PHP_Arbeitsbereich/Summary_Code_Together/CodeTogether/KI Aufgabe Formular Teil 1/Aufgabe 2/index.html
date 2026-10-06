@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teilnehmerprofil | PHP</title>
+  <!-- Relativer Pfad: Die CSS-Datei liegt im selben Ordner. -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header>
+      <p class="kicker">Teilnehmerprofil · Gemeinsam lernen</p>
+      <h1>Als Teilnehmer anmelden</h1>
+      <p class="intro">Ein guter Start beginnt mit deinen Angaben. Bitte verwende für diese Übung nur erfundene Daten.</p>
+    </header>
+
+    <section class="card" aria-label="Anmeldeformular">
+      <p class="form-note">Die mit * markierten Felder sind Pflichtangaben.</p>
+
+      <!-- POST überträgt die Formulardaten im Anfragekörper. -->
+      <form action="teilnehmer.php" method="post">
+        <fieldset class="form-section">
+          <legend>Persönliche Angaben</legend>
+          <div class="form-grid">
+            <div class="field">
+              <label for="vorname">Vorname *</label>
+              <input type="text" id="vorname" name="vorname" autocomplete="given-name" required>
+            </div>
+
+            <div class="field">
+              <label for="nachname">Nachname *</label>
+              <input type="text" id="nachname" name="nachname" autocomplete="family-name" required>
+            </div>
+
+            <div class="field full-width">
+              <label for="email">E-Mail-Adresse *</label>
+              <!-- type=email und required aktivieren die Browserprüfung. -->
+              <input type="email" id="email" name="email" autocomplete="email" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-section">
+          <legend>Anschrift</legend>
+          <div class="form-grid">
+            <div class="field full-width">
+              <label for="strasse">Straße mit Hausnummer <span class="optional">(freiwillig)</span></label>
+              <input type="text" id="strasse" name="strasse" autocomplete="address-line1">
+            </div>
+
+            <div class="field">
+              <label for="plz">Postleitzahl <span class="optional">(freiwillig)</span></label>
+              <!-- Text statt Zahl: Eine führende Null muss erhalten bleiben. -->
+              <input type="text" id="plz" name="plz" autocomplete="postal-code" inputmode="numeric">
+            </div>
+
+            <div class="field">
+              <label for="ort">Ort <span class="optional">(freiwillig)</span></label>
+              <input type="text" id="ort" name="ort" autocomplete="address-level2">
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="form-actions">
+          <!-- Ohne checked ist diese freiwillige Auswahl anfangs nicht ausgewählt. -->
+          <label class="choice" for="kursinfos">
+            <input type="checkbox" id="kursinfos" name="kursinfos" value="ja">
+            <span>Ich möchte Informationen zu weiteren Kursen erhalten.</span>
+          </label>
+          <button type="submit">Anmeldung absenden</button>
+        </div>
+      </form>
+    </section>
+
+    <p class="demo-note">PHP · Übungsformular. Die PHP-Auswertung ist nicht enthalten.</p>
+  </main>
+</body>
+</html>

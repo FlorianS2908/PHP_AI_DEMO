@@ -1,0 +1,67 @@
+PHP – Pseudocode: Arrays und mehrseitige Formulare
+Didaktische Schreibweise: ← ist Zuweisung; FÜR JEDES ist Iteration.
+Dies ist keine verbindliche Pseudocode-Norm und kein ausführbarer PHP-Code.
+
+1. DROPDOWN AUS ASSOZIATIVEM KATALOG
+FÜR JEDES (id, ziel) IN zielkatalog
+    optionWert ← id
+    optionText ← ziel.titel
+    GIB option-Element mit HTML-kodiertem Wert und Text AUS
+ENDE FÜR
+
+2. EINGABE PRÜFEN
+fehler ← leere Liste
+WENN anfrageMethode ≠ POST ODER eingabe.reise kein Array
+    GIB Fehler zurück
+ENDE WENN
+FÜR JEDES skalares Feld IN name, ziel, personen, verpflegung, nachricht
+    WENN Feld fehlt ODER kein Textwert ist
+        Fehler an fehler anhängen
+    ENDE WENN
+ENDE FÜR
+PRÜFE Name und Nachricht auf erlaubte Länge
+PRÜFE Ziel-ID und Verpflegungs-ID gegen den serverseitigen Katalog
+PRÜFE Personen auf ganze Zahl im Bereich 1 bis 6
+extras ← übermittelte Extras, bei fehlendem Feld leere Liste
+WENN extras kein Array
+    Fehler an fehler anhängen
+SONST
+    FÜR JEDES extraId IN extras
+        PRÜFE String-Typ, erlaubte ID und keine doppelte Auswahl
+    ENDE FÜR
+ENDE WENN
+ok ← fehler ist leer
+GIB ok, geprüfte Werte und fehler ZURÜCK
+
+3. PREIS AUSRECHNEN (NUR NACH ERFOLGREICHER PRÜFUNG)
+preisProPerson ← zielkatalog[reise.ziel].preisCent
+FÜR JEDES extraId IN reise.extras
+    preisProPerson ← preisProPerson + extrakatalog[extraId].preisCent
+ENDE FÜR
+preisProPerson ← preisProPerson + verpflegungskatalog[reise.verpflegung].preisCent
+gesamtCent ← preisProPerson × reise.personen
+GIB gesamtCent ZURÜCK
+
+4. WERTE AN DIE NÄCHSTE SEITE WEITERGEBEN
+FÜR JEDES bekanntes skalares Feld IN geprüfte Reise
+    WENN das Feld auf Seite 2 NICHT erneut sichtbar angeboten wird
+        GIB Hidden-Feld mit Array-Feldnamen und HTML-kodiertem Wert AUS
+    ENDE WENN
+ENDE FÜR
+FÜR JEDES extraId IN geprüfte Reise.extras
+    GIB Hidden-Feld name='reise[extras][]' mit HTML-kodiertem extraId AUS
+ENDE FÜR
+BROWSER sendet das neue Formular ab
+NÄCHSTE SEITE prüft alle empfangenen Werte erneut und berechnet neu
+
+5. AUSGEBEN
+text ← Zielname + Zeilenumbruch + Personen + Zeilenumbruch + Gesamtpreis
+GIB HTML-kodierten Text zwischen den Tags einer readonly-Textarea AUS
+FÜR JEDE Rechnungsposition
+    GIB eine HTML-Tabellenzeile mit HTML-kodierten Beschriftungen AUS
+ENDE FÜR
+GIB formatierten Gesamtpreis in output AUS
+
+MERKE
+Keine Session in dieser Demo. Keine Annahme über vorherige Requests.
+Preise und Kataloge niemals ungeprüft vom Browser übernehmen.

@@ -1,0 +1,67 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pseudocode · PHP</title><link rel="stylesheet" href="assets/kurs.css"><link rel="stylesheet" href="assets/php-ergaenzung.css"></head><body><a class="skip" href="#inhalt">Zum Inhalt</a><div class="shell"><aside class="sidebar"><div class="brand"><div class="brand-mark">10a</div><div><small>PHP · VERTIEFUNG</small><strong>Webwerkstatt</strong></div></div><a class="back" href="index.html">← Materialübersicht</a><button class="sidebar-toggle" aria-expanded="false" aria-controls="side-content" type="button">Navigation öffnen</button><div id="side-content"><nav aria-label="Materialien"><a class="btn" href="webvariante.html">Webvariante</a><a class="btn" href="demo-start.html">Demos starten</a><a class="btn" href="quelltexte/index.html">Quelltexte</a><a class="btn" href="pseudocode.html">Pseudocode</a><a class="btn" href="aufgaben.html">Aufgaben</a><a class="btn" href="dozent/loesungen.html">Lösungen</a><a class="btn" href="dozent/leitfaden.html">Dozentenleitfaden</a><a class="btn" href="quellen.html">Quellen & Abgrenzung</a></nav><p class="aside-note">Arrays → Formular → POST → neue Ausgabe.</p></div></aside><main id="inhalt" class="main"><div class="topline"><span>PHP · Arrays und mehrseitige Formulare</span><span>Ohne Session / Cookie</span></div><header class="hero"><div class="eyebrow">PHP · PHP-Vertiefung</div><h1>Erst den Ablauf formulieren.</h1><p>Von der fachlichen Idee zum ausführbaren PHP-Code.</p></header><div class="codebox"><div class="codebar"><span>Pseudocode</span><button type="button" data-copy>Code kopieren</button></div><pre><code>PHP – Pseudocode: Arrays und mehrseitige Formulare
+Didaktische Schreibweise: ← ist Zuweisung; FÜR JEDES ist Iteration.
+Dies ist keine verbindliche Pseudocode-Norm und kein ausführbarer PHP-Code.
+
+1. DROPDOWN AUS ASSOZIATIVEM KATALOG
+FÜR JEDES (id, ziel) IN zielkatalog
+    optionWert ← id
+    optionText ← ziel.titel
+    GIB option-Element mit HTML-kodiertem Wert und Text AUS
+ENDE FÜR
+
+2. EINGABE PRÜFEN
+fehler ← leere Liste
+WENN anfrageMethode ≠ POST ODER eingabe.reise kein Array
+    GIB Fehler zurück
+ENDE WENN
+FÜR JEDES skalares Feld IN name, ziel, personen, verpflegung, nachricht
+    WENN Feld fehlt ODER kein Textwert ist
+        Fehler an fehler anhängen
+    ENDE WENN
+ENDE FÜR
+PRÜFE Name und Nachricht auf erlaubte Länge
+PRÜFE Ziel-ID und Verpflegungs-ID gegen den serverseitigen Katalog
+PRÜFE Personen auf ganze Zahl im Bereich 1 bis 6
+extras ← übermittelte Extras, bei fehlendem Feld leere Liste
+WENN extras kein Array
+    Fehler an fehler anhängen
+SONST
+    FÜR JEDES extraId IN extras
+        PRÜFE String-Typ, erlaubte ID und keine doppelte Auswahl
+    ENDE FÜR
+ENDE WENN
+ok ← fehler ist leer
+GIB ok, geprüfte Werte und fehler ZURÜCK
+
+3. PREIS AUSRECHNEN (NUR NACH ERFOLGREICHER PRÜFUNG)
+preisProPerson ← zielkatalog[reise.ziel].preisCent
+FÜR JEDES extraId IN reise.extras
+    preisProPerson ← preisProPerson + extrakatalog[extraId].preisCent
+ENDE FÜR
+preisProPerson ← preisProPerson + verpflegungskatalog[reise.verpflegung].preisCent
+gesamtCent ← preisProPerson × reise.personen
+GIB gesamtCent ZURÜCK
+
+4. WERTE AN DIE NÄCHSTE SEITE WEITERGEBEN
+FÜR JEDES bekanntes skalares Feld IN geprüfte Reise
+    WENN das Feld auf Seite 2 NICHT erneut sichtbar angeboten wird
+        GIB Hidden-Feld mit Array-Feldnamen und HTML-kodiertem Wert AUS
+    ENDE WENN
+ENDE FÜR
+FÜR JEDES extraId IN geprüfte Reise.extras
+    GIB Hidden-Feld name=&#x27;reise[extras][]&#x27; mit HTML-kodiertem extraId AUS
+ENDE FÜR
+BROWSER sendet das neue Formular ab
+NÄCHSTE SEITE prüft alle empfangenen Werte erneut und berechnet neu
+
+5. AUSGEBEN
+text ← Zielname + Zeilenumbruch + Personen + Zeilenumbruch + Gesamtpreis
+GIB HTML-kodierten Text zwischen den Tags einer readonly-Textarea AUS
+FÜR JEDE Rechnungsposition
+    GIB eine HTML-Tabellenzeile mit HTML-kodierten Beschriftungen AUS
+ENDE FÜR
+GIB formatierten Gesamtpreis in output AUS
+
+MERKE
+Keine Session in dieser Demo. Keine Annahme über vorherige Requests.
+Preise und Kataloge niemals ungeprüft vom Browser übernehmen.</code></pre></div><a class="btn" href="pseudocode.txt">Als Textdatei öffnen</a></main></div><script src="assets/kurs.js"></script></body></html>

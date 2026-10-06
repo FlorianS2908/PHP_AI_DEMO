@@ -1,0 +1,17 @@
+{
+  "eingabe": {
+    "name": "Alex Beispiel",
+    "email": "alex@example.com",
+    "raum": "team",
+    "personen": "8",
+    "beginn": "@future_start",
+    "ende": "@future_end",
+    "bestuhlung": "tische",
+    "ausstattung": [
+      "beamer"
+    ],
+    "notiz": "Bitte lüften.",
+    "bestaetigung": "ja"
+  },
+  "erwartete_gesamtsumme": "135,00 €"
+}

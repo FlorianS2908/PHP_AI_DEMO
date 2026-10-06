@@ -1,0 +1,58 @@
+PRÜFBERICHT – KORRIGIERTES HTML-TAG-TOOL
+Stand: 28.09.2026
+======================================
+
+KORREKTUR GEGENÜBER DER HOCHGELADENEN ORIGINAL-ZIP
+- Die sechs nicht mitgelieferten CSS-/JS-Ressourcen außerhalb des
+  Tool-Ordners werden nicht mehr angefordert.
+- Auch fachinfo.html lädt die lokale Basis statt ../global.css.
+- tool-basis.css enthält die benötigten Designvariablen und Grundstile.
+- Navigation und mobile Menübedienung sind lokal eingebunden.
+- Der dunkelblaue Kopfbereich ist wieder sichtbar; die weiße Schrift
+  steht nicht mehr auf einem nahezu weißen Hintergrund.
+- START.cmd und starten.py sind als optionale lokale HTTP-Starter enthalten.
+
+ERNEUT AUSGEFÜHRTE PRÜFUNGEN
+- Alle 11 Ressourcenverweise beider HTML-Seiten zeigen auf vorhandene
+  Dateien innerhalb des Tool-Ordners (9 unterschiedliche Asset-Dateien).
+- Alle 5 JavaScript-Dateien bestehen node --check.
+- Die Python-Startdatei besteht die Syntaxprüfung.
+- Beide HTML-Seiten und die 9 unterschiedlichen Assets wurden über einen
+  lokalen Python-HTTP-Testserver geladen: jeweils HTTP 200; die Inhalte
+  stimmen bytegenau mit den Dateien überein.
+- 5 Tagesbereiche, 58 Tag-Karten und 290 CSS-Auswahlvarianten vorhanden.
+- Die HTML-Inhalte aller 58 Karten stimmen mit dem Original überein.
+- fachinfo-daten.js ist bytegenau identisch zum hochgeladenen Original.
+
+DARSTELLUNGS- UND BEDIENUNGSPRÜFUNG
+Im verwalteten Chromium wurden DOM-Testseiten mit den tatsächlichen
+HTML-, CSS- und JavaScript-Inhalten verwendet.
+- Ansicht bei 973 x 875 Pixeln geprüft.
+- Gemessener Kopfbereich-Hintergrund: rgb(0, 57, 100).
+- Alle 290 CSS-Umschaltungen zeigen den jeweils passenden Codeblock.
+- Mobiles Menü bei 390 x 844 Pixeln öffnet und schließt korrekt.
+- Tagesauswahl öffnet den zugehörigen Bereich und schließt das mobile Menü.
+- Kein horizontaler Überlauf der Hauptseite bei 390 Pixeln Breite.
+- Experimentierlabor mit dem Datensatz info-tag-01-html geprüft:
+  Initialisierung, Vorschaugröße, CSS-Anwenden und Zurücksetzen.
+- Keine JavaScript-Ausnahmen in diesen DOM-Tests.
+
+TESTGRENZEN
+Die verwaltete Browserumgebung blockiert direkte file://-Navigation mit
+ERR_BLOCKED_BY_ADMINISTRATOR. Die Darstellungs-/Bedienungstests sind daher
+keine vollständigen Ende-zu-Ende-Tests der lokalen Dateinavigation.
+CSS und JS wurden nur für den Test direkt in die Browser-Testseiten
+eingefügt; die ausgelieferten Dateien enthalten normale relative Pfade.
+Der Datensatz für den Labor-Test wurde in der DOM-Testseite vorgegeben,
+weil die Testseite keine fachinfo.html-URL mit id-Parameter hat.
+Der echte Fensterwechsel in Windows/Edge und START.cmd unter Windows
+wurden in dieser erneuten Prüfung nicht ausgeführt. Es wurden keine
+Browser-Sicherheitsrichtlinien verändert oder ausgeschaltet.
+
+KURSINTEGRATION
+Die fehlenden Originaldateien des Gesamtkurses lagen nicht vor.
+Die lokalen Grundstile sind ein Ersatz für dieses Tool und keine
+Rekonstruktion der unbekannten zentralen Kursdateien. Kursweite
+Fortschrittsspeicherung ist nicht eingebunden; vorhandene Fortschritte
+werden nicht gelöscht. Andere Kursordner bleiben unverändert.
+Der Link zur Lernübersicht kann in tool-config.js eingestellt werden.

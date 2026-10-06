@@ -1,0 +1,921 @@
+{
+  "php_version": "8.4.23",
+  "umgebung": "PHP Built-in-Server, Linux; XAMPP nicht ausgeführt",
+  "testzeit": "2026-10-01T09:18:14.604360+02:00",
+  "tests": [
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Formular direkt öffnen",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "POST-Ziel und Methode",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Sichtbare zugeordnete Labels",
+      "erfolgreich": true,
+      "details": "[]"
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Lokale Icons vorhanden",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Direktaufruf Auswertung -> Formular",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Gültige Eingabe und erwartete Summe",
+      "erfolgreich": true,
+      "details": "272,00 €"
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Leeres POST: Fehler statt Absturz",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Mehrere Fehler zusammen prüfen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Alle Fehler gleichzeitig sichtbar",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Ungültige E-Mail zurückweisen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Gültige Eingabe erhalten / ungültige leeren",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Array statt Name robust ablehnen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "HTML-Ausgabe maskiert Text",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Unbekannte Option: kurs",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Unbekannte Option: format",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Unbekannte Mehrfachauswahl: extras",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Text statt Checkbox-Liste: extras",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Verschachtelte Checkbox-Liste: extras",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Manipulierte Preise werden ignoriert",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Null abweisen: personen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Negative Zahl abweisen: personen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Exponentialschreibweise abweisen: personen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Nicht numerisch abweisen: personen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Formular direkt öffnen",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "POST-Ziel und Methode",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Sichtbare zugeordnete Labels",
+      "erfolgreich": true,
+      "details": "[]"
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Lokale Icons vorhanden",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Direktaufruf Auswertung -> Formular",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Gültige Eingabe und erwartete Summe",
+      "erfolgreich": true,
+      "details": "104,00 €"
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Leeres POST: Fehler statt Absturz",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Mehrere Fehler zusammen prüfen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Alle Fehler gleichzeitig sichtbar",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Ungültige E-Mail zurückweisen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Gültige Eingabe erhalten / ungültige leeren",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Array statt Name robust ablehnen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "HTML-Ausgabe maskiert Text",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Unbekannte Option: kontaktweg",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Unbekannte Option: radtyp",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Unbekannte Option: prioritaet",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Unbekannte Mehrfachauswahl: leistungen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Text statt Checkbox-Liste: leistungen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Verschachtelte Checkbox-Liste: leistungen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Manipulierte Preise werden ignoriert",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Null abweisen: budget",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Negative Zahl abweisen: budget",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Exponentialschreibweise abweisen: budget",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Nicht numerisch abweisen: budget",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Unmögliches Datum: abgabe",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Formular direkt öffnen",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "POST-Ziel und Methode",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Sichtbare zugeordnete Labels",
+      "erfolgreich": true,
+      "details": "[]"
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Lokale Icons vorhanden",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Direktaufruf Auswertung -> Formular",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Gültige Eingabe und erwartete Summe",
+      "erfolgreich": true,
+      "details": "135,00 €"
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Leeres POST: Fehler statt Absturz",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Mehrere Fehler zusammen prüfen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Alle Fehler gleichzeitig sichtbar",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Ungültige E-Mail zurückweisen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Gültige Eingabe erhalten / ungültige leeren",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Array statt Name robust ablehnen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "HTML-Ausgabe maskiert Text",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Unbekannte Option: raum",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Unbekannte Option: bestuhlung",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Unbekannte Mehrfachauswahl: ausstattung",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Text statt Checkbox-Liste: ausstattung",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Verschachtelte Checkbox-Liste: ausstattung",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Manipulierte Preise werden ignoriert",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Null abweisen: personen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Negative Zahl abweisen: personen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Exponentialschreibweise abweisen: personen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Nicht numerisch abweisen: personen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Unmögliches Datum: beginn",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Unmögliches Datum: ende",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Formular direkt öffnen",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "POST-Ziel und Methode",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Sichtbare zugeordnete Labels",
+      "erfolgreich": true,
+      "details": "[]"
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Lokale Icons vorhanden",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Direktaufruf Auswertung -> Formular",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Gültige Eingabe und erwartete Summe",
+      "erfolgreich": true,
+      "details": "281,00 €"
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Leeres POST: Fehler statt Absturz",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Mehrere Fehler zusammen prüfen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Alle Fehler gleichzeitig sichtbar",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Ungültige E-Mail zurückweisen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Gültige Eingabe erhalten / ungültige leeren",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Array statt Name robust ablehnen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "HTML-Ausgabe maskiert Text",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Unbekannte Option: modell",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Unbekannte Option: groesse",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Unbekannte Option: druckposition",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Unbekannte Mehrfachauswahl: extras",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Text statt Checkbox-Liste: extras",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Verschachtelte Checkbox-Liste: extras",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Manipulierte Preise werden ignoriert",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Null abweisen: menge",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Negative Zahl abweisen: menge",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Exponentialschreibweise abweisen: menge",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Nicht numerisch abweisen: menge",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Unmögliches Datum: wunschtermin",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Formular direkt öffnen",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "POST-Ziel und Methode",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Sichtbare zugeordnete Labels",
+      "erfolgreich": true,
+      "details": "[]"
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Lokale Icons vorhanden",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Direktaufruf Auswertung -> Formular",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Gültige Eingabe und erwartete Summe",
+      "erfolgreich": true,
+      "details": "1.024,00 €"
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Leeres POST: Fehler statt Absturz",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Mehrere Fehler zusammen prüfen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Alle Fehler gleichzeitig sichtbar",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Ungültige E-Mail zurückweisen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Gültige Eingabe erhalten / ungültige leeren",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Array statt Name robust ablehnen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "HTML-Ausgabe maskiert Text",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Unbekannte Option: zweck",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Unbekannte Option: cpu",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Unbekannte Option: ram",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Unbekannte Option: grafik",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Unbekannte Option: speicher",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Unbekannte Mehrfachauswahl: extras",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Text statt Checkbox-Liste: extras",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Verschachtelte Checkbox-Liste: extras",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Manipulierte Preise werden ignoriert",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Null abweisen: budget",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Negative Zahl abweisen: budget",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Exponentialschreibweise abweisen: budget",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Nicht numerisch abweisen: budget",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Online + Skript nicht kombinieren",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Optionale Extras dürfen fehlen",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Bruchteile einer Person ablehnen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "01_Workshop",
+      "test": "Doppelte Extras nur einmal berechnen",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Telefon bedingt verpflichtend",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Telefonischer Kontakt gültig",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Vergangene Abgabe ablehnen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Abgabe heute erlaubt",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Mindestens eine Werkstattleistung",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Budgetüberschreitung nur Warnung",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "02_Fahrradwerkstatt",
+      "test": "Budget exakt erreicht: keine Warnung",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Raumkapazität beachten",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Ende gleich Beginn ablehnen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Maximaldauer überschritten",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Maximaldauer genau erlaubt",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "03_Raumreservierung",
+      "test": "Raumkapazität genau erlaubt",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Drucktext bedingt verpflichtend",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Druckposition bedingt verpflichtend",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Ohne Druck keine Druckpflicht",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Ungültigen CSS-Farbwert abweisen",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Vorlauf unterschritten",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Vorlauf genau erreicht erlaubt",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "04_Teamshirt",
+      "test": "Kein Rabatt unter Staffelgrenze",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Gaming-Kombination mehrfach fehlerhaft",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Beide Kompatibilitätsfehler sichtbar",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Kreativarbeit mit zu wenig RAM",
+      "erfolgreich": true,
+      "details": "422"
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "Office mit integrierter Grafik erlaubt",
+      "erfolgreich": true,
+      "details": ""
+    },
+    {
+      "aufgabe": "05_PC_Konfigurator",
+      "test": "PC-Budgetwarnung mit Differenz",
+      "erfolgreich": true,
+      "details": ""
+    }
+  ],
+  "gesamt": 152,
+  "bestanden": 152
+}

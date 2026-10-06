@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Sonnenseite | PHP</title>
+  <!-- Relativer Pfad: Die CSS-Datei liegt im selben Ordner. -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header>
+      <p class="kicker">Café Sonnenseite · Zeit zum Genießen</p>
+      <h1>Dein Tisch im Café Sonnenseite</h1>
+      <p class="intro">Für eine kleine Pause oder ein gemütliches Treffen: Sende uns deinen Tischwunsch.</p>
+    </header>
+
+    <div class="reservation-layout">
+      <aside class="info-panel" aria-labelledby="hinweis-titel">
+        <p class="info-number" aria-hidden="true">01 /</p>
+        <h2 id="hinweis-titel">Erst anfragen.<br>Dann genießen.</h2>
+        <p>Wir prüfen deine Anfrage und melden uns anschließend bei dir. Deine Reservierung ist erst nach unserer Bestätigung verbindlich.</p>
+      </aside>
+
+      <section class="card" aria-label="Reservierungsformular">
+        <p class="form-note">Die mit * markierten Felder sind Pflichtangaben.</p>
+
+        <form action="reservierung.php" method="post" class="form-grid">
+          <div class="field full-width">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+
+          <div class="field full-width">
+            <label for="email">E-Mail-Adresse *</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+
+          <div class="field">
+            <label for="datum">Datum *</label>
+            <input type="date" id="datum" name="datum" required>
+          </div>
+
+          <div class="field">
+            <label for="uhrzeit">Uhrzeit *</label>
+            <input type="time" id="uhrzeit" name="uhrzeit" required>
+          </div>
+
+          <div class="field full-width">
+            <label for="personen">Personenzahl *</label>
+            <select id="personen" name="personen" required>
+              <option value="" disabled selected>Bitte auswählen</option>
+              <option value="1">1 Person</option>
+              <option value="2">2 Personen</option>
+              <option value="3">3 Personen</option>
+              <option value="4">4 Personen</option>
+              <option value="5">5 Personen</option>
+              <option value="6">6 Personen</option>
+              <option value="7">7 Personen</option>
+              <option value="8">8 Personen</option>
+            </select>
+          </div>
+
+          <fieldset class="seat-options full-width">
+            <legend>Sitzplatzwunsch</legend>
+            <!-- Gleicher name: Es kann nur ein Radiobutton gewählt werden. -->
+            <div class="option-list">
+              <label class="choice" for="sitzplatz_innen">
+                <input type="radio" id="sitzplatz_innen" name="sitzplatz" value="innen">
+                <span>Innenbereich</span>
+              </label>
+              <label class="choice" for="sitzplatz_terrasse">
+                <input type="radio" id="sitzplatz_terrasse" name="sitzplatz" value="terrasse">
+                <span>Terrasse</span>
+              </label>
+              <!-- Änderungsauftrag: Dritte Option als Ausgangswert. -->
+              <label class="choice" for="sitzplatz_egal">
+                <input type="radio" id="sitzplatz_egal" name="sitzplatz" value="keine_praeferenz" checked>
+                <span>Keine Präferenz</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="field full-width">
+            <label for="wuensche">Zusätzliche Wünsche <span class="optional">(freiwillig)</span></label>
+            <textarea id="wuensche" name="wuensche" rows="4"
+                      placeholder="Gibt es etwas, das wir wissen sollten?"></textarea>
+          </div>
+
+          <div class="button-row full-width">
+            <button type="submit">Reservierung anfragen</button>
+            <!-- reset stellt die im HTML hinterlegten Ausgangswerte wieder her. -->
+            <button type="reset" class="secondary">Zurücksetzen</button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <p class="demo-note">PHP · Übungsformular. Die PHP-Auswertung ist nicht enthalten.</p>
+  </main>
+</body>
+</html>

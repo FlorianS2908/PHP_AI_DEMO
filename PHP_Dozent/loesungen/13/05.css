@@ -1,0 +1,1 @@
+ :root{--akzent:#0074c8}.karten{display:flex;gap:20px;flex-wrap:wrap}.karten article{flex:1 1 220px;border-top:5px solid var(--akzent)}a:focus-visible{outline:3px solid #b44f00;outline-offset:3px}

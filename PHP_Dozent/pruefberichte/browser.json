@@ -1,0 +1,87 @@
+{
+  "method": "Chromium headless; locally generated HTML with local assets inlined via set_content. Direct file/http navigation is blocked by test-environment policy.",
+  "pools": [
+    {
+      "pool": "PHP-01",
+      "questions": 12,
+      "score": "12 von 12 Punkten"
+    },
+    {
+      "pool": "PHP-02",
+      "questions": 12,
+      "score": "12 von 12 Punkten"
+    },
+    {
+      "pool": "PHP-03",
+      "questions": 12,
+      "score": "12 von 12 Punkten"
+    },
+    {
+      "pool": "PHP-04",
+      "questions": 12,
+      "score": "12 von 12 Punkten"
+    },
+    {
+      "pool": "PHP-05",
+      "questions": 12,
+      "score": "12 von 12 Punkten"
+    },
+    {
+      "pool": "PHP-06",
+      "questions": 12,
+      "score": "12 von 12 Punkten"
+    },
+    {
+      "pool": "PHP-07",
+      "questions": 12,
+      "score": "12 von 12 Punkten"
+    },
+    {
+      "pool": "PHP-08",
+      "questions": 12,
+      "score": "12 von 12 Punkten"
+    },
+    {
+      "pool": "PHP-09",
+      "questions": 12,
+      "score": "12 von 12 Punkten"
+    },
+    {
+      "pool": "PHP-10",
+      "questions": 12,
+      "score": "12 von 12 Punkten"
+    },
+    {
+      "pool": "PHP-11",
+      "questions": 12,
+      "score": "12 von 12 Punkten"
+    },
+    {
+      "pool": "PHP-12",
+      "questions": 12,
+      "score": "12 von 12 Punkten"
+    },
+    {
+      "pool": "PHP-13",
+      "questions": 12,
+      "score": "12 von 12 Punkten"
+    },
+    {
+      "pool": "PHP-test-frontend",
+      "questions": 45,
+      "score": "45 von 45 Punkten"
+    }
+  ],
+  "checks": [
+    "Result export via browser download succeeded; score 12/12.",
+    "Wrong answer + partial multiple choice + unanswered questions: 0/12. Answers persist across navigation; skip finds unanswered question.",
+    "Participant quiz imported PHP-09.json successfully.",
+    "Invalid JSON and duplicate IDs rejected without damaging available pools.",
+    "Real elapsed timer test (1.2 seconds): automatic finish and correct 0/1 score.",
+    "Import markup: script/event payloads do not execute; code remains visible text.",
+    "All 208 slides: keyboard progression, Home/End, single slide vs reading mode, print mode visibility and desktop horizontal overflow checked.",
+    "Desktop (1440px) and mobile (390px) views checked; mobile menu toggles; no horizontal page overflow.",
+    "Standalone web course: 198 slides present and keyboard navigation works."
+  ],
+  "page_errors": []
+}

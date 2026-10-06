@@ -1,0 +1,299 @@
+{
+  "id": "PHP-13",
+  "name": "PHP · 13 · CSS-Layout ergänzen",
+  "description": "12 Fragen · Grundlagen, Anwendung, Zuordnung und Reihenfolge",
+  "durationMinutes": 20,
+  "instructions": "Lies die Angaben genau. Bei Mehrfachwahl steht die Zahl richtiger Antworten dabei. Jede vollständig richtig gelöste Frage zählt einen Punkt. Keine Teilpunkte. Übungspool mit sichtbaren Lösungsschlüsseln im JSON.",
+  "topicLabels": {
+    "01": "User Interfaces",
+    "02": "Qualitätssicherung",
+    "03": "UX beschreiben",
+    "04": "UX gestalten",
+    "05": "HTML-Grundlagen",
+    "06": "HTML-Inhalte",
+    "07": "Struktur und Navigation",
+    "08": "Formulare",
+    "09": "CSS und Selektoren",
+    "10": "Farben und Hintergründe",
+    "11": "PHP und Formulardaten",
+    "12": "PHP und Datenbank",
+    "13": "CSS-Layout ergänzen"
+  },
+  "difficultyLabels": {
+    "leicht": "Grundlagen",
+    "mittel": "Anwendung"
+  },
+  "questions": [
+    {
+      "id": "PHP-13-01",
+      "type": "single",
+      "topic": "13",
+      "difficulty": "leicht",
+      "text": "Wo liegt padding?",
+      "options": [
+        "Zwischen Inhalt und Rahmen",
+        "Nur außerhalb des Rahmens",
+        "Außerhalb des Außenabstands",
+        "Immer zwischen zwei Dateien"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Padding ist der Innenabstand.",
+      "source": "Webgrundlagen_tag_01_Webvariante_erweitert.html · CSS-Rolle, Box-Modell, Einheiten, Variablen, Layout und DevTools"
+    },
+    {
+      "id": "PHP-13-02",
+      "type": "single",
+      "topic": "13",
+      "difficulty": "mittel",
+      "text": "Welche Größe ist der Inhaltsbereich?<pre><code>.karte { box-sizing: border-box; width: 280px;\n  padding: 20px; border: 2px solid navy; }</code></pre>",
+      "options": [
+        "236px",
+        "324px",
+        "280px",
+        "240px"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "280 − 2×20 − 2×2 = 236.",
+      "source": "Webgrundlagen_tag_01_Webvariante_erweitert.html · CSS-Rolle, Box-Modell, Einheiten, Variablen, Layout und DevTools"
+    },
+    {
+      "id": "PHP-13-03",
+      "type": "single",
+      "topic": "13",
+      "difficulty": "leicht",
+      "text": "Worauf bezieht sich rem bei einer Schriftgrößenangabe?",
+      "options": [
+        "Auf die Dateigröße",
+        "Immer auf die Fensterbreite",
+        "Auf die Schriftgröße des Wurzelelements",
+        "Auf die Anzahl Karten"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "rem ist eine wurzelbezogene relative Einheit.",
+      "source": "Webgrundlagen_tag_01_Webvariante_erweitert.html · CSS-Rolle, Box-Modell, Einheiten, Variablen, Layout und DevTools"
+    },
+    {
+      "id": "PHP-13-04",
+      "type": "single",
+      "topic": "13",
+      "difficulty": "leicht",
+      "text": "Wie wird die Custom Property --akzent gelesen?",
+      "options": [
+        "var(--akzent)",
+        "url(--akzent) als Farbzugriff",
+        "echo(--akzent)",
+        "SELECT akzent"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "var liest den Wert einer Custom Property.",
+      "source": "Webgrundlagen_tag_01_Webvariante_erweitert.html · CSS-Rolle, Box-Modell, Einheiten, Variablen, Layout und DevTools"
+    },
+    {
+      "id": "PHP-13-05",
+      "type": "single",
+      "topic": "13",
+      "difficulty": "leicht",
+      "text": "Wo wird display: flex gesetzt, um dessen direkte Kinder anzuordnen?",
+      "options": [
+        "Nur an einer entfernten Datenbank",
+        "Am Container",
+        "Nur am Seitentitel",
+        "Immer an jedem Textzeichen"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Die unmittelbaren Kinder werden dadurch Flex-Elemente.",
+      "source": "Webgrundlagen_tag_01_Webvariante_erweitert.html · CSS-Rolle, Box-Modell, Einheiten, Variablen, Layout und DevTools"
+    },
+    {
+      "id": "PHP-13-06",
+      "type": "single",
+      "topic": "13",
+      "difficulty": "leicht",
+      "text": "Welche Eigenschaft erlaubt Umbruch in der gezeigten Flex-Navigation?",
+      "options": [
+        "flex-wrap: wrap",
+        "background-size: cover",
+        "font-weight: bold",
+        "white-space: nowrap"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "flex-wrap steuert die Möglichkeit mehrerer Flex-Zeilen.",
+      "source": "Webgrundlagen_tag_01_Webvariante_erweitert.html · CSS-Rolle, Box-Modell, Einheiten, Variablen, Layout und DevTools"
+    },
+    {
+      "id": "PHP-13-07",
+      "type": "single",
+      "topic": "13",
+      "difficulty": "leicht",
+      "text": "Was ist ein aussagekräftiger Responsive-Test?",
+      "options": [
+        "Nur den Dateinamen lesen",
+        "Dieselbe Seite bei mehreren Breiten untersuchen",
+        "Nur die Anzahl CSS-Regeln zählen",
+        "Nur den Browser-Tab schließen"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Tatsächliche Anordnung und mögliche Überläufe müssen beobachtet werden.",
+      "source": "Webgrundlagen_tag_01_Webvariante_erweitert.html · CSS-Rolle, Box-Modell, Einheiten, Variablen, Layout und DevTools"
+    },
+    {
+      "id": "PHP-13-08",
+      "type": "single",
+      "topic": "13",
+      "difficulty": "leicht",
+      "text": "Wozu dient ein sichtbarer Tastaturfokus?",
+      "options": [
+        "Er macht das aktuell fokussierte Element erkennbar.",
+        "Er startet einen Server.",
+        "Er verhindert jede Mausbedienung.",
+        "Er ersetzt sämtliche Beschriftungen."
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Erkennbarkeit unterstützt Tastaturbedienung.",
+      "source": "Webgrundlagen_tag_01_Webvariante_erweitert.html · CSS-Rolle, Box-Modell, Einheiten, Variablen, Layout und DevTools"
+    },
+    {
+      "id": "PHP-13-09",
+      "type": "multiple",
+      "topic": "13",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Bestandteile werden bei border-box in eine feste Breite einbezogen?",
+      "options": [
+        "Border",
+        "Padding",
+        "Margin",
+        "Der Abstand zum Fenster unabhängig von Layout"
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "explanation": "Außenabstand bleibt außerhalb der festgelegten Boxbreite.",
+      "source": "Webgrundlagen_tag_01_Webvariante_erweitert.html · CSS-Rolle, Box-Modell, Einheiten, Variablen, Layout und DevTools"
+    },
+    {
+      "id": "PHP-13-10",
+      "type": "multiple",
+      "topic": "13",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Beobachtungen sind mit DevTools sinnvoll?",
+      "options": [
+        "Welche CSS-Regel tatsächlich wirkt",
+        "Ob eine nie ausgeführte Buchung bezahlt ist",
+        "Welche Größe ein Element besitzt",
+        "Ob eine nicht vorhandene Datei sicher geladen wurde"
+      ],
+      "correct": [
+        0,
+        2
+      ],
+      "explanation": "Browserwerkzeuge zeigen angewendete Regeln und berechnete Größen.",
+      "source": "Webgrundlagen_tag_01_Webvariante_erweitert.html · CSS-Rolle, Box-Modell, Einheiten, Variablen, Layout und DevTools"
+    },
+    {
+      "id": "PHP-13-11",
+      "type": "matching-postits",
+      "topic": "13",
+      "difficulty": "mittel",
+      "text": "Ordne die Begriffe ihren Beschreibungen zu.",
+      "items": [
+        {
+          "id": "i0",
+          "text": "padding"
+        },
+        {
+          "id": "i1",
+          "text": "border"
+        },
+        {
+          "id": "i2",
+          "text": "margin"
+        }
+      ],
+      "targets": [
+        {
+          "id": "t2",
+          "text": "Außenabstand"
+        },
+        {
+          "id": "t1",
+          "text": "Rahmen"
+        },
+        {
+          "id": "t0",
+          "text": "Innenabstand"
+        }
+      ],
+      "pairs": [
+        {
+          "leftId": "i0",
+          "rightId": "t0"
+        },
+        {
+          "leftId": "i1",
+          "rightId": "t1"
+        },
+        {
+          "leftId": "i2",
+          "rightId": "t2"
+        }
+      ],
+      "explanation": "padding: Innenabstand; border: Rahmen; margin: Außenabstand",
+      "source": "Webgrundlagen_tag_01_Webvariante_erweitert.html"
+    },
+    {
+      "id": "PHP-13-12",
+      "type": "sql-order",
+      "topic": "13",
+      "difficulty": "mittel",
+      "text": "Ordne den im Kurs vorgegebenen Arbeitsablauf. Gemeint ist diese didaktische Reihenfolge, nicht die einzig mögliche Vorgehensweise in jedem Projekt.",
+      "blocks": [
+        {
+          "id": "b4",
+          "text": "Tastaturbedienung prüfen"
+        },
+        {
+          "id": "b3",
+          "text": "Schmale Ansicht prüfen"
+        },
+        {
+          "id": "b2",
+          "text": "Wirkung vergleichen"
+        },
+        {
+          "id": "b1",
+          "text": "Eine Eigenschaft ändern"
+        },
+        {
+          "id": "b0",
+          "text": "Ausgangsansicht beobachten"
+        }
+      ],
+      "correctOrder": [
+        "b0",
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "explanation": "Ausgangsansicht beobachten → Eine Eigenschaft ändern → Wirkung vergleichen → Schmale Ansicht prüfen → Tastaturbedienung prüfen",
+      "source": "Webgrundlagen_tag_01_Webvariante_erweitert.html"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "test": "Mini-Demo echter POST erfolgreich",
+    "ok": true
+  },
+  {
+    "test": "Mehrfachauswahl als passende Namen",
+    "ok": true
+  },
+  {
+    "test": "Nachricht mehrzeilig erhalten",
+    "ok": true
+  },
+  {
+    "test": "HTML nicht als Skript im DOM",
+    "ok": true
+  },
+  {
+    "test": "Kein Cookie gesetzt",
+    "ok": true
+  },
+  {
+    "test": "Ohne Extras gültig",
+    "ok": true
+  },
+  {
+    "test": "Ungültige Datenstruktur abgefangen",
+    "ok": true
+  }
+]

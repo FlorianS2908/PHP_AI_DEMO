@@ -1,0 +1,299 @@
+{
+  "id": "PHP-08",
+  "name": "PHP · 08 · Formulare",
+  "description": "12 Fragen · Grundlagen, Anwendung, Zuordnung und Reihenfolge",
+  "durationMinutes": 20,
+  "instructions": "Lies die Angaben genau. Bei Mehrfachwahl steht die Zahl richtiger Antworten dabei. Jede vollständig richtig gelöste Frage zählt einen Punkt. Keine Teilpunkte. Übungspool mit sichtbaren Lösungsschlüsseln im JSON.",
+  "topicLabels": {
+    "01": "User Interfaces",
+    "02": "Qualitätssicherung",
+    "03": "UX beschreiben",
+    "04": "UX gestalten",
+    "05": "HTML-Grundlagen",
+    "06": "HTML-Inhalte",
+    "07": "Struktur und Navigation",
+    "08": "Formulare",
+    "09": "CSS und Selektoren",
+    "10": "Farben und Hintergründe",
+    "11": "PHP und Formulardaten",
+    "12": "PHP und Datenbank",
+    "13": "CSS-Layout ergänzen"
+  },
+  "difficultyLabels": {
+    "leicht": "Grundlagen",
+    "mittel": "Anwendung"
+  },
+  "questions": [
+    {
+      "id": "PHP-08-01",
+      "type": "single",
+      "topic": "08",
+      "difficulty": "leicht",
+      "text": "Was beschreibt action am form?",
+      "options": [
+        "Die Textfarbe",
+        "Das Ziel der Übermittlung",
+        "Die eindeutige Feld-ID",
+        "Die Zahl der Radio-Optionen"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "action benennt die verarbeitende Adresse.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 14–32"
+    },
+    {
+      "id": "PHP-08-02",
+      "type": "single",
+      "topic": "08",
+      "difficulty": "mittel",
+      "text": "Welcher Wert ist hier der übermittelte Feldname?<pre><code>&lt;label for=&quot;ziel&quot;&gt;Ort&lt;/label&gt;\n&lt;input id=&quot;ziel&quot; name=&quot;reiseziel&quot; type=&quot;text&quot;&gt;</code></pre>",
+      "options": [
+        "Ort",
+        "ziel",
+        "text",
+        "reiseziel"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "name ist der Übermittlungsname.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 14–32"
+    },
+    {
+      "id": "PHP-08-03",
+      "type": "single",
+      "topic": "08",
+      "difficulty": "leicht",
+      "text": "Welche Angaben stellen die ausdrückliche Label-Zuordnung her?",
+      "options": [
+        "for am label und id am Feld",
+        "rows und cols",
+        "href und method",
+        "name am label und color am Feld"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "for verweist auf die Feld-ID.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 14–32"
+    },
+    {
+      "id": "PHP-08-04",
+      "type": "single",
+      "topic": "08",
+      "difficulty": "leicht",
+      "text": "Was bildet die Radio-Gruppe?",
+      "options": [
+        "Identische IDs",
+        "Gleiche Farbe",
+        "Gleicher sichtbarer Text",
+        "Gleicher name-Wert"
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": "Die Optionswerte werden über den gemeinsamen Namen gruppiert.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 14–32"
+    },
+    {
+      "id": "PHP-08-05",
+      "type": "single",
+      "topic": "08",
+      "difficulty": "mittel",
+      "text": "Welcher Wert wird bei der sichtbaren Auswahl Paris übermittelt?<pre><code>&lt;select name=&quot;ziel&quot;&gt;\n  &lt;option value=&quot;PAR&quot;&gt;Paris&lt;/option&gt;\n&lt;/select&gt;</code></pre>",
+      "options": [
+        "PAR",
+        "Paris zwingend immer",
+        "ziel",
+        "select"
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": "Der value-Wert ist hier PAR.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 14–32"
+    },
+    {
+      "id": "PHP-08-06",
+      "type": "single",
+      "topic": "08",
+      "difficulty": "leicht",
+      "text": "Wo wird der Vorbelegungstext einer textarea geschrieben?",
+      "options": [
+        "Nur in method",
+        "Nur in href",
+        "Zwischen Start- und End-Tag",
+        "In einem option-Element"
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "textarea enthält seinen anfänglichen Text als Inhalt.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 14–32"
+    },
+    {
+      "id": "PHP-08-07",
+      "type": "single",
+      "topic": "08",
+      "difficulty": "mittel",
+      "text": "Was tut dieser Button ohne ergänzende Logik?<pre><code>&lt;button type=&quot;button&quot;&gt;Absenden&lt;/button&gt;</code></pre>",
+      "options": [
+        "Er legt eine Datenbank an.",
+        "Er übermittelt zwingend per POST.",
+        "Er übermittelt das Formular nicht allein wegen seiner Aufschrift.",
+        "Er setzt immer alle Felder zurück."
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": "type button hat keine automatische Formularübermittlung.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 14–32"
+    },
+    {
+      "id": "PHP-08-08",
+      "type": "single",
+      "topic": "08",
+      "difficulty": "leicht",
+      "text": "Was setzt type=&quot;reset&quot; zurück?",
+      "options": [
+        "Zwingend jeden Wert auf leeren Text",
+        "Die Formularwerte auf ihre Ausgangswerte",
+        "Den HTML-Standard",
+        "Die gesamte Festplatte"
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": "Reset bedeutet Rückkehr zur Vorbelegung, nicht zwingend Leeren.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 14–32"
+    },
+    {
+      "id": "PHP-08-09",
+      "type": "multiple",
+      "topic": "08",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Dinge können Checkboxen unabhängig voneinander darstellen?",
+      "options": [
+        "Frühstück gewünscht",
+        "Den Dokumenttitel ändern ohne Logik",
+        "Transfer gewünscht",
+        "Genau eine exklusive Hotel-ja/nein-Gruppe automatisch"
+      ],
+      "correct": [
+        0,
+        2
+      ],
+      "explanation": "Unabhängige Wünsche dürfen gleichzeitig gewählt werden.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 14–32"
+    },
+    {
+      "id": "PHP-08-10",
+      "type": "multiple",
+      "topic": "08",
+      "difficulty": "leicht",
+      "text": "Welche ZWEI Aussagen zur lokalen Demo stimmen?",
+      "options": [
+        "Sie weist bereits eine Datenbankspeicherung nach.",
+        "Sie bestätigt automatisch eine Identität.",
+        "Sie ist keine echte Buchung.",
+        "Die Vorschau zeigt Formularnamen und Werte."
+      ],
+      "correct": [
+        2,
+        3
+      ],
+      "explanation": "Die Demo erklärt die Datenstruktur, nicht einen produktiven Geschäftsabschluss.",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf · 14–32"
+    },
+    {
+      "id": "PHP-08-11",
+      "type": "matching-postits",
+      "topic": "08",
+      "difficulty": "mittel",
+      "text": "Ordne die Begriffe ihren Beschreibungen zu.",
+      "items": [
+        {
+          "id": "i0",
+          "text": "id"
+        },
+        {
+          "id": "i1",
+          "text": "name"
+        },
+        {
+          "id": "i2",
+          "text": "value"
+        }
+      ],
+      "targets": [
+        {
+          "id": "t2",
+          "text": "Wert der gewählten Option"
+        },
+        {
+          "id": "t1",
+          "text": "Übermittelter Feldname"
+        },
+        {
+          "id": "t0",
+          "text": "Kennzeichnung für die Label-Zuordnung"
+        }
+      ],
+      "pairs": [
+        {
+          "leftId": "i0",
+          "rightId": "t0"
+        },
+        {
+          "leftId": "i1",
+          "rightId": "t1"
+        },
+        {
+          "leftId": "i2",
+          "rightId": "t2"
+        }
+      ],
+      "explanation": "id: Kennzeichnung für die Label-Zuordnung; name: Übermittelter Feldname; value: Wert der gewählten Option",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf"
+    },
+    {
+      "id": "PHP-08-12",
+      "type": "sql-order",
+      "topic": "08",
+      "difficulty": "mittel",
+      "text": "Ordne den im Kurs vorgegebenen Arbeitsablauf. Gemeint ist diese didaktische Reihenfolge, nicht die einzig mögliche Vorgehensweise in jedem Projekt.",
+      "blocks": [
+        {
+          "id": "b4",
+          "text": "Werte prüfen"
+        },
+        {
+          "id": "b3",
+          "text": "Formular ausfüllen"
+        },
+        {
+          "id": "b2",
+          "text": "Labels und Namen zuordnen"
+        },
+        {
+          "id": "b1",
+          "text": "Eingabetypen wählen"
+        },
+        {
+          "id": "b0",
+          "text": "Benötigte Angaben bestimmen"
+        }
+      ],
+      "correctOrder": [
+        "b0",
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "explanation": "Benötigte Angaben bestimmen → Eingabetypen wählen → Labels und Namen zuordnen → Formular ausfüllen → Werte prüfen",
+      "source": "PHP-Kurs_Kapitel 4_HTML_Teil 2_Präsentation.pdf"
+    }
+  ]
+}

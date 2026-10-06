@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fachinformation · HTML</title>
+  <link rel="icon" type="image/svg+xml" href="tool-icon.svg">
+  <link rel="stylesheet" href="tool-basis.css">
+  <link rel="stylesheet" href="fachinfo.css">
+</head>
+<body class="course-shell fachinfo-page">
+  <header class="fachinfo-header">
+    <div class="fachinfo-wrap"><span>HTML &amp; CSS</span><p>Fachinformation im zweiten Fenster</p></div>
+  </header>
+  <main class="fachinfo-wrap" id="fachinfo-main" tabindex="-1">
+    <p class="fachinfo-status" id="fachinfo-status" role="status">Fachinformation wird geladen …</p>
+    <div id="fachinfo-content"></div>
+    <section class="experiment-lab" id="experiment-lab" aria-labelledby="lab-title" hidden>
+      <header class="lab-heading"><div><span class="lab-kicker">Experimentierlabor</span><h2 id="lab-title"></h2><p id="lab-description"></p></div><button class="lab-button lab-button-quiet" id="lab-reset" type="button">Zurücksetzen</button></header>
+      <div class="lab-workspace">
+        <aside class="lab-controls" aria-label="Einstellungen des Experimentierlabors">
+          <h3>Gezielt verändern</h3>
+          <div id="lab-controls"></div>
+          <h3>Aufgabenimpulse</h3>
+          <ul id="lab-hints"></ul>
+          <div class="lab-presets" aria-label="Darstellungspresets"><button class="lab-button lab-button-toggle is-active" type="button" data-lab-preset="calm" aria-pressed="true">Ruhig</button><button class="lab-button lab-button-toggle" type="button" data-lab-preset="contrast" aria-pressed="false">Kontrast</button><button class="lab-button lab-button-toggle" type="button" data-lab-preset="compact" aria-pressed="false">Kompakt</button></div>
+        </aside>
+        <section class="lab-stage" aria-label="Editoren und Live-Vorschau">
+          <div class="lab-toolbar"><strong>Isolierte Live-Vorschau</strong><div class="lab-widths" aria-label="Vorschaugröße"><button class="lab-button lab-button-toggle is-active" type="button" data-lab-width="wide" aria-pressed="true">Desktop</button><button class="lab-button lab-button-toggle" type="button" data-lab-width="medium" aria-pressed="false">Tablet</button><button class="lab-button lab-button-toggle" type="button" data-lab-width="narrow" aria-pressed="false">Mobil</button></div></div>
+          <div class="lab-preview-frame"><div class="lab-preview-shell wide" id="lab-preview-shell"><iframe id="lab-preview" sandbox="" title="Isolierte Vorschau des individuellen Experimentierlabors"></iframe></div></div>
+          <div class="lab-editors">
+            <label>HTML bearbeiten<textarea id="lab-html" spellcheck="false"></textarea></label>
+            <label>CSS bearbeiten<textarea id="lab-css" spellcheck="false"></textarea></label>
+          </div>
+          <div class="lab-actions"><button class="lab-button lab-button-primary" id="lab-run" type="button">Änderungen anwenden</button><button class="lab-button lab-button-secondary" id="lab-copy" type="button">CSS kopieren</button><span id="lab-status" role="status" aria-live="polite"></span></div>
+        </section>
+      </div>
+    </section>
+    <div class="fachinfo-actions">
+      <button class="lab-button lab-button-quiet" id="fachinfo-close" type="button">Fenster schließen</button>
+      <a class="course-button fachinfo-back" href="index.html" hidden>Zur HTML-Tag-Übersicht</a>
+    </div>
+  </main>
+  <script src="fachinfo-daten.js"></script>
+  <script src="fachinfo.js"></script>
+</body>
+</html>

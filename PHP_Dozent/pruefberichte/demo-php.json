@@ -1,0 +1,230 @@
+{
+  "demos": [
+    {
+      "file": "01-1.html",
+      "rendered": true
+    },
+    {
+      "file": "01-2.html",
+      "rendered": true
+    },
+    {
+      "file": "02-1.html",
+      "rendered": true
+    },
+    {
+      "file": "02-2.html",
+      "rendered": true
+    },
+    {
+      "file": "03-1.html",
+      "rendered": true
+    },
+    {
+      "file": "03-2.html",
+      "rendered": true
+    },
+    {
+      "file": "04-1.html",
+      "rendered": true
+    },
+    {
+      "file": "04-2.html",
+      "rendered": true
+    },
+    {
+      "file": "05-1.html",
+      "rendered": true
+    },
+    {
+      "file": "05-2.html",
+      "rendered": true
+    },
+    {
+      "file": "06-1.html",
+      "video": "Loaded and played local demonstration video"
+    },
+    {
+      "file": "06-2.html",
+      "rendered": true
+    },
+    {
+      "file": "07-1.html",
+      "rendered": true
+    },
+    {
+      "file": "07-2.html",
+      "rendered": true
+    },
+    {
+      "file": "08-1.html",
+      "rendered": true
+    },
+    {
+      "file": "08-2.html",
+      "rendered": true
+    },
+    {
+      "file": "09-1.html",
+      "rendered": true
+    },
+    {
+      "file": "09-2.html",
+      "rendered": true
+    },
+    {
+      "file": "10-1.html",
+      "rendered": true
+    },
+    {
+      "file": "10-2.html",
+      "rendered": true
+    },
+    {
+      "file": "11-1.html",
+      "rendered": true
+    },
+    {
+      "file": "11-2.html",
+      "rendered": true
+    },
+    {
+      "file": "12-1.html",
+      "rendered": true
+    },
+    {
+      "file": "12-2.html",
+      "rendered": true
+    },
+    {
+      "file": "13-1.html",
+      "rendered": true
+    },
+    {
+      "file": "13-2.html",
+      "rendered": true
+    }
+  ],
+  "php_cases": [
+    {
+      "path": "backend/post.php",
+      "expected": "Bitte ein Reiseziel eingeben.",
+      "passed": true
+    },
+    {
+      "path": "backend/post.php",
+      "expected": "Eingabe erhalten: Paris.",
+      "passed": true
+    },
+    {
+      "path": "backend/post.php",
+      "expected": "Bitte genau einen Zieltext",
+      "passed": true
+    },
+    {
+      "path": "backend/post.php",
+      "expected": "Das Reiseziel fehlt.",
+      "passed": true
+    },
+    {
+      "path": "backend/post.php",
+      "expected": "Bitte genau einen Zieltext",
+      "passed": true
+    },
+    {
+      "path": "backend/post.php",
+      "expected": "Der Zieltext ist zu lang.",
+      "passed": true
+    },
+    {
+      "path": "backend/get.php",
+      "expected": "37500 Cent",
+      "passed": true
+    },
+    {
+      "path": "backend/get.php?ziel=Rom",
+      "expected": "Ziel: Rom",
+      "passed": true
+    },
+    {
+      "path": "backend/suche.php",
+      "expected": "Wähle ein Reiseziel",
+      "passed": true
+    },
+    {
+      "path": "backend/suche.php?ziel=Unbekannt",
+      "expected": "Bitte ein zulässiges Reiseziel",
+      "passed": true
+    },
+    {
+      "path": "backend/suche.php?ziel[]=Paris",
+      "expected": "Bitte ein zulässiges Reiseziel",
+      "passed": true
+    },
+    {
+      "path": "backend/suche.php?ziel=Paris",
+      "expected": "Suche nicht verfügbar",
+      "passed": true
+    },
+    {
+      "path": "backend/sql-demo.php",
+      "expected": "Suche nicht verfügbar",
+      "passed": true
+    },
+    {
+      "path": "backend/post.php",
+      "expected": "HTML content safely displayed as text",
+      "passed": true
+    },
+    {
+      "path": "backend/get.php?ziel=%3Cimg+src%3Dx+onerror%3Dalert%281%29%3E",
+      "expected": "HTML content safely displayed as text",
+      "passed": true
+    },
+    {
+      "path": "backend/kontrollstrukturen.php",
+      "expected": [
+        "Kleine Gruppe",
+        "Italien",
+        "1 2 3",
+        "1 2 3",
+        "3",
+        "Paris Rom"
+      ],
+      "passed": true
+    },
+    {
+      "path": "loesungen/11/03.php",
+      "expected": "No runtime warnings or fatal errors on initial request",
+      "passed": true
+    },
+    {
+      "path": "loesungen/11/04.php",
+      "expected": "No runtime warnings or fatal errors on initial request",
+      "passed": true
+    },
+    {
+      "path": "loesungen/11/05.php",
+      "expected": "No runtime warnings or fatal errors on initial request",
+      "passed": true
+    },
+    {
+      "path": "loesungen/12/03.php",
+      "expected": "No runtime warnings or fatal errors on initial request",
+      "passed": true
+    },
+    {
+      "path": "loesungen/12/04.php",
+      "expected": "No runtime warnings or fatal errors on initial request",
+      "passed": true
+    },
+    {
+      "path": "loesungen/12/05.php",
+      "expected": "No runtime warnings or fatal errors on initial request",
+      "passed": true
+    }
+  ],
+  "page_errors": [],
+  "database_integration": "Not executed: PHP mysqli and a MySQL/MariaDB server are not installed in this test environment.",
+  "php_version": "PHP 8.4.23 (cli) (built: Jul  3 2026 12:26:56) (NTS)"
+}

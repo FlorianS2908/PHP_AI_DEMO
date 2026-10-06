@@ -1,0 +1,5 @@
+<?php
+// Als index.php in deinem Arbeitsordner speichern.
+// TODO: Erstelle Formular und Verarbeitung für ein Reiseziel. Behandle Direktaufruf ohne POST, fehlenden Wert und eine Texteingabe.
+?>
+<!doctype html><html lang="de"><head><meta charset="utf-8"><title>Meine PHP-Aufgabe</title></head><body><h1>Meine Aufgabe</h1></body></html>
