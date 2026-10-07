@@ -155,7 +155,7 @@
       "type": "single",
       "topic": "09",
       "difficulty": "leicht",
-      "text": "Welche Aussage zu p.hinweis stimmt?",
+      "text": "Welche Aussage zum CSS-Selektor p.hinweis stimmt?",
       "options": [
         "Alle p und alle Elemente mit hinweis werden unabhängig ausgewählt.",
         "Nur Kinder eines Elements hinweis werden ausgewählt.",

@@ -64,6 +64,8 @@ Die ursprüngliche Ausarbeitung dauerte nach rückblickender Schätzung etwa vie
 
 Persönliche Bearbeitungen liegen unter PHP_Arbeitsbereich/Persoenliche_Arbeit und sind über .gitignore von der gemeinsamen Versionierung ausgenommen. Das öffentliche Repository enthält auch Lehrkraftmaterial; die Trennung ist didaktisch und keine Zugriffskontrolle.
 
-Die aktuelle Ordner- und Navigationsprüfung steht in [ordnerstruktur-review.md](pruefberichte/ordnerstruktur-review.md). Die fachliche Tagesstruktur dokumentiert [kursstruktur-review.md](pruefberichte/kursstruktur-review.md); der maschinelle Verweischeck steht in [bereitstellung.json](pruefberichte/bereitstellung.json). Ältere Prüfberichte sind historische Nachweise und keine erneute Prüfung dieses Stands. Ein echter Windows-/XAMPP-Test erfolgt separat.
+Die aktuelle fachliche, didaktische und sprachliche Korrektur mit Testumfang und offenen Grenzen steht im **[Inhaltsreview vom 07.10.2026](pruefberichte/inhaltsreview.md)**.
+
+Die Ordner- und Navigationsprüfung steht in [ordnerstruktur-review.md](pruefberichte/ordnerstruktur-review.md). Die fachliche Tagesstruktur dokumentiert [kursstruktur-review.md](pruefberichte/kursstruktur-review.md); der maschinelle Verweischeck steht in [bereitstellung.json](pruefberichte/bereitstellung.json). Ältere Prüfberichte sind historische Nachweise und keine erneute Prüfung dieses Stands. Ein echter Windows-/XAMPP-Test erfolgt separat.
 
 Interne Ausgangspräsentationen, persönliche Git-Historien und alte Archive sind nicht Teil der Veröffentlichung. Alle Geschäftsszenarien verwenden fiktive Daten; keine echten Bestellungen, Zahlungen oder E-Mails.

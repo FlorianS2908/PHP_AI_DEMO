@@ -1,31 +1,54 @@
 <?php
-$chatname = "";
-$error = [];
-$daten = [];
+require __DIR__ . "/function.php";
 
+$alias = "";
+$fehler = [];
+$gueltigeDaten = [];
 
-if($_SERVER["REQUEST_METHOD"] !== "POST"){
-    $error["REQUEST_METHOD_ERROR"] = "Bitte die per POST übersenden";
+// 1. Die Methode muss zum Formular passen.
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    $fehler[] = "Bitte das Formular mit POST absenden.";
 }
-if(isset($_POST["chatname"]) && is_string($_POST["chatname"])){
-    $chatname = trim($_POST["chatname"]);
-}
-if($chatname === ""){
-    $error["DATEN_ERROR_CHATNAME"] = "Bitte Formular ausfüllen";
-}else{
-    $gueltigeDaten["chatname"]  = $chatname; 
-}
-if(!empty($error)){
 
-    $anzahlDurchlauf = 0;
-    $zeichenkette = "";
-    foreach($error as $key => $value){
-        $anzahlDurchlauf++;
-        $zeichenkette .= $anzahlDurchlauf . " Error => ". $key . " => " . $value . "<br>" . PHP_EOL;
-    }
-    $daten["error"] = $zeichenkette;
-    $urlParameter = http_build_query($daten,"", "&");
-    header("Location: index.php?".$urlParameter, true, 303); 
+// 2. Kein ungeprüfter Zugriff auf Formulardaten.
+if (isset($_POST["alias"]) && is_string($_POST["alias"])) {
+    $alias = trim($_POST["alias"]);
+}
+
+// 3. Alle Felder vollständig prüfen, bevor eine Rückleitung erfolgt.
+if ($alias === "") {
+    $fehler[] = "Chatname: Bitte ausfüllen.";
+} else {
+    $gueltigeDaten["alias"] = $alias;
+}
+
+// 4. Nur gültige Werte und die gesammelten Fehlermeldungen zurückgeben.
+if (!empty($fehler)) {
+    $gueltigeDaten["fehler"] = implode(" ", $fehler);
+    $parameter = http_build_query($gueltigeDaten, "", "&");
+
+    // 303: Der Browser öffnet index.php danach mit GET.
+    header("Location: index.php?" . $parameter, true, 303);
     exit;
 }
+
+// 5. Erst nach allen Prüfungen und möglichen Rückleitungen folgt die Ausgabe.
+header("Content-Type: text/html; charset=UTF-8");
 ?>
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ergebnis</title>
+    <style>body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.5; }</style>
+</head>
+<body>
+    <h1>Ergebnis</h1>
+<?php
+echo "<p>Chatname: " . html($alias) . "</p>";
+?>
+    <p>Übung: Die Daten wurden nur geprüft und angezeigt.</p>
+    <p><a href="index.php">Neue Eingabe</a></p>
+</body>
+</html>

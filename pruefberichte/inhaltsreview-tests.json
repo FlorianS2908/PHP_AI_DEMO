@@ -1,0 +1,221 @@
+{
+  "date": "2026-10-07",
+  "environment": "PHP 8.3.6 (cli) (built: Sep  2 2026 12:56:02) (NTS)",
+  "scope": "Syntax aller PHP-Dateien, Quiz-Struktur, neue Starter und korrigierte CodeTogether-Beispiele. Kein DB-/Windows-Laufzeittest.",
+  "php_files": 255,
+  "php_syntax_errors": [],
+  "quiz_pools": 22,
+  "unique_question_objects": 401,
+  "checks": [
+    {
+      "test": "PHP-Syntax aller PHP-Dateien",
+      "passed": true
+    },
+    {
+      "test": "Alle Quizpools: eindeutige IDs, vollständige Antwortschlüssel und Erläuterungen",
+      "passed": true
+    },
+    {
+      "test": "Musterlösungen vollständig ausführbar: PHP_PHP_Grundlagen_Loesungen.php",
+      "passed": true
+    },
+    {
+      "test": "Musterlösungen vollständig ausführbar: PHP_PHP_Kontrollstrukturen_Loesungen.php",
+      "passed": true
+    },
+    {
+      "test": "Startdatei ohne PHP-Fehler: 01_auswertung.php",
+      "passed": true
+    },
+    {
+      "test": "Startdatei ohne PHP-Fehler: 02_auswertung.php",
+      "passed": true
+    },
+    {
+      "test": "Startdatei ohne PHP-Fehler: 03_auswertung.php",
+      "passed": true
+    },
+    {
+      "test": "Startdatei ohne PHP-Fehler: 04_auswertung.php",
+      "passed": true
+    },
+    {
+      "test": "Startdatei ohne PHP-Fehler: 05_auswertung.php",
+      "passed": true
+    },
+    {
+      "test": "Startdatei ohne PHP-Fehler: 06_auswertung.php",
+      "passed": true
+    },
+    {
+      "test": "Startdatei ohne PHP-Fehler: 07_auswertung.php",
+      "passed": true
+    },
+    {
+      "test": "Startdatei ohne PHP-Fehler: 08_auswertung.php",
+      "passed": true
+    },
+    {
+      "test": "Startdatei ohne PHP-Fehler: 09_auswertung.php",
+      "passed": true
+    },
+    {
+      "test": "Startdatei ohne PHP-Fehler: 10_auswertung.php",
+      "passed": true
+    },
+    {
+      "test": "Preisimport: 4 gültig, 7 Fehler, 12140 Cent",
+      "passed": true
+    },
+    {
+      "test": "Preisimport: Arrays ablehnen und ursprünglichen Index behalten",
+      "passed": true
+    },
+    {
+      "test": "Preisimport: Grenzen, Rundung und Nicht-String",
+      "passed": true
+    },
+    {
+      "test": "Preisimport: leere Liste",
+      "passed": true
+    },
+    {
+      "test": "Anmeldeliste: Nulltext behalten, Leerfelder/Dubletten zählen",
+      "passed": true
+    },
+    {
+      "test": "GET/POST-Demo: GET, Alter 0, maskierte Ausgabe",
+      "passed": true
+    },
+    {
+      "test": "GET/POST-Demo: GET, Alter 120, maskierte Ausgabe",
+      "passed": true
+    },
+    {
+      "test": "GET/POST-Demo: POST, Alter 0, maskierte Ausgabe",
+      "passed": true
+    },
+    {
+      "test": "GET/POST-Demo: POST, Alter 120, maskierte Ausgabe",
+      "passed": true
+    },
+    {
+      "test": "GET/POST-Demo: 303 bei fehlt",
+      "passed": true
+    },
+    {
+      "test": "GET/POST-Demo: 303 bei über Maximum",
+      "passed": true
+    },
+    {
+      "test": "GET/POST-Demo: 303 bei Name als Array",
+      "passed": true
+    },
+    {
+      "test": "GET/POST-Demo: 303 bei Alter als Array",
+      "passed": true
+    },
+    {
+      "test": "GET/POST-Demo: 303 bei Dezimalzahl",
+      "passed": true
+    },
+    {
+      "test": "GET/POST-Demo: 303 bei Name leer",
+      "passed": true
+    },
+    {
+      "test": "Formular: Query-Fehler und wiederbefüllte Werte maskiert",
+      "passed": true
+    },
+    {
+      "test": "GET/POST-Demo: 405 und Allow",
+      "passed": true
+    },
+    {
+      "test": "Büchersuche: GET-Erfolg sicher anzeigen",
+      "passed": true
+    },
+    {
+      "test": "Büchersuche: nummerierte Methoden-/Feldfehler",
+      "passed": true
+    },
+    {
+      "test": "Büchersuche: Array abweisen",
+      "passed": true
+    },
+    {
+      "test": "Büchersuche: Fehlermeldung aus URL maskieren",
+      "passed": true
+    },
+    {
+      "test": "Chatname: Formular sendet das geforderte Feld alias mit POST",
+      "passed": true
+    },
+    {
+      "test": "Chatname: POST-Erfolgsausgabe",
+      "passed": true
+    },
+    {
+      "test": "Chatname: GET ist kein POST-Erfolg",
+      "passed": true
+    },
+    {
+      "test": "Chatname: Array wird ohne Warnung abgewiesen",
+      "passed": true
+    },
+    {
+      "test": "Chatname: HTML-Ausgabe maskiert",
+      "passed": true
+    },
+    {
+      "test": "Fundbüro: gültigen Wert erhalten, Fehler für Farbe",
+      "passed": true
+    },
+    {
+      "test": "Fundbüro: gültigen Wert erhalten, Fehler für Gegenstand",
+      "passed": true
+    },
+    {
+      "test": "Fundbüro: beide Feldfehler sammeln",
+      "passed": true
+    },
+    {
+      "test": "Fundbüro: Erfolg zeigt beide Werte",
+      "passed": true
+    },
+    {
+      "test": "Fundbüro: 303 ohne vorherige Debug-Ausgabe",
+      "passed": true
+    },
+    {
+      "test": "Fundbüro: Fehler und Attribute maskiert",
+      "passed": true
+    },
+    {
+      "test": "Reise: fünf Tage und maskiertes Ziel",
+      "passed": true
+    },
+    {
+      "test": "Reise: nur tatsächlich ungültiges Datum beanstanden",
+      "passed": true
+    },
+    {
+      "test": "Reise: Abreise vor Anreise",
+      "passed": true
+    },
+    {
+      "test": "Reise: Vergangenheit als Warnung ohne Debug-Ausgabe",
+      "passed": true
+    },
+    {
+      "test": "Reise: 405 und Allow",
+      "passed": true
+    },
+    {
+      "test": "require_once: zweimal einbinden, Funktionen mehrfach nutzen",
+      "passed": true
+    }
+  ],
+  "passed": 52,
+  "failed": 0
+}

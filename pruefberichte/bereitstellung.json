@@ -1,13 +1,13 @@
 {
   "date": "2026-10-07",
   "scope": "Bereitstellungsprüfung der neutral benannten Veröffentlichung",
-  "files": 986,
+  "files": 1002,
   "pdf_files": 29,
-  "json_files": 52,
-  "html_files": 266,
-  "checked_local_references": 6985,
+  "json_files": 53,
+  "html_files": 269,
+  "checked_local_references": 7026,
   "javascript_syntax": true,
   "distinct_core_questions": 156,
   "errors": [],
-  "runtime_note": "PHP- und Browser-Prüfungen der Ordnerstruktur wurden separat ausgeführt; siehe ordnerstruktur-review.md. Kein Windows/XAMPP- oder optionaler Datenbank-Laufzeittest."
+  "runtime_note": "PHP-, Inhalts- und Browser-Prüfungen wurden separat ausgeführt; siehe inhaltsreview.md. Kein Windows/XAMPP- oder optionaler Datenbank-Laufzeittest."
 }

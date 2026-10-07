@@ -11,7 +11,8 @@ if (!isset($_POST['ziel']) || !is_string($_POST['ziel'])) {
 } else {
     $ziel = trim($_POST['ziel']);
     if ($ziel === '') { $fehler[] = 'Bitte einen Zielort eintragen.'; }
-    elseif (strlen($ziel) > 100) { $fehler[] = 'Bitte einen kürzeren Zieltext verwenden.'; }
+    // strlen zählt Bytes. Für dieses kleine Übungsformular sind höchstens 100 erlaubt.
+    elseif (strlen($ziel) > 100) { $fehler[] = 'Bitte höchstens 100 UTF-8-Bytes eingeben.'; }
     else { $daten['ziel'] = $ziel; }
 }
 if ($fehler !== []) { $daten['fehler'] = implode(' ', $fehler); }

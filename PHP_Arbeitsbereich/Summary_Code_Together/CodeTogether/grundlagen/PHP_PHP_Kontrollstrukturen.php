@@ -5,12 +5,11 @@ declare(strict_types=1);
 // Aufgaben zum Korrigieren und Ergänzen
 // Stand: 29.09.2026
 //
-// START MIT XAMPP
-// 1. Diese Datei unter C:\xampp\htdocs\PHP\ speichern.
-// 2. Im XAMPP Control Panel Apache starten.
-// 3. Im Browser öffnen:
-//    http://localhost/PHP/PHP_PHP_Kontrollstrukturen_25_Aufgaben.php
-// Alternativ im Terminal: php PHP_PHP_Kontrollstrukturen_25_Aufgaben.php
+// START IM REPOSITORY
+// 1. PHP-START.cmd im Hauptordner ausführen oder das gesamte Repo mit XAMPP öffnen.
+// 2. Im Browser: Arbeitsbereich > Summary Code Together > Grundlagen.
+// 3. Diese Datei im Editor lesen und über den PHP-Server ausführen.
+// Alternativ im Terminal: php PHP_PHP_Kontrollstrukturen.php
 // Es werden keine weiteren Dateien, Bibliotheken oder Datenbanken benötigt.
 // UTF-8 ohne BOM verwenden; kein weiteres PHP-Öffnungstag in die Abschnitte kopieren.
 //

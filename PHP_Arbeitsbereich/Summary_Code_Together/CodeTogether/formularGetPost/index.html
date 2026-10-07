@@ -13,12 +13,13 @@
         style="max-width: 340px; padding: 20px; background: white; border-radius: 8px; display: grid; gap: 10px;">
 
         <h2 style="margin: 0 0 10px;">Deine Daten</h2>
+        <p>Nur fiktive Daten. <a href="formular.php">Zur Demo mit Fehleranzeige und Wiederbefüllung</a></p>
 
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required style="padding: 8px;">
 
         <label for="alter">Alter</label>
-        <input type="number" id="alter" name="alter" min="0" max="120" style="padding: 8px;">
+        <input type="number" id="alter" name="alter" min="0" max="120" step="1" required style="padding: 8px;">
 
         <button type="submit" formmethod="get" style="padding: 10px;">
             Mit GET senden

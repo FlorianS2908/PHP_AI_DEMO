@@ -6,7 +6,7 @@ function ausgabe(string $text): string
 }
 
 // Nur ein gültiges Datum im Format JJJJ-MM-TT akzeptieren.
-function pruefeDatum(string $text)
+function pruefeDatum(string $text): DateTimeImmutable|false
 {
     if (strlen($text) !== 10 || strpos($text, "\0") !== false) {
         return false;
@@ -20,11 +20,3 @@ function pruefeDatum(string $text)
 
     return $datum;
 }
-
-function redirctAndDatenInjecten(array $redirectDaten, array $stammDaten){
-    echo "Daten aus Function";
-    var_dump($redirectDaten);
-    var_dump($stammDaten);
-}
-
-?>

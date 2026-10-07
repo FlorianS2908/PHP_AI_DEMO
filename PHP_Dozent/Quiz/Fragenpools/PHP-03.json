@@ -119,9 +119,9 @@
       "type": "single",
       "topic": "03",
       "difficulty": "leicht",
-      "text": "Was beschreibt valuable in dieser Unterlage?",
+      "text": "Was beschreibt valuable im UX-Honeycomb?",
       "options": [
-        "Durchdacht und mit Sorgfalt entwickelt",
+        "Wertbeitrag zu den Zielen der Organisation und zum Nutzen ihrer Zielgruppe",
         "Ausschließlich die Anzahl Animationen",
         "Beliebig viele Zusatzfunktionen",
         "Nur der höchste Verkaufspreis"
@@ -129,7 +129,7 @@
       "correct": [
         0
       ],
-      "explanation": "Die Antwort folgt bewusst der Formulierung der bereitgestellten Unterlage.",
+      "explanation": "Valuable fragt nach dem Wertbeitrag der Anwendung, beispielsweise zur Bildungsaufgabe eines Anbieters. Sorgfalt allein beschreibt diesen Begriff nicht vollständig.",
       "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 1_Präsentation.pdf · 3–19"
     },
     {
@@ -192,18 +192,18 @@
       "type": "multiple",
       "topic": "03",
       "difficulty": "leicht",
-      "text": "Welche ZWEI Merkmale passen zur Darstellung von desirable?",
+      "text": "Welche ZWEI Merkmale passen zu desirable im UX-Honeycomb?",
       "options": [
         "Erzwungenes Flackern",
         "Ablenkung vom Hauptinhalt",
-        "Störungsfreies Erlebnis",
-        "Klarheit"
+        "Ansprechende Bildsprache",
+        "Passende visuelle Identität"
       ],
       "correct": [
         2,
         3
       ],
-      "explanation": "Die Unterlage betont einladende, klare, nicht störende Gestaltung.",
+      "explanation": "Desirable betrifft die ästhetische und emotionale Anziehungskraft, etwa Bildsprache und visuelle Identität.",
       "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 1_Präsentation.pdf · 3–19"
     },
     {

@@ -82,21 +82,21 @@
     "tasks": [
       {
         "title": "Ein- und Ausgabe beobachten",
-        "task": "Öffne Demo 1. Notiere zwei Handlungen der Person und zwei sichtbare Systeminformationen. Ordne sie Eingabe oder Ausgabe zu.",
+        "task": "Öffne Demo 1. Notiere zwei Handlungen der Person und zwei sichtbare Systeminformationen. Ordne sie Eingabe oder Ausgabe zu. Erkläre zusätzlich, warum ein Touchscreen Ein- und Ausgaben ermöglicht.",
         "hint": "Nicht das Gerät, sondern den konkreten Prozess beschreiben.",
         "criteria": "Vier zugeordnete Beobachtungen und ein erklärter Touchscreen-Sonderfall.",
         "solution": "Zielauswahl und Klick sind Eingaben; Optionsliste und lokale Bestätigung sind Ausgaben. Ein Touchscreen bietet beide Prozesse."
       },
       {
         "title": "Begriffe sortieren",
-        "task": "Ordne Reiseformular, USB-Anschluss, Datenaustausch-API und öffentliches OOP-Interface den vier Bedeutungen von Schnittstelle zu.",
+        "task": "Ordne Reiseformular, USB-Anschluss und Datenaustausch-API den drei Bereichen Benutzer-, Hardware- und Software-Schnittstelle zu. Begründe jede Zuordnung.",
         "hint": "Vergleiche die Beteiligten auf beiden Seiten.",
         "criteria": "Jede Zuordnung ist durch einen Satz begründet.",
-        "solution": "Reiseformular: Mensch/System. USB: Hardware/Hardware. API: Software/Software. OOP-Interface: sichtbarer Vertrag einer Programmkomponente."
+        "solution": "Reiseformular: Benutzer-Schnittstelle zwischen Mensch und Software. USB-Anschluss: Hardware-Schnittstelle zwischen Geräten. API: Software-Schnittstelle für den Datenaustausch zwischen Programmen."
       },
       {
         "title": "Geräteübersicht erstellen",
-        "task": "Erstelle eine Tabelle mit fünf Eingabe- und fünf Ausgabebeispielen aus Kapitel 1. Ergänze jeweils den übertragenen Informationstyp.",
+        "task": "Erstelle anhand der Webvariante „User Interfaces“ eine Tabelle mit fünf Eingabe- und fünf Ausgabebeispielen. Ergänze jeweils den übertragenen Informationstyp.",
         "hint": "Ton, Berührung, Bild, Druck und Vibration helfen beim Unterscheiden.",
         "criteria": "Zehn Beispiele, keine bloße Namensliste.",
         "solution": "Eingabe etwa Mausbewegung, Tastendruck, Mikrofonton, Schalterstellung, Sensorsignal. Ausgabe etwa Bildschirmbild, Lautsprecherton, Ausdruck, Projektorbild und Vibration."
@@ -245,7 +245,7 @@
         "task": "Erstelle einen Testplan für die Reiseauswahl mit fünf Fällen, Zuständigkeit, Umgebung und Abnahmekriterium.",
         "hint": "Nutze die mitgelieferte Protokollvorlage.",
         "criteria": "Planung, Soll-Ergebnisse und spätere Ist-Felder sind getrennt.",
-        "solution": "Die Lösungsvorlage zeigt Normalfall, leeres Ziel, unerlaubtes Ziel, keine Treffer und technischen Fehler als unterschiedliche Situationen."
+        "solution": "Möglicher Plan: gültige Auswahl, leere Pflichtangabe, untere und obere gültige Personenzahl sowie eine Zahl außerhalb des Bereichs. Notiere jeweils Soll-Ergebnis, Testperson und Umgebung. Die Ist-Spalte bleibt bis zur Durchführung leer; bestanden ist ein Fall erst beim bestätigten Soll-Ist-Vergleich."
       }
     ]
   },
@@ -282,7 +282,7 @@
       },
       {
         "title": "Desirable und findable",
-        "lead": "Desirable steht hier für einladende, klare und störungsfreie Gestaltung. Findable betrifft das Auffinden von Informationen, Funktionen und Hilfe.",
+        "lead": "Desirable beschreibt die ästhetische und emotionale Anziehungskraft, etwa durch Bildsprache, Identität und Gestaltung. Findable betrifft das Auffinden von Informationen, Funktionen und Hilfe.",
         "points": [
           "Reduziere Ablenkung vom eigentlichen Arbeitsziel.",
           "Ordne Navigation und Überschriften nachvollziehbar.",
@@ -306,11 +306,11 @@
       },
       {
         "title": "Credible und valuable",
-        "lead": "Credible: transparent und ehrlich. Valuable: in der Darstellung der Unterlage durchdacht, sorgfältig und hochwertig entwickelt.",
+        "lead": "Credible bedeutet glaubwürdig und vertrauenswürdig. Valuable fragt nach dem Wertbeitrag für die Organisation: Unterstützt die Anwendung ihre Ziele und schafft sie Nutzen für ihre Zielgruppe?",
         "points": [
           "Keine Erfolgsmeldung für eine nicht erfolgte Buchung.",
           "Details und Begriffe über mehrere Ansichten hinweg abstimmen.",
-          "Konkrete Vorteile und verlässlicher Service sind wichtiger als bloße Effekte."
+          "Beispiel für valuable: Eine verständliche Kursanmeldung verringert Rückfragen und hilft dem Bildungsanbieter, seine Angebote zugänglich zu machen."
         ],
         "code": "Ungenau: „Reise gebucht!“\nPassend zur Suchdemo: „Drei Beispielangebote gefunden.“",
         "result": "Die Aussage muss dem tatsächlich erreichten Zustand entsprechen.",
@@ -335,7 +335,7 @@
         "task": "Schreibe zu jedem Honeycomb-Begriff einen kurzen Erklärungssatz in eigenen Worten.",
         "hint": "Behalte die Begriffe der Unterlage bei.",
         "criteria": "Alle sieben Bereiche sind unterscheidbar erklärt.",
-        "solution": "Useful: Nutzen; usable: Bedienbarkeit; desirable: einladender Eindruck; findable: Auffindbarkeit; accessible: unterschiedliche Bedürfnisse; credible: Ehrlichkeit; valuable: Sorgfalt und konkrete Vorteile."
+        "solution": "Useful: nützlich; usable: gut bedienbar; desirable: ästhetisch und emotional ansprechend; findable: auffindbar; accessible: auch für Menschen mit Behinderungen zugänglich; credible: glaubwürdig; valuable: wertvoll für die Ziele der Organisation und ihre Zielgruppe."
       },
       {
         "title": "Zwei Ansichten vergleichen",
@@ -349,7 +349,7 @@
         "task": "Erstelle eine Honeycomb-Matrix für eine Reiseseite: Bereich, Prüffrage, Beobachtung, Verbesserung.",
         "hint": "Die Beobachtung darf zunächst offen bleiben.",
         "criteria": "Sieben sinnvolle Prüffragen, keine siebenmal gleiche Frage.",
-        "solution": "Beispielfragen: Löst die Suche mein Problem? Verstehe ich die Felder? Lenkt Gestaltung ab? Finde ich Hilfe? Kann ich passend bedienen? Stimmen Aussagen? Wirkt der Ablauf sorgfältig?"
+        "solution": "Beispielfragen: Löst die Suche mein Problem? Verstehe ich die Felder? Spricht mich die Gestaltung an? Finde ich Hilfe? Ist die Bedienung auch mit assistiven Hilfsmitteln möglich? Sind Angaben glaubwürdig? Welchen Beitrag leistet die Anwendung zum Ziel des Anbieters?"
       },
       {
         "title": "Nutzen und Bedienbarkeit trennen",
@@ -472,9 +472,9 @@
       {
         "title": "Zehn Prinzipien prüfen",
         "task": "Erstelle eine Checkliste mit den zehn Kategorien aus UX Teil 2. Verbinde jede Kategorie mit einer Frage an die Demo.",
-        "hint": "Die Kategorien stehen auch in der Zusammenfassung der Musterlösung.",
+        "hint": "Nutze die Begriffe der Webvariante: Systemzustand, Wirklichkeitsbezug, Benutzerfreiheit, Konsistenz, Fehlervermeidung, Wiedererkennung, Flexibilität, Minimalismus, Fehlerbehandlung und Hilfe.",
         "criteria": "Zehn unterscheidbare Fragen.",
-        "solution": "Systemzustand, Wirklichkeitsbezug, Benutzerfreiheit, Konsistenz, Fehlervermeidung, Merkhilfen, Flexibilität, Minimalismus/Ästhetik, Fehlerbehandlung und Hilfe."
+        "solution": "Mögliche Prüffragen: Ist der aktuelle Zustand erkennbar? Sind die Begriffe vertraut? Gibt es einen Rückweg? Heißen gleiche Aktionen gleich? Werden Eingabefehler vermieden? Ist die Auswahl sichtbar? Gibt es passende Bedienwege? Ist Unnötiges weggelassen? Nennen Fehler einen nächsten Schritt? Ist Hilfe am passenden Ort erreichbar?"
       },
       {
         "title": "Konsistenz herstellen",
@@ -849,7 +849,7 @@
         "task": "Erstelle eine Seite mit Kopf, Navigation, Hauptinhalt und Fuß. Ergänze einen Sprunglink zum Hauptinhalt.",
         "hint": "Die Ziel-ID muss vorhanden sein.",
         "criteria": "Alle vier Bereiche und ein funktionierender Sprunglink.",
-        "solution": "Muster 03.html enthält diese Bereiche und den Sprung zu id=\"inhalt\".."
+        "solution": "Muster 03.html enthält diese Bereiche und den Sprung zu id=\"inhalt\". Der Sprunglink verweist mit href=\"#inhalt\" auf diesen Bereich."
       },
       {
         "title": "Drei Seiten verknüpfen",
@@ -957,17 +957,17 @@
     "tasks": [
       {
         "title": "Namen und Werte lesen",
-        "task": "Lies Demo 1 und sage voraus, welche Namen/Werte die Auswahl Paris und Hotel ja erzeugen.",
+        "task": "Lies Demo 1. Wähle Paris, trage als Abreisedatum 2026-10-16 und als Hinweis Fensterplatz ein. Notiere vor dem Absenden die drei erwarteten Namen-Wert-Paare.",
         "hint": "Sichtbare Texte können von values abweichen.",
         "criteria": "Vorhersage wird mit der Vorschau verglichen.",
-        "solution": "Maßgeblich sind name und value, nicht id oder die sichtbare Überschrift."
+        "solution": "Die Vorschau zeigt reiseziel: PAR, abreise: 2026-10-16 und hinweise: Fensterplatz. Maßgeblich sind die name-Attribute und die Feldwerte; die ID ort ist kein übertragener Feldname."
       },
       {
         "title": "Label-Fehler beheben",
         "task": "Korrigiere label for=\"datum\" zu einem Feld mit id=\"abreise\". Ergänze dem Feld einen Übermittlungsnamen.",
         "hint": "Entweder for oder id angleichen und name ergänzen.",
         "criteria": "Label-Klick fokussiert das Feld; Vorschau enthält den Wert.",
-        "solution": "label for=\"abreise\" und input id=\"abreise\" name=\"abreise\" type=\"date\".."
+        "solution": "Zum Beispiel: <label for=\"abreise\">Abreise</label> und <input id=\"abreise\" name=\"abreise\" type=\"date\">. Der Klick auf die Beschriftung fokussiert das Feld; name legt den Übermittlungsschlüssel fest."
       },
       {
         "title": "Reiseformular erstellen",

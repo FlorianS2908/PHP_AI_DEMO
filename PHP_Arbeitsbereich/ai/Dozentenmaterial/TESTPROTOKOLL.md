@@ -1,3 +1,5 @@
+> Historischer Prüfstand. Seit 07.10.2026 wurden die versteckten Kopiertest-Anweisungen aus den öffentlichen Aufgaben-PDFs entfernt. Der frühere Marker-Nachweis weiter unten gilt für die damalige Fassung. Aktueller Stand: [Korrekturreview](../../../pruefberichte/inhaltsreview.md).
+
 # Prüfprotokoll – PHP Formularlabor
 
 Prüfumgebung: PHP Built-in-Server, Linux; XAMPP nicht ausgeführt. PHP 8.4.23. Prüfzeit laut Laufzeitumgebung: 2026-10-01T09:18:14.604360+02:00.

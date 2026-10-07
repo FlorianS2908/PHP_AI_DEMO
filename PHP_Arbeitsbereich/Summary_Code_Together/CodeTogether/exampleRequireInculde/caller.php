@@ -1,16 +1,14 @@
 <?php
-# verpflichtend => bei nicht funktionalität gibt es einen Error
-# __DIR__ => ist ein konstante in der der Pfad zum aktuellen Ordner liegt
-# C:\xampp\htdocs\PHP\PHP\Summary_Code_Together\CodeTogether\exampleRequireInculde
-require_once __DIR__."/funktionen.php";# __DIR__ + Dateiname
-# __DIR__ steht in php file => OrdnerPfad zu dieser Datei
-# nicht verpflichtend => Warning
-#include __DIR__."/funktionen.php";
-# once bietet das einmalig nutzen der Datei an
-#require_once __DIR__."/funktionen.php";
-#include_once __DIR__."/funktionen.php";
-echo addiere(1,3);
-echo addiere2(1,3);
-echo "Test";
+declare(strict_types=1);
+header('Content-Type: text/plain; charset=UTF-8');
 
-?>
+// __DIR__ enthält den Ordnerpfad dieser Datei – unabhängig vom Aufrufort.
+// require bricht bei einer fehlenden Datei mit einem Fehler ab;
+// include erzeugt eine Warnung und führt das Skript grundsätzlich weiter aus.
+// _once verhindert ein erneutes Einbinden derselben Datei innerhalb des Requests.
+require_once __DIR__ . '/funktionen.php';
+require_once __DIR__ . '/funktionen.php'; // Keine doppelte Funktionsdeklaration.
+
+// Eingebundene Funktionen dürfen trotzdem mehrfach aufgerufen werden.
+echo 'addiere(1, 3): ' . addiere(1, 3) . "\n";
+echo 'addiere(5, 2): ' . addiere(5, 2) . "\n";

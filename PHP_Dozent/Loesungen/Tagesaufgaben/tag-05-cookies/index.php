@@ -53,7 +53,7 @@ body.gross { font-size: 21px; }
 <body>
     <h1>Aufgabe 01: Eine Ansicht merken</h1>
     <p>Cookie setzen und nach der Rückleitung auslesen</p>
-    <p class="info"><strong>Startdateien:</strong> Bearbeite die TODO-Stellen. Das Merken ist noch nicht umgesetzt.</p>
+    <p class="info"><strong>Musterlösung:</strong> Die Verarbeitung prüft die Auswahl, setzt das Cookie und leitet zum erneuten Lesen zurück. Vergleiche die drei Schritte im Quelltext.</p>
     <?php if ($fehler !== "") : ?>
         <p class="fehler" role="alert"><strong>Fehler:</strong> <?= html($fehler) ?></p>
     <?php endif; ?>

@@ -207,7 +207,7 @@
       ],
       "reading": "<p>Speichere die Datei mit der Endung <code>.php</code> und rufe sie über <code>http://localhost/...</code> auf. Ein Doppelklick führt PHP nicht aus. Beginne mit festen Werten; Formulardaten kommen als eigener Schritt an Tag 4.</p><p>Bei Schleifen immer Startwert, Bedingung, Veränderung und Ausgabe notieren. Nutze zunächst <code>if/else</code>, <code>for</code> und <code>foreach</code>. <code>switch</code>, <code>while</code> und <code>do-while</code> liegen als kurze Vertiefung im vorhandenen Baustein 11 bereit.</p>",
       "example": "<?php\ndeclare(strict_types=1);\nfunction doppelt(int $zahl): int {\n    return $zahl * 2;\n}\n$anzahl = 3;\n$summe = doppelt($anzahl);\n?>\n<!doctype html>\n<html lang=\"de\">\n<head><meta charset=\"utf-8\"><title>PHP-Einstieg</title></head>\n<body><p>Ergebnis: <?= $summe ?></p></body>\n</html>",
-      "task": "Bearbeite die TODOs in der Startdatei: Lege drei Lernziele in einem Array ab, gib sie mit foreach aus und ergänze eine Entscheidung zur Teilnehmerzahl. Schreibe eine Funktion für eine einfache Berechnung. Notiere die erwartete Ausgabe vor dem Aufruf. Erkläre anschließend \"3\" === 3 und die Wirkung von strict_types am Funktionsaufruf.",
+      "task": "Bearbeite die TODOs in der Startdatei: Lege drei Lernziele in einem Array ab, gib sie mit foreach aus und ergänze eine if/else-Entscheidung zur Teilnehmerzahl: Bei 1 bis 4 Personen gilt „Kleine Gruppe“, ab 5 „Große Gruppe“. Verwende für diese Aufgabe nur positive ganze Teilnehmerzahlen. Schreibe die Funktion doppelt(int $zahl): int, die das Doppelte zurückgibt. Verwende sie für die Teilnehmerzahl. Notiere die erwartete Ausgabe vor dem Aufruf. Erkläre anschließend \"3\" === 3 und die Wirkung von strict_types am Funktionsaufruf.",
       "checks": [
         "Was sieht der Browser vom PHP-Quellcode bei korrekter Serverausführung?",
         "Was bewirkt strict_types bei gewöhnlichen Variablen?",
@@ -269,7 +269,7 @@
       ],
       "reading": "<p>Arbeite zuerst mit nur ein oder zwei Feldern. Die vorhandenen Alltagsformulare zeigen den Ablauf mit getrennten Dateien für Anzeige, Verarbeitung und Funktionen. Baue erst danach die kleine Variante deines KI-Projekts.</p><p>Für die heutige lokale Übung können harmlose kurze Rückmeldungen mit <code>http_build_query</code> im Query-Teil der Rücksprung-URL stehen. Sensible Daten gehören dort nicht hinein. Tag 5 führt Sessions als Alternative für Rückmeldungen und Entwürfe ein.</p>",
       "example": "$fehler = [];\n$ziel = \"\";\nif (!isset($_POST[\"ziel\"]) || !is_string($_POST[\"ziel\"])) {\n    $fehler[\"ziel\"] = \"Bitte einen Zielort als Text senden.\";\n} else {\n    $ziel = trim($_POST[\"ziel\"]);\n    if ($ziel === \"\") {\n        $fehler[\"ziel\"] = \"Bitte einen Zielort eintragen.\";\n    }\n}\n// Bei der späteren HTML-Ausgabe:\necho htmlspecialchars($ziel, ENT_QUOTES, \"UTF-8\");",
-      "task": "Wähle eine kleine Alltagsaufgabe und ergänze die fehlende Verarbeitung. Prüfe Direktaufruf ohne POST, fehlendes Feld, Leerzeichen, gültigen Text, den Wert \"0\" und eine Array-Eingabe. Gib fremdes HTML als Text aus. Vergleiche nach dem Absenden den POST und den folgenden GET. Halte Eingabe, Soll, Ist und Korrektur schriftlich fest.",
+      "task": "Bearbeite die verlinkte Startaufgabe „Reiseziel prüfen“. Benenne index.html in index.php um, damit dort nach dem 303-Rückweg PHP die Rückmeldung und den gültigen Zieltext anzeigen kann. Erlaubt ist ein nicht leerer Text nach trim() mit höchstens 100 Bytes in UTF-8; strlen() zählt Bytes, Umlaute können mehrere Bytes belegen. Die Grenze hält diese kleine Übung kurz. Prüfe Direktaufruf ohne POST, fehlendes Feld, Leerzeichen, gültigen Text, den Wert \"0\" und eine Array-Eingabe. Gib fremdes HTML als Text aus. Vergleiche nach dem Absenden den POST und den folgenden GET. Halte Eingabe, Soll, Ist und Korrektur schriftlich fest.",
       "checks": [
         "Warum reicht required im HTML nicht aus?",
         "Wann ist empty(\"0\") problematisch?",
@@ -328,7 +328,7 @@
       ],
       "reading": "<p>Die vorhandenen Cookie- und Session-Webvarianten enthalten Erklärungen, Schrittsimulationen, fertige Demos, Aufgabenblätter und Startdateien. Bearbeite heute je eine kleine Aufgabe vollständig. Weitere Aufgaben bleiben als Übungsreserve erreichbar.</p><p>Vergleiche in den Entwicklerwerkzeugen Browser-Speicher, Request-Header und Response-Header. Für einen unabhängigen Session-Test verwende ein getrenntes Browserprofil. Eine Cookie-Einstellung und ein serverseitig gespeicherter Formularentwurf haben unterschiedliche Aufgaben.</p>",
       "example": "<?php\ndeclare(strict_types=1);\nsession_start(); // vor der HTML-Ausgabe\nif (!isset($_SESSION[\"thema\"])) {\n    $_SESSION[\"thema\"] = \"PHP\";\n}\necho htmlspecialchars($_SESSION[\"thema\"], ENT_QUOTES, \"UTF-8\");",
-      "task": "Nutze die vorbereiteten Cookie- und Session-Aufgaben. Merke eine erlaubte Anzeigeeinstellung per Cookie. Speichere einen geprüften Alias in einer Session und lies ihn auf einer zweiten Seite. Teste fehlende oder manipulierte Eingaben, Ändern und Löschen. Ergänze anschließend höchstens eine dieser Funktionen in dein Formularprojekt.",
+      "task": "Nutze die vorbereiteten Cookie- und Session-Aufgaben. Merke eine erlaubte Anzeigeeinstellung per Cookie. Speichere einen geprüften Alias in einer Session und lies ihn auf einer zweiten Seite. Teste fehlende oder manipulierte Eingaben und das Überschreiben eines gespeicherten Werts. Lösche das Cookie einmal in den Browserwerkzeugen. Erprobe unset und das vollständige Session-Beenden anschließend in der verlinkten Session-Demo; die Startaufgabe 01 verlangt zunächst nur Speichern und Lesen. Ergänze anschließend höchstens eine dieser Funktionen in dein Formularprojekt.",
       "checks": [
         "Wo liegen Cookie-Wert, Session-ID und Session-Nutzdaten?",
         "Warum zeigt $_COOKIE unmittelbar nach setcookie noch den alten Eingang?",
@@ -339,7 +339,7 @@
         "$_COOKIE stammt aus der eingehenden Anfrage. setcookie beschreibt erst die ausgehende Antwort.",
         "Das muss praktisch belegt werden: passende Cookies und Daten der gestarteten Session können weiterbestehen; gewöhnliche lokale PHP-Variablen beginnen je Request neu."
       ],
-      "teacher": "Je eine Cookie- und Session-Aufgabe ist Pflicht; weitere neun Aufgaben sind Reserve. UE 8 ist die praktische Lernzielkontrolle: Datenweg erklären, einen Fehlfall reproduzieren und die Korrektur belegen. OOP und Datenbank bleiben außerhalb dieser fünf Tage."
+      "teacher": "Je eine Cookie- und Session-Aufgabe ist Pflicht; die übrigen neun Aufgaben pro Paket sind Reserve. UE 8 ist die praktische Lernzielkontrolle: Datenweg erklären, einen Fehlfall reproduzieren und die Korrektur belegen. OOP und Datenbank bleiben außerhalb dieser fünf Tage."
     }
   ],
   "core_scope": "HTML/CSS bis Cookies und Sessions",

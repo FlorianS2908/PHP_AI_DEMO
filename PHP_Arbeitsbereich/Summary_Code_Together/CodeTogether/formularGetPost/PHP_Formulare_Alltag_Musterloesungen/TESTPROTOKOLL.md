@@ -1,4 +1,6 @@
-# Technische Prüfung der Musterlösungen
+# Historische technische Prüfung der Musterlösungen
+
+Dieser übernommene Nachweis bezieht sich auf den damaligen Stand. Die aktuelle Korrektur von Chatname und Fundbüro ist im zentralen [Inhaltsreview](../../../../../pruefberichte/inhaltsreview.md) dokumentiert.
 
 Geprüft mit PHP 8.4.23 und dem integrierten PHP-Webserver.
 

@@ -229,18 +229,18 @@
       "type": "multiple",
       "topic": "03",
       "difficulty": "leicht",
-      "text": "Welche ZWEI Merkmale passen zur Darstellung von desirable?",
+      "text": "Welche ZWEI Merkmale passen zu desirable im UX-Honeycomb?",
       "options": [
         "Erzwungenes Flackern",
         "Ablenkung vom Hauptinhalt",
-        "Störungsfreies Erlebnis",
-        "Klarheit"
+        "Ansprechende Bildsprache",
+        "Passende visuelle Identität"
       ],
       "correct": [
         2,
         3
       ],
-      "explanation": "Die Unterlage betont einladende, klare, nicht störende Gestaltung.",
+      "explanation": "Desirable betrifft die ästhetische und emotionale Anziehungskraft, etwa Bildsprache und visuelle Identität.",
       "source": "PHP-Kurs_Kapitel 3_User Experience_Teil 1_Präsentation.pdf · 3–19"
     },
     {
@@ -649,7 +649,7 @@
       "type": "single",
       "topic": "09",
       "difficulty": "leicht",
-      "text": "Welche Aussage zu p.hinweis stimmt?",
+      "text": "Welche Aussage zum CSS-Selektor p.hinweis stimmt?",
       "options": [
         "Alle p und alle Elemente mit hinweis werden unabhängig ausgewählt.",
         "Nur Kinder eines Elements hinweis werden ausgewählt.",

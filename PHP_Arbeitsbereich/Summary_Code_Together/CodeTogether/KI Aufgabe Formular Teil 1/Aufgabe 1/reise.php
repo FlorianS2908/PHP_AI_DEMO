@@ -1,5 +1,11 @@
 <?php
-// Das Reiseformular sendet GET, die Bestätigung sendet POST.
+declare(strict_types=1);
+// Diese Prüfansicht akzeptiert beide Formularmethoden; es erfolgt keine Buchung.
+if (!in_array($_SERVER['REQUEST_METHOD'], ['GET', 'POST'], true)) {
+    http_response_code(405);
+    header('Allow: GET, POST');
+    exit('Nur GET und POST sind erlaubt.');
+}
 $eingaben = $_SERVER["REQUEST_METHOD"] === "POST" ? $_POST : $_GET;
 $felder = [
     "reiseziel" => "Reiseziel",
@@ -8,7 +14,6 @@ $felder = [
     "reisende" => "Reisende",
     "unterkunft" => "Unterkunft"
 ];
-$felder_keys = array_keys($felder);
 $daten = [];
 foreach ($felder as $feld => $bezeichnung) {
     $wert = $eingaben[$feld] ?? "";
@@ -25,24 +30,26 @@ $anreise = pruefeDatum($daten["anreise"]);
 $abreise = pruefeDatum($daten["abreise"]);
 
 if ($daten["reiseziel"] === "") {
-    $fehler[$felder_keys[0]] = "Bitte gib ein Reiseziel ein.";
+    $fehler['reiseziel'] = "Bitte gib ein Reiseziel ein.";
 }
 if (!in_array($daten["reisende"], ["1", "2", "3", "4", "5", "6"], true)) {
-    $fehler[$felder_keys[3]] =  "Bitte wähle zwischen 1 und 6 Reisenden.";
+    $fehler['reisende'] =  "Bitte wähle zwischen 1 und 6 Reisenden.";
 }
 if (!in_array($daten["unterkunft"], ["hotel", "ferienwohnung", "camping"], true)) {
-    $fehler[$felder_keys[4]] = "Bitte wähle eine gültige Unterkunft.";
+    $fehler['unterkunft'] = "Bitte wähle eine gültige Unterkunft.";
 }
-if ($anreise === false || $abreise === false) {
-    $fehler[$felder_keys[1]] = "Bitte gib für Anreise ein gültiges Datum ein.";
-    $fehler[$felder_keys[2]] = "Bitte gib für Abreise ein gültiges Datum ein.";
+if ($anreise === false) {
+    $fehler['anreise'] = "Bitte gib für die Anreise ein gültiges Datum ein.";
+}
+if ($abreise === false) {
+    $fehler['abreise'] = "Bitte gib für die Abreise ein gültiges Datum ein.";
 }
 // Vergangene Daten lösen nur eine Warnung aus, keine Sperre.
 if ($anreise !== false && $anreise < $heute) {
-    $warnungen[$felder_keys[1]] = "Die Anreise liegt in der Vergangenheit.";
+    $warnungen['anreise'] = "Die Anreise liegt in der Vergangenheit.";
 }
 if ($abreise !== false && $abreise < $heute) {
-    $warnungen[$felder_keys[2]] = "Die Abreise liegt in der Vergangenheit.";
+    $warnungen['abreise'] = "Die Abreise liegt in der Vergangenheit.";
 }
 
 if ($anreise !== false && $abreise !== false) {
@@ -52,12 +59,6 @@ if ($anreise !== false && $abreise !== false) {
         // Unterschied in Kalendertagen: 10.10. bis 15.10. = 5 Tage.
         $dauer = $anreise->diff($abreise)->days;
     }
-}
-if(!empty($fehler) || !empty($warnungen)){
-    var_dump($fehler);
-    var_dump($warnungen);
-    $arrayMergeError = array_merge($fehler, $warnungen);
-    redirctAndDatenInjecten($arrayMergeError, $daten);
 }
 // Für die Tabelle Daten im deutschen Datumsformat anzeigen.
 $anzeige = $daten;
@@ -71,6 +72,9 @@ if ($abreise !== false) {
 // Posted by Richard Knop, modified by community. See post 'Timeline' for change history
 // Retrieved 2026-09-30, License - CC BY-SA 3.0
 ?>
+<!doctype html><html lang="de"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reisedaten prüfen</title>
 <style>
 body {
     font-family: Arial, sans-serif;
@@ -87,14 +91,14 @@ td {
     padding: 8px;
     text-align: left;
 }
-</style>
+</style></head>
 
 <body>
-    <h1>Reisedaten prüfen</h1>
+    <h1>Reisedaten prüfen</h1><p>Prüfansicht: Diese Demo speichert keine Reise und löst keine Buchung aus.</p>
 
     <?php
     foreach ($fehler as $meldung) {
-        echo "<p><strong>Fehler:</strong> " . ausgabe($meldung) . "</p>";
+        echo "<p role='alert'><strong>Fehler:</strong> " . ausgabe($meldung) . "</p>";
     }
     foreach ($warnungen as $meldung) {
         echo "<p><strong>Warnung:</strong> " . ausgabe($meldung) . "</p>";
@@ -120,3 +124,5 @@ td {
             </tr>
         </tbody>
     </table>
+<p><a href="index.html">Zurück zum Formular</a></p>
+</body></html>

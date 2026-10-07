@@ -1,9 +1,19 @@
 <?php
 declare(strict_types=1);
-function doppelt(int $zahl): int { return $zahl * 2; }
+// Eingabe: ganze Zahl. Ausgabe: verdoppelter Wert; die Funktion gibt kein HTML aus.
+function doppelt(int $zahl): int
+{
+    return $zahl * 2;
+}
 $anzahl = 3;
 $themen = ['HTML', 'CSS', 'PHP'];
-$einordnung = $anzahl <= 4 ? 'Kleine Gruppe' : 'Große Gruppe';
+// Die Aufgabe setzt positive ganze Teilnehmerzahlen voraus.
+// Bis einschließlich 4 Personen gilt die erste Gruppe; ab 5 die zweite.
+if ($anzahl <= 4) {
+    $einordnung = 'Kleine Gruppe';
+} else {
+    $einordnung = 'Große Gruppe';
+}
 // Dynamische Typisierung bleibt erhalten, obwohl strict_types aktiv ist.
 $beispiel = 3;
 $typVorher = gettype($beispiel);

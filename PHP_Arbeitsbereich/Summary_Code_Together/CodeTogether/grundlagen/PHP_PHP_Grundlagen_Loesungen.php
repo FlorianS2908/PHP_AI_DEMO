@@ -4,11 +4,10 @@ declare(strict_types=1);
 // PHP | PHP von Anfang an | 30 Musterlösungen
 // Passendes Begleitskript: PHP_PHP_Grundlagen_Skript.pdf
 //
-// START MIT XAMPP
-// 1. Diese Datei unter C:\xampp\htdocs\PHP\ speichern.
-// 2. Im XAMPP Control Panel Apache starten.
-// 3. Im Browser öffnen: http://localhost/PHP/PHP_PHP_Grundlagen_Loesungen.php
-// Nicht per Doppelklick als lokale Datei öffnen. Diese Übungen brauchen keine Datenbank.
+// START IM REPOSITORY
+// 1. PHP-START.cmd im Hauptordner ausführen oder das gesamte Repo mit XAMPP öffnen.
+// 2. Im Browser: Arbeitsbereich > Summary Code Together > Grundlagen.
+// 3. Diese Datei im Editor lesen und über den PHP-Server ausführen.
 // Alternativ in einem Terminal mit PHP im Suchpfad: php PHP_PHP_Grundlagen_Loesungen.php
 //
 // SO ARBEITEST DU
@@ -28,7 +27,7 @@ ini_set("display_errors", "1");
 header("Content-Type: text/plain; charset=UTF-8");
 
 echo "PHP | PHP-Grundlagen | Musterloesungen" . PHP_EOL;
-echo "Bearbeite die Aufgaben nacheinander im Editor." . PHP_EOL;
+echo "Vergleiche erst nach eigener Bearbeitung mit diesen 30 Musterlösungen." . PHP_EOL;
 
 // ====================================================================================
 // BLOCK A | Variablen und Kommentare
@@ -573,117 +572,3 @@ function istLeer(string $text): bool {
 }
 var_dump(istLeer("   "));
 var_dump(istLeer("0"));
-
-
-// FACHLICHE REFERENZEN | PHP-Handbuch | Stand der Prüfung: 29.09.2026
-// https://www.php.net/manual/en/language.basic-syntax.php
-// https://www.php.net/manual/en/language.basic-syntax.comments.php
-// https://www.php.net/manual/en/language.variables.basics.php
-// https://www.php.net/manual/en/language.types.intro.php
-// https://www.php.net/manual/en/language.types.array.php
-// https://www.php.net/manual/en/function.var-dump.php
-// https://www.php.net/manual/en/control-structures.declare.php
-// https://www.php.net/manual/en/language.types.declarations.php
-// https://www.php.net/manual/en/language.operators.arithmetic.php
-// https://www.php.net/manual/en/language.operators.comparison.php
-// https://www.php.net/manual/en/language.operators.string.php
-// https://www.php.net/manual/en/language.control-structures.php
-// https://www.php.net/manual/en/function.trim.php
-// https://www.php.net/manual/en/function.strtolower.php
-// https://www.php.net/manual/en/function.strtoupper.php
-// https://www.php.net/manual/en/function.strlen.php
-// https://www.php.net/manual/en/function.str-replace.php
-// https://www.php.net/manual/en/function.isset.php
-// https://www.php.net/manual/en/function.empty.php
-// https://www.php.net/manual/en/functions.user-defined.php
-// https://www.php.net/manual/en/language.types.declarations.php
-
-
-
-
-
-const MAX_PREIS = 500.0;
-
-/**
- * Bereinigt und prüft die Importdaten.
- *
- * @param array $rohpreise Ungeprüfte Eingaben mit ihren Ursprungsindizes.
- * @return array Gültige Datensätze, Fehlerprotokoll und Zusammenfassung.
- */
-function importierePreise(array $rohpreise): array
-{
-    $gueltig = [];
-    $fehler = [];
-    $summeCent = 0;
-
-    foreach ($rohpreise as $index => $rohpreis) {
-        // 1. Nur Strings akzeptieren, keine Zahlen, Arrays oder null.
-        if (!is_string($rohpreis)) {
-            $fehler[] = ["index" => $index, "grund" => "Kein String"];
-            continue;
-        }
-
-        // 2. Äußere Leerzeichen entfernen und Dezimalkomma ersetzen.
-        $text = trim($rohpreis);
-        $text = str_replace(",", ".", $text);
-
-        // "0" bleibt erlaubt: nur den wirklich leeren String ablehnen.
-        if ($text === "") {
-            $fehler[] = ["index" => $index, "grund" => "Leere Eingabe"];
-            continue;
-        }
-
-        // 3. Den vollständigen Text VOR der Umwandlung prüfen.
-        if (!is_numeric($text)) {
-            $fehler[] = [
-                "index" => $index,
-                "grund" => "Keine vollständige Zahl"
-            ];
-            continue;
-        }
-
-        // 4. Umwandeln und anschließend den Zahlenbereich prüfen.
-        $preis = floatval($text);
-
-        if ($preis < 0 || $preis > MAX_PREIS) {
-            $fehler[] = [
-                "index" => $index,
-                "grund" => "Preis außerhalb von 0 bis " . MAX_PREIS . " Euro"
-            ];
-            continue;
-        }
-
-        // 5. Volle Euro abschneiden; den Centbetrag dagegen zuerst runden.
-        $volleEuro = intval($preis);
-        $cent = intval(round($preis * 100));
-
-        $gueltig[] = [
-            "index" => $index,
-            "preis" => $preis,
-            "volleEuro" => $volleEuro,
-            "cent" => $cent
-        ];
-
-        $summeCent += $cent;
-    }
-
-    return [
-        "gueltig" => $gueltig,
-        "fehler" => $fehler,
-        "anzahlGueltig" => count($gueltig),
-        "anzahlFehler" => count($fehler),
-        "summeCent" => $summeCent
-    ];
-}
-
-$rohpreise = [
-    " 12,50 ", "8.90", "0", "1e2", "-2,50",
-    "12abc", "", "  ", "1.234,56", null, ["9,90"]
-];
-
-// Zum Testen die Startdaten durch eine dieser Listen ersetzen:
-// $rohpreise = ["500", "500,01", "12,345", "0,10", 12];
-// $rohpreise = [];
-
-$ergebnis = importierePreise($rohpreise);
-var_dump($ergebnis);

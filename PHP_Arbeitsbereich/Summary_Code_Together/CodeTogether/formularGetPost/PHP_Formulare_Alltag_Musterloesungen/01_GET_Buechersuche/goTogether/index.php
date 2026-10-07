@@ -1,37 +1,19 @@
 <?php
-# index => daten nach auswertung => daten zurück zu index
-$fehler = "";
-
-if(isset($_GET["error"])){
-http://localhost:8080/PHP/PHP_Arbeitsbereich/Summary_Code_Together/CodeTogether/formularGetPost/PHP_Formulare_Alltag_Musterloesungen/01_GET_Buechersuche/goTogether/index.php?dummy=Hallo%20Welt&
-    $fehler = $_GET["error"];
-}
-
-
+declare(strict_types=1);
+require_once __DIR__ . '/../function.php';
+$fehler = is_string($_GET['error'] ?? null) ? $_GET['error'] : '';
 ?>
-<!doctype html>
-<html lang="de">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=divice-width, inital-scale=1">
-    <titel>Aufgabe 1 Büchersuche</titel>
-</head>
-
-<body>
-    <form action="auswertung.php" method="post">
-
-        <h1>Aufgabe 1: Büchersuche</h1>
-        <?php if($fehler !== "") : ?>
-        <p role="alert"><strong>Fehler:</strong><?= $fehler ?> </p>
-        <?php endif ?>
-        <label for="suchbegriff">Suchbegriff</label>
-        <input type="text" id="suchbegriff" name="suchbegriff" style="padding: 8px;">
-        <button type="submit">
-            suche starten
-        </button>
-
-    </form>
-</body>
-
-</html>
+<!doctype html><html lang="de"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aufgabe 1: Büchersuche</title></head><body>
+<h1>Aufgabe 1: Büchersuche</h1>
+<p>Gemeinsam erarbeitet: Fehler sammeln, nummerieren und nach der Weiterleitung sicher anzeigen.
+Eine echte Suche wird hier nicht ausgeführt.</p>
+<?php if ($fehler !== ''): ?>
+<p role="alert" style="white-space:pre-line"><?= html($fehler) ?></p>
+<?php endif; ?>
+<form action="auswertung.php" method="get">
+<label for="suchbegriff">Suchbegriff</label>
+<input type="text" id="suchbegriff" name="suchbegriff">
+<button type="submit">Suche starten</button>
+</form></body></html>

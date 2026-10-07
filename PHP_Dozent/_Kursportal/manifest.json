@@ -6,8 +6,8 @@
   "files": [
     {
       "path": "Aufgaben/01.html",
-      "bytes": 8426,
-      "sha256": "118dedf747240ecaf9473c35b0730d115dad702fdbb4146046dc0d7d33efa34c"
+      "bytes": 8632,
+      "sha256": "a3c2f6b763fb24188435280a56957ba317ee9409c9a44abd6024cff8eae59006"
     },
     {
       "path": "Aufgaben/02.html",
@@ -21,8 +21,8 @@
     },
     {
       "path": "Aufgaben/04.html",
-      "bytes": 8337,
-      "sha256": "abe4be7597461a88f53bf91efc4e34b1c01f93ca754f7253f70c9a32559ccff0"
+      "bytes": 8461,
+      "sha256": "48c140d9613b3f333e8cf9fb3b1543d92894e5cc22e624ade7ae54443d2bfe55"
     },
     {
       "path": "Aufgaben/05.html",
@@ -41,8 +41,8 @@
     },
     {
       "path": "Aufgaben/08.html",
-      "bytes": 8193,
-      "sha256": "68147fd0961bbbbd78b964162192093ca8529a7a11e155642adbf3c460c1c797"
+      "bytes": 8262,
+      "sha256": "c8dfe6fe0aa073209efd5d8fa576c5363db437b7f0bfd3e8abf8ce11e759e749"
     },
     {
       "path": "Aufgaben/09.html",
@@ -676,13 +676,13 @@
     },
     {
       "path": "Loesungen/Tagesaufgaben/tag-03.php",
-      "bytes": 1327,
-      "sha256": "67b1b442289c52141f013fe7ee31bb4a9426d6815520f3bf5ecd21940951e1d3"
+      "bytes": 1588,
+      "sha256": "0fdad7a2c05caad0ad0a455492bfcde5cd79eccdc0578fb27346bed28f3747ca"
     },
     {
       "path": "Loesungen/Tagesaufgaben/tag-04/auswertung.php",
-      "bytes": 746,
-      "sha256": "849a1a3e0fa691e4a2b6c1948f55945575106178cb6bc564ee1d37ea96327e0a"
+      "bytes": 839,
+      "sha256": "932985d370f52869497c32cedc5b2e37f4ded2c05970227c28154d8482c3cb28"
     },
     {
       "path": "Loesungen/Tagesaufgaben/tag-04/index.php",
@@ -701,8 +701,8 @@
     },
     {
       "path": "Loesungen/Tagesaufgaben/tag-05-cookies/index.php",
-      "bytes": 3324,
-      "sha256": "a30b739b7bb7afbad058d18d2ba8f990c9c747394388798e0a7e82806644ed7b"
+      "bytes": 3396,
+      "sha256": "d6d01f3a9f976b8cca1b6f5273e235db37eada37445847dc249beaaec503f6af"
     },
     {
       "path": "Loesungen/Tagesaufgaben/tag-05-session/anzeige.php",
@@ -726,18 +726,18 @@
     },
     {
       "path": "Loesungen/Themen/01.html",
-      "bytes": 6790,
-      "sha256": "7a9913d4b7cd4b29ae03b0c6dc82eae8b038ecca8b65ff01cd50a62f427deac4"
+      "bytes": 6850,
+      "sha256": "b7ce76e497428635cd35523c64983368f801dc0c1c862d1cde552cf1fc0dba4f"
     },
     {
       "path": "Loesungen/Themen/02.html",
-      "bytes": 6627,
-      "sha256": "703b704f888cd88a6001bcdc14c762e5d177a5969ffbeedeee8b3cb36bbf9e84"
+      "bytes": 6795,
+      "sha256": "178addd61f3a86f19856acf825f24ecd037684c8f500eccae8d98267d67ce3de"
     },
     {
       "path": "Loesungen/Themen/03.html",
-      "bytes": 6683,
-      "sha256": "94018f9f8b69f5728a6326dce6662bef109602f3fbaf5a97dbf3147ecfb1f6d1"
+      "bytes": 6835,
+      "sha256": "3e4f3fcf3b7a1738a327ed111cc6402ec547b451b04c3e1bd28d52ae9cd1a362"
     },
     {
       "path": "Loesungen/Themen/04/05.css",
@@ -756,8 +756,8 @@
     },
     {
       "path": "Loesungen/Themen/04.html",
-      "bytes": 8381,
-      "sha256": "3fa2c9931192b46b6a5f854188050e649135b217718b6aaaaeb8dae3758c8e4d"
+      "bytes": 8556,
+      "sha256": "84084704a99f45f479b71758ca94fa9717f9ee1b9fd39a8181893196c687b2a1"
     },
     {
       "path": "Loesungen/Themen/05/03.css",
@@ -986,8 +986,8 @@
     },
     {
       "path": "Loesungen/Themen/08.html",
-      "bytes": 11919,
-      "sha256": "10ec27cf282c4ed6f00c7a107474e231b09f3bfa0db19a29d117164d3cf1a64d"
+      "bytes": 12026,
+      "sha256": "75bcc91668ae4be1bc90e88ecc3fad45d54c013faaaa6ddff53e751b484970ff"
     },
     {
       "path": "Loesungen/Themen/09/03.css",
@@ -1176,8 +1176,8 @@
     },
     {
       "path": "Loesungen/erwartungshorizonte.html",
-      "bytes": 7429,
-      "sha256": "e5ac52e6dc4821756e64893a135bd601c242b62eb7190232414696c3fcea543b"
+      "bytes": 9373,
+      "sha256": "d6151d485cc8efff20ca2e4df1992cd3f7d5944d5ee4e9575d121b5b69bf5800"
     },
     {
       "path": "Loesungen/index.html",
@@ -1201,8 +1201,8 @@
     },
     {
       "path": "Quiz/Fragenpools/PHP-03.json",
-      "bytes": 9234,
-      "sha256": "bd86420ccfcd470e8247add8cd80b25b8d78da4f78901ea7bec97a444f7dd55a"
+      "bytes": 9417,
+      "sha256": "9504731f3b7afd958f4566b1c163ae07452a6061766ebc6a694622db2969181f"
     },
     {
       "path": "Quiz/Fragenpools/PHP-04.json",
@@ -1231,8 +1231,8 @@
     },
     {
       "path": "Quiz/Fragenpools/PHP-09.json",
-      "bytes": 8879,
-      "sha256": "2e24237e6cec55a0261bb0a1e80175f338a70dcee6128885e68c6e56a58bdf19"
+      "bytes": 8893,
+      "sha256": "7a2af0fa8fe528e71652874d939c668a36824969d7227c87644c486109a7dd6c"
     },
     {
       "path": "Quiz/Fragenpools/PHP-10.json",
@@ -1256,8 +1256,8 @@
     },
     {
       "path": "Quiz/Fragenpools/PHP-test-frontend.json",
-      "bytes": 28862,
-      "sha256": "bf92b7aa8c0ef6939ac2d71a214efcb6b2d4829c41b471d10fc518699021010e"
+      "bytes": 28937,
+      "sha256": "c41427a173b9da5c9a40f41bc3c642156ece568536536f1146bfa1ad99176232"
     },
     {
       "path": "Quiz/Fragenpools/index.html",
@@ -1276,8 +1276,8 @@
     },
     {
       "path": "Quiz/pools.js",
-      "bytes": 112832,
-      "sha256": "c29314da9fc369419f51719b49f4a49771ea8e682d76a416522d7580c51e389b"
+      "bytes": 113051,
+      "sha256": "44465190902f3aca70a1ca02270c12a4c98df9244e25cd531488001657b7bc08"
     },
     {
       "path": "README.md",
@@ -1311,8 +1311,8 @@
     },
     {
       "path": "Unterricht/projekt.html",
-      "bytes": 3214,
-      "sha256": "17a059beb5c18bc217854285097404ed9b13ad35126f5fe97386026b104a2807"
+      "bytes": 3265,
+      "sha256": "ee30cdb32b44910dc48b635366fa4609c623e137f0b17c70475bbc33fe606e49"
     },
     {
       "path": "Unterricht/tag-01.html",
@@ -1326,23 +1326,23 @@
     },
     {
       "path": "Unterricht/tag-03.html",
-      "bytes": 9429,
-      "sha256": "c2585ee77a3356a66987e47dc0a1a5be2f6d3d38d889e3c9b63df16082644e87"
+      "bytes": 9636,
+      "sha256": "e6b0d5f0fe45fee6ae4fad28c2eaa6cb28c1f2ac14e0182e3d62008f1fca95d0"
     },
     {
       "path": "Unterricht/tag-04.html",
-      "bytes": 9235,
-      "sha256": "2260fd7e64b39fa30478d3f284a38d3d716001af489dfd9d37c4ac9de04aeb92"
+      "bytes": 9541,
+      "sha256": "426430ec99b703a261db4e25364df515f6ed07108bf862d5292227be5d7361e3"
     },
     {
       "path": "Unterricht/tag-05.html",
-      "bytes": 8806,
-      "sha256": "c1053223a678d17ff197b7054f9fbdb33e50abdf901312113e9d97346974c7a6"
+      "bytes": 9062,
+      "sha256": "761b1ee05fe1b01365bcd20f1b72aa6ce9fd3aaefb005be69bfc02de988a3887"
     },
     {
       "path": "Unterricht/unterrichtsplanung.html",
-      "bytes": 10833,
-      "sha256": "395baab1b6751aed7f5ba66a096202d7a18831c4bc16eecc9d7dcd0a1d6af0b1"
+      "bytes": 10848,
+      "sha256": "e74f0d8dad670aad71898cffce678eb0a8e954134915f19757f1f02d34bdf6a9"
     },
     {
       "path": "_Kursportal/README.md",
@@ -1426,8 +1426,8 @@
     },
     {
       "path": "_Kursportal/kursdaten.json",
-      "bytes": 97494,
-      "sha256": "e4f311abbfd46b4965b2f05e239c0c739974505368f399674445e12ed39d48b6"
+      "bytes": 98857,
+      "sha256": "9c3bc2d51854c30fa3b19b0c4320d340a97d31c9ea350119cb695561cee4ac31"
     },
     {
       "path": "_Kursportal/materialien.html",
@@ -1436,8 +1436,8 @@
     },
     {
       "path": "_Kursportal/module/01.html",
-      "bytes": 19572,
-      "sha256": "d7ee6a14a5271408c6fc7d532df60d8821be673383dec917ea4492bcb3f01121"
+      "bytes": 19778,
+      "sha256": "59e11c3475e2f0962a397ce38e0925868885c5aa7eb284422482f9c099c0c7cc"
     },
     {
       "path": "_Kursportal/module/02.html",
@@ -1446,13 +1446,13 @@
     },
     {
       "path": "_Kursportal/module/03.html",
-      "bytes": 19092,
-      "sha256": "ce4190ffe06963024e9d1171d8b5e89ca8b118e40ecbd48150c2e76020193e7e"
+      "bytes": 19276,
+      "sha256": "89a793e40a32a6d54d84634bb1c51312f355bedcb2b50a1a05318add6f84d3c3"
     },
     {
       "path": "_Kursportal/module/04.html",
-      "bytes": 19662,
-      "sha256": "6736d428544f38c9183335976ae62bebbc14add5e893f11294ab1f8f1d5f0400"
+      "bytes": 19786,
+      "sha256": "986c6a20e25ed310540396535af31a73b3df7b21d39e23b9000e9bcb9e89d749"
     },
     {
       "path": "_Kursportal/module/05.html",
@@ -1471,8 +1471,8 @@
     },
     {
       "path": "_Kursportal/module/08.html",
-      "bytes": 19834,
-      "sha256": "06d4dfbdb3771212502b4a5a0cea0c7198332886f9b2ebd0527c76daf680f358"
+      "bytes": 19903,
+      "sha256": "76db001feae7d0cc240046015e5484f04d3c17a915d962b3b31d3fb020c177cc"
     },
     {
       "path": "_Kursportal/module/09.html",
@@ -1626,8 +1626,8 @@
     },
     {
       "path": "_Kursportal/quellen.html",
-      "bytes": 13920,
-      "sha256": "57b53aaf27590d33579a31e8e24c8d1cd8b8f8b9d28559a06020196881ecfad6"
+      "bytes": 14323,
+      "sha256": "069397bb72306aeb70fd9bc583c6e06b9049ab7a83fae9d47c2b3b23b5a2b4de"
     },
     {
       "path": "_Kursportal/zusatzmaterial.html",

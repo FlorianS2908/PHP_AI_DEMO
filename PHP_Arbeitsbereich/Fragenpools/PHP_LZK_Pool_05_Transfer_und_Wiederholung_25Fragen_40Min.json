@@ -894,7 +894,7 @@
       "type": "single-choice",
       "topic": "ux",
       "difficulty": "mittel",
-      "text": "<p>Welcher Honeycomb-Begriff wird in der Zusammenfassung der Präsentation mit „durchdacht und mit Sorgfalt entwickelt“ verbunden?</p>",
+      "text": "<p>Welcher Honeycomb-Begriff bezeichnet den Wertbeitrag eines Produkts zu den Zielen der Organisation und zum Nutzen ihrer Zielgruppe?</p>",
       "options": [
         "Findable.",
         "Valuable.",
@@ -905,7 +905,7 @@
         1
       ],
       "solution": "Valuable.",
-      "explanation": "Die Präsentation ordnet diese Zusammenfassung valuable zu und betont dabei Sorgfalt, handfeste Vorteile und verlässlichen Service. Gefragt ist hier ausdrücklich die Darstellung der Unterrichtsquelle.",
+      "explanation": "Valuable fragt nach dem Wertbeitrag, etwa für den Bildungsauftrag eines Anbieters. Damit ist mehr gemeint als eine sorgfältige Gestaltung.",
       "sourceIds": [
         "ppt-ux1"
       ],
