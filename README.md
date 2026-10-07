@@ -18,6 +18,21 @@ Arbeitsprobe von Florian Schaffer: ein aus der Unterrichtspraxis weiterentwickel
 
 Jeder Tag hat Lernziele, neun UE, kurze Erklärungen, kleine Beispiele, verknüpfte Demos, Startdateien, Aufgaben, einen KI-Auftrag und einen Wissenscheck. Die Dozentenfassung ergänzt Ablaufhinweise, Erwartungshorizonte und getrennte Musterlösungen. [kursplan.json](kursplan.json) dokumentiert die Zuordnung.
 
+## Schnell im Material zurechtfinden
+
+Beide Rollenordner haben denselben Aufbau. Lokal ist `index.html` der Einstieg; jeder Materialbereich hat eine eigene Übersicht.
+
+| Ordner | Unterrichtsrelevanter Inhalt |
+| --- | --- |
+| `Unterricht/` | Fünf Tagespläne und Kursprojekt; beim Dozenten zusätzlich Planung und Klassenbuch |
+| `Aufgaben/` | Aufgaben, `Startdateien/` und `Vorlagen/` |
+| `Demos/` | Beschriftete Themenübersichten und ausführbare Beispieldateien |
+| `Quiz/` | Quiz-Tool und Tageschecks; beim Dozenten zusätzlich `Fragenpools/` |
+| `Loesungen/` | Nur beim Dozenten: Erwartungshorizonte, `Tagesaufgaben/` und `Themen/` |
+| `_Kursportal/` | Gebündelte Unterstützung: Module, Backend, Medien, Quellen und Metadaten |
+
+Der Hintergrundordner bleibt Bestandteil des Pakets. Sein Inhalt ist über die Kursnavigation erreichbar; im Dateibrowser stehen die Materialbereiche im Vordergrund. OOP und Datenbanken bleiben optional.
+
 ## Lokal starten
 
 1. Das **gesamte Repository** herunterladen/klonen. GitHub zeigt HTML als Quelltext; lokale Darstellung über index.html.
@@ -30,7 +45,7 @@ Jeder Tag hat Lernziele, neun UE, kurze Erklärungen, kleine Beispiele, verknüp
 - [HTML-Tag-Tool](PHP_Arbeitsbereich/html-tag-tool/index.html): direkt aus Teilnehmer- und Dozentenansicht erreichbar, mit Rückwegen.
 - [Summary Code Together](PHP_Arbeitsbereich/Summary_Code_Together/index.html): vorhandene Grundlagen, Arrays, kleine Schritte und Formulare für Tag 3–4.
 - [Cookies](PHP_Arbeitsbereich/cookies/index.html) und [Sessions](PHP_Arbeitsbereich/session/index.html): Erklärung, Demo und Startaufgaben für Tag 5. Je eine Aufgabe ist Pflicht, weitere Aufgaben sind Reserve.
-- [Erwartungshorizonte](PHP_Dozent/tagesloesungen.html): Antworten, Lösungen für neue PHP-Tagesaufgaben und die beiden ausgewählten Zustandsübungen. Die historischen vollständigen Zusatz-Lösungspakete sind nicht enthalten.
+- [Erwartungshorizonte](PHP_Dozent/Loesungen/erwartungshorizonte.html): Antworten, Lösungen für neue PHP-Tagesaufgaben und die beiden ausgewählten Zustandsübungen. Die historischen vollständigen Zusatz-Lösungspakete sind nicht enthalten.
 - Der Themenfundus umfasst die ursprünglichen 13 Bausteine (einschließlich der optionalen Datenbank), 78 Aufgaben, 26 Demos und 156 unterschiedliche Fragen. Neue Tagesseiten führen eine passende Auswahl zusammen; die fünf Tage verlangen nicht die vollständige Bearbeitung des Fundus.
 
 ## KI mit wachsendem Lernstand
@@ -49,6 +64,6 @@ Die ursprüngliche Ausarbeitung dauerte nach rückblickender Schätzung etwa vie
 
 Persönliche Bearbeitungen liegen unter PHP_Arbeitsbereich/Persoenliche_Arbeit und sind über .gitignore von der gemeinsamen Versionierung ausgenommen. Das öffentliche Repository enthält auch Lehrkraftmaterial; die Trennung ist didaktisch und keine Zugriffskontrolle.
 
-Die aktuelle Prüfung steht in [pruefberichte/kursstruktur-review.md](pruefberichte/kursstruktur-review.md) und [bereitstellung.json](pruefberichte/bereitstellung.json). Ältere Prüfberichte sind historische Nachweise und keine erneute Prüfung dieses Stands. Ein echter Windows-/XAMPP-Test erfolgt separat.
+Die aktuelle Ordner- und Navigationsprüfung steht in [ordnerstruktur-review.md](pruefberichte/ordnerstruktur-review.md). Die fachliche Tagesstruktur dokumentiert [kursstruktur-review.md](pruefberichte/kursstruktur-review.md); der maschinelle Verweischeck steht in [bereitstellung.json](pruefberichte/bereitstellung.json). Ältere Prüfberichte sind historische Nachweise und keine erneute Prüfung dieses Stands. Ein echter Windows-/XAMPP-Test erfolgt separat.
 
 Interne Ausgangspräsentationen, persönliche Git-Historien und alte Archive sind nicht Teil der Veröffentlichung. Alle Geschäftsszenarien verwenden fiktive Daten; keine echten Bestellungen, Zahlungen oder E-Mails.

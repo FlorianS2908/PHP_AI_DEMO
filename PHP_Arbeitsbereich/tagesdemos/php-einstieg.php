@@ -16,4 +16,4 @@ $beispiel = 'drei';
 </ul><p>Typ vorher: <?= $typVorher ?>; Typ danach: <?= gettype($beispiel) ?>.</p>
 <p><code>"3" === 3</code> ergibt <?= '3' === 3 ? 'true' : 'false' ?>.</p>
 <p>Versuche in einer lokalen Kopie, <code>doppelt($anzahl)</code> durch <code>doppelt("3")</code> zu ersetzen. Bei diesem eigenen Funktionsaufruf in der strengen Datei entsteht ein TypeError. Danach die gültige Eingabe wiederherstellen.</p>
-<a href="../../PHP_Teilnehmer/tag-03.html">Zurück zu Tag 3</a></body></html>
+<a href="../../PHP_Teilnehmer/Unterricht/tag-03.html">Zurück zu Tag 3</a></body></html>

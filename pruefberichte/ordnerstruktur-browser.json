@@ -1,0 +1,120 @@
+{
+  "date": "2026-10-07",
+  "environment": "Linux / Chromium; HTTP und lokale HTML-Datei; Desktop und 390px",
+  "checks": [
+    {
+      "test": "PHP_Dozent -> Unterricht",
+      "passed": true
+    },
+    {
+      "test": "PHP_Dozent -> Aufgaben",
+      "passed": true
+    },
+    {
+      "test": "PHP_Dozent -> Demos",
+      "passed": true
+    },
+    {
+      "test": "PHP_Dozent -> Quiz",
+      "passed": true
+    },
+    {
+      "test": "PHP_Dozent -> Loesungen",
+      "passed": true
+    },
+    {
+      "test": "PHP_Dozent Aufgabe -> Startdatei",
+      "passed": true
+    },
+    {
+      "test": "PHP_Dozent Demos laden ihre eingebetteten Beispiele",
+      "passed": true
+    },
+    {
+      "test": "PHP_Dozent Themenfundus ist zunächst zugeklappt",
+      "passed": true
+    },
+    {
+      "test": "PHP_Dozent aufgeklappter Fundus -> Nachbarthema",
+      "passed": true
+    },
+    {
+      "test": "PHP_Dozent Quiz wird initialisiert",
+      "passed": true
+    },
+    {
+      "test": "PHP_Dozent Quiz startet mit bedienbarer Frage",
+      "passed": true
+    },
+    {
+      "test": "PHP_Teilnehmer -> Unterricht",
+      "passed": true
+    },
+    {
+      "test": "PHP_Teilnehmer -> Aufgaben",
+      "passed": true
+    },
+    {
+      "test": "PHP_Teilnehmer -> Demos",
+      "passed": true
+    },
+    {
+      "test": "PHP_Teilnehmer -> Quiz",
+      "passed": true
+    },
+    {
+      "test": "PHP_Teilnehmer Aufgabe -> Startdatei",
+      "passed": true
+    },
+    {
+      "test": "PHP_Teilnehmer Demos laden ihre eingebetteten Beispiele",
+      "passed": true
+    },
+    {
+      "test": "PHP_Teilnehmer Themenfundus ist zunächst zugeklappt",
+      "passed": true
+    },
+    {
+      "test": "PHP_Teilnehmer aufgeklappter Fundus -> Nachbarthema",
+      "passed": true
+    },
+    {
+      "test": "PHP_Teilnehmer Quiz wird initialisiert",
+      "passed": true
+    },
+    {
+      "test": "PHP_Teilnehmer Quiz startet mit bedienbarer Frage",
+      "passed": true
+    },
+    {
+      "test": "Fragenpools erreichbar",
+      "passed": true
+    },
+    {
+      "test": "Mobil: PHP_Teilnehmer/index.html",
+      "passed": true
+    },
+    {
+      "test": "Mobil: PHP_Teilnehmer/Aufgaben/index.html",
+      "passed": true
+    },
+    {
+      "test": "Mobil: PHP_Dozent/Loesungen/index.html",
+      "passed": true
+    },
+    {
+      "test": "Mobil: PHP_Teilnehmer/Quiz/index.html",
+      "passed": true
+    },
+    {
+      "test": "Lokaler HTML-Einstieg ohne Server",
+      "passed": true
+    },
+    {
+      "test": "Keine Browserfehler oder fehlenden Ressourcen",
+      "passed": true
+    }
+  ],
+  "passed": 28,
+  "errors": []
+}

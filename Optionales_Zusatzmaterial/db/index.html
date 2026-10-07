@@ -47,8 +47,7 @@ while ($zeile = $abfrage-&gt;fetch(PDO::FETCH_ASSOC)) {
     );
 }</code></pre>
 <p><code>query()</code> führt hier die feste Abfrage aus. <code>fetch(PDO::FETCH_ASSOC)</code> liefert die nächste Zeile als Array mit Spaltennamen als Schlüsseln. Am Ende kommt <code>false</code>; die Schleife endet. In jedem Durchlauf erzeugen wir ein neues Objekt. <a href="#r2">[2]</a></p>
-<details><summary>Die kleine Person-Klasse ansehen</summary><pre><code>
-&lt;?php
+<details><summary>Die kleine Person-Klasse ansehen</summary><pre><code>&lt;?php
 declare(strict_types=1);
 
 // Eine Person ist hier ein Datenträger: kein SQL, keine HTML-Ausgabe.
@@ -109,7 +108,8 @@ exit;</code></pre>
 <section id="ablauf"><div class="eyebrow">04 / Zum Vorführen</div><h2>Den Weg einer Person verfolgen</h2>
 <p class="small muted">Illustration mit festen Daten, kein echter PHP- oder Datenbankzugriff. Die lauffähigen Demos sind oben verlinkt.</p>
 <div class="stepbar" aria-label="Ablauf wählen"><button type="button" id="modeRead" aria-pressed="true">Lesen</button><button type="button" id="modeWrite" aria-pressed="false">Speichern</button></div>
-<div aria-live="polite"><p id="stepTitle" class="step"></p><pre><code id="stepCode"></code></pre><div id="stepOutput" class="trace-output"></div><p id="stepText"></p></div>
+<div aria-live="polite"><p id="stepTitle" class="step"></p><pre><code id="stepCode">
+</code></pre><div id="stepOutput" class="trace-output"></div><p id="stepText"></p></div>
 <div class="actions"><button id="prev" type="button">Zurück</button><button id="next" type="button">Weiter</button><button id="reset" type="button">Von vorn</button></div></section>
 <section id="regeln"><div class="eyebrow">05 / Die wenigen wichtigen Regeln</div><h2>Für diese Anwendung merken</h2>
 <div class="rules"><p><strong>SQL und Werte trennen.</strong> Nutzereingaben gehören in Parameter, nicht per Verkettung in SQL. <a href="#r3">[3]</a></p>

@@ -1,4 +1,4 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Quelltexte · PHP</title><link rel="stylesheet" href="../assets/kurs.css"><link rel="stylesheet" href="../assets/php-ergaenzung.css"></head><body><a class="skip" href="#inhalt">Zum Inhalt</a><div class="shell"><aside class="sidebar"><div class="brand"><div class="brand-mark">10a</div><div><small>PHP · VERTIEFUNG</small><strong>Webwerkstatt</strong></div></div><a class="back" href="../index.html">← Materialübersicht</a><button class="sidebar-toggle" aria-expanded="false" aria-controls="side-content" type="button">Navigation öffnen</button><div id="side-content"><nav aria-label="Materialien"><a class="btn" href="../webvariante.html">Webvariante</a><a class="btn" href="../demo-start.html">Demos starten</a><a class="btn" href="../quelltexte/index.html">Quelltexte</a><a class="btn" href="../pseudocode.html">Pseudocode</a><a class="btn" href="../aufgaben.html">Aufgaben</a><a class="btn" href="../dozent/loesungen.html">Lösungen</a><a class="btn" href="../dozent/leitfaden.html">Dozentenleitfaden</a><a class="btn" href="../quellen.html">Quellen & Abgrenzung</a></nav><p class="aside-note">Arrays → Formular → POST → neue Ausgabe.</p></div></aside><main id="inhalt" class="main"><div class="topline"><span>PHP · Arrays und mehrseitige Formulare</span><span>Ohne Session / Cookie</span></div><header class="hero"><div class="eyebrow">PHP · PHP-Vertiefung</div><h1>Datei für Datei nachvollziehen.</h1><p>Alle PHP-, HTML- und CSS-Dateien liegen offen im Paket. Hier sind sie auch im Browser lesbar.</p></header><section class="card plain-section filelist"><h2><code>demo/00-mini/ausgabe.php</code></h2><p><a class="btn" href="demo__00-mini__ausgabe.php.txt">Textdatei öffnen</a></p><details><summary>Quelltext direkt lesen</summary><div class="codebox"><div class="codebar"><span>PHP</span><button type="button" data-copy>Code kopieren</button></div><pre><code>&lt;?php
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Quelltexte · PHP</title><link rel="stylesheet" href="../assets/kurs.css"><link rel="stylesheet" href="../assets/php-ergaenzung.css"></head><body><a class="skip" href="#inhalt">Zum Inhalt</a><div class="shell"><aside class="sidebar"><div class="brand"><div class="brand-mark">10a</div><div><small>PHP · VERTIEFUNG</small><strong>Webwerkstatt</strong></div></div><a class="back" href="../index.html">← Materialübersicht</a><button class="sidebar-toggle" aria-expanded="false" aria-controls="side-content" type="button">Navigation öffnen</button><div id="side-content"><nav aria-label="Materialien"><a class="btn" href="../webvariante.html">Webvariante</a><a class="btn" href="../demo-start.html">Demos starten</a><a class="btn" href="index.html">Quelltexte</a><a class="btn" href="../pseudocode.html">Pseudocode</a><a class="btn" href="../aufgaben.html">Aufgaben</a><a class="btn" href="../dozent/loesungen.html">Lösungen</a><a class="btn" href="../dozent/leitfaden.html">Dozentenleitfaden</a><a class="btn" href="../quellen.html">Quellen & Abgrenzung</a></nav><p class="aside-note">Arrays → Formular → POST → neue Ausgabe.</p></div></aside><main id="inhalt" class="main"><div class="topline"><span>PHP · Arrays und mehrseitige Formulare</span><span>Ohne Session / Cookie</span></div><header class="hero"><div class="eyebrow">PHP · PHP-Vertiefung</div><h1>Datei für Datei nachvollziehen.</h1><p>Alle PHP-, HTML- und CSS-Dateien liegen offen im Paket. Hier sind sie auch im Browser lesbar.</p></header><section class="card plain-section filelist"><h2><code>demo/00-mini/ausgabe.php</code></h2><p><a class="btn" href="demo__00-mini__ausgabe.php.txt">Textdatei öffnen</a></p><details><summary>Quelltext direkt lesen</summary><div class="codebox"><div class="codebar"><span>PHP</span><button type="button" data-copy>Code kopieren</button></div><pre><code>&lt;?php
 declare(strict_types=1);
 require __DIR__ . &#x27;/../01-mehrseitig/katalog.php&#x27;;
 require __DIR__ . &#x27;/../01-mehrseitig/funktionen.php&#x27;; // e() maskiert HTML-Text.
@@ -92,7 +92,8 @@ if ($fehler === []) {
         &lt;div class=&quot;actions&quot;&gt;&lt;button type=&quot;submit&quot;&gt;An PHP senden →&lt;/button&gt;&lt;/div&gt;
     &lt;/form&gt;
     &lt;a href=&quot;../../index.html&quot;&gt;Zur Materialübersicht&lt;/a&gt;
-&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;</code></pre></div></details></section><section class="card plain-section filelist"><h2><code>demo/01-mehrseitig/auswahl.php</code></h2><p><a class="btn" href="demo__01-mehrseitig__auswahl.php.txt">Textdatei öffnen</a></p><details><summary>Quelltext direkt lesen</summary><div class="codebox"><div class="codebar"><span>PHP</span><button type="button" data-copy>Code kopieren</button></div><pre><code>&lt;?php
+&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;
+</code></pre></div></details></section><section class="card plain-section filelist"><h2><code>demo/01-mehrseitig/auswahl.php</code></h2><p><a class="btn" href="demo__01-mehrseitig__auswahl.php.txt">Textdatei öffnen</a></p><details><summary>Quelltext direkt lesen</summary><div class="codebox"><div class="codebar"><span>PHP</span><button type="button" data-copy>Code kopieren</button></div><pre><code>&lt;?php
 declare(strict_types=1);
 require __DIR__ . &#x27;/katalog.php&#x27;;
 require __DIR__ . &#x27;/funktionen.php&#x27;;
@@ -166,7 +167,8 @@ reise[extras][]   → &quot;tour&quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p class=&quot;note&quot;&gt;Noch kein dauerhaftes Merken: Die Weitergabe erfolgt in jeder Anfrage ausdrücklich neu.&lt;/p&gt;
 &lt;a href=&quot;auswahl.php?ziel=paris&quot;&gt;GET-Vorbelegung ausprobieren: Paris&lt;/a&gt;
 &lt;/aside&gt;&lt;/div&gt;
-&lt;?= fuss() ?&gt;</code></pre></div></details></section><section class="card plain-section filelist"><h2><code>demo/01-mehrseitig/ergebnis.php</code></h2><p><a class="btn" href="demo__01-mehrseitig__ergebnis.php.txt">Textdatei öffnen</a></p><details><summary>Quelltext direkt lesen</summary><div class="codebox"><div class="codebar"><span>PHP</span><button type="button" data-copy>Code kopieren</button></div><pre><code>&lt;?php
+&lt;?= fuss() ?&gt;
+</code></pre></div></details></section><section class="card plain-section filelist"><h2><code>demo/01-mehrseitig/ergebnis.php</code></h2><p><a class="btn" href="demo__01-mehrseitig__ergebnis.php.txt">Textdatei öffnen</a></p><details><summary>Quelltext direkt lesen</summary><div class="codebox"><div class="codebar"><span>PHP</span><button type="button" data-copy>Code kopieren</button></div><pre><code>&lt;?php
 declare(strict_types=1);
 require __DIR__ . &#x27;/katalog.php&#x27;;
 require __DIR__ . &#x27;/funktionen.php&#x27;;
@@ -242,7 +244,8 @@ echo kopf(&#x27;Deine formatierte Zusammenfassung&#x27;, 3);
     &lt;p&gt;Hier reist jede Auswahl wieder als Formularwert mit. Bei mehr Schritten wird das aufwendig. Eine Session kann geprüfte Werte serverseitig einem Browser zuordnen. Das ist der nächste Lernschritt.&lt;/p&gt;
     &lt;/details&gt;
 &lt;/aside&gt;&lt;/div&gt;
-&lt;?= fuss() ?&gt;</code></pre></div></details></section><section class="card plain-section filelist"><h2><code>demo/01-mehrseitig/funktionen.php</code></h2><p><a class="btn" href="demo__01-mehrseitig__funktionen.php.txt">Textdatei öffnen</a></p><details><summary>Quelltext direkt lesen</summary><div class="codebox"><div class="codebar"><span>PHP</span><button type="button" data-copy>Code kopieren</button></div><pre><code>&lt;?php
+&lt;?= fuss() ?&gt;
+</code></pre></div></details></section><section class="card plain-section filelist"><h2><code>demo/01-mehrseitig/funktionen.php</code></h2><p><a class="btn" href="demo__01-mehrseitig__funktionen.php.txt">Textdatei öffnen</a></p><details><summary>Quelltext direkt lesen</summary><div class="codebox"><div class="codebar"><span>PHP</span><button type="button" data-copy>Code kopieren</button></div><pre><code>&lt;?php
 declare(strict_types=1);
 
 // Zusatzhilfen: Die Fachlogik ist prozedural und verwendet keine eigenen Klassen.
@@ -438,7 +441,8 @@ function fehlerseite(array $fehler, array $reise): string
     }
     return $html . &#x27;&lt;/ul&gt;&lt;/section&gt;&lt;form action=&quot;auswahl.php&quot; method=&quot;post&quot;&gt;&#x27;
         . hidden_reise($reise) . &#x27;&lt;button type=&quot;submit&quot;&gt;Zurück zum Formular&lt;/button&gt;&lt;/form&gt;&#x27;;
-}</code></pre></div></details></section><section class="card plain-section filelist"><h2><code>demo/01-mehrseitig/katalog.php</code></h2><p><a class="btn" href="demo__01-mehrseitig__katalog.php.txt">Textdatei öffnen</a></p><details><summary>Quelltext direkt lesen</summary><div class="codebox"><div class="codebar"><span>PHP</span><button type="button" data-copy>Code kopieren</button></div><pre><code>&lt;?php
+}
+</code></pre></div></details></section><section class="card plain-section filelist"><h2><code>demo/01-mehrseitig/katalog.php</code></h2><p><a class="btn" href="demo__01-mehrseitig__katalog.php.txt">Textdatei öffnen</a></p><details><summary>Quelltext direkt lesen</summary><div class="codebox"><div class="codebar"><span>PHP</span><button type="button" data-copy>Code kopieren</button></div><pre><code>&lt;?php
 declare(strict_types=1);
 
 // Statische Unterrichtsdaten werden bei JEDEM Request neu geladen.
@@ -460,7 +464,8 @@ $verpflegungen = [
     &#x27;ohne&#x27;         =&gt; [&#x27;titel&#x27; =&gt; &#x27;Ohne Verpflegung&#x27;, &#x27;preis_cent&#x27; =&gt; 0],
     &#x27;fruehstueck&#x27;  =&gt; [&#x27;titel&#x27; =&gt; &#x27;Frühstück&#x27;,         &#x27;preis_cent&#x27; =&gt; 1200],
     &#x27;halbpension&#x27;  =&gt; [&#x27;titel&#x27; =&gt; &#x27;Halbpension&#x27;,       &#x27;preis_cent&#x27; =&gt; 3000],
-];</code></pre></div></details></section><section class="card plain-section filelist"><h2><code>demo/01-mehrseitig/pruefen.php</code></h2><p><a class="btn" href="demo__01-mehrseitig__pruefen.php.txt">Textdatei öffnen</a></p><details><summary>Quelltext direkt lesen</summary><div class="codebox"><div class="codebar"><span>PHP</span><button type="button" data-copy>Code kopieren</button></div><pre><code>&lt;?php
+];
+</code></pre></div></details></section><section class="card plain-section filelist"><h2><code>demo/01-mehrseitig/pruefen.php</code></h2><p><a class="btn" href="demo__01-mehrseitig__pruefen.php.txt">Textdatei öffnen</a></p><details><summary>Quelltext direkt lesen</summary><div class="codebox"><div class="codebar"><span>PHP</span><button type="button" data-copy>Code kopieren</button></div><pre><code>&lt;?php
 declare(strict_types=1);
 require __DIR__ . &#x27;/katalog.php&#x27;;
 require __DIR__ . &#x27;/funktionen.php&#x27;;
@@ -517,7 +522,8 @@ echo kopf(&#x27;Auswahl prüfen und weiterreichen&#x27;, 2);
     &lt;/form&gt;
     &lt;p class=&quot;help&quot;&gt;Dieser Rückweg verwendet die auf Seite 2 empfangene Auswahl. Die noch nicht abgesendete Änderung oben wird dabei nicht übernommen.&lt;/p&gt;
 &lt;/section&gt;&lt;/div&gt;
-&lt;?= fuss() ?&gt;</code></pre></div></details></section><section class="card plain-section filelist"><h2><code>demo/02-arrays/arrays-kontrollstrukturen.php</code></h2><p><a class="btn" href="demo__02-arrays__arrays-kontrollstrukturen.php.txt">Textdatei öffnen</a></p><details><summary>Quelltext direkt lesen</summary><div class="codebox"><div class="codebar"><span>PHP</span><button type="button" data-copy>Code kopieren</button></div><pre><code>&lt;?php
+&lt;?= fuss() ?&gt;
+</code></pre></div></details></section><section class="card plain-section filelist"><h2><code>demo/02-arrays/arrays-kontrollstrukturen.php</code></h2><p><a class="btn" href="demo__02-arrays__arrays-kontrollstrukturen.php.txt">Textdatei öffnen</a></p><details><summary>Quelltext direkt lesen</summary><div class="codebox"><div class="codebar"><span>PHP</span><button type="button" data-copy>Code kopieren</button></div><pre><code>&lt;?php
 declare(strict_types=1);
 require __DIR__ . &#x27;/../01-mehrseitig/funktionen.php&#x27;;
 
@@ -590,4 +596,5 @@ $beispiele = [
 &lt;section class=&quot;card&quot;&gt;&lt;h2&gt;&lt;?= e($beispiel[0]) ?&gt;&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;&lt;?= e($beispiel[1]) ?&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;details&gt;&lt;summary&gt;Berechnete Ausgabe einblenden&lt;/summary&gt;&lt;pre&gt;&lt;?= e($beispiel[2]) ?&gt;&lt;/pre&gt;&lt;/details&gt;&lt;/section&gt;
 &lt;?php endforeach; ?&gt;
-&lt;a href=&quot;../../index.html&quot;&gt;Zur Materialübersicht&lt;/a&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;</code></pre></div></details></section></main></div><script src="../assets/kurs.js"></script></body></html>
+&lt;a href=&quot;../../index.html&quot;&gt;Zur Materialübersicht&lt;/a&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;
+</code></pre></div></details></section></main></div><script src="../assets/kurs.js"></script></body></html>

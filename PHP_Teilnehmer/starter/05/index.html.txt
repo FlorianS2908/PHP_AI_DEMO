@@ -1,2 +1,0 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Starter</title><link rel="stylesheet" href="../../assets/demo.css"><link rel="stylesheet" href="index.css"><script defer src="../../assets/demo.js"></script></head><body id="top"><p class="notice">PHP · Didaktisches Beispiel mit fiktiven Daten. Formularvorschauen bleiben lokal; keine Buchung.</p><h1>Meine Aufgabe</h1>
-<!-- TODO: Inhalte gemäß Arbeitsauftrag ergänzen. --></body></html>

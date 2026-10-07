@@ -1,0 +1,3 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vorbereitete SQL-Abfrage</title><link rel="stylesheet" href="../../_Kursportal/assets/demo.css"><link rel="stylesheet" href="12-1.css"><script defer src="../../_Kursportal/assets/demo.js"></script></head><body id="top"><p class="notice">PHP · Didaktisches Beispiel mit fiktiven Daten. Formularvorschauen bleiben lokal; keine Buchung.</p><h1>Datenwerte getrennt binden</h1><pre>SELECT ziel, preis_cent
+FROM angebote
+WHERE ziel = ?</pre><p>Das Ziel wird als Parameter an die vorbereitete Anweisung gebunden.</p></body></html>

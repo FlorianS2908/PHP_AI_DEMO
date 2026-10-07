@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-06",
+  "date": "2026-10-07",
   "environment": "Chromium · Linux · 1360x900 / 390x844",
   "checks": [
     {
@@ -15,11 +15,11 @@
       "passed": true
     },
     {
-      "test": "Render PHP_Dozent/dozent.html",
+      "test": "Render PHP_Dozent/Unterricht/unterrichtsplanung.html",
       "passed": true
     },
     {
-      "test": "Render PHP_Dozent/tagesloesungen.html",
+      "test": "Render PHP_Dozent/Loesungen/erwartungshorizonte.html",
       "passed": true
     },
     {
@@ -31,43 +31,43 @@
       "passed": true
     },
     {
-      "test": "Render PHP_Teilnehmer/tag-01.html",
+      "test": "Render PHP_Teilnehmer/Unterricht/tag-01.html",
       "passed": true
     },
     {
-      "test": "Render PHP_Teilnehmer/tag-02.html",
+      "test": "Render PHP_Teilnehmer/Unterricht/tag-02.html",
       "passed": true
     },
     {
-      "test": "Render PHP_Teilnehmer/tag-03.html",
+      "test": "Render PHP_Teilnehmer/Unterricht/tag-03.html",
       "passed": true
     },
     {
-      "test": "Render PHP_Teilnehmer/tag-04.html",
+      "test": "Render PHP_Teilnehmer/Unterricht/tag-04.html",
       "passed": true
     },
     {
-      "test": "Render PHP_Teilnehmer/tag-05.html",
+      "test": "Render PHP_Teilnehmer/Unterricht/tag-05.html",
       "passed": true
     },
     {
-      "test": "Render PHP_Dozent/tag-01.html",
+      "test": "Render PHP_Dozent/Unterricht/tag-01.html",
       "passed": true
     },
     {
-      "test": "Render PHP_Dozent/tag-02.html",
+      "test": "Render PHP_Dozent/Unterricht/tag-02.html",
       "passed": true
     },
     {
-      "test": "Render PHP_Dozent/tag-03.html",
+      "test": "Render PHP_Dozent/Unterricht/tag-03.html",
       "passed": true
     },
     {
-      "test": "Render PHP_Dozent/tag-04.html",
+      "test": "Render PHP_Dozent/Unterricht/tag-04.html",
       "passed": true
     },
     {
-      "test": "Render PHP_Dozent/tag-05.html",
+      "test": "Render PHP_Dozent/Unterricht/tag-05.html",
       "passed": true
     },
     {
@@ -79,11 +79,11 @@
       "passed": true
     },
     {
-      "test": "Mobile ohne Seitenüberlauf PHP_Teilnehmer/tag-01.html",
+      "test": "Mobile ohne Seitenüberlauf PHP_Teilnehmer/Unterricht/tag-01.html",
       "passed": true
     },
     {
-      "test": "Mobile ohne Seitenüberlauf PHP_Dozent/tag-03.html",
+      "test": "Mobile ohne Seitenüberlauf PHP_Dozent/Unterricht/tag-03.html",
       "passed": true
     },
     {

@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-06",
+  "date": "2026-10-07",
   "environment": "Linux · PHP 8.3.6 CLI -n · integrierter HTTP-Server",
   "scope": "Neue Tagesdemos und die ausgewählten Pflichtlösungen; kein Windows/XAMPP- oder optionaler DB-Laufzeittest",
   "checks": [
@@ -20,43 +20,43 @@
       "passed": true
     },
     {
-      "test": "PHP-Syntax PHP_Dozent/tagesloesungen/tag-03.php",
+      "test": "PHP-Syntax PHP_Dozent/Loesungen/Tagesaufgaben/tag-03.php",
       "passed": true
     },
     {
-      "test": "PHP-Syntax PHP_Dozent/tagesloesungen/tag-05-cookies/index.php",
+      "test": "PHP-Syntax PHP_Dozent/Loesungen/Tagesaufgaben/tag-05-cookies/function.php",
       "passed": true
     },
     {
-      "test": "PHP-Syntax PHP_Dozent/tagesloesungen/tag-05-cookies/auswertung.php",
+      "test": "PHP-Syntax PHP_Dozent/Loesungen/Tagesaufgaben/tag-05-cookies/index.php",
       "passed": true
     },
     {
-      "test": "PHP-Syntax PHP_Dozent/tagesloesungen/tag-05-cookies/function.php",
+      "test": "PHP-Syntax PHP_Dozent/Loesungen/Tagesaufgaben/tag-05-cookies/auswertung.php",
       "passed": true
     },
     {
-      "test": "PHP-Syntax PHP_Dozent/tagesloesungen/tag-04/index.php",
+      "test": "PHP-Syntax PHP_Dozent/Loesungen/Tagesaufgaben/tag-05-session/function.php",
       "passed": true
     },
     {
-      "test": "PHP-Syntax PHP_Dozent/tagesloesungen/tag-04/auswertung.php",
+      "test": "PHP-Syntax PHP_Dozent/Loesungen/Tagesaufgaben/tag-05-session/index.php",
       "passed": true
     },
     {
-      "test": "PHP-Syntax PHP_Dozent/tagesloesungen/tag-05-session/anzeige.php",
+      "test": "PHP-Syntax PHP_Dozent/Loesungen/Tagesaufgaben/tag-05-session/anzeige.php",
       "passed": true
     },
     {
-      "test": "PHP-Syntax PHP_Dozent/tagesloesungen/tag-05-session/index.php",
+      "test": "PHP-Syntax PHP_Dozent/Loesungen/Tagesaufgaben/tag-05-session/auswertung.php",
       "passed": true
     },
     {
-      "test": "PHP-Syntax PHP_Dozent/tagesloesungen/tag-05-session/auswertung.php",
+      "test": "PHP-Syntax PHP_Dozent/Loesungen/Tagesaufgaben/tag-04/index.php",
       "passed": true
     },
     {
-      "test": "PHP-Syntax PHP_Dozent/tagesloesungen/tag-05-session/function.php",
+      "test": "PHP-Syntax PHP_Dozent/Loesungen/Tagesaufgaben/tag-04/auswertung.php",
       "passed": true
     },
     {
