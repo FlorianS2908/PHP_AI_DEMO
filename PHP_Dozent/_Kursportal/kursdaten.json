@@ -663,8 +663,8 @@
           "Die Mediendatei muss tatsächlich vorhanden sein.",
           "Die Kursgrafik ist als Beispielgrafik gekennzeichnet, kein echtes Reisefoto."
         ],
-        "code": "<img src=\"../../assets/beispiel.svg\"\n     alt=\"Beispielgrafik mit Kreis und Rahmen\"\n     width=\"640\" height=\"360\">",
-        "result": "Prüfe das Ergebnis nach dem Kopieren des gesamten Ordners.",
+        "code": "<img src=\"../../_Kursportal/assets/beispiel.svg\"\n     alt=\"Beispielgrafik mit Kreis und Rahmen\"\n     width=\"640\" height=\"360\">",
+        "result": "Die gezeigten Pfade gelten für die Datei Demos/dateien/06-1.html. Kopiere den gesamten Rollenordner, damit die Bilddatei erreichbar bleibt.",
         "page": "37–39"
       },
       {
@@ -675,8 +675,8 @@
           "Die Kursdemo enthält ein kurzes synthetisches Video mit Untertiteln.",
           "Autoplay wird im Lernbeispiel nicht erzwungen."
         ],
-        "code": "<video controls width=\"480\">\n  <source src=\"../../assets/demo.mp4\" type=\"video/mp4\">\n  <track src=\"../../assets/demo.vtt\" kind=\"captions\"\n         srclang=\"de\" label=\"Deutsch\" default>\n  Dein Browser kann dieses Video nicht anzeigen.\n</video>",
-        "result": "source und Untertitel sind gekennzeichnete didaktische Ergänzungen zum einfachen video-Beispiel.",
+        "code": "<video controls width=\"480\">\n  <source src=\"../../_Kursportal/assets/demo.mp4\" type=\"video/mp4\">\n  <track src=\"../../_Kursportal/assets/demo.vtt\" kind=\"captions\"\n         srclang=\"de\" label=\"Deutsch\" default>\n  Dein Browser kann dieses Video nicht anzeigen.\n</video>",
+        "result": "Die gezeigten Pfade gelten für die Datei Demos/dateien/06-1.html. source und track sind leere Elemente ohne End-Tag; die Untertiteldatei gehört zum Beispiel.",
         "page": "40"
       },
       {

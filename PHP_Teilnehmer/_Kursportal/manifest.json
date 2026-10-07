@@ -431,8 +431,8 @@
     },
     {
       "path": "Demos/dateien/06-1.html",
-      "bytes": 1153,
-      "sha256": "c364895594a0a042895d868b51800193e1277b4e10dd9f698c09b173fc42720d"
+      "bytes": 1136,
+      "sha256": "eb2cc9cb7e94d9a9133a9f35c86cd13af2255e512f741ca672e277ee7f157b48"
     },
     {
       "path": "Demos/dateien/06-1.html.txt",
@@ -851,8 +851,8 @@
     },
     {
       "path": "_Kursportal/module/06.html",
-      "bytes": 19110,
-      "sha256": "8e18ce4ed7b918ad995f8df4b442c9729aa83af12ec0d516269389523f4f1ff6"
+      "bytes": 19289,
+      "sha256": "c9075f4328e471bc739bd817b20d6369a2be440257bebc246e6a174ec8040dc5"
     },
     {
       "path": "_Kursportal/module/07.html",

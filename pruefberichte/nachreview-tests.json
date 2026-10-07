@@ -1,0 +1,674 @@
+{
+  "date": "2026-10-07",
+  "scope": "Zweite Inhaltskorrektur: vier Funktionen, mehrseitige Reisedemo, fünf KI-Referenzlösungen.",
+  "environment": "PHP 8.3.6 (cli) (built: Sep  2 2026 12:56:02) (NTS)",
+  "checks": [
+    {
+      "test": "Mengen: Startdaten",
+      "passed": true
+    },
+    {
+      "test": "Mengen: Ganzzahltexte und negatives Vorzeichen",
+      "passed": true
+    },
+    {
+      "test": "Mengen: Bool, Array und Dezimalzahl entfernen",
+      "passed": true
+    },
+    {
+      "test": "Mengen: ungültiges Array",
+      "passed": true
+    },
+    {
+      "test": "Mengen: leeres Array",
+      "passed": true
+    },
+    {
+      "test": "Bestand: Lieferung und Trim",
+      "passed": true
+    },
+    {
+      "test": "Bestand: Original bleibt unverändert",
+      "passed": true
+    },
+    {
+      "test": "Bestand: Nullmenge bei neuem Artikel",
+      "passed": true
+    },
+    {
+      "test": "Bestand: vorhandenes null bleibt erhalten",
+      "passed": true
+    },
+    {
+      "test": "Bestand: Überlauf verhindern",
+      "passed": true
+    },
+    {
+      "test": "Bestand: ungültiges Lager",
+      "passed": true
+    },
+    {
+      "test": "Bestand: ungültige Eingabe 0",
+      "passed": true
+    },
+    {
+      "test": "Bestand: ungültige Eingabe 1",
+      "passed": true
+    },
+    {
+      "test": "Bestand: ungültige Eingabe 2",
+      "passed": true
+    },
+    {
+      "test": "Bestand: ungültige Eingabe 3",
+      "passed": true
+    },
+    {
+      "test": "Bestand: ungültige Eingabe 4",
+      "passed": true
+    },
+    {
+      "test": "Bestand: ungültige Eingabe 5",
+      "passed": true
+    },
+    {
+      "test": "Bestand: ungültige Eingabe 6",
+      "passed": true
+    },
+    {
+      "test": "Summe: normale Zahlen",
+      "passed": true
+    },
+    {
+      "test": "Summe: Null ist kein Fehler",
+      "passed": true
+    },
+    {
+      "test": "Summe: Zahlenstring",
+      "passed": true
+    },
+    {
+      "test": "Summe: ungültiger Text",
+      "passed": true
+    },
+    {
+      "test": "Summe: nicht endlicher Wert",
+      "passed": true
+    },
+    {
+      "test": "Summe: nicht endliches Ergebnis",
+      "passed": true
+    },
+    {
+      "test": "Maximum: Gleichstand",
+      "passed": true
+    },
+    {
+      "test": "Maximum: negative Zahlen",
+      "passed": true
+    },
+    {
+      "test": "Maximum: drei Nullen",
+      "passed": true
+    },
+    {
+      "test": "Maximum: Zahlenstrings",
+      "passed": true
+    },
+    {
+      "test": "Maximum: Array abweisen",
+      "passed": true
+    },
+    {
+      "test": "Maximum: NAN abweisen",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Normale Auswahl gültig",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Personenzahl wird Integer",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Rechnung Paris, 2, Museum + Tour + Frühstück",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Vier korrekte Rechnungspositionen",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Positionssumme entspricht Gesamt",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Formatierte Summe",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Änderung Halbpension ergibt 54400 Cent",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Fehlende Extras sind eine gültige leere Liste",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Explizit leere Extras gültig",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Trim und UTF-8-Name",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: 500 Unicode-Zeichen gültig",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: 501 Zeichen ungültig",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Ungültiges UTF-8 verwerfen",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Ungültige Reise-Struktur 0",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Ungültige Reise-Struktur 1",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Ungültige Reise-Struktur 2",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Ungültige Reise-Struktur 3",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Ungültige Reise-Struktur 4",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Fehlendes skalares Feld name",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Array statt Text bei name",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Fehlendes skalares Feld ziel",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Array statt Text bei ziel",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Fehlendes skalares Feld personen",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Array statt Text bei personen",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Fehlendes skalares Feld verpflegung",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Array statt Text bei verpflegung",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Fehlendes skalares Feld nachricht",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Array statt Text bei nachricht",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Ungültige Personen 0",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Ungültige Personen 7",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Ungültige Personen -1",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Ungültige Personen 2.5",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Ungültige Personen abc",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Ungültige Personen 1e2",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Ungültige Personen 999999999999999999999",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Gültiger Personen-Grenzwert 1",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Gültiger Personen-Grenzwert 6",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Ungültige Ziel-ID unbekannt",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Ungültige Ziel-ID ",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Ungültige Ziel-ID ../datei",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Unbekannte Verpflegung",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Leerer Name ungültig",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Zu langer Name ungültig",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Ungültige Extras-Struktur/-Werte 0",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Ungültige Extras-Struktur/-Werte 1",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Ungültige Extras-Struktur/-Werte 2",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Ungültige Extras-Struktur/-Werte 3",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Ungültige Extras-Struktur/-Werte 4",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Unbekannte Preis- und Rollenfelder werden nicht übernommen",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Manipulierter Preis verändert Summe nicht",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: HTML-Zeichen bleiben erlaubter Text",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: HTML-Text korrekt maskiert",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Kein unverarbeitetes Script im Hidden-HTML",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Zwei Extras als einzelne Hidden-Felder",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Weitergabe ohne doppeltes Verpflegungsfeld",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Hidden enthält keinen Preis",
+      "passed": true
+    },
+    {
+      "test": "Mehrseitige Reise: Alle Extras und sechs Personen",
+      "passed": true
+    },
+    {
+      "test": "01_Workshop: Normalfall und dokumentierte Summe",
+      "passed": true
+    },
+    {
+      "test": "01_Workshop: Direktaufruf wird zurückgeleitet",
+      "passed": true
+    },
+    {
+      "test": "01_Workshop: fehlende Pflichtfelder",
+      "passed": true
+    },
+    {
+      "test": "01_Workshop: HTML-Zeichen sicher ausgeben",
+      "passed": true
+    },
+    {
+      "test": "01_Workshop: ungültiger Datentyp bei name",
+      "passed": true
+    },
+    {
+      "test": "01_Workshop: ungültiger Datentyp bei email",
+      "passed": true
+    },
+    {
+      "test": "01_Workshop: ungültiger Datentyp bei kurs",
+      "passed": true
+    },
+    {
+      "test": "01_Workshop: ungültiger Datentyp bei personen",
+      "passed": true
+    },
+    {
+      "test": "01_Workshop: ungültiger Datentyp bei format",
+      "passed": true
+    },
+    {
+      "test": "01_Workshop: ungültiger Datentyp bei extras",
+      "passed": true
+    },
+    {
+      "test": "01_Workshop: ungültiger Datentyp bei notiz",
+      "passed": true
+    },
+    {
+      "test": "01_Workshop: ungültiger Datentyp bei bestaetigung",
+      "passed": true
+    },
+    {
+      "test": "02_Fahrradwerkstatt: Normalfall und dokumentierte Summe",
+      "passed": true
+    },
+    {
+      "test": "02_Fahrradwerkstatt: Direktaufruf wird zurückgeleitet",
+      "passed": true
+    },
+    {
+      "test": "02_Fahrradwerkstatt: fehlende Pflichtfelder",
+      "passed": true
+    },
+    {
+      "test": "02_Fahrradwerkstatt: HTML-Zeichen sicher ausgeben",
+      "passed": true
+    },
+    {
+      "test": "02_Fahrradwerkstatt: ungültiger Datentyp bei name",
+      "passed": true
+    },
+    {
+      "test": "02_Fahrradwerkstatt: ungültiger Datentyp bei email",
+      "passed": true
+    },
+    {
+      "test": "02_Fahrradwerkstatt: ungültiger Datentyp bei kontaktweg",
+      "passed": true
+    },
+    {
+      "test": "02_Fahrradwerkstatt: ungültiger Datentyp bei telefon",
+      "passed": true
+    },
+    {
+      "test": "02_Fahrradwerkstatt: ungültiger Datentyp bei radtyp",
+      "passed": true
+    },
+    {
+      "test": "02_Fahrradwerkstatt: ungültiger Datentyp bei abgabe",
+      "passed": true
+    },
+    {
+      "test": "02_Fahrradwerkstatt: ungültiger Datentyp bei leistungen",
+      "passed": true
+    },
+    {
+      "test": "02_Fahrradwerkstatt: ungültiger Datentyp bei prioritaet",
+      "passed": true
+    },
+    {
+      "test": "02_Fahrradwerkstatt: ungültiger Datentyp bei budget",
+      "passed": true
+    },
+    {
+      "test": "02_Fahrradwerkstatt: ungültiger Datentyp bei beschreibung",
+      "passed": true
+    },
+    {
+      "test": "02_Fahrradwerkstatt: abgabe / Nullbyte",
+      "passed": true
+    },
+    {
+      "test": "02_Fahrradwerkstatt: abgabe / ungültiger Kalendertag",
+      "passed": true
+    },
+    {
+      "test": "03_Raumreservierung: Normalfall und dokumentierte Summe",
+      "passed": true
+    },
+    {
+      "test": "03_Raumreservierung: Direktaufruf wird zurückgeleitet",
+      "passed": true
+    },
+    {
+      "test": "03_Raumreservierung: fehlende Pflichtfelder",
+      "passed": true
+    },
+    {
+      "test": "03_Raumreservierung: HTML-Zeichen sicher ausgeben",
+      "passed": true
+    },
+    {
+      "test": "03_Raumreservierung: ungültiger Datentyp bei name",
+      "passed": true
+    },
+    {
+      "test": "03_Raumreservierung: ungültiger Datentyp bei email",
+      "passed": true
+    },
+    {
+      "test": "03_Raumreservierung: ungültiger Datentyp bei raum",
+      "passed": true
+    },
+    {
+      "test": "03_Raumreservierung: ungültiger Datentyp bei personen",
+      "passed": true
+    },
+    {
+      "test": "03_Raumreservierung: ungültiger Datentyp bei beginn",
+      "passed": true
+    },
+    {
+      "test": "03_Raumreservierung: ungültiger Datentyp bei ende",
+      "passed": true
+    },
+    {
+      "test": "03_Raumreservierung: ungültiger Datentyp bei bestuhlung",
+      "passed": true
+    },
+    {
+      "test": "03_Raumreservierung: ungültiger Datentyp bei ausstattung",
+      "passed": true
+    },
+    {
+      "test": "03_Raumreservierung: ungültiger Datentyp bei notiz",
+      "passed": true
+    },
+    {
+      "test": "03_Raumreservierung: ungültiger Datentyp bei bestaetigung",
+      "passed": true
+    },
+    {
+      "test": "03_Raumreservierung: beginn / Nullbyte",
+      "passed": true
+    },
+    {
+      "test": "03_Raumreservierung: beginn / ungültiger Kalendertag",
+      "passed": true
+    },
+    {
+      "test": "03_Raumreservierung: ende / Nullbyte",
+      "passed": true
+    },
+    {
+      "test": "03_Raumreservierung: ende / ungültiger Kalendertag",
+      "passed": true
+    },
+    {
+      "test": "04_Teamshirt: Normalfall und dokumentierte Summe",
+      "passed": true
+    },
+    {
+      "test": "04_Teamshirt: Direktaufruf wird zurückgeleitet",
+      "passed": true
+    },
+    {
+      "test": "04_Teamshirt: fehlende Pflichtfelder",
+      "passed": true
+    },
+    {
+      "test": "04_Teamshirt: HTML-Zeichen sicher ausgeben",
+      "passed": true
+    },
+    {
+      "test": "04_Teamshirt: ungültiger Datentyp bei name",
+      "passed": true
+    },
+    {
+      "test": "04_Teamshirt: ungültiger Datentyp bei email",
+      "passed": true
+    },
+    {
+      "test": "04_Teamshirt: ungültiger Datentyp bei modell",
+      "passed": true
+    },
+    {
+      "test": "04_Teamshirt: ungültiger Datentyp bei menge",
+      "passed": true
+    },
+    {
+      "test": "04_Teamshirt: ungültiger Datentyp bei groesse",
+      "passed": true
+    },
+    {
+      "test": "04_Teamshirt: ungültiger Datentyp bei farbe",
+      "passed": true
+    },
+    {
+      "test": "04_Teamshirt: ungültiger Datentyp bei wunschtermin",
+      "passed": true
+    },
+    {
+      "test": "04_Teamshirt: ungültiger Datentyp bei druck",
+      "passed": true
+    },
+    {
+      "test": "04_Teamshirt: ungültiger Datentyp bei drucktext",
+      "passed": true
+    },
+    {
+      "test": "04_Teamshirt: ungültiger Datentyp bei druckposition",
+      "passed": true
+    },
+    {
+      "test": "04_Teamshirt: ungültiger Datentyp bei extras",
+      "passed": true
+    },
+    {
+      "test": "04_Teamshirt: ungültiger Datentyp bei notiz",
+      "passed": true
+    },
+    {
+      "test": "04_Teamshirt: wunschtermin / Nullbyte",
+      "passed": true
+    },
+    {
+      "test": "04_Teamshirt: wunschtermin / ungültiger Kalendertag",
+      "passed": true
+    },
+    {
+      "test": "05_PC_Konfigurator: Normalfall und dokumentierte Summe",
+      "passed": true
+    },
+    {
+      "test": "05_PC_Konfigurator: Direktaufruf wird zurückgeleitet",
+      "passed": true
+    },
+    {
+      "test": "05_PC_Konfigurator: fehlende Pflichtfelder",
+      "passed": true
+    },
+    {
+      "test": "05_PC_Konfigurator: HTML-Zeichen sicher ausgeben",
+      "passed": true
+    },
+    {
+      "test": "05_PC_Konfigurator: ungültiger Datentyp bei name",
+      "passed": true
+    },
+    {
+      "test": "05_PC_Konfigurator: ungültiger Datentyp bei email",
+      "passed": true
+    },
+    {
+      "test": "05_PC_Konfigurator: ungültiger Datentyp bei budget",
+      "passed": true
+    },
+    {
+      "test": "05_PC_Konfigurator: ungültiger Datentyp bei zweck",
+      "passed": true
+    },
+    {
+      "test": "05_PC_Konfigurator: ungültiger Datentyp bei cpu",
+      "passed": true
+    },
+    {
+      "test": "05_PC_Konfigurator: ungültiger Datentyp bei ram",
+      "passed": true
+    },
+    {
+      "test": "05_PC_Konfigurator: ungültiger Datentyp bei grafik",
+      "passed": true
+    },
+    {
+      "test": "05_PC_Konfigurator: ungültiger Datentyp bei speicher",
+      "passed": true
+    },
+    {
+      "test": "05_PC_Konfigurator: ungültiger Datentyp bei extras",
+      "passed": true
+    },
+    {
+      "test": "05_PC_Konfigurator: ungültiger Datentyp bei montage",
+      "passed": true
+    },
+    {
+      "test": "05_PC_Konfigurator: ungültiger Datentyp bei notiz",
+      "passed": true
+    }
+  ],
+  "passed": 166,
+  "failed": 0,
+  "limits": "Keine Windows-/XAMPP- oder MySQL-Prüfung. HTML-Antworten über HTTP geprüft; keine neuen Browser-End-to-End-Tests."
+}

@@ -2,7 +2,7 @@
   "date": "2026-10-07",
   "environment": "PHP 8.3.6 (cli) (built: Sep  2 2026 12:56:02) (NTS)",
   "scope": "Syntax aller PHP-Dateien, Quiz-Struktur, neue Starter und korrigierte CodeTogether-Beispiele. Kein DB-/Windows-Laufzeittest.",
-  "php_files": 255,
+  "php_files": 256,
   "php_syntax_errors": [],
   "quiz_pools": 22,
   "unique_question_objects": 401,

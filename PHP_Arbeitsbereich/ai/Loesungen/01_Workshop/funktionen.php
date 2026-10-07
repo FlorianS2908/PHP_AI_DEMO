@@ -118,6 +118,12 @@ function budget_pruefen(string $feld, string $wert, array &$fehler): int
 }
 function datum_pruefen(string $feld, string $wert, string $format, array &$fehler): ?DateTimeImmutable
 {
+    // Nullbytes aus manipulierten Requests vor dem Parser abweisen.
+    // So entsteht eine Feldmeldung statt eines ValueError.
+    if (strpos($wert, "\0") !== false) {
+        $fehler[$feld] = 'Bitte ein gültiges Datum bzw. eine gültige Uhrzeit eingeben.';
+        return null;
+    }
     $datum = DateTimeImmutable::createFromFormat('!' . $format, $wert);
     // Der Rückvergleich erkennt auch scheinbare Daten wie den 31. Februar.
     if (!$datum || $datum->format($format) !== $wert) {

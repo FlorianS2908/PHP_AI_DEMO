@@ -431,8 +431,8 @@
     },
     {
       "path": "Demos/dateien/06-1.html",
-      "bytes": 1153,
-      "sha256": "c364895594a0a042895d868b51800193e1277b4e10dd9f698c09b173fc42720d"
+      "bytes": 1136,
+      "sha256": "eb2cc9cb7e94d9a9133a9f35c86cd13af2255e512f741ca672e277ee7f157b48"
     },
     {
       "path": "Demos/dateien/06-1.html.txt",
@@ -831,8 +831,8 @@
     },
     {
       "path": "Loesungen/Themen/06/04.html",
-      "bytes": 1061,
-      "sha256": "71cb0e6938337f8074acefa1aef7e93293234ce6b02659eec55dd3f784b42408"
+      "bytes": 1044,
+      "sha256": "af89dca76b4bda64d6edbf2d3198d2ca07c19c6495fd8b43d542e3f7160bcfd0"
     },
     {
       "path": "Loesungen/Themen/06/04.html.txt",
@@ -1426,8 +1426,8 @@
     },
     {
       "path": "_Kursportal/kursdaten.json",
-      "bytes": 98857,
-      "sha256": "9c3bc2d51854c30fa3b19b0c4320d340a97d31c9ea350119cb695561cee4ac31"
+      "bytes": 99037,
+      "sha256": "477ca783ac2ae39d9221420c712e36cd57533bbe793a328d72c532fe1d708329"
     },
     {
       "path": "_Kursportal/materialien.html",
@@ -1461,8 +1461,8 @@
     },
     {
       "path": "_Kursportal/module/06.html",
-      "bytes": 19694,
-      "sha256": "41d58781181930f746086abcb9eb5742a6542bf708255a2d4df68ff075071e28"
+      "bytes": 19873,
+      "sha256": "fe0927e5a577fecee78602951df97a0e6b88c1ea44b829a07f030b9aea1f77c8"
     },
     {
       "path": "_Kursportal/module/07.html",

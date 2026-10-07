@@ -22,11 +22,28 @@ Erklärungen, Arbeitsaufträge und Lösung müssen dasselbe Lernziel und dieselb
 | Reisedemo und Dateieinbindung | Ein ungültiges Datum erzeugte zwei Feldfehler; zusätzliche Debug-Funktion täuschte eine Weiterleitung an. Unklare include/require-Kommentare. | Datumsfelder einzeln prüfen, Debug-Code entfernen, Prüfansicht klar als unverbindlich kennzeichnen; `require_once` mit wiederholtem Einbinden und mehrfachen Funktionsaufrufen erklären. |
 | PDFs | Veraltete Startpfade, uneinheitliche Cookie-Bezeichner und unsichtbare Kopiertest-Anweisungen in KI-Aufgaben. | 13 PDFs aktualisiert; unsichtbare Anweisungen aus den Aufgaben entfernt; Experiment und faire Bewertung offen in den Dozentenhinweisen erläutert. Sichtbare Aufgabeninhalte blieben beim Entfernen unverändert. |
 
+## Zweiter Korrekturdurchgang am 07.10.2026
+
+Die erneute Prüfung baute auf dem oben beschriebenen Stand auf. Zusätzlich wurden die gemeinsam erarbeiteten Array-/Funktionsübungen, die fünf vollständigen KI-Referenzlösungen, die mehrseitige Reisedemo und die Medienbeispiele geprüft.
+
+| Befund | Korrektur und Nachweis |
+| --- | --- |
+| Array-Arbeitsdatei vermischte Lösung, unvollständige Funktionen und lose Unterrichtsnotizen. Die Angabe `number` war als Parameterstandard ungeeignet; der Ausdruck „typunsicher“ war fachlich unpräzise. | Vier klar formulierte Aufgaben mit Prüffällen, reine Startdatei und getrennte kommentierte Musterlösungen. `return`, Ausgabe, dynamische Typisierung und das gültige Ergebnis `0` werden unterschieden. [Aufgabenübersicht](../PHP_Arbeitsbereich/Summary_Code_Together/CodeTogether/phparray/README.md). |
+| Die gemeinsame Datumsfunktion konnte bei einem eingebetteten Nullbyte mit `ValueError` abbrechen. | Fehler am PHP-Parser reproduziert; Nullbyte-Prüfung vor dem Parser in allen fünf Kopien ergänzt. Ungültige Datumswerte liefern eine Feldmeldung mit HTTP 422; andere gültige Angaben bleiben erhalten. |
+| Die Textnotiz zum Kopiertest behauptete weiterhin, versteckte Anweisungen seien in aktuellen PDFs enthalten. | Notiz auf den historischen Versuch umgestellt, aktuelle Fassung eindeutig beschrieben; Lernziel und faire Bewertung offen erläutert. |
+| Die kopierbaren Medienbeispiele verwendeten Pfade aus der früheren Ordnerstruktur. Drei HTML-Dateien schlossen leere HTML-Elemente unzulässig mit End-Tags. | Pfade an `Demos/dateien/06-1.html` angepasst und ihren Bezug erklärt. Überflüssige End-Tags von `source` und `track` entfernt; Teilnehmer-, Dozentenfassung und Lösung gemeinsam korrigiert. |
+
+**Zusätzliche Prüfung:** 166 erfolgreiche Prüfungen der vier Funktionen, der mehrseitigen Reisedemo und der fünf KI-Anwendungen. Dazu gehören die dokumentierten Gesamtsummen, falsche Eingabetypen in jedem Formularfeld, sichere HTML-Ausgabe und ungültige Datumswerte. [Einzelergebnisse](nachreview-tests.json), [wiederholbarer Test](tests/nachreview.py).
+
+**Browsernachprüfung:** 32 erfolgreiche Prüfungen der Navigation, Quizfunktionen und Medienbeispiele, einschließlich geladener Beispielgrafiken in beiden Rollen und schmaler Ansichten. Keine erfassten Browserfehler oder fehlenden Ressourcen. [Protokoll](nachreview-browser.json).
+
+Die bisherigen 52 Korrekturprüfungen und die Syntaxprüfung aller nun 256 PHP-Dateien wurden erneut ausgeführt. Die Grenzen zu Windows/XAMPP, MySQL und nicht vollständig gelösten Reserveaufgaben gelten weiterhin.
+
 ## Prüfungen dieses Stands
 
 | Prüfung | Ergebnis und Nachweis |
 | --- | --- |
-| PHP-Syntax | Alle 255 PHP-Dateien ohne Syntaxfehler. Das schließt Startdateien und optionale Pakete ein, ist aber kein Nachweis ihrer vollständigen fachlichen Funktion. |
+| PHP-Syntax | Alle 256 PHP-Dateien ohne Syntaxfehler. Das schließt Startdateien und optionale Pakete ein, ist aber kein Nachweis ihrer vollständigen fachlichen Funktion. |
 | Korrekturtests | 52 erfolgreiche Prüfungen: neue Starter, Grundlagen-/Kontrollstrukturlösungen, Importberechnungen, Quizstruktur und korrigierte Formularabläufe. [Einzelergebnisse](inhaltsreview-tests.json), [ausführbarer Test](tests/inhaltsreview.py). |
 | Tagesdemos und Pflichtlösungen | 37 Prüfungen erfolgreich, darunter 14 Syntaxprüfungen und 23 HTTP-/Zustandsprüfungen. [Protokoll](kursstruktur-php.json). |
 | Browser und Navigation | 23 Prüfungen der Tagesseiten und 28 Prüfungen der Materialnavigation erfolgreich. Desktop, 390-Pixel-Ansicht, GET/POST, Quiz und lokale HTML-Navigation; keine erfassten Browserfehler. [Tagesseiten](kursstruktur-browser.json), [Materialnavigation](ordnerstruktur-browser.json). |
