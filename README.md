@@ -58,7 +58,7 @@ HTML/CSS prüfen → Formular planen → kleinen PHP-Code erklären → Eingaben
 
 Die Lehrkraft benennt zuerst Zielgruppe, Vorwissen, Lernziele, Zeitrahmen, Themenfolge und Prüfkriterien. CourseForge erstellt zusammenhängende Materialien; die Lehrkraft prüft fachlich und didaktisch und arbeitet Feedback ein. Kurs-, Ordner- und Dateibezeichnungen werden vorgegeben und entsprechend zusammengesetzt. Diese Fassung verwendet neutrale PHP-Namen.
 
-Die ursprüngliche Ausarbeitung dauerte nach rückblickender Schätzung etwa vier bis fünf Tage mit sieben bis acht Anpassungen. Das sind projektspezifische Erfahrungswerte, keine gemessenen Arbeitsstunden oder allgemeine Leistungsgarantie. Die hier dokumentierte Tagesstruktur ist eine Weiterentwicklung des Materials.
+Für die Materialien dieses Wochenkurses (fünf Tage / 45 UE) beträgt die Ausarbeitungsdauer nach Florians Projekterfahrung **maximal zehn Stunden mit drei bis vier Review- und Überarbeitungsrunden**. Die Zeit umfasst die didaktische Konzeption, die KI-gestützte Ausarbeitung und die manuelle Prüfung einschließlich der Überarbeitungen. Während CourseForge die Materialien erstellt und Feedback einarbeitet, steuert die Lehrkraft Lernziele, Qualität und Freigabe. Die Angabe bezieht sich auf dieses konkrete Kurspaket. Die hier dokumentierte Tagesstruktur ist eine Weiterentwicklung des Materials.
 
 ## Zusammenarbeit und Prüfstand
 
